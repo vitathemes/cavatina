@@ -1,0 +1,72 @@
+// .c-nav {
+//   width: 100%;
+//   text-align: left;
+//   max-height: 0;
+//   transition: 1s ease-in-out;
+//   overflow: hidden;
+
+//   @include media(tablet) {
+//     display: none;
+//   }
+// }
+
+// .c-header__nav--home {
+//   @include media(tablet) {
+//     display: block;
+//     max-height: unset;
+//     order: 2;
+//     margin-bottom: 64px;
+//   }
+// }
+
+// .c-home__nav-title {
+//   margin: 0;
+//   text-align: left;
+//   order: 1;
+// }
+
+// .c-header__holder.toggled {
+//   @include media(tablet) {
+//     animation-name: increaseHeaderWidth;
+//     animation-duration: 0.5s;
+//     animation-fill-mode: forwards;
+//     height: max-content;
+//     justify-content: center;
+//     flex-direction: row;
+//   }
+
+//   .c-header__logo {
+//     @include media(tablet) {
+//       width: 50%;
+//       order: 2;
+
+//       transform: rotate(0deg);
+//       margin-bottom: 0;
+//     }
+//   }
+//   .c-header__menu {
+//     @include media(tablet) {
+//       width: 50%;
+//     }
+//   }
+//   .c-header__search {
+//     @include media(tablet) {
+//       display: none;
+//     }
+//   }
+//   .c-nav {
+//     padding-top: 32px;
+
+//     max-height: 25em;
+
+//     @include media(tablet) {
+//       display: inline-block;
+//       order: 3;
+//       padding-left: 16px;
+//     }
+//   }
+// }
+// .s-nav {
+//   padding: 0;
+//   list-style-type: none;
+// }
