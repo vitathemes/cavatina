@@ -155,8 +155,7 @@
 
                     <div class="text-carousel2 text-carousel--mobile">
                         <h3 class="o-carousel__post-title o-carousel__post-title--home">01 . Advertisement Poster</h3>
-                        <h3 class="o-carousel__post-title o-carousel__post-title--home">02 . special event or exhibit
-                            poster concept</h3>
+                        <h3 class="o-carousel__post-title o-carousel__post-title--home">02 . Advertisement Poster</h3>
                         <h3 class="o-carousel__post-title o-carousel__post-title--home">03 . Advertisement Poster</h3>
                         <h3 class="o-carousel__post-title o-carousel__post-title--home">04 . Advertisement Poster</h3>
                         <h3 class="o-carousel__post-title o-carousel__post-title--home">05 . Advertisement Poster</h3>

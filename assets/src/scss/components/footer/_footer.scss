@@ -1,8 +1,8 @@
 .c-footer {
   position: absolute;
   width: 100%;
-  height: 10%;
-  bottom: 5px;
+  height: max-content;
+  bottom: 0;
   z-index: 8;
 
   display: flex;
@@ -10,12 +10,17 @@
   justify-content: flex-end;
 
   background-color: transparent;
+
+  @include media(tablet) {
+    bottom: 5px;
+    height: 10%;
+  }
 }
 
 .c-footer__context {
   width: 100%;
   height: 100%;
-  margin-top: 50%;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

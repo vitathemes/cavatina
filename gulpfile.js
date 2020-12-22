@@ -53,7 +53,7 @@ const uglifyTask = (cb) => {
 
 const browserSyncTask = (cb) => {
   browserSync.init({
-    proxy: "cavatina.local",
+    proxy: "localhost/",
   });
   cb();
 };

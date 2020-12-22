@@ -1,4 +1,5 @@
 .o-page {
+  position: relative;
   @include media(tablet) {
     text-align: right;
   }

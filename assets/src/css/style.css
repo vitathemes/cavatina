@@ -772,9 +772,11 @@ li {
 --------------------------------------------------------------*/
 /* block
 --------------------------------------------- */
-@media only screen and (min-width: 980px) {
-  .o-page {
-    text-align: right; } }
+.o-page {
+  position: relative; }
+  @media only screen and (min-width: 980px) {
+    .o-page {
+      text-align: right; } }
 
 .o-home {
   width: 82%;
@@ -1076,7 +1078,9 @@ li {
   width: 100%;
   height: 90%;
   text-align: left;
-  margin-top: 40%; }
+  margin-top: 40%;
+  display: flex;
+  flex-direction: column; }
   @media only screen and (min-width: 980px) {
     .c-carousel {
       width: 90%;
@@ -1241,18 +1245,22 @@ li {
 .c-footer {
   position: absolute;
   width: 100%;
-  height: 10%;
-  bottom: 5px;
+  height: max-content;
+  bottom: 0;
   z-index: 8;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   background-color: transparent; }
+  @media only screen and (min-width: 980px) {
+    .c-footer {
+      bottom: 5px;
+      height: 10%; } }
 
 .c-footer__context {
   width: 100%;
   height: 100%;
-  margin-top: 50%;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end; }
