@@ -1,5 +1,6 @@
 .c-header {
   // background-color: darkkhaki;
+  background-color: $color__background-body;
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
   position: fixed;
@@ -110,6 +111,12 @@
   }
 
   .s-nav {
+    list-style-type: none;
+    margin: 2%;
+
+    @include media(tablet) {
+      margin: 0;
+    }
     .page_item {
       list-style-type: none;
     }
@@ -297,7 +304,7 @@
   @include media(tablet) {
     margin: 0;
     text-align: left;
-    margin-left: 32px;
+    margin-left: 16px;
     margin-bottom: 16px;
     padding-top: 16px;
     color: #8a8a8a;
@@ -333,7 +340,7 @@
     display: block;
     width: 100%;
 
-    padding-left: 32px;
+    padding-left: 16px;
     text-align: left;
     // background-color: rgba(255, 17, 17, 0.5);
   }

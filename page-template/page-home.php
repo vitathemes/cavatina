@@ -46,7 +46,7 @@
                                     array(
                                     'theme_location' => 'menu-1',
                                     'menu_id'        => 'primary-menu',
-                                    "menu_class" => "c-nav", // nesting 
+                                    "menu_class" => "s-nav", // nesting 
                                     "container_class" => "c-nav",
                                     "container" => "nav",
                                     )
@@ -72,7 +72,7 @@
                                 array(
                                 'theme_location' => 'menu-1',
                                 'menu_id'        => 'primary-menu',
-                                "menu_class" => "c-nav", // nesting 
+                                "menu_class" => "s-nav", // nesting 
                                 "container_class" => "c-nav",
                                 "container" => "nav",
                                 )

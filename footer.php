@@ -43,7 +43,7 @@
 
 
         <div class="c-footer__copy">
-            <p>© 2020 CAVATINA. TERMS OF USE AND PRIVACY POLICY.</p>
+            <p class="c-footer__text">© 2020 CAVATINA. TERMS OF USE AND PRIVACY POLICY.</p>
         </div>
 
 

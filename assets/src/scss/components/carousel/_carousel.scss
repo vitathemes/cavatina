@@ -94,10 +94,12 @@
 .flickity-page-dots {
   bottom: -65px;
   padding-left: 5%;
+  padding-right: 5%;
 
   @include media(tablet) {
     bottom: -35px;
     padding-left: 0;
+    padding-right: 0;
   }
 
   .dot {

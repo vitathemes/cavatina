@@ -2,7 +2,7 @@
   position: absolute;
   width: 100%;
   height: 10%;
-  bottom: 0;
+  bottom: 5px;
   z-index: 8;
 
   display: flex;
@@ -15,20 +15,38 @@
 .c-footer__context {
   width: 100%;
   height: 100%;
-
+  margin-top: 30%;
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
-
+  flex-direction: column;
+  justify-content: flex-end;
   @include media(tablet) {
     width: 85%;
+    margin-top: 0;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
 .c-footer__social-media {
-  margin-right: 4%;
+  margin-left: 4%;
+  @include media(tablet) {
+    margin-right: 4%;
+  }
 }
 .c-social-media__item {
   margin: 4px;
+}
+
+.c-footer__copy {
+  margin-left: 2%;
+
+  @include media(tablet-only) {
+    margin-left: 5%;
+  }
+}
+
+.c-footer__text {
+  font-size: 1.3em;
+  color: gray;
 }
