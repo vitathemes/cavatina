@@ -4524,7 +4524,12 @@ li {
       margin-right: 4%; } }
 
 .c-social-media__item {
-  margin: 4px; }
+  margin: 4px;
+  transition: 0.2s all; }
+  .c-social-media__item svg path {
+    transition: 0.2s all; }
+    .c-social-media__item svg path:hover {
+      fill: #000000; }
 
 .c-footer__copy {
   margin-left: 2%; }

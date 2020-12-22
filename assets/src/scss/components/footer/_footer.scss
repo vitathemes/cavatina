@@ -36,6 +36,17 @@
 }
 .c-social-media__item {
   margin: 4px;
+
+  transition: 0.2s all;
+
+  svg {
+    path {
+      transition: 0.2s all;
+      &:hover {
+        fill: #000000;
+      }
+    }
+  }
 }
 
 .c-footer__copy {

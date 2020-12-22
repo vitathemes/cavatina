@@ -119,6 +119,8 @@
                                     src="<?php echo get_template_directory_uri(); ?>/assets/images/carousel.jpg"
                                     alt="Advertisment poster" />
 
+
+
                             </div>
                             <div class="carousel-cell">
                                 <img class="c-carousel__image"
