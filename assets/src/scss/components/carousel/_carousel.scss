@@ -35,7 +35,6 @@
   text-align: left;
   margin-left: 5%;
 
-  color: #8a8a8a;
   @include media(tablet) {
     display: none;
   }
@@ -127,6 +126,7 @@
   line-height: 17px;
   /* identical to box height */
 
+  color: #8a8a8a;
   @include media(tablet) {
     margin: 0;
     color: #8a8a8a;
@@ -137,15 +137,6 @@
   @include media(tablet) {
     margin-top: 16px;
     margin-bottom: 32px;
-  }
-}
-
-.o-carousel__post-title--home {
-  width: max-content;
-  margin-top: 5%;
-  margin-left: 5%;
-  @include media(tablet) {
-    display: none;
   }
 }
 
@@ -206,5 +197,22 @@
 
   &:hover {
     color: #8a8a8a;
+  }
+}
+
+.text-carousel2 {
+  .flickity-viewport {
+    .flickity-slider {
+      margin-left: 5%;
+
+      .o-carousel__post-title--home {
+        width: 95%;
+        margin-top: 5%;
+
+        @include media(tablet) {
+          display: none;
+        }
+      }
+    }
   }
 }

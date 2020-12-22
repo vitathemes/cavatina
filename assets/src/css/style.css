@@ -1099,8 +1099,7 @@ li {
 .o-carousel__title--home {
   width: max-content;
   text-align: left;
-  margin-left: 5%;
-  color: #8a8a8a; }
+  margin-left: 5%; }
   @media only screen and (min-width: 980px) {
     .o-carousel__title--home {
       display: none; } }
@@ -1172,7 +1171,8 @@ li {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  /* identical to box height */ }
+  /* identical to box height */
+  color: #8a8a8a; }
   @media only screen and (min-width: 980px) {
     .o-carousel__title {
       margin: 0;
@@ -1182,14 +1182,6 @@ li {
   .o-carousel__post-title {
     margin-top: 16px;
     margin-bottom: 32px; } }
-
-.o-carousel__post-title--home {
-  width: max-content;
-  margin-top: 5%;
-  margin-left: 5%; }
-  @media only screen and (min-width: 980px) {
-    .o-carousel__post-title--home {
-      display: none; } }
 
 @media only screen and (min-width: 980px) {
   .o-carousel__more {
@@ -1236,6 +1228,15 @@ li {
       width: 100%; } }
   .o-carousel__post-title:hover {
     color: #8a8a8a; }
+
+.text-carousel2 .flickity-viewport .flickity-slider {
+  margin-left: 5%; }
+  .text-carousel2 .flickity-viewport .flickity-slider .o-carousel__post-title--home {
+    width: 95%;
+    margin-top: 5%; }
+    @media only screen and (min-width: 980px) {
+      .text-carousel2 .flickity-viewport .flickity-slider .o-carousel__post-title--home {
+        display: none; } }
 
 .c-footer {
   position: absolute;
