@@ -11,6 +11,7 @@
  * Root Media Query Variables
  */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 :root {
   --global--spacing-unit: 20px;
   --global--spacing-horizontal: 15px;
@@ -594,6 +595,18 @@ html {
 --------------------------------------------- */
 /* Typography
 --------------------------------------------- */
+* {
+  font-family: "Montserrat", sans-serif; }
+
+a {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #000000; }
+
 /* Elements
 --------------------------------------------- */
 /* Elements
@@ -759,6 +772,10 @@ li {
 --------------------------------------------------------------*/
 /* block
 --------------------------------------------- */
+@media only screen and (min-width: 980px) {
+  .o-page {
+    text-align: right; } }
+
 .o-home {
   width: 82%;
   height: 100%;
@@ -848,7 +865,12 @@ li {
     .c-logo--home .o-image--rotate {
       transform: rotate(0deg); } }
 
+@media only screen and (min-width: 980px) {
+  .c-item__logo--home {
+    width: 60%; } }
+
 .c-header__desc {
+  color: #8a8a8a;
   display: none; }
 
 @media only screen and (min-width: 980px) {
@@ -925,8 +947,9 @@ li {
   .c-header__desc--home {
     display: block;
     width: 100%;
-    text-align: center;
-    margin: 0 0 0 5%; } }
+    text-align: left;
+    margin: 0;
+    padding-left: 23%; } }
 
 @media only screen and (min-width: 980px) {
   .c-header__toggle--home {
@@ -948,10 +971,6 @@ li {
     margin-bottom: 16px;
     padding-top: 16px;
     color: #8a8a8a; } }
-
-@media only screen and (min-width: 980px) {
-  .c-page {
-    text-align: right; } }
 
 @media only screen and (min-width: 980px) {
   .c-home {
@@ -1032,11 +1051,26 @@ li {
   .c-nav .s-nav {
     list-style-type: none;
     margin: 2%; }
+    .c-nav .s-nav a {
+      transition: 0.2s all;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000; }
+      .c-nav .s-nav a:hover {
+        color: #8a8a8a; }
     @media only screen and (min-width: 980px) {
       .c-nav .s-nav {
         margin: 0; } }
-    .c-nav .s-nav .page_item {
-      list-style-type: none; }
+
+.o-navigation_title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #8a8a8a; }
 
 .c-carousel {
   width: 100%;
@@ -1065,7 +1099,8 @@ li {
 .o-carousel__title--home {
   width: max-content;
   text-align: left;
-  margin-left: 5%; }
+  margin-left: 5%;
+  color: #8a8a8a; }
   @media only screen and (min-width: 980px) {
     .o-carousel__title--home {
       display: none; } }
@@ -1132,10 +1167,16 @@ li {
     .flickity-prev-next-button.previous {
       left: 95%; } }
 
-@media only screen and (min-width: 980px) {
-  .o-carousel__title {
-    margin: 0;
-    color: #8a8a8a; } }
+.o-carousel__title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */ }
+  @media only screen and (min-width: 980px) {
+    .o-carousel__title {
+      margin: 0;
+      color: #8a8a8a; } }
 
 @media only screen and (min-width: 980px) {
   .o-carousel__post-title {
@@ -1156,7 +1197,13 @@ li {
 
 .o-carousel__more--home {
   margin-top: 10%;
-  margin-left: 5%; }
+  margin-left: 5%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #000000; }
   @media only screen and (min-width: 980px) {
     .o-carousel__more--home {
       display: none; } }
@@ -1176,7 +1223,19 @@ li {
       height: 100%; }
 
 .o-carousel__post-title {
-  width: 100%; }
+  width: max-content;
+  transition: 0.2s all;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 200%;
+  /* identical to box height, or 28px */
+  color: #000000; }
+  @media only screen and (min-width: 980px) {
+    .o-carousel__post-title {
+      width: 100%; } }
+  .o-carousel__post-title:hover {
+    color: #8a8a8a; }
 
 .c-footer {
   position: absolute;
@@ -1221,7 +1280,12 @@ li {
 
 .c-footer__text {
   font-size: 1.3em;
-  color: gray; }
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+  color: #8a8a8a; }
 
 /*--------------------------------------------------------------
 # External

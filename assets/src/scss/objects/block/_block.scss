@@ -1,3 +1,9 @@
+.o-page {
+  @include media(tablet) {
+    text-align: right;
+  }
+}
+
 .o-home {
   width: 82%;
   height: 100%;

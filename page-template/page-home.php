@@ -13,7 +13,7 @@
     <?php wp_body_open(); ?>
 
 
-    <div id="page" class="c-page">
+    <div id="page" class="o-page">
 
         <div class="u-header-space"></div>
 
@@ -23,8 +23,8 @@
 
 
                 <div class="c-header__item c-header__item--logo c-header__logo--home">
-                    <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
-                        alt="logo" />
+                    <img class="o-image c-item__logo--home"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
                 </div>
 
                 <p class="c-header__desc c-header__desc--home">digital creativity</p>
@@ -87,10 +87,10 @@
 
                         <div class="text-carousel">
                             <h3 class="o-carousel__post-title">01 . Advertisement Poster</h3>
-                            <h3 class="o-carousel__post-title">01 . special event or exhibit poster concept</h3>
-                            <h3 class="o-carousel__post-title">01 . Advertisement Poster</h3>
-                            <h3 class="o-carousel__post-title">01 . Advertisement Poster</h3>
-                            <h3 class="o-carousel__post-title">01 . Advertisement Poster</h3>
+                            <h3 class="o-carousel__post-title">02 . special event or exhibit poster concept</h3>
+                            <h3 class="o-carousel__post-title">03 . Advertisement Poster</h3>
+                            <h3 class="o-carousel__post-title">04 . Advertisement Poster</h3>
+                            <h3 class="o-carousel__post-title">05 . Advertisement Poster</h3>
                         </div>
 
 

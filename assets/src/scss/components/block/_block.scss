@@ -1,9 +1,3 @@
-.c-page {
-  @include media(tablet) {
-    text-align: right;
-  }
-}
-
 .c-home {
   @include media(tablet) {
     width: 85%;

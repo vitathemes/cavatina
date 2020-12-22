@@ -34,6 +34,8 @@
   width: max-content;
   text-align: left;
   margin-left: 5%;
+
+  color: #8a8a8a;
   @include media(tablet) {
     display: none;
   }
@@ -119,6 +121,12 @@
 }
 
 .o-carousel__title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
   @include media(tablet) {
     margin: 0;
     color: #8a8a8a;
@@ -149,6 +157,14 @@
 .o-carousel__more--home {
   margin-top: 10%;
   margin-left: 5%;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  color: #000000;
   @include media(tablet) {
     display: none;
   }
@@ -174,5 +190,21 @@
 }
 
 .o-carousel__post-title {
-  width: 100%;
+  width: max-content;
+  transition: 0.2s all;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 200%;
+  /* identical to box height, or 28px */
+
+  color: #000000;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  &:hover {
+    color: #8a8a8a;
+  }
 }

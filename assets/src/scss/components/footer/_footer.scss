@@ -48,5 +48,12 @@
 
 .c-footer__text {
   font-size: 1.3em;
-  color: gray;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #8a8a8a;
 }

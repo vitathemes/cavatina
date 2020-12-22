@@ -95,8 +95,14 @@
   }
 }
 
-// i'm here
+.c-item__logo--home {
+  @include media(tablet) {
+    width: 60%;
+  }
+}
+
 .c-header__desc {
+  color: #8a8a8a;
   display: none;
 }
 
@@ -195,10 +201,12 @@
   @include media(tablet) {
     display: block;
     width: 100%;
-    text-align: center;
-    margin: 0 0 0 5%;
+    text-align: left;
+    margin: 0;
+    padding-left: 23%;
   }
 }
+
 .c-header__toggle--home {
   @include media(tablet) {
     display: none;
