@@ -1,0 +1,11 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $wp-cavatina__secondary-color;
+	font-family: $wp-cavatina__primary-font;
+	font-size: $wp-cavatina_base-font-size;
+	line-height: $font__line-height-body;
+}

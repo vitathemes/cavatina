@@ -26,23 +26,25 @@
 
     <div id="page" class="site">
 
-        <header id="masthead" class="c-header">
+        <header id="masthead" class="c-header ">
 
-            <div class="c-header__holder js-nav">
+            <div class="c-header__holder  js-nav">
 
-                <div class="c-logo--block">
-                    <img class="o-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
-                        alt="logo" />
+
+                <div class="c-header__item c-header__item--logo">
+                    <img class="o-image o-image--rotate"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
                 </div>
 
-                <button class="o-toggle c-toggle--block" aria-controls="primary-menu" aria-expanded="false">
-                    <img class="o-header__image"
+                <button class="c-header__item c-header__item--menu-icon" aria-controls="primary-menu"
+                    aria-expanded="false">
+                    <img class="o-image"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/hamburger-menu.svg"
                         alt="hamburger" />
                 </button>
 
-                <div class="o-search--block">
-                    <img class="o-search " src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg"
+                <div class="c-header__item c-header__item--search">
+                    <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg"
                         alt="hamburger" />
                 </div>
 
