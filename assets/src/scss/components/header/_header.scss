@@ -218,3 +218,14 @@
     // background-color: darkred;
   }
 }
+
+.o-navigation_title {
+  @include media(tablet) {
+    margin: 0;
+    text-align: left;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    color: #8a8a8a;
+  }
+}

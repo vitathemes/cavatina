@@ -13,7 +13,7 @@
     <?php wp_body_open(); ?>
 
 
-    <div id="page" class="o-page">
+    <div id="page" class="c-page">
 
         <div class="u-header-space"></div>
 
@@ -66,7 +66,7 @@
                 <div class="c-home__item c-home__item--bottom">
 
                     <div class="c-home__navigation">
-                        <p class="c-navigation_title">Navigation</p>
+                        <p class="o-navigation_title">Navigation</p>
                         <?php
                             wp_nav_menu(
                                 array(
@@ -83,11 +83,19 @@
 
                     <div class="c-home__carousel">
 
-                        <p class="c-carousel__title">Recent Projects</p>
+                        <p class="o-carousel__title">Recent Projects</p>
 
-                        <h3 class="c-carousel__post-title">01 . Advertisement Poster</h3>
+                        <div class="text-carousel">
+                            <h3 class="o-carousel__post-title">01 . Advertisement Poster</h3>
+                            <h3 class="o-carousel__post-title">01 . special event or exhibit poster concept</h3>
+                            <h3 class="o-carousel__post-title">01 . Advertisement Poster</h3>
+                            <h3 class="o-carousel__post-title">01 . Advertisement Poster</h3>
+                            <h3 class="o-carousel__post-title">01 . Advertisement Poster</h3>
+                        </div>
 
-                        <a href="#" class="c-carousel__more">View All Projects</a>
+
+                        <a href="#" class="o-carousel__more">View All Projects</a>
+
                     </div>
 
                 </div>
@@ -115,7 +123,7 @@
                             <div class="carousel-cell">
                                 <img class="c-carousel__image"
                                     src="<?php echo get_template_directory_uri(); ?>/assets/images/carousel.jpg"
-                                    alt="advertisment poster" />
+                                    alt="Advertisment poster" />
 
                             </div>
                             <div class="carousel-cell">
@@ -141,9 +149,9 @@
 
                     </div>
 
-                    <h3 class="c-carousel__post-title c-carousel__post-title--home">01 . Advertisement Poster</h3>
+                    <h3 class="o-carousel__post-title o-carousel__post-title--home">01 . Advertisement Poster</h3>
 
-                    <a href="#" class="c-carousel__more c-carousel__more--home">View All Projects</a>
+                    <a href="#" class="o-carousel__more o-carousel__more--home">View All Projects</a>
 
                 </div>
 

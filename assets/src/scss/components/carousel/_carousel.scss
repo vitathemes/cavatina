@@ -118,26 +118,21 @@
   }
 }
 
-.c-carousel__title {
+.o-carousel__title {
   @include media(tablet) {
     margin: 0;
     color: #8a8a8a;
   }
 }
 
-.c-carousel__post-title {
-  transition: all 0.2s;
-  &:hover {
-    color: #8a8a8a;
-  }
-
+.o-carousel__post-title {
   @include media(tablet) {
     margin-top: 16px;
     margin-bottom: 32px;
   }
 }
 
-.c-carousel__post-title--home {
+.o-carousel__post-title--home {
   width: max-content;
   margin-top: 5%;
   margin-left: 5%;
@@ -146,15 +141,38 @@
   }
 }
 
-.c-carousel__more {
+.o-carousel__more {
   @include media(tablet) {
     margin: 0;
   }
 }
-.c-carousel__more--home {
+.o-carousel__more--home {
   margin-top: 10%;
   margin-left: 5%;
   @include media(tablet) {
     display: none;
   }
+}
+
+/*******************************
+    Text  Carousel
+    
+*******************************/
+.text-carousel {
+  width: 100%;
+  height: max-content;
+
+  .flickity-viewport {
+    width: 100%;
+    height: 100%;
+
+    .flickity-slider {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.o-carousel__post-title {
+  width: 100%;
 }

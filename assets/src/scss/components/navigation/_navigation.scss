@@ -14,38 +14,11 @@
     list-style-type: none;
     margin: 2%;
 
-    a {
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 17px;
-      /* identical to box height */
-      transition: 0.2s all;
-
-      color: #000000;
-
-      &:hover {
-        color: #8a8a8a;
-      }
-    }
-
     @include media(tablet) {
       margin: 0;
     }
     .page_item {
       list-style-type: none;
     }
-  }
-}
-
-.c-navigation_title {
-  @include media(tablet) {
-    margin: 0;
-    text-align: left;
-    margin-left: 16px;
-    margin-bottom: 16px;
-    padding-top: 16px;
-    color: #8a8a8a;
   }
 }

@@ -6,3 +6,14 @@ var flkty = new Flickity(carousel, {
   //   pageDots: false,
   prevNextButtons: true,
 });
+
+// Carosuel - text
+var carouselImage = document.querySelector(".text-carousel");
+var flkty = new Flickity(carouselImage, {
+  setGallerySize: true,
+  freeScroll: false,
+  prevNextButtons: false,
+  pageDots: false,
+  asNavFor: ".c-carousel__context",
+});
+console.log("test");
