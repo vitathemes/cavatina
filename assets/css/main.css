@@ -4104,19 +4104,18 @@ li {
   .c-header__holder--home {
     padding-bottom: 0; } }
 
-.c-header__item--logo {
+.c-header__logo {
   width: 50%;
   text-align: center;
   padding: 32px 20% 0px 5%; }
   @media only screen and (min-width: 980px) {
-    .c-header__item--logo {
+    .c-header__logo {
       width: 95%;
       text-align: center;
       padding: 0; } }
-
-@media only screen and (min-width: 980px) {
-  .c-item__logo--home {
-    width: 60%; } }
+  @media only screen and (min-width: 980px) {
+    .c-header__logo .o-image {
+      width: 60%; } }
 
 .c-header__desc {
   color: #8a8a8a;

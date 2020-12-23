@@ -22,7 +22,7 @@
             <div class="c-header__holder c-header__holder--home js-nav">
 
 
-                <div class="c-header__item c-header__item--logo c-header__logo--home">
+                <div class="c-header__item c-header__logo c-header__logo--home">
                     <img class="o-image c-item__logo--home"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
                 </div>
