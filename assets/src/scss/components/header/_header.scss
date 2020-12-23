@@ -79,7 +79,9 @@
     padding: 0;
     // background-color: red;
   }
+}
 
+.c-header__logo--home {
   .o-image {
     @include media(tablet) {
       width: 60%;
@@ -92,7 +94,7 @@
   display: none;
 }
 
-.o-image--rotate {
+.c-header__logo--rotate {
   @include media(tablet) {
     padding: 0;
     transform: rotate(-90deg);

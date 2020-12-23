@@ -1,4 +1,4 @@
-.c-home {
+.c-sidebar {
   @include media(tablet) {
     width: 85%;
     height: 90vh;
@@ -8,7 +8,7 @@
   }
 }
 
-.c-home__context {
+.c-sidebar__context {
   @include media(tablet) {
     display: inline-block;
     vertical-align: middle;
@@ -16,7 +16,7 @@
   }
 }
 
-.c-home__context--left {
+.c-sidebar__context--left {
   @include media(tablet) {
     width: 20%;
     vertical-align: bottom;
@@ -24,7 +24,7 @@
   }
 }
 
-.c-home__item {
+.c-sidebar__item {
   @include media(tablet) {
     width: 100%;
     vertical-align: top;
@@ -32,14 +32,14 @@
   }
 }
 
-.c-home__item--top {
+.c-sidebar__item--top {
   @include media(tablet) {
     height: 20%;
     // background-color: darkturquoise;
   }
 }
 
-.c-home__item--bottom {
+.c-sidebar__item--bottom {
   @include media(tablet) {
     height: 100%;
     display: flex;
@@ -54,7 +54,7 @@
   }
 }
 
-.c-home__navigation {
+.c-sidebar__navigation {
   display: none;
 
   @include media(tablet) {
@@ -77,7 +77,7 @@
   }
 }
 
-.c-home__carousel {
+.c-sidebar__carousel {
   display: none;
   @include media(tablet) {
     display: block;
@@ -89,7 +89,7 @@
   }
 }
 
-.c-home__context--right {
+.c-sidebar__context--right {
   @include media(tablet) {
     width: 79%;
 

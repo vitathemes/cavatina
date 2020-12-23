@@ -23,8 +23,8 @@
 
 
                 <div class="c-header__item c-header__logo c-header__logo--home">
-                    <img class="o-image c-item__logo--home"
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
+                    <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
+                        alt="logo" />
                 </div>
 
                 <p class="c-header__item c-header__desc c-header__desc--home">digital creativity</p>
@@ -61,13 +61,13 @@
             </div>
         </header>
 
-        <section class="c-home">
+        <section class="c-sidebar">
 
-            <div class="c-home__context c-home__context--left">
+            <div class="c-sidebar__context c-sidebar__context--left">
 
-                <div class="c-home__item c-home__item--bottom">
+                <div class="c-sidebar__item c-sidebar__item--bottom">
 
-                    <div class="c-home__navigation">
+                    <div class="c-sidebar__navigation">
                         <p class="c-navigation_title">Navigation</p>
 
 
@@ -90,7 +90,7 @@
                     </div>
 
 
-                    <div class="c-home__carousel">
+                    <div class="c-sidebar__carousel">
 
                         <p class="c-carousel__title">Recent Projects</p>
 
@@ -111,7 +111,7 @@
 
             </div>
 
-            <div class="c-home__context c-home__context--right">
+            <div class="c-sidebar__context c-sidebar__context--right">
 
 
                 <div class="c-carousel">

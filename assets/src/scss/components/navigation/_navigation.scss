@@ -41,12 +41,10 @@
     padding-left: 20%;
   }
 
-  .c-header__item--logo {
+  .c-header__logo {
     @include media(tablet) {
       width: 50%;
       margin-bottom: 0;
-    }
-    .o-image--rotate {
       transform: rotate(0deg);
     }
   }

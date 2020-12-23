@@ -31,9 +31,9 @@
             <div class="c-header__holder  js-nav">
 
 
-                <div class="c-header__item c-header__logo">
-                    <img class="o-image o-image--rotate"
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
+                <div class="c-header__item c-header__logo c-header__logo--rotate">
+                    <img class="o-image " src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
+                        alt="logo" />
                 </div>
 
                 <button class="c-header__item c-header__item--menu-icon" aria-controls="primary-menu"
