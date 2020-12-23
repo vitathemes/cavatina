@@ -29,8 +29,8 @@
     return;
   }
 
-  if (!menu.classList.contains("s-nav")) {
-    menu.classList.add("s-nav");
+  if (!menu.classList.contains("c-nav")) {
+    menu.classList.add("c-nav");
   }
 
   // Toggle the .toggled class and the aria-expanded value each time the button is clicked.

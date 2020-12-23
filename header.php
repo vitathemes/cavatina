@@ -49,15 +49,20 @@
                 </div>
 
                 <?php
-                                wp_nav_menu(
-                                    array(
-                                    'theme_location' => 'menu-1',
-                                    'menu_id'        => 'primary-menu',
-                                    "menu_class" => "s-nav", // nesting 
-                                    "container_class" => "c-nav",
-                                    "container" => "nav",
-                                    )
-                                );
+                if ( has_nav_menu( 'menu-1' ) ) {
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'menu_id'        => 'primary-menu-registered',
+                            "menu_class" => "s-nav", // nesting
+                            "container_class" => "c-nav",
+                            "container" => "nav",
+                        )
+                    );
+                }
+                else{
+                    echo "<p class='c-menu__error'>* Primary menu not found</p>";
+                }
                 ?>
             </div>
         </header>

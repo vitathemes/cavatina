@@ -1074,11 +1074,18 @@ li {
   /* identical to box height */
   color: #8a8a8a; }
 
+.c-menu__error {
+  text-align: left; }
+
+@media only screen and (min-width: 980px) {
+  .c-menu__error--home {
+    display: none; } }
+
 .c-carousel {
   width: 100%;
   height: 90%;
   text-align: left;
-  margin-top: 40%;
+  margin-top: 30%;
   display: flex;
   flex-direction: column; }
   @media only screen and (min-width: 980px) {
@@ -1091,7 +1098,7 @@ li {
 .c-carousel__context {
   height: 100%;
   background: transparent; }
-  .c-carousel__context .flickity-viewport {
+  .c-carousel__context .c-carousel .flickity-viewport {
     height: 100%; }
 
 .c-carousel__slider {
