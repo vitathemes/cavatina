@@ -89,6 +89,10 @@
   }
 }
 
-.text-carousel {
-  width: 50%;
+.c-home__context--right {
+  @include media(tablet) {
+    width: 79%;
+
+    // background-color: darkred;
+  }
 }

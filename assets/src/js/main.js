@@ -8,7 +8,7 @@ var flkty = new Flickity(carousel, {
 });
 
 // Carosuel - text
-var carouselImage = document.querySelector(".text-carousel");
+var carouselImage = document.querySelector(".c-carousel__post-titles");
 var flkty = new Flickity(carouselImage, {
   setGallerySize: true,
   freeScroll: false,
@@ -18,7 +18,9 @@ var flkty = new Flickity(carouselImage, {
 });
 
 // Carosuel - text Mobile
-var carouselTextMobile = document.querySelector(".text-carousel--mobile");
+var carouselTextMobile = document.querySelector(
+  ".c-carousel__post-titles--mobile"
+);
 var flkty = new Flickity(carouselTextMobile, {
   setGallerySize: true,
   freeScroll: false,

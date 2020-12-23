@@ -18,7 +18,7 @@
 
 .c-carousel__context {
   height: 100%;
-  background: transparent;.c-carousel
+  background: transparent;
 
   .flickity-viewport {
     height: 100%;
@@ -33,7 +33,7 @@
   }
 }
 
-.o-carousel__title--home {
+.c-carousel__title--home {
   width: max-content;
   text-align: left;
   margin-left: 5%;
@@ -50,7 +50,7 @@
   object-fit: cover;
 }
 
-.carousel-cell {
+.c-carousel__cell {
   width: 90%;
 
   @include media(tablet) {
@@ -122,7 +122,7 @@
   }
 }
 
-.o-carousel__title {
+.c-carousel__title {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -136,20 +136,21 @@
   }
 }
 
-.o-carousel__post-title {
+.c-carousel__post-title {
   @include media(tablet) {
     margin-top: 16px;
     margin-bottom: 32px;
   }
 }
 
-.o-carousel__more {
+.c-carousel__more {
   @include media(tablet) {
     margin: 0;
   }
 }
-.o-carousel__more--home {
+.c-carousel__more--home {
   margin-top: 10%;
+
   margin-left: 5%;
 
   font-style: normal;
@@ -168,7 +169,7 @@
     Text  Carousel
     
 *******************************/
-.text-carousel {
+.c-carousel__post-titles {
   width: 100%;
   height: max-content;
 
@@ -183,7 +184,7 @@
   }
 }
 
-.o-carousel__post-title {
+.c-carousel__post-title {
   width: max-content;
   transition: 0.2s all;
   font-style: normal;
@@ -203,12 +204,12 @@
   }
 }
 
-.text-carousel2 {
+.c-carousel__post-titles--mobile {
   .flickity-viewport {
     .flickity-slider {
       margin-left: 5%;
 
-      .o-carousel__post-title--home {
+      .c-carousel__post-title--home {
         width: 95%;
         margin-top: 5%;
 
