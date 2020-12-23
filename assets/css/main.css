@@ -4019,26 +4019,18 @@ li {
 
 .o-page {
   width: 100%;
-  height: 100vh; }
+  height: max-content;
+  position: relative; }
+  @media only screen and (min-width: 980px) {
+    .o-page {
+      height: 100vh;
+      text-align: right; } }
 
 /*--------------------------------------------------------------
 # Objects
 --------------------------------------------------------------*/
 /* block
 --------------------------------------------- */
-.o-page {
-  position: relative; }
-  @media only screen and (min-width: 980px) {
-    .o-page {
-      text-align: right; } }
-
-.o-home {
-  width: 82%;
-  height: 100%;
-  vertical-align: top;
-  display: inline-block;
-  background-color: darkcyan; }
-
 /* layout
 --------------------------------------------- */
 /* Images
@@ -4567,19 +4559,22 @@ li {
     display: none; } }
 
 .c-footer {
-  position: absolute;
   width: 100%;
   height: max-content;
-  bottom: 0;
+  position: relative;
   z-index: 8;
+  padding-top: 10%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   background-color: transparent; }
   @media only screen and (min-width: 980px) {
     .c-footer {
+      position: absolute;
+      padding-top: 0;
       bottom: 5px;
-      height: 10%; } }
+      height: 10%;
+      bottom: 0; } }
 
 .c-footer__context {
   width: 100%;

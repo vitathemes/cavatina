@@ -1,18 +1,20 @@
 .c-footer {
-  position: absolute;
   width: 100%;
   height: max-content;
-  bottom: 0;
+  position: relative;
   z-index: 8;
-
+  padding-top: 10%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   background-color: transparent;
 
   @include media(tablet) {
+    position: absolute;
+    padding-top: 0;
     bottom: 5px;
     height: 10%;
+    bottom: 0;
   }
 }
 
