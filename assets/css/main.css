@@ -4438,7 +4438,6 @@ li {
   width: 90%;
   height: 100%;
   margin-right: 10px;
-  background: #8c8;
   counter-increment: gallery-cell; }
   @media only screen and (min-width: 980px) {
     .c-carousel__cell {
@@ -4529,10 +4528,6 @@ li {
     .c-carousel__more--home {
       display: none; } }
 
-/*******************************
-    Text  Carousel
-    
-*******************************/
 .c-carousel__post-titles {
   width: 100%;
   height: max-content; }

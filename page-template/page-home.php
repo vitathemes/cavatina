@@ -97,11 +97,12 @@
                             <p class="c-carousel__title">Recent Projects</p>
 
                             <div class="c-carousel__post-titles">
-                                <h3 class="c-carousel__post-title">01 . Advertisement Poster</h3>
-                                <h3 class="c-carousel__post-title">02 . special event or exhibit poster concept</h3>
-                                <h3 class="c-carousel__post-title">03 . Advertisement Poster</h3>
-                                <h3 class="c-carousel__post-title">04 . Advertisement Poster</h3>
-                                <h3 class="c-carousel__post-title">05 . Advertisement Poster</h3>
+                                <a href="#" class="c-carousel__post-title">01 . Advertisement Poster</a>
+                                <a href="#" class="c-carousel__post-title">02 . special event or exhibit poster
+                                    concept</a>
+                                <a href="#" class="c-carousel__post-title">03 . Advertisement Poster</a>
+                                <a href="#" class="c-carousel__post-title">04 . Advertisement Poster</a>
+                                <a href="#" class="c-carousel__post-title">05 . Advertisement Poster</a>
                             </div>
 
                         </div>

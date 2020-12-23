@@ -15,6 +15,7 @@ var flkty = new Flickity(carouselImage, {
   prevNextButtons: false,
   pageDots: false,
   asNavFor: ".c-carousel__context",
+  draggable: false,
 });
 
 // Carosuel - text Mobile
@@ -29,4 +30,5 @@ var flkty = new Flickity(carouselTextMobile, {
   asNavFor: ".c-carousel__context",
   contain: true,
   groupCells: true,
+  draggable: false,
 });
