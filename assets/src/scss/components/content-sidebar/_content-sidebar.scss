@@ -1,0 +1,124 @@
+.o-page__main {
+  @include media(tablet) {
+    width: 85%;
+    height: 90vh;
+    // background-color: darkolivegreen;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+.o-page__col {
+  @include media(tablet) {
+    display: inline-block;
+
+    vertical-align: middle;
+
+    height: 100%;
+  }
+}
+
+.o-page__col--left {
+  @include media(tablet) {
+    width: 20%;
+    vertical-align: bottom;
+    // background-color: darkorange;
+  }
+}
+
+.o-page__col--right {
+  @include media(tablet) {
+    width: 79%;
+
+    // background-color: darkred;
+  }
+}
+
+.c-aside {
+  @include media(tablet) {
+    width: 100%;
+    vertical-align: top;
+    // background-color: darkslateblue;
+  }
+
+  @include media(tablet) {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-bottom: 10%;
+    // background-color: darkcyan;
+  }
+
+  @include media(wide) {
+    padding-bottom: 20%;
+  }
+}
+
+.c-aside__nav-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #8a8a8a;
+
+  @include media(tablet) {
+    margin: 0;
+    text-align: left;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    color: #8a8a8a;
+  }
+}
+
+.c-sidebar__item--top {
+  @include media(tablet) {
+    height: 20%;
+    // background-color: darkturquoise;
+  }
+}
+
+.c-aside__nav {
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+    padding-bottom: 20%;
+    // background-color: rgba(169, 169, 169, 0.335);
+  }
+
+  @include media(wide) {
+    padding-bottom: 30%;
+  }
+  .c-nav {
+    @include media(tablet) {
+      display: inline-block;
+      overflow: unset;
+    }
+
+    ul {
+      @include media(tablet) {
+        list-style-type: none;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.c-aside__carousel {
+  display: none;
+  @include media(tablet) {
+    display: block;
+    width: 100%;
+
+    padding-left: 16px;
+    text-align: left;
+    // background-color: rgba(255, 17, 17, 0.5);
+  }
+
+  .c-carousel {
+    margin-left: 0;
+  }
+}

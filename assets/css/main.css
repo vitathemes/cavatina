@@ -4120,7 +4120,8 @@ li {
 
 .c-header__desc {
   color: #8a8a8a;
-  display: none; }
+  display: none;
+  font-size: 14px; }
 
 @media only screen and (min-width: 980px) {
   .c-header__logo--rotate {
@@ -4232,6 +4233,94 @@ li {
   .c-sidebar__context--right {
     width: 79%; } }
 
+@media only screen and (min-width: 980px) {
+  .o-page__main {
+    width: 85%;
+    height: 90vh;
+    display: inline-block;
+    text-align: center; } }
+
+@media only screen and (min-width: 980px) {
+  .o-page__col {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%; } }
+
+@media only screen and (min-width: 980px) {
+  .o-page__col--left {
+    width: 20%;
+    vertical-align: bottom; } }
+
+@media only screen and (min-width: 980px) {
+  .o-page__col--right {
+    width: 79%; } }
+
+@media only screen and (min-width: 980px) {
+  .c-aside {
+    width: 100%;
+    vertical-align: top; } }
+
+@media only screen and (min-width: 980px) {
+  .c-aside {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-bottom: 10%; } }
+
+@media only screen and (min-width: 1400px) {
+  .c-aside {
+    padding-bottom: 20%; } }
+
+.c-aside__nav-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #8a8a8a; }
+  @media only screen and (min-width: 980px) {
+    .c-aside__nav-title {
+      margin: 0;
+      text-align: left;
+      margin-left: 16px;
+      margin-bottom: 16px;
+      padding-top: 16px;
+      color: #8a8a8a; } }
+
+@media only screen and (min-width: 980px) {
+  .c-sidebar__item--top {
+    height: 20%; } }
+
+.c-aside__nav {
+  display: none; }
+  @media only screen and (min-width: 980px) {
+    .c-aside__nav {
+      display: block;
+      padding-bottom: 20%; } }
+  @media only screen and (min-width: 1400px) {
+    .c-aside__nav {
+      padding-bottom: 30%; } }
+  @media only screen and (min-width: 980px) {
+    .c-aside__nav .c-nav {
+      display: inline-block;
+      overflow: unset; } }
+  @media only screen and (min-width: 980px) {
+    .c-aside__nav .c-nav ul {
+      list-style-type: none;
+      text-align: left; } }
+
+.c-aside__carousel {
+  display: none; }
+  @media only screen and (min-width: 980px) {
+    .c-aside__carousel {
+      display: block;
+      width: 100%;
+      padding-left: 16px;
+      text-align: left; } }
+  .c-aside__carousel .c-carousel {
+    margin-left: 0; }
+
 .c-nav {
   width: 100%;
   max-height: 0;
@@ -4298,22 +4387,6 @@ li {
   flex-wrap: wrap;
   width: 100%;
   order: 3; }
-
-.c-navigation_title {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-  color: #8a8a8a; }
-  @media only screen and (min-width: 980px) {
-    .c-navigation_title {
-      margin: 0;
-      text-align: left;
-      margin-left: 16px;
-      margin-bottom: 16px;
-      padding-top: 16px;
-      color: #8a8a8a; } }
 
 .c-menu__error {
   text-align: left; }
@@ -4397,7 +4470,8 @@ li {
     border-radius: 0;
     background: #8a8a8a;
     opacity: 0.25;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: 0.5s all; }
   .flickity-page-dots .dot.is-selected {
     height: 2px;
     background: #8a8a8a; }
@@ -4434,6 +4508,9 @@ li {
   .c-carousel__post-title {
     margin-top: 16px;
     margin-bottom: 32px; } }
+
+.c-carousel__more:hover {
+  color: #8a8a8a; }
 
 @media only screen and (min-width: 980px) {
   .c-carousel__more {
@@ -4483,12 +4560,16 @@ li {
 
 .c-carousel__post-titles--mobile .flickity-viewport .flickity-slider {
   margin-left: 5%; }
-  .c-carousel__post-titles--mobile .flickity-viewport .flickity-slider .c-carousel__post-title--home {
+  .c-carousel__post-titles--mobile .flickity-viewport .flickity-slider .c-carousel__post-title {
     width: 95%;
     margin-top: 5%; }
     @media only screen and (min-width: 980px) {
-      .c-carousel__post-titles--mobile .flickity-viewport .flickity-slider .c-carousel__post-title--home {
+      .c-carousel__post-titles--mobile .flickity-viewport .flickity-slider .c-carousel__post-title {
         display: none; } }
+
+@media only screen and (min-width: 980px) {
+  .c-carousel__post-titles--mobile .c-carousel__post-title {
+    display: none; } }
 
 .c-footer {
   position: absolute;
@@ -4527,12 +4608,13 @@ li {
       margin-right: 4%; } }
 
 .c-social-media__item {
-  margin: 4px;
+  margin: 9px;
   transition: 0.2s all; }
   .c-social-media__item svg path {
     transition: 0.2s all; }
-    .c-social-media__item svg path:hover {
-      fill: #000000; }
+
+.c-social-media__item:hover svg path {
+  fill: #000000; }
 
 .c-footer__copy {
   margin-left: 2%; }

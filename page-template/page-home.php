@@ -54,22 +54,21 @@
                     );
                 }
                 else{
-                    echo "<p class='c-menu__error c-menu__error--home'>* Primary menu not found</p>";
+                   
                 }
                 ?>
 
             </div>
-
         </header>
 
-        <section class="c-sidebar">
+        <section class="o-page__main">
 
-            <div class="c-sidebar__context c-sidebar__context--left">
+            <div class="o-page__col o-page__col--left">
 
-                <div class="c-sidebar__item c-sidebar__item--bottom">
+                <div class="c-aside">
 
-                    <div class="c-sidebar__navigation">
-                        <p class="c-navigation_title">Navigation</p>
+                    <div class="c-aside__nav">
+                        <p class="c-aside__nav-title">Navigation</p>
 
 
                         <?php
@@ -85,24 +84,27 @@
                             );
                         }
                         else{
-                            echo "<p class='c-menu__error'>* Primary menu not found</p>";
+                            
                         }
                         ?>
                     </div>
 
 
-                    <div class="c-sidebar__carousel">
+                    <div class="c-aside__carousel">
 
-                        <p class="c-carousel__title">Recent Projects</p>
+                        <div class="c-carousel">
 
-                        <div class="c-carousel__post-titles">
-                            <h3 class="c-carousel__post-title">01 . Advertisement Poster</h3>
-                            <h3 class="c-carousel__post-title">02 . special event or exhibit poster concept</h3>
-                            <h3 class="c-carousel__post-title">03 . Advertisement Poster</h3>
-                            <h3 class="c-carousel__post-title">04 . Advertisement Poster</h3>
-                            <h3 class="c-carousel__post-title">05 . Advertisement Poster</h3>
+                            <p class="c-carousel__title">Recent Projects</p>
+
+                            <div class="c-carousel__post-titles">
+                                <h3 class="c-carousel__post-title">01 . Advertisement Poster</h3>
+                                <h3 class="c-carousel__post-title">02 . special event or exhibit poster concept</h3>
+                                <h3 class="c-carousel__post-title">03 . Advertisement Poster</h3>
+                                <h3 class="c-carousel__post-title">04 . Advertisement Poster</h3>
+                                <h3 class="c-carousel__post-title">05 . Advertisement Poster</h3>
+                            </div>
+
                         </div>
-
 
                         <a href="#" class="c-carousel__more">View All Projects</a>
 
@@ -112,7 +114,7 @@
 
             </div>
 
-            <div class="c-sidebar__context c-sidebar__context--right">
+            <div class="o-page__col o-page__col--right">
 
 
                 <div class="c-carousel">
@@ -160,11 +162,11 @@
 
 
                     <div class="c-carousel__post-titles c-carousel__post-titles--mobile">
-                        <h3 class="c-carousel__post-title c-carousel__post-title--home">01 . Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title c-carousel__post-title--home">02 . Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title c-carousel__post-title--home">03 . Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title c-carousel__post-title--home">04 . Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title c-carousel__post-title--home">05 . Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">01 . Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">02 . Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">03 . Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">04 . Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">05 . Advertisement Poster</h3>
                     </div>
 
 

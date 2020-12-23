@@ -95,6 +95,8 @@
     background: #8a8a8a;
     opacity: 0.25;
     cursor: pointer;
+
+    transition: 0.5s all;
   }
   .dot.is-selected {
     height: 2px;
@@ -144,6 +146,10 @@
 }
 
 .c-carousel__more {
+  &:hover {
+    color: #8a8a8a;
+  }
+
   @include media(tablet) {
     margin: 0;
   }
@@ -209,7 +215,7 @@
     .flickity-slider {
       margin-left: 5%;
 
-      .c-carousel__post-title--home {
+      .c-carousel__post-title {
         width: 95%;
         margin-top: 5%;
 
@@ -217,6 +223,12 @@
           display: none;
         }
       }
+    }
+  }
+
+  @include media(tablet) {
+    .c-carousel__post-title {
+      display: none;
     }
   }
 }

@@ -39,16 +39,21 @@
   }
 }
 .c-social-media__item {
-  margin: 4px;
+  margin: 9px;
 
   transition: 0.2s all;
 
   svg {
     path {
       transition: 0.2s all;
-      &:hover {
-        fill: #000000;
-      }
+    }
+  }
+}
+
+.c-social-media__item:hover {
+  svg {
+    path {
+      fill: #000000;
     }
   }
 }
