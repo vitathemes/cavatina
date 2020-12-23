@@ -59,6 +59,7 @@
                 ?>
 
             </div>
+
         </header>
 
         <section class="c-sidebar">
