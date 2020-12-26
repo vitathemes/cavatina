@@ -1,0 +1,142 @@
+/*------------------------------------*\
+  #fadein
+\*------------------------------------*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*------------------------------------*\
+  #fadeout
+\*------------------------------------*/
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+
+/*------------------------------------*\
+  #nav drop down 
+\*------------------------------------*/
+@keyframes navDropdown {
+  0% {
+    max-height: 0px;
+  }
+
+  100% {
+    max-height: max-content;
+  }
+}
+@-webkit-keyframes navDropdown {
+  0% {
+    max-height: 0px;
+  }
+
+  100% {
+    max-height: max-content;
+  }
+}
+
+/*------------------------------------*\
+  #nav drop down reverse
+\*------------------------------------*/
+@keyframes navDropReverse {
+  0% {
+    height: 140px;
+  }
+
+  99% {
+    height: 0px;
+  }
+  100% {
+    display: none;
+  }
+}
+@-webkit-keyframes navDropReverse {
+  0% {
+    height: 140px;
+  }
+
+  99% {
+    height: 0px;
+  }
+  100% {
+    display: none;
+  }
+}
+
+/*------------------------------------*\
+  #Laptop/Desktop header animations
+\*------------------------------------*/
+
+@keyframes increaseHeaderWidth {
+  0% {
+    width: 90px;
+  }
+
+  100% {
+    width: 250px;
+  }
+}
+@-webkit-keyframes increaseHeaderWidth {
+  0% {
+    height: 90;
+  }
+
+  100% {
+    width: 250px;
+  }
+}
+
+// decrease header with
+@keyframes decreaseHeaderWidth {
+  0% {
+    width: 250px;
+  }
+
+  100% {
+    width: 90px;
+  }
+}
+@-webkit-keyframes decreaseHeaderWidth {
+  0% {
+    width: 250px;
+  }
+
+  100% {
+    height: 90;
+  }
+}

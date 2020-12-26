@@ -765,18 +765,26 @@ li {
 
 .o-page {
   width: 100%;
-  height: max-content;
-  position: relative; }
-  @media only screen and (min-width: 980px) {
-    .o-page {
-      height: 100vh;
-      text-align: right; } }
+  height: 100vh; }
 
 /*--------------------------------------------------------------
 # Objects
 --------------------------------------------------------------*/
 /* block
 --------------------------------------------- */
+.o-page {
+  position: relative; }
+  @media only screen and (min-width: 980px) {
+    .o-page {
+      text-align: right; } }
+
+.o-home {
+  width: 82%;
+  height: 100%;
+  vertical-align: top;
+  display: inline-block;
+  background-color: darkcyan; }
+
 /* layout
 --------------------------------------------- */
 /* Images
@@ -1133,6 +1141,133 @@ li {
   .c-menu__error--home {
     display: none; } }
 
+.c-footer {
+  position: absolute;
+  width: 100%;
+  height: max-content;
+  bottom: 0;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: transparent; }
+  @media only screen and (min-width: 980px) {
+    .c-footer {
+      bottom: 5px;
+      height: 10%; } }
+
+.c-footer__context {
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
+  @media only screen and (min-width: 980px) {
+    .c-footer__context {
+      width: 85%;
+      margin-top: 0;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between; } }
+
+.c-footer__social-media {
+  margin-left: 4%; }
+  @media only screen and (min-width: 980px) {
+    .c-footer__social-media {
+      margin-right: 4%; } }
+
+.c-social-media__item {
+  margin: 9px;
+  transition: 0.2s all; }
+  .c-social-media__item svg path {
+    transition: 0.2s all; }
+
+.c-social-media__item:hover svg path {
+  fill: #000000; }
+
+.c-footer__copy {
+  margin-left: 2%; }
+  @media only screen and (max-width: 979px) {
+    .c-footer__copy {
+      margin-left: 5%; } }
+
+.c-footer__text {
+  font-size: 1.3em;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+  color: #8a8a8a; }
+
+/*--------------------------------------------------------------
+# External
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+  # External
+  --------------------------------------------------------------*/
+/*! Flickity v2.2.1
+  https://flickity.metafizzy.co
+  ---------------------------------------------- */
+.flickity-enabled {
+  position: relative; }
+
+.flickity-enabled:focus {
+  outline: none; }
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+/* ---- flickity-button ---- */
+.flickity-button {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.75);
+  border: none;
+  color: #333; }
+
+.flickity-button:active {
+  opacity: 0.6; }
+
+.flickity-button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+  /* prevent disabled button from capturing pointer up event. #716 */
+  pointer-events: none; }
+
+/* ---- previous/next buttons ---- */
+.flickity-prev-next-button .flickity-button-icon {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 40%;
+  height: 40%; }
+
+/* ---- page dots ---- */
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1; }
+
+.flickity-rtl .flickity-page-dots {
+  direction: rtl; }
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1; }
+
 .c-carousel {
   width: 100%;
   height: 90%;
@@ -1215,7 +1350,7 @@ li {
 
 .flickity-button {
   position: absolute;
-  left: 95%;
+  left: 92%;
   top: 135%;
   transform: translate(-50%, -50%); }
   @media only screen and (min-width: 980px) {
@@ -1223,8 +1358,21 @@ li {
       top: 115%;
       left: 99%; } }
 
+.flickity-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #19f; }
+
+.flickity-button:active {
+  opacity: 0.6; }
+
+.flickity-button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+  /* prevent disabled button from capturing pointer up event. #716 */
+  pointer-events: none; }
+
 .flickity-prev-next-button.previous {
-  left: 90%; }
+  left: 85%; }
   @media only screen and (min-width: 980px) {
     .flickity-prev-next-button.previous {
       left: 95%; } }
@@ -1303,70 +1451,3 @@ li {
 @media only screen and (min-width: 980px) {
   .c-carousel__post-titles--mobile .c-carousel__post-title {
     display: none; } }
-
-.c-footer {
-  width: 100%;
-  height: max-content;
-  position: relative;
-  z-index: 8;
-  padding-top: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background-color: transparent; }
-  @media only screen and (min-width: 980px) {
-    .c-footer {
-      position: absolute;
-      padding-top: 0;
-      bottom: 5px;
-      height: 10%;
-      bottom: 0; } }
-
-.c-footer__context {
-  width: 100%;
-  height: 100%;
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; }
-  @media only screen and (min-width: 980px) {
-    .c-footer__context {
-      width: 85%;
-      margin-top: 0;
-      flex-direction: row-reverse;
-      align-items: center;
-      justify-content: space-between; } }
-
-.c-footer__social-media {
-  margin-left: 4%; }
-  @media only screen and (min-width: 980px) {
-    .c-footer__social-media {
-      margin-right: 4%; } }
-
-.c-social-media__item {
-  margin: 9px;
-  transition: 0.2s all; }
-  .c-social-media__item svg path {
-    transition: 0.2s all; }
-
-.c-social-media__item:hover svg path {
-  fill: #000000; }
-
-.c-footer__copy {
-  margin-left: 2%; }
-  @media only screen and (max-width: 979px) {
-    .c-footer__copy {
-      margin-left: 5%; } }
-
-.c-footer__text {
-  font-size: 1.3em;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
-  /* identical to box height */
-  color: #8a8a8a; }
-
-/*--------------------------------------------------------------
-# External
---------------------------------------------------------------*/

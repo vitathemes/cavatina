@@ -1,0 +1,14 @@
+.o-page {
+  position: relative;
+  @include media(tablet) {
+    text-align: right;
+  }
+}
+
+.o-home {
+  width: 82%;
+  height: 100%;
+  vertical-align: top;
+  display: inline-block;
+  background-color: darkcyan;
+}

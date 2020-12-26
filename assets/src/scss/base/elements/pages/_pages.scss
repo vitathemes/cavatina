@@ -1,9 +1,4 @@
 .o-page {
   width: 100%;
-  height: max-content;
-  position: relative;
-  @include media(tablet) {
-    height: 100vh;
-    text-align: right;
-  }
+  height: 100vh;
 }

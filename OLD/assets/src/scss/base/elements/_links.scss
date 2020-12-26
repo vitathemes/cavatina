@@ -1,0 +1,23 @@
+a {
+  color: $wp-cavatina__secondary-color;
+  transition: $global-transition;
+  text-decoration: none;
+  &:visited {
+    color: $wp-cavatina__secondary-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $wp-cavatina__primary-color;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
