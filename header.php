@@ -76,5 +76,8 @@
             </div>
         </header>
 
+        <div class="c-overlay">
+        </div>
+
 
         <!-- #masthead -->

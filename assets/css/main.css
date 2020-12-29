@@ -903,7 +903,7 @@ li {
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
   position: fixed;
-  z-index: 9;
+  z-index: 50;
   top: 0; }
   @media only screen and (min-width: 980px) {
     .c-header {
