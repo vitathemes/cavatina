@@ -1128,6 +1128,10 @@ li {
     visibility: visible;
     opacity: 1; }
 
+@media only screen and (min-width: 980px) {
+  .c-search__icon {
+    display: none; } }
+
 /* Header
 --------------------------------------------- */
 /*--------------------------------------------------------------
@@ -1151,7 +1155,8 @@ li {
       width: 15%;
       height: 100%;
       vertical-align: top;
-      position: relative; } }
+      position: relative;
+      border-top: none; } }
 
 .c-aside--home {
   display: none; }

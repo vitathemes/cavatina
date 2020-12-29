@@ -25,7 +25,7 @@ get_header();
             </div>
 
 
-            <img class="o-image" onClick="searchToggle()"
+            <img class="c-search__icon" onClick="searchToggle()"
                 src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="hamburger" />
 
             <div class="c-search">

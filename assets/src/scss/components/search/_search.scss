@@ -29,3 +29,9 @@
     opacity: 1;
   }
 }
+
+.c-search__icon {
+  @include media(tablet) {
+    display: none;
+  }
+}
