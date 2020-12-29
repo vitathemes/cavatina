@@ -1,13 +1,10 @@
 ul,
 ol {
-  margin: 0 0 1.2em 1em;
-  padding: 0 0 0 1em;
-}
+  margin: 0 ;
+  padding: 0 ;
 
-ul {
-  list-style: disc;
+  list-style-type: none;
 }
-
 ol {
   list-style: decimal;
 }

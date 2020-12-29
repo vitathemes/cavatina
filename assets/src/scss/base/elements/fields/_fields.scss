@@ -15,23 +15,24 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   color: $wp-cavatina__main-primary-light-color;
-  border: none;
-  border-radius: $global-radius;
-  background-color: $wp-cavatina__neutral-gray-light-color;
-  padding-right: 8px;
-  padding-left: 14px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  font-size: 0.75rem;
-  line-height: 1.5em;
-
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid $wp-cavatina__main-primary-color;
+  width: 90%;
+  height: max-content;
+  padding-bottom: 10px;
   &::placeholder {
     color: $wp-cavatina__main-primary-light-color;
     opacity: 1;
+    font-weight: normal;
+    font-size: 14px;
+
+    color: $wp-cavatina__main-primary-light-color;
   }
 
   &:focus {
     color: $color__text-input-focus;
+    outline: none;
   }
 }
 

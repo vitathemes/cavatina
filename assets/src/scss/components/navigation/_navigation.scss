@@ -4,6 +4,8 @@
   transition: 1s ease-in-out;
   transition-delay: 0s;
   overflow: hidden;
+
+  margin-left: 16px;
   @include media(tablet) {
     display: none;
     order: 1;
@@ -39,6 +41,7 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     padding-left: 20%;
+    padding-right: 5%;
   }
 
   .c-header__logo {
@@ -49,7 +52,7 @@
     }
   }
 
-  .c-header__item--menu-icon {
+  .c-header__menu {
     padding: 0;
     width: 50%;
     text-align: right;
@@ -69,7 +72,7 @@
     }
   }
 
-  .c-header__item--search {
+  .c-header__search {
     @include media(tablet) {
       display: none;
     }

@@ -11,7 +11,7 @@
 
 ?>
 
-<footer id="colophon" class="c-footer">
+<footer id="colophon" class="c-footer c-footer--home">
 
     <div class="c-footer__context">
 

@@ -1,8 +1,27 @@
-/* Components
+/*------------------------------------*\
+  #Components
+\*------------------------------------*/
+
+/* Header
 --------------------------------------------- */
 @import "header/header";
-@import "block/block";
-@import "content-sidebar/content-sidebar";
+
+/* Navigation
+--------------------------------------------- */
 @import "navigation/navigation";
-@import "searchform/searchform";
+
+/* Search
+--------------------------------------------- */
+@import "search/search";
+
+/* Header
+--------------------------------------------- */
+@import "common/common";
+
+/* Contents
+--------------------------------------------- */
+@import "content/content";
+
+/* Footer
+--------------------------------------------- */
 @import "footer/footer";

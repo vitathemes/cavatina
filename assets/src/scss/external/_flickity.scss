@@ -4,6 +4,7 @@
 /*! Flickity v2.2.1
   https://flickity.metafizzy.co
   ---------------------------------------------- */
+
 .flickity-enabled {
   position: relative;
 }
@@ -208,7 +209,7 @@
   pointer-events: none;
 }
 .flickity-prev-next-button.previous {
-  left: 85%;
+  left: 80%;
 
   @include media(tablet) {
     left: 95%;
@@ -316,6 +317,168 @@
   @include media(tablet) {
     .c-carousel__post-title {
       display: none;
+    }
+  }
+}
+
+/*------------------------------------*\
+    #single carousel
+\*------------------------------------*/
+
+.c-single__carousel {
+  width: 100%;
+  margin-top: 45px;
+
+  @include media(tablet) {
+    height: 100%;
+    margin-top: 8vh;
+  }
+}
+
+/*------------------------------------*\
+      #hide title and meta in tablet
+\*------------------------------------*/
+.c-single__carousel--mobile {
+  .single__title {
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    margin-left: 16px;
+
+    @include media(tablet) {
+      display: none;
+    }
+  }
+
+  .c-single__meta {
+    display: block;
+    margin-left: 16px;
+
+    @include media(tablet) {
+      display: none;
+    }
+
+    li {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 200%;
+    }
+  }
+}
+
+/*------------------------------------*\
+  #single slider 
+\*------------------------------------*/
+
+.c-single__slider {
+  width: 100%;
+  height: max-content;
+  transition: 1s all;
+  background-color: $color__background-body;
+  //position: absolute ;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  @include media(tablet) {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    margin-top: 0;
+  }
+  .flickity-viewport {
+    width: 100%;
+    height: 140px;
+
+    margin-right: -0.5%;
+
+    @include media(tablet) {
+      width: 100%;
+      height: 95%;
+    }
+
+    .flickity-slider {
+      //display: flex;
+      //justify-content: center;
+      //align-items: center;
+
+      // mobile
+      //position: relative ;
+      //display: flex ;
+
+      @include media(tablet) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .carousel__cell__single {
+        //width: 300px ;
+        width: 100%;
+        height: 200px;
+
+        transition: 1s all;
+
+        padding-left: 16px;
+        padding-right: 16px;
+
+        // mobile
+        //position: relative ;
+        //left: 0 ;
+
+        @include media(tablet) {
+          width: 80%;
+          height: 600px;
+
+          transition: 1s all;
+
+          padding-left: 5%;
+          padding-right: 5%;
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .flickity-page-dots {
+    padding-left: 0;
+    padding-right: 0;
+    bottom: -15px;
+
+    .dot {
+      width: 30%;
+    }
+  }
+}
+
+/*------------------------------------*\
+      #modifier 
+\*------------------------------------*/
+
+.c-single__slider--full-width {
+  width: 100%;
+}
+
+.c-single__slider--full-width {
+  .flickity-viewport {
+    .flickity-slider {
+      .carousel__cell__single {
+        width: 90%;
+        padding-left: 20%;
+        padding-right: 20%;
+
+        @include media(wide) {
+          padding-left: 25%;
+          padding-right: 25%;
+        }
+      }
     }
   }
 }

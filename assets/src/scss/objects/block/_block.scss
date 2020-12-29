@@ -1,14 +1,31 @@
 .o-page {
-  position: relative;
+  width: 100%;
+  height: calc(100vh);
+  max-height: max-content;
+
   @include media(tablet) {
+    overflow-y: hidden;
     text-align: right;
+    max-height: 100vh;
+
+    //need QA
+    padding-left: 7%;
   }
 }
 
-.o-home {
-  width: 82%;
-  height: 100%;
-  vertical-align: top;
-  display: inline-block;
-  background-color: darkcyan;
+.o-page--home {
+  @include media(tablet) {
+    padding-left: 15%;
+  }
 }
+
+// .o-page {
+//   width: 100%;
+//   height: max-content;
+//   overflow-y: hidden;
+//   position: relative;
+//   @include media(tablet) {
+//     text-align: right;
+//     max-height: 100vh;
+//   }
+// }

@@ -9,30 +9,36 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
+
+
+    <header class="c-post__header entry-header">
+        <?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		if ( 'post' === get_post_type() ) :
+		?>
+        <div class="c-post__meta entry-meta">
+            <?php 
+			
+				echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';  
+				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';  
+			
 			?>
-			<div class="entry-meta">
-				<?php
-				wp_cavatina_posted_on();
-				wp_cavatina_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+        </div><!-- .entry-meta -->
 
-	<?php wp_cavatina_post_thumbnail(); ?>
+    </header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
+
+
+    <a href=<?php the_permalink() ?>>
+        <?php the_post_thumbnail('large', array('class' => 'c-post_thumbnail')); ?>
+    </a>
+
+    <div class="entry-content">
+        <?php
 		the_content(
 			sprintf(
 				wp_kses(
@@ -55,9 +61,9 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+    </div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php wp_cavatina_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    <footer class="entry-footer">
+        <?php //wp_cavatina_entry_footer(); ?>
+    </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

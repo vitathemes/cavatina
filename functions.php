@@ -183,7 +183,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Enqueue scripts and styles.
  */
 function cavatina_scripts() {
-	
+
 
 
 	wp_enqueue_style( 'cavatina-style', get_template_directory_uri() . '/assets/css/main.css', array(), _S_VERSION );
@@ -194,3 +194,70 @@ function cavatina_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
+
+/**
+ * Custom Post type
+ */
+
+function cavatina_projects() {
+
+// Set UI labels for Custom Post Type
+$labels = array(
+    'name'                => _x( 'Projects', 'Post Type General Name', 'cavatina' ),
+    'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'cavatina' ),
+    'menu_name'           => __( 'Projects', 'cavatina' ),
+    'parent_item_colon'   => __( 'Parent Project', 'cavatina' ),
+    'all_items'           => __( 'All Projects', 'cavatina' ),
+    'view_item'           => __( 'View Project', 'cavatina' ),
+    'add_new_item'        => __( 'Add New Project', 'cavatina' ),
+    'add_new'             => __( 'Add New', 'cavatina' ),
+    'edit_item'           => __( 'Edit Project', 'cavatina' ),
+    'update_item'         => __( 'Update Project', 'cavatina' ),
+    'search_items'        => __( 'Search Project', 'cavatina' ),
+    'not_found'           => __( 'Not Found', 'cavatina' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'tcavatina' ),
+);
+
+// Set other options for Custom Post Type
+
+    $args = array(
+        'label'               => __( 'projects', 'cavatina' ),
+        'description'         => __( 'Project news and reviews', 'cavatina' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+        'taxonomies'          => array( 'category' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+
+    );
+
+    // Registering your Custom Post Type
+    register_post_type( 'projects', $args );
+
+}
+
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not
+* unnecessarily executed.
+*/
+
+add_action( 'init', 'cavatina_projects', 0 );
+
+

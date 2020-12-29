@@ -1,0 +1,154 @@
+/*------------------------------------*\
+  #Aside block
+\*------------------------------------*/
+
+.c-aside {
+  position: fixed;
+  width: 100%;
+  height: max-content;
+  bottom: 0;
+  z-index: 9;
+  background-color: $color__background-body;
+  border-top: 1px solid #e1e1e1;
+  padding-top: 22px;
+  padding-bottom: 22px;
+
+  @include media(tablet) {
+    width: 15%;
+    height: 100%;
+    vertical-align: top;
+    position: relative;
+    // background-color: darkorange;
+  }
+}
+
+.c-aside--home {
+  display: none;
+  @include media(tablet) {
+    width: 22%;
+    display: inline-block;
+  }
+
+  .c-aside__content {
+    @include media(tablet) {
+      justify-content: flex-end;
+      flex-direction: column;
+      padding-bottom: 10%;
+    }
+  }
+}
+
+/*------------------------------------*\
+    #Aside content block
+\*------------------------------------*/
+
+.c-aside__content {
+  justify-content: center;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include media(tablet) {
+    width: 100%;
+    vertical-align: top;
+    // background-color: darkslateblue;
+    height: 100%;
+
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  @include media(wide) {
+    padding-bottom: 20%;
+  }
+}
+
+.c-aside__context {
+  width: max-content;
+
+  @include media(tablet) {
+    text-align: left;
+    padding-top: 20%;
+  }
+}
+
+.c-aside__title {
+  font-size: 18px;
+  margin: 0;
+
+  display: inline-block;
+
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.c-aside__counter {
+  font-size: 14px;
+}
+
+.c-aside__nav-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #8a8a8a;
+
+  @include media(tablet) {
+    margin: 0;
+    text-align: left;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    color: #8a8a8a;
+  }
+}
+
+.c-aside__nav {
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+    padding-bottom: 20%;
+    // background-color: rgba(169, 169, 169, 0.335);
+  }
+
+  @include media(wide) {
+    padding-bottom: 30%;
+  }
+
+  .c-nav {
+    @include media(tablet) {
+      display: inline-block;
+      overflow: unset;
+    }
+
+    ul {
+      @include media(tablet) {
+        list-style-type: none;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.c-aside__carousel {
+  display: none;
+  @include media(tablet) {
+    display: block;
+    width: 100%;
+
+    padding-left: 16px;
+    text-align: left;
+    // background-color: rgba(255, 17, 17, 0.5);
+  }
+
+  .c-carousel {
+    margin-left: 0;
+  }
+}

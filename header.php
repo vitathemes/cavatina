@@ -24,26 +24,35 @@
 
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-cavatina' ); ?></a>
 
-    <div id="page" class="site">
+    <div id="page" class="o-page">
+
+        <div class="u-header-space"></div>
 
         <header id="masthead" class="c-header ">
+
+
 
             <div class="c-header__holder  js-nav">
 
 
-                <div class="c-header__item c-header__logo c-header__logo--rotate">
-                    <img class="o-image " src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
+
+
+                <div class="c-header__logo c-header__logo--rotate">
+                    <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
                         alt="logo" />
                 </div>
 
-                <button class="c-header__item c-header__item--menu-icon" aria-controls="primary-menu"
-                    aria-expanded="false">
+
+
+
+                <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false">
                     <img class="o-image"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/hamburger-menu.svg"
                         alt="hamburger" />
                 </button>
 
-                <div class="c-header__item c-header__item--search">
+
+                <div class="c-header__search">
                     <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg"
                         alt="hamburger" />
                 </div>
@@ -66,6 +75,6 @@
                 ?>
             </div>
         </header>
-    </div>
 
-    <!-- #masthead -->
+
+        <!-- #masthead -->

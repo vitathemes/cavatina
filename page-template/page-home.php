@@ -13,30 +13,28 @@
     <?php wp_body_open(); ?>
 
 
-    <div id="page" class="o-page">
+    <div id="page" class="o-page o-page--home">
 
-        <div class="u-header-space"></div>
 
         <header id="masthead" class="c-header c-header--home">
 
-            <div class="c-header__holder c-header__holder--home js-nav">
+            <div class="c-header__holder js-nav">
 
 
-                <div class="c-header__item c-header__logo c-header__logo--home">
+                <div class="c-header__logo">
                     <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
                         alt="logo" />
                 </div>
 
-                <p class="c-header__item c-header__desc c-header__desc--home">digital creativity</p>
+                <p class="c-header__text ">digital creativity</p>
 
-                <button class="c-header__item c-header__item--menu-icon c-header__toggle--home"
-                    aria-controls="primary-menu" aria-expanded="false">
+                <button class=" c-header__menu " aria-controls="primary-menu" aria-expanded="false">
                     <img class="o-image"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/hamburger-menu.svg"
                         alt="hamburger" />
                 </button>
 
-                <div class="c-header__item c-header__item--search c-header__search--home">
+                <div class="c-header__search ">
                     <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg"
                         alt="hamburger" />
                 </div>
@@ -54,7 +52,7 @@
                     );
                 }
                 else{
-                   
+
                 }
                 ?>
 
@@ -63,9 +61,9 @@
 
         <section class="o-page__main">
 
-            <div class="o-page__col o-page__col--left">
+            <div class="o-page__col c-aside c-aside--home">
 
-                <div class="c-aside">
+                <div class="c-aside__content ">
 
                     <div class="c-aside__nav">
                         <p class="c-aside__nav-title">Navigation</p>
@@ -84,7 +82,7 @@
                             );
                         }
                         else{
-                            
+
                         }
                         ?>
                     </div>
@@ -115,7 +113,7 @@
 
             </div>
 
-            <div class="o-page__col o-page__col--right">
+            <div class="o-page__col c-content c-content--home">
 
 
                 <div class="c-carousel">

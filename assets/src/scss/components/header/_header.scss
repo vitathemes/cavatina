@@ -1,3 +1,6 @@
+/*------------------------------------*\
+  #Header block
+\*------------------------------------*/
 .c-header {
   // background-color: darkkhaki;
   background-color: $color__background-body;
@@ -10,6 +13,7 @@
   @include media(tablet) {
     left: 0;
     width: max-content;
+    min-width: 7%;
 
     height: 80%;
     border-right: 1px solid #e1e1e1;
@@ -29,6 +33,50 @@
   @include media(tablet) {
     width: 15%;
     border-bottom: none;
+  }
+
+  .c-header__holder {
+    @include media(tablet) {
+      width: 100%;
+      padding-bottom: 75%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include media(wide) {
+      padding-bottom: 0;
+    }
+
+    .c-header__logo {
+      img {
+        @include media(tablet) {
+          width: 60%;
+        }
+      }
+    }
+
+    .c-header__text {
+      @include media(tablet) {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin: 0;
+        padding-left: 23%;
+      }
+    }
+
+    .c-header__menu {
+      @include media(tablet) {
+        display: none;
+      }
+    }
+
+    .c-header__search {
+      @include media(tablet) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -53,19 +101,9 @@
   }
 }
 
-.c-header__holder--home {
-  @include media(tablet) {
-    width: 100%;
-    padding-bottom: 75%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @include media(wide) {
-    padding-bottom: 0;
-  }
-}
+/*------------------------------------*\
+  #Header logo block
+\*------------------------------------*/
 
 .c-header__logo {
   width: 50%;
@@ -81,21 +119,6 @@
   }
 }
 
-.c-header__logo--home {
-  .o-image {
-    @include media(tablet) {
-      width: 60%;
-    }
-  }
-}
-
-.c-header__desc {
-  color: #8a8a8a;
-  display: none;
-
-  font-size: 14px;
-}
-
 .c-header__logo--rotate {
   @include media(tablet) {
     padding: 0;
@@ -103,7 +126,22 @@
     order: 1;
   }
 }
-.c-header__item--menu-icon {
+
+/*------------------------------------*\
+  #Header text block
+\*------------------------------------*/
+
+.c-header__text {
+  color: #8a8a8a;
+  display: none;
+
+  font-size: 14px;
+}
+
+/*------------------------------------*\
+  #Header menu block
+\*------------------------------------*/
+.c-header__menu {
   width: 50%;
   text-align: right;
   background-color: transparent;
@@ -116,37 +154,15 @@
   }
 }
 
-.c-header__item--menu-icon:focus {
+.c-header__menu:focus {
   outline: none;
 }
 
-.c-header__item--search {
+.c-header__search {
   display: none;
 
   @include media(tablet) {
     display: block;
     order: 3;
-  }
-}
-
-.c-header__desc--home {
-  @include media(tablet) {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin: 0;
-    padding-left: 23%;
-  }
-}
-
-.c-header__toggle--home {
-  @include media(tablet) {
-    display: none;
-  }
-}
-
-.c-header__search--home {
-  @include media(tablet) {
-    display: none;
   }
 }

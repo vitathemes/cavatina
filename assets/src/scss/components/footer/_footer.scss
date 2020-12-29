@@ -1,19 +1,15 @@
 .c-footer {
-  position: absolute;
   width: 100%;
+
   height: max-content;
   bottom: 0;
   z-index: 8;
-
+  margin-top: 16px;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   background-color: transparent;
-
-  @include media(tablet) {
-    bottom: 5px;
-    height: 10%;
-  }
 }
 
 .c-footer__context {
@@ -24,7 +20,8 @@
   flex-direction: column;
   justify-content: flex-end;
   @include media(tablet) {
-    width: 85%;
+    width: 100%;
+
     margin-top: 0;
     flex-direction: row-reverse;
     align-items: center;
@@ -67,11 +64,9 @@
 }
 
 .c-footer__text {
-  font-size: 1.3em;
-
+  font-size: 12px;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
   line-height: 15px;
   /* identical to box height */
 
