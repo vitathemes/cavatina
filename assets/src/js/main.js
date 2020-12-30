@@ -1,5 +1,5 @@
 // Check device is mobile or not
-isDesktop = () => {
+function isDesktop() {
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
@@ -9,10 +9,10 @@ isDesktop = () => {
   } else {
     return true;
   }
-};
+}
 
 // search menu toggle
-searchToggle = () => {
+function searchToggle() {
   let search = document.querySelector(".c-search");
 
   if (search.classList.contains("c-search--toggled")) {
@@ -20,11 +20,25 @@ searchToggle = () => {
   } else {
     search.classList.add("c-search--toggled");
   }
-};
+}
+
+// o page toggle for blur content
+function blurToggle() {
+  var pageMain = document.querySelector(".o-page__main");
+  var overlay = document.querySelector(".c-overlay");
+
+  if (pageMain.classList.contains("o-page__main--blur")) {
+    pageMain.classList.remove("o-page__main--blur");
+    overlay.classList.remove("c-overlay--active");
+  } else {
+    pageMain.classList.add("o-page__main--blur");
+    overlay.classList.add("c-overlay--active");
+  }
+}
 
 // Carousel (Main)
 var carousel = document.querySelector(".c-carousel__context");
-var flkty = new Flickity(carousel, {
+var flCarouselMain = new Flickity(carousel, {
   setGallerySize: false,
   freeScroll: false,
   prevNextButtons: true,
@@ -32,7 +46,7 @@ var flkty = new Flickity(carousel, {
 
 // Carosuel (Main Child) - text
 var carouselImage = document.querySelector(".c-carousel__post-titles");
-var flkty = new Flickity(carouselImage, {
+var flCarouselText = new Flickity(carouselImage, {
   setGallerySize: true,
   freeScroll: false,
   prevNextButtons: false,
@@ -47,7 +61,7 @@ var flkty = new Flickity(carouselImage, {
 var carouselTextMobile = document.querySelector(
   ".c-carousel__post-titles--mobile"
 );
-var flkty = new Flickity(carouselTextMobile, {
+var flCarouselTextMobile = new Flickity(carouselTextMobile, {
   setGallerySize: true,
   freeScroll: false,
   prevNextButtons: false,
@@ -63,18 +77,16 @@ var flkty = new Flickity(carouselTextMobile, {
 // Carosuel - Single Page
 var carouselSingle = document.querySelector(".c-single__slider");
 
-var flkty = new Flickity(carouselSingle, {
+var flCarouselSingle = new Flickity(carouselSingle, {
   freeScroll: isDesktop(),
   setGallerySize: false,
   cellAlign: "left",
   prevNextButtons: false,
   on: {
-    ready: function () {
-      console.log("Flickity is ready");
-    },
+    ready: function () {},
     change: function (index) {
       if (isDesktop() === true) {
-        console.log("Slide changed to" + index);
+        // console.log("Slide changed to" + index);
         var singleCarousel = document.querySelector(".c-single__slider");
         singleCarousel.classList.add("c-single__slider--full-width");
 

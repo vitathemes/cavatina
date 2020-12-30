@@ -5,9 +5,13 @@ input[type="submit"] {
   border: none;
   font-weight: var(--heading-typography-variant);
   padding: 16px 24px;
-  background-color: $wp-cavatina__main-primary-light-color;
+  background-color: $wp-cavatina__main-primary-color;
   color: $wp-cavatina__neutral-white;
   border-radius: $global-radius;
+
+  background: #000000;
+  border-radius: 5px;
+
   cursor: pointer;
   transition: $global-transition;
 

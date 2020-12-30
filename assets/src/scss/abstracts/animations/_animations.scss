@@ -1,4 +1,54 @@
 /*------------------------------------*\
+  #Laptop/Desktop blur animations
+\*------------------------------------*/
+
+@keyframes blur {
+  0% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+
+  100% {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+
+  100% {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+}
+// blur reverse
+@keyframes blurReverse {
+  0% {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+}
+@-webkit-keyframes blurReverse {
+  0% {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+}
+
+/*------------------------------------*\
   #fadein
 \*------------------------------------*/
 @keyframes fadeIn {

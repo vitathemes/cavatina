@@ -3,6 +3,9 @@
 \*------------------------------------*/
 
 .o-page__main {
+  animation-name: blurReverse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
   @include media(tablet) {
     width: 100%;
     height: 90vh;
@@ -11,6 +14,12 @@
     display: inline-block;
     text-align: center;
   }
+}
+
+.o-page__main--blur {
+  animation-name: blur;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 /*------------------------------------*\

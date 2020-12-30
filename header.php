@@ -45,7 +45,8 @@
 
 
 
-                <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false">
+                <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false"
+                    onClick="blurToggle()">
                     <img class="o-image"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/hamburger-menu.svg"
                         alt="hamburger" />
@@ -70,13 +71,17 @@
                     );
                 }
                 else{
-                    echo "<p class='c-menu__error'>* Primary menu not found</p>";
+                    
                 }
                 ?>
             </div>
         </header>
 
         <div class="c-overlay">
+
+
+
+
         </div>
 
 

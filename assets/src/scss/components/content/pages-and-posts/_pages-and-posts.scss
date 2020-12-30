@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 .c-content {
-  height: max-content;
+  height: 100%;
   overflow: hidden;
 
   @include media(tablet) {
