@@ -18,8 +18,6 @@ get_header();
 <main id="primary" class="site-main">
 
 
-    <h2>page.php</h2>
-
     <?php
 		while ( have_posts() ) :
 			the_post();

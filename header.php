@@ -32,18 +32,12 @@
 
 
 
-            <div class="c-header__holder  js-nav">
-
-
-
+            <div class="c-header__holder js-nav">
 
                 <div class="c-header__logo c-header__logo--rotate">
                     <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
                         alt="logo" />
                 </div>
-
-
-
 
                 <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false"
                     onClick="blurToggle()">
@@ -53,9 +47,13 @@
                 </button>
 
 
-                <div class="c-header__search">
+                <div class="c-header__search" onClick="toggleElement('.c-search__overlay')">
                     <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg"
                         alt="hamburger" />
+
+
+
+
                 </div>
 
                 <?php
@@ -77,12 +75,13 @@
             </div>
         </header>
 
-        <div class="c-overlay">
+        <div class="c-search__overlay">
 
-
+            <?php get_search_form(); ?>
 
 
         </div>
+        <div class="c-overlay"></div>
 
 
         <!-- #masthead -->

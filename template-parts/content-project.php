@@ -11,7 +11,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
 
-    <header class="c-post__header entry-header">
+
+    <header class="c-post__header c-post__header--min-height entry-header">
         <?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -23,7 +24,7 @@
             <?php 
 			
 				echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';  
-				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';  
+				
 			
 			?>
         </div><!-- .entry-meta -->
@@ -38,20 +39,20 @@
 
     <div class="entry-content">
         <?php
-		// the_content(
-		// 	sprintf(
-		// 		wp_kses(
-		// 			/* translators: %s: Name of current post. Only visible to screen readers */
-		// 			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
-		// 			array(
-		// 				'span' => array(
-		// 					'class' => array(),
-		// 				),
-		// 			)
-		// 		),
-		// 		wp_kses_post( get_the_title() )
-		// 	)
-		// );
+		the_content(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				wp_kses_post( get_the_title() )
+			)
+		);
 
 		wp_link_pages(
 			array(

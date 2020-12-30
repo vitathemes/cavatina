@@ -11,6 +11,46 @@ function isDesktop() {
   }
 }
 
+// Fade Out Vanilla JS
+function fadeOut(el) {
+  el.style.opacity = 1;
+  (function fade() {
+    if ((el.style.opacity -= 0.1) < 0) {
+      el.style.display = "none";
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+// Fade In Vanilla JS
+function fadeIn(el, display) {
+  el.style.opacity = 0;
+  el.style.display = display || "block";
+  (function fade() {
+    var val = parseFloat(el.style.opacity);
+    if (!((val += 0.1) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+// Toggle element -> should describe with selector (# or .)
+isToggled = false;
+function toggleElement(toggledElement) {
+  const toggleElement = document.querySelector(toggledElement);
+  // toggleElement.classList.toggle("c-search__overlay--toggle");
+
+  if (isToggled === true) {
+    fadeOut(toggleElement);
+    isToggled = false;
+  } else {
+    fadeIn(toggleElement, "flex");
+    isToggled = true;
+  }
+}
+
 // search menu toggle
 function searchToggle() {
   let search = document.querySelector(".c-search");
@@ -86,7 +126,7 @@ var flCarouselSingle = new Flickity(carouselSingle, {
     ready: function () {},
     change: function (index) {
       if (isDesktop() === true) {
-        // console.log("Slide changed to" + index);
+        // make slider full width with first drag
         var singleCarousel = document.querySelector(".c-single__slider");
         singleCarousel.classList.add("c-single__slider--full-width");
 

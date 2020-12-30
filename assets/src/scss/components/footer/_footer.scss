@@ -29,17 +29,22 @@
   }
 }
 
-.c-footer__social-media {
-  margin-left: 4%;
+/*
+  -qa
+
+*/
+
+.c-social-media {
+  margin-left: 3%;
   @include media(tablet) {
-    margin-right: 4%;
+    margin-left: 0;
+    margin-right: 2%;
   }
 }
+
 .c-social-media__item {
   margin: 9px;
-
   transition: 0.2s all;
-
   svg {
     path {
       transition: 0.2s all;

@@ -261,3 +261,24 @@ $labels = array(
 add_action( 'init', 'cavatina_projects', 0 );
 
 
+
+/**
+ * change submit button text in wordpress comment form
+ */ 
+function wcs_change_submit_button_text( $defaults ) {
+    $defaults['label_submit'] = 'Send';
+    return $defaults;
+}
+add_filter( 'comment_form_defaults', 'wcs_change_submit_button_text' );
+
+
+
+/**
+ * change comment date format
+ */ 
+
+add_filter( 'get_comment_date', 'wpsites_change_comment_date_format' );	
+function wpsites_change_comment_date_format( $d ) {
+    $d = date("F j.Y");	
+    return $d;
+}	

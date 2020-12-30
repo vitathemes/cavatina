@@ -15,7 +15,7 @@
 
     <div class="c-footer__context">
 
-        <div class="c-footer__social-media">
+        <div class="c-social-media">
 
 
             <a href="#" class="c-social-media__item">

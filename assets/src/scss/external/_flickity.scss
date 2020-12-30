@@ -339,7 +339,7 @@
       #hide title and meta in tablet
 \*------------------------------------*/
 .c-single__carousel--mobile {
-  .single__title {
+  .c-single__title {
     display: block;
     font-size: 14px;
     line-height: 17px;
@@ -363,6 +363,24 @@
       font-weight: normal;
       font-size: 12px;
       line-height: 200%;
+    }
+  }
+
+  .c-single__slider {
+    .flickity-viewport {
+      height: 380px;
+
+      @include media(tablet) {
+        height: 95%;
+      }
+      .flickity-slider {
+        .carousel__cell__single {
+          height: 100%;
+          @include media(tablet) {
+            height: 100%;
+          }
+        }
+      }
     }
   }
 }
@@ -415,7 +433,6 @@
       }
 
       .carousel__cell__single {
-        //width: 300px ;
         width: 100%;
         height: 200px;
 
@@ -424,14 +441,11 @@
         padding-left: 16px;
         padding-right: 16px;
 
-        // mobile
-        //position: relative ;
-        //left: 0 ;
-
         @include media(tablet) {
           width: 80%;
-          height: 600px;
 
+          // height: 600px;
+          height: 100%;
           transition: 1s all;
 
           padding-left: 5%;
@@ -442,7 +456,12 @@
           height: 100%;
           width: 100%;
           object-fit: cover;
+          border-radius: 10px;
         }
+      }
+
+      .carousel__cell__single--page {
+        width: 100%;
       }
     }
   }
@@ -459,8 +478,13 @@
 }
 
 /*------------------------------------*\
-      #modifier 
+  #modifier 
 \*------------------------------------*/
+
+.c-single__slider--page {
+  .flickity-viewport {
+  }
+}
 
 .c-single__slider--full-width {
   width: 100%;

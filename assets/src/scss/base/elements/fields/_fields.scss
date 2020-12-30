@@ -21,6 +21,8 @@ textarea {
   width: 100%;
   height: max-content;
   padding-bottom: 10px;
+  padding-top: 10px;
+  min-height: max-content;
   &::placeholder {
     color: $wp-cavatina__main-primary-light-color;
     opacity: 1;
@@ -46,4 +48,8 @@ select {
 
 textarea {
   width: 100%;
+}
+
+#comment {
+  height: 84px;
 }

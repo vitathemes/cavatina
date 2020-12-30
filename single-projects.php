@@ -1,16 +1,16 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * The template for displaying single project
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package wp-cavatina
+ * @package wp_cavatina
  */
 
+get_header();
 ?>
+
 <main class="o-page__main">
-
-
 
     <div class="o-page__col c-aside">
 
@@ -51,9 +51,12 @@
                 <div class="c-single__context__holder">
 
 
-                    <h2 class="c-single__title c-single__title--red">HELLO THERE! MY NAME IS</h2>
+                    <h2 class="c-single__title">Advertisement Poster</h2>
 
-                    <h3 class="c-single__title c-single__title--small">NINA LOSERT</h3>
+                    <ul class="c-single__meta">
+                        <li>Commercial</li>
+                        <li>April 2019</li>
+                    </ul>
 
 
                     <p class="c-single__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at arcu
@@ -79,19 +82,34 @@
                     <li>April 2019</li>
                 </ul>
 
-                <div class="c-single__slider c-single__slider--page">
+                <div class="c-single__slider ">
 
-                    <div class="carousel__cell__single carousel__cell__single--page ">
+
+                    <div class="carousel__cell__single">
                         <img class="o-imagce"
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/about-page-thumbnail.jpg"
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(1).jpg"
+                            alt="hamburger" />
+                    </div>
+
+
+                    <div class="carousel__cell__single">
+                        <img class="o-imagec"
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(2).jpg"
+                            alt="hamburger" />
+                    </div>
+
+
+                    <div class="carousel__cell__single">
+                        <img class="o-imagec"
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(3).jpg"
                             alt="hamburger" />
                     </div>
 
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
 
 
 </main><!-- #main -->

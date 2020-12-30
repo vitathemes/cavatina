@@ -29,9 +29,8 @@
   min-height: 300px;
   overflow-y: auto;
 
-  // ///////////////////////
+  scrollbar-color: #555 #e1e1e1;
 
-  /////////////////////////
   @include media(tablet) {
     width: 50%;
     margin-top: 0;
@@ -61,13 +60,30 @@
   background: #555;
 }
 
-.single__title {
+.c-single__title {
   width: 100%;
   display: none;
 
   @include media(tablet) {
     display: block;
   }
+}
+
+.c-single__title--red {
+  color: #ff3636;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  margin-bottom: 16px;
+}
+
+.c-single__title--small {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 0;
+  margin-bottom: 29px;
 }
 
 .c-single__meta {
