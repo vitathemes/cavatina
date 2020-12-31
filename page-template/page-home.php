@@ -28,16 +28,13 @@
 
                 <p class="c-header__text ">digital creativity</p>
 
-                <button class=" c-header__menu " aria-controls="primary-menu" aria-expanded="false">
+
+                <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false"
+                    onClick="blurToggle()">
                     <img class="o-image"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/hamburger-menu.svg"
                         alt="hamburger" />
                 </button>
-
-                <div class="c-header__search ">
-                    <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg"
-                        alt="hamburger" />
-                </div>
 
                 <?php
                 if ( has_nav_menu( 'menu-1' ) ) {
@@ -58,6 +55,10 @@
 
             </div>
         </header>
+
+        <div class="c-search__overlay">
+            <?php get_search_form(); ?>
+        </div>
 
         <section class="o-page__main">
 
@@ -95,12 +96,12 @@
                             <p class="c-carousel__title">Recent Projects</p>
 
                             <div class="c-carousel__post-titles">
-                                <a href="#" class="c-carousel__post-title">01 . Advertisement Poster</a>
-                                <a href="#" class="c-carousel__post-title">02 . special event or exhibit poster
+                                <a href="#" class="c-carousel__post-title">Advertisement Poster</a>
+                                <a href="#" class="c-carousel__post-title">special event or exhibit poster
                                     concept</a>
-                                <a href="#" class="c-carousel__post-title">03 . Advertisement Poster</a>
-                                <a href="#" class="c-carousel__post-title">04 . Advertisement Poster</a>
-                                <a href="#" class="c-carousel__post-title">05 . Advertisement Poster</a>
+                                <a href="#" class="c-carousel__post-title">Advertisement Poster</a>
+                                <a href="#" class="c-carousel__post-title">Advertisement Poster</a>
+                                <a href="#" class="c-carousel__post-title">Advertisement Poster</a>
                             </div>
 
                         </div>
@@ -125,47 +126,47 @@
                     <div class="c-carousel__slider">
 
                         <div class="c-carousel__context">
+
                             <div class="c-carousel__cell">
                                 <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/carousel.jpg"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/static-samples/img(1).png"
+                                    alt="Advertisment poster" />
+
+                            </div>
+
+                            <div class="c-carousel__cell">
+                                <img class="c-carousel__image"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/static-samples/img(1).jpg"
                                     alt="Advertisment poster" />
 
                             </div>
                             <div class="c-carousel__cell">
                                 <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/carousel.jpg"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/static-samples/img(2).jpg"
                                     alt="Advertisment poster" />
 
                             </div>
+
                             <div class="c-carousel__cell">
                                 <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/carousel.jpg"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/static-samples/img(2).png"
                                     alt="Advertisment poster" />
 
                             </div>
-                            <div class="c-carousel__cell">
-                                <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/carousel.jpg"
-                                    alt="Advertisment poster" />
 
-                            </div>
-                            <div class="c-carousel__cell">
-                                <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/carousel.jpg"
-                                    alt="Advertisment poster" />
 
-                            </div>
+
                         </div>
                     </div>
 
 
 
                     <div class="c-carousel__post-titles c-carousel__post-titles--mobile">
-                        <h3 class="c-carousel__post-title">01 . Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title">02 . Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title">03 . Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title">04 . Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title">05 . Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
                     </div>
 
 

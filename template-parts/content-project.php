@@ -15,12 +15,12 @@
     <header class="c-post__header c-post__header--min-height entry-header">
         <?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="c-post__entry-title c-post__entry-title--circle entry-title ">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class=" c-post__entry-title c-post__entry-title--circle entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
-        <div class="c-post__meta entry-meta">
+        <div class="c-post__meta c-post__meta--left-space entry-meta">
             <?php 
 			
 				echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';  

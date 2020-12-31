@@ -10,6 +10,7 @@
 get_header();
 ?>
 
+
 <main class="o-page__main">
 
     <div class="o-page__col c-aside">
@@ -18,8 +19,7 @@ get_header();
 
             <div class="c-aside__context">
 
-                <h4 class="c-aside__title">Projects</h4>
-                <span class="c-aside__counter">12 Portfolios</span>
+                <h4 class="c-aside__title">Project</h4>
 
             </div>
 
@@ -32,13 +32,11 @@ get_header();
                     placeholder="Search…" autocomplete="off" value="" aria-describedby="Search Field"
                     title="Search for:">
 
-
             </div>
 
         </div>
 
     </div>
-
 
     <div class="o-page__col c-content">
 

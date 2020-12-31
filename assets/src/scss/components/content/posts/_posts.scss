@@ -11,9 +11,12 @@
   flex-wrap: wrap;
   flex-direction: column-reverse;
 
+  padding-bottom: 30%;
+
   @include media(tablet) {
     flex-direction: column;
     height: 90vh;
+    padding-bottom: 0;
   }
 }
 

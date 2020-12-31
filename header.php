@@ -26,7 +26,7 @@
 
     <div id="page" class="o-page">
 
-        <div class="u-header-space"></div>
+
 
         <header id="masthead" class="c-header ">
 

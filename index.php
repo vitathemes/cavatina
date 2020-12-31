@@ -19,7 +19,7 @@ get_header();
 
             <div class="c-aside__context">
 
-                <h4 class="c-aside__title">Projects</h4>
+                <h4 class="c-aside__title">Blog</h4>
                 <span class="c-aside__counter">20 Portfolios</span>
 
             </div>
