@@ -4,12 +4,14 @@
 
 .c-content {
   height: 100%;
-  padding-bottom: 20%;
-  overflow:hidden;
+  padding-bottom: 15%;
+  overflow-x: hidden;
+  overflow-y: auto;
   @include media(tablet) {
     width: 83%;
-
     padding-bottom: 0;
+
+
     // background-color: darkred;
   }
 }
@@ -20,6 +22,11 @@
   @include media(tablet) {
     width: 76%;
   }
+}
+
+.c-content--max-height{
+  height: max-content;
+  overflow: hidden;
 }
 
 /*------------------------------------*\

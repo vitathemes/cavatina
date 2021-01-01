@@ -352,11 +352,10 @@
 
 .c-single__carousel {
   width: 100%;
-  margin-top: 45px;
 
   @include media(tablet) {
     height: 100%;
-    margin-top: 8vh;
+    //margin-top: 8vh;
   }
 }
 
@@ -394,9 +393,10 @@
   .c-single__slider {
     .flickity-viewport {
       height: 380px;
+      cursor: grab;
 
       @include media(tablet) {
-        height: 95%;
+        height: 89%;
       }
       .flickity-slider {
         .carousel__cell__single {
@@ -422,7 +422,7 @@
   //position: absolute ;
   right: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   margin-top: 24px;
   @include media(tablet) {

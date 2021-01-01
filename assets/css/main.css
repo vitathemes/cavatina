@@ -722,7 +722,6 @@ html {
   max-height: max-content; }
   @media only screen and (min-width: 980px) {
     .o-page {
-      overflow-y: hidden;
       text-align: right;
       max-height: 100vh;
       padding-left: 7%; } }
@@ -745,7 +744,7 @@ html {
   @media only screen and (min-width: 980px) {
     .o-page__main {
       width: 100%;
-      height: 90vh;
+      height: 90%;
       overflow-x: hidden;
       display: inline-block;
       text-align: center; } }
@@ -808,10 +807,10 @@ html {
 @media only screen and (min-width: 980px) {
   .c-header--home .c-header__holder {
     width: 100%;
-    padding-bottom: 75%;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; } }
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 60%; } }
 
 @media only screen and (min-width: 1400px) {
   .c-header--home .c-header__holder {
@@ -1064,9 +1063,11 @@ html {
       display: inline-block; } }
   @media only screen and (min-width: 980px) {
     .c-aside--home .c-aside__content {
-      justify-content: flex-end;
+      justify-content: flex-start;
+      height: max-content;
+      margin-top: 60%;
       flex-direction: column;
-      padding-bottom: 10%; } }
+      padding-bottom: 0; } }
 
 /*------------------------------------*\
     #Aside content block
@@ -1454,8 +1455,9 @@ html {
 \*------------------------------------*/
 .c-content {
   height: 100%;
-  padding-bottom: 20%;
-  overflow: hidden; }
+  padding-bottom: 15%;
+  overflow-x: hidden;
+  overflow-y: auto; }
   @media only screen and (min-width: 980px) {
     .c-content {
       width: 83%;
@@ -1466,6 +1468,10 @@ html {
   @media only screen and (min-width: 980px) {
     .c-content--home {
       width: 76%; } }
+
+.c-content--max-height {
+  height: max-content;
+  overflow: hidden; }
 
 /*------------------------------------*\
   #Container block -> All posts => arcvhives
@@ -2212,12 +2218,10 @@ li {
     #single carousel
 \*------------------------------------*/
 .c-single__carousel {
-  width: 100%;
-  margin-top: 45px; }
+  width: 100%; }
   @media only screen and (min-width: 980px) {
     .c-single__carousel {
-      height: 100%;
-      margin-top: 8vh; } }
+      height: 100%; } }
 
 /*------------------------------------*\
       #hide title and meta in tablet
@@ -2244,10 +2248,11 @@ li {
     line-height: 200%; }
 
 .c-single__carousel--mobile .c-single__slider .flickity-viewport {
-  height: 380px; }
+  height: 380px;
+  cursor: grab; }
   @media only screen and (min-width: 980px) {
     .c-single__carousel--mobile .c-single__slider .flickity-viewport {
-      height: 95%; } }
+      height: 89%; } }
   .c-single__carousel--mobile .c-single__slider .flickity-viewport .flickity-slider .carousel__cell__single {
     height: 100%; }
     @media only screen and (min-width: 980px) {
@@ -2264,7 +2269,7 @@ li {
   background-color: #fff;
   right: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   margin-top: 24px; }
   @media only screen and (min-width: 980px) {

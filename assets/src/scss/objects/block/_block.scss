@@ -4,7 +4,7 @@
   max-height: max-content;
 
   @include media(tablet) {
-    overflow-y: hidden;
+    //overflow-y: hidden;
     text-align: right;
     max-height: 100vh;
 

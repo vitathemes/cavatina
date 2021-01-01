@@ -9,29 +9,33 @@
 
 ?>
 
-
-
-
 <div class="o-page__col c-aside">
 
-    <div class="c-aside__content">
+    <div class="o-page__col c-aside">
 
-        <div class="c-aside__context">
-
-            <h4 class="c-aside__title"><?php global $post; $post_slug=$post->post_name; echo $post_slug; ?></h4>
+        <div class="c-aside__content">
 
 
-        </div>
+            <div class="c-aside__context">
 
-        <img class="c-search__icon" onClick="searchToggle()"
-            src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="hamburger" />
+                <h4 class="c-aside__title">Blog</h4>
+                <span class="c-aside__counter">20 Portfolios</span>
 
-        <div class="c-search">
+            </div>
 
-            <!-- <input id="searchInput" type="search" name="s" class="c-search__input form-control search-field"
-                placeholder="Search…" autocomplete="off" value="" aria-describedby="Search Field" title="Search for:"> -->
 
-            <?php get_search_form(); ?>
+            <img class="c-search__icon" onClick="searchToggle()"
+                 src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="hamburger" />
+
+            <div class="c-search">
+
+                <input id="searchInput" type="search" name="s" class="c-search__input form-control search-field"
+                       placeholder="Search…" autocomplete="off" value="" aria-describedby="Search Field"
+                       title="Search for:">
+
+
+            </div>
+
 
 
         </div>
@@ -94,7 +98,3 @@
 </div>
 
 
-
-
-<?php
-get_footer();

@@ -38,10 +38,10 @@
   .c-header__holder {
     @include media(tablet) {
       width: 100%;
-      padding-bottom: 75%;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+      padding-top: 60%;
     }
 
     @include media(wide) {
