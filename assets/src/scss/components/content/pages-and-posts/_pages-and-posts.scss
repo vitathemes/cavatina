@@ -7,6 +7,8 @@
   padding-bottom: 15%;
   overflow-x: hidden;
   overflow-y: auto;
+
+
   @include media(tablet) {
     width: 83%;
     padding-bottom: 0;
@@ -18,7 +20,7 @@
 
 .c-content--home {
   height: 100%;
-
+  overflow: hidden;
   @include media(tablet) {
     width: 76%;
   }

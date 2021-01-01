@@ -5,7 +5,7 @@
   transition-delay: 0s;
   overflow: hidden;
 
-  margin-left: 16px;
+  margin-left: 8px;
   @include media(tablet) {
     display: none;
     order: 1;
@@ -14,17 +14,32 @@
   .s-nav {
     list-style-type: none;
     margin: 2%;
-    a {
-      transition: 0.2s all;
-      font-family: "Montserrat", sans-serif;
-      font-style: normal;
-      font-size: 14px;
-      line-height: 17px;
-      color: #000000;
-      &:hover {
-        color: #8a8a8a;
+
+    li {
+      margin-bottom: 24px;
+
+      @include media(tablet) {
+        margin-bottom: 10px;
+      }
+      a {
+        transition: 0.2s all;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 19px;
+        line-height: 23px;
+
+        @include media(tablet) {
+          font-size: 14px;
+          line-height: 17px;
+          color: #000000;
+        }
+        &:hover {
+          color: #8a8a8a;
+        }
       }
     }
+
     @include media(tablet) {
       margin: 0;
     }
@@ -61,6 +76,7 @@
 
   .c-nav {
     padding-top: 32px;
+    padding-bottom: 16px;
     max-height: 25em;
     text-align: left;
 

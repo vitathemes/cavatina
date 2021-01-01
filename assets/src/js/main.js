@@ -121,7 +121,7 @@ var flCarouselSingle = new Flickity(carouselSingle, {
   freeScroll: isDesktop(),
   setGallerySize: false,
   cellAlign: "left",
-  pageDots: false,
+  pageDots: !isDesktop(),
   prevNextButtons: false,
   on: {
     ready: function () {},

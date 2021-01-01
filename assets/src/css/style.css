@@ -782,7 +782,9 @@ html {
   border-bottom: 1px solid #e1e1e1;
   position: relative;
   z-index: 50;
-  top: 0; }
+  top: 0;
+  padding-top: 25px;
+  padding-bottom: 25px; }
   @media only screen and (min-width: 980px) {
     .c-header {
       left: 0;
@@ -810,7 +812,7 @@ html {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 60%; } }
+    padding-top: 45%; } }
 
 @media only screen and (min-width: 1400px) {
   .c-header--home .c-header__holder {
@@ -842,7 +844,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: baseline; }
+  align-items: center; }
   @media only screen and (min-width: 980px) {
     .c-header__holder {
       width: 100%;
@@ -850,15 +852,16 @@ html {
       flex-direction: column-reverse;
       justify-content: space-between;
       display: flex;
-      align-items: center; } }
+      align-items: center;
+      padding-bottom: 0px; } }
 
 /*------------------------------------*\
   #Header logo block
 \*------------------------------------*/
 .c-header__logo {
   width: 50%;
-  text-align: center;
-  padding: 32px 20% 0px 5%; }
+  text-align: left;
+  padding-left: 16px; }
   @media only screen and (min-width: 980px) {
     .c-header__logo {
       width: 95%;
@@ -885,10 +888,10 @@ html {
 .c-header__menu {
   width: 50%;
   text-align: right;
-  background-color: transparent;
-  padding: 5%; }
+  background-color: transparent; }
   @media only screen and (min-width: 980px) {
     .c-header__menu {
+      width: unset;
       order: 2;
       text-align: center;
       height: 5%; } }
@@ -926,7 +929,7 @@ html {
   transition: 1s ease-in-out;
   transition-delay: 0s;
   overflow: hidden;
-  margin-left: 16px; }
+  margin-left: 8px; }
   @media only screen and (min-width: 980px) {
     .c-nav {
       display: none;
@@ -934,15 +937,25 @@ html {
   .c-nav .s-nav {
     list-style-type: none;
     margin: 2%; }
-    .c-nav .s-nav a {
-      transition: 0.2s all;
-      font-family: "Montserrat", sans-serif;
-      font-style: normal;
-      font-size: 14px;
-      line-height: 17px;
-      color: #000000; }
-      .c-nav .s-nav a:hover {
-        color: #8a8a8a; }
+    .c-nav .s-nav li {
+      margin-bottom: 24px; }
+      @media only screen and (min-width: 980px) {
+        .c-nav .s-nav li {
+          margin-bottom: 10px; } }
+      .c-nav .s-nav li a {
+        transition: 0.2s all;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 19px;
+        line-height: 23px; }
+        @media only screen and (min-width: 980px) {
+          .c-nav .s-nav li a {
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000; } }
+        .c-nav .s-nav li a:hover {
+          color: #8a8a8a; }
     @media only screen and (min-width: 980px) {
       .c-nav .s-nav {
         margin: 0; } }
@@ -972,6 +985,7 @@ html {
 
 .toggled .c-nav {
   padding-top: 32px;
+  padding-bottom: 16px;
   max-height: 25em;
   text-align: left;
   display: block;
@@ -1045,7 +1059,7 @@ html {
   z-index: 9;
   background-color: #fff;
   border-top: 1px solid #e1e1e1;
-  padding-top: 22px;
+  padding-top: 3%;
   padding-bottom: 22px; }
   @media only screen and (min-width: 980px) {
     .c-aside {
@@ -1065,7 +1079,7 @@ html {
     .c-aside--home .c-aside__content {
       justify-content: flex-start;
       height: max-content;
-      margin-top: 60%;
+      margin-top: 50%;
       flex-direction: column;
       padding-bottom: 0; } }
 
@@ -1120,7 +1134,7 @@ html {
     .c-aside__nav-title {
       margin: 0;
       text-align: left;
-      margin-left: 16px;
+      margin-left: 8px;
       margin-bottom: 16px;
       padding-top: 16px;
       color: #8a8a8a; } }
@@ -1149,7 +1163,7 @@ html {
     .c-aside__carousel {
       display: block;
       width: 100%;
-      padding-left: 16px;
+      padding-left: 8px;
       text-align: left; } }
   .c-aside__carousel .c-carousel {
     margin-left: 0; }
@@ -1464,7 +1478,8 @@ html {
       padding-bottom: 0; } }
 
 .c-content--home {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
   @media only screen and (min-width: 980px) {
     .c-content--home {
       width: 76%; } }
@@ -2012,7 +2027,13 @@ li {
   line-height: 1;
   display: flex;
   width: 100%;
-  align-items: flex-end; }
+  align-items: flex-end;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px; }
+  @media only screen and (min-width: 980px) {
+    .flickity-page-dots {
+      padding: 0; } }
 
 .flickity-rtl .flickity-page-dots {
   direction: rtl; }

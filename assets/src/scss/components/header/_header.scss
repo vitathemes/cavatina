@@ -2,13 +2,15 @@
   #Header block
 \*------------------------------------*/
 .c-header {
-  // background-color: darkkhaki;
   background-color: $color__background-body;
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
   position: relative;
   z-index: 50;
   top: 0;
+
+  padding-top: 25px;
+  padding-bottom: 25px;
 
   @include media(tablet) {
     left: 0;
@@ -41,7 +43,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 60%;
+      padding-top: 45%;
     }
 
     @include media(wide) {
@@ -86,7 +88,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 
   // background-color: rgba(85, 107, 47, 0.452);
 
@@ -98,6 +100,7 @@
     justify-content: space-between;
     display: flex;
     align-items: center;
+    padding-bottom: 0px;
   }
 }
 
@@ -107,8 +110,9 @@
 
 .c-header__logo {
   width: 50%;
-  text-align: center;
-  padding: 32px 20% 0px 5%;
+  text-align: left;
+
+  padding-left: 16px;
 
   @include media(tablet) {
     width: 95%;
@@ -145,9 +149,9 @@
   width: 50%;
   text-align: right;
   background-color: transparent;
-  padding: 5%;
 
   @include media(tablet) {
+    width: unset;
     order: 2;
     text-align: center;
     height: 5%;

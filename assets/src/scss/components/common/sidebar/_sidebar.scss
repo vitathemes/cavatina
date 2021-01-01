@@ -10,7 +10,7 @@
   z-index: 9;
   background-color: $color__background-body;
   border-top: 1px solid #e1e1e1;
-  padding-top: 22px;
+  padding-top: 3%;
   padding-bottom: 22px;
 
   @include media(tablet) {
@@ -32,10 +32,9 @@
 
   .c-aside__content {
     @include media(tablet) {
-
       justify-content: flex-start;
       height: max-content;
-      margin-top: 60%;
+      margin-top: 50%;
 
       flex-direction: column;
       padding-bottom: 0;
@@ -107,7 +106,7 @@
   @include media(tablet) {
     margin: 0;
     text-align: left;
-    margin-left: 16px;
+    margin-left: 8px;
     margin-bottom: 16px;
     padding-top: 16px;
     color: #8a8a8a;
@@ -148,7 +147,7 @@
     display: block;
     width: 100%;
 
-    padding-left: 16px;
+    padding-left: 8px;
     text-align: left;
     // background-color: rgba(255, 17, 17, 0.5);
   }
