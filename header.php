@@ -30,11 +30,9 @@
 
         <header id="masthead" class="c-header ">
 
-
-
             <div class="c-header__holder js-nav">
 
-                <div class="c-header__logo c-header__logo--rotate">
+                <div class="c-header__logo">
                     <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
                         alt="logo" />
                 </div>
@@ -50,9 +48,6 @@
                 <div class="c-header__search" onClick="toggleElement('.c-search__overlay')">
                     <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg"
                         alt="hamburger" />
-
-
-
 
                 </div>
 

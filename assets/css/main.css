@@ -801,43 +801,6 @@ html {
       left: 0;
       transform: translate(0%, -50%); } }
 
-@media only screen and (min-width: 980px) {
-  .c-header--home {
-    width: 15%;
-    border-bottom: none; } }
-
-@media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder {
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 45%; } }
-
-@media only screen and (min-width: 1400px) {
-  .c-header--home .c-header__holder {
-    padding-bottom: 0; } }
-
-@media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__logo img {
-    width: 60%; } }
-
-@media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__text {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin: 0;
-    padding-left: 23%; } }
-
-@media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__menu {
-    display: none; } }
-
-@media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__search {
-    display: none; } }
-
 .c-header__holder {
   width: 100%;
   height: 100%;
@@ -865,14 +828,11 @@ html {
   @media only screen and (min-width: 980px) {
     .c-header__logo {
       width: 95%;
+      margin-bottom: 15%;
       text-align: center;
-      padding: 0; } }
-
-@media only screen and (min-width: 980px) {
-  .c-header__logo--rotate {
-    padding: 0;
-    transform: rotate(-90deg);
-    order: 1; } }
+      padding: 0;
+      transform: rotate(-90deg);
+      order: 1; } }
 
 /*------------------------------------*\
   #Header text block
@@ -880,6 +840,7 @@ html {
 .c-header__text {
   color: #8a8a8a;
   display: none;
+  order: 2;
   font-size: 14px; }
 
 /*------------------------------------*\
@@ -920,6 +881,51 @@ html {
 
 .c-overlay--active {
   display: flex; }
+
+/*------------------------------------*\
+  #Header Modifier
+\*------------------------------------*/
+@media only screen and (min-width: 980px) {
+  .c-header--home {
+    width: 15%;
+    border-bottom: none; } }
+
+@media only screen and (min-width: 980px) {
+  .c-header--home .c-header__holder {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 45%; } }
+
+@media only screen and (min-width: 1400px) {
+  .c-header--home .c-header__holder {
+    padding-bottom: 0; } }
+
+@media only screen and (min-width: 980px) {
+  .c-header--home .c-header__holder .c-header__logo {
+    transform: rotate(0deg);
+    margin-bottom: 0; } }
+
+@media only screen and (min-width: 980px) {
+  .c-header--home .c-header__holder .c-header__logo img {
+    width: 60%; } }
+
+@media only screen and (min-width: 980px) {
+  .c-header--home .c-header__holder .c-header__text {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding-left: 23%; } }
+
+@media only screen and (min-width: 980px) {
+  .c-header--home .c-header__holder .c-header__menu {
+    display: none; } }
+
+@media only screen and (min-width: 980px) {
+  .c-header--home .c-header__holder .c-header__search {
+    display: none; } }
 
 /* Navigation
 --------------------------------------------- */
@@ -1211,6 +1217,51 @@ html {
 
 /* Comments
 --------------------------------------------- */
+.comment-reply-title {
+  margin-bottom: 0px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #000000; }
+
+.c-comment-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .c-comment-form .comment-notes {
+    width: 100%;
+    margin-bottom: 46px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #767676; }
+  .c-comment-form .comment-form-author {
+    width: 100%;
+    display: inline-block; }
+    @media only screen and (min-width: 980px) {
+      .c-comment-form .comment-form-author {
+        width: 45%; } }
+  .c-comment-form .comment-form-email {
+    width: 100%;
+    display: inline-block; }
+    @media only screen and (min-width: 980px) {
+      .c-comment-form .comment-form-email {
+        width: 45%; } }
+  .c-comment-form .comment-form-url {
+    width: 100%; }
+    @media only screen and (min-width: 980px) {
+      .c-comment-form .comment-form-url {
+        margin-top: 48px; } }
+  .c-comment-form .comment-form-comment {
+    width: 100%; }
+    @media only screen and (min-width: 980px) {
+      .c-comment-form .comment-form-comment {
+        margin-top: 40px; } }
+
 .comments-area {
   display: flex;
   flex-wrap: wrap; }

@@ -1,3 +1,62 @@
+.comment-reply-title {
+  margin-bottom: 0px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.c-comment-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .comment-notes {
+    width: 100%;
+    margin-bottom: 46px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #767676;
+  }
+  .comment-form-author {
+    width: 100%;
+    display: inline-block;
+    @include media(tablet) {
+      width: 45%;
+    }
+  }
+
+  .comment-form-email {
+    width: 100%;
+    display: inline-block;
+    @include media(tablet) {
+      width: 45%;
+    }
+  }
+
+  .comment-form-url {
+    width: 100%;
+
+    @include media(tablet) {
+      margin-top: 48px;
+    }
+  }
+
+  .comment-form-comment {
+    width: 100%;
+
+    @include media(tablet) {
+      margin-top: 40px;
+    }
+  }
+}
+
 .comments-area {
   display: flex;
   flex-wrap: wrap;
