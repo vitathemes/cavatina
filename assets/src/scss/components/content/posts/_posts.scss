@@ -10,12 +10,13 @@
   align-items: flex-end;
   flex-wrap: wrap;
   flex-direction: column-reverse;
-
+  margin-top: 64px;
   padding-bottom: 30%;
 
   @include media(tablet) {
     flex-direction: column;
     height: 90vh;
+    margin-top: 0;
     padding-bottom: 0;
   }
 }
@@ -23,6 +24,7 @@
 /*------------------------------------*\
   #single context
 \*------------------------------------*/
+
 .c-single__context {
   width: 100%;
   height: 100%;
@@ -140,7 +142,3 @@
     min-height: calc(50vh);
   }
 }
-
-/*------------------------------------*\
-    #Temporary
-\*------------------------------------*/

@@ -17,8 +17,8 @@
 
         <div class="c-aside__context">
 
-            <h4 class="c-aside__title">Blog</h4>
-            <span class="c-aside__counter">20 Portfolios</span>
+            <h4 class="c-aside__title"><?php global $post; $post_slug=$post->post_name; echo $post_slug; ?></h4>
+
 
         </div>
 

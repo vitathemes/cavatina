@@ -20,7 +20,7 @@ get_header();
             <div class="c-aside__context">
 
                 <h4 class="c-aside__title">Blog</h4>
-                <span class="c-aside__counter">20 Portfolios</span>
+                <span class="c-aside__counter">4 Posts</span>
 
             </div>
 
@@ -59,6 +59,7 @@ get_header();
                         while (have_posts()) :
                             the_post();
 
+                        
                             /*
                              * Include the Post-Type-specific template for the content.
                              * If you want to override this in a child theme, then include a file

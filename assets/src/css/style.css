@@ -1125,7 +1125,8 @@ html {
   display: inline-block; }
   @media only screen and (min-width: 980px) {
     .c-aside__title {
-      display: block; } }
+      display: block;
+      padding-bottom: 8px; } }
 
 .c-aside__counter {
   font-size: 14px; }
@@ -1177,6 +1178,9 @@ html {
 /*--------------------------------------------------------------
 # Social Share
 --------------------------------------------------------------*/
+/*------------------------------------*\
+  #Social media links 
+\*------------------------------------*/
 .c-social-media {
   margin-left: 3%; }
   @media only screen and (min-width: 980px) {
@@ -1483,7 +1487,8 @@ html {
       height: 100%;
       align-content: center;
       margin-top: 0;
-      padding-left: 64px; } }
+      padding-left: 64px;
+      padding-top: 3%; } }
 
 .c-form {
   width: 100%;
@@ -1530,11 +1535,13 @@ html {
   align-items: flex-end;
   flex-wrap: wrap;
   flex-direction: column-reverse;
+  margin-top: 64px;
   padding-bottom: 30%; }
   @media only screen and (min-width: 980px) {
     .c-single {
       flex-direction: column;
       height: 90vh;
+      margin-top: 0;
       padding-bottom: 0; } }
 
 /*------------------------------------*\
@@ -1633,9 +1640,6 @@ html {
       margin-top: calc(40vh);
       min-height: calc(50vh); } }
 
-/*------------------------------------*\
-    #Temporary
-\*------------------------------------*/
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
@@ -1831,6 +1835,9 @@ html {
   order: 4;
   text-align: left;
   line-height: 28px; }
+  .c-blog__entery-content ul {
+    list-style-type: disc;
+    margin-left: 16px; }
   .c-blog__entery-content p {
     color: #000000;
     font-style: normal;
@@ -1990,6 +1997,10 @@ input[type="submit"] {
   input[type="reset"]:hover,
   input[type="submit"]:hover {
     background-color: var(--quaternary-color); }
+
+blockquote {
+  border-left: 1px solid #e1e1e1;
+  padding-left: 16px; }
 
 a {
   color: var(--secondary-color);

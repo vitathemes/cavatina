@@ -171,6 +171,7 @@
 /*------------------------------------*\
   #Post blog block
 \*------------------------------------*/
+
 .c-blog {
   width: 100%;
   margin-top: 64px;
@@ -252,6 +253,12 @@
   order: 4;
   text-align: left;
   line-height: 28px;
+
+  ul {
+    list-style-type: disc;
+
+    margin-left: 16px;
+  }
 
   p {
     color: #000000;
