@@ -138,3 +138,10 @@ var flCarouselSingle = new Flickity(carouselSingle, {
     },
   },
 });
+
+window.addEventListener("load", function (event) {
+  let scroller = document.querySelector(".c-single__context");
+  let simpleBar = new SimpleBar(scroller, {
+    autoHide: false,
+  });
+});

@@ -168,8 +168,6 @@
 
 .flickity-page-dots {
   bottom: -55px;
-  // padding-left: 5%;
-  // padding-right: 5%;
 
   @include media(tablet) {
     bottom: -35px;
@@ -221,7 +219,6 @@
 .flickity-button:disabled {
   opacity: 0.3;
   cursor: auto;
-  /* prevent disabled button from capturing pointer up event. #716 */
   pointer-events: none;
 }
 .flickity-prev-next-button.previous {
@@ -424,12 +421,13 @@
   height: max-content;
   transition: 1s all;
   background-color: $color__background-body;
-  //position: absolute ;
+
   right: 0;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   margin-top: 24px;
+  z-index: 5;
   @include media(tablet) {
     width: 50%;
     height: 100%;
@@ -448,14 +446,6 @@
     }
 
     .flickity-slider {
-      //display: flex;
-      //justify-content: center;
-      //align-items: center;
-
-      // mobile
-      //position: relative ;
-      //display: flex ;
-
       @include media(tablet) {
         display: flex;
         justify-content: center;
@@ -510,11 +500,6 @@
 /*------------------------------------*\
   #modifier
 \*------------------------------------*/
-
-.c-single__slider--page {
-  .flickity-viewport {
-  }
-}
 
 .c-single__slider--full-width {
   width: 100%;

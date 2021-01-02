@@ -65,7 +65,6 @@ get_header();
                         nec aliquet erat, et dictum nulla. eugiat elit tincidunt in. Curabitur nec aliquet erat, et
                         dictum nulla.Sed quis maximus nunc. Nulla eu erat vel nunc consectetur ornare.Sed quis
                         maximus nunc.Sed at arcu dui. Aenean placerat mauris nisl.</p>
-
                 </div>
 
             </div>
