@@ -12,7 +12,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
 
 
-    <header class="c-post__header c-post__header--min-height entry-header">
+    <header class="c-post__header c-post__header--space-height entry-header">
+
+        <span class="c-numeric-bullet"></span>
         <?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="c-post__entry-title c-post__entry-title--circle entry-title ">', '</h1>' );
@@ -20,6 +22,7 @@
 			the_title( '<h2 class=" c-post__entry-title c-post__entry-title--circle entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
+
         <div class="c-post__meta c-post__meta--left-space entry-meta">
             <?php 
 			
@@ -28,6 +31,8 @@
 			
 			?>
         </div><!-- .entry-meta -->
+
+
 
     </header><!-- .entry-header -->
 
