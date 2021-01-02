@@ -1683,7 +1683,8 @@ html {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-top: 64px; }
   @media only screen and (min-width: 980px) {
     .c-container__content {
       padding-right: 60px;
@@ -1729,16 +1730,20 @@ html {
 
 .c-post__entry-title {
   display: inline-block;
-  width: calc(89% - 30px);
+  width: 100%;
   margin-bottom: 0px;
   vertical-align: top;
   margin-top: 0;
+  width: 100%;
   counter-reset: section; }
   .c-post__entry-title a {
     font-weight: 600;
     font-size: 14px;
     color: #111111;
     vertical-align: top; }
+
+.c-post__entry-title--projects {
+  width: calc(89% - 30px); }
 
 .c-post__meta {
   padding-left: 45px; }
@@ -1869,6 +1874,9 @@ html {
   .c-blog__tags li {
     display: inline-block;
     margin-right: 16px; }
+
+.c-post__category--blog {
+  padding-left: 0; }
 
 /*------------------------------------*\
   #Author avatar

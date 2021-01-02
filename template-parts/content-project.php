@@ -17,9 +17,9 @@
         <span class="c-numeric-bullet"></span>
         <?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="c-post__entry-title c-post__entry-title--circle entry-title ">', '</h1>' );
+			the_title( '<h1 class="c-post__entry-title c-post__entry-title--projects entry-title ">', '</h1>' );
 		else :
-			the_title( '<h2 class=" c-post__entry-title c-post__entry-title--circle entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
 

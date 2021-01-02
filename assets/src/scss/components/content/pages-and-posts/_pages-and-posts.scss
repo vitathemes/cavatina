@@ -51,6 +51,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
+  margin-top: 64px;
   @include media(tablet) {
     padding-right: 60px;
     padding-top: 150px;
@@ -119,10 +120,11 @@
 
 .c-post__entry-title {
   display: inline-block;
-  width: calc(89% - 30px);
+  width: 100%;
   margin-bottom: 0px;
   vertical-align: top;
   margin-top: 0;
+  width: 100%;
 
   a {
     font-weight: 600;
@@ -132,6 +134,10 @@
   }
 
   counter-reset: section;
+}
+
+.c-post__entry-title--projects {
+  width: calc(89% - 30px);
 }
 
 .c-post__meta {
@@ -304,6 +310,9 @@
   }
 }
 
+.c-post__category--blog {
+  padding-left: 0;
+}
 /*------------------------------------*\
   #Author avatar
 \*------------------------------------*/
