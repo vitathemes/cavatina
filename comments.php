@@ -37,11 +37,11 @@ if ( post_password_required() ) {
 					'<span>Comments</span>'
 				);
 			} else {
-				printf( 
-					/* translators: 1: ccomment-authormment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $wp_cavatina_comment_count, 'comments title', 'wp-cavatina' ) ),
-					number_format_i18n( $wp_cavatina_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+		
+				printf(
+					/* translators: Comments */
+					
+					'<span>Comments</span>'
 				);
 			}
 			?>

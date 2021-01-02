@@ -29,37 +29,6 @@
   }
 }
 
-/*
-  -qa
-
-*/
-
-.c-social-media {
-  margin-left: 3%;
-  @include media(tablet) {
-    margin-left: 0;
-    margin-right: 2%;
-  }
-}
-
-.c-social-media__item {
-  margin: 9px;
-  transition: 0.2s all;
-  svg {
-    path {
-      transition: 0.2s all;
-    }
-  }
-}
-
-.c-social-media__item:hover {
-  svg {
-    path {
-      fill: #000000;
-    }
-  }
-}
-
 .c-footer__copy {
   margin-left: 2%;
 

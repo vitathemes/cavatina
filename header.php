@@ -33,8 +33,8 @@
             <div class="c-header__holder js-nav">
 
                 <div class="c-header__logo">
-                    <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
-                        alt="logo" />
+                    <a href="<?php echo esc_url( home_url(  ) ); ?>"> <img class="o-image"
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" /></a>
                 </div>
 
                 <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false"

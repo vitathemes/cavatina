@@ -1,0 +1,42 @@
+.c-social-media {
+  margin-left: 3%;
+  @include media(tablet) {
+    margin-left: 0;
+    margin-right: 2%;
+  }
+}
+
+.c-social-media__item {
+  margin: 9px;
+  transition: 0.2s all;
+  svg {
+    path {
+      transition: 0.2s all;
+    }
+  }
+}
+
+.c-social-media__item:hover {
+  svg {
+    path {
+      fill: #000000;
+    }
+  }
+}
+
+/*------------------------------------*\
+  #Blog social media
+\*------------------------------------*/
+.c-social-media--blog {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  order: 3;
+  margin-left: 0;
+
+  @include media(tablet) {
+    display: flex;
+    flex-direction: column;
+    width: 17%;
+    margin-top: 64px;
+  }
+}

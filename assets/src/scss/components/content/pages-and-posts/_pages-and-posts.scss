@@ -4,15 +4,13 @@
 
 .c-content {
   height: 100%;
-  padding-bottom: 15%;
+
   overflow-x: hidden;
   overflow-y: auto;
-
 
   @include media(tablet) {
     width: 83%;
     padding-bottom: 0;
-
 
     // background-color: darkred;
   }
@@ -26,7 +24,7 @@
   }
 }
 
-.c-content--max-height{
+.c-content--max-height {
   height: max-content;
   overflow: hidden;
 }
@@ -175,6 +173,7 @@
 \*------------------------------------*/
 .c-blog {
   width: 100%;
+  margin-top: 64px;
   padding-left: 16px;
   padding-right: 16px;
   height: max-content;
@@ -312,22 +311,5 @@
 
   h3 {
     margin: 0;
-  }
-}
-
-/*------------------------------------*\
-  #Blog social media
-\*------------------------------------*/
-.c-social-media--blog {
-  margin-top: 32px;
-  margin-bottom: 16px;
-  order: 3;
-  margin-left: 0;
-
-  @include media(tablet) {
-    display: flex;
-    flex-direction: column;
-    width: 17%;
-    margin-top: 64px;
   }
 }

@@ -1175,6 +1175,40 @@ html {
     margin-left: 0; }
 
 /*--------------------------------------------------------------
+# Social Share
+--------------------------------------------------------------*/
+.c-social-media {
+  margin-left: 3%; }
+  @media only screen and (min-width: 980px) {
+    .c-social-media {
+      margin-left: 0;
+      margin-right: 2%; } }
+
+.c-social-media__item {
+  margin: 9px;
+  transition: 0.2s all; }
+  .c-social-media__item svg path {
+    transition: 0.2s all; }
+
+.c-social-media__item:hover svg path {
+  fill: #000000; }
+
+/*------------------------------------*\
+  #Blog social media
+\*------------------------------------*/
+.c-social-media--blog {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  order: 3;
+  margin-left: 0; }
+  @media only screen and (min-width: 980px) {
+    .c-social-media--blog {
+      display: flex;
+      flex-direction: column;
+      width: 17%;
+      margin-top: 64px; } }
+
+/*--------------------------------------------------------------
 # Search form
 --------------------------------------------------------------*/
 .c-search__overlay {
@@ -1224,6 +1258,22 @@ html {
   line-height: 17px;
   /* identical to box height */
   color: #000000; }
+
+.comment {
+  margin-left: 0px;
+  margin-top: 24px; }
+  @media only screen and (min-width: 980px) {
+    .comment {
+      margin-top: 39px; } }
+
+.comment.depth-1 {
+  border-bottom: 1px solid #e1e1e1; }
+
+.comment.depth-2 {
+  margin-left: 0px; }
+  @media only screen and (min-width: 980px) {
+    .comment.depth-2 {
+      margin-left: 40px; } }
 
 .c-comment-form {
   width: 100%;
@@ -1286,36 +1336,108 @@ html {
 .comment-list {
   list-style-type: none;
   order: 3; }
+  @media only screen and (min-width: 980px) {
+    .comment-list {
+      width: 100%; } }
+
+.children {
+  margin-left: 0; }
+  @media only screen and (min-width: 980px) {
+    .children {
+      margin-left: 1.5em; } }
 
 .comment-meta {
   position: relative;
   min-width: 290px;
   height: max-content; }
+  @media only screen and (min-width: 980px) {
+    .comment-meta {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      min-width: max-content; } }
   .comment-meta .comment-author {
     position: relative; }
     .comment-meta .comment-author img {
-      position: absolute;
       width: 50px;
       height: 50px; }
     .comment-meta .comment-author .fn {
-      position: absolute;
-      left: 60px;
-      top: 5px; }
+      margin-left: 24px;
+      width: max-content;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 15px;
+      display: flex;
+      align-items: center;
+      color: #000000; }
+      @media only screen and (min-width: 980px) {
+        .comment-meta .comment-author .fn {
+          position: relative;
+          margin-left: 40px; } }
+      .comment-meta .comment-author .fn a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        color: #000000; }
   .comment-meta .comment-metadata {
     position: absolute;
-    top: 25px;
-    left: 60px; }
+    top: 35px;
+    left: 75px; }
+    @media only screen and (min-width: 980px) {
+      .comment-meta .comment-metadata {
+        margin-left: 24px;
+        position: static; } }
+    .comment-meta .comment-metadata a {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 15px;
+      color: #767676; }
+
+.comment-content {
+  margin-left: 75px;
+  transform: translate(0px, 0px); }
+  @media only screen and (min-width: 980px) {
+    .comment-content {
+      padding-left: 15px;
+      transform: translate(0px, -16px); } }
+
+.comment-body {
+  margin-bottom: 40px; }
 
 .comment-author {
-  width: 50px;
-  height: 50px;
-  display: inline-block; }
+  display: flex;
+  width: max-content; }
+  @media only screen and (min-width: 980px) {
+    .comment-author {
+      width: max-content; } }
   .comment-author img {
     width: 100%;
     border-radius: 40px; }
 
+.comment-awaiting-moderation {
+  margin-top: 8px; }
+
 .says {
   display: none; }
+
+.reply {
+  width: max-content;
+  transform: translate(70px, 0px); }
+  @media only screen and (min-width: 980px) {
+    .reply {
+      padding-left: 90px;
+      transform: translate(0px, -16px); } }
+  .reply:before {
+    content: url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 4C13.2 4 16 7.8 16 14C14.5 11.6 13.3 10 8 10V14L0 7L8 0V4Z' fill='%23767676'/%3E%3C/svg%3E%0A");
+    margin-right: 12px;
+    font-size: 14px;
+    width: 20px;
+    height: 20px; }
 
 /* Contact
 --------------------------------------------- */
@@ -1346,17 +1468,19 @@ html {
 
 .c-contact__context {
   width: 100%;
-  height: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
+  height: 300px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 32px;
   margin-top: 32px; }
   @media only screen and (min-width: 980px) {
     .c-contact__context {
       width: 50%;
+      height: 100%;
       align-content: center;
       margin-top: 0;
       padding-left: 64px; } }
@@ -1520,7 +1644,6 @@ html {
 \*------------------------------------*/
 .c-content {
   height: 100%;
-  padding-bottom: 15%;
   overflow-x: hidden;
   overflow-y: auto; }
   @media only screen and (min-width: 980px) {
@@ -1645,6 +1768,7 @@ html {
 \*------------------------------------*/
 .c-blog {
   width: 100%;
+  margin-top: 64px;
   padding-left: 16px;
   padding-right: 16px;
   height: max-content; }
@@ -1753,21 +1877,6 @@ html {
   .c-author__info h3 {
     margin: 0; }
 
-/*------------------------------------*\
-  #Blog social media
-\*------------------------------------*/
-.c-social-media--blog {
-  margin-top: 32px;
-  margin-bottom: 16px;
-  order: 3;
-  margin-left: 0; }
-  @media only screen and (min-width: 980px) {
-    .c-social-media--blog {
-      display: flex;
-      flex-direction: column;
-      width: 17%;
-      margin-top: 64px; } }
-
 /* Footer
 --------------------------------------------- */
 .c-footer {
@@ -1796,26 +1905,6 @@ html {
       flex-direction: row-reverse;
       align-items: center;
       justify-content: space-between; } }
-
-/*
-  -qa
-
-*/
-.c-social-media {
-  margin-left: 3%; }
-  @media only screen and (min-width: 980px) {
-    .c-social-media {
-      margin-left: 0;
-      margin-right: 2%; } }
-
-.c-social-media__item {
-  margin: 9px;
-  transition: 0.2s all; }
-  .c-social-media__item svg path {
-    transition: 0.2s all; }
-
-.c-social-media__item:hover svg path {
-  fill: #000000; }
 
 .c-footer__copy {
   margin-left: 2%; }
@@ -2000,7 +2089,8 @@ ol {
   list-style-type: none; }
 
 ol {
-  list-style: decimal; }
+  list-style: decimal;
+  list-style-type: none; }
 
 li > ul,
 li > ol {
