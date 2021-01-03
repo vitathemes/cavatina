@@ -10,7 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
-
     <header class="c-post__header entry-header">
         <?php
 		if ( is_singular() ) :
@@ -27,32 +26,12 @@
 			
 			?>
         </div><!-- .entry-meta -->
-
     </header><!-- .entry-header -->
-
-
-
     <a href=<?php the_permalink() ?>>
         <?php the_post_thumbnail('large', array('class' => 'c-post_thumbnail')); ?>
     </a>
-
     <div class="entry-content">
         <?php
-		// the_content(
-		// 	sprintf(
-		// 		wp_kses(
-		// 			/* translators: %s: Name of current post. Only visible to screen readers */
-		// 			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
-		// 			array(
-		// 				'span' => array(
-		// 					'class' => array(),
-		// 				),
-		// 			)
-		// 		),
-		// 		wp_kses_post( get_the_title() )
-		// 	)
-		// );
-
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
@@ -61,7 +40,6 @@
 		);
 		?>
     </div><!-- .entry-content -->
-
     <footer class="entry-footer">
         <?php //wp_cavatina_entry_footer(); ?>
     </footer><!-- .entry-footer -->

@@ -11,49 +11,25 @@ get_header();
 ?>
 
 <main class="o-page__main">
-
     <div class="o-page__col c-aside">
-
         <div class="c-aside__content">
-
-
             <div class="c-aside__context">
-
                 <h4 class="c-aside__title">Projects</h4>
                 <span class="c-aside__counter">20 Portfolios</span>
-
             </div>
-
-
             <img class="c-search__icon" onClick="searchToggle()"
                 src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="hamburger" />
-
             <div class="c-search">
-
                 <input id="searchInput" type="search" name="s" class="c-search__input form-control search-field"
                     placeholder="Search…" autocomplete="off" value="" aria-describedby="Search Field"
                     title="Search for:">
-
-
             </div>
-
-
-
         </div>
-
     </div>
-
-
     <div class="o-page__col c-content c-content--max-height">
-
         <div class="c-container site-main__container default-max-width">
-
             <div class="c-container__content site-main__content">
-
-
                 <?php if (have_posts()) : ?>
-
-
                 <?php
                         /* Start the Loop */
                         while (have_posts()) :
@@ -76,16 +52,10 @@ get_header();
 
                     endif;
                     ?>
-
-
             </div>
-
         </div>
-
     </div>
-
 </main><!-- #main -->
-
 <?php
 get_sidebar();
 get_footer();

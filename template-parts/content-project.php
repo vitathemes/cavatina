@@ -10,10 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
-
-
     <header class="c-post__header c-post__header--space-height entry-header">
-
         <span class="c-numeric-bullet"></span>
         <?php
 		if ( is_singular() ) :
@@ -22,26 +19,15 @@
 			the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
-
         <div class="c-post__meta c-post__meta--left-space entry-meta">
             <?php 
-			
 				echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';  
-				
-			
 			?>
         </div><!-- .entry-meta -->
-
-
-
     </header><!-- .entry-header -->
-
-
-
     <a href=<?php the_permalink() ?>>
         <?php the_post_thumbnail('large', array('class' => 'c-post_thumbnail')); ?>
     </a>
-
     <div class="entry-content">
         <?php
 		the_content(
@@ -58,7 +44,6 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
-
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
@@ -67,7 +52,6 @@
 		);
 		?>
     </div><!-- .entry-content -->
-
     <footer class="entry-footer">
         <?php //wp_cavatina_entry_footer(); ?>
     </footer><!-- .entry-footer -->
