@@ -76,72 +76,75 @@ function blurToggle() {
   }
 }
 
-// Carousel (Main)
-var carousel = document.querySelector(".c-carousel__context");
-var flCarouselMain = new Flickity(carousel, {
-  setGallerySize: false,
-  freeScroll: false,
-  prevNextButtons: true,
-});
+// Main page Carousels
+function mainPageCarousels() {
+  // Carousel (Main)
+  var carousel = document.querySelector(".c-carousel__context");
+  var flCarouselMain = new Flickity(carousel, {
+    setGallerySize: false,
+    freeScroll: false,
+    prevNextButtons: true,
+  });
 
-// Carosuel (Main Child) - text
-var carouselImage = document.querySelector(".c-carousel__post-titles");
-var flCarouselText = new Flickity(carouselImage, {
-  setGallerySize: true,
-  freeScroll: false,
-  prevNextButtons: false,
-  pageDots: false,
-  asNavFor: ".c-carousel__context",
-  draggable: false,
-  selectedAttraction: 0.2,
-  friction: 0.8,
-});
+  // Carosuel (Main Child) - text
+  var carouselImage = document.querySelector(".c-carousel__post-titles");
+  var flCarouselText = new Flickity(carouselImage, {
+    setGallerySize: true,
+    freeScroll: false,
+    prevNextButtons: false,
+    pageDots: false,
+    asNavFor: ".c-carousel__context",
+    draggable: false,
+    selectedAttraction: 0.2,
+    friction: 0.8,
+  });
 
-// Carosuel (Main Child) - text Mobile
-var carouselTextMobile = document.querySelector(
-  ".c-carousel__post-titles--mobile"
-);
-var flCarouselTextMobile = new Flickity(carouselTextMobile, {
-  setGallerySize: true,
-  freeScroll: false,
-  prevNextButtons: false,
-  pageDots: false,
-  asNavFor: ".c-carousel__context",
-  contain: true,
-  groupCells: true,
-  draggable: false,
-  selectedAttraction: 0.2,
-  friction: 0.8,
-});
+  // Carosuel (Main Child) - text Mobile
+  var carouselTextMobile = document.querySelector(
+    ".c-carousel__post-titles--mobile"
+  );
+  var flCarouselTextMobile = new Flickity(carouselTextMobile, {
+    setGallerySize: true,
+    freeScroll: false,
+    prevNextButtons: false,
+    pageDots: false,
+    asNavFor: ".c-carousel__context",
+    contain: true,
+    groupCells: true,
+    draggable: false,
+    selectedAttraction: 0.2,
+    friction: 0.8,
+  });
+}
 
 // Carosuel - Single Page
-var carouselSingle = document.querySelector(".c-single__slider");
+function singleCarousel() {
+  var carouselSingle = document.querySelector(".c-single__slider");
 
-var flCarouselSingle = new Flickity(carouselSingle, {
-  freeScroll: isDesktop(),
-  setGallerySize: false,
-  cellAlign: "left",
-  pageDots: !isDesktop(),
-  prevNextButtons: false,
-  on: {
-    ready: function () {},
-    change: function (index) {
-      if (isDesktop() === true) {
-        // make slider full width with first drag
-        var singleCarousel = document.querySelector(".c-single__slider");
-        singleCarousel.classList.add("c-single__slider--full-width");
+  var flCarouselSingle = new Flickity(carouselSingle, {
+    freeScroll: isDesktop(),
+    setGallerySize: false,
+    cellAlign: "left",
+    pageDots: !isDesktop(),
+    prevNextButtons: false,
+    on: {
+      ready: function () {},
+      change: function (index) {
+        if (isDesktop() === true) {
+          // make slider full width with first drag
+          var singleCarousel = document.querySelector(".c-single__slider");
+          singleCarousel.classList.add("c-single__slider--full-width");
 
-        if (index === 0) {
-          singleCarousel.classList.remove("c-single__slider--full-width");
+          if (index === 0) {
+            singleCarousel.classList.remove("c-single__slider--full-width");
+          }
         }
-      }
+      },
     },
-  },
-});
-
-window.addEventListener("load", function (event) {
-  let scroller = document.querySelector(".c-single__context");
-  let simpleBar = new SimpleBar(scroller, {
-    autoHide: false,
   });
-});
+}
+
+const element = document.querySelector(".c-single__slider");
+if (element.classList.contains("c-single__slider") === true) {
+  singleCarousel();
+}

@@ -23,8 +23,14 @@
 }
 
 .c-content--max-height {
-  height: max-content;
-  overflow: hidden;
+  overflow: scroll;
+  min-height: max-content;
+  @include media(tablet){
+    height: max-content;
+    overflow: hidden;
+
+  }
+
 }
 
 /*------------------------------------*\
@@ -64,11 +70,13 @@
   width: 100%;
   height: max-content;
   min-height: 325px;
-  margin-bottom: 48px;
   text-align: left;
+  padding-bottom: 68px;
 
   @include media(tablet) {
     width: 35%;
+    margin-bottom: 48px;
+    padding-bottom:0px;
   }
 }
 

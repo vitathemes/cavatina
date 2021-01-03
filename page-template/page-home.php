@@ -9,7 +9,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> onload="mainPageCarousels()">
     <?php wp_body_open(); ?>
 
 
@@ -64,7 +64,7 @@
 
             <div class="o-page__col c-aside c-aside--home">
 
-                <div class="c-aside__content ">
+                <div class="c-aside__content">
 
                     <div class="c-aside__nav">
                         <p class="c-aside__nav-title">Navigation</p>

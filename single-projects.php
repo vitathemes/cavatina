@@ -43,7 +43,7 @@ get_header();
         <div class="c-single">
 
 
-            <div class="c-single__context">
+            <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
 
 
                 <div class="c-single__context__holder">
