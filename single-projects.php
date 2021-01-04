@@ -28,25 +28,50 @@ get_header();
     </div>
 
     <div class="o-page__col c-content">
-        <div class="c-single">
+        <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>
             <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
                 <div class="c-single__context__holder">
-                    <h2 class="c-single__title">Advertisement Poster</h2>
+                    <?php
+                        if ( is_singular() ) :
+                            the_title( '<h2 class="c-single__title">', '</h2>' );
+                        else :
+                            the_title( '<h2 class="c-single__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                        endif;
+                    ?>
                     <ul class="c-single__meta">
-                        <li>Commercial</li>
-                        <li>April 2019</li>
+                        <li>
+                            <?php echo '<span >'. get_the_category( $id )[0]->name .'</span>'; ?>
+                        </li>
+                        <li>
+                            <?php echo '<span >'. get_the_date( "F j.Y", $post_id ) .'</span>';   ?>
+                        </li>
                     </ul>
-                    <p class="c-single__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at arcu
-                        dui. Aenean placerat
-                        mauris nisl. Proin vitae urna eu sem pellentesque laoreet. Mauris varius quam ut libero
-                        tempor rutrum. Sed quis maximus nunc. Nulla eu erat vel nunc consectetur ornare. Nam
-                        bibendum cursus viverra. Aenean placerat bibendum quam, eugiat elit tincidunt in. Curabitur
-                        nec aliquet erat, et dictum nulla. eugiat elit tincidunt in. Curabitur nec aliquet erat, et
-                        dictum nulla.Sed quis maximus nunc. Nulla eu erat vel nunc consectetur ornare.Sed quis
-                        maximus nunc.Sed at arcu dui. Aenean placerat mauris nisl.</p>
+                    <div class="c-single__text">
+                        <?php
+                            the_content(
+                                sprintf(
+                                    wp_kses(
+                                        /* translators: %s: Name of current post. Only visible to screen readers */
+                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
+                                        array(
+                                            'span' => array(
+                                                'class' => array(),
+                                            ),
+                                        )
+                                    ),
+                                    wp_kses_post( get_the_title() )
+                                )
+                            );
+                            wp_link_pages(
+                                array(
+                                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
+                                    'after'  => '</div>',
+                                )
+                            );
+                        ?>
+                    </div>
                 </div>
             </div>
-
             <div class="c-single__carousel c-single__carousel--mobile">
                 <h2 class="c-single__title">Advertisement Poster</h2>
                 <ul class="c-single__meta">
@@ -71,9 +96,9 @@ get_header();
                     </div>
                 </div>
             </div>
-        </div>
+        </article><!-- #post-<?php the_ID(); ?> -->
+        <!--Single-->
     </div>
 </main><!-- #main -->
-
 <?php
 get_footer();

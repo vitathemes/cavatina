@@ -1,3 +1,6 @@
+/*------------------------------------*\
+  #Fields elements  
+\*------------------------------------*/
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -52,4 +55,10 @@ textarea {
 
 #comment {
   height: 84px;
+}
+
+[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
 }

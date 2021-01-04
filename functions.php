@@ -295,3 +295,26 @@ function wpb_move_comment_field_to_bottom( $fields ) {
 	}
 	 
 	add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
+
+
+/**
+ * count number of posts in a page 
+ */ 
+function wp_cavatina_total_posts() { 
+	$total = wp_count_posts()->publish;
+	echo  $total;
+} 
+
+/**
+ * count number of posts in a page 
+ */ 
+function wp_cavatina_post_type_name() { 
+	printf( __( '%s', 'textdomain' ), get_post_type( get_the_ID() ) );
+} 
+
+/**
+ * count number of posts types (project) in a page 
+ */ 
+function wp_cavatina_total_post_types() { 
+	printf($count_posts = wp_count_posts( 'projects' )->publish);
+} 

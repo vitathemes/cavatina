@@ -8,50 +8,64 @@
  */
 
 ?>
-
 <div class="o-page__col c-aside">
     <div class="c-aside__content">
         <div class="c-aside__context">
-            <h4 class="c-aside__title"><?php global $post; $post_slug=$post->post_name; echo $post_slug; ?></h4>
+            <span class="c-aside__title"><?php global $post; $post_slug=$post->post_name; echo $post_slug; ?></span>
         </div>
-        <img class="c-search__icon" onClick="searchToggle()"
-            src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="hamburger" />
+        <div class="c-search__icon"></div>
         <div class="c-search">
-            <input id="searchInput" type="search" name="s" class="c-search__input form-control search-field"
-                placeholder="Search…" autocomplete="off" value="" aria-describedby="Search Field" title="Search for:">
+            <div class="c-search__holder">
+                <?php get_search_form(); ?>
+            </div>
         </div>
     </div>
 </div>
-
 <div class="o-page__col c-content">
-    <div class="c-single">
-        <div class="c-single__context">
+    <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>
+        <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
             <div class="c-single__context__holder">
-                <h2 class="c-single__title c-single__title--red">HELLO THERE! MY NAME IS</h2>
-                <h3 class="c-single__title c-single__title--small">NINA LOSERT</h3>
-                <p class="c-single__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at arcu
-                    dui. Aenean placerat
-                    mauris nisl. Proin vitae urna eu sem pellentesque laoreet. Mauris varius quam ut libero
-                    tempor rutrum. Sed quis maximus nunc. Nulla eu erat vel nunc consectetur ornare. Nam
-                    bibendum cursus viverra. Aenean placerat bibendum quam, eugiat elit tincidunt in. Curabitur
-                    nec aliquet erat, et dictum nulla. eugiat elit tincidunt in. Curabitur nec aliquet erat, et
-                    dictum nulla.Sed quis maximus nunc. Nulla eu erat vel nunc consectetur ornare.Sed quis
-                    maximus nunc.Sed at arcu dui. Aenean placerat mauris nisl.</p>
-            </div>
-        </div>
-        <div class="c-single__carousel c-single__carousel--mobile">
-            <h2 class="c-single__title">Advertisement Poster</h2>
-            <ul class="c-single__meta">
-                <li>Commercial</li>
-                <li>April 2019</li>
-            </ul>
-            <div class="c-single__slider c-single__slider--page">
-                <div class="carousel__cell__single carousel__cell__single--page ">
-                    <img class="o-imagce"
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/about-page-thumbnail.jpg"
-                        alt="hamburger" />
+                <?php
+                        if ( is_singular() ) :
+                            the_title( '<h2 class="c-single__title c-single__title--red c-single__title--page">', '</h2>' );
+                        else :
+                            the_title( '<h2 class="c-single__title c-single__title--red c-single__title--page"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                        endif;
+                ?>
+                <div class="c-single__text">
+                    <?php
+                            the_content(
+                                sprintf(
+                                    wp_kses(
+                                        /* translators: %s: Name of current post. Only visible to screen readers */
+                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
+                                        array(
+                                            'span' => array(
+                                                'class' => array(),
+                                            ),
+                                        )
+                                    ),
+                                    wp_kses_post( get_the_title() )
+                                )
+                            );
+                            wp_link_pages(
+                                array(
+                                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
+                                    'after'  => '</div>',
+                                )
+                            );
+                        ?>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="c-single__carousel c-single__carousel--mobile">
+            <div class="c-single__slider ">
+                <div class="carousel__cell__single  carousel__cell__single--page">
+                    <a class="c-blog__thumbnail" href=<?php the_permalink() ?>>
+                        <?php the_post_thumbnail('large', array()); ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article><!-- #post-<?php the_ID(); ?> -->
 </div>

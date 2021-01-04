@@ -14,15 +14,14 @@ get_header();
     <div class="o-page__col c-aside">
         <div class="c-aside__content">
             <div class="c-aside__context">
-                <h4 class="c-aside__title">Projects</h4>
-                <span class="c-aside__counter">20 Portfolios</span>
+                <span class="c-aside__title"><?php wp_cavatina_post_type_name();  ?></span>
+                <span class="c-aside__counter"><?php wp_cavatina_total_posts(); ?> Portfolios</span>
             </div>
-            <img class="c-search__icon" onClick="searchToggle()"
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="hamburger" />
+            <div class="c-search__icon"></div>
             <div class="c-search">
-                <input id="searchInput" type="search" name="s" class="c-search__input form-control search-field"
-                    placeholder="Search…" autocomplete="off" value="" aria-describedby="Search Field"
-                    title="Search for:">
+                <div class="c-search__holder">
+                    <?php get_search_form(); ?>
+                </div>
             </div>
         </div>
     </div>

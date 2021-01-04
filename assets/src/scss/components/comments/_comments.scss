@@ -39,8 +39,13 @@
     font-size: 14px;
     line-height: 17px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     color: #767676;
+
+    @include media(tablet) {
+      flex-wrap: nowrap;
+    }
   }
   .comment-form-author {
     width: 100%;
@@ -72,6 +77,15 @@
     @include media(tablet) {
       margin-top: 40px;
     }
+  }
+}
+
+.email-notes {
+  text-align: left;
+  width: 100%;
+
+  @include media(tablet) {
+    width: max-content;
   }
 }
 
@@ -123,7 +137,7 @@
 
   @include media(tablet) {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: max-content;
     min-width: max-content;
   }
@@ -146,13 +160,14 @@
       font-size: 16px;
       line-height: 15px;
       display: flex;
-      align-items: center;
-
+      align-items: flex-start;
+      padding-top: 8px;
       color: #000000;
 
       @include media(tablet) {
         position: relative;
         margin-left: 40px;
+        margin-top: 3px;
       }
 
       a {
@@ -176,6 +191,7 @@
 
     @include media(tablet) {
       margin-left: 24px;
+      margin-top: 1px;
       position: static;
     }
 
@@ -195,6 +211,10 @@
   @include media(tablet) {
     padding-left: 15px;
     transform: translate(0px, -16px);
+  }
+
+  p {
+    margin-top: 8px;
   }
 }
 .comment-body {
@@ -236,4 +256,8 @@
     width: 20px;
     height: 20px;
   }
+}
+
+#cancel-comment-reply-link {
+  margin-left: 16px;
 }

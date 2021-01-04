@@ -18,6 +18,6 @@ input[type="submit"] {
   transition: $global-transition;
 
   &:hover {
-    background-color: $wp-cavatina__quaternary-color;
+    background-color: $color__border-button-hover;
   }
 }

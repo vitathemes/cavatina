@@ -36,33 +36,51 @@ function fadeIn(el, display) {
   })();
 }
 
-// Toggle element -> should describe with selector (# or .)
-isToggled = false;
-function toggleElement(toggledElement) {
-  const toggleElement = document.querySelector(toggledElement);
-  // toggleElement.classList.toggle("c-search__overlay--toggle");
+// Search Box Desktop
+let isToggled = false;
+function searchToggleHeader() {
+  const header = document.querySelector(".c-header");
+  const headerSearch = document.querySelector(".c-header__search");
+  const searchOverlay = document.querySelector(".c-search__overlay");
 
-  if (isToggled === true) {
-    fadeOut(toggleElement);
-    isToggled = false;
-  } else {
-    fadeIn(toggleElement, "flex");
-    isToggled = true;
+  let headerContains = header.contains(headerSearch);
+
+  if (headerContains === true) {
+    headerSearch.addEventListener("click", function () {
+      // Fade in/out the search overlay
+      if (isToggled === true) {
+        fadeOut(searchOverlay);
+        headerSearch.classList.remove("c-header__search--toggle");
+        isToggled = false;
+      } else {
+        fadeIn(searchOverlay, "flex");
+        headerSearch.classList.add("c-header__search--toggle");
+        isToggled = true;
+      }
+    });
   }
 }
 
-// search menu toggle
-function searchToggle() {
-  let search = document.querySelector(".c-search");
+searchToggleHeader();
 
-  if (search.classList.contains("c-search--toggled")) {
-    search.classList.remove("c-search--toggled");
-  } else {
-    search.classList.add("c-search--toggled");
+// Search Box mobile
+function searchToggleAside() {
+  const oPageMain = document.querySelector(".o-page__main");
+  const serachIcon = document.querySelector(".c-search__icon");
+  const searchBlock = document.querySelector(".c-search");
+
+  let pageMainContain = oPageMain.contains(serachIcon);
+
+  if (pageMainContain === true) {
+    serachIcon.addEventListener("click", function () {
+      serachIcon.classList.toggle("c-search__icon--toggled");
+      searchBlock.classList.toggle("c-search--toggled");
+    });
   }
 }
+searchToggleAside();
 
-// o page toggle for blur content
+// o-page toggle for blur content
 function blurToggle() {
   var pageMain = document.querySelector(".o-page__main");
   var overlay = document.querySelector(".c-overlay");
@@ -144,6 +162,7 @@ function singleCarousel() {
   });
 }
 
+// if we have single carousel in page slider will render
 const element = document.querySelector(".c-single__slider");
 if (element.classList.contains("c-single__slider") === true) {
   singleCarousel();

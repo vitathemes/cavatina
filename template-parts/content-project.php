@@ -14,7 +14,7 @@
         <span class="c-numeric-bullet"></span>
         <?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="c-post__entry-title c-post__entry-title--projects entry-title ">', '</h1>' );
+			the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title">', '</h2>' );
 		else :
 			the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -28,7 +28,7 @@
     <a href=<?php the_permalink() ?>>
         <?php the_post_thumbnail('large', array('class' => 'c-post_thumbnail')); ?>
     </a>
-    <div class="entry-content">
+    <div class="c-post__entery-content entry-content">
         <?php
 		the_content(
 			sprintf(

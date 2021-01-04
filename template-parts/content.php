@@ -27,9 +27,12 @@
 			?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
-    <a href=<?php the_permalink() ?>>
-        <?php the_post_thumbnail('large', array('class' => 'c-post_thumbnail')); ?>
-    </a>
+
+    <div class="c-post__thumbnail">
+        <a href=<?php the_permalink() ?>>
+            <?php the_post_thumbnail('large', array()); ?>
+        </a>
+    </div>
     <div class="entry-content">
         <?php
 		wp_link_pages(

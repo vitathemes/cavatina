@@ -91,6 +91,15 @@
   margin-bottom: 29px;
 }
 
+.c-single__title--page {
+  display: block;
+  margin-left: 16px;
+  margin-bottom: 0;
+  @include media(tablet) {
+    margin-left: 0;
+  }
+}
+
 .c-single__meta {
   width: 100%;
   display: none;

@@ -19,7 +19,7 @@
         </div><!-- .entry-meta -->
         <?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="c-blog__entry-title">', '</h1>' );
+			the_title( '<h2 class="c-blog__entry-title">', '</h2>' );
 		else :
 			the_title( '<h2 class="entry-title "><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -29,8 +29,7 @@
                 <?php echo get_avatar( get_the_author_meta('user_email'), '80', '' ); ?>
             </div>
             <div class="c-author__info">
-                <h3><?php the_author_link(); ?></h3>
-
+                <span>By <?php the_author_link(); ?></span>
             </div>
         </div>
     </header><!-- .entry-header -->
@@ -95,9 +94,8 @@
         <?php
         $posttags = get_the_tags();
             if ($posttags) {
-            foreach($posttags as $tag) {
-                
-                echo '<li>#'.$tag->name .'</li>';
+            foreach($posttags as $tag) { 
+                echo '<li><a href="'.  esc_url( get_tag_link( $tag->term_id ) ) .'" title="'.  esc_attr( $tag->name ) .'">#'. esc_html( $tag->name ). '</a></li>';
             }
         }
         ?>

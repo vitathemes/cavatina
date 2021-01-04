@@ -29,7 +29,7 @@
     </noscript>
 </head>
 
-<body <?php body_class(); ?> oncLoad="scrollbar()">
+<body <?php body_class(); ?> oncLoad="scrollbar()" id="mybody">
     <?php wp_body_open(); ?>
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-cavatina' ); ?></a>
     <div id="page" class="o-page">
@@ -45,10 +45,7 @@
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/hamburger-menu.svg"
                         alt="hamburger" />
                 </button>
-                <div class="c-header__search" onClick="toggleElement('.c-search__overlay')">
-                    <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg"
-                        alt="hamburger" />
-                </div>
+                <div class="c-header__search"></div>
                 <?php
                 if ( has_nav_menu( 'menu-1' ) ) {
                     wp_nav_menu(
@@ -58,8 +55,7 @@
                             "menu_class" => "s-nav", // nesting
                             "container_class" => "c-nav",
                             "container" => "nav",
-                        )
-                    );
+                        ));
                 }
                 else{
                 }
