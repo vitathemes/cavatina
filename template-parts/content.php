@@ -21,7 +21,8 @@
         <div class="c-post__meta entry-meta c-post__category--blog ">
             <?php 
 			
-				echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';  
+                echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';  
+                echo '<span class="o-bullet"></span>';
 				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';  
 			
 			?>

@@ -1,0 +1,253 @@
+/*------------------------------------*\
+  #Container block -> All posts => arcvhives
+\*------------------------------------*/
+
+.c-container {
+  width: 100%;
+  height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  @include media(tablet) {
+    display: inline;
+  }
+}
+
+.c-container__content {
+  width: 100%;
+  height: max-content;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 64px;
+  margin-top: 64px;
+
+  @include media(tablet) {
+    height: 100%;
+    padding-right: 60px;
+    padding-top: 70px;
+    padding-bottom: 0px;
+  }
+
+  .c-post {
+    .c-post__entery-content {
+      display: none;
+    }
+  }
+}
+
+/*------------------------------------*\
+  #Content block
+\*------------------------------------*/
+
+.c-content {
+  height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @include media(tablet) {
+    width: 100%;
+    padding-bottom: 0;
+  }
+}
+
+.c-content--home {
+
+  height: max-content;
+
+  @include media(tablet){
+    height: 100%;
+  }
+
+  overflow: hidden;
+}
+
+.c-content--max-height {
+  overflow: scroll;
+  min-height: max-content;
+  @include media(tablet) {
+    height: max-content;
+    overflow: hidden;
+  }
+}
+
+.c-content--search {
+  height: 90%;
+  overflow-y: scroll;
+
+  .c-container{
+
+    .c-container__content{
+      height: max-content;
+
+
+      .search-submit-mobile{
+        display: none;
+      }
+
+    }
+
+  }
+}
+/*------------------------------------*\
+  #Author avatar
+\*------------------------------------*/
+
+.c-author {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 39px;
+}
+
+.c-author__avatar {
+  display: inline-block;
+  vertical-align: top;
+
+  img {
+    border-radius: 40px;
+  }
+}
+
+.c-author__info {
+  display: inline-block;
+  margin-left: 24px;
+
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+/*------------------------------------*\
+    #Contact page block
+\*------------------------------------*/
+
+.c-contact {
+  width: 100%;
+  height: max-content;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  @include media(tablet) {
+    padding-top: 5%;
+    height: 100%;
+  }
+}
+
+.c-contact__form {
+  width: 100%;
+  height: max-content;
+
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 0;
+
+  @include media(tablet) {
+    width: 50%;
+    height: 100%;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: flex-start;
+  }
+}
+
+.c-contact__context {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 64px;
+  margin-top: 32px;
+
+  @include media(tablet) {
+    width: 50%;
+    height: 100%;
+    align-content: center;
+    margin-top: 0;
+    padding-left: 64px;
+    padding-top: 5%;
+  }
+  @include media(wide) {
+    padding-top: 5%;
+  }
+}
+
+.c-form {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: left;
+}
+
+.c-form__text {
+  margin-bottom: 32px;
+  height: 30px;
+  padding-top: 5%;
+}
+
+.c-form__text-area {
+  width: 100%;
+  text-align: left;
+  height: 80px;
+
+  @include media(tablet) {
+    margin-top: 32px;
+  }
+}
+
+.c-form__button {
+  margin-top: 16px;
+}
+
+.c-contact__widget {
+  width: 100%;
+  height: max-content;
+
+  text-align: left;
+  margin-bottom: 39px;
+}
+
+/*------------------------------------*\
+    #Search nothing found
+\*------------------------------------*/
+.no-results {
+  width: 100%;
+  height: max-content;
+
+  @include media(tablet) {
+    width: 750px;
+    max-width: 70%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-header {
+    width: 100%;
+  }
+  .page-content {
+    width: 100%;
+  }
+}

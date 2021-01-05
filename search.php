@@ -1,43 +1,50 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying archive pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package wp-cavatina
  */
 
 get_header();
 ?>
-
-<main id="primary" class="site-main">
-    <?php if ( have_posts() ) : ?>
-    <header class="page-header">
-        <h1 class="page-title">
-            <?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'wp-cavatina' ), '<span>' . get_search_query() . '</span>' );
-					?>
-        </h1>
-    </header><!-- .page-header -->
-    <?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-			endwhile;
-			the_posts_navigation();
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-		endif;
-		?>
+<aside class="o-page__col c-aside">
+    <div class="c-aside__content">
+        <div class="c-aside__context">
+            <span class="c-aside__title">Search Result</span>
+        </div>
+        <div class="c-search__icon"></div>
+        <div class="c-search">
+            <div class="c-search__holder">
+                <?php get_search_form(); ?>
+            </div>
+        </div>
+    </div>
+</aside>
+<main class="o-page__main">
+    <div class="o-page__col c-content c-content--max-height c-content--search">
+        <div class="c-container site-main__container">
+            <div class="c-container__content site-main__content">
+                <?php if (have_posts()) : ?>
+                <?php
+                        /* Start the Loop */
+                        while (have_posts()) :
+                            the_post();
+                            /*
+                            * Include the Post-Type-specific template for the content.
+                            * If you want to override this in a child theme, then include a file
+                            * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                            */
+                            get_template_part('template-parts/content', 'search');
+                        endwhile;
+                        the_posts_navigation();
+                    else :
+                        get_template_part('template-parts/content', 'none');
+                    endif;
+                    ?>
+            </div>
+        </div>
+    </div>
+    <?php get_footer(); ?>
 </main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();

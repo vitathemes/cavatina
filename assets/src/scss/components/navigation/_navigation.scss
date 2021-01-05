@@ -50,6 +50,7 @@
   @include media(tablet) {
     justify-content: center;
     flex-direction: row;
+    align-items: baseline;
     height: 20%;
 
     animation-name: increaseHeaderWidth;
@@ -69,9 +70,21 @@
 
   .c-header__menu {
     padding: 0;
-    width: 50%;
+    width: 10%;
+    height: 14px;
     text-align: right;
-    padding-right: 5%;
+    padding-right: 26px;
+
+    &::before {
+      transform: rotate(45deg) translate(-14px, -4px);
+    }
+    &::after{
+      transform: rotate(-45deg) translateX(-10px);
+    }
+
+    @include media(tablet){
+      width: 21%;
+    }
   }
 
   .c-nav {
@@ -100,6 +113,25 @@
   }
 
   .c-header__search {
+
+    &::before{
+      width: 30px;
+      height: 1px;
+      border-color: #fff;
+      border-bottom: 1px solid #000;
+      border-radius: 0;
+      transform: rotate(-45deg) translateY(10px) translateX(-11px);
+      top: 0;
+      left: 0;
+    }
+
+    &::after{
+      width: 30px;
+      height: 0;
+      transform: rotate(45deg) translateY(-10px) translateX(-8px);
+    }
+
+
     @include media(tablet) {
       display: none;
     }
@@ -114,4 +146,13 @@
   @include media(tablet) {
     display: none;
   }
+}
+
+.posts-navigation {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
 }

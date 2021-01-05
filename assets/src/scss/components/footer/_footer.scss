@@ -1,15 +1,20 @@
 .c-footer {
   width: 100%;
-
-  height: max-content;
+  height: 9%;
   bottom: 0;
   z-index: 8;
-  margin-top: 16px;
-  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   background-color: transparent;
+
+  padding-top: 1%;
+  padding-left: 16px;
+  padding-right: 12px;
+
+  @include media(tablet) {
+    padding-left: 0;
+  }
 }
 
 .c-footer__context {
@@ -30,11 +35,6 @@
 }
 
 .c-footer__copy {
-  margin-left: 2%;
-
-  @include media(tablet-only) {
-    margin-left: 5%;
-  }
 }
 
 .c-footer__text {

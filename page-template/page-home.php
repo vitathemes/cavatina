@@ -10,50 +10,49 @@
 </head>
 
 <body <?php body_class(); ?> onload="mainPageCarousels()">
-    <?php wp_body_open(); ?>
 
+    <?php wp_body_open(); ?>
+    <header id="masthead" class="c-header c-header--home">
+        <div class="c-header__holder js-nav">
+            <div class="c-header__logo">
+                <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
+                    alt="logo" />
+                <!-- <h1>Cavatina</h1> -->
+                <p class="c-header__text ">digital creativity</p>
+            </div>
+
+            <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
+            </button>
+            <?php
+            if ( has_nav_menu( 'menu-1' ) ) {
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-1',
+                        'menu_id'        => 'primary-menu-registered',
+                        "menu_class" => "s-nav", // nesting
+                        "container_class" => "c-nav",
+                        "container" => "nav",
+                    )
+                );
+            }
+            else{
+
+            }
+            ?>
+        </div>
+    </header>
+
+    <div class="c-search__overlay">
+        <?php get_search_form(); ?>
+    </div>
 
     <div id="page" class="o-page o-page--home">
-        <header id="masthead" class="c-header c-header--home">
-            <div class="c-header__holder js-nav">
-                <div class="c-header__logo">
-                    <img class="o-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
-                        alt="logo" />
-                </div>
-                <p class="c-header__text ">digital creativity</p>
-                <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false"
-                    onClick="blurToggle()">
-                    <img class="o-image"
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/hamburger-menu.svg"
-                        alt="hamburger" />
-                </button>
-                <?php
-                if ( has_nav_menu( 'menu-1' ) ) {
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'menu-1',
-                            'menu_id'        => 'primary-menu-registered',
-                            "menu_class" => "s-nav", // nesting
-                            "container_class" => "c-nav",
-                            "container" => "nav",
-                        )
-                    );
-                }
-                else{
 
-                }
-                ?>
-            </div>
-        </header>
-        <div class="c-search__overlay">
-            <?php get_search_form(); ?>
-        </div>
-        <section class="o-page__main">
-            <div class="o-page__col c-aside c-aside--home">
-                <div class="c-aside__content">
-                    <div class="c-aside__nav">
-                        <p class="c-aside__nav-title">Navigation</p>
-                        <?php
+        <aside class="o-page__col c-aside c-aside--home">
+            <div class="c-aside__content">
+                <div class="c-aside__nav">
+                    <p class="c-aside__nav-title">Navigation</p>
+                    <?php
                         if ( has_nav_menu( 'menu-1' ) ) {
                             wp_nav_menu(
                                 array(
@@ -68,23 +67,35 @@
                         else{
                         }
                         ?>
-                    </div>
-                    <div class="c-aside__carousel">
-                        <div class="c-carousel">
-                            <p class="c-carousel__title">Recent Projects</p>
-                            <div class="c-carousel__post-titles">
-                                <a href="#" class="c-carousel__post-title">Advertisement Poster</a>
-                                <a href="#" class="c-carousel__post-title">special event or exhibit poster
-                                    concept</a>
-                                <a href="#" class="c-carousel__post-title">Advertisement Poster</a>
-                                <a href="#" class="c-carousel__post-title">Advertisement Poster</a>
-                                <a href="#" class="c-carousel__post-title">Advertisement Poster</a>
-                            </div>
+                </div>
+                <div class="c-aside__carousel">
+                    <div class="c-carousel">
+                        <p class="c-carousel__title">Recent Projects</p>
+                        <div class="c-carousel__post-titles">
+                            <a href="#" class="c-carousel__post-title"><span
+                                    class="o-bullet-numeric"></span>Advertisement
+                                Poster</a>
+                            <a href="#" class="c-carousel__post-title"><span class="o-bullet-numeric"></span>special
+                                event or
+                                exhibit poster
+                                concept</a>
+                            <a href="#" class="c-carousel__post-title"><span
+                                    class="o-bullet-numeric"></span>Advertisement
+                                Poster</a>
+                            <a href="#" class="c-carousel__post-title"><span
+                                    class="o-bullet-numeric"></span>Advertisement
+                                Poster</a>
+                            <a href="#" class="c-carousel__post-title"><span
+                                    class="o-bullet-numeric"></span>Advertisement
+                                Poster</a>
                         </div>
-                        <a href="#" class="c-carousel__more">View All Projects</a>
                     </div>
+                    <a href="#" class="c-carousel__more">View All Projects</a>
                 </div>
             </div>
+        </aside>
+        <section class="o-page__main">
+
             <div class="o-page__col c-content c-content--home">
                 <div class="c-carousel">
                     <div class="c-carousel__title">
@@ -115,11 +126,16 @@
                         </div>
                     </div>
                     <div class="c-carousel__post-titles c-carousel__post-titles--mobile">
-                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
-                        <h3 class="c-carousel__post-title">Advertisement Poster</h3>
+                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
+                        </h3>
+                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
+                        </h3>
+                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
+                        </h3>
+                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
+                        </h3>
+                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
+                        </h3>
                     </div>
                     <a href="#" class="c-carousel__more c-carousel__more--home">View All Projects</a>
                 </div>

@@ -13,7 +13,8 @@
     <header class="c-blog__header entry-header">
         <div class="c-blog__meta entry-meta">
             <?php 
-				echo '<span class="c-post__category ">'. get_the_category( $id )[0]->name .'</span>';  
+                echo '<span class="c-post__category ">'. get_the_category( $id )[0]->name .'</span>';  
+                echo '<span class="o-bullet"></span>';
 				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';  
 			?>
         </div><!-- .entry-meta -->
@@ -100,8 +101,5 @@
         }
         ?>
     </ul>
-    <footer class="entry-footer">
-        <?php //wp_cavatina_entry_footer(); ?>
-    </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
 <div class="u-half-border"></div>

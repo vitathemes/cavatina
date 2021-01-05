@@ -65,7 +65,7 @@ searchToggleHeader();
 
 // Search Box mobile
 function searchToggleAside() {
-  const oPageMain = document.querySelector(".o-page__main");
+  const oPageMain = document.querySelector(".o-page");
   const serachIcon = document.querySelector(".c-search__icon");
   const searchBlock = document.querySelector(".c-search");
 
@@ -163,7 +163,7 @@ function singleCarousel() {
 }
 
 // if we have single carousel in page slider will render
-const element = document.querySelector(".c-single__slider");
-if (element.classList.contains("c-single__slider") === true) {
+const singleSlider = document.querySelector(".c-single__slider");
+if (singleSlider.classList.contains("c-single__slider") === true) {
   singleCarousel();
 }

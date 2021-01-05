@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
     <header class="c-post__header c-post__header--space-height entry-header">
-        <span class="c-numeric-bullet"></span>
+        <span class="o-bullet-numeric"></span>
         <?php
 		if ( is_singular() ) :
 			the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title">', '</h2>' );
@@ -20,14 +20,24 @@
 		endif;
 		?>
         <div class="c-post__meta c-post__meta--left-space entry-meta">
-            <?php 
-				echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';  
+            <?php
+				echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';
 			?>
         </div><!-- .entry-meta -->
+
+
     </header><!-- .entry-header -->
-    <a href=<?php the_permalink() ?>>
-        <?php the_post_thumbnail('large', array('class' => 'c-post_thumbnail')); ?>
-    </a>
+
+    <div class="c-post__thumbnail">
+        <a href=<?php the_permalink() ?>>
+            <?php the_post_thumbnail('large', array()); ?>
+        </a>
+    </div>
+
+    <div class="c-post__excerpt">
+        <?php the_excerpt() ?>
+    </div>
+
     <div class="c-post__entery-content entry-content">
         <?php
 		the_content(
@@ -52,7 +62,5 @@
 		);
 		?>
     </div><!-- .entry-content -->
-    <footer class="entry-footer">
-        <?php //wp_cavatina_entry_footer(); ?>
-    </footer><!-- .entry-footer -->
+
 </article><!-- #post-<?php the_ID(); ?> -->

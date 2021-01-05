@@ -26,6 +26,7 @@ textarea {
   padding-bottom: 10px;
   padding-top: 10px;
   min-height: max-content;
+
   &::placeholder {
     color: $wp-cavatina__main-primary-light-color;
     opacity: 1;

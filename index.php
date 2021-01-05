@@ -9,23 +9,23 @@
 
 get_header();
 ?>
-<main class="o-page__main">
-    <div class="o-page__col c-aside">
-        <div class="c-aside__content">
-            <div class="c-aside__context">
-                <span class="c-aside__title"><?php wp_cavatina_post_type_name();  ?></span>
-                <span class="c-aside__counter"><?php wp_cavatina_total_posts(); ?> Posts</span>
-            </div>
-            <div class="c-search__icon"></div>
-            <div class="c-search">
-                <div class="c-search__holder">
-                    <?php get_search_form(); ?>
-                </div>
+<aside class="o-page__col c-aside">
+    <div class="c-aside__content">
+        <div class="c-aside__context">
+            <span class="c-aside__title">Blog</span>
+            <span class="c-aside__counter"><?php wp_cavatina_total_posts(); ?> Posts</span>
+        </div>
+        <div class="c-search__icon"></div>
+        <div class="c-search">
+            <div class="c-search__holder">
+                <?php get_search_form(); ?>
             </div>
         </div>
     </div>
+</aside>
+<main class="o-page__main">
     <div class="o-page__col c-content c-content--max-height">
-        <div class="c-container site-main__container default-max-width">
+        <div class="c-container site-main__container">
             <div class="c-container__content site-main__content">
                 <?php if (have_posts()) : ?>
                 <?php
@@ -47,7 +47,5 @@ get_header();
             </div>
         </div>
     </div>
+    <?php get_footer(); ?>
 </main><!-- #main -->
-<?php
-get_sidebar();
-get_footer();

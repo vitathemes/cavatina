@@ -60,16 +60,24 @@
 .c-header__logo {
   width: 50%;
   text-align: left;
-
   padding-left: 16px;
 
   @include media(tablet) {
-    width: 95%;
+    width: max-content;
     margin-bottom: 15%;
-    text-align: center;
     padding: 0;
     transform: rotate(-90deg);
     order: 1;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 8px;
+
+    @include media(tablet) {
+      font-size: 2em;
+    }
   }
 }
 
@@ -88,36 +96,81 @@
   #Header menu block
 \*------------------------------------*/
 .c-header__menu {
-  width: 50%;
+
   text-align: right;
   background-color: transparent;
+
+  width:10%;
+  height: 14px;
+  position: relative;
+  display: inline-block;
 
   &:hover {
     background-color: transparent;
   }
 
+  &::before {
+    height: 0;
+    border-bottom: 1px solid #000;
+    top: 10px;
+    left: 0;
+    transform-origin: top left;
+  }
+
+  &::after{
+    height: 0;
+    border-bottom: 1px solid #000;
+    bottom: 10px;
+    left: 0;
+    transform-origin: bottom left;
+  }
+
   @include media(tablet) {
-    width: unset;
+    margin-left: 25%;
     order: 2;
     text-align: center;
-    height: 5%;
+
   }
+}
+
+.c-header__menu::before , .c-header__menu::after{
+  width:50%;
+  content: '';
+  position: absolute;
+  border-color: #000;
+  display: block;
+  transition: transform 700ms cubic-bezier(0.75, 0.01, 0.07, 0.99);
+  will-change: transform;
 }
 
 .c-header__menu:focus {
   outline: none;
 }
-
+/*------------------------------------*\
+  #Header search block
+\*------------------------------------*/
 .c-header__search {
+  cursor: pointer;
+  width: 27px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
   display: none;
 
   &::before {
-    content: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.8169 28.9331L20.6888 19.805C22.5848 17.6999 23.75 14.9244 23.75 11.875C23.75 5.32717 18.4229 0 11.875 0C5.32717 0 0 5.32717 0 11.875C0 18.4229 5.32717 23.75 11.875 23.75C14.9244 23.75 17.6999 22.5848 19.805 20.6888L28.9331 29.8169C29.0552 29.9389 29.2151 30 29.375 30C29.5349 30 29.6948 29.9389 29.817 29.8169C30.0611 29.5727 30.0611 29.1772 29.8169 28.9331ZM11.875 22.5C6.01688 22.5 1.25004 17.7337 1.25004 11.875C1.25004 6.01629 6.01688 1.24998 11.875 1.24998C17.7332 1.24998 22.5 6.01623 22.5 11.875C22.5 17.7338 17.7332 22.5 11.875 22.5Z' fill='black'/%3E%3C/svg%3E%0A");
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    display: block;
-    background-size: 28px 28px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #000;
+    border-radius: 12px;
+  }
+
+  &::after{
+    width: 12px;
+    height: 0;
+    border-bottom: 1px solid #000;
+    transform: rotate(45deg) translateY(-4px);
+    bottom: 0;
+    right: 0;
   }
 
   @include media(tablet) {
@@ -126,14 +179,36 @@
   }
 }
 
+.c-header__search::after, .c-header__search::before{
+  content: '';
+  position: absolute;
+  transform-origin: center;
+  border-color: #000;
+  display: block;
+  transition: all 700ms cubic-bezier(0.75, 0.01, 0.07, 0.99);
+  will-change: transform, width, border;
+
+}
+
+
 .c-header__search--toggle {
-  &::before {
-    content: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.30574L21 21M1 20.6943L21 1' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E%0A");
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    display: block;
-    background-size: 28px 28px;
+  &::before{
+
+    width: 30px;
+    height: 1px;
+    border-color: #fff;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    transform: rotate(-45deg) translateY(10px) translateX(-11px);
+    top: 0;
+    left: 0;
+
+  }
+
+  &::after{
+    width: 30px;
+    height: 0;
+    transform: rotate(45deg) translateY(-10px) translateX(-8px);
   }
 }
 
@@ -176,7 +251,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 45%;
+      padding-top: 40%;
     }
 
     @include media(wide) {
@@ -191,7 +266,9 @@
 
       img {
         @include media(tablet) {
-          width: 60%;
+          width: 120px;
+          margin-bottom: 8px;
+          margin-top: 8px;
         }
       }
     }
@@ -200,9 +277,7 @@
       @include media(tablet) {
         display: block;
         width: 100%;
-        text-align: left;
         margin: 0;
-        padding-left: 23%;
       }
     }
 

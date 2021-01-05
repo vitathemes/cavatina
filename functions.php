@@ -264,7 +264,7 @@ add_action( 'init', 'cavatina_projects', 0 );
 
 /**
  * change submit button text in wordpress comment form
- */ 
+ */
 function wcs_change_submit_button_text( $defaults ) {
     $defaults['label_submit'] = 'Send';
     return $defaults;
@@ -275,17 +275,17 @@ add_filter( 'comment_form_defaults', 'wcs_change_submit_button_text' );
 
 /**
  * change comment date format
- */ 
+ */
 
-add_filter( 'get_comment_date', 'wpsites_change_comment_date_format' );	
+add_filter( 'get_comment_date', 'wpsites_change_comment_date_format' );
 function wpsites_change_comment_date_format( $d ) {
-    $d = date("F j.Y");	
+    $d = date("F j.Y");
     return $d;
-}	
+}
 
 /**
- * change order of comments 
- */ 
+ * change order of comments
+ */
 
 function wpb_move_comment_field_to_bottom( $fields ) {
 	$comment_field = $fields['comment'];
@@ -293,28 +293,36 @@ function wpb_move_comment_field_to_bottom( $fields ) {
 	$fields['comment'] = $comment_field;
 	return $fields;
 	}
-	 
+
 	add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
 
 
 /**
- * count number of posts in a page 
- */ 
-function wp_cavatina_total_posts() { 
+ * count number of posts in a page
+ */
+function wp_cavatina_total_posts() {
 	$total = wp_count_posts()->publish;
 	echo  $total;
-} 
+}
 
 /**
- * count number of posts in a page 
- */ 
-function wp_cavatina_post_type_name() { 
+ * count number of posts in a page
+ */
+function wp_cavatina_post_type_name() {
 	printf( __( '%s', 'textdomain' ), get_post_type( get_the_ID() ) );
-} 
+}
 
 /**
- * count number of posts types (project) in a page 
- */ 
-function wp_cavatina_total_post_types() { 
+ * count number of posts types (project) in a page
+ */
+function wp_cavatina_total_post_types() {
 	printf($count_posts = wp_count_posts( 'projects' )->publish);
-} 
+}
+
+/**
+ * change excerpt length
+ */
+function wp_cavatina_custom_excerpt_length( $length ) {
+	return 10;
+}
+add_filter( 'excerpt_length', 'wp_cavatina_custom_excerpt_length', 999 );

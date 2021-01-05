@@ -1,0 +1,27 @@
+.not-found__error {
+  font-size: 15vw;
+  margin: 0;
+}
+
+.error-404 {
+  text-align: center;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  @include media(tablet) {
+    width: 80%;
+  }
+  .page-header {
+    width: 100%;
+  }
+
+  .page-content {
+    p {
+      margin-bottom: 32px;
+    }
+  }
+}

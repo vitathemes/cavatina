@@ -11,7 +11,7 @@
 
 ?>
 
-<footer id="colophon" class="c-footer c-footer--home">
+<footer id="colophon" class="c-footer">
     <div class="c-footer__context">
         <div class="c-social-media">
             <a href="#" class="c-social-media__item">

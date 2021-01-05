@@ -17,6 +17,10 @@
 }
 .comment.depth-1 {
   border-bottom: 1px solid #e1e1e1;
+
+  &:last-child {
+    border-bottom: 0px;
+  }
 }
 
 .comment.depth-2 {
@@ -186,13 +190,14 @@
   .comment-metadata {
     //mobile
     position: absolute;
-    top: 35px;
+    top: 30px;
     left: 75px;
 
     @include media(tablet) {
       margin-left: 24px;
-      margin-top: 1px;
+      margin-top: 10px;
       position: static;
+      top: 35px;
     }
 
     a {

@@ -10,7 +10,20 @@
 get_header();
 ?>
 
-<main class="o-page__main">
+<aside class="o-page__col c-aside c-aside--blog">
+    <div class="c-aside__content">
+        <div class="c-aside__context">
+            <span class="c-aside__title">Blog</span>
+        </div>
+        <div class="c-search__icon"></div>
+        <div class="c-search">
+            <div class="c-search__holder">
+                <?php get_search_form(); ?>
+            </div>
+        </div>
+    </div>
+</aside>
+<main class="o-page__main o-page__main--blog">
     <div class="c-blog">
         <?php
 			while ( have_posts() ) :
@@ -23,7 +36,6 @@ get_header();
 			endwhile; // End of the loop.
 			?>
     </div>
+
+    <?php get_footer();?>
 </main><!-- #main -->
-<?php
-get_sidebar();
-get_footer();

@@ -10,23 +10,20 @@
 get_header();
 ?>
 
-
-<main class="o-page__main">
-    <div class="o-page__col c-aside">
-        <div class="c-aside__content">
-            <div class="c-aside__context">
-                <h4 class="c-aside__title">Project</h4>
-            </div>
-            <img class="c-search__icon" onClick="searchToggle()"
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="hamburger" />
-            <div class="c-search">
-                <input id="searchInput" type="search" name="s" class="c-search__input form-control search-field"
-                    placeholder="Search…" autocomplete="off" value="" aria-describedby="Search Field"
-                    title="Search for:">
+<aside class="o-page__col c-aside">
+    <div class="c-aside__content">
+        <div class="c-aside__context">
+            <span class="c-aside__title">Project</span>
+        </div>
+        <div class="c-search__icon"></div>
+        <div class="c-search">
+            <div class="c-search__holder">
+                <?php get_search_form(); ?>
             </div>
         </div>
     </div>
-
+</aside>
+<main class="o-page__main">
     <div class="o-page__col c-content">
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>
             <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
@@ -38,10 +35,12 @@ get_header();
                             the_title( '<h2 class="c-single__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
                         endif;
                     ?>
+
                     <ul class="c-single__meta">
                         <li>
                             <?php echo '<span >'. get_the_category( $id )[0]->name .'</span>'; ?>
                         </li>
+                        <span class="o-bullet o-bullet--big"></span>
                         <li>
                             <?php echo '<span >'. get_the_date( "F j.Y", $post_id ) .'</span>';   ?>
                         </li>
@@ -86,7 +85,7 @@ get_header();
                     </div>
                     <div class="carousel__cell__single">
                         <img class="o-imagec"
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(2).jpg"
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/img2.jpg"
                             alt="hamburger" />
                     </div>
                     <div class="carousel__cell__single">
@@ -99,6 +98,5 @@ get_header();
         </article><!-- #post-<?php the_ID(); ?> -->
         <!--Single-->
     </div>
+    <?php get_footer();?>
 </main><!-- #main -->
-<?php
-get_footer();

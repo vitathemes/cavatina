@@ -5,21 +5,27 @@
 .c-aside {
   position: fixed;
   width: 100%;
-  height: max-content;
+
   bottom: 0;
   z-index: 9;
   background-color: $color__background-body;
   border-top: 1px solid #e1e1e1;
-  padding-bottom: 30px;
-  padding-top: 16px;
-
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
   @include media(tablet) {
-    width: 15%;
+    display: inline-block;
+    width: 180px;
     height: 100%;
     vertical-align: top;
     position: relative;
-    padding-top: 3%;
     border-top: none;
+    padding-top: 5%;
+  }
+
+  @include media(wide) {
+    padding-top: 5.5%;
   }
 }
 
@@ -27,6 +33,7 @@
   display: none;
   @include media(tablet) {
     width: 22%;
+    height: 90%;
     display: inline-block;
   }
 
@@ -34,11 +41,21 @@
     @include media(tablet) {
       justify-content: flex-start;
       height: max-content;
-      margin-top: 50%;
+      margin-top: 40%;
 
       flex-direction: column;
       padding-bottom: 0;
     }
+
+    @include media(tablet) {
+      margin-top: 45%;
+    }
+  }
+}
+
+.c-aside--blog {
+  @include media(tablet) {
+    display: none;
   }
 }
 
@@ -76,7 +93,6 @@
 
   @include media(tablet) {
     text-align: left;
-    padding-top: 20%;
   }
 }
 
