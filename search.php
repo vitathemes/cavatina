@@ -14,15 +14,15 @@ get_header();
         <div class="c-aside__context">
             <span class="c-aside__title">Search Result</span>
         </div>
-        <div class="c-search__icon"></div>
-        <div class="c-search">
+        <div class="c-search__icon js-search__icon"></div>
+        <div class="c-search js-search">
             <div class="c-search__holder">
                 <?php get_search_form(); ?>
             </div>
         </div>
     </div>
 </aside>
-<main class="o-page__main">
+<main class="o-page__main js-page__main">
     <div class="o-page__col c-content c-content--max-height c-content--search">
         <div class="c-container site-main__container">
             <div class="c-container__content site-main__content">

@@ -28,7 +28,7 @@ function fadeIn(el, display) {
   el.style.opacity = 0;
   el.style.display = display || "block";
   (function fade() {
-    var val = parseFloat(el.style.opacity);
+    let val = parseFloat(el.style.opacity);
     if (!((val += 0.1) > 1)) {
       el.style.opacity = val;
       requestAnimationFrame(fade);
@@ -39,9 +39,9 @@ function fadeIn(el, display) {
 // Search Box Desktop
 let isToggled = false;
 function searchToggleHeader() {
-  const header = document.querySelector(".c-header");
-  const headerSearch = document.querySelector(".c-header__search");
-  const searchOverlay = document.querySelector(".c-search__overlay");
+  const header = document.querySelector(".js-header");
+  const headerSearch = document.querySelector(".js-header__search");
+  const searchOverlay = document.querySelector(".js-search__overlay");
 
   let headerContains = header.contains(headerSearch);
 
@@ -65,15 +65,15 @@ searchToggleHeader();
 
 // Search Box mobile
 function searchToggleAside() {
-  const oPageMain = document.querySelector(".o-page");
-  const serachIcon = document.querySelector(".c-search__icon");
-  const searchBlock = document.querySelector(".c-search");
+  const oPageMain = document.querySelector(".js-page");
+  const searchIcon = document.querySelector(".js-search__icon");
+  const searchBlock = document.querySelector(".js-search");
 
-  let pageMainContain = oPageMain.contains(serachIcon);
+  let pageMainContain = oPageMain.contains(searchIcon);
 
   if (pageMainContain === true) {
-    serachIcon.addEventListener("click", function () {
-      serachIcon.classList.toggle("c-search__icon--toggled");
+    searchIcon.addEventListener("click", function () {
+      searchIcon.classList.toggle("c-search__icon--toggled");
       searchBlock.classList.toggle("c-search--toggled");
     });
   }
@@ -82,8 +82,8 @@ searchToggleAside();
 
 // o-page toggle for blur content
 function blurToggle() {
-  var pageMain = document.querySelector(".o-page__main");
-  var overlay = document.querySelector(".c-overlay");
+  let pageMain = document.querySelector(".js-page__main");
+  let overlay = document.querySelector(".js-overlay");
 
   if (pageMain.classList.contains("o-page__main--blur")) {
     pageMain.classList.remove("o-page__main--blur");
@@ -97,16 +97,16 @@ function blurToggle() {
 // Main page Carousels
 function mainPageCarousels() {
   // Carousel (Main)
-  var carousel = document.querySelector(".c-carousel__context");
-  var flCarouselMain = new Flickity(carousel, {
+  let carousel = document.querySelector(".js-carousel__context");
+  let flCarouselMain = new Flickity(carousel, {
     setGallerySize: false,
     freeScroll: false,
     prevNextButtons: true,
   });
 
-  // Carosuel (Main Child) - text
-  var carouselImage = document.querySelector(".c-carousel__post-titles");
-  var flCarouselText = new Flickity(carouselImage, {
+  // Carousel (Main Child) - text
+  let carouselImage = document.querySelector(".js-carousel__post-titles");
+  let flCarouselText = new Flickity(carouselImage, {
     setGallerySize: true,
     freeScroll: false,
     prevNextButtons: false,
@@ -117,11 +117,11 @@ function mainPageCarousels() {
     friction: 0.8,
   });
 
-  // Carosuel (Main Child) - text Mobile
-  var carouselTextMobile = document.querySelector(
-    ".c-carousel__post-titles--mobile"
+  // Carousel (Main Child) - text Mobile
+  let carouselTextMobile = document.querySelector(
+    ".js-carousel__post-titles--mobile"
   );
-  var flCarouselTextMobile = new Flickity(carouselTextMobile, {
+  let flCarouselTextMobile = new Flickity(carouselTextMobile, {
     setGallerySize: true,
     freeScroll: false,
     prevNextButtons: false,
@@ -135,11 +135,11 @@ function mainPageCarousels() {
   });
 }
 
-// Carosuel - Single Page
+// Carousel - Single Page
 function singleCarousel() {
-  var carouselSingle = document.querySelector(".c-single__slider");
+  let carouselSingle = document.querySelector(".js-single__slider");
 
-  var flCarouselSingle = new Flickity(carouselSingle, {
+  let flCarouselSingle = new Flickity(carouselSingle, {
     freeScroll: isDesktop(),
     setGallerySize: false,
     cellAlign: "left",
@@ -150,7 +150,7 @@ function singleCarousel() {
       change: function (index) {
         if (isDesktop() === true) {
           // make slider full width with first drag
-          var singleCarousel = document.querySelector(".c-single__slider");
+          let singleCarousel = document.querySelector(".js-single__slider");
           singleCarousel.classList.add("c-single__slider--full-width");
 
           if (index === 0) {
@@ -163,7 +163,7 @@ function singleCarousel() {
 }
 
 // if we have single carousel in page slider will render
-const singleSlider = document.querySelector(".c-single__slider");
+const singleSlider = document.querySelector(".js-single__slider");
 if (singleSlider.classList.contains("c-single__slider") === true) {
   singleCarousel();
 }

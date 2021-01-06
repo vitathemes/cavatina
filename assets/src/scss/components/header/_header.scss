@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #Header block
+  #Header
 \*------------------------------------*/
 .c-header {
   background-color: $color__background-body;
@@ -39,12 +39,9 @@
   justify-content: space-between;
   align-items: center;
 
-  // background-color: rgba(85, 107, 47, 0.452);
-
   @include media(tablet) {
     width: 100%;
     height: 100%;
-    // border-right: 1px solid #e1e1e1;
     flex-direction: column-reverse;
     justify-content: space-between;
     display: flex;
@@ -54,7 +51,7 @@
 }
 
 /*------------------------------------*\
-  #Header logo block
+  #Header logo
 \*------------------------------------*/
 
 .c-header__logo {
@@ -82,7 +79,7 @@
 }
 
 /*------------------------------------*\
-  #Header text block
+  #Header text
 \*------------------------------------*/
 
 .c-header__text {
@@ -93,7 +90,7 @@
 }
 
 /*------------------------------------*\
-  #Header menu block
+  #Header menu
 \*------------------------------------*/
 .c-header__menu {
 
@@ -147,7 +144,7 @@
   outline: none;
 }
 /*------------------------------------*\
-  #Header search block
+  #Header search
 \*------------------------------------*/
 .c-header__search {
   cursor: pointer;
@@ -236,7 +233,7 @@
   display: flex;
 }
 /*------------------------------------*\
-  #Header Modifier
+  #Header Home Modifier
 \*------------------------------------*/
 
 .c-header--home {
@@ -251,7 +248,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 40%;
+      padding-top: 45%;
     }
 
     @include media(wide) {
@@ -264,7 +261,7 @@
         margin-bottom: 0;
       }
 
-      img {
+      .c-header__logo__image {
         @include media(tablet) {
           width: 120px;
           margin-bottom: 8px;

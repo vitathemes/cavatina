@@ -19,19 +19,19 @@
 		endif;
 		?>
         <div class="c-post__meta entry-meta c-post__category--blog ">
-            <?php 
-			
-                echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';  
+            <?php
+
+                echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';
                 echo '<span class="o-bullet"></span>';
-				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';  
-			
+				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';
+
 			?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
 
     <div class="c-post__thumbnail">
         <a href=<?php the_permalink() ?>>
-            <?php the_post_thumbnail('large', array()); ?>
+            <?php the_post_thumbnail('large', array('class' => 'c-post__thumbnail__image')); ?>
         </a>
     </div>
     <div class="entry-content">

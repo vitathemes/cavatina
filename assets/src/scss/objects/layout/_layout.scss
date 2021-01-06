@@ -59,11 +59,12 @@
 /*------------------------------------*\
   #Page 404
 \*------------------------------------*/
-.o-page--404 {
+.o-page__main--404 {
   display: inline-block;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 25%;
+
   @include media(tablet) {
     padding: 0;
     padding-left: 32px;

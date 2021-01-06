@@ -19,15 +19,15 @@ get_header();
         <div class="c-aside__context">
             <span class="c-aside__title"><?php global $post; $post_slug=$post->post_name; echo $post_slug; ?></span>
         </div>
-        <div class="c-search__icon"></div>
-        <div class="c-search">
+        <div class="c-search__icon js-search__icon"></div>
+        <div class="c-search js-search">
             <div class="c-search__holder">
                 <?php get_search_form(); ?>
             </div>
         </div>
     </div>
 </aside>
-<main id="primary" class="o-page__main">
+<main id="primary" class="o-page__main js-page__main">
     <?php
 		while ( have_posts() ) :
 			the_post();

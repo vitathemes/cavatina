@@ -15,15 +15,15 @@ get_header();
             <span class="c-aside__title"><?php wp_cavatina_post_type_name();  ?></span>
             <span class="c-aside__counter"><?php wp_cavatina_total_post_types(); ?> Portfolios</span>
         </div>
-        <div class="c-search__icon"></div>
-        <div class="c-search">
+        <div class="c-search__icon js-search__icon"></div>
+        <div class="c-search js-search">
             <div class="c-search__holder">
                 <?php get_search_form(); ?>
             </div>
         </div>
     </div>
 </aside>
-<main class="o-page__main">
+<main class="o-page__main js-page__main">
     <div class="o-page__col c-content c-content--max-height">
         <div class="c-container site-main__container">
             <div class="c-container__content site-main__content">

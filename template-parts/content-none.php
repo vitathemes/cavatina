@@ -9,11 +9,11 @@
 
 ?>
 
-<section class="no-results not-found">
-    <header class="page-header">
-        <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp-cavatina' ); ?></h1>
+<main class="o-page__main no-results not-found">
+    <header class="o-page__main__header">
+        <h1 class="o-page__main__title"><?php esc_html_e( 'Nothing Found', 'wp-cavatina' ); ?></h1>
     </header><!-- .page-header -->
-    <div class="page-content">
+    <div class="o-page__main__content">
         <?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -45,4 +45,4 @@
 		endif;
 		?>
     </div><!-- .page-content -->
-</section><!-- .no-results -->
+</main><!-- .no-results -->

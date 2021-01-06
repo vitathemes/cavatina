@@ -31,7 +31,7 @@
 
     <div class="c-post__thumbnail">
         <a href=<?php the_permalink() ?>>
-            <?php the_post_thumbnail('large', array()); ?>
+            <?php the_post_thumbnail('large', array('class' => 'c-post__thumbnail__image')); ?>
         </a>
     </div>
     <div class="entry-content">

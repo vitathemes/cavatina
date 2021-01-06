@@ -76,9 +76,7 @@
   @include media(tablet) {
     width: 100%;
     vertical-align: top;
-    // background-color: darkslateblue;
     height: 100%;
-
     align-items: flex-start;
     justify-content: center;
   }
@@ -105,6 +103,13 @@
   @include media(tablet) {
     display: block;
     padding-bottom: 8px;
+  }
+}
+
+.c-aside__title--mobile-hide{
+  display: block;
+  @include media(tablet){
+    display: none;
   }
 }
 
@@ -142,7 +147,6 @@
   @include media(tablet) {
     display: block;
     padding-bottom: 20%;
-    // background-color: rgba(169, 169, 169, 0.335);
   }
 
   @include media(wide) {
@@ -169,12 +173,9 @@
   @include media(tablet) {
     display: block;
     width: 100%;
-
     padding-left: 8px;
     text-align: left;
-    // background-color: rgba(255, 17, 17, 0.5);
   }
-
   .c-carousel {
     margin-left: 0;
   }

@@ -15,8 +15,8 @@ get_header();
         <div class="c-aside__context">
             <span class="c-aside__title">Blog</span>
         </div>
-        <div class="c-search__icon"></div>
-        <div class="c-search">
+        <div class="c-search__icon js-search__icon"></div>
+        <div class="c-search js-search">
             <div class="c-search__holder">
                 <?php get_search_form(); ?>
             </div>

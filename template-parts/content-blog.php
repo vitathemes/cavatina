@@ -12,10 +12,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-blog__post' ); ?>>
     <header class="c-blog__header entry-header">
         <div class="c-blog__meta entry-meta">
-            <?php 
-                echo '<span class="c-post__category ">'. get_the_category( $id )[0]->name .'</span>';  
+            <?php
+                echo '<span class="c-post__category ">'. get_the_category( $id )[0]->name .'</span>';
                 echo '<span class="o-bullet"></span>';
-				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';  
+				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';
 			?>
         </div><!-- .entry-meta -->
         <?php
@@ -35,8 +35,8 @@
         </div>
     </header><!-- .entry-header -->
     <a class="c-blog__thumbnail" href=<?php the_permalink() ?>>
-        <?php the_post_thumbnail('large', array()); ?>
-    </a>
+        <?php the_post_thumbnail('large', array('class' => 'c-blog__thumbnail__image')); ?>
+            </a>
     <div class="c-social-media c-social-media--blog">
         <a href="#" class="c-social-media__item">
             <svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
@@ -95,7 +95,7 @@
         <?php
         $posttags = get_the_tags();
             if ($posttags) {
-            foreach($posttags as $tag) { 
+            foreach($posttags as $tag) {
                 echo '<li><a href="'.  esc_url( get_tag_link( $tag->term_id ) ) .'" title="'.  esc_attr( $tag->name ) .'">#'. esc_html( $tag->name ). '</a></li>';
             }
         }

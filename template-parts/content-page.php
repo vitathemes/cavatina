@@ -47,9 +47,9 @@
             </div>
         </div>
         <div class="c-single__carousel c-single__carousel--mobile">
-            <div class="c-single__slider ">
-                <div class="carousel__cell__single  carousel__cell__single--page">
-                    <a class="c-blog__thumbnail" href=<?php the_permalink() ?>>
+            <div class="c-single__slider js-single__slider">
+                <div class="c-single__slider__cell  c-single__slider__cell--page">
+                    <a class="c-single__thumbnail c-single__slider__cell__image" href=<?php the_permalink() ?>>
                         <?php the_post_thumbnail('large', array()); ?>
                     </a>
                 </div>
