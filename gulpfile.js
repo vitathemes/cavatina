@@ -8,7 +8,6 @@ const concat = require("gulp-concat");
 const cleanCSS = require("gulp-clean-css");
 const uglify = require("gulp-uglify");
 const browserSync = require("browser-sync").create();
-
 const series = gulp.series;
 const parallel = gulp.parallel;
 
@@ -51,6 +50,14 @@ const uglifyTask = (cb) => {
   return gulp.src("assets/js/*.js").pipe(uglify()).pipe(gulp.dest("assets/js"));
   cb();
 };
+
+
+exports.default = () => (
+    gulp.src('assets/src/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('assets/images'))
+);
+
 
 const browserSyncTask = (cb) => {
   browserSync.init({
