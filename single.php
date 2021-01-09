@@ -23,8 +23,8 @@ get_header();
         </div>
     </div>
 </aside>
-<main class="o-page__main o-page__main--blog">
-    <div class="c-blog">
+<main class="o-page__main o-page__main--blog js-page__main">
+    <div class="c-single__blog">
         <?php
 			while ( have_posts() ) :
 				the_post();

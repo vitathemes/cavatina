@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #Post block
+  #Post
 \*------------------------------------*/
 
 .c-post {
@@ -95,128 +95,13 @@
   }
 }
 
-/*------------------------------------*\
-  #Post blog block
-\*------------------------------------*/
-
-.c-blog {
+.posts-navigation {
   width: 100%;
-  margin-top: 64px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: max-content;
-
-  @include media(tablet) {
-    width: 85%;
-    display: inline-block;
-    margin-top: 107px;
-  }
 }
-.c-blog__post {
-  width: 100%;
 
+.nav-links {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @include media(tablet) {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
+  justify-content: space-between;
 }
 
-.c-blog__header {
-  width: 100%;
-
-  order: 2;
-
-  @include media(tablet) {
-    width: 45%;
-    text-align: left;
-    margin-left: 5%;
-  }
-}
-
-.c-blog__meta {
-  margin-top: 16px;
-
-  @include media(tablet) {
-    margin-top: 0;
-  }
-}
-
-.c-blog__entry-title {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 30px;
-  max-width: 450px;
-
-  color: #000000;
-
-  @include media(tablet) {
-    font-size: 24px;
-  }
-}
-
-.c-blog__thumbnail {
-  width: 100%;
-  height: 190px;
-  order: 1;
-
-  @include media(tablet) {
-    width: 50%;
-    height: 360px;
-  }
-}
-.c-blog__thumbnail__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.c-blog__entery-content {
-  order: 4;
-  text-align: left;
-  line-height: 28px;
-
-  @include media(tablet) {
-    width: 80%;
-    margin-top: 48px;
-  }
-  ul {
-    list-style-type: disc;
-
-    margin-left: 16px;
-  }
-
-  p {
-    color: #000000;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-  }
-}
-
-.c-blog__tags {
-  display: none;
-  order: 5;
-  width: 100%;
-  text-align: left;
-  padding-left: 20%;
-  margin-top: 39px;
-
-  @include media(tablet) {
-    display: inline-block;
-  }
-
-  li {
-    display: inline-block;
-    margin-right: 16px;
-  }
-}
-
-.c-post__category--blog {
-  padding-left: 0;
-}

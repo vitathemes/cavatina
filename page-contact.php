@@ -26,12 +26,12 @@ get_header();
 <main class="o-page__main js-page__main">
     <div class="o-page__col c-content">
         <div class="c-contact">
-            <div class="c-contact__form">
-                <form class="c-form">
-                    <input class="c-form__text" type="text" placeholder="Insert Your Name" />
-                    <input class="c-form__text" type="text" placeholder="Insert Your Name" />
-                    <textarea class="c-form__text-area">Your Message</textarea>
-                    <button class="c-form__button" type="submit">Send</button>
+            <div class="c-contact__form__holder">
+                <form class="c-contact__form">
+                    <input class="c-contact__form__text" type="text" placeholder="Insert Your Name" />
+                    <input class="c-contact__form__text" type="text" placeholder="Insert Your Name" />
+                    <textarea class="c-contact__form__text-area">Your Message</textarea>
+                    <button class="c-contact__form__button" type="submit">Send</button>
                 </form>
             </div>
             <div class="c-contact__context">

@@ -1,0 +1,105 @@
+
+/*------------------------------------*\
+    #Contact page block
+\*------------------------------------*/
+
+.c-contact {
+  width: 100%;
+  height: max-content;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  @include media(tablet) {
+    padding-top: 5%;
+    height: 100%;
+  }
+}
+
+.c-contact__form__holder {
+  width: 100%;
+  height: max-content;
+
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 0;
+
+  @include media(tablet) {
+    width: 50%;
+    height: 100%;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: flex-start;
+  }
+}
+
+.c-contact__context {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 64px;
+  margin-top: 32px;
+
+  @include media(tablet) {
+    width: 50%;
+    height: 100%;
+    align-content: center;
+    margin-top: 0;
+    padding-left: 64px;
+    padding-top: 5%;
+  }
+  @include media(wide) {
+    padding-top: 5%;
+  }
+}
+
+
+/*------------------------------------*\
+  #Contact Form
+\*------------------------------------*/
+.c-contact__form {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: left;
+}
+
+.c-contact__form__text {
+  margin-bottom: 32px;
+  height: 30px;
+  padding-top: 5%;
+}
+
+.c-contact__form__text-area {
+  width: 100%;
+  text-align: left;
+  height: 80px;
+
+  @include media(tablet) {
+    margin-top: 32px;
+  }
+}
+
+.c-contact__form__button {
+  margin-top: 16px;
+}
+
+.c-contact__widget {
+  width: 100%;
+  height: max-content;
+
+  text-align: left;
+  margin-bottom: 39px;
+}

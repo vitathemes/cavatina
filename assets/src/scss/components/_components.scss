@@ -14,13 +14,21 @@
 --------------------------------------------- */
 @import "common/common";
 
-/* no-sidebar
+/* Container
 --------------------------------------------- */
-@import "layouts/no-sidebar";
+@import "container/container";
 
-/* content side bar
+/* Contact
 --------------------------------------------- */
-@import "layouts/content-sidebar";
+@import "contact/contact";
+
+/* Aside
+--------------------------------------------- */
+@import "aside/aside";
+
+/* Carousel
+--------------------------------------------- */
+@import "carousel/carousel";
 
 /* widgets
 --------------------------------------------- */

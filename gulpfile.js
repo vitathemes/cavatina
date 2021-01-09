@@ -1,7 +1,7 @@
 "use strict";
 
 const gulp = require("gulp");
-var sass = require("gulp-sass");
+const sass = require("gulp-sass");
 sass.compiler = require("node-sass");
 const imagemin = require("gulp-imagemin");
 const concat = require("gulp-concat");
@@ -23,7 +23,7 @@ const sassTask = (cb) => {
 
 const cssConcatTask = (cb) => {
   return gulp
-    .src("assets/src/css/*.css")
+    .src( ['./node_modules/flickity/dist/flickity.css' , './node_modules/simplebar/dist/simplebar.css' , "assets/src/css/*.css"])
     .pipe(concat("main.css"))
     .pipe(gulp.dest("assets/css"))
     .pipe(browserSync.stream());
@@ -38,9 +38,10 @@ const cleanCssTask = (cb) => {
   cb();
 };
 
+
 const concatJs = (cb) => {
   return gulp
-    .src("assets/src/js/*.js")
+    .src(['./node_modules/flickity/dist/flickity.pkgd.js', './node_modules/simplebar/dist/simplebar.js' , './assets/src/js/*.js'])
     .pipe(concat("main.js"))
     .pipe(gulp.dest("assets/js"));
   cb();

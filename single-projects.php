@@ -77,19 +77,19 @@ get_header();
                     <li>Commercial</li>
                     <li>April 2019</li>
                 </ul>
-                <div class="c-single__slider js-single__slider">
-                    <div class="c-single__slider__cell">
-                        <img class="c-single__slider__cell__image"
+                <div class="c-carousel__single__slider js-single__slider">
+                    <div class="c-carousel__single__cell">
+                        <img class="c-carousel__single__cell__image"
                             src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(1).jpg"
                             alt="hamburger" />
                     </div>
-                    <div class="c-single__slider__cell">
-                        <img class="c-single__slider__cell__image"
+                    <div class="c-carousel__single__cell">
+                        <img class="c-carousel__single__cell__image"
                             src="<?php echo get_template_directory_uri(); ?>/assets/images/img2.jpg"
                             alt="hamburger" />
                     </div>
-                    <div class="c-single__slider__cell">
-                        <img class="c-single__slider__cell__image"
+                    <div class="c-carousel__single__cell">
+                        <img class="c-carousel__single__cell__image"
                             src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(3).jpg"
                             alt="hamburger" />
                     </div>

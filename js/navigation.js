@@ -48,10 +48,10 @@
   document.addEventListener("click", function (event) {
     const isClickInside = siteNavigation.contains(event.target);
     var pageMain = document.querySelector(".o-page__main");
-    var overlay = document.querySelector(".c-overlay");
+    var overlay = document.querySelector(".js-overlay");
 
     if (!isClickInside) {
-      overlay.classList.remove("c-overlay--active");
+      overlay.classList.remove("o-overlay--active");
       pageMain.classList.remove("o-page__main--blur");
 
       siteNavigation.classList.remove("toggled");

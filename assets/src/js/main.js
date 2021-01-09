@@ -87,10 +87,10 @@ function blurToggle() {
 
   if (pageMain.classList.contains("o-page__main--blur")) {
     pageMain.classList.remove("o-page__main--blur");
-    overlay.classList.remove("c-overlay--active");
+    overlay.classList.remove("o-overlay--active");
   } else {
     pageMain.classList.add("o-page__main--blur");
-    overlay.classList.add("c-overlay--active");
+    overlay.classList.add("o-overlay--active");
   }
 }
 
@@ -151,10 +151,10 @@ function singleCarousel() {
         if (isDesktop() === true) {
           // make slider full width with first drag
           let singleCarousel = document.querySelector(".js-single__slider");
-          singleCarousel.classList.add("c-single__slider--full-width");
+          singleCarousel.classList.add("c-carousel__single__slider--full-width");
 
           if (index === 0) {
-            singleCarousel.classList.remove("c-single__slider--full-width");
+            singleCarousel.classList.remove("c-carousel__single__slider--full-width");
           }
         }
       },
@@ -164,6 +164,8 @@ function singleCarousel() {
 
 // if we have single carousel in page slider will render
 const singleSlider = document.querySelector(".js-single__slider");
-if (singleSlider.classList.contains("c-single__slider") === true) {
+if (singleSlider.classList.contains("c-carousel__single__slider") === true) {
   singleCarousel();
 }
+
+

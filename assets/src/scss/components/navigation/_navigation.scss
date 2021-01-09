@@ -46,7 +46,9 @@
   }
 }
 
-.toggled {
+.c-header__holder.toggled {
+
+
   @include media(tablet) {
     justify-content: center;
     flex-direction: row;
@@ -70,7 +72,7 @@
 
   .c-header__menu {
     padding: 0;
-    width: 10%;
+    width: 37px;
     height: 14px;
     text-align: right;
     padding-right: 26px;
@@ -139,11 +141,3 @@
 }
 
 
-.posts-navigation {
-  width: 100%;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: space-between;
-}

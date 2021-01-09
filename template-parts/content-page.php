@@ -47,10 +47,10 @@
             </div>
         </div>
         <div class="c-single__carousel c-single__carousel--mobile">
-            <div class="c-single__slider js-single__slider">
-                <div class="c-single__slider__cell  c-single__slider__cell--page">
-                    <a class="c-single__thumbnail c-single__slider__cell__image" href=<?php the_permalink() ?>>
-                        <?php the_post_thumbnail('large', array()); ?>
+            <div class="c-carousel__single__slider js-single__slider">
+                <div class="c-carousel__single__cell  c-carousel__single__cell--page">
+                    <a class="c-single__thumbnail c-carousel__single__cell__anchor" href=<?php the_permalink() ?>>
+                        <?php the_post_thumbnail('large', array('class' => 'c-carousel__single__cell__image')); ?>
                     </a>
                 </div>
             </div>

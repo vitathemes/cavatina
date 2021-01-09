@@ -36,7 +36,7 @@
                 <a href="<?php echo esc_url( home_url(  ) ); ?>">
                     <img class="c-header__logo__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
                         alt="logo" />
-                    <!-- <h1>cavatina<h1> -->
+<!--                     <h1>cavatina<h1>-->
                 </a>
             </div>
             <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
@@ -61,6 +61,6 @@
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
     </div>
-    <div class="c-overlay js-overlay"></div>
+    <div class="o-overlay js-overlay"></div>
     <div id="page" class="o-page js-page">
         <!-- #masthead -->

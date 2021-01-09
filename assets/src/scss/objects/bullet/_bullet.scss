@@ -1,26 +1,7 @@
-.o-page {
-  width: 100%;
-  height: calc(100vh);
-  max-height: max-content;
 
-  @include media(tablet) {
-    //overflow-y: hidden;
-    text-align: left;
-    max-height: 100vh;
-
-    //need QA
-    padding-left: 7%;
-  }
-}
-
-.o-page--home {
-  height: max-content;
-  @include media(tablet) {
-    height: calc(100vh);
-    padding-left: 15%;
-  }
-}
-
+/*------------------------------------*\
+  #Red bullet
+\*------------------------------------*/
 .o-bullet-numeric {
   height: 100%;
   width: max-content;

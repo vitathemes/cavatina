@@ -166,17 +166,7 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
 
 
 /**
@@ -184,12 +174,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 function cavatina_scripts() {
 
-
-
 	wp_enqueue_style( 'cavatina-style', get_template_directory_uri() . '/assets/css/main.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'cavatina-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array( ), _S_VERSION, true );
-
 
 }
 
@@ -221,8 +208,8 @@ $labels = array(
 // Set other options for Custom Post Type
 
     $args = array(
-        'label'               => __( 'projects', 'cavatina' ),
-        'description'         => __( 'Project news and reviews', 'cavatina' ),
+        'label'               => __( 'projects', 'wp-cavatina' ),
+        'description'         => __( 'Project news and reviews', 'wp-cavatina' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
         'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
@@ -309,7 +296,7 @@ function wp_cavatina_total_posts() {
  * count number of posts in a page
  */
 function wp_cavatina_post_type_name() {
-	printf( __( '%s', 'textdomain' ), get_post_type( get_the_ID() ) );
+	echo esc_html( get_post_type( get_the_ID() ));
 }
 
 /**

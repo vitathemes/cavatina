@@ -1,27 +1,24 @@
 /*------------------------------------*\
-  #Social media links 
+  #Social media links
 \*------------------------------------*/
 .c-social-media {
 }
-
 .c-social-media__item {
   margin-right: 18px;
   transition: 0.2s all;
-  svg {
-    path {
-      transition: 0.2s all;
-    }
-  }
 }
 
-.c-social-media__item:hover {
-  svg {
-    path {
+.c-social-media__item{
+  &:hover{
+    .c-social-media__icon{
       fill: #000000;
     }
+    }
+
+  .c-social-media__icon{
+    fill: #8A8A8A;
   }
 }
-
 /*------------------------------------*\
   #Blog social media
 \*------------------------------------*/

@@ -1,0 +1,270 @@
+/*------------------------------------*\
+  #Carousel
+\*------------------------------------*/
+
+.c-carousel {
+  width: 100%;
+  height: 90%;
+  text-align: left;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+
+  @include media(tablet) {
+    width: 90%;
+    height: 80%;
+    margin-top: 7%;
+    margin-left: 5%;
+  }
+}
+
+.c-carousel__context {
+  height: 100%;
+  background: transparent;
+
+  .flickity-viewport {
+    height: 100%;
+  }
+}
+
+.c-carousel__title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8a8a8a;
+  @include media(tablet) {
+    margin: 0;
+    color: #8a8a8a;
+  }
+}
+
+.c-carousel__slider {
+  height: 40vh;
+
+  @include media(tablet) {
+    height: 90%;
+  }
+}
+
+.c-carousel__title--home {
+  width: max-content;
+  text-align: left;
+  margin-left: 5%;
+
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.c-carousel__cell {
+  width: 90%;
+
+  @include media(tablet) {
+    width: 80%;
+  }
+
+  height: 100%;
+  margin-right: 10px;
+
+  counter-increment: gallery-cell;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+}
+
+.c-carousel__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.c-carousel__post-title {
+  counter-reset: section;
+
+  @include media(tablet) {
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+}
+
+.c-carousel__more {
+  &:hover {
+    color: #8a8a8a;
+  }
+
+  @include media(tablet) {
+    margin: 0;
+  }
+}
+.c-carousel__more--home {
+  margin-top: 15%;
+
+  margin-left: 5%;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  color: #000000;
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.c-carousel__post-titles {
+  width: 100%;
+  height: max-content;
+
+  .flickity-viewport {
+    width: 100%;
+    height: 100%;
+
+    .flickity-slider {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.c-carousel__post-title {
+  width: max-content;
+  transition: 0.2s all;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 200%;
+  /* identical to box height, or 28px */
+
+  color: #000000;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  &:hover {
+    color: #8a8a8a;
+  }
+}
+
+.c-carousel__post-titles--mobile {
+  .flickity-slider {
+    margin-left: 5%;
+  }
+  .c-carousel__post-title {
+    width: 95%;
+    margin-top: 5%;
+    @include media(tablet) {
+      display: none;
+    }
+  }
+
+  @include media(tablet) {
+    .c-carousel__post-title {
+      display: none;
+    }
+  }
+}
+
+/*------------------------------------*\
+  #single slider
+\*------------------------------------*/
+
+.c-carousel__single__slider {
+  width: 100%;
+  height: max-content;
+  transition: 1s all;
+  background-color: $color__background-body;
+
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 24px;
+  z-index: 5;
+  @include media(tablet) {
+    width: 50%; // here
+    height: 100%;
+    position: absolute;
+    margin-top: 0;
+  }
+  .flickity-viewport {
+    width: 100%;
+    height: 140px;
+    margin-right: -0.5%;
+
+    @include media(tablet) {
+      width: 100%;
+      height: 95%;
+    }
+
+    .flickity-slider {
+      @include media(tablet) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .c-carousel__single__cell {
+      width: 100%;
+      height: 100%;
+      transition: 1s all;
+      padding-left: 16px;
+      padding-right: 16px;
+
+      @include media(tablet) {
+        width: 80%;
+        height: 100%;
+        transition: 1s all;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }
+    .c-carousel__single__cell--page {
+      width: 100%;
+    }
+  }
+
+  .flickity-page-dots {
+    padding-left: 0;
+    padding-right: 0;
+    bottom: -15px;
+
+    .dot {
+      width: 30%;
+    }
+  }
+}
+
+.c-carousel__single__image{
+  border-radius: 10px;
+}
+
+.c-carousel__single__cell__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/*------------------------------------*\
+  #modifier
+\*------------------------------------*/
+
+.c-carousel__single__slider--full-width {
+  width: 100%;
+  .c-single__slider__cell {
+    width: 90%;
+    padding-left: 10%;
+    padding-right: 10%;
+    @include media(wide) {
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+  }
+}

@@ -9,8 +9,8 @@
 
 ?>
 
-<main class="o-page__main no-results not-found">
-    <header class="o-page__main__header">
+<main class="o-page__main o-page__main--no-results not-found">
+    <header class="o-page__main__header o-page__main__header--align-left">
         <h1 class="o-page__main__title"><?php esc_html_e( 'Nothing Found', 'wp-cavatina' ); ?></h1>
     </header><!-- .page-header -->
     <div class="o-page__main__content">
