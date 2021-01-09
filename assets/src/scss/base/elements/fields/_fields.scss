@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #Fields elements  
+  #Fields elements
 \*------------------------------------*/
 input[type="text"],
 input[type="email"],
@@ -39,6 +39,10 @@ textarea {
   &:focus {
     color: $color__text-input-focus;
     outline: none;
+  }
+
+  &:hover{
+
   }
 }
 

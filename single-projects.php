@@ -81,17 +81,17 @@ get_header();
                     <div class="c-carousel__single__cell">
                         <img class="c-carousel__single__cell__image"
                             src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(1).jpg"
-                            alt="hamburger" />
+                            alt="slider_image_1" />
                     </div>
                     <div class="c-carousel__single__cell">
                         <img class="c-carousel__single__cell__image"
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/img2.jpg"
-                            alt="hamburger" />
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(2).jpg"
+                            alt="slider_image_2" />
                     </div>
                     <div class="c-carousel__single__cell">
                         <img class="c-carousel__single__cell__image"
                             src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(3).jpg"
-                            alt="hamburger" />
+                            alt="slider_image_3" />
                     </div>
                 </div>
             </div>

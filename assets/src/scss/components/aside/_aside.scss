@@ -65,8 +65,8 @@
 /*------------------------------------*\
   #Aside content
 \*------------------------------------*/
-
 .c-aside__content {
+  width: 95%;
   justify-content: center;
   text-align: left;
   display: flex;
@@ -75,6 +75,7 @@
   align-items: center;
   padding-left: 16px;
   padding-right: 16px;
+
 
   @include media(tablet) {
     width: 100%;

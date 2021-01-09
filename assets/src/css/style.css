@@ -734,7 +734,8 @@ html {
 .o-bullet-numeric {
   height: 100%;
   width: max-content;
-  display: inline-block; }
+  display: inline-block;
+  color: #111111; }
   .o-bullet-numeric::before {
     content: "0" counter(chapter);
     counter-increment: chapter;
@@ -1301,7 +1302,7 @@ img {
   @media only screen and (min-width: 980px) {
     .c-header__holder.toggled .c-nav {
       padding-top: 12px;
-      margin-left: 0; } }
+      margin-left: 5px; } }
   @media only screen and (min-width: 980px) {
     .c-header__holder.toggled .c-nav .s-nav {
       margin-left: 0;
@@ -1412,7 +1413,7 @@ img {
 .c-search__holder {
   visibility: hidden;
   width: 90%; }
-  .c-search__holder .c-search__form .search-submit {
+  .c-search__holder .search-submit {
     display: none; }
 
 .c-search--toggled {
@@ -1429,7 +1430,7 @@ img {
   height: 20px;
   display: block;
   background-size: 28px 28px;
-  margin-right: 16px;
+  margin-right: 8px;
   margin-bottom: 8px; }
 
 @media only screen and (min-width: 980px) {
@@ -1456,6 +1457,9 @@ img {
   @media only screen and (min-width: 980px) {
     .search-submit-mobile {
       display: none; } }
+  .search-submit-mobile:hover {
+    background: transparent;
+    outline: none; }
   .search-submit-mobile::before {
     content: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.8169 28.9331L20.6888 19.805C22.5848 17.6999 23.75 14.9244 23.75 11.875C23.75 5.32717 18.4229 0 11.875 0C5.32717 0 0 5.32717 0 11.875C0 18.4229 5.32717 23.75 11.875 23.75C14.9244 23.75 17.6999 22.5848 19.805 20.6888L28.9331 29.8169C29.0552 29.9389 29.2151 30 29.375 30C29.5349 30 29.6948 29.9389 29.817 29.8169C30.0611 29.5727 30.0611 29.1772 29.8169 28.9331ZM11.875 22.5C6.01688 22.5 1.25004 17.7337 1.25004 11.875C1.25004 6.01629 6.01688 1.24998 11.875 1.24998C17.7332 1.24998 22.5 6.01623 22.5 11.875C22.5 17.7338 17.7332 22.5 11.875 22.5Z' fill='black'/%3E%3C/svg%3E%0A");
     cursor: pointer;
@@ -1658,6 +1662,7 @@ img {
   #Aside content
 \*------------------------------------*/
 .c-aside__content {
+  width: 95%;
   justify-content: center;
   text-align: left;
   display: flex;
@@ -2752,7 +2757,7 @@ a {
     outline: 0; }
 
 /*------------------------------------*\
-  #Fields elements  
+  #Fields elements
 \*------------------------------------*/
 input[type="text"],
 input[type="email"],

@@ -48,12 +48,12 @@
 
 .c-header__holder.toggled {
 
-
   @include media(tablet) {
     justify-content: center;
     flex-direction: row;
     align-items: baseline;
     height: 20%;
+
 
     animation-name: increaseHeaderWidth;
     animation-duration: 0.5s;
@@ -102,7 +102,7 @@
 
     @include media(tablet) {
       padding-top: 12px;
-      margin-left: 0;
+      margin-left: 5px;
     }
 
     .s-nav {
