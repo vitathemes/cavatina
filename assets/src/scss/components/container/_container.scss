@@ -12,8 +12,6 @@
   }
 }
 
-
-
 .c-container__content {
   width: 100%;
   height: max-content;
@@ -21,8 +19,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 64px;
-  margin-top: 64px;
+  // padding-bottom: 64px;
+  margin-top: 32px;
 
   @include media(tablet) {
     height: 100%;

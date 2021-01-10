@@ -15,8 +15,8 @@
     <header id="masthead" class="c-header c-header--home">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo">
-                <img class="c-header__logo__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
-                    alt="logo" />
+                <img class="c-header__logo__image"
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
                 <!-- <h1>Cavatina</h1> -->
                 <p class="c-header__text ">digital creativity</p>
             </div>
@@ -124,7 +124,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="c-carousel__post-titles js-carousel__post-titles c-carousel__post-titles--mobile js-carousel__post-titles--mobile">
+                    <div
+                        class="c-carousel__post-titles js-carousel__post-titles c-carousel__post-titles--mobile js-carousel__post-titles--mobile">
                         <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
                         </h3>
                         <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster

@@ -270,19 +270,6 @@ function wpsites_change_comment_date_format( $d ) {
     return $d;
 }
 
-/**
- * change order of comments
- */
-
-function wpb_move_comment_field_to_bottom( $fields ) {
-	$comment_field = $fields['comment'];
-	unset( $fields['comment'] );
-	$fields['comment'] = $comment_field;
-	return $fields;
-	}
-
-	add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
-
 
 /**
  * count number of posts in a page
@@ -305,6 +292,10 @@ function wp_cavatina_post_type_name() {
 function wp_cavatina_total_post_types() {
 	printf($count_posts = wp_count_posts( 'projects' )->publish);
 }
+
+
+
+
 
 /**
  * change excerpt length

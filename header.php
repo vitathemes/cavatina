@@ -32,11 +32,11 @@
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-cavatina' ); ?></a>
     <header id="masthead" class="c-header js-header">
         <div class="c-header__holder js-nav">
-            <div class="c-header__logo">
+            <div class="c-header__logo js-logo">
                 <a href="<?php echo esc_url( home_url(  ) ); ?>">
-                    <img class="c-header__logo__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
-                        alt="logo" />
-<!--                     <h1>cavatina<h1>-->
+                    <img class="c-header__logo__image "
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
+                    <!--                     <h1>cavatina<h1>-->
                 </a>
             </div>
             <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
@@ -48,8 +48,8 @@
                     array(
                         'theme_location' => 'menu-1',
                         'menu_id'        => 'primary-menu-registered',
-                        "menu_class" => "s-nav", // nesting
-                        "container_class" => "c-nav",
+                        "menu_class" => "s-nav ",
+                        "container_class" => "c-nav js-navigation",
                         "container" => "nav",
                     ));
             }

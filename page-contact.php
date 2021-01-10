@@ -29,21 +29,30 @@ get_header();
             <div class="c-contact__form__holder">
                 <form class="c-contact__form">
                     <input class="c-contact__form__text" type="text" placeholder="Insert Your Name" />
-                    <input class="c-contact__form__text" type="text" placeholder="Insert Your Name" />
+                    <input class="c-contact__form__text" type="text" placeholder="Insert Your E-mail Address" />
                     <textarea class="c-contact__form__text-area">Your Message</textarea>
-                    <button class="c-contact__form__button" type="submit">Send</button>
+                    <button class="c-contact__form__button button--small" type="submit">Send</button>
                 </form>
             </div>
             <div class="c-contact__context">
                 <div class="c-contact__widget">
                     <h6 class="c-widget__title">Project Inquiries </h6>
-                    <p class="c-widget__text">hello@ cvatina.com</p>
-                    <p class="c-widget__text">754.765.8373</p>
+                    <a href="#">
+                        <p class="c-widget__text">hello@ cvatina.com</p>
+                    </a>
+                    <a href="#">
+                        <p class="c-widget__text">754.765.8373</p>
+                    </a>
                 </div>
                 <div class="c-contact__widget">
-                    <h6 class="c-widget__title">Project Inquiries </h6>
-                    <p class="c-widget__text">hello@ cvatina.com</p>
-                    <p class="c-widget__text">754.765.8373</p>
+                    <h6 class="c-widget__title">Office </h6>
+                    <a href="#">
+                        <p class="c-widget__text">7653 sea Ave, Suite A</p>
+                    </a>
+
+                    <a href="#">
+                        <p class="c-widget__text">North Charleston, Sc 87350</p>
+                    </a>
                 </div>
             </div>
         </div>

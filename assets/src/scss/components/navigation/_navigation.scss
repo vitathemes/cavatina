@@ -1,10 +1,12 @@
+/*------------------------------------*\
+  #Navigation
+\*------------------------------------*/
 .c-nav {
   width: 100%;
   max-height: 0;
   transition: 1s ease-in-out;
   transition-delay: 0s;
   overflow: hidden;
-
   margin-left: 8px;
   @include media(tablet) {
     display: none;
@@ -46,17 +48,18 @@
   }
 }
 
+/*------------------------------------*\
+  #Header Holder toggled
+\*------------------------------------*/
 .c-header__holder.toggled {
-
   @include media(tablet) {
     justify-content: center;
     flex-direction: row;
-    align-items: baseline;
+    align-items: flex-end;
     height: 20%;
 
-
     animation-name: increaseHeaderWidth;
-    animation-duration: 0.5s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     padding-left: 20%;
     padding-right: 5%;
@@ -78,13 +81,12 @@
     padding-right: 26px;
 
     &::before {
-      transform: rotate(45deg) translate(-14px, -4px);
+      transform: rotate(45deg) translate(-14px, -5px);
     }
-    &::after{
+    &::after {
       transform: rotate(-45deg) translateX(-10px);
     }
-
-    @include media(tablet){
+    @include media(tablet) {
       width: 21%;
     }
   }
@@ -94,15 +96,15 @@
     padding-bottom: 16px;
     max-height: 25em;
     text-align: left;
-
     display: block;
     flex-wrap: wrap;
     width: 100%;
     order: 3;
-
+    margin-top: 40px;
     @include media(tablet) {
       padding-top: 12px;
       margin-left: 5px;
+      margin-top: 10px;
     }
 
     .s-nav {
@@ -115,8 +117,7 @@
   }
 
   .c-header__search {
-
-    &::before{
+    &::before {
       width: 30px;
       height: 1px;
       border-color: #fff;
@@ -126,18 +127,62 @@
       top: 0;
       left: 0;
     }
-
-    &::after{
+    &::after {
       width: 30px;
       height: 0;
       transform: rotate(45deg) translateY(-10px) translateX(-8px);
     }
-
-
     @include media(tablet) {
       display: none;
     }
   }
+
+  .js-logo.is-open.logo-out {
+    @include media(tablet) {
+      opacity: 0;
+    }
+  }
+
+  .js-logo.is-open.logo-in {
+    @include media(tablet) {
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .js-navigation.is-open.nav-out {
+    @include media(tablet) {
+      opacity: 0;
+    }
+  }
+
+  .js-navigation.is-open.nav-in {
+    @include media(tablet) {
+      opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-delay: 0.7s;
+      animation-fill-mode: forwards;
+    }
+  }
 }
 
+.js-nav.has-animation-out {
+  @include media(tablet) {
+    animation-name: decreaseHeaderWidth;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+}
 
+.nav-previous {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
+.nav-next {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}

@@ -1,6 +1,7 @@
 /*------------------------------------*\
   #Fields elements
 \*------------------------------------*/
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -22,9 +23,9 @@ textarea {
   border: 0;
   border-bottom: 1px solid $wp-cavatina__main-primary-color;
   width: 100%;
-  height: max-content;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  // height: max-content;
+  // padding-bottom: 10px;
+  // padding-top: 10px;
   min-height: max-content;
 
   &::placeholder {
@@ -41,8 +42,7 @@ textarea {
     outline: none;
   }
 
-  &:hover{
-
+  &:hover {
   }
 }
 
@@ -66,4 +66,12 @@ textarea {
   width: 18px;
   height: 18px;
   vertical-align: middle;
+}
+
+[type="text"] {
+  padding-bottom: 25px;
+
+  &::placeholder {
+    font-size: 12px !important;
+  }
 }

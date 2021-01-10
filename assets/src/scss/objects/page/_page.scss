@@ -23,7 +23,6 @@
   }
 }
 
-
 /*------------------------------------*\
   #Page main
 \*------------------------------------*/
@@ -55,6 +54,7 @@
 .o-page--home {
   .o-page__main {
     height: 100%;
+    padding-bottom: 0;
     @include media(tablet) {
       width: calc(99% - 22%);
       height: 90%;
@@ -62,7 +62,7 @@
   }
 }
 
-.o-page__main__header{
+.o-page__main__header {
   width: 100%;
 }
 .o-page__main--blog {
@@ -73,7 +73,7 @@
   flex-wrap: wrap;
 }
 
-.o-page__main__header--align-left{
+.o-page__main__header--align-left {
   text-align: left;
 }
 
@@ -106,7 +106,7 @@
   }
 }
 
-.o-page__main__error-404{
+.o-page__main__error-404 {
   text-align: center;
   height: 90%;
   display: flex;
@@ -134,8 +134,6 @@
   margin: 0;
 }
 
-
-
 /*------------------------------------*\
   #Search nothing found
 \*------------------------------------*/
@@ -157,14 +155,11 @@
   .o-page__main__header {
     width: 100%;
   }
-
 }
 
-.o-page__main__content{
+.o-page__main__content {
   width: 100%;
-  .search-submit-mobile{
+  .search-submit-mobile {
     display: none;
   }
 }
-
-

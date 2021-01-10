@@ -25,7 +25,7 @@
 
     .search-submit {
       position: absolute;
-      top: 5px;
+      top: 15px;
       right: 0px;
     }
   }
@@ -51,9 +51,9 @@
 .c-search__holder {
   visibility: hidden;
   width: 90%;
-    .search-submit {
-      display: none;
-    }
+  .search-submit {
+    display: none;
+  }
 }
 
 .c-search--toggled {
@@ -108,8 +108,7 @@
     display: none;
   }
 
-
-  &:hover{
+  &:hover {
     background: transparent;
     outline: none;
   }

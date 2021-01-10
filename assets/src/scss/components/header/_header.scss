@@ -93,11 +93,10 @@
   #Header menu
 \*------------------------------------*/
 .c-header__menu {
-
   text-align: right;
   background-color: transparent;
 
-  width: 37px;
+  width: 45px;
   height: 14px;
   position: relative;
   display: inline-block;
@@ -114,7 +113,7 @@
     transform-origin: top left;
   }
 
-  &::after{
+  &::after {
     height: 0;
     border-bottom: 1px solid #000;
     bottom: 10px;
@@ -126,13 +125,13 @@
     margin-left: 25%;
     order: 2;
     text-align: center;
-
   }
 }
 
-.c-header__menu::before , .c-header__menu::after{
-  width:50%;
-  content: '';
+.c-header__menu::before,
+.c-header__menu::after {
+  width: 50%;
+  content: "";
   position: absolute;
   border-color: #000;
   display: block;
@@ -161,7 +160,7 @@
     border-radius: 12px;
   }
 
-  &::after{
+  &::after {
     width: 12px;
     height: 0;
     border-bottom: 1px solid #000;
@@ -176,21 +175,19 @@
   }
 }
 
-.c-header__search::after, .c-header__search::before{
-  content: '';
+.c-header__search::after,
+.c-header__search::before {
+  content: "";
   position: absolute;
   transform-origin: center;
   border-color: #000;
   display: block;
   transition: all 700ms cubic-bezier(0.75, 0.01, 0.07, 0.99);
   will-change: transform, width, border;
-
 }
 
-
 .c-header__search--toggle {
-  &::before{
-
+  &::before {
     width: 30px;
     height: 1px;
     border-color: #fff;
@@ -199,10 +196,9 @@
     transform: rotate(-45deg) translateY(10px) translateX(-11px);
     top: 0;
     left: 0;
-
   }
 
-  &::after{
+  &::after {
     width: 30px;
     height: 0;
     transform: rotate(45deg) translateY(-10px) translateX(-8px);

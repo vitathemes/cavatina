@@ -22,6 +22,9 @@
   }
 
   const menu = siteNavigation.getElementsByTagName("ul")[0];
+  let mainHeader = document.querySelector(".js-header");
+  let menuLogo = document.querySelector(".js-logo");
+  let menuNav = document.querySelector(".js-navigation");
 
   // Hide menu toggle button if menu is empty and return early.
   if ("undefined" === typeof menu) {
@@ -29,13 +32,43 @@
     return;
   }
 
-  if (!menu.classList.contains("c-nav")) {
-    menu.classList.add("c-nav");
+  if (!menu.classList.contains("s-nav")) {
+    menu.classList.add("s-nav");
   }
 
   // Toggle the .toggled class and the aria-expanded value each time the button is clicked.
   button.addEventListener("click", function () {
     siteNavigation.classList.toggle("toggled");
+    siteNavigation.classList.toggle("is-open");
+    menuLogo.classList.toggle("is-open");
+    menuNav.classList.toggle("is-open");
+
+    // Header Holder animation
+    if (!siteNavigation.classList.contains("is-open")) {
+      siteNavigation.classList.add("has-animation-out");
+    } else {
+      siteNavigation.classList.remove("has-animation-out");
+    }
+
+    // Menu Logo animation
+    if (menuLogo.classList.contains("is-open")) {
+      menuLogo.classList.add("logo-out");
+      menuNav.classList.add("nav-out");
+
+      setTimeout(() => {
+        menuLogo.classList.add("logo-in");
+        menuLogo.classList.remove("logo-out");
+
+        menuNav.classList.add("nav-in");
+        menuNav.classList.remove("nav-out");
+      }, 1000);
+    } else {
+      menuLogo.classList.remove("logo-in");
+      menuLogo.classList.add("logo-out");
+
+      menuLogo.classList.remove("nav-in");
+      menuLogo.classList.remove("nav-out");
+    }
 
     if (button.getAttribute("aria-expanded") === "true") {
       button.setAttribute("aria-expanded", "false");
@@ -56,6 +89,14 @@
 
       siteNavigation.classList.remove("toggled");
       button.setAttribute("aria-expanded", "false");
+
+      siteNavigation.classList.add("has-animation-out");
+      siteNavigation.classList.remove("is-open");
+
+      menuLogo.classList.remove("logo-in");
+      menuLogo.classList.remove("is-open");
+
+      menuNav.classList.remove("is-open");
     }
   });
 

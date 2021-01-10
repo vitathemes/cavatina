@@ -1,4 +1,3 @@
-
 /*------------------------------------*\
     #Contact page block
 \*------------------------------------*/
@@ -58,13 +57,12 @@
     align-content: center;
     margin-top: 0;
     padding-left: 64px;
-    padding-top: 5%;
+    padding-top: 9%;
   }
   @include media(wide) {
     padding-top: 5%;
   }
 }
-
 
 /*------------------------------------*\
   #Contact Form
@@ -86,6 +84,7 @@
   width: 100%;
   text-align: left;
   height: 80px;
+  font-size: 12px;
 
   @include media(tablet) {
     margin-top: 32px;

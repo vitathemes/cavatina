@@ -9,11 +9,15 @@ input[type="submit"] {
   border-radius: $global-radius;
   background: #000000;
   border-radius: 5px;
-  padding: 16px 26px;
+  // padding: 16px 26px;
   cursor: pointer;
   transition: $global-transition;
 
   &:hover {
     background-color: $color__border-button-hover;
   }
+}
+
+.button--small {
+  padding: 13px 25px;
 }

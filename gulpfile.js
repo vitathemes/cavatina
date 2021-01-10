@@ -22,7 +22,11 @@ const sassTask = (cb) => {
 
 const cssConcatTask = (cb) => {
   return gulp
-    .src( ['./node_modules/flickity/dist/flickity.css' , './node_modules/simplebar/dist/simplebar.css' , "assets/src/css/*.css"])
+    .src([
+      "./node_modules/flickity/dist/flickity.css",
+      "./node_modules/simplebar/dist/simplebar.css",
+      "assets/src/css/*.css",
+    ])
     .pipe(concat("main.css"))
     .pipe(gulp.dest("assets/css"))
     .pipe(browserSync.stream());
@@ -37,10 +41,13 @@ const cleanCssTask = (cb) => {
   cb();
 };
 
-
 const concatJs = (cb) => {
   return gulp
-    .src(['./node_modules/flickity/dist/flickity.pkgd.js', './node_modules/simplebar/dist/simplebar.js' , './assets/src/js/*.js'])
+    .src([
+      "./node_modules/flickity/dist/flickity.pkgd.js",
+      "./node_modules/simplebar/dist/simplebar.js",
+      "./assets/src/js/*.js",
+    ])
     .pipe(concat("main.js"))
     .pipe(gulp.dest("assets/js"));
   cb();
@@ -51,13 +58,11 @@ const uglifyTask = (cb) => {
   cb();
 };
 
-
-exports.default = () => (
-    gulp.src('assets/src/images/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('assets/images'))
-);
-
+exports.default = () =>
+  gulp
+    .src("assets/src/images/*")
+    .pipe(imagemin())
+    .pipe(gulp.dest("assets/images"));
 
 const browserSyncTask = (cb) => {
   browserSync.init({
