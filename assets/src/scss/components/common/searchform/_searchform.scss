@@ -39,10 +39,10 @@
   max-height: 0;
   height: 0;
   transition: 0.5s all;
-
   display: flex;
   align-items: center;
   justify-content: center;
+
   @include media(tablet) {
     display: none;
   }
@@ -101,8 +101,8 @@
   position: absolute;
   display: inline-block;
   background-color: transparent;
-  right: -10px;
-  top: 5px;
+  right: 5px;
+  top: 25px;
 
   @include media(tablet) {
     display: none;
@@ -139,6 +139,7 @@
 }
 .search-field {
   width: 100%;
+  padding-bottom: 8px;
 }
 .search-submit {
   position: absolute;

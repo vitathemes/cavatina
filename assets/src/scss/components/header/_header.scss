@@ -20,7 +20,7 @@
     height: 80%;
     border-right: 1px solid #e1e1e1;
     border-bottom: none;
-
+    padding-top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -213,6 +213,7 @@
   @include media(tablet) {
     width: 15%;
     border-bottom: none;
+    padding-top: 25px;
   }
 
   .c-header__holder {
@@ -221,11 +222,12 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 45%;
+      padding-top: 65%;
     }
 
     @include media(wide) {
       padding-bottom: 0;
+      padding-top: 95%;
     }
 
     .c-header__logo {

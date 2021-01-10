@@ -9,26 +9,28 @@
 
 get_header();
 ?>
-
-
 <aside class="o-page__col c-aside">
     <div class="c-aside__content">
-        <div class="c-aside__context">
-            <span class="c-aside__title c-aside__title--mobile-hide">404 Page</span>
+        <div class="c-aside__wrapper">
+            <div class="c-aside__context">
+                <span class="c-aside__title c-aside__title--mobile-hide">404 Page</span>
+            </div>
+            <div class="c-search__icon js-search__icon"></div>
         </div>
-        <div class="c-search__icon js-search__icon"></div>
         <div class="c-search js-search">
             <div class="c-search__holder">
                 <?php get_search_form(); ?>
             </div>
         </div>
+
     </div>
 </aside>
 <main class="o-page__main js-page__main o-page__main--404">
     <section class="o-page__main__error-404 not-found">
         <header class="o-page__main__header">
             <h1 class="o-page__main__error">404</h1>
-            <h2 class="o-page__main__title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wp-cavatina' ); ?></h2>
+            <h2 class="o-page__main__title">
+                <?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wp-cavatina' ); ?></h2>
         </header><!-- .page-header -->
 
         <div class="o-page__main__content">

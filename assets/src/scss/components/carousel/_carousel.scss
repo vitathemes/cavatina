@@ -120,6 +120,7 @@
 .c-carousel__post-titles {
   width: 100%;
   height: max-content;
+  opacity: 0;
 
   .flickity-viewport {
     width: 100%;
@@ -145,6 +146,7 @@
 
   @include media(tablet) {
     width: 100%;
+    padding-left: 1px;
   }
 
   &:hover {

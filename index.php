@@ -11,11 +11,13 @@ get_header();
 ?>
 <aside class="o-page__col c-aside">
     <div class="c-aside__content">
-        <div class="c-aside__context">
-            <span class="c-aside__title">Blog</span>
-            <span class="c-aside__counter"><?php wp_cavatina_total_posts(); ?> Posts</span>
+        <div class="c-aside__wrapper">
+            <div class="c-aside__context">
+                <span class="c-aside__title">Blog</span>
+                <span class="c-aside__counter"><?php wp_cavatina_total_posts(); ?> Posts</span>
+            </div>
+            <div class="c-search__icon js-search__icon"></div>
         </div>
-        <div class="c-search__icon js-search__icon"></div>
         <div class="c-search js-search">
             <div class="c-search__holder">
                 <?php get_search_form(); ?>

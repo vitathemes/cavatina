@@ -12,9 +12,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
 
   @include media(tablet) {
     display: inline-block;
@@ -23,14 +20,19 @@
     vertical-align: top;
     position: relative;
     border-top: none;
-    padding-top: 5%;
+    padding-top: 3%;
   }
 
   @include media(wide) {
-    padding-top: 5.5%;
+    padding-top: 4%;
   }
 }
-
+.c-aside--mobile-hide {
+  display: none;
+  @include media(tablet) {
+    display: inline-block;
+  }
+}
 .c-aside--home {
   display: none;
   @include media(tablet) {
@@ -41,17 +43,29 @@
 
   .c-aside__content {
     @include media(tablet) {
-      justify-content: flex-start;
-      height: max-content;
-      margin-top: 40%;
-
+      justify-content: flex-end;
+      height: 100%;
       flex-direction: column;
       padding-bottom: 0;
     }
+  }
+}
 
-    @include media(tablet) {
-      margin-top: 45%;
-    }
+.c-aside__wrapper {
+  width: 100%;
+  min-height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  border-bottom: 1px solid #e1e1e1;
+  border-top: 1px solid #e1e1e1;
+
+  @include media(tablet) {
+    border-bottom: 0px solid #e1e1e1;
+    border-top: 0px solid #e1e1e1;
+    justify-content: center;
   }
 }
 
@@ -61,28 +75,25 @@
   }
 }
 
-
 /*------------------------------------*\
   #Aside content
 \*------------------------------------*/
 .c-aside__content {
-  width: 95%;
+  width: 100%;
   justify-content: center;
   text-align: left;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
-
 
   @include media(tablet) {
-    width: 100%;
     vertical-align: top;
     height: 100%;
     align-items: flex-start;
     justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   @include media(wide) {
@@ -92,7 +103,7 @@
 
 .c-aside__context {
   width: max-content;
-
+  display: inline-block;
   @include media(tablet) {
     text-align: left;
   }
@@ -110,9 +121,9 @@
   }
 }
 
-.c-aside__title--mobile-hide{
+.c-aside__title--mobile-hide {
   display: block;
-  @include media(tablet){
+  @include media(tablet) {
     display: none;
   }
 }
@@ -182,6 +193,10 @@
   }
   .c-carousel {
     margin-left: 0;
+    height: 19vh;
+
+    @include media(wide) {
+      height: 20vh;
+    }
   }
 }
-

@@ -1,0 +1,95 @@
+.c-preloader {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #e1e1e1;
+  z-index: 90;
+}
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  display: block;
+  width: 3.75em;
+  height: 4.25em;
+  margin-left: -1.875em;
+  margin-top: -2.125em;
+  transform-origin: center center;
+  transform: rotateY(180deg) rotateZ(-60deg);
+}
+.preloader .slice {
+  border-top: 1.125em solid transparent;
+  border-right: none;
+  border-bottom: 1em solid transparent;
+  border-left: 1.875em solid #f7484e;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform-origin: left bottom;
+  border-radius: 3px 3px 0 0;
+}
+.preloader .slice:nth-child(1) {
+  transform: rotateZ(60deg) rotateY(0deg) rotateX(0);
+  -webkit-animation: 0.15s linear 0.82s preload-hide-1 both 1;
+  animation: 0.15s linear 0.82s preload-hide-1 both 1;
+}
+.preloader .slice:nth-child(2) {
+  transform: rotateZ(120deg) rotateY(0deg) rotateX(0);
+  -webkit-animation: 0.15s linear 0.74s preload-hide-2 both 1;
+  animation: 0.15s linear 0.74s preload-hide-2 both 1;
+}
+.preloader .slice:nth-child(3) {
+  transform: rotateZ(180deg) rotateY(0deg) rotateX(0);
+  -webkit-animation: 0.15s linear 0.66s preload-hide-3 both 1;
+  animation: 0.15s linear 0.66s preload-hide-3 both 1;
+}
+.preloader .slice:nth-child(4) {
+  transform: rotateZ(240deg) rotateY(0deg) rotateX(0);
+  -webkit-animation: 0.15s linear 0.58s preload-hide-4 both 1;
+  animation: 0.15s linear 0.58s preload-hide-4 both 1;
+}
+.preloader .slice:nth-child(5) {
+  transform: rotateZ(300deg) rotateY(0deg) rotateX(0);
+  -webkit-animation: 0.15s linear 0.5s preload-hide-5 both 1;
+  animation: 0.15s linear 0.5s preload-hide-5 both 1;
+}
+.preloader .slice:nth-child(6) {
+  transform: rotateZ(360deg) rotateY(0deg) rotateX(0);
+  -webkit-animation: 0.15s linear 0.42s preload-hide-6 both 1;
+  animation: 0.15s linear 0.42s preload-hide-6 both 1;
+}
+.preloader.loading {
+  -webkit-animation: 2s preload-flip steps(2) infinite both;
+  animation: 2s preload-flip steps(2) infinite both;
+}
+.preloader.loading .slice:nth-child(1) {
+  transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+  -webkit-animation: 2s preload-cycle-1 linear infinite both;
+  animation: 2s preload-cycle-1 linear infinite both;
+}
+.preloader.loading .slice:nth-child(2) {
+  transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+  -webkit-animation: 2s preload-cycle-2 linear infinite both;
+  animation: 2s preload-cycle-2 linear infinite both;
+}
+.preloader.loading .slice:nth-child(3) {
+  transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+  -webkit-animation: 2s preload-cycle-3 linear infinite both;
+  animation: 2s preload-cycle-3 linear infinite both;
+}
+.preloader.loading .slice:nth-child(4) {
+  transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+  -webkit-animation: 2s preload-cycle-4 linear infinite both;
+  animation: 2s preload-cycle-4 linear infinite both;
+}
+.preloader.loading .slice:nth-child(5) {
+  transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+  -webkit-animation: 2s preload-cycle-5 linear infinite both;
+  animation: 2s preload-cycle-5 linear infinite both;
+}
+.preloader.loading .slice:nth-child(6) {
+  transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+  -webkit-animation: 2s preload-cycle-6 linear infinite both;
+  animation: 2s preload-cycle-6 linear infinite both;
+}

@@ -115,6 +115,12 @@ function mainPageCarousels() {
     draggable: false,
     selectedAttraction: 0.2,
     friction: 0.8,
+    on: {
+      ready: function () {
+        const postTitiles = document.querySelector(".c-carousel__post-titles");
+        postTitiles.style.opacity = 1;
+      },
+    },
   });
 
   // Carousel (Main Child) - text Mobile
@@ -132,6 +138,14 @@ function mainPageCarousels() {
     draggable: false,
     selectedAttraction: 0.2,
     friction: 0.8,
+    on: {
+      ready: function () {
+        const postTitiles2 = document.querySelector(
+          ".js-carousel__post-titles--mobile"
+        );
+        postTitiles2.style.opacity = 1;
+      },
+    },
   });
 }
 
@@ -151,10 +165,14 @@ function singleCarousel() {
         if (isDesktop() === true) {
           // make slider full width with first drag
           let singleCarousel = document.querySelector(".js-single__slider");
-          singleCarousel.classList.add("c-carousel__single__slider--full-width");
+          singleCarousel.classList.add(
+            "c-carousel__single__slider--full-width"
+          );
 
           if (index === 0) {
-            singleCarousel.classList.remove("c-carousel__single__slider--full-width");
+            singleCarousel.classList.remove(
+              "c-carousel__single__slider--full-width"
+            );
           }
         }
       },
@@ -167,5 +185,3 @@ const singleSlider = document.querySelector(".js-single__slider");
 if (singleSlider.classList.contains("c-carousel__single__slider") === true) {
   singleCarousel();
 }
-
-

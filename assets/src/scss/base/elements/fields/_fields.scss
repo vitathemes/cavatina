@@ -23,16 +23,14 @@ textarea {
   border: 0;
   border-bottom: 1px solid $wp-cavatina__main-primary-color;
   width: 100%;
-  // height: max-content;
-  // padding-bottom: 10px;
-  // padding-top: 10px;
+  font-size: 12px;
   min-height: max-content;
 
   &::placeholder {
     color: $wp-cavatina__main-primary-light-color;
     opacity: 1;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 12px;
 
     color: $wp-cavatina__main-primary-light-color;
   }
@@ -68,10 +66,18 @@ textarea {
   vertical-align: middle;
 }
 
-[type="text"] {
-  padding-bottom: 25px;
+[type="text"],
+[type="email"],
+[type="url"] {
+  padding-bottom: 16px;
 
   &::placeholder {
     font-size: 12px !important;
+  }
+}
+
+.form-submit {
+  .submit {
+    padding: 13px 25px;
   }
 }

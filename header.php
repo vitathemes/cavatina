@@ -28,6 +28,7 @@
 </head>
 
 <body <?php body_class(); ?> oncLoad="scrollbar()" id="mybody">
+
     <?php wp_body_open(); ?>
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-cavatina' ); ?></a>
     <header id="masthead" class="c-header js-header">

@@ -294,7 +294,32 @@ function wp_cavatina_total_post_types() {
 }
 
 
+/**
+ * Change comment form textarea to use placeholder
+ *
+ * @since  1.0.0
+ * @param  array $args
+ * @return array
+ */
+function ea_comment_textarea_placeholder( $args ) {
+	$args['comment_field']        = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
+	return $args;
+}
+add_filter( 'comment_form_defaults', 'ea_comment_textarea_placeholder' );
 
+/**
+ * Comment Form Fields Placeholder
+ *
+ */
+function be_comment_form_fields( $fields ) {
+	foreach( $fields as &$field ) {
+		$field = str_replace( 'id="author"', 'id="author" placeholder="Name*"', $field );
+		$field = str_replace( 'id="email"', 'id="email" placeholder="Email*"', $field );
+		$field = str_replace( 'id="url"', 'id="url" placeholder="Website"', $field );
+	}
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'be_comment_form_fields' );
 
 
 /**
