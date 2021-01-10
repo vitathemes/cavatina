@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+*,
+html,
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+body {
+  background: $color__background-body; // Fallback for when there is no custom background color defined.
+  counter-reset: chapter; /* Create a chapter counter scope */
+  &.has-no-scrollbar {
+    height: 100%;
+    overflow: hidden;
+  }
+}

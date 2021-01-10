@@ -1,0 +1,376 @@
+/*------------------------------------*\
+  #single
+\*------------------------------------*/
+
+.c-single {
+  width: 100%;
+  height: max-content;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  margin-top: 16px;
+
+  @include media(tablet) {
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/*------------------------------------*\
+  #single context
+\*------------------------------------*/
+
+.c-single__context {
+  width: 100%;
+  height: 100%;
+  margin-top: 37px;
+  text-align: left;
+
+  min-height: 300px;
+  overflow-y: auto;
+
+  scrollbar-color: #555 #e1e1e1;
+
+  @include media(tablet) {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+
+.c-single__context::-webkit-scrollbar {
+  width: 2px;
+  //background-color: #767676;
+}
+
+/* Track */
+.c-single__context::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  width: 1px;
+  margin-top: 10vh;
+  margin-bottom: 0vh;
+}
+
+/* Handle */
+.c-single__context::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.c-single__context::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.c-single__title {
+  width: 100%;
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.c-single__title--red {
+  color: #ff3636;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  margin-bottom: 16px;
+}
+
+.c-single__title--small {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 0;
+  margin-bottom: 29px;
+}
+
+.c-single__title--page {
+  display: block;
+  margin-left: 16px;
+  margin-bottom: 0;
+  @include media(tablet) {
+    margin-left: 0;
+  }
+}
+
+.c-single__meta {
+  width: 100%;
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+  }
+  li {
+    display: inline-block;
+
+    &:nth-child(2)::before {
+      display: inline-block;
+      content: "";
+      -webkit-border-radius: 0.375rem;
+      border-radius: 0.375rem;
+      height: 0.75rem;
+      width: 0.75rem;
+      margin-right: 10px;
+      margin-left: 10px;
+      background-color: #ff3636;
+    }
+  }
+}
+
+.c-single__text {
+  font-size: 14px;
+  width: 100%;
+  text-align: justify;
+  line-height: 200%;
+
+  margin-left: 16px;
+  margin-right: 32px;
+
+  @include media(tablet) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.c-single__context__holder {
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+
+  @include media(tablet) {
+    margin-top: calc(40vh);
+    margin-right: 25px;
+    min-height: calc(50vh);
+  }
+}
+
+/*------------------------------------*\
+    #single carousel
+\*------------------------------------*/
+
+.c-single__carousel {
+  width: 100%;
+
+  @include media(tablet) {
+    height: 100%;
+  }
+}
+
+/*------------------------------------*\
+  #hide title and meta in tablet
+\*------------------------------------*/
+.c-single__carousel--mobile {
+  .c-single__title {
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    margin-left: 16px;
+
+    @include media(tablet) {
+      display: none;
+    }
+  }
+
+  .c-single__meta {
+    display: block;
+    margin-left: 16px;
+
+    @include media(tablet) {
+      display: none;
+    }
+
+    li {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 200%;
+    }
+  }
+
+  .flickity-viewport {
+    height: 380px;
+    cursor: grab;
+    @include media(tablet) {
+      height: 89%;
+    }
+
+    .c-single__slider__cell {
+      height: 100%;
+      @include media(tablet) {
+        height: 100%;
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+  #Post blog
+\*------------------------------------*/
+
+.c-single__blog {
+  width: 100%;
+  margin-top: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: max-content;
+
+  @include media(tablet) {
+    width: 85%;
+    display: inline-block;
+    margin-top: 107px;
+  }
+}
+.c-single__blog__post {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media(tablet) {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+.c-single__blog__header {
+  width: 100%;
+
+  order: 2;
+
+  @include media(tablet) {
+    width: 45%;
+    text-align: left;
+    margin-left: 5%;
+  }
+}
+
+.c-single__blog__meta {
+  margin-top: 16px;
+
+  @include media(tablet) {
+    margin-top: 0;
+  }
+}
+
+.c-single__blog__entry-title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 30px;
+  max-width: 450px;
+
+  color: #000000;
+
+  @include media(tablet) {
+    font-size: 24px;
+  }
+}
+
+.c-single__blog__thumbnail {
+  width: 100%;
+  height: 190px;
+  order: 1;
+
+  @include media(tablet) {
+    width: 50%;
+    height: 360px;
+  }
+}
+
+.c-single__blog__thumbnail__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.c-single__blog__entery-content {
+  order: 4;
+  text-align: left;
+  line-height: 28px;
+
+  @include media(tablet) {
+    width: 80%;
+    margin-top: 48px;
+  }
+  ul {
+    list-style-type: disc;
+
+    margin-left: 16px;
+  }
+
+  p {
+    color: #000000;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+.c-single__blog__tags {
+  display: none;
+  order: 5;
+  width: 100%;
+  text-align: left;
+  padding-left: 20%;
+  margin-top: 39px;
+
+  @include media(tablet) {
+    display: inline-block;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 16px;
+  }
+}
+
+.c-post__category--blog {
+  padding-left: 0;
+}
+
+/*------------------------------------*\
+  #Author avatar
+\*------------------------------------*/
+
+.c-single__author {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 39px;
+}
+
+.c-single__author__avatar {
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+
+  img {
+    border-radius: 40px;
+  }
+}
+
+.c-single__author__info {
+  display: inline-block;
+  margin-left: 24px;
+
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+
+  h3 {
+    margin: 0;
+  }
+}

@@ -1,0 +1,77 @@
+/*------------------------------------*\
+  #Fields elements
+\*------------------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: $wp-cavatina__main-primary-light-color;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid $wp-cavatina__main-primary-color;
+  width: 100%;
+  // height: max-content;
+  // padding-bottom: 10px;
+  // padding-top: 10px;
+  min-height: max-content;
+
+  &::placeholder {
+    color: $wp-cavatina__main-primary-light-color;
+    opacity: 1;
+    font-weight: normal;
+    font-size: 14px;
+
+    color: $wp-cavatina__main-primary-light-color;
+  }
+
+  &:focus {
+    color: $color__text-input-focus;
+    outline: none;
+  }
+
+  &:hover {
+  }
+}
+
+select {
+  color: $wp-cavatina__main-primary-light-color;
+  border: none;
+  border-radius: $global-radius;
+  background-color: $wp-cavatina__neutral-gray-light-color;
+  padding: 10px 14px;
+}
+
+textarea {
+  width: 100%;
+}
+
+#comment {
+  height: 84px;
+}
+
+[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+[type="text"] {
+  padding-bottom: 25px;
+
+  &::placeholder {
+    font-size: 12px !important;
+  }
+}

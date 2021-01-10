@@ -1,0 +1,16 @@
+/*--------------------------------------------------------------
+  # Custom Simplebar
+  --------------------------------------------------------------*/
+
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  margin-top: 12%;
+  background: #e1e1e1;
+  border-radius: 15px;
+}
+

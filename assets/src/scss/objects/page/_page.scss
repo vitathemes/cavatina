@@ -1,0 +1,165 @@
+/*------------------------------------*\
+  #Page
+\*------------------------------------*/
+.o-page {
+  width: 100%;
+  height: calc(100vh);
+  max-height: max-content;
+
+  @include media(tablet) {
+    text-align: left;
+    max-height: 100vh;
+
+    //qa-
+    padding-left: 7%;
+  }
+}
+
+.o-page--home {
+  height: max-content;
+  @include media(tablet) {
+    height: calc(100vh);
+    padding-left: 15%;
+  }
+}
+
+/*------------------------------------*\
+  #Page main
+\*------------------------------------*/
+
+.o-page__main {
+  animation-name: blurReverse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  overflow: auto;
+  height: max-content;
+  padding-bottom: 75px;
+
+  @include media(tablet) {
+    width: calc(99% - 175px);
+    height: 99%;
+    overflow-x: hidden;
+    display: inline-block;
+    text-align: left;
+    padding-bottom: 0px;
+  }
+}
+
+.o-page__main--blur {
+  animation-name: blur;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.o-page--home {
+  .o-page__main {
+    height: 100%;
+    padding-bottom: 0;
+    @include media(tablet) {
+      width: calc(99% - 22%);
+      height: 90%;
+    }
+  }
+}
+
+.o-page__main__header {
+  width: 100%;
+}
+.o-page__main--blog {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.o-page__main__header--align-left {
+  text-align: left;
+}
+
+/*------------------------------------*\
+  #Page col
+\*------------------------------------*/
+
+.o-page__col {
+  @include media(tablet) {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+
+/*------------------------------------*\
+  #Page 404
+\*------------------------------------*/
+.o-page__main--404 {
+  display: inline-block;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 25%;
+
+  @include media(tablet) {
+    padding: 0;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 32px;
+  }
+}
+
+.o-page__main__error-404 {
+  text-align: center;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  @include media(tablet) {
+    width: 80%;
+  }
+
+  .page-content {
+    p {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+/*------------------------------------*\
+    #Page Main - Error
+\*------------------------------------*/
+.o-page__main__error {
+  font-size: 15vw;
+  margin: 0;
+}
+
+/*------------------------------------*\
+  #Search nothing found
+\*------------------------------------*/
+.o-page__main--no-results {
+  width: 100%;
+  height: max-content;
+
+  @include media(tablet) {
+    width: 750px;
+    max-width: 70%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .o-page__main__header {
+    width: 100%;
+  }
+}
+
+.o-page__main__content {
+  width: 100%;
+  .search-submit-mobile {
+    display: none;
+  }
+}
