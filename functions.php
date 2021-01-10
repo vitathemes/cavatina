@@ -1,18 +1,18 @@
 <?php
 /**
- * wp-cavatina functions and definitions
+ * cavatina functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package wp-cavatina
+ * @package cavatina
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'CAVATINA_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'CAVATINA_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'wp_cavatina_setup' ) ) :
+if ( ! function_exists( 'cavatina_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'wp_cavatina_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function wp_cavatina_setup() {
+	function cavatina_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on wp-cavatina, use a find and replace
-		 * to change 'wp-cavatina' to the name of your theme in all the template files.
+		 * If you're building a theme based on cavatina, use a find and replace
+		 * to change 'cavatina' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'wp-cavatina', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'cavatina', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'wp_cavatina_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'wp-cavatina' ),
+				'menu-1' => esc_html__( 'Primary', 'cavatina' ),
 			)
 		);
 
@@ -102,7 +102,7 @@ if ( ! function_exists( 'wp_cavatina_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'wp_cavatina_setup' );
+add_action( 'after_setup_theme', 'cavatina_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -124,9 +124,9 @@ add_action( 'after_setup_theme', 'wp_cavatina_content_width', 0 );
 function wp_cavatina_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'wp-cavatina' ),
+			'name'          => esc_html__( 'Sidebar', 'cavatina' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'wp-cavatina' ),
+			'description'   => esc_html__( 'Add widgets here.', 'cavatina' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -140,10 +140,10 @@ add_action( 'widgets_init', 'wp_cavatina_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wp_cavatina_scripts() {
-	wp_enqueue_style( 'wp-cavatina-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'wp-cavatina-style', get_stylesheet_uri(), array(), CAVATINA_VERSION );
 	wp_style_add_data( 'wp-cavatina-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'wp-cavatina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'wp-cavatina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAVATINA_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -174,9 +174,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 function cavatina_scripts() {
 
-	wp_enqueue_style( 'cavatina-style', get_template_directory_uri() . '/assets/css/main.css', array(), _S_VERSION );
+	wp_enqueue_style( 'cavatina-style', get_template_directory_uri() . '/assets/css/main.css', array(), CAVATINA_VERSION );
 
-	wp_enqueue_script( 'cavatina-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array( ), _S_VERSION, true );
+	wp_enqueue_script( 'cavatina-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array( ), CAVATINA_VERSION, true );
 
 }
 
@@ -208,8 +208,8 @@ $labels = array(
 // Set other options for Custom Post Type
 
     $args = array(
-        'label'               => __( 'projects', 'wp-cavatina' ),
-        'description'         => __( 'Project news and reviews', 'wp-cavatina' ),
+        'label'               => __( 'projects', 'cavatina' ),
+        'description'         => __( 'Project news and reviews', 'cavatina' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
         'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
@@ -252,11 +252,11 @@ add_action( 'init', 'cavatina_projects', 0 );
 /**
  * change submit button text in wordpress comment form
  */
-function wcs_change_submit_button_text( $defaults ) {
+function cavatina_change_submit_button_text( $defaults ) {
     $defaults['label_submit'] = 'Send';
     return $defaults;
 }
-add_filter( 'comment_form_defaults', 'wcs_change_submit_button_text' );
+add_filter( 'comment_form_defaults', 'cavatina_change_submit_button_text' );
 
 
 
@@ -264,17 +264,17 @@ add_filter( 'comment_form_defaults', 'wcs_change_submit_button_text' );
  * change comment date format
  */
 
-add_filter( 'get_comment_date', 'wpsites_change_comment_date_format' );
-function wpsites_change_comment_date_format( $d ) {
+
+function cavatina_change_comment_date_format( $d ) {
     $d = date("F j.Y");
     return $d;
 }
-
+add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
 
 /**
  * count number of posts in a page
  */
-function wp_cavatina_total_posts() {
+function cavatina_total_posts() {
 	$total = wp_count_posts()->publish;
 	echo  $total;
 }
@@ -282,14 +282,14 @@ function wp_cavatina_total_posts() {
 /**
  * count number of posts in a page
  */
-function wp_cavatina_post_type_name() {
+function cavatina_post_type_name() {
 	echo esc_html( get_post_type( get_the_ID() ));
 }
 
 /**
  * count number of posts types (project) in a page
  */
-function wp_cavatina_total_post_types() {
+function cavatina_total_post_types() {
 	printf($count_posts = wp_count_posts( 'projects' )->publish);
 }
 
@@ -301,11 +301,11 @@ function wp_cavatina_total_post_types() {
  * @param  array $args
  * @return array
  */
-function ea_comment_textarea_placeholder( $args ) {
+function cavatina_change_placeholder( $args ) {
 	$args['comment_field']        = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
 	return $args;
 }
-add_filter( 'comment_form_defaults', 'ea_comment_textarea_placeholder' );
+add_filter( 'comment_form_defaults', 'cavatina_change_placeholder' );
 
 /**
  * Comment Form Fields Placeholder
@@ -325,7 +325,7 @@ add_filter( 'comment_form_default_fields', 'be_comment_form_fields' );
 /**
  * change excerpt length
  */
-function wp_cavatina_custom_excerpt_length( $length ) {
+function cavatina_custom_excerpt_length( $length ) {
 	return 10;
 }
-add_filter( 'excerpt_length', 'wp_cavatina_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'cavatina_custom_excerpt_length', 999 );

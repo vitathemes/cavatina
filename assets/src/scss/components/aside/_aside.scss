@@ -60,7 +60,6 @@
   align-items: center;
   padding: 20px 16px;
   border-bottom: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1;
 
   @include media(tablet) {
     border-bottom: 0px solid #e1e1e1;
@@ -193,7 +192,7 @@
   }
   .c-carousel {
     margin-left: 0;
-    height: 19vh;
+    height: 22vh;
 
     @include media(wide) {
       height: 20vh;

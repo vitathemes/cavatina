@@ -90,13 +90,16 @@
       siteNavigation.classList.remove("toggled");
       button.setAttribute("aria-expanded", "false");
 
-      siteNavigation.classList.add("has-animation-out");
-      siteNavigation.classList.remove("is-open");
+      if (siteNavigation.classList.contains("is-open")) {
+        siteNavigation.classList.add("has-animation-out");
+        siteNavigation.classList.remove("is-open");
 
-      menuLogo.classList.remove("logo-in");
-      menuLogo.classList.remove("is-open");
+        menuLogo.classList.add("logo-out");
+        menuLogo.classList.remove("logo-in");
+        menuLogo.classList.remove("is-open");
 
-      menuNav.classList.remove("is-open");
+        menuNav.classList.remove("is-open");
+      }
     }
   });
 

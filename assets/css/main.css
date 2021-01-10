@@ -977,7 +977,7 @@ https://flickity.metafizzy.co
 .u-half-border {
   width: 70%;
   margin-left: -10%;
-  margin-top: 24px;
+  margin-top: 16px;
   margin-bottom: 24px;
   border-top: 1px solid #e1e1e1; }
   @media only screen and (min-width: 980px) {
@@ -1429,6 +1429,8 @@ html {
     .o-page--home {
       height: calc(100vh);
       padding-left: 15%; } }
+  .o-page--home .c-footer {
+    padding-left: 16px; }
 
 /*------------------------------------*\
   #Page main
@@ -1942,7 +1944,7 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 65%; } }
+    padding-top: 55%; } }
 
 @media only screen and (min-width: 1400px) {
   .c-header--home .c-header__holder {
@@ -2465,8 +2467,7 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 20px 16px;
-  border-bottom: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1; }
+  border-bottom: 1px solid #e1e1e1; }
   @media only screen and (min-width: 980px) {
     .c-aside__wrapper {
       border-bottom: 0px solid #e1e1e1;
@@ -2574,7 +2575,7 @@ img {
       text-align: left; } }
   .c-aside__carousel .c-carousel {
     margin-left: 0;
-    height: 19vh; }
+    height: 22vh; }
     @media only screen and (min-width: 1400px) {
       .c-aside__carousel .c-carousel {
         height: 20vh; } }
@@ -2721,6 +2722,7 @@ img {
 \*------------------------------------*/
 .c-carousel__single__slider {
   width: 100%;
+  left: 0;
   height: max-content;
   transition: 1s all;
   background-color: #fff;
@@ -2732,8 +2734,9 @@ img {
   z-index: 5; }
   @media only screen and (min-width: 980px) {
     .c-carousel__single__slider {
-      width: 50%;
+      width: 100%;
       height: 100%;
+      left: 50%;
       position: absolute;
       margin-top: 0; } }
   .c-carousel__single__slider .flickity-viewport {
@@ -2750,18 +2753,21 @@ img {
         justify-content: center;
         align-items: center; } }
     .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell {
-      width: 100%;
+      min-width: 90%;
+      max-width: 600px;
       height: 100%;
       transition: 1s all;
       padding-left: 16px;
-      padding-right: 16px; }
+      padding-right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
       @media only screen and (min-width: 980px) {
         .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell {
-          width: 80%;
-          height: 100%;
           transition: 1s all;
-          padding-left: 5%;
-          padding-right: 5%; } }
+          padding-left: 24px;
+          padding-right: 24px;
+          min-width: 30%; } }
     .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell--page {
       width: 100%; }
   .c-carousel__single__slider .flickity-page-dots {
@@ -2771,14 +2777,20 @@ img {
     .c-carousel__single__slider .flickity-page-dots .dot {
       width: 30%; }
 
+.flickity-page-dots {
+  bottom: -23%; }
+  @media only screen and (min-width: 980px) {
+    .flickity-page-dots {
+      bottom: -25px; } }
+
 .c-carousel__single__image {
   border-radius: 10px; }
 
 .c-carousel__single__cell__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px; }
+  max-width: 100%;
+  border-radius: 10px;
+  max-height: 100%;
+  width: auto; }
 
 .c-carousel__single__cell_image--page {
   cursor: auto; }
@@ -2787,7 +2799,7 @@ img {
   #modifier
 \*------------------------------------*/
 .c-carousel__single__slider--full-width {
-  width: 100%; }
+  left: 0; }
   .c-carousel__single__slider--full-width .c-single__slider__cell {
     width: 90%;
     padding-left: 10%;
@@ -2884,10 +2896,12 @@ img {
       .c-comment-form .comment-form-url {
         margin-top: 48px; } }
   .c-comment-form .comment-form-comment {
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 0; }
     @media only screen and (min-width: 980px) {
       .c-comment-form .comment-form-comment {
-        margin-top: 40px; } }
+        margin-top: 40px;
+        margin-bottom: 16px; } }
 
 .email-notes {
   text-align: left;
@@ -2903,6 +2917,9 @@ img {
     .comments-area {
       margin-left: 20%;
       text-align: left; } }
+
+.wp-comment-cookies-consent {
+  display: block; }
 
 .comment-respond {
   margin-bottom: 40px; }
@@ -2929,6 +2946,16 @@ img {
   @media only screen and (min-width: 980px) {
     .children {
       margin-left: 1.5em; } }
+
+.comment-awaiting-moderation {
+  display: none;
+  font-size: 16px;
+  margin-left: 73px;
+  margin-top: 8px; }
+  @media only screen and (min-width: 980px) {
+    .comment-awaiting-moderation {
+      margin-top: 10px;
+      margin-left: 16px; } }
 
 .comment-meta {
   position: relative;
@@ -3009,9 +3036,6 @@ img {
     width: 100%;
     border-radius: 40px; }
 
-.comment-awaiting-moderation {
-  margin-top: 8px; }
-
 .says {
   display: none; }
 
@@ -3032,11 +3056,24 @@ img {
 #cancel-comment-reply-link {
   margin-left: 16px; }
 
-.comment-form-cookies-consent {
-  width: 100%; }
-
 .comment-respond label {
   display: none; }
+
+.comment-form-cookies-consent {
+  width: 100%;
+  display: block; }
+  .comment-form-cookies-consent label {
+    vertical-align: top;
+    display: inline-block;
+    width: 85%;
+    margin-left: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    display: inline-block;
+    color: #767676; }
 
 /* Contents
 --------------------------------------------- */
@@ -3690,7 +3727,7 @@ textarea {
 [type="text"],
 [type="email"],
 [type="url"] {
-  padding-bottom: 16px; }
+  padding-bottom: 20px; }
   [type="text"]::placeholder,
   [type="email"]::placeholder,
   [type="url"]::placeholder {
@@ -3698,6 +3735,18 @@ textarea {
 
 .form-submit .submit {
   padding: 13px 25px; }
+
+.error {
+  margin-top: 8px; }
+
+.c-error__title {
+  padding: 10px 0 20px 0;
+  color: #ff0000;
+  font-family: "Montserrat", sans-serif !important; }
+
+input.error,
+textarea.error {
+  color: #000000; }
 
 ul,
 ol {

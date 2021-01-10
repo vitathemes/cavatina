@@ -9,22 +9,7 @@
 
 get_header();
 ?>
-<aside class="o-page__col c-aside c-aside--mobile-hide">
-    <div class="c-aside__content">
-        <div class="c-aside__wrapper">
-            <div class="c-aside__context">
-                <span class="c-aside__title">Blog</span>
-            </div>
-            <div class="c-search__icon js-search__icon"></div>
-        </div>
-        <div class="c-search js-search">
-            <div class="c-search__holder">
-                <?php get_search_form(); ?>
-            </div>
-        </div>
 
-    </div>
-</aside>
 <main class="o-page__main o-page__main--blog o-page__main--no-bottom-space js-page__main">
     <div class="c-single__blog">
         <?php

@@ -60,9 +60,9 @@ const uglifyTask = (cb) => {
 
 exports.default = () =>
   gulp
-    .src("assets/src/images/*")
+    .src("assets/src/images/**/*")
     .pipe(imagemin())
-    .pipe(gulp.dest("assets/images"));
+    .pipe(gulp.dest("assets/images/dist"));
 
 const browserSyncTask = (cb) => {
   browserSync.init({

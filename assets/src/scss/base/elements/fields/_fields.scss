@@ -69,7 +69,7 @@ textarea {
 [type="text"],
 [type="email"],
 [type="url"] {
-  padding-bottom: 16px;
+  padding-bottom: 20px;
 
   &::placeholder {
     font-size: 12px !important;
@@ -80,4 +80,17 @@ textarea {
   .submit {
     padding: 13px 25px;
   }
+}
+
+.error {
+  margin-top: 8px;
+}
+.c-error__title {
+  padding: 10px 0 20px 0;
+  color: #ff0000;
+  font-family: "Montserrat", sans-serif !important;
+}
+input.error,
+textarea.error {
+  color: #000000;
 }
