@@ -2295,6 +2295,7 @@ img {
 \*------------------------------------*/
 .c-carousel__single__slider {
   width: 100%;
+  left: 0;
   height: max-content;
   transition: 1s all;
   background-color: #fff;
@@ -2306,8 +2307,9 @@ img {
   z-index: 5; }
   @media only screen and (min-width: 980px) {
     .c-carousel__single__slider {
-      width: 50%;
+      width: 100%;
       height: 100%;
+      left: 50%;
       position: absolute;
       margin-top: 0; } }
   .c-carousel__single__slider .flickity-viewport {
@@ -2324,18 +2326,21 @@ img {
         justify-content: center;
         align-items: center; } }
     .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell {
-      width: 100%;
+      min-width: 90%;
+      max-width: 600px;
       height: 100%;
       transition: 1s all;
       padding-left: 16px;
-      padding-right: 16px; }
+      padding-right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
       @media only screen and (min-width: 980px) {
         .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell {
-          width: 80%;
-          height: 100%;
           transition: 1s all;
-          padding-left: 5%;
-          padding-right: 5%; } }
+          padding-left: 24px;
+          padding-right: 24px;
+          min-width: 30%; } }
     .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell--page {
       width: 100%; }
   .c-carousel__single__slider .flickity-page-dots {
@@ -2349,10 +2354,10 @@ img {
   border-radius: 10px; }
 
 .c-carousel__single__cell__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px; }
+  max-width: 100%;
+  border-radius: 10px;
+  max-height: 100%;
+  width: auto; }
 
 .c-carousel__single__cell_image--page {
   cursor: auto; }
@@ -2361,7 +2366,7 @@ img {
   #modifier
 \*------------------------------------*/
 .c-carousel__single__slider--full-width {
-  width: 100%; }
+  left: 0; }
   .c-carousel__single__slider--full-width .c-single__slider__cell {
     width: 90%;
     padding-left: 10%;

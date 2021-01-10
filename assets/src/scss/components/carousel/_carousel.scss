@@ -100,6 +100,7 @@
     margin: 0;
   }
 }
+
 .c-carousel__more--home {
   margin-top: 15%;
 
@@ -156,6 +157,7 @@
   .flickity-slider {
     margin-left: 5%;
   }
+
   .c-carousel__post-title {
     width: 95%;
     margin-top: 5%;
@@ -177,10 +179,10 @@
 
 .c-carousel__single__slider {
   width: 100%;
+  left: 0;
   height: max-content;
   transition: 1s all;
   background-color: $color__background-body;
-
   right: 0;
   display: flex;
   align-items: flex-end;
@@ -188,11 +190,13 @@
   margin-top: 24px;
   z-index: 5;
   @include media(tablet) {
-    width: 50%; // here
+    width: 100%; // here
     height: 100%;
+    left: 50%;
     position: absolute;
     margin-top: 0;
   }
+
   .flickity-viewport {
     width: 100%;
     height: 140px;
@@ -212,20 +216,24 @@
     }
 
     .c-carousel__single__cell {
-      width: 100%;
+      min-width: 90%;
+      max-width: 600px;
       height: 100%;
       transition: 1s all;
       padding-left: 16px;
       padding-right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       @include media(tablet) {
-        width: 80%;
-        height: 100%;
         transition: 1s all;
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 24px;
+        padding-right: 24px;
+        min-width: 30%;
       }
     }
+
     .c-carousel__single__cell--page {
       width: 100%;
     }
@@ -247,25 +255,28 @@
 }
 
 .c-carousel__single__cell__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
   border-radius: 10px;
+  max-height: 100%;
+  width: auto;
 }
 
 .c-carousel__single__cell_image--page {
   cursor: auto;
 }
+
 /*------------------------------------*\
   #modifier
 \*------------------------------------*/
 
 .c-carousel__single__slider--full-width {
-  width: 100%;
+  left: 0;
+
   .c-single__slider__cell {
     width: 90%;
     padding-left: 10%;
     padding-right: 10%;
+
     @include media(wide) {
       padding-left: 15%;
       padding-right: 15%;
