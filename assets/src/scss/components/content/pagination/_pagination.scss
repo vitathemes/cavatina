@@ -31,8 +31,12 @@
   color: #767676;
   border-radius: 3px;
   cursor: pointer;
-  padding: 10px 15px;
   margin:2px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover{
     background-color: #767676;
     color: #fff;
@@ -48,6 +52,7 @@
   font-family: dashicons !important;
   &:hover{
     background-color: transparent;
+    color: #E1E1E1;
   }
 }
 

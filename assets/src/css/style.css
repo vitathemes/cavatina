@@ -2844,8 +2844,12 @@ img {
   color: #767676;
   border-radius: 3px;
   cursor: pointer;
-  padding: 10px 15px;
-  margin: 2px; }
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   .page-numbers:hover {
     background-color: #767676;
     color: #fff; }
@@ -2858,7 +2862,8 @@ img {
   color: #767676;
   font-family: dashicons !important; }
   .dashicons:hover {
-    background-color: transparent; }
+    background-color: transparent;
+    color: #E1E1E1; }
 
 .next.page-numbers:hover, .prev.page-numbers:hover {
   background-color: unset; }
