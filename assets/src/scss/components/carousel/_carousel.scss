@@ -18,9 +18,21 @@
   }
 }
 
+.c-carousel--aside{
+    margin-left: 0;
+    height: 22vh;
+    width: 100%;
+
+    @include media(wide) {
+      height: 20vh;
+    }
+
+}
+
 .c-carousel__context {
   height: 100%;
   background: transparent;
+  opacity: 0;
 
   .flickity-viewport {
     height: 100%;
@@ -100,6 +112,7 @@
     margin: 0;
   }
 }
+
 .c-carousel__more--home {
   margin-top: 15%;
 
@@ -120,15 +133,17 @@
 .c-carousel__post-titles {
   width: 100%;
   height: max-content;
+  opacity: 0;
 
   .flickity-viewport {
     width: 100%;
     height: 100%;
 
-    .flickity-slider {
-      width: 100%;
-      height: 100%;
-    }
+  }
+
+  .flickity-slider {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -145,6 +160,7 @@
 
   @include media(tablet) {
     width: 100%;
+    padding-left: 1px;
   }
 
   &:hover {
@@ -156,6 +172,7 @@
   .flickity-slider {
     margin-left: 5%;
   }
+
   .c-carousel__post-title {
     width: 95%;
     margin-top: 5%;
@@ -177,10 +194,10 @@
 
 .c-carousel__single__slider {
   width: 100%;
+  left: 0;
   height: max-content;
   transition: 1s all;
   background-color: $color__background-body;
-
   right: 0;
   display: flex;
   align-items: flex-end;
@@ -188,11 +205,13 @@
   margin-top: 24px;
   z-index: 5;
   @include media(tablet) {
-    width: 50%; // here
+    width: 100%; // here
     height: 100%;
+    left: 50%;
     position: absolute;
     margin-top: 0;
   }
+
   .flickity-viewport {
     width: 100%;
     height: 140px;
@@ -202,32 +221,13 @@
       width: 100%;
       height: 95%;
     }
+  }
 
-    .flickity-slider {
-      @include media(tablet) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-
-    .c-carousel__single__cell {
-      width: 100%;
-      height: 100%;
-      transition: 1s all;
-      padding-left: 16px;
-      padding-right: 16px;
-
-      @include media(tablet) {
-        width: 80%;
-        height: 100%;
-        transition: 1s all;
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-    }
-    .c-carousel__single__cell--page {
-      width: 100%;
+  .flickity-slider {
+    @include media(tablet) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -235,37 +235,83 @@
     padding-left: 0;
     padding-right: 0;
     bottom: -15px;
-
     .dot {
       width: 30%;
     }
   }
+
 }
 
+.c-carousel__single__cell {
+  min-width: 90%;
+  max-width: 600px;
+  height: 100%;
+  transition: 1s all;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media(tablet) {
+    transition: 1s all;
+    padding-left: 24px;
+    padding-right: 24px;
+    min-width: 30%;
+  }
+}
+
+.c-carousel__single__cell--page {
+  width: 100%;
+  @include media(laptop){
+    width: 50%;
+  }
+}
+
+
+
+.flickity-page-dots {
+  bottom: -23%;
+  @include media(tablet) {
+    bottom: -25px;
+  }
+}
 .c-carousel__single__image {
   border-radius: 10px;
 }
 
 .c-carousel__single__cell__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
   border-radius: 10px;
+  max-height: 100%;
+  width: auto;
 }
 
 .c-carousel__single__cell_image--page {
   cursor: auto;
+  width: 100%;
+  object-position: top;
+  object-fit: cover;
+  height: 100%;
+
+  @include media(tablet){
+    height: unset;
+  }
+
+
 }
+
 /*------------------------------------*\
   #modifier
 \*------------------------------------*/
 
 .c-carousel__single__slider--full-width {
-  width: 100%;
+  left: 0;
   .c-single__slider__cell {
     width: 90%;
     padding-left: 10%;
     padding-right: 10%;
+
     @include media(wide) {
       padding-left: 15%;
       padding-right: 15%;

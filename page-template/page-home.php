@@ -69,7 +69,7 @@
                         ?>
                 </div>
                 <div class="c-aside__carousel">
-                    <div class="c-carousel">
+                    <div class="c-carousel c-carousel--aside">
                         <p class="c-carousel__title">Recent Projects</p>
                         <div class="c-carousel__post-titles js-carousel__post-titles">
                             <a href="#" class="c-carousel__post-title"><span
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </aside>
-        <main class="o-page__main js-page__main">
+        <main class="o-page__main js-page__main o-page__main--home">
             <div class="o-page__col c-content c-content--home">
                 <div class="c-carousel">
                     <div class="c-carousel__title">

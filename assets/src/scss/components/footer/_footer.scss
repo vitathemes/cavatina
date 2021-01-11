@@ -7,13 +7,13 @@
   align-items: center;
   justify-content: flex-end;
   background-color: transparent;
-
   padding-top: 1%;
   padding-left: 16px;
-  padding-right: 12px;
+  padding-right:10px;
 
   @include media(tablet) {
     padding-left: 0;
+    padding-right: 36px;
   }
 }
 
@@ -26,15 +26,11 @@
   justify-content: flex-end;
   @include media(tablet) {
     width: 100%;
-
     margin-top: 0;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
   }
-}
-
-.c-footer__copy {
 }
 
 .c-footer__text {

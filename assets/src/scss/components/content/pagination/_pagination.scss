@@ -1,0 +1,66 @@
+
+.nav-links {
+  display: none !important;
+}
+
+.nav-previous {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
+.nav-next {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
+
+.c-pagination{
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  @include media(tablet){
+    padding-right: 60px;
+  }
+
+
+}
+
+.page-numbers{
+  color: #767676;
+  border-radius: 3px;
+  cursor: pointer;
+  margin:2px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+    background-color: #767676;
+    color: #fff;
+  }
+}
+
+.page-numbers.current{
+  background-color: #767676;
+  color: #fff;
+}
+.dashicons{
+  color: #767676;
+  font-family: dashicons !important;
+  &:hover{
+    background-color: transparent;
+    color: #E1E1E1;
+  }
+}
+
+
+.next.page-numbers , .prev.page-numbers{
+
+  &:hover{
+    background-color: unset;
+  }
+
+}

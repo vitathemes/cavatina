@@ -67,7 +67,7 @@
 .c-single__title {
   width: 100%;
   display: none;
-
+  font-size: 24px;
   @include media(tablet) {
     display: block;
   }
@@ -108,7 +108,8 @@
   }
   li {
     display: inline-block;
-
+    color: #767676;
+    font-size: 14px;
     &:nth-child(2)::before {
       display: inline-block;
       content: "";
@@ -126,10 +127,10 @@
 .c-single__text {
   font-size: 14px;
   width: 100%;
-  text-align: justify;
+  text-align: left;
   line-height: 200%;
 
-  margin-left: 16px;
+  margin-left: 14px;
   margin-right: 32px;
 
   @include media(tablet) {
@@ -229,7 +230,6 @@
 }
 .c-single__blog__post {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -363,7 +363,7 @@
   display: inline-block;
   margin-left: 24px;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: $font__regular;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;

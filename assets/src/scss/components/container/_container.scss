@@ -1,7 +1,6 @@
 /*------------------------------------------*\
   #Container block -> All posts => archives
 \*------------------------------------------*/
-
 .c-container {
   width: 100%;
   height: 100%;
@@ -15,23 +14,17 @@
 .c-container__content {
   width: 100%;
   height: max-content;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  // padding-bottom: 64px;
   margin-top: 32px;
-
   @include media(tablet) {
     height: 100%;
     padding-right: 60px;
-    padding-top: 70px;
+    padding-top: 100px;
     padding-bottom: 0px;
   }
-
-  .c-post {
-    .c-post__entery-content {
+  .c-post__entery-content {
       display: none;
-    }
   }
 }

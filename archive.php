@@ -11,16 +11,19 @@ get_header();
 ?>
 <aside class="o-page__col c-aside">
     <div class="c-aside__content">
-        <div class="c-aside__context">
-            <span class="c-aside__title"><?php wp_cavatina_post_type_name();  ?></span>
-            <span class="c-aside__counter"><?php wp_cavatina_total_post_types(); ?> Portfolios</span>
+        <div class="c-aside__wrapper">
+            <div class="c-aside__context">
+                <span class="c-aside__title"><?php cavatina_post_type_name();  ?>s</span>
+                <span class="c-aside__counter"><?php cavatina_total_post_types(); ?> Portfolios</span>
+            </div>
+            <div class="c-search__icon js-search__icon"></div>
         </div>
-        <div class="c-search__icon js-search__icon"></div>
         <div class="c-search js-search">
             <div class="c-search__holder">
                 <?php get_search_form(); ?>
             </div>
         </div>
+
     </div>
 </aside>
 <main class="o-page__main js-page__main">
@@ -44,6 +47,14 @@ get_header();
                         get_template_part('template-parts/content', 'none');
                     endif;
                     ?>
+            </div>
+            <div class="c-pagination">
+                <?php echo paginate_links( array(
+
+                    'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
+                    'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+
+                )); ?>
             </div>
         </div>
     </div>

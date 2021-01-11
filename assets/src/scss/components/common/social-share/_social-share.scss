@@ -2,10 +2,15 @@
   #Social media links
 \*------------------------------------*/
 .c-social-media {
+  transition: 1s all;
 }
 .c-social-media__item {
   margin-right: 18px;
   transition: 0.2s all;
+}
+
+.c-social-media__icon{
+  transition: 0.3s all;
 }
 
 .c-social-media__item{
@@ -13,7 +18,7 @@
     .c-social-media__icon{
       fill: #000000;
     }
-    }
+  }
 
   .c-social-media__icon{
     fill: #8A8A8A;

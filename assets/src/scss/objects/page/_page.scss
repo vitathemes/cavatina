@@ -21,6 +21,11 @@
     height: calc(100vh);
     padding-left: 15%;
   }
+
+  .c-footer {
+    padding-left: 16px;
+    padding-right: 36px;
+  }
 }
 
 /*------------------------------------*\
@@ -46,9 +51,9 @@
 }
 
 .o-page__main--blur {
-  animation-name: blur;
+  animation-name: blur !important;
   animation-duration: 1s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards ;
 }
 
 .o-page--home {
@@ -62,20 +67,63 @@
   }
 }
 
+.o-page__main--page-single{
+  .c-footer{
+    @include media(tablet){
+      padding-right: 0;
+    }
+  }
+}
+
+
+// Index pagge
+.o-page__main--posts{
+
+  .c-footer{
+    @include media(tablet){
+      padding-right: 36px;
+    }
+  }
+
+}
+
+
 .o-page__main__header {
   width: 100%;
 }
+
+// Single Blog
 .o-page__main--blog {
   width: 100%;
 
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
+  .c-footer{
+
+    @include  media(tablet){
+      padding-right: 7%;
+      padding-left: 25%;
+    }
+  }
+}
+
+// Project pages
+.o-page__main--projects{
+  .c-footer{
+    padding-right: 45px;
+  }
 }
 
 .o-page__main__header--align-left {
   text-align: left;
 }
+
+.o-page__main--no-bottom-space {
+  padding-bottom: 0;
+}
+
 
 /*------------------------------------*\
   #Page col
@@ -104,6 +152,11 @@
     padding-right: 32px;
     padding-top: 32px;
   }
+
+  form{
+    width: 90%;
+    margin-top: 16px;
+  }
 }
 
 .o-page__main__error-404 {
@@ -115,8 +168,15 @@
   align-content: center;
   flex-wrap: wrap;
 
+
   @include media(tablet) {
     width: 80%;
+  }
+
+  .o-page__main__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .page-content {
@@ -132,6 +192,7 @@
 .o-page__main__error {
   font-size: 15vw;
   margin: 0;
+  line-height: 120%;
 }
 
 /*------------------------------------*\

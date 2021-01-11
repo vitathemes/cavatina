@@ -41,23 +41,23 @@ let isToggled = false;
 function searchToggleHeader() {
   const header = document.querySelector(".js-header");
   const headerSearch = document.querySelector(".js-header__search");
+
+
   const searchOverlay = document.querySelector(".js-search__overlay");
 
-  let headerContains = header.contains(headerSearch);
-
-  if (headerContains === true) {
-    headerSearch.addEventListener("click", function () {
-      // Fade in/out the search overlay
-      if (isToggled === true) {
-        fadeOut(searchOverlay);
-        headerSearch.classList.remove("c-header__search--toggle");
-        isToggled = false;
-      } else {
-        fadeIn(searchOverlay, "flex");
-        headerSearch.classList.add("c-header__search--toggle");
-        isToggled = true;
-      }
-    });
+    if(document.querySelector('body').getElementsByClassName('o-overlay')[0]) {
+      headerSearch.addEventListener("click", function () {
+        // Fade in/out the search overlay
+        if (isToggled === true) {
+          fadeOut(searchOverlay);
+          headerSearch.classList.remove("c-header__search--toggle");
+          isToggled = false;
+        } else {
+          fadeIn(searchOverlay, "flex");
+          headerSearch.classList.add("c-header__search--toggle");
+          isToggled = true;
+        }
+      });
   }
 }
 
@@ -84,11 +84,14 @@ searchToggleAside();
 function blurToggle() {
   let pageMain = document.querySelector(".js-page__main");
   let overlay = document.querySelector(".js-overlay");
+  let searchOverlay = document.querySelector(".js-search__overlay");
 
   if (pageMain.classList.contains("o-page__main--blur")) {
+    searchOverlay.classList.remove("o-page__main--blur");
     pageMain.classList.remove("o-page__main--blur");
     overlay.classList.remove("o-overlay--active");
   } else {
+    searchOverlay.classList.add("o-page__main--blur");
     pageMain.classList.add("o-page__main--blur");
     overlay.classList.add("o-overlay--active");
   }
@@ -102,6 +105,12 @@ function mainPageCarousels() {
     setGallerySize: false,
     freeScroll: false,
     prevNextButtons: true,
+    on: {
+      ready: function () {
+        const mainCarousel = document.querySelector(".js-carousel__context");
+        mainCarousel.style.opacity = 1;
+      },
+    },
   });
 
   // Carousel (Main Child) - text
@@ -115,6 +124,12 @@ function mainPageCarousels() {
     draggable: false,
     selectedAttraction: 0.2,
     friction: 0.8,
+    on: {
+      ready: function () {
+        const postTitiles = document.querySelector(".c-carousel__post-titles");
+        postTitiles.style.opacity = 1;
+      },
+    },
   });
 
   // Carousel (Main Child) - text Mobile
@@ -132,6 +147,14 @@ function mainPageCarousels() {
     draggable: false,
     selectedAttraction: 0.2,
     friction: 0.8,
+    on: {
+      ready: function () {
+        const postTitiles2 = document.querySelector(
+          ".js-carousel__post-titles--mobile"
+        );
+        postTitiles2.style.opacity = 1;
+      },
+    },
   });
 }
 
@@ -142,6 +165,7 @@ function singleCarousel() {
   let flCarouselSingle = new Flickity(carouselSingle, {
     freeScroll: isDesktop(),
     setGallerySize: false,
+    imagesLoaded: true,
     cellAlign: "left",
     pageDots: !isDesktop(),
     prevNextButtons: false,
@@ -151,10 +175,14 @@ function singleCarousel() {
         if (isDesktop() === true) {
           // make slider full width with first drag
           let singleCarousel = document.querySelector(".js-single__slider");
-          singleCarousel.classList.add("c-carousel__single__slider--full-width");
+          singleCarousel.classList.add(
+            "c-carousel__single__slider--full-width"
+          );
 
           if (index === 0) {
-            singleCarousel.classList.remove("c-carousel__single__slider--full-width");
+            singleCarousel.classList.remove(
+              "c-carousel__single__slider--full-width"
+            );
           }
         }
       },
@@ -163,9 +191,37 @@ function singleCarousel() {
 }
 
 // if we have single carousel in page slider will render
-const singleSlider = document.querySelector(".js-single__slider");
-if (singleSlider.classList.contains("c-carousel__single__slider") === true) {
+  if(document.querySelector('.o-page__main').getElementsByClassName('c-carousel__single__slider')[0]) {
   singleCarousel();
 }
 
+// if we have single carousel in page slider will render
+function validate() {
+  if (document.myForm.Name.value == "") {
+    alert("Please provide your name!");
+    document.myForm.Name.focus();
+    return false;
+  }
 
+  if (document.myForm.EMail.value == "") {
+    alert("Please provide your Email!");
+    document.myForm.EMail.focus();
+    return false;
+  }
+
+  if (
+    document.myForm.Zip.value == "" ||
+    isNaN(document.myForm.Zip.value) ||
+    document.myForm.Zip.value.length != 5
+  ) {
+    alert("Please provide a zip in the format #####.");
+    document.myForm.Zip.focus();
+    return false;
+  }
+
+  if (document.myForm.Country.value == "-1") {
+    alert("Please provide your country!");
+    return false;
+  }
+  return true;
+}

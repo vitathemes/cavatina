@@ -20,7 +20,7 @@
     height: 80%;
     border-right: 1px solid #e1e1e1;
     border-bottom: none;
-
+    padding-top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,6 +137,7 @@
   display: block;
   transition: transform 700ms cubic-bezier(0.75, 0.01, 0.07, 0.99);
   will-change: transform;
+
 }
 
 .c-header__menu:focus {
@@ -213,6 +214,7 @@
   @include media(tablet) {
     width: 15%;
     border-bottom: none;
+    padding-top: 25px;
   }
 
   .c-header__holder {
@@ -221,11 +223,12 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 45%;
+      padding-top: 55%;
     }
 
     @include media(wide) {
       padding-bottom: 0;
+      padding-top: 95%;
     }
 
     .c-header__logo {
@@ -262,5 +265,151 @@
         display: none;
       }
     }
+  }
+}
+
+
+/*------------------------------------*\
+  #Header Holder toggled
+\*------------------------------------*/
+.c-header__holder.toggled {
+  @include media(tablet) {
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 20%;
+
+    animation-name: increaseHeaderWidth;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    padding-left: 20%;
+    padding-right: 5%;
+  }
+
+  .c-header__logo {
+    @include media(tablet) {
+      width: 50%;
+      margin-bottom: 0;
+      transform: rotate(0deg);
+    }
+  }
+
+  .c-header__menu {
+    padding: 0;
+    width: 45px;
+    height: 14px;
+    text-align: right;
+    padding-right: 26px;
+
+    @include media(tablet) {
+      &::before {
+        transform: rotate(45deg) translate(-14px, -5px);
+
+      }
+      &::after {
+        transform: rotate(-45deg) translateX(-10px);
+      }
+    }
+
+    @include media(tablet) {
+      width: 40px;
+      height: 14px;
+    }
+  }
+
+
+  .c-header__menu::before,
+  .c-header__menu::after {
+
+    @include media(tablet){
+      margin-left: 20px;
+    }
+
+
+  }
+
+
+  .c-nav {
+    padding-top: 32px;
+    padding-bottom: 16px;
+    max-height: 25em;
+    text-align: left;
+    display: block;
+    flex-wrap: wrap;
+    width: 100%;
+    order: 3;
+    margin-top: 40px;
+    @include media(tablet) {
+      padding-top: 12px;
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+
+    .s-nav {
+      @include media(tablet) {
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 10%;
+      }
+    }
+  }
+
+  .c-header__search {
+    &::before {
+      width: 30px;
+      height: 1px;
+      border-color: #fff;
+      border-bottom: 1px solid #000;
+      border-radius: 0;
+      transform: rotate(-45deg) translateY(10px) translateX(-11px);
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      width: 30px;
+      height: 0;
+      transform: rotate(45deg) translateY(-10px) translateX(-8px);
+    }
+    @include media(tablet) {
+      display: none;
+    }
+  }
+
+  .js-logo.is-open.logo-out {
+    @include media(tablet) {
+      opacity: 0;
+    }
+  }
+
+  .js-logo.is-open.logo-in {
+    @include media(tablet) {
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .js-navigation.is-open.nav-out {
+    @include media(tablet) {
+      opacity: 0;
+    }
+  }
+
+  .js-navigation.is-open.nav-in {
+    @include media(tablet) {
+      opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-delay: 0.7s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.js-nav.has-animation-out {
+  @include media(tablet) {
+    animation-name: decreaseHeaderWidth;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
 }
