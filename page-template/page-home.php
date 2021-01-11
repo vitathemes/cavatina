@@ -94,7 +94,7 @@
                 </div>
             </div>
         </aside>
-        <main class="o-page__main js-page__main">
+        <main class="o-page__main js-page__main o-page__main--home">
             <div class="o-page__col c-content c-content--home">
                 <div class="c-carousel">
                     <div class="c-carousel__title">

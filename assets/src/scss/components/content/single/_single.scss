@@ -67,7 +67,7 @@
 .c-single__title {
   width: 100%;
   display: none;
-
+  font-size: 24px;
   @include media(tablet) {
     display: block;
   }
@@ -108,7 +108,8 @@
   }
   li {
     display: inline-block;
-
+    color: #767676;
+    font-size: 14px;
     &:nth-child(2)::before {
       display: inline-block;
       content: "";

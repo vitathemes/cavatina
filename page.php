@@ -30,7 +30,7 @@ get_header();
 
     </div>
 </aside>
-<main id="primary" class="o-page__main js-page__main">
+<main id="primary" class="o-page__main js-page__main o-page__main--page-single">
     <?php
 		while ( have_posts() ) :
 			the_post();

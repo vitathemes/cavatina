@@ -323,6 +323,16 @@ add_filter( 'comment_form_default_fields', 'be_comment_form_fields' );
 
 
 /**
+ * cange font
+ */
+function cavatina_google_fonts() {
+    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap', false );
+}
+
+add_action( 'wp_enqueue_scripts', 'cavatina_google_fonts' );
+
+
+/**
  * change excerpt length
  */
 function cavatina_custom_excerpt_length( $length ) {

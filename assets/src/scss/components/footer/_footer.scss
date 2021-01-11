@@ -9,10 +9,11 @@
   background-color: transparent;
   padding-top: 1%;
   padding-left: 16px;
-  padding-right: 60px;
+  padding-right:10px;
 
   @include media(tablet) {
     padding-left: 0;
+    padding-right: 36px;
   }
 }
 

@@ -82,10 +82,17 @@
     const isClickInside = siteNavigation.contains(event.target);
     var pageMain = document.querySelector(".o-page__main");
     var overlay = document.querySelector(".js-overlay");
+    const pageBody = document.querySelector("body");
+
 
     if (!isClickInside) {
-      overlay.classList.remove("o-overlay--active");
-      pageMain.classList.remove("o-page__main--blur");
+
+
+      if(document.querySelector('body').getElementsByClassName('o-overlay')[0]) {
+        overlay.classList.remove("o-overlay--active");
+        pageMain.classList.remove("o-page__main--blur");
+      }
+
 
       siteNavigation.classList.remove("toggled");
       button.setAttribute("aria-expanded", "false");
@@ -97,8 +104,8 @@
         menuLogo.classList.add("logo-out");
         menuLogo.classList.remove("logo-in");
         menuLogo.classList.remove("is-open");
-
         menuNav.classList.remove("is-open");
+
       }
     }
   });

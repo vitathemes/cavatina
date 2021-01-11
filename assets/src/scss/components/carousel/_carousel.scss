@@ -21,6 +21,7 @@
 .c-carousel__context {
   height: 100%;
   background: transparent;
+  opacity: 0;
 
   .flickity-viewport {
     height: 100%;
@@ -238,6 +239,10 @@
 
     .c-carousel__single__cell--page {
       width: 100%;
+
+      @include media(laptop){
+        width: 50%;
+      }
     }
   }
 
@@ -271,6 +276,9 @@
 
 .c-carousel__single__cell_image--page {
   cursor: auto;
+  width: 100%;
+  object-position: top;
+  object-fit: cover;
 }
 
 /*------------------------------------*\

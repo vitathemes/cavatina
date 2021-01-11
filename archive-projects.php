@@ -26,7 +26,7 @@ get_header();
 
     </div>
 </aside>
-<main class="o-page__main js-page__main">
+<main class="o-page__main js-page__main o-page__main--projects" >
     <div class="o-page__col c-content c-content--max-height">
         <div class="c-container site-main__container">
             <div class="c-container__content site-main__content">

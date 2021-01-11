@@ -193,6 +193,7 @@
   .c-carousel {
     margin-left: 0;
     height: 22vh;
+    width: 100%;
 
     @include media(wide) {
       height: 20vh;

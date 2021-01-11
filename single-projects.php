@@ -33,9 +33,9 @@ get_header();
                 <div class="c-single__context__holder">
                     <?php
                         if ( is_singular() ) :
-                            the_title( '<h2 class="c-single__title">', '</h2>' );
+                            the_title( '<h1 class="c-single__title">', '</h1>' );
                         else :
-                            the_title( '<h2 class="c-single__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                            the_title( '<h1 class="c-single__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
                         endif;
                     ?>
 

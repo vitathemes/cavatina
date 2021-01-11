@@ -360,6 +360,7 @@ https://flickity.metafizzy.co
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 /**
  * Root Media Query Variables
  */
@@ -1024,9 +1025,6 @@ https://flickity.metafizzy.co
   outline: 0; }
 
 /*--------------------------------------------------------------
-# Structure
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -1430,7 +1428,8 @@ html {
       height: calc(100vh);
       padding-left: 15%; } }
   .o-page--home .c-footer {
-    padding-left: 16px; }
+    padding-left: 16px;
+    padding-right: 36px; }
 
 /*------------------------------------*\
   #Page main
@@ -1464,6 +1463,14 @@ html {
       width: calc(99% - 22%);
       height: 90%; } }
 
+@media only screen and (min-width: 980px) {
+  .o-page__main--page-single .c-footer {
+    padding-right: 0; } }
+
+@media only screen and (min-width: 980px) {
+  .o-page__main--posts .c-footer {
+    padding-right: 36px; } }
+
 .o-page__main__header {
   width: 100%; }
 
@@ -1472,6 +1479,13 @@ html {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; }
+  @media only screen and (min-width: 980px) {
+    .o-page__main--blog .c-footer {
+      padding-right: 7%;
+      padding-left: 25%; } }
+
+.o-page__main--projects .c-footer {
+  padding-right: 45px; }
 
 .o-page__main__header--align-left {
   text-align: left; }
@@ -1502,6 +1516,9 @@ html {
       padding-left: 32px;
       padding-right: 32px;
       padding-top: 32px; } }
+  .o-page__main--404 form {
+    width: 90%;
+    margin-top: 16px; }
 
 .o-page__main__error-404 {
   text-align: center;
@@ -1514,6 +1531,10 @@ html {
   @media only screen and (min-width: 980px) {
     .o-page__main__error-404 {
       width: 80%; } }
+  .o-page__main__error-404 .o-page__main__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
   .o-page__main__error-404 .page-content p {
     margin-bottom: 32px; }
 
@@ -1522,7 +1543,8 @@ html {
 \*------------------------------------*/
 .o-page__main__error {
   font-size: 15vw;
-  margin: 0; }
+  margin: 0;
+  line-height: 120%; }
 
 /*------------------------------------*\
   #Search nothing found
@@ -2143,9 +2165,15 @@ img {
 /*------------------------------------*\
   #Social media links
 \*------------------------------------*/
+.c-social-media {
+  transition: 1s all; }
+
 .c-social-media__item {
   margin-right: 18px;
   transition: 0.2s all; }
+
+.c-social-media__icon {
+  transition: 0.3s all; }
 
 .c-social-media__item:hover .c-social-media__icon {
   fill: #000000; }
@@ -2291,7 +2319,7 @@ img {
 .search-submit {
   position: absolute;
   right: 0;
-  top: 0; }
+  top: 10px; }
 
 /* Container
 --------------------------------------------- */
@@ -2575,7 +2603,8 @@ img {
       text-align: left; } }
   .c-aside__carousel .c-carousel {
     margin-left: 0;
-    height: 22vh; }
+    height: 22vh;
+    width: 100%; }
     @media only screen and (min-width: 1400px) {
       .c-aside__carousel .c-carousel {
         height: 20vh; } }
@@ -2601,7 +2630,8 @@ img {
 
 .c-carousel__context {
   height: 100%;
-  background: transparent; }
+  background: transparent;
+  opacity: 0; }
   .c-carousel__context .flickity-viewport {
     height: 100%; }
 
@@ -2770,6 +2800,9 @@ img {
           min-width: 30%; } }
     .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell--page {
       width: 100%; }
+      @media only screen and (min-width: 1140px) {
+        .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell--page {
+          width: 50%; } }
   .c-carousel__single__slider .flickity-page-dots {
     padding-left: 0;
     padding-right: 0;
@@ -2793,7 +2826,10 @@ img {
   width: auto; }
 
 .c-carousel__single__cell_image--page {
-  cursor: auto; }
+  cursor: auto;
+  width: 100%;
+  object-position: top;
+  object-fit: cover; }
 
 /*------------------------------------*\
   #modifier
@@ -3130,7 +3166,7 @@ img {
   @media only screen and (min-width: 980px) {
     .c-post {
       width: 35%;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
       padding-bottom: 0px; } }
 
 .c-post__header {
@@ -3266,7 +3302,8 @@ img {
 
 .c-single__title {
   width: 100%;
-  display: none; }
+  display: none;
+  font-size: 24px; }
   @media only screen and (min-width: 980px) {
     .c-single__title {
       display: block; } }
@@ -3300,7 +3337,9 @@ img {
     .c-single__meta {
       display: block; } }
   .c-single__meta li {
-    display: inline-block; }
+    display: inline-block;
+    color: #767676;
+    font-size: 14px; }
     .c-single__meta li:nth-child(2)::before {
       display: inline-block;
       content: "";
@@ -3522,10 +3561,11 @@ img {
   background-color: transparent;
   padding-top: 1%;
   padding-left: 16px;
-  padding-right: 60px; }
+  padding-right: 10px; }
   @media only screen and (min-width: 980px) {
     .c-footer {
-      padding-left: 0; } }
+      padding-left: 0;
+      padding-right: 36px; } }
 
 .c-footer__context {
   width: 100%;
@@ -3557,6 +3597,28 @@ img {
 --------------------------------------------- */
 /* Headings
 --------------------------------------------- */
+h1 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif; }
+
+h2 {
+  font-size: 19px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif; }
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px; }
+
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400; }
+
 /* Typography
 --------------------------------------------- */
 * {
@@ -3578,7 +3640,7 @@ a {
 *,
 html,
 body {
-  font-family: "Montserrat", sans-serif !important; }
+  font-family: 'Montserrat', sans-serif; }
 
 body {
   background: #fff;

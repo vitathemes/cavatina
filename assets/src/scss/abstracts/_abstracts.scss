@@ -6,6 +6,7 @@
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
+@import "variables/typography";
 @import "variables/colors";
 @import "variables/structure";
 @import "variables/global";
@@ -24,8 +25,3 @@
 # Accessibility
 --------------------------------------------------------------*/
 @import "accessibility/accessibility";
-
-/*--------------------------------------------------------------
-# Structure
---------------------------------------------------------------*/
-@import "structure/structure";
