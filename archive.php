@@ -48,6 +48,14 @@ get_header();
                     endif;
                     ?>
             </div>
+            <div class="c-pagination">
+                <?php echo paginate_links( array(
+
+                    'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
+                    'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+
+                )); ?>
+            </div>
         </div>
     </div>
     <?php get_footer(); ?>

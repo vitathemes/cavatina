@@ -339,3 +339,36 @@ function cavatina_custom_excerpt_length( $length ) {
 	return 10;
 }
 add_filter( 'excerpt_length', 'cavatina_custom_excerpt_length', 999 );
+
+
+
+
+/**
+ * Add numerical pagination
+ */
+
+$args = array(
+    'base'               => '%_%',
+    'format'             => '?paged=%#%',
+    'total'              => 1,
+    'current'            => 0,
+    'show_all'           => false,
+    'end_size'           => 1,
+    'mid_size'           => 2,
+    'add_args'           => false,
+    'add_fragment'       => '',
+    'before_page_number' => '',
+    'after_page_number'  => '');
+
+
+
+
+/**
+ * Enable Dashicons
+ */
+
+
+function ww_load_dashicons(){
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'ww_load_dashicons', 999);
