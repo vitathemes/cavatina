@@ -51,9 +51,9 @@
 }
 
 .o-page__main--blur {
-  animation-name: blur;
+  animation-name: blur !important;
   animation-duration: 1s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards ;
 }
 
 .o-page--home {

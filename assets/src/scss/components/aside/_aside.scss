@@ -129,6 +129,7 @@
 
 .c-aside__counter {
   font-size: 14px;
+  color: #767676;
 
   &::before {
     content: "| \00a0";
@@ -136,6 +137,10 @@
       content: "";
     }
   }
+}
+
+.page-numbers.current{
+  font-size: 14px;
 }
 
 .c-aside__nav-title {

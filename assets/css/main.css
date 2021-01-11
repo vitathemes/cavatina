@@ -1462,7 +1462,7 @@ html {
       padding-bottom: 0px; } }
 
 .o-page__main--blur {
-  animation-name: blur;
+  animation-name: blur !important;
   animation-duration: 1s;
   animation-fill-mode: forwards; }
 
@@ -2223,7 +2223,10 @@ img {
   padding-left: 70px;
   display: none;
   align-items: center;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  animation-name: blurReverse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
   .c-search__overlay .c-search__form {
     position: relative;
     width: 50%; }
@@ -2353,9 +2356,9 @@ img {
     .c-container__content {
       height: 100%;
       padding-right: 60px;
-      padding-top: 70px;
+      padding-top: 100px;
       padding-bottom: 0px; } }
-  .c-container__content .c-post .c-post__entery-content {
+  .c-container__content .c-post__entery-content {
     display: none; }
 
 /* Contact
@@ -2560,12 +2563,16 @@ img {
       display: none; } }
 
 .c-aside__counter {
-  font-size: 14px; }
+  font-size: 14px;
+  color: #767676; }
   .c-aside__counter::before {
     content: "| \00a0"; }
     @media only screen and (min-width: 980px) {
       .c-aside__counter::before {
         content: ""; } }
+
+.page-numbers.current {
+  font-size: 14px; }
 
 .c-aside__nav-title {
   font-style: normal;

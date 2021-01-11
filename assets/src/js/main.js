@@ -84,11 +84,14 @@ searchToggleAside();
 function blurToggle() {
   let pageMain = document.querySelector(".js-page__main");
   let overlay = document.querySelector(".js-overlay");
+  let searchOverlay = document.querySelector(".js-search__overlay");
 
   if (pageMain.classList.contains("o-page__main--blur")) {
+    searchOverlay.classList.remove("o-page__main--blur");
     pageMain.classList.remove("o-page__main--blur");
     overlay.classList.remove("o-overlay--active");
   } else {
+    searchOverlay.classList.add("o-page__main--blur");
     pageMain.classList.add("o-page__main--blur");
     overlay.classList.add("o-overlay--active");
   }

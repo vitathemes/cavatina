@@ -82,14 +82,14 @@
     const isClickInside = siteNavigation.contains(event.target);
     var pageMain = document.querySelector(".o-page__main");
     var overlay = document.querySelector(".js-overlay");
-    const pageBody = document.querySelector("body");
+    const searchOverlay = document.querySelector(".js-search__overlay");
 
 
     if (!isClickInside) {
 
-
       if(document.querySelector('body').getElementsByClassName('o-overlay')[0]) {
         overlay.classList.remove("o-overlay--active");
+        searchOverlay.classList.remove("o-page__main--blur");
         pageMain.classList.remove("o-page__main--blur");
       }
 
