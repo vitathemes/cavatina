@@ -83,6 +83,7 @@
     @include media(tablet) {
       &::before {
         transform: rotate(45deg) translate(-14px, -5px);
+
       }
       &::after {
         transform: rotate(-45deg) translateX(-10px);
@@ -90,9 +91,22 @@
     }
 
     @include media(tablet) {
-      width: 21%;
+      width: 40px;
+      height: 14px;
     }
   }
+
+
+  .c-header__menu::before,
+  .c-header__menu::after {
+
+    @include media(tablet){
+      margin-left: 20px;
+    }
+
+
+  }
+
 
   .c-nav {
     padding-top: 32px;

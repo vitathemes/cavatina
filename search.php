@@ -13,7 +13,7 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
-                <span class="c-aside__title">Search Result</span>
+                <span class="c-aside__title">Result</span>
             </div>
             <div class="c-search__icon js-search__icon"></div>
         </div>

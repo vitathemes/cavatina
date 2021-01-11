@@ -628,7 +628,7 @@
 .u-half-border {
   width: 70%;
   margin-left: -10%;
-  margin-top: 16px;
+  margin-top: 8px;
   margin-bottom: 24px;
   border-top: 1px solid #e1e1e1; }
   @media only screen and (min-width: 980px) {
@@ -1724,7 +1724,13 @@ img {
       transform: rotate(-45deg) translateX(-10px); } }
   @media only screen and (min-width: 980px) {
     .c-header__holder.toggled .c-header__menu {
-      width: 21%; } }
+      width: 40px;
+      height: 14px; } }
+
+@media only screen and (min-width: 980px) {
+  .c-header__holder.toggled .c-header__menu::before,
+  .c-header__holder.toggled .c-header__menu::after {
+    margin-left: 20px; } }
 
 .c-header__holder.toggled .c-nav {
   padding-top: 32px;
