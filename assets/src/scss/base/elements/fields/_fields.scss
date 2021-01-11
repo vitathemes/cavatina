@@ -88,7 +88,7 @@ textarea {
 .c-error__title {
   padding: 10px 0 20px 0;
   color: #ff0000;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: $font__regular;
 }
 input.error,
 textarea.error {

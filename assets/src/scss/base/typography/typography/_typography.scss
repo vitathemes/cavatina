@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: $font__regular;
 }
 
 a {
-  font-family: "Montserrat", sans-serif;
+  font-family: $font__regular;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;

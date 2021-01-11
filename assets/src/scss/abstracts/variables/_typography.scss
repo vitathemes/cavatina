@@ -1,6 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap"); // Montserrat Regular 400
+
+
+
+@font-face {
+  font-family: 'montserrat-regular';
+  src: url('../../assets/fonts/montserrat-regular.eot'); /* IE9 Compat Modes */
+  src: url('../../assets/fonts/montserrat-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../../assets/fonts/montserrat-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../../assets/fonts/montserrat-regular.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../../assets/fonts/montserrat-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('../../assets/fonts/montserrat-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'montserrat-semiBold';
+  src: url('../../assets/fonts/montserrat-semiBold.eot'); /* IE9 Compat Modes */
+  src: url('../../assets/fonts/montserrat-semiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../../assets/fonts/montserrat-semiBold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../../assets/fonts/montserrat-semiBold.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../../assets/fonts/montserrat-semiBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('../../assets/fonts/montserrat-semiBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
 
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
-$font__main: "Montserrat", sans-serif;
+$cavatina__primary-font : "montserrat-regular";
+$cavatina__secondary-font : "montserrat-semiBold";
+
+
+$font__main: "montserrat-regular";
+
+$font__regular: "montserrat-regular";
+$font__semi-bold : "montserrat-semiBold";
+
+

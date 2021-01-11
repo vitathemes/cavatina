@@ -69,7 +69,7 @@
                         ?>
                 </div>
                 <div class="c-aside__carousel">
-                    <div class="c-carousel">
+                    <div class="c-carousel c-carousel--aside">
                         <p class="c-carousel__title">Recent Projects</p>
                         <div class="c-carousel__post-titles js-carousel__post-titles">
                             <a href="#" class="c-carousel__post-title"><span

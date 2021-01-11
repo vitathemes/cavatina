@@ -13,7 +13,7 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
-                <span class="c-aside__title"><?php cavatina_post_type_name();  ?></span>
+                <span class="c-aside__title"><?php cavatina_post_type_name();  ?>s</span>
                 <span class="c-aside__counter"><?php cavatina_total_post_types(); ?> Portfolios</span>
             </div>
             <div class="c-search__icon js-search__icon"></div>

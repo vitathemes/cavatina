@@ -360,12 +360,23 @@ https://flickity.metafizzy.co
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@font-face {
+  font-family: 'montserrat-regular';
+  src: url("../../assets/fonts/montserrat-regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../../assets/fonts/montserrat-regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/montserrat-regular.woff2") format("woff2"), url("../../assets/fonts/montserrat-regular.woff") format("woff"), url("../../assets/fonts/montserrat-regular.ttf") format("truetype"), url("../../assets/fonts/montserrat-regular.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'montserrat-semiBold';
+  src: url("../../assets/fonts/montserrat-semiBold.eot");
+  /* IE9 Compat Modes */
+  src: url("../../assets/fonts/montserrat-semiBold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/montserrat-semiBold.woff2") format("woff2"), url("../../assets/fonts/montserrat-semiBold.woff") format("woff"), url("../../assets/fonts/montserrat-semiBold.ttf") format("truetype"), url("../../assets/fonts/montserrat-semiBold.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+
 /**
  * Root Media Query Variables
  */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 :root {
   --global--spacing-unit: 20px;
   --global--spacing-horizontal: 15px;
@@ -1998,48 +2009,6 @@ img {
   .c-header--home .c-header__holder .c-header__search {
     display: none; } }
 
-/* Navigation
---------------------------------------------- */
-/*------------------------------------*\
-  #Navigation
-\*------------------------------------*/
-.c-nav {
-  width: 100%;
-  max-height: 0;
-  transition: 1s ease-in-out;
-  transition-delay: 0s;
-  overflow: hidden;
-  margin-left: 8px; }
-  @media only screen and (min-width: 980px) {
-    .c-nav {
-      display: none;
-      order: 1; } }
-  .c-nav .s-nav {
-    list-style-type: none;
-    margin: 2%; }
-    .c-nav .s-nav li {
-      margin-bottom: 24px; }
-      @media only screen and (min-width: 980px) {
-        .c-nav .s-nav li {
-          margin-bottom: 10px; } }
-      .c-nav .s-nav li a {
-        transition: 0.2s all;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 19px;
-        line-height: 23px; }
-        @media only screen and (min-width: 980px) {
-          .c-nav .s-nav li a {
-            font-size: 14px;
-            line-height: 17px;
-            color: #000000; } }
-        .c-nav .s-nav li a:hover {
-          color: #8a8a8a; }
-    @media only screen and (min-width: 980px) {
-      .c-nav .s-nav {
-        margin: 0; } }
-
 /*------------------------------------*\
   #Header Holder toggled
 \*------------------------------------*/
@@ -2050,7 +2019,7 @@ img {
     align-items: flex-end;
     height: 20%;
     animation-name: increaseHeaderWidth;
-    animation-duration: 1.5s;
+    animation-duration: 0.7s;
     animation-fill-mode: forwards;
     padding-left: 20%;
     padding-right: 5%; } }
@@ -2149,6 +2118,48 @@ img {
     animation-name: decreaseHeaderWidth;
     animation-duration: 1s;
     animation-fill-mode: forwards; } }
+
+/* Navigation
+--------------------------------------------- */
+/*------------------------------------*\
+  #Navigation
+\*------------------------------------*/
+.c-nav {
+  width: 100%;
+  max-height: 0;
+  transition: 1s ease-in-out;
+  transition-delay: 0s;
+  overflow: hidden;
+  margin-left: 8px; }
+  @media only screen and (min-width: 980px) {
+    .c-nav {
+      display: none;
+      order: 1; } }
+  .c-nav .s-nav {
+    list-style-type: none;
+    margin: 2%; }
+    .c-nav .s-nav li {
+      margin-bottom: 24px; }
+      @media only screen and (min-width: 980px) {
+        .c-nav .s-nav li {
+          margin-bottom: 10px; } }
+      .c-nav .s-nav li a {
+        transition: 0.2s all;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 19px;
+        line-height: 23px; }
+        @media only screen and (min-width: 980px) {
+          .c-nav .s-nav li a {
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000; } }
+        .c-nav .s-nav li a:hover {
+          color: #8a8a8a; }
+    @media only screen and (min-width: 980px) {
+      .c-nav .s-nav {
+        margin: 0; } }
 
 /* Common
 --------------------------------------------- */
@@ -2597,13 +2608,6 @@ img {
       width: 100%;
       padding-left: 8px;
       text-align: left; } }
-  .c-aside__carousel .c-carousel {
-    margin-left: 0;
-    height: 22vh;
-    width: 100%; }
-    @media only screen and (min-width: 1400px) {
-      .c-aside__carousel .c-carousel {
-        height: 20vh; } }
 
 /* Carousel
 --------------------------------------------- */
@@ -2623,6 +2627,14 @@ img {
       height: 80%;
       margin-top: 7%;
       margin-left: 5%; } }
+
+.c-carousel--aside {
+  margin-left: 0;
+  height: 22vh;
+  width: 100%; }
+  @media only screen and (min-width: 1400px) {
+    .c-carousel--aside {
+      height: 20vh; } }
 
 .c-carousel__context {
   height: 100%;
@@ -2709,9 +2721,9 @@ img {
   .c-carousel__post-titles .flickity-viewport {
     width: 100%;
     height: 100%; }
-    .c-carousel__post-titles .flickity-viewport .flickity-slider {
-      width: 100%;
-      height: 100%; }
+  .c-carousel__post-titles .flickity-slider {
+    width: 100%;
+    height: 100%; }
 
 .c-carousel__post-title {
   width: max-content;
@@ -2773,38 +2785,40 @@ img {
       .c-carousel__single__slider .flickity-viewport {
         width: 100%;
         height: 95%; } }
-    @media only screen and (min-width: 980px) {
-      .c-carousel__single__slider .flickity-viewport .flickity-slider {
-        display: flex;
-        justify-content: center;
-        align-items: center; } }
-    .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell {
-      min-width: 90%;
-      max-width: 600px;
-      height: 100%;
-      transition: 1s all;
-      padding-left: 16px;
-      padding-right: 16px;
+  @media only screen and (min-width: 980px) {
+    .c-carousel__single__slider .flickity-slider {
       display: flex;
-      align-items: center;
-      justify-content: center; }
-      @media only screen and (min-width: 980px) {
-        .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell {
-          transition: 1s all;
-          padding-left: 24px;
-          padding-right: 24px;
-          min-width: 30%; } }
-    .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell--page {
-      width: 100%; }
-      @media only screen and (min-width: 1140px) {
-        .c-carousel__single__slider .flickity-viewport .c-carousel__single__cell--page {
-          width: 50%; } }
+      justify-content: center;
+      align-items: center; } }
   .c-carousel__single__slider .flickity-page-dots {
     padding-left: 0;
     padding-right: 0;
     bottom: -15px; }
     .c-carousel__single__slider .flickity-page-dots .dot {
       width: 30%; }
+
+.c-carousel__single__cell {
+  min-width: 90%;
+  max-width: 600px;
+  height: 100%;
+  transition: 1s all;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  @media only screen and (min-width: 980px) {
+    .c-carousel__single__cell {
+      transition: 1s all;
+      padding-left: 24px;
+      padding-right: 24px;
+      min-width: 30%; } }
+
+.c-carousel__single__cell--page {
+  width: 100%; }
+  @media only screen and (min-width: 1140px) {
+    .c-carousel__single__cell--page {
+      width: 50%; } }
 
 .flickity-page-dots {
   bottom: -23%; }
@@ -2825,7 +2839,11 @@ img {
   cursor: auto;
   width: 100%;
   object-position: top;
-  object-fit: cover; }
+  object-fit: cover;
+  height: 100%; }
+  @media only screen and (min-width: 980px) {
+    .c-carousel__single__cell_image--page {
+      height: unset; } }
 
 /*------------------------------------*\
   #modifier
@@ -3167,8 +3185,10 @@ img {
   width: 100%;
   display: flex;
   align-content: center;
-  justify-content: center;
-  padding-right: 60px; }
+  justify-content: center; }
+  @media only screen and (min-width: 980px) {
+    .c-pagination {
+      padding-right: 60px; } }
 
 .page-numbers {
   color: #767676;
@@ -3185,7 +3205,8 @@ img {
   color: #fff; }
 
 .dashicons {
-  color: #767676; }
+  color: #767676;
+  font-family: dashicons !important; }
   .dashicons:hover {
     background-color: transparent; }
 
@@ -3580,7 +3601,7 @@ img {
 .c-single__author__info {
   display: inline-block;
   margin-left: 24px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "montserrat-regular";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -3642,31 +3663,31 @@ h1 {
   font-size: 24px;
   line-height: 30px;
   font-weight: 600;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "montserrat-regular"; }
 
 h2 {
   font-size: 19px;
   font-weight: 600;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "montserrat-regular"; }
 
 h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "montserrat-regular";
   font-size: 14px;
   font-weight: 600;
   line-height: 20px; }
 
 h4 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "montserrat-regular";
   font-size: 12px;
   font-weight: 400; }
 
 /* Typography
 --------------------------------------------- */
 * {
-  font-family: "Montserrat", sans-serif; }
+  font-family: "montserrat-regular"; }
 
 a {
-  font-family: "Montserrat", sans-serif;
+  font-family: "montserrat-regular";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -3681,7 +3702,7 @@ a {
 *,
 html,
 body {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: "montserrat-regular" !important; }
 
 body {
   background: #fff;
@@ -3845,7 +3866,7 @@ textarea {
 .c-error__title {
   padding: 10px 0 20px 0;
   color: #ff0000;
-  font-family: "Montserrat", sans-serif !important; }
+  font-family: "montserrat-regular"; }
 
 input.error,
 textarea.error {

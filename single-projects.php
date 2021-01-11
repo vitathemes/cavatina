@@ -32,11 +32,7 @@ get_header();
             <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
                 <div class="c-single__context__holder">
                     <?php
-                        if ( is_singular() ) :
                             the_title( '<h1 class="c-single__title">', '</h1>' );
-                        else :
-                            the_title( '<h1 class="c-single__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-                        endif;
                     ?>
 
                     <ul class="c-single__meta">

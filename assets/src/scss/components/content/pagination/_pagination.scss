@@ -19,10 +19,13 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  padding-right: 60px;
+
+  @include media(tablet){
+    padding-right: 60px;
+  }
+
 
 }
-
 
 .page-numbers{
   color: #767676;
@@ -34,18 +37,15 @@
     background-color: #767676;
     color: #fff;
   }
-
 }
 
 .page-numbers.current{
   background-color: #767676;
   color: #fff;
 }
-
-
 .dashicons{
   color: #767676;
-
+  font-family: dashicons !important;
   &:hover{
     background-color: transparent;
   }
