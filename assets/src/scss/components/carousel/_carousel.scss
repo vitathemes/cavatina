@@ -140,6 +140,7 @@
   .flickity-viewport {
     width: 100%;
     height: 100%;
+    max-height: 100px;
 
   }
 
@@ -278,7 +279,7 @@
 .flickity-page-dots {
   bottom: -23%;
   @include media(tablet) {
-    bottom: -25px;
+    bottom: -24px;
   }
 }
 .c-carousel__single__image {

@@ -86,6 +86,16 @@ function blurToggle() {
   let overlay = document.querySelector(".js-overlay");
   let searchOverlay = document.querySelector(".js-search__overlay");
 
+  const headerMenuLogo  = document.querySelector(".c-header__menu");
+
+  fadeOut(headerMenuLogo);
+  setTimeout(function(){
+   fadeIn(headerMenuLogo , "block");
+    }, 500);
+
+
+
+
   if (pageMain.classList.contains("o-page__main--blur")) {
     searchOverlay.classList.remove("o-page__main--blur");
     pageMain.classList.remove("o-page__main--blur");

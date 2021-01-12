@@ -61,7 +61,7 @@
 
         menuNav.classList.add("nav-in");
         menuNav.classList.remove("nav-out");
-      }, 1000);
+      }, 500);
     } else {
       menuLogo.classList.remove("logo-in");
       menuLogo.classList.add("logo-out");
@@ -80,8 +80,8 @@
   // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
   document.addEventListener("click", function (event) {
     const isClickInside = siteNavigation.contains(event.target);
-    var pageMain = document.querySelector(".o-page__main");
-    var overlay = document.querySelector(".js-overlay");
+    let pageMain = document.querySelector(".o-page__main");
+    let overlay = document.querySelector(".js-overlay");
     const searchOverlay = document.querySelector(".js-search__overlay");
 
 

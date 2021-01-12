@@ -12,39 +12,38 @@
 <body <?php body_class(); ?> onload="mainPageCarousels()">
 
     <?php wp_body_open(); ?>
-    <header id="masthead" class="c-header c-header--home">
+    <header id="masthead" class="c-header c-header--home js-header">
         <div class="c-header__holder js-nav">
-            <div class="c-header__logo">
+            <div class="c-header__logo js-logo">
                 <img class="c-header__logo__image"
                     src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
                 <!-- <h1>Cavatina</h1> -->
                 <p class="c-header__text ">digital creativity</p>
             </div>
-
             <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
             </button>
+            <div class="c-header__search js-header__search"></div>
             <?php
             if ( has_nav_menu( 'menu-1' ) ) {
                 wp_nav_menu(
                     array(
                         'theme_location' => 'menu-1',
                         'menu_id'        => 'primary-menu-registered',
-                        "menu_class" => "s-nav", // nesting
-                        "container_class" => "c-nav",
+                        "menu_class" => "s-nav",
+                        "container_class" => "c-nav js-navigation",
                         "container" => "nav",
                     )
                 );
             }
-            else{
 
-            }
             ?>
         </div>
     </header>
-
-    <div class="c-search__overlay">
+    <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
     </div>
+    <div class="o-overlay js-overlay"></div>
+
     <div id="page" class="o-page o-page--home js-page">
         <aside class="o-page__col c-aside c-aside--home">
             <div class="c-aside__content">

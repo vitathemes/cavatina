@@ -14,7 +14,7 @@
   @include media(tablet) {
     background: linear-gradient(
                     90deg,
-                    darken($color: #ffffff, $amount: 0) 12%,
+                    darken($color: #ffffff, $amount: 0) 23%,
                     darken($color: #ffffff, $amount: 0) 0%,
                     darken($color: #ffffff00, $amount: 0) 100%
     );
