@@ -45,9 +45,7 @@
     <div class="c-search__overlay">
         <?php get_search_form(); ?>
     </div>
-
     <div id="page" class="o-page o-page--home js-page">
-
         <aside class="o-page__col c-aside c-aside--home">
             <div class="c-aside__content">
                 <div class="c-aside__nav">
@@ -68,29 +66,22 @@
                         }
                         ?>
                 </div>
+                <?php
+                $loop = new WP_Query( array(
+                        'post_type' => 'projects',
+                        'posts_per_page' => 5
+                ));
+                ?>
                 <div class="c-aside__carousel">
                     <div class="c-carousel c-carousel--aside">
                         <p class="c-carousel__title">Recent Projects</p>
                         <div class="c-carousel__post-titles js-carousel__post-titles">
-                            <a href="#" class="c-carousel__post-title"><span
-                                    class="o-bullet-numeric"></span>Advertisement
-                                Poster</a>
-                            <a href="#" class="c-carousel__post-title"><span class="o-bullet-numeric"></span>special
-                                event or
-                                exhibit poster
-                                concept</a>
-                            <a href="#" class="c-carousel__post-title"><span
-                                    class="o-bullet-numeric"></span>Advertisement
-                                Poster</a>
-                            <a href="#" class="c-carousel__post-title"><span
-                                    class="o-bullet-numeric"></span>Advertisement
-                                Poster</a>
-                            <a href="#" class="c-carousel__post-title"><span
-                                    class="o-bullet-numeric"></span>Advertisement
-                                Poster</a>
+                            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                            <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-numeric"></span>', '</a>' ); ?>
+                            <?php endwhile; wp_reset_query(); ?>
                         </div>
                     </div>
-                    <a href="#" class="c-carousel__more">View All Projects</a>
+                    <a href="/projects" class="c-carousel__more">View All Projects</a>
                 </div>
             </div>
         </aside>
@@ -102,42 +93,21 @@
                     </div>
                     <div class="c-carousel__slider">
                         <div class="c-carousel__context js-carousel__context">
+                            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="c-carousel__cell">
-                                <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/static-samples/img(1).png"
-                                    alt="Advertisment poster" />
+                                <a href="<?php echo get_permalink() ?>">
+                                 <?php the_post_thumbnail('large', array('class' => 'c-carousel__image')); ?>
+                                </a>
                             </div>
-                            <div class="c-carousel__cell">
-                                <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/static-samples/img(1).jpg"
-                                    alt="Advertisment poster" />
-                            </div>
-                            <div class="c-carousel__cell">
-                                <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/static-samples/img(2).jpg"
-                                    alt="Advertisment poster" />
-                            </div>
-                            <div class="c-carousel__cell">
-                                <img class="c-carousel__image"
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/static-samples/img(2).png"
-                                    alt="Advertisment poster" />
-                            </div>
+                            <?php endwhile; wp_reset_query(); ?>
                         </div>
                     </div>
-                    <div
-                        class="c-carousel__post-titles js-carousel__post-titles c-carousel__post-titles--mobile js-carousel__post-titles--mobile">
-                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
-                        </h3>
-                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
-                        </h3>
-                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
-                        </h3>
-                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
-                        </h3>
-                        <h3 class="c-carousel__post-title"><span class="o-bullet-numeric"></span>Advertisement Poster
-                        </h3>
+                    <div class="c-carousel__post-titles js-carousel__post-titles c-carousel__post-titles--mobile js-carousel__post-titles--mobile">
+                        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                            <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-numeric"></span>', '</a>' ); ?>
+                        <?php endwhile; wp_reset_query(); ?>
                     </div>
-                    <a href="#" class="c-carousel__more c-carousel__more--home">View All Projects</a>
+                    <a href="/projects" class="c-carousel__more c-carousel__more--home">View All Projects</a>
                 </div>
             </div>
         </main>

@@ -223,12 +223,12 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 55%;
+      padding-top: 60%;
     }
 
     @include media(wide) {
       padding-bottom: 0;
-      padding-top: 95%;
+      padding-top: 90%;
     }
 
     .c-header__logo {

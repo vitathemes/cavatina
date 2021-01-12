@@ -6,16 +6,14 @@
  *
  * @package wp-cavatina
  */
-
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single__blog__post' ); ?>>
     <header class="c-single__blog__header entry-header">
         <div class="c-single__blog__meta entry-meta">
             <?php
                 echo '<span class="c-post__category ">'. get_the_category( $id )[0]->name .'</span>';
                 echo '<span class="o-bullet"></span>';
-				echo '<span class="c-post__date">'. get_the_date( "F j.Y", $post_id ) .'</span>';
+				echo '<span class="c-post__date">'. get_the_date( "F j.Y" ) .'</span>';
 			?>
         </div><!-- .entry-meta -->
         <?php
