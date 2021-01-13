@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-<aside class="o-page__col c-aside">
+<aside class="o-page__col c-aside c-aside--mobile-hide">
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">

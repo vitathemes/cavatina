@@ -71,6 +71,7 @@
   padding: 5%;
   top: 135%;
   transform: translate(-50%, -50%);
+  color: #767676;
 
   @include media(tablet) {
     top: 115%;
@@ -85,4 +86,3 @@
     left: 95%;
   }
 }
-

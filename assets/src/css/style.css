@@ -1012,7 +1012,8 @@ img {
   left: 92%;
   padding: 5%;
   top: 135%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  color: #767676; }
   @media only screen and (min-width: 980px) {
     .flickity-button {
       top: 115%;
@@ -1598,7 +1599,8 @@ img {
     position: relative;
     width: 50%; }
     .c-search__overlay .c-search__form .search-field {
-      padding-bottom: 24px; }
+      height: 100%;
+      padding-bottom: 20px; }
     .c-search__overlay .c-search__form .search-submit {
       position: absolute;
       top: 15px;
