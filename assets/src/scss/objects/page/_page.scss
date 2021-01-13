@@ -73,6 +73,16 @@
   }
 }
 
+// Search Page
+
+.o-page__main--search {
+  .c-footer {
+    @include media(tablet) {
+      padding-right: 65px;
+    }
+  }
+}
+
 // Index pagge
 .o-page__main--posts {
   .c-footer {

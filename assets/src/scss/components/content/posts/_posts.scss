@@ -33,6 +33,10 @@
   padding-right: 16px;
   line-height: 17px;
 
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
   &:hover {
     color: #767676;
   }
@@ -51,11 +55,13 @@
   width: calc(89% - 30px);
 }
 
+.js-post__entry-title::first-letter {
+  color: red !important;
+}
+
 .c-post__excerpt {
   font-size: 14px;
   line-height: 200%;
-
-  text-transform: uppercase;
 }
 .c-post__meta {
   padding-left: 44px;

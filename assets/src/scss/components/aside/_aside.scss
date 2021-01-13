@@ -109,12 +109,13 @@
 }
 
 .c-aside__title {
-  font-size: 18px;
+  font-size: 13px;
   margin: 0;
   display: inline-block;
   text-transform: capitalize;
 
   @include media(tablet) {
+    font-size: 18px;
     display: block;
     padding-bottom: 8px;
   }
@@ -128,8 +129,12 @@
 }
 
 .c-aside__counter {
-  font-size: 14px;
+  font-size: 12px;
   color: #767676;
+
+  @include media(tablet) {
+    font-size: 14px;
+  }
 
   &::before {
     content: "| \00a0";
@@ -139,7 +144,7 @@
   }
 }
 
-.page-numbers.current{
+.page-numbers.current {
   font-size: 14px;
 }
 
@@ -195,5 +200,4 @@
     padding-left: 8px;
     text-align: left;
   }
-
 }

@@ -71,6 +71,10 @@
   @include media(tablet) {
     display: block;
   }
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 .c-single__title--red {
@@ -271,6 +275,10 @@
   @include media(tablet) {
     font-size: 24px;
   }
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 .c-single__blog__thumbnail {
@@ -295,6 +303,10 @@
   order: 4;
   text-align: left;
   line-height: 28px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 
   @include media(tablet) {
     width: 80%;

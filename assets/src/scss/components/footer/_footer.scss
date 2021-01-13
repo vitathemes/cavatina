@@ -9,7 +9,7 @@
   background-color: transparent;
   padding-top: 1%;
   padding-left: 16px;
-  padding-right:10px;
+  padding-right: 10px;
 
   @include media(tablet) {
     padding-left: 0;
@@ -41,4 +41,17 @@
   /* identical to box height */
 
   color: #8a8a8a;
+}
+
+.c-footer__text__link {
+  font-size: 12px;
+  line-height: 15px;
+  border-bottom: 1px solid #767676;
+  color: #767676;
+  margin: 0 2px;
+  padding-bottom: 1px;
+
+  &:hover {
+    color: #3a3a3a;
+  }
 }

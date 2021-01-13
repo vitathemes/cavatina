@@ -98,6 +98,55 @@ function blurToggle() {
   }
 }
 
+// make first letter uppercase ( use case unsupported css )
+function capitalizeFirstLetter() {
+  // js-carousel__post-title__text
+  if (
+    document
+      .querySelector("body")
+      .getElementsByClassName("js-carousel__post-title__text")[0]
+  ) {
+    const carouselTitle = document.querySelector(
+      ".js-carousel__post-title__text"
+    );
+
+    carouselTitle.textContent =
+      carouselTitle.textContent.charAt(0).toUpperCase() +
+      carouselTitle.textContent.slice(1);
+  }
+
+  // js-carousel__post-title__text-mobile
+  if (
+    document
+      .querySelector("body")
+      .getElementsByClassName("js-carousel__post-title__text-mobile")[0]
+  ) {
+    const carouselTitle = document.querySelector(
+      ".js-carousel__post-title__text-mobile"
+    );
+
+    carouselTitle.textContent =
+      carouselTitle.textContent.charAt(0).toUpperCase() +
+      carouselTitle.textContent.slice(1);
+  }
+
+  // c-post__entry-title__anchor
+  if (
+    document
+      .querySelector("body")
+      .getElementsByClassName("c-post__entry-title__anchor")[0]
+  ) {
+    const projectPostTitle = document.querySelector(
+      ".c-post__entry-title__anchor"
+    );
+
+    projectPostTitle.textContent =
+      projectPostTitle.textContent.charAt(0).toUpperCase() +
+      projectPostTitle.textContent.slice(1);
+  }
+}
+capitalizeFirstLetter();
+
 // Main page Carousels
 function mainPageCarousels() {
   // Carousel (Main)

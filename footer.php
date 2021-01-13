@@ -44,7 +44,9 @@
             </a>
         </div>
         <div class="c-footer__copy">
-            <p class="c-footer__text">© 2020 CAVATINA. TERMS OF USE AND PRIVACY POLICY.</p>
+            <p class="c-footer__text">© 2020 CAVATINA.<a class="c-footer__text__link" href="#"> TERMS OF USE </a> AND
+                <a class="c-footer__text__link" href="#">PRIVACY POLICY.</a>
+            </p>
         </div>
     </div><!-- #.c-footer__context -->
 </footer><!-- #colophon -->

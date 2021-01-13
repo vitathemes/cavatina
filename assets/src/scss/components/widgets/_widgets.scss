@@ -13,8 +13,12 @@
   font-size: 14px;
   line-height: 17px;
   /* identical to box height */
-
+  transition: 0.5s all;
   color: #767676;
+
+  &:hover {
+    color: #000000;
+  }
 }
 
 .widget-area {
