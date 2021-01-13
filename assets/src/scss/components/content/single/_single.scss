@@ -311,6 +311,7 @@
   @include media(tablet) {
     width: 80%;
     margin-top: 48px;
+    padding: 0 16px;
   }
   ul {
     list-style-type: disc;

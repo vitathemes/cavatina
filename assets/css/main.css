@@ -3317,7 +3317,8 @@ img {
   @media only screen and (min-width: 980px) {
     .c-single__blog__entery-content {
       width: 80%;
-      margin-top: 48px; } }
+      margin-top: 48px;
+      padding: 0 16px; } }
   .c-single__blog__entery-content ul {
     list-style-type: disc;
     margin-left: 16px; }
