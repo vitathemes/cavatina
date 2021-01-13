@@ -43,7 +43,7 @@
     menuLogo.classList.toggle("is-open");
     menuNav.classList.toggle("is-open");
 
-    // Header Holder animation
+    // Header Holder animation ( Animation out => decrease Width )
     if (!siteNavigation.classList.contains("is-open")) {
       siteNavigation.classList.add("has-animation-out");
     } else {
@@ -55,19 +55,22 @@
       menuLogo.classList.add("logo-out");
       menuNav.classList.add("nav-out");
 
+      // fadeIn animation after toggled
       setTimeout(() => {
+        menuNav.style.display = "nav-in";
+        siteNavigation.classList.add("space-top");
         menuLogo.classList.add("logo-in");
         menuLogo.classList.remove("logo-out");
-
         menuNav.classList.add("nav-in");
         menuNav.classList.remove("nav-out");
-      }, 500);
+      }, 700);
     } else {
+      siteNavigation.classList.remove("space-top");
+
       menuLogo.classList.remove("logo-in");
       menuLogo.classList.add("logo-out");
 
-      menuLogo.classList.remove("nav-in");
-      menuLogo.classList.remove("nav-out");
+      menuNav.classList.remove("nav-in");
     }
 
     if (button.getAttribute("aria-expanded") === "true") {
@@ -84,15 +87,14 @@
     let overlay = document.querySelector(".js-overlay");
     const searchOverlay = document.querySelector(".js-search__overlay");
 
-
     if (!isClickInside) {
-
-      if(document.querySelector('body').getElementsByClassName('o-overlay')[0]) {
+      if (
+        document.querySelector("body").getElementsByClassName("o-overlay")[0]
+      ) {
         overlay.classList.remove("o-overlay--active");
         searchOverlay.classList.remove("o-page__main--blur");
         pageMain.classList.remove("o-page__main--blur");
       }
-
 
       siteNavigation.classList.remove("toggled");
       button.setAttribute("aria-expanded", "false");
@@ -100,12 +102,13 @@
       if (siteNavigation.classList.contains("is-open")) {
         siteNavigation.classList.add("has-animation-out");
         siteNavigation.classList.remove("is-open");
+        siteNavigation.classList.remove("space-top");
 
         menuLogo.classList.add("logo-out");
         menuLogo.classList.remove("logo-in");
         menuLogo.classList.remove("is-open");
         menuNav.classList.remove("is-open");
-
+        menuNav.classList.remove("nav-in");
       }
     }
   });

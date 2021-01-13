@@ -9,9 +9,7 @@
   @include media(tablet) {
     text-align: left;
     max-height: 100vh;
-
-    //qa-
-    padding-left: 7%;
+    padding-left: 90px;
   }
 }
 
@@ -53,7 +51,7 @@
 .o-page__main--blur {
   animation-name: blur !important;
   animation-duration: 1s;
-  animation-fill-mode: forwards ;
+  animation-fill-mode: forwards;
 }
 
 .o-page--home {
@@ -67,26 +65,22 @@
   }
 }
 
-.o-page__main--page-single{
-  .c-footer{
-    @include media(tablet){
+.o-page__main--page-single {
+  .c-footer {
+    @include media(tablet) {
       padding-right: 0;
     }
   }
 }
 
-
 // Index pagge
-.o-page__main--posts{
-
-  .c-footer{
-    @include media(tablet){
+.o-page__main--posts {
+  .c-footer {
+    @include media(tablet) {
       padding-right: 36px;
     }
   }
-
 }
-
 
 .o-page__main__header {
   width: 100%;
@@ -100,9 +94,8 @@
   justify-content: center;
   flex-wrap: wrap;
 
-  .c-footer{
-
-    @include  media(tablet){
+  .c-footer {
+    @include media(tablet) {
       padding-right: 7%;
       padding-left: 25%;
     }
@@ -110,8 +103,8 @@
 }
 
 // Project pages
-.o-page__main--projects{
-  .c-footer{
+.o-page__main--projects {
+  .c-footer {
     padding-right: 45px;
   }
 }
@@ -123,7 +116,6 @@
 .o-page__main--no-bottom-space {
   padding-bottom: 0;
 }
-
 
 /*------------------------------------*\
   #Page col
@@ -153,7 +145,7 @@
     padding-top: 32px;
   }
 
-  form{
+  form {
     width: 90%;
     margin-top: 16px;
   }
@@ -168,12 +160,11 @@
   align-content: center;
   flex-wrap: wrap;
 
-
   @include media(tablet) {
     width: 80%;
   }
 
-  .o-page__main__content{
+  .o-page__main__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

@@ -42,22 +42,21 @@ function searchToggleHeader() {
   const header = document.querySelector(".js-header");
   const headerSearch = document.querySelector(".js-header__search");
 
-
   const searchOverlay = document.querySelector(".js-search__overlay");
 
-    if(document.querySelector('body').getElementsByClassName('o-overlay')[0]) {
-      headerSearch.addEventListener("click", function () {
-        // Fade in/out the search overlay
-        if (isToggled === true) {
-          fadeOut(searchOverlay);
-          headerSearch.classList.remove("c-header__search--toggle");
-          isToggled = false;
-        } else {
-          fadeIn(searchOverlay, "flex");
-          headerSearch.classList.add("c-header__search--toggle");
-          isToggled = true;
-        }
-      });
+  if (document.querySelector("body").getElementsByClassName("o-overlay")[0]) {
+    headerSearch.addEventListener("click", function () {
+      // Fade in/out the search overlay
+      if (isToggled === true) {
+        fadeOut(searchOverlay);
+        headerSearch.classList.remove("c-header__search--toggle");
+        isToggled = false;
+      } else {
+        fadeIn(searchOverlay, "flex");
+        headerSearch.classList.add("c-header__search--toggle");
+        isToggled = true;
+      }
+    });
   }
 }
 
@@ -86,15 +85,7 @@ function blurToggle() {
   let overlay = document.querySelector(".js-overlay");
   let searchOverlay = document.querySelector(".js-search__overlay");
 
-  const headerMenuLogo  = document.querySelector(".c-header__menu");
-
-  fadeOut(headerMenuLogo);
-  setTimeout(function(){
-   fadeIn(headerMenuLogo , "block");
-    }, 500);
-
-
-
+  const headerMenuLogo = document.querySelector(".c-header__menu");
 
   if (pageMain.classList.contains("o-page__main--blur")) {
     searchOverlay.classList.remove("o-page__main--blur");
@@ -201,7 +192,11 @@ function singleCarousel() {
 }
 
 // if we have single carousel in page slider will render
-  if(document.querySelector('.o-page__main').getElementsByClassName('c-carousel__single__slider')[0]) {
+if (
+  document
+    .querySelector(".o-page__main")
+    .getElementsByClassName("c-carousel__single__slider")[0]
+) {
   singleCarousel();
 }
 
