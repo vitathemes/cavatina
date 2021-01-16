@@ -17,7 +17,13 @@
 }
 
 .c-post__header {
-  min-height: 70px;
+  min-height: max-content;
+  margin-bottom: 26px;
+
+  @include media(tablet) {
+    min-height: 70px;
+    margin-bottom: 16px;
+  }
 }
 
 .c-post__header--space-height {
@@ -42,10 +48,12 @@
   }
 
   a {
-    font-weight: 600;
+    font-weight: normal;
     font-size: 14px;
     color: #111111;
     vertical-align: top;
+    font-family: $font__semi-bold;
+    line-height: 20px;
   }
 
   counter-reset: section;

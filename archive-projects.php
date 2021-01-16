@@ -23,10 +23,9 @@ get_header();
                 <?php get_search_form(); ?>
             </div>
         </div>
-
     </div>
 </aside>
-<main class="o-page__main js-page__main o-page__main--projects" >
+<main class="o-page__main js-page__main o-page__main--projects">
     <div class="o-page__col c-content c-content--max-height">
         <div class="c-container site-main__container">
             <div class="c-container__content site-main__content">
@@ -50,10 +49,8 @@ get_header();
             </div>
             <div class="c-pagination">
                 <?php echo paginate_links( array(
-
                     'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
                     'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-
                 )); ?>
             </div>
         </div>

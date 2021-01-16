@@ -222,7 +222,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 60%;
+      padding-top: 55%;
     }
 
     @include media(wide) {
@@ -302,7 +302,7 @@
 
     @include media(tablet) {
       &::before {
-        transform: rotate(45deg) translate(-14px, -5px);
+        transform: rotate(45deg) translate(-15px, -5px);
       }
       &::after {
         transform: rotate(-45deg) translateX(-10px);

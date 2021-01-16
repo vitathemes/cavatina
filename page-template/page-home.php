@@ -87,9 +87,7 @@
         <main class="o-page__main js-page__main o-page__main--home">
             <div class="o-page__col c-content c-content--home">
                 <div class="c-carousel">
-                    <div class="c-carousel__title">
-                        <p class="c-carousel__title c-carousel__title--home">Recent Projects</p>
-                    </div>
+                    <p class="c-carousel__title c-carousel__title--home">Recent Projects</p>
                     <div class="c-carousel__slider">
                         <div class="c-carousel__context js-carousel__context">
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>

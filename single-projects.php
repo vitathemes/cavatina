@@ -39,7 +39,7 @@ get_header();
                         <li>
                             <?php echo '<span >'. get_the_category( $id )[0]->name .'</span>'; ?>
                         </li>
-                        <span class="o-bullet o-bullet--big"></span>
+                        <!-- bullet is here (single meta before) -->
                         <li>
                             <?php echo '<span >'. get_the_date( "F j.Y", $post_id ) .'</span>';   ?>
                         </li>

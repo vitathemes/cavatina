@@ -22,7 +22,7 @@
             <?php
 
                 echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';
-                echo '<span class="o-bullet"></span>';
+                echo '<span class="o-bullet o-bullet--sm"></span>';
 				echo '<span class="c-post__date">'. get_the_date( "F j.Y" ) .'</span>';
 
 			?>

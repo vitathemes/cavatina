@@ -23,9 +23,8 @@
     @include media(tablet) {
       margin-bottom: 10px;
     }
-    a{
+    a {
       transition: 0.2s all;
-      font-family: Montserrat;
       font-style: normal;
       font-weight: normal;
       font-size: 19px;
@@ -45,5 +44,4 @@
   @include media(tablet) {
     margin: 0;
   }
-
 }

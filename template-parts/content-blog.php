@@ -12,7 +12,7 @@
         <div class="c-single__blog__meta entry-meta">
             <?php
                 echo '<span class="c-post__category ">'. get_the_category( $id )[0]->name .'</span>';
-                echo '<span class="o-bullet"></span>';
+                echo '<span class="o-bullet o-bullet--sm"></span>';
 				echo '<span class="c-post__date">'. get_the_date( "F j.Y" ) .'</span>';
 			?>
         </div><!-- .entry-meta -->
@@ -32,9 +32,13 @@
             </div>
         </div>
     </header><!-- .entry-header -->
+
+
     <a class="c-single__blog__thumbnail" href=<?php the_permalink() ?>>
         <?php the_post_thumbnail('large', array('class' => 'c-single__blog__thumbnail__image')); ?>
     </a>
+
+
     <div class="c-social-media c-social-media--blog">
         <a href="#" class="c-social-media__item">
             <svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +91,9 @@
 				'after'  => '</div>',
 			)
 		);
-		?>
+        ?>
+
+
     </div><!-- .entry-content -->
     <ul class="c-single__blog__tags">
         <?php

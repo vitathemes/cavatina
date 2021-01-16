@@ -8,7 +8,6 @@
  *
  * @package wp-cavatina
  */
-
 ?>
 
 <footer id="colophon" class="c-footer">
