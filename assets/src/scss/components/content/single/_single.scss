@@ -224,16 +224,10 @@
   #Post blog
 \*------------------------------------*/
 
-.o-page__main {
-  // background-color: darkgoldenrod;
-}
-
 .c-single__blog {
   width: 100%;
-
   margin-top: 32px;
   padding: 0 16px;
-
   height: max-content;
 
   @include media(tablet) {
@@ -366,6 +360,7 @@
   width: 100%;
   text-align: left;
   margin-top: 39px;
+  color: #767676;
 
   @include media(tablet) {
     display: inline-block;
@@ -407,7 +402,6 @@
 .c-single__author__info {
   display: inline-block;
   margin-left: 24px;
-
   font-family: $font__regular;
   font-style: normal;
   font-weight: normal;

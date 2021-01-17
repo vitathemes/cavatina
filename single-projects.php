@@ -34,14 +34,13 @@ get_header();
                     <?php
                             the_title( '<h1 class="c-single__title">', '</h1>' );
                     ?>
-
                     <ul class="c-single__meta">
                         <li>
-                            <?php echo '<span >'. get_the_category( $id )[0]->name .'</span>'; ?>
+                            <?php echo '<span>'. get_the_category( $id )[0]->name .'</span>'; ?>
                         </li>
                         <!-- bullet is here (single meta before) -->
                         <li>
-                            <?php echo '<span >'. get_the_date( "F j.Y", $post_id ) .'</span>';   ?>
+                            <?php echo '<span>'. get_the_date( "F j.Y", $post_id ) .'</span>';   ?>
                         </li>
                     </ul>
                     <div class="c-single__text">

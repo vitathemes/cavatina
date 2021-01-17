@@ -30,20 +30,37 @@ get_header();
         <div class="c-container site-main__container">
             <div class="c-container__content site-main__content">
                 <?php if (have_posts()) : ?>
+                <?php 
+                    echo get_post_meta($post->ID,'incr_number',true); 
+                ?>
                 <?php
                     /* Start the Loop */
-                    while (have_posts()) :
-                        the_post();
-                        /*
-                        * Include the Post-Type-specific template for the content.
-                        * If you want to override this in a child theme, then include a file
-                        * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-                        */
-                        get_template_part('template-parts/content', 'project');
-                    endwhile;
-                    the_posts_navigation();
+                ?>
+                <?php $loop = new WP_Query( array( 'post_type' => 'project', 'posts_per_page' => -1 ) ); ?>
+                <?php $postNumber = 1; while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <div class="single-post">
+                    <h1 class="post-number"><?php echo $postNumber++; ?></h1>
+                    <h1 class="post-title"><a href="<?php the_permalink(); ?>"
+                            title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                    </h1>
+                    <div class="post-content"><?php the_excerpt(); ?> </div>
+                    <?php edit_post_link(); ?>
+                </div>
+                <?php endwhile; wp_reset_query();
+
+
+                while (have_posts()) :
+                the_post();
+                /*
+                * Include the Post-Type-specific template for the content.
+                * If you want to override this in a child theme, then include a file
+                * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                */
+                get_template_part('template-parts/content', 'project');
+                endwhile;
+                the_posts_navigation();
                 else :
-                    get_template_part('template-parts/content', 'none');
+                get_template_part('template-parts/content', 'none');
                 endif;
                 ?>
             </div>

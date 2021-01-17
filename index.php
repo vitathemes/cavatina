@@ -6,7 +6,6 @@
  *
  * @package wp-cavatina
  */
-
 get_header();
 ?>
 <aside class="o-page__col c-aside">
@@ -40,9 +39,6 @@ get_header();
                              * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                              */
                             get_template_part( 'template-parts/content', get_post_type() );
-
-
-
                         endwhile;
                         the_posts_navigation();
                     else :
@@ -52,10 +48,8 @@ get_header();
             </div>
             <div class="c-pagination">
                 <?php echo paginate_links( array(
-
                     'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
                     'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-
                 )); ?>
             </div>
         </div>
