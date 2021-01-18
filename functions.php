@@ -287,7 +287,7 @@ function cavatina_post_type_name() {
 }
 
 /**
- * count number of posts types (project) in a page
+ * count number of posts types (projects) in a page
  */
 function cavatina_total_post_types() {
 	printf($count_posts = wp_count_posts( 'projects' )->publish);
@@ -360,56 +360,3 @@ function ww_load_dashicons(){
     wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'ww_load_dashicons', 999);
-
-
-/*
-* Posts increment number
-*/
-
-// function updateNumbers() {
-
-// 	global $wpdb;
-// 	$querystr = "SELECT $wpdb->posts.* FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'post' ";
-//   $pageposts = $wpdb->get_results($querystr, OBJECT);
-// 	$counts = 0 ;
-
-// 	if ($pageposts):
-// 	  foreach ($pageposts as $post):
-
-// 		setup_postdata($post);
-// 		$counts++;
-
-// 		add_post_meta($post->ID, 'incr_number', $counts, true);
-// 		update_post_meta($post->ID, 'incr_number', $counts);
-
-// 	  endforeach;
-// 	endif;
-//   }  
-
-//   add_action ( 'publish_post', 'updateNumbers' );
-//   add_action ( 'deleted_post', 'updateNumbers' );
-//   add_action ( 'edit_post', 'updateNumbers' );
-
-
-/*
-* Posts increment number
-*/
-//  add_action( 'the_title', 'dk_auto_numbering' );
-
-//  function dk_auto_numbering($title) {
-//   $post_ID = get_the_ID();
-//   $the_post = get_post($post_ID);
-//   $date = $the_post->post_date;
-//   $maintitle = $the_post->post_title;
-//   $count='';
-//   if ($the_post->post_status == 'publish' AND $the_post->post_type == 'projects' AND in_the_loop()) {
-// 	  global $wpdb;
-// 	  $count = $wpdb->get_var("SELECT count(*) FROM $wpdb->posts  WHERE post_status='publish' AND post_type='projects' AND post_date<'{$date}'");
-// 	 if ($maintitle==$title) {
-// 	  $count = $count.': ';  
-// 	 } else {
-// 	  $count ='';
-// 	 }
-//   } 
-//   return $count.$title;
-//  }

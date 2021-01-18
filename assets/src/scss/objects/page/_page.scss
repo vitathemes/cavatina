@@ -25,7 +25,13 @@
     padding-right: 36px;
   }
 }
+.o-page--404{
+  height: calc(100vh - 125px);
 
+  @include media(tablet){
+    height: calc(100vh);
+  }
+}
 /*------------------------------------*\
   #Page main
 \*------------------------------------*/
@@ -34,6 +40,7 @@
   animation-name: blurReverse;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+
   overflow: auto;
   height: max-content;
   padding-bottom: 75px;
@@ -148,36 +155,39 @@
   padding-right: 16px;
   padding-top: 25%;
 
+
+
   @include media(tablet) {
     padding: 0;
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 32px;
+    width: 100% ;
   }
 
   form {
     width: 90%;
     margin-top: 16px;
   }
+
+  .c-footer{
+    display: none;
+  }
+
 }
 
 .o-page__main__error-404 {
   text-align: center;
-  height: 90%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
 
-  @include media(tablet) {
-    width: 80%;
-  }
 
-  .o-page__main__content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  @include media(tablet) {
+    width: 100%;
   }
 
   .page-content {
@@ -191,10 +201,26 @@
     #Page Main - Error
 \*------------------------------------*/
 .o-page__main__error {
-  font-size: 15vw;
+  font-size:24px;
   margin: 0;
-  line-height: 120%;
+  line-height: 41px;
+  font-family: $font__semi-bold;
+  color: #000000;
+
+  font-weight: normal;
 }
+
+.o-page__main__error-desc{
+  font-family: $font__regular;
+  font-size: 19px;
+  line-height: 30px;
+  color: #767676;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
 
 /*------------------------------------*\
   #Search nothing found
@@ -206,12 +232,16 @@
   @include media(tablet) {
     width: 750px;
     max-width: 70%;
-    height: 80%;
+    height: 50vh;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
+  }
+
+  .o-page__main__desc{
+    margin-bottom: 64px;
   }
 
   .o-page__main__header {
@@ -221,7 +251,10 @@
 
 .o-page__main__content {
   width: 100%;
+
   .search-submit-mobile {
     display: none;
   }
+
+
 }

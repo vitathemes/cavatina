@@ -66,14 +66,14 @@ searchToggleHeader();
 function searchToggleAside() {
   const oPageMain = document.querySelector(".js-page");
   const searchIcon = document.querySelector(".js-search__icon");
-  const searchBlock = document.querySelector(".js-search");
+  const searchBlock = document.querySelector(".js-search__form");
 
   let pageMainContain = oPageMain.contains(searchIcon);
 
   if (pageMainContain === true) {
     searchIcon.addEventListener("click", function () {
       searchIcon.classList.toggle("c-search__icon--toggled");
-      searchBlock.classList.toggle("c-search--toggled");
+      searchBlock.classList.toggle("c-search__form--toggled");
     });
   }
 }
@@ -84,6 +84,16 @@ function blurToggle() {
   let pageMain = document.querySelector(".js-page__main");
   let overlay = document.querySelector(".js-overlay");
   let searchOverlay = document.querySelector(".js-search__overlay");
+
+  if (document.querySelector("body").getElementsByClassName("c-aside")[0]) {
+    console.log("true");
+    let aside = document.querySelector(".js-aside");
+    if (pageMain.classList.contains("o-page__main--blur")) {
+      aside.classList.remove("c-aside--blur");
+    } else {
+      aside.classList.add("c-aside--blur");
+    }
+  }
 
   const headerMenuLogo = document.querySelector(".c-header__menu");
 

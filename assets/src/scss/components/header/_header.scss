@@ -404,7 +404,7 @@
 
 .space-top {
   @include media(tablet) {
-    padding-top: 64%;
+    padding-top: 65%;
   }
 }
 
@@ -415,3 +415,21 @@
     animation-fill-mode: forwards;
   }
 }
+
+/*------------------------------------*\
+  #Header 404 Modifier
+\*------------------------------------*/
+
+.c-header--404{
+  .c-header__holder{
+    padding-top: 0px;
+
+    @include media(tablet){
+      justify-content: center;
+    }
+  }
+
+  .c-header__menu{
+    display: none;
+  }
+ }

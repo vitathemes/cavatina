@@ -224,6 +224,7 @@
   justify-content: center;
   margin-top: 24px;
   z-index: 5;
+
   @include media(tablet) {
     width: 100%; // here
     height: 100%;

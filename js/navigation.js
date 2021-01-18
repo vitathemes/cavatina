@@ -85,6 +85,7 @@
     const isClickInside = siteNavigation.contains(event.target);
     let pageMain = document.querySelector(".o-page__main");
     let overlay = document.querySelector(".js-overlay");
+    let aside = document.querySelector(".js-aside");
     const searchOverlay = document.querySelector(".js-search__overlay");
 
     if (!isClickInside) {
@@ -94,6 +95,10 @@
         overlay.classList.remove("o-overlay--active");
         searchOverlay.classList.remove("o-page__main--blur");
         pageMain.classList.remove("o-page__main--blur");
+        if (document.querySelector("body").getElementsByClassName("c-aside")[0]) {
+          aside.classList.remove("c-aside--blur");
+
+        }
       }
 
       siteNavigation.classList.remove("toggled");

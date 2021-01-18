@@ -9,23 +9,19 @@
 
 get_header();
 ?>
-
-<aside class="o-page__col c-aside c-aside--mobile-hide">
+<!-- Aside -->
+<aside class="o-page__col c-aside c-aside--mobile-hide js-aside">
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
                 <span class="c-aside__title">Project</span>
             </div>
-            <div class="c-search__icon js-search__icon"></div>
-        </div>
-        <div class="c-search js-search">
-            <div class="c-search__holder">
-                <?php get_search_form(); ?>
-            </div>
         </div>
 
     </div>
 </aside>
+
+<!-- Main content-->
 <main class="o-page__main o-page__main--no-bottom-space js-page__main">
     <div class="o-page__col c-content">
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>

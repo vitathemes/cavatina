@@ -38,14 +38,14 @@
 
             ?>
         </div>
-    </header>
+    </header>   <!-- #masthead -->
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
     </div>
     <div class="o-overlay js-overlay"></div>
 
     <div id="page" class="o-page o-page--home js-page">
-        <aside class="o-page__col c-aside c-aside--home">
+        <aside class="o-page__col c-aside c-aside--home js-aside">
             <div class="c-aside__content">
                 <div class="c-aside__nav">
                     <p class="c-aside__nav-title">Navigation</p>
@@ -109,6 +109,6 @@
                 </div>
             </div>
         </main>
-        <!-- #masthead -->
+
         <?php get_footer(); ?>
     </div>

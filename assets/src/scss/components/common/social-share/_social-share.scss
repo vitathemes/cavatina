@@ -21,7 +21,7 @@
   }
 
   .c-social-media__icon {
-    fill: #8a8a8a;
+    fill: #767676;
   }
 }
 /*------------------------------------*\
@@ -43,5 +43,17 @@
 
   .c-social-media__item {
     margin-bottom: 24px;
+  }
+}
+
+/*------------------------------------*\
+  #404 social media
+\*------------------------------------*/
+
+.c-social-media--404{
+  margin-top: 50px;
+  margin-bottom: 23px;
+  a{
+    margin: 0 10px;
   }
 }

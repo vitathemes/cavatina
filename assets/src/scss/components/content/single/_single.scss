@@ -82,7 +82,6 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-
   margin-bottom: 16px;
 }
 
@@ -158,6 +157,45 @@
     margin-top: calc(40vh);
     margin-right: 25px;
     min-height: calc(50vh);
+  }
+}
+
+.c-single__context__holder--full-height {
+  .c-single__context {
+    width: 100%;
+    margin-top: 9px;
+  }
+
+  .c-single__context__holder {
+    width: 100%;
+
+    @include media(tablet) {
+      width: 600px;
+    }
+  }
+
+  .c-single__context__holder {
+    @include media(tablet) {
+      margin-top: 131px;
+    }
+  }
+}
+
+.c-single__text--full-height {
+  line-height: 30px;
+  text-align: justify;
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ul {
+    margin-left: 16px;
+    list-style-type: disc;
+  }
+
+  h3 {
+    line-height: 28px;
   }
 }
 

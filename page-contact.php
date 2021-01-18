@@ -9,22 +9,37 @@
 
 get_header();
 ?>
-<aside class="o-page__col c-aside">
+
+<!-- Aside -->
+<aside class="o-page__col c-aside js-aside">
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
                 <span class="c-aside__title"><?php global $post; $post_slug=$post->post_name; echo $post_slug; ?></span>
             </div>
-            <div class="c-search__icon js-search__icon"></div>
-        </div>
-        <div class="c-search js-search">
-            <div class="c-search__holder">
-                <?php get_search_form(); ?>
-            </div>
         </div>
 
     </div>
 </aside>
+
+<!-- Searchbar Mobile -->
+<section class="c-search">
+    <div class="c-search__content">
+        <div class="c-search__wrapper">
+            <div class="c-search__context">
+                <span class="c-search__title">Search</span>
+            </div>
+            <div class="c-search__icon js-search__icon"></div>
+        </div>
+        <div class="c-search__form js-search__form">
+            <div class="c-search__holder">
+                <?php get_search_form(); ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main content-->
 <main class="o-page__main js-page__main">
     <div class="o-page__col c-content">
         <div class="c-contact">
