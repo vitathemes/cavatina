@@ -10,7 +10,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
     <header class="c-post__header c-post__header--space-height entry-header">
-        <span class="o-bullet"></span>
+        <span class="o-bullet-numeric"></span>
         <?php
 		if ( is_singular() ) :
 			the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
