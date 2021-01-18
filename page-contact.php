@@ -44,13 +44,31 @@ get_header();
     <div class="o-page__col c-content">
         <div class="c-contact">
             <div class="c-contact__form__holder">
-                <form class="c-contact__form" name="myForm">
+                <!-- <form class="c-contact__form" name="myForm">
                     <input class="c-contact__form__text" name="name" type="text" placeholder="Insert Your Name" />
                     <input class="c-contact__form__text" name="email" type="text"
                         placeholder="Insert Your E-mail Address" />
                     <textarea class="c-contact__form__text-area" name="message">Your Message</textarea>
                     <button class="c-contact__form__button button--small" name="submit" type="submit">Send</button>
-                </form>
+                </form> -->
+
+                <?php
+                            the_content(
+                                sprintf(
+                                    wp_kses(
+                                        /* translators: %s: Name of current post. Only visible to screen readers */
+                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
+                                        array(
+                                            'span' => array(
+                                                'class' => array(),
+                                            ),
+                                        )
+                                    ),
+                                    wp_kses_post( get_the_title() )
+                                )
+                            );
+                        ?>
+
             </div>
             <div class="c-contact__context">
                 <div class="c-contact__widget">

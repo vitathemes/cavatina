@@ -263,8 +263,6 @@ add_filter( 'comment_form_defaults', 'cavatina_change_submit_button_text' );
 /**
  * change comment date format
  */
-
-
 function cavatina_change_comment_date_format( $d ) {
     $d = date("F j.Y");
     return $d;
@@ -296,22 +294,18 @@ function cavatina_total_post_types() {
 
 /**
  * Change comment form textarea to use placeholder
- *
- * @since  1.0.0
- * @param  array $args
- * @return array
  */
-function cavatina_change_placeholder( $args ) {
+function cavatina_change_textarea_placeholder( $args ) {
 	$args['comment_field']        = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
 	return $args;
 }
-add_filter( 'comment_form_defaults', 'cavatina_change_placeholder' );
+add_filter( 'comment_form_defaults', 'cavatina_change_textarea_placeholder' );
 
 /**
  * Comment Form Fields Placeholder
  *
  */
-function be_comment_form_fields( $fields ) {
+function cavatina_comments_placeholders( $fields ) {
 	foreach( $fields as &$field ) {
 		$field = str_replace( 'id="author"', 'id="author" placeholder="Name*"', $field );
 		$field = str_replace( 'id="email"', 'id="email" placeholder="Email*"', $field );
@@ -319,7 +313,7 @@ function be_comment_form_fields( $fields ) {
 	}
 	return $fields;
 }
-add_filter( 'comment_form_default_fields', 'be_comment_form_fields' );
+add_filter( 'comment_form_default_fields', 'cavatina_comments_placeholders' );
 
 
 
@@ -330,8 +324,6 @@ function cavatina_custom_excerpt_length( $length ) {
 	return 10;
 }
 add_filter( 'excerpt_length', 'cavatina_custom_excerpt_length', 999 );
-
-
 
 
 /**
@@ -351,65 +343,10 @@ $args = array(
     'before_page_number' => '',
     'after_page_number'  => '');
 
-
-
 /**
  * Enable Dashicons
  */
-function ww_load_dashicons(){
+function cavatina_dashicons(){
     wp_enqueue_style('dashicons');
 }
-add_action('wp_enqueue_scripts', 'ww_load_dashicons', 999);
-
-
-/*
-* Posts increment number
-*/
-
-// function updateNumbers() {
-
-// 	global $wpdb;
-// 	$querystr = "SELECT $wpdb->posts.* FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'post' ";
-//   $pageposts = $wpdb->get_results($querystr, OBJECT);
-// 	$counts = 0 ;
-
-// 	if ($pageposts):
-// 	  foreach ($pageposts as $post):
-
-// 		setup_postdata($post);
-// 		$counts++;
-
-// 		add_post_meta($post->ID, 'incr_number', $counts, true);
-// 		update_post_meta($post->ID, 'incr_number', $counts);
-
-// 	  endforeach;
-// 	endif;
-//   }  
-
-//   add_action ( 'publish_post', 'updateNumbers' );
-//   add_action ( 'deleted_post', 'updateNumbers' );
-//   add_action ( 'edit_post', 'updateNumbers' );
-
-
-/*
-* Posts increment number
-*/
-//  add_action( 'the_title', 'dk_auto_numbering' );
-
-//  function dk_auto_numbering($title) {
-//   $post_ID = get_the_ID();
-//   $the_post = get_post($post_ID);
-//   $date = $the_post->post_date;
-//   $maintitle = $the_post->post_title;
-//   $count='';
-//   if ($the_post->post_status == 'publish' AND $the_post->post_type == 'projects' AND in_the_loop()) {
-// 	  global $wpdb;
-// 	  $count = $wpdb->get_var("SELECT count(*) FROM $wpdb->posts  WHERE post_status='publish' AND post_type='projects' AND post_date<'{$date}'");
-// 	 if ($maintitle==$title) {
-// 	  $count = $count.': ';  
-// 	 } else {
-// 	  $count ='';
-// 	 }
-//   } 
-//   return $count.$title;
-//  }
+add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);

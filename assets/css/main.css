@@ -1094,7 +1094,7 @@ html {
   display: inline-block;
   color: #111111; }
   .o-bullet-numeric::before {
-    content: "0" counter(chapter);
+    content: counter(chapter);
     counter-increment: chapter;
     font-size: 14px;
     width: 20px;
@@ -2296,6 +2296,42 @@ img {
   height: max-content;
   text-align: left;
   margin-bottom: 39px; }
+
+/*------------------------------------*\
+  #Contact Form 7 Plugin 
+\*------------------------------------*/
+.wpcf7 {
+  width: 100%; }
+  .wpcf7 form input[type="text"] {
+    margin-bottom: 32px;
+    height: 30px;
+    padding-top: 5%; }
+  .wpcf7 form input[type="submit"] {
+    margin-top: 16px; }
+  .wpcf7 form textarea {
+    width: 100%;
+    text-align: left;
+    height: 80px;
+    font-size: 12px; }
+    @media only screen and (min-width: 980px) {
+      .wpcf7 form textarea {
+        margin-top: 32px; } }
+
+.wpcf7-not-valid-tip {
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 166.3%;
+  font-family: "montserratregular";
+  letter-spacing: 0.1em;
+  color: #ff3636; }
+
+.wpcf7-response-output {
+  outline: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important; }
 
 /* Aside
 --------------------------------------------- */
@@ -3828,6 +3864,74 @@ textarea {
   textarea:focus {
     color: #111;
     outline: none; }
+  input[type="text"]:active,
+  input[type="email"]:active,
+  input[type="url"]:active,
+  input[type="password"]:active,
+  input[type="search"]:active,
+  input[type="number"]:active,
+  input[type="tel"]:active,
+  input[type="range"]:active,
+  input[type="date"]:active,
+  input[type="month"]:active,
+  input[type="week"]:active,
+  input[type="time"]:active,
+  input[type="datetime"]:active,
+  input[type="datetime-local"]:active,
+  input[type="color"]:active,
+  textarea:active {
+    color: #111; }
+  input[type="text"]:focus:-moz-placeholder,
+  input[type="email"]:focus:-moz-placeholder,
+  input[type="url"]:focus:-moz-placeholder,
+  input[type="password"]:focus:-moz-placeholder,
+  input[type="search"]:focus:-moz-placeholder,
+  input[type="number"]:focus:-moz-placeholder,
+  input[type="tel"]:focus:-moz-placeholder,
+  input[type="range"]:focus:-moz-placeholder,
+  input[type="date"]:focus:-moz-placeholder,
+  input[type="month"]:focus:-moz-placeholder,
+  input[type="week"]:focus:-moz-placeholder,
+  input[type="time"]:focus:-moz-placeholder,
+  input[type="datetime"]:focus:-moz-placeholder,
+  input[type="datetime-local"]:focus:-moz-placeholder,
+  input[type="color"]:focus:-moz-placeholder,
+  textarea:focus:-moz-placeholder {
+    color: #111; }
+  input[type="text"]:focus:-ms-input-placeholder,
+  input[type="email"]:focus:-ms-input-placeholder,
+  input[type="url"]:focus:-ms-input-placeholder,
+  input[type="password"]:focus:-ms-input-placeholder,
+  input[type="search"]:focus:-ms-input-placeholder,
+  input[type="number"]:focus:-ms-input-placeholder,
+  input[type="tel"]:focus:-ms-input-placeholder,
+  input[type="range"]:focus:-ms-input-placeholder,
+  input[type="date"]:focus:-ms-input-placeholder,
+  input[type="month"]:focus:-ms-input-placeholder,
+  input[type="week"]:focus:-ms-input-placeholder,
+  input[type="time"]:focus:-ms-input-placeholder,
+  input[type="datetime"]:focus:-ms-input-placeholder,
+  input[type="datetime-local"]:focus:-ms-input-placeholder,
+  input[type="color"]:focus:-ms-input-placeholder,
+  textarea:focus:-ms-input-placeholder {
+    color: #111; }
+  input[type="text"]:focus::-webkit-input-placeholder,
+  input[type="email"]:focus::-webkit-input-placeholder,
+  input[type="url"]:focus::-webkit-input-placeholder,
+  input[type="password"]:focus::-webkit-input-placeholder,
+  input[type="search"]:focus::-webkit-input-placeholder,
+  input[type="number"]:focus::-webkit-input-placeholder,
+  input[type="tel"]:focus::-webkit-input-placeholder,
+  input[type="range"]:focus::-webkit-input-placeholder,
+  input[type="date"]:focus::-webkit-input-placeholder,
+  input[type="month"]:focus::-webkit-input-placeholder,
+  input[type="week"]:focus::-webkit-input-placeholder,
+  input[type="time"]:focus::-webkit-input-placeholder,
+  input[type="datetime"]:focus::-webkit-input-placeholder,
+  input[type="datetime-local"]:focus::-webkit-input-placeholder,
+  input[type="color"]:focus::-webkit-input-placeholder,
+  textarea:focus::-webkit-input-placeholder {
+    color: #111; }
 
 select {
   color: #767676;

@@ -40,7 +40,20 @@ textarea {
     outline: none;
   }
 
-  &:hover {
+  &:active {
+    color: $color__text-input-focus;
+  }
+
+  &:focus:-moz-placeholder {
+    color: $color__text-input-focus;
+  }
+
+  &:focus:-ms-input-placeholder {
+    color: $color__text-input-focus;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    color: $color__text-input-focus;
   }
 }
 
