@@ -263,8 +263,6 @@ add_filter( 'comment_form_defaults', 'cavatina_change_submit_button_text' );
 /**
  * change comment date format
  */
-
-
 function cavatina_change_comment_date_format( $d ) {
     $d = date("F j.Y");
     return $d;
@@ -296,22 +294,18 @@ function cavatina_total_post_types() {
 
 /**
  * Change comment form textarea to use placeholder
- *
- * @since  1.0.0
- * @param  array $args
- * @return array
  */
-function cavatina_change_placeholder( $args ) {
+function cavatina_change_textarea_placeholder( $args ) {
 	$args['comment_field']        = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
 	return $args;
 }
-add_filter( 'comment_form_defaults', 'cavatina_change_placeholder' );
+add_filter( 'comment_form_defaults', 'cavatina_change_textarea_placeholder' );
 
 /**
  * Comment Form Fields Placeholder
  *
  */
-function be_comment_form_fields( $fields ) {
+function cavatina_comments_placeholders( $fields ) {
 	foreach( $fields as &$field ) {
 		$field = str_replace( 'id="author"', 'id="author" placeholder="Name*"', $field );
 		$field = str_replace( 'id="email"', 'id="email" placeholder="Email*"', $field );
@@ -319,17 +313,8 @@ function be_comment_form_fields( $fields ) {
 	}
 	return $fields;
 }
-add_filter( 'comment_form_default_fields', 'be_comment_form_fields' );
+add_filter( 'comment_form_default_fields', 'cavatina_comments_placeholders' );
 
-
-/**
- * cange font
- */
-function cavatina_google_fonts() {
-    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap', false );
-}
-
-add_action( 'wp_enqueue_scripts', 'cavatina_google_fonts' );
 
 
 /**
@@ -339,8 +324,6 @@ function cavatina_custom_excerpt_length( $length ) {
 	return 10;
 }
 add_filter( 'excerpt_length', 'cavatina_custom_excerpt_length', 999 );
-
-
 
 
 /**
@@ -360,15 +343,10 @@ $args = array(
     'before_page_number' => '',
     'after_page_number'  => '');
 
-
-
-
 /**
  * Enable Dashicons
  */
-
-
-function ww_load_dashicons(){
+function cavatina_dashicons(){
     wp_enqueue_style('dashicons');
 }
-add_action('wp_enqueue_scripts', 'ww_load_dashicons', 999);
+add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);

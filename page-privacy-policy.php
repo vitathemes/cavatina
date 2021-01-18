@@ -14,12 +14,13 @@
 
 get_header();
 ?>
+
 <!-- Aside -->
 <aside class="o-page__col c-aside js-aside">
     <div class="c-aside__content">
-        <div class="c-aside__wrapper">
+        <div class="c-aside__wrapper c-aside__wrapper--full-width">
             <div class="c-aside__context">
-                <span class="c-aside__title"><?php global $post; $post_slug=$post->post_name; echo $post_slug; ?></span>
+                <span class="c-aside__title">Privacy Policy</span>
             </div>
         </div>
 
@@ -46,17 +47,17 @@ get_header();
 <!-- Main content-->
 <main id="primary" class="o-page__main js-page__main o-page__main--page-single">
     <?php
-		while ( have_posts() ) :
-			the_post();
+    while ( have_posts() ) :
+        the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+        get_template_part( 'template-parts/content', 'page-full-height' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+        // If comments are open or we have at least one comment, load up the comment template.
+        if ( comments_open() || get_comments_number() ) :
+            comments_template();
+        endif;
 
-		endwhile; // End of the loop.
-        ?>
+    endwhile; // End of the loop.
+    ?>
     <?php get_footer();?>
 </main><!-- #main -->

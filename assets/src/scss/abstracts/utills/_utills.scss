@@ -11,7 +11,6 @@
 }
 
 .u-header-space {
-
   width: 100%;
   height: 90px;
 
@@ -37,10 +36,7 @@
   border-top: 1px solid #e1e1e1;
 
   @include media(tablet) {
-    width: 80%;
-    margin-left: 20%;
+    width: calc(825px - 212px);
+    margin-left: 212px;
   }
 }
-
-
-

@@ -6,25 +6,39 @@
  *
  * @package wp-cavatina
  */
-
 get_header();
 ?>
-<aside class="o-page__col c-aside">
+<!-- Aside -->
+<aside class="o-page__col c-aside js-aside">
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
                 <span class="c-aside__title">Blog</span>
                 <span class="c-aside__counter"><?php cavatina_total_posts(); ?> Posts</span>
             </div>
+        </div>
+
+    </div>
+</aside>
+
+<!-- Searchbar Mobile -->
+<section class="c-search">
+    <div class="c-search__content">
+        <div class="c-search__wrapper">
+            <div class="c-search__context">
+                <span class="c-search__title">Search</span>
+            </div>
             <div class="c-search__icon js-search__icon"></div>
         </div>
-        <div class="c-search js-search">
+        <div class="c-search__form js-search__form">
             <div class="c-search__holder">
                 <?php get_search_form(); ?>
             </div>
         </div>
     </div>
-</aside>
+</section>
+
+<!-- Main content-->
 <main class="o-page__main js-page__main o-page__main--posts">
     <div class="o-page__col c-content c-content--max-height">
         <div class="c-container site-main__container">
@@ -40,9 +54,6 @@ get_header();
                              * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                              */
                             get_template_part( 'template-parts/content', get_post_type() );
-
-
-
                         endwhile;
                         the_posts_navigation();
                     else :
@@ -52,10 +63,8 @@ get_header();
             </div>
             <div class="c-pagination">
                 <?php echo paginate_links( array(
-
                     'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
                     'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-
                 )); ?>
             </div>
         </div>

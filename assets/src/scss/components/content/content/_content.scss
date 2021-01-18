@@ -1,4 +1,3 @@
-
 /*------------------------------------*\
   #Content
 \*------------------------------------*/
@@ -15,8 +14,10 @@
 }
 .c-content--home {
   height: max-content;
-  @include media(tablet){
+  margin-top: 39px;
+  @include media(tablet) {
     height: 100%;
+    margin-top: 0px;
   }
   overflow: hidden;
 }
@@ -31,9 +32,9 @@
 .c-content--search {
   height: 90%;
   overflow-y: scroll;
-  .c-container__content{
+  .c-container__content {
     height: max-content;
-    .search-submit-mobile{
+    .search-submit-mobile {
       display: none;
     }
   }

@@ -9,7 +9,7 @@ input[type="submit"] {
   border-radius: $global-radius;
   background: #000000;
   border-radius: 5px;
-  // padding: 16px 26px;
+  font-size: 14px;
   cursor: pointer;
   transition: $global-transition;
 
@@ -19,5 +19,5 @@ input[type="submit"] {
 }
 
 .button--small {
-  padding: 13px 25px;
+  padding: 12px 25px;
 }

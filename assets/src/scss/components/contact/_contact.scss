@@ -102,3 +102,61 @@
   text-align: left;
   margin-bottom: 39px;
 }
+
+/*------------------------------------*\
+  #Contact Form 7 Plugin 
+\*------------------------------------*/
+
+.wpcf7 {
+  width: 90%;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  form {
+    input[type="text"] {
+      height: 30px;
+      padding-top: 5%;
+    }
+
+    input[type="email"] {
+      margin-top: 20px;
+      height: 30px;
+      padding-top: 5%;
+    }
+
+    input[type="submit"] {
+      margin-top: 16px;
+    }
+
+    textarea {
+      width: 100%;
+      text-align: left;
+      height: 80px;
+      font-size: 12px;
+
+      @include media(tablet) {
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
+.wpcf7-not-valid-tip {
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 166.3%;
+  font-family: $font__regular;
+  letter-spacing: 0.1em;
+  color: #ff3636;
+}
+
+.wpcf7-response-output {
+  outline: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}

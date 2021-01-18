@@ -40,7 +40,20 @@ textarea {
     outline: none;
   }
 
-  &:hover {
+  &:active {
+    color: $color__text-input-focus;
+  }
+
+  &:focus:-moz-placeholder {
+    color: $color__text-input-focus;
+  }
+
+  &:focus:-ms-input-placeholder {
+    color: $color__text-input-focus;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    color: $color__text-input-focus;
   }
 }
 
@@ -93,4 +106,22 @@ textarea {
 input.error,
 textarea.error {
   color: #000000;
+}
+
+/* remore X button from inputs */
+input[type="text"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="text"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }

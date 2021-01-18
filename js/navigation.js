@@ -43,7 +43,7 @@
     menuLogo.classList.toggle("is-open");
     menuNav.classList.toggle("is-open");
 
-    // Header Holder animation
+    // Header Holder animation ( Animation out => decrease Width )
     if (!siteNavigation.classList.contains("is-open")) {
       siteNavigation.classList.add("has-animation-out");
     } else {
@@ -55,19 +55,22 @@
       menuLogo.classList.add("logo-out");
       menuNav.classList.add("nav-out");
 
+      // fadeIn animation after toggled
       setTimeout(() => {
+        menuNav.style.display = "nav-in";
+        siteNavigation.classList.add("space-top");
         menuLogo.classList.add("logo-in");
         menuLogo.classList.remove("logo-out");
-
         menuNav.classList.add("nav-in");
         menuNav.classList.remove("nav-out");
-      }, 1000);
+      }, 700);
     } else {
+      siteNavigation.classList.remove("space-top");
+
       menuLogo.classList.remove("logo-in");
       menuLogo.classList.add("logo-out");
 
-      menuLogo.classList.remove("nav-in");
-      menuLogo.classList.remove("nav-out");
+      menuNav.classList.remove("nav-in");
     }
 
     if (button.getAttribute("aria-expanded") === "true") {
@@ -80,19 +83,23 @@
   // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
   document.addEventListener("click", function (event) {
     const isClickInside = siteNavigation.contains(event.target);
-    var pageMain = document.querySelector(".o-page__main");
-    var overlay = document.querySelector(".js-overlay");
+    let pageMain = document.querySelector(".o-page__main");
+    let overlay = document.querySelector(".js-overlay");
+    let aside = document.querySelector(".js-aside");
     const searchOverlay = document.querySelector(".js-search__overlay");
 
-
     if (!isClickInside) {
-
-      if(document.querySelector('body').getElementsByClassName('o-overlay')[0]) {
+      if (
+        document.querySelector("body").getElementsByClassName("o-overlay")[0]
+      ) {
         overlay.classList.remove("o-overlay--active");
         searchOverlay.classList.remove("o-page__main--blur");
         pageMain.classList.remove("o-page__main--blur");
-      }
+        if (document.querySelector("body").getElementsByClassName("c-aside")[0]) {
+          aside.classList.remove("c-aside--blur");
 
+        }
+      }
 
       siteNavigation.classList.remove("toggled");
       button.setAttribute("aria-expanded", "false");
@@ -100,12 +107,13 @@
       if (siteNavigation.classList.contains("is-open")) {
         siteNavigation.classList.add("has-animation-out");
         siteNavigation.classList.remove("is-open");
+        siteNavigation.classList.remove("space-top");
 
         menuLogo.classList.add("logo-out");
         menuLogo.classList.remove("logo-in");
         menuLogo.classList.remove("is-open");
         menuNav.classList.remove("is-open");
-
+        menuNav.classList.remove("nav-in");
       }
     }
   });

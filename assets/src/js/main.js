@@ -42,22 +42,21 @@ function searchToggleHeader() {
   const header = document.querySelector(".js-header");
   const headerSearch = document.querySelector(".js-header__search");
 
-
   const searchOverlay = document.querySelector(".js-search__overlay");
 
-    if(document.querySelector('body').getElementsByClassName('o-overlay')[0]) {
-      headerSearch.addEventListener("click", function () {
-        // Fade in/out the search overlay
-        if (isToggled === true) {
-          fadeOut(searchOverlay);
-          headerSearch.classList.remove("c-header__search--toggle");
-          isToggled = false;
-        } else {
-          fadeIn(searchOverlay, "flex");
-          headerSearch.classList.add("c-header__search--toggle");
-          isToggled = true;
-        }
-      });
+  if (document.querySelector("body").getElementsByClassName("o-overlay")[0]) {
+    headerSearch.addEventListener("click", function () {
+      // Fade in/out the search overlay
+      if (isToggled === true) {
+        fadeOut(searchOverlay);
+        headerSearch.classList.remove("c-header__search--toggle");
+        isToggled = false;
+      } else {
+        fadeIn(searchOverlay, "flex");
+        headerSearch.classList.add("c-header__search--toggle");
+        isToggled = true;
+      }
+    });
   }
 }
 
@@ -67,14 +66,14 @@ searchToggleHeader();
 function searchToggleAside() {
   const oPageMain = document.querySelector(".js-page");
   const searchIcon = document.querySelector(".js-search__icon");
-  const searchBlock = document.querySelector(".js-search");
+  const searchBlock = document.querySelector(".js-search__form");
 
   let pageMainContain = oPageMain.contains(searchIcon);
 
   if (pageMainContain === true) {
     searchIcon.addEventListener("click", function () {
       searchIcon.classList.toggle("c-search__icon--toggled");
-      searchBlock.classList.toggle("c-search--toggled");
+      searchBlock.classList.toggle("c-search__form--toggled");
     });
   }
 }
@@ -86,6 +85,18 @@ function blurToggle() {
   let overlay = document.querySelector(".js-overlay");
   let searchOverlay = document.querySelector(".js-search__overlay");
 
+  if (document.querySelector("body").getElementsByClassName("c-aside")[0]) {
+    console.log("true");
+    let aside = document.querySelector(".js-aside");
+    if (pageMain.classList.contains("o-page__main--blur")) {
+      aside.classList.remove("c-aside--blur");
+    } else {
+      aside.classList.add("c-aside--blur");
+    }
+  }
+
+  const headerMenuLogo = document.querySelector(".c-header__menu");
+
   if (pageMain.classList.contains("o-page__main--blur")) {
     searchOverlay.classList.remove("o-page__main--blur");
     pageMain.classList.remove("o-page__main--blur");
@@ -96,6 +107,55 @@ function blurToggle() {
     overlay.classList.add("o-overlay--active");
   }
 }
+
+// make first letter uppercase ( use case unsupported css )
+function capitalizeFirstLetter() {
+  // js-carousel__post-title__text
+  if (
+    document
+      .querySelector("body")
+      .getElementsByClassName("js-carousel__post-title__text")[0]
+  ) {
+    const carouselTitle = document.querySelector(
+      ".js-carousel__post-title__text"
+    );
+
+    carouselTitle.textContent =
+      carouselTitle.textContent.charAt(0).toUpperCase() +
+      carouselTitle.textContent.slice(1);
+  }
+
+  // js-carousel__post-title__text-mobile
+  if (
+    document
+      .querySelector("body")
+      .getElementsByClassName("js-carousel__post-title__text-mobile")[0]
+  ) {
+    const carouselTitle = document.querySelector(
+      ".js-carousel__post-title__text-mobile"
+    );
+
+    carouselTitle.textContent =
+      carouselTitle.textContent.charAt(0).toUpperCase() +
+      carouselTitle.textContent.slice(1);
+  }
+
+  // c-post__entry-title__anchor
+  if (
+    document
+      .querySelector("body")
+      .getElementsByClassName("c-post__entry-title__anchor")[0]
+  ) {
+    const projectPostTitle = document.querySelector(
+      ".c-post__entry-title__anchor"
+    );
+
+    projectPostTitle.textContent =
+      projectPostTitle.textContent.charAt(0).toUpperCase() +
+      projectPostTitle.textContent.slice(1);
+  }
+}
+capitalizeFirstLetter();
 
 // Main page Carousels
 function mainPageCarousels() {
@@ -191,37 +251,10 @@ function singleCarousel() {
 }
 
 // if we have single carousel in page slider will render
-  if(document.querySelector('.o-page__main').getElementsByClassName('c-carousel__single__slider')[0]) {
+if (
+  document
+    .querySelector(".o-page__main")
+    .getElementsByClassName("c-carousel__single__slider")[0]
+) {
   singleCarousel();
-}
-
-// if we have single carousel in page slider will render
-function validate() {
-  if (document.myForm.Name.value == "") {
-    alert("Please provide your name!");
-    document.myForm.Name.focus();
-    return false;
-  }
-
-  if (document.myForm.EMail.value == "") {
-    alert("Please provide your Email!");
-    document.myForm.EMail.focus();
-    return false;
-  }
-
-  if (
-    document.myForm.Zip.value == "" ||
-    isNaN(document.myForm.Zip.value) ||
-    document.myForm.Zip.value.length != 5
-  ) {
-    alert("Please provide a zip in the format #####.");
-    document.myForm.Zip.focus();
-    return false;
-  }
-
-  if (document.myForm.Country.value == "-1") {
-    alert("Please provide your country!");
-    return false;
-  }
-  return true;
 }

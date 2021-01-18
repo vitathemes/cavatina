@@ -1,26 +1,32 @@
-
 h1 {
   font-size: 24px;
   line-height: 30px;
-  font-weight: 600;
-  font-family: $font__main;
+  font-weight: normal;
+  font-family: $font__semi-bold;
 }
 
 h2 {
   font-size: 19px;
-  font-weight: 600;
-  font-family: $font__main;
+  font-weight: normal;
+  font-family: $font__regular;
 }
 
 h3 {
-  font-family: $font__main;
+  font-family: $font__semi-bold;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+}
+.h3--regular {
+  font-family: $font__regular;
   font-size: 14px;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 30px;
+  margin-bottom: 15px;
 }
 
 h4 {
-  font-family: $font__main;
+  font-family: $font__regular;
   font-size: 12px;
   font-weight: 400;
 }

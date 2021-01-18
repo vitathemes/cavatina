@@ -1,10 +1,9 @@
 .comment-reply-title {
   margin-bottom: 0px;
-  font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-  /* identical to box height */
-
+  font-style: normal;
+  font-family: $font__semi-bold;
   color: #000000;
 }
 
@@ -26,7 +25,7 @@
 .comment.depth-2 {
   margin-left: 0px;
   @include media(tablet) {
-    margin-left: 40px;
+    margin-left: 70px;
   }
 }
 
@@ -38,7 +37,7 @@
 
   .comment-notes {
     width: 100%;
-    margin-bottom: 46px;
+    margin-bottom: 50px;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
@@ -99,7 +98,6 @@
   flex-wrap: wrap;
 
   @include media(tablet) {
-    margin-left: 20%;
     text-align: left;
   }
 }
@@ -285,7 +283,7 @@
 .comment-form-cookies-consent {
   width: 100%;
   display: block;
-  label{
+  label {
     vertical-align: top;
     display: inline-block;
     width: 85%;
@@ -299,5 +297,3 @@
     color: #767676;
   }
 }
-
-

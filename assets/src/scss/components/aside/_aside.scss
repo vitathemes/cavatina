@@ -3,15 +3,19 @@
 \*------------------------------------*/
 
 .c-aside {
-  position: fixed;
   width: 100%;
   bottom: 0;
   z-index: 9;
   background-color: $color__background-body;
-  border-top: 1px solid #e1e1e1;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 39px;
+
+  animation-name: blurReverse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 
   @include media(tablet) {
     display: inline-block;
@@ -27,12 +31,28 @@
     padding-top: 4%;
   }
 }
+
+.c-aside--blur {
+  animation-name: blur;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.c-aside--mobile-hide {
+  display: none;
+
+  @include media(tablet) {
+    display: inline-block;
+  }
+}
+
 .c-aside--mobile-hide {
   display: none;
   @include media(tablet) {
     display: inline-block;
   }
 }
+
 .c-aside--home {
   display: none;
   @include media(tablet) {
@@ -53,18 +73,22 @@
 
 .c-aside__wrapper {
   width: 100%;
-  min-height: 50px;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 16px;
-  border-bottom: 1px solid #e1e1e1;
 
   @include media(tablet) {
-    border-bottom: 0px solid #e1e1e1;
     border-top: 0px solid #e1e1e1;
     justify-content: center;
+    padding: 20px 16px;
+    min-height: 50px;
+  }
+}
+
+.c-aside__wrapper--full-width {
+  @include media(tablet) {
+    padding: 26px 0 0 0;
   }
 }
 
@@ -103,18 +127,23 @@
 .c-aside__context {
   width: max-content;
   display: inline-block;
+  padding-left: 16px;
+
   @include media(tablet) {
     text-align: left;
   }
 }
 
 .c-aside__title {
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 17px;
   margin: 0;
   display: inline-block;
   text-transform: capitalize;
+  font-weight: normal;
 
   @include media(tablet) {
+    font-size: 19px;
     display: block;
     padding-bottom: 8px;
   }
@@ -130,6 +159,12 @@
 .c-aside__counter {
   font-size: 14px;
   color: #767676;
+  line-height: 17px;
+  font-weight: normal;
+
+  @include media(tablet) {
+    font-size: 14px;
+  }
 
   &::before {
     content: "| \00a0";
@@ -139,7 +174,7 @@
   }
 }
 
-.page-numbers.current{
+.page-numbers.current {
   font-size: 14px;
 }
 
@@ -165,7 +200,7 @@
 
   @include media(tablet) {
     display: block;
-    padding-bottom: 20%;
+    padding-bottom: 10%;
   }
 
   @include media(wide) {
@@ -195,5 +230,4 @@
     padding-left: 8px;
     text-align: left;
   }
-
 }

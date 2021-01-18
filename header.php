@@ -7,8 +7,7 @@
 * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
 *
 * @package wp-cavatina
-*/
-?>
+*/?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -28,7 +27,6 @@
 </head>
 
 <body <?php body_class(); ?> oncLoad="scrollbar()">
-
     <?php wp_body_open(); ?>
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-cavatina' ); ?></a>
     <header id="masthead" class="c-header js-header">
@@ -53,8 +51,6 @@
                         "container_class" => "c-nav js-navigation",
                         "container" => "nav",
                     ));
-            }
-            else{
             }
             ?>
         </div>

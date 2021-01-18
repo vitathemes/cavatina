@@ -1,7 +1,6 @@
 /*------------------------------------*\
   #Carousel
 \*------------------------------------*/
-
 .c-carousel {
   width: 100%;
   height: 90%;
@@ -9,7 +8,6 @@
   margin-top: 0px;
   display: flex;
   flex-direction: column;
-
   @include media(tablet) {
     width: 90%;
     height: 80%;
@@ -18,15 +16,18 @@
   }
 }
 
-.c-carousel--aside{
-    margin-left: 0;
-    height: 22vh;
-    width: 100%;
+.c-carousel--aside {
+  margin-left: 0;
+  height: 22vh;
+  width: 100%;
 
-    @include media(wide) {
-      height: 20vh;
-    }
-
+  @include media(tablet) {
+    margin-bottom: 16px;
+    padding-top: 20px;
+  }
+  @include media(wide) {
+    height: 20vh;
+  }
 }
 
 .c-carousel__context {
@@ -45,9 +46,19 @@
   font-size: 14px;
   line-height: 17px;
   color: #8a8a8a;
+  margin: 0 0 24px 0;
+
   @include media(tablet) {
     margin: 0;
     color: #8a8a8a;
+  }
+
+  &::after {
+    content: url("data:image/svg+xml,%3Csvg width='17' height='4' viewBox='0 0 17 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.1768 2.17678C16.2744 2.07915 16.2744 1.92086 16.1768 1.82322L14.5858 0.232234C14.4882 0.134603 14.3299 0.134603 14.2322 0.232234C14.1346 0.329865 14.1346 0.488157 14.2322 0.585788L15.6464 2L14.2322 3.41421C14.1346 3.51185 14.1346 3.67014 14.2322 3.76777C14.3299 3.8654 14.4882 3.8654 14.5858 3.76777L16.1768 2.17678ZM-2.18557e-08 2.25L16 2.25L16 1.75L2.18557e-08 1.75L-2.18557e-08 2.25Z' fill='%238A8A8A'/%3E%3C/svg%3E%0A");
+    vertical-align: text-bottom;
+    display: inline-block;
+    background-size: 28px 28px;
+    margin-left: 12px;
   }
 }
 
@@ -95,11 +106,19 @@
 
 .c-carousel__post-title {
   counter-reset: section;
-  text-transform: capitalize;
 
   @include media(tablet) {
     margin-top: 16px;
     margin-bottom: 32px;
+  }
+}
+.c-carousel__post-title__text {
+  width: max-content;
+  color: #000000;
+  display: inline;
+  transition: 0.2s all;
+  &:hover {
+    color: #767676;
   }
 }
 
@@ -114,10 +133,9 @@
 }
 
 .c-carousel__more--home {
-  margin-top: 15%;
-
+  margin-top: 78px;
   margin-left: 5%;
-
+  margin-bottom: 66px;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -138,7 +156,7 @@
   .flickity-viewport {
     width: 100%;
     height: 100%;
-
+    max-height: 100px;
   }
 
   .flickity-slider {
@@ -175,7 +193,10 @@
 
   .c-carousel__post-title {
     width: 95%;
+    height: 30px;
+    overflow: hidden;
     margin-top: 5%;
+    padding-right: 32px;
     @include media(tablet) {
       display: none;
     }
@@ -204,6 +225,7 @@
   justify-content: center;
   margin-top: 24px;
   z-index: 5;
+
   @include media(tablet) {
     width: 100%; // here
     height: 100%;
@@ -239,7 +261,6 @@
       width: 30%;
     }
   }
-
 }
 
 .c-carousel__single__cell {
@@ -263,17 +284,15 @@
 
 .c-carousel__single__cell--page {
   width: 100%;
-  @include media(laptop){
+  @include media(laptop) {
     width: 50%;
   }
 }
 
-
-
 .flickity-page-dots {
   bottom: -23%;
   @include media(tablet) {
-    bottom: -25px;
+    bottom: -24px;
   }
 }
 .c-carousel__single__image {
@@ -294,11 +313,9 @@
   object-fit: cover;
   height: 100%;
 
-  @include media(tablet){
+  @include media(tablet) {
     height: unset;
   }
-
-
 }
 
 /*------------------------------------*\
