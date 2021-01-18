@@ -44,14 +44,6 @@ get_header();
     <div class="o-page__col c-content">
         <div class="c-contact">
             <div class="c-contact__form__holder">
-                <!-- <form class="c-contact__form" name="myForm">
-                    <input class="c-contact__form__text" name="name" type="text" placeholder="Insert Your Name" />
-                    <input class="c-contact__form__text" name="email" type="text"
-                        placeholder="Insert Your E-mail Address" />
-                    <textarea class="c-contact__form__text-area" name="message">Your Message</textarea>
-                    <button class="c-contact__form__button button--small" name="submit" type="submit">Send</button>
-                </form> -->
-
                 <?php
                             the_content(
                                 sprintf(

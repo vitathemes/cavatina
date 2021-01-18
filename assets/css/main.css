@@ -2303,7 +2303,10 @@ img {
 .wpcf7 {
   width: 100%; }
   .wpcf7 form input[type="text"] {
-    margin-bottom: 32px;
+    height: 30px;
+    padding-top: 5%; }
+  .wpcf7 form input[type="email"] {
+    margin-top: 20px;
     height: 30px;
     padding-top: 5%; }
   .wpcf7 form input[type="submit"] {
