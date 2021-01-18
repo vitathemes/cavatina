@@ -2301,7 +2301,10 @@ img {
   #Contact Form 7 Plugin 
 \*------------------------------------*/
 .wpcf7 {
-  width: 100%; }
+  width: 90%; }
+  @media only screen and (min-width: 980px) {
+    .wpcf7 {
+      width: 100%; } }
   .wpcf7 form input[type="text"] {
     height: 30px;
     padding-top: 5%; }
@@ -3420,10 +3423,12 @@ img {
   line-height: 30px;
   text-align: justify; }
   .c-single__text--full-height p {
-    margin-bottom: 16px; }
+    margin-bottom: 16px;
+    text-align: left; }
   .c-single__text--full-height ul {
     margin-left: 16px;
-    list-style-type: disc; }
+    list-style-type: disc;
+    text-align: left; }
   .c-single__text--full-height h3 {
     line-height: 28px; }
 

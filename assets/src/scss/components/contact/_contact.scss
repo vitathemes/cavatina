@@ -106,8 +106,13 @@
 /*------------------------------------*\
   #Contact Form 7 Plugin 
 \*------------------------------------*/
+
 .wpcf7 {
-  width: 100%;
+  width: 90%;
+
+  @include media(tablet) {
+    width: 100%;
+  }
 
   form {
     input[type="text"] {
