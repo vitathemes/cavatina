@@ -53,6 +53,11 @@
 }
 
 .o-bullet-after {
+
+  font-family: $font__regular;
+  font-size: 14px;
+  line-height: 17px;
+
   &::after {
     content: "";
     display: inline-block;

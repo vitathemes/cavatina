@@ -19,12 +19,30 @@
 .c-post__header {
   min-height: max-content;
   margin-bottom: 26px;
+  width: 100%;
 
   @include media(tablet) {
-    min-height: 70px;
+    min-height: 60px;
     margin-bottom: 16px;
   }
 }
+
+
+.c-post__header__col{
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+}
+
+.c-post__header__col--left{
+  max-width: 15%;
+
+}
+
+.c-post__header__col--right{
+  max-width: 85%;
+}
+
 
 .c-post__header--space-height {
   margin-bottom: 8px;
@@ -36,7 +54,6 @@
   margin-bottom: 6px;
   vertical-align: top;
   margin-top: 0;
-  padding-right: 16px;
   line-height: 17px;
 
   &::first-letter {
@@ -47,20 +64,22 @@
     color: #767676;
   }
 
-  a {
-    font-weight: normal;
-    font-size: 14px;
-    color: #111111;
-    vertical-align: top;
-    font-family: $font__semi-bold;
-    line-height: 20px;
-  }
-
   counter-reset: section;
 }
 
+.c-post__entry-title__anchor{
+  font-weight: normal;
+  font-size: 14px;
+  color: #111111;
+  vertical-align: top;
+  font-family: $font__semi-bold;
+}
+
+
+
+
 .c-post__entry-title--projects {
-  width: calc(89% - 30px);
+  width: 100%;
 }
 
 .js-post__entry-title::first-letter {
@@ -72,7 +91,7 @@
   line-height: 200%;
 }
 .c-post__meta {
-  padding-left: 44px;
+
 }
 
 .c-post__category {

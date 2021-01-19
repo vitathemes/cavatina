@@ -293,7 +293,7 @@ function cavatina_total_post_types() {
 
 
 /**
- * Change comment form textarea to use placeholder
+ * Change comment form textarea placeholder
  */
 function cavatina_change_textarea_placeholder( $args ) {
 	$args['comment_field']        = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
@@ -302,7 +302,7 @@ function cavatina_change_textarea_placeholder( $args ) {
 add_filter( 'comment_form_defaults', 'cavatina_change_textarea_placeholder' );
 
 /**
- * Comment Form Fields Placeholder
+ * change Comment Form Fields Placeholder
  *
  */
 function cavatina_comments_placeholders( $fields ) {
@@ -343,6 +343,7 @@ $args = array(
     'before_page_number' => '',
     'after_page_number'  => '');
 
+
 /**
  * Enable Dashicons
  */
@@ -350,3 +351,17 @@ function cavatina_dashicons(){
     wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
+
+
+/**
+ * Auto increment number per posts ( in pages like archives... )
+ */
+function cavatina_get_post_number()
+{
+    global $wp_query;
+    $posts_per_page = get_option('posts_per_page');
+    $paged          = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $offset         = ($paged - 1) * $posts_per_page;
+    $loop           = $wp_query->current_post + 1;
+    return $offset + $loop;
+}

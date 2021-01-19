@@ -7,24 +7,45 @@
  * @package wp-cavatina
  */
 
+$decimalCounter = "0";
 ?>
+
+    <?php while (have_posts()) : the_post(); ?>
+
+    <?php
+        // get post number (auto increment)
+        $postNumber = cavatina_get_post_number();
+
+        // Remove zero when reaching 10
+        if($postNumber >= 10){
+            $decimalCounter = "";
+            $postNumber = $postNumber;
+        }
+        else{$postNumber = $decimalCounter.$postNumber;}
+    ?>
+
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
     <header class="c-post__header c-post__header--space-height entry-header">
-        <span class="o-bullet-numeric"></span>
-        <?php
-		if ( is_singular() ) :
-			the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		else :
-			the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-		?>
-        <div class="c-post__meta c-post__meta--left-space entry-meta">
+
+        <div class="c-post__header__col c-post__header__col--left">
+            <span class="o-bullet-after"><?php echo $postNumber ?></span>
+        </div>
+
+        <div class="c-post__header__col c-post__header__col--right">
             <?php
-				echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';
-			?>
-        </div><!-- .entry-meta -->
-
-
+            if ( is_singular() ) :
+                the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+            else :
+                the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+            endif;
+            ?>
+            <div class="c-post__meta c-post__meta--left-space entry-meta">
+                <?php
+                echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';
+                ?>
+            </div><!-- .entry-meta -->
+        </div>
     </header><!-- .entry-header -->
 
     <div class="c-post__thumbnail">
@@ -43,7 +64,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -55,11 +76,12 @@
 		);
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cavatina' ),
 				'after'  => '</div>',
 			)
 		);
 		?>
     </div><!-- .entry-content -->
-
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<?php  endwhile; ?>

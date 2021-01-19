@@ -778,17 +778,21 @@ html {
   width: 5px;
   height: 5px; }
 
-.o-bullet-after::after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-color: #ff3636;
-  border-radius: 50%;
+.o-bullet-after {
+  font-family: "montserratregular";
   font-size: 14px;
-  width: 7px;
-  height: 7px;
-  margin-right: 8px;
-  margin-left: 6px; }
+  line-height: 17px; }
+  .o-bullet-after::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #ff3636;
+    border-radius: 50%;
+    font-size: 14px;
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    margin-left: 6px; }
 
 /* block
 --------------------------------------------- */
@@ -2065,7 +2069,7 @@ img {
     .c-aside__wrapper {
       border-top: 0px solid #e1e1e1;
       justify-content: center;
-      padding: 20px 16px;
+      padding: 25px 16px;
       min-height: 50px; } }
 
 @media only screen and (min-width: 980px) {
@@ -2841,11 +2845,23 @@ img {
 
 .c-post__header {
   min-height: max-content;
-  margin-bottom: 26px; }
+  margin-bottom: 26px;
+  width: 100%; }
   @media only screen and (min-width: 980px) {
     .c-post__header {
-      min-height: 70px;
+      min-height: 60px;
       margin-bottom: 16px; } }
+
+.c-post__header__col {
+  vertical-align: top;
+  display: inline-block;
+  height: 100%; }
+
+.c-post__header__col--left {
+  max-width: 15%; }
+
+.c-post__header__col--right {
+  max-width: 85%; }
 
 .c-post__header--space-height {
   margin-bottom: 8px; }
@@ -2856,23 +2872,22 @@ img {
   margin-bottom: 6px;
   vertical-align: top;
   margin-top: 0;
-  padding-right: 16px;
   line-height: 17px;
   counter-reset: section; }
   .c-post__entry-title::first-letter {
     text-transform: uppercase; }
   .c-post__entry-title:hover {
     color: #767676; }
-  .c-post__entry-title a {
-    font-weight: normal;
-    font-size: 14px;
-    color: #111111;
-    vertical-align: top;
-    font-family: "montserratsemibold";
-    line-height: 20px; }
+
+.c-post__entry-title__anchor {
+  font-weight: normal;
+  font-size: 14px;
+  color: #111111;
+  vertical-align: top;
+  font-family: "montserratsemibold"; }
 
 .c-post__entry-title--projects {
-  width: calc(89% - 30px); }
+  width: 100%; }
 
 .js-post__entry-title::first-letter {
   color: red !important; }
@@ -2880,9 +2895,6 @@ img {
 .c-post__excerpt {
   font-size: 14px;
   line-height: 200%; }
-
-.c-post__meta {
-  padding-left: 44px; }
 
 .c-post__category {
   font-size: 14px;
