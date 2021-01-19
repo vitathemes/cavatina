@@ -57,7 +57,7 @@
     align-content: center;
     margin-top: 0;
     padding-left: 64px;
-    padding-top: 9%;
+    padding-top: 7%;
   }
   @include media(wide) {
     padding-top: 5%;
@@ -117,13 +117,17 @@
   form {
     input[type="text"] {
       height: 30px;
-      padding-top: 5%;
+      padding-top: 10px;
     }
 
     input[type="email"] {
-      margin-top: 20px;
+      margin-top: 22px;
       height: 30px;
-      padding-top: 5%;
+      padding-top: 10px;
+
+      @include media(tablet) {
+        margin-top: 38px;
+      }
     }
 
     input[type="submit"] {
@@ -133,11 +137,11 @@
     textarea {
       width: 100%;
       text-align: left;
-      height: 80px;
+      height: 84px;
       font-size: 12px;
-
+      margin-top: 22px;
       @include media(tablet) {
-        margin-top: 32px;
+        margin-top: 46px;
       }
     }
   }

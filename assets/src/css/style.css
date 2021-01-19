@@ -1765,7 +1765,7 @@ img {
     animation-fill-mode: forwards; }
 
 .c-search__icon::before {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='17pt' height='17pt' viewBox='0 0 17 17' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(0%25,0%25,0%25);fill-opacity:1;' d='M 16.894531 16.394531 L 11.722656 11.222656 C 12.796875 10.03125 13.457031 8.457031 13.457031 6.730469 C 13.457031 3.019531 10.441406 0 6.730469 0 C 3.019531 0 0 3.019531 0 6.730469 C 0 10.441406 3.019531 13.457031 6.730469 13.457031 C 8.457031 13.457031 10.03125 12.796875 11.222656 11.722656 L 16.394531 16.894531 C 16.464844 16.964844 16.554688 17 16.644531 17 C 16.738281 17 16.828125 16.964844 16.894531 16.894531 C 17.035156 16.757812 17.035156 16.535156 16.894531 16.394531 Z M 6.730469 12.75 C 3.410156 12.75 0.707031 10.050781 0.707031 6.730469 C 0.707031 3.410156 3.410156 0.707031 6.730469 0.707031 C 10.046875 0.707031 12.75 3.410156 12.75 6.730469 C 12.75 10.050781 10.046875 12.75 6.730469 12.75 Z M 6.730469 12.75 '/%3E%3C/g%3E%3C/svg%3E%0A");
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16pt' height='16pt' viewBox='0 0 16 16' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(0%25,0%25,0%25);fill-opacity:1;' d='M 15.902344 15.429688 L 11.035156 10.5625 C 12.046875 9.441406 12.667969 7.960938 12.667969 6.332031 C 12.667969 2.839844 9.824219 0 6.332031 0 C 2.839844 0 0 2.839844 0 6.332031 C 0 9.824219 2.839844 12.667969 6.332031 12.667969 C 7.960938 12.667969 9.441406 12.046875 10.5625 11.035156 L 15.429688 15.902344 C 15.496094 15.96875 15.582031 16 15.667969 16 C 15.75 16 15.835938 15.96875 15.902344 15.902344 C 16.03125 15.773438 16.03125 15.5625 15.902344 15.429688 Z M 6.332031 12 C 3.210938 12 0.667969 9.457031 0.667969 6.332031 C 0.667969 3.207031 3.210938 0.667969 6.332031 0.667969 C 9.457031 0.667969 12 3.207031 12 6.332031 C 12 9.457031 9.457031 12 6.332031 12 Z M 6.332031 12 '/%3E%3C/g%3E%3C/svg%3E%0A");
   cursor: pointer;
   width: 20px;
   height: 20px;
@@ -1791,7 +1791,8 @@ img {
   position: absolute;
   display: inline-block;
   background-color: transparent;
-  right: 0px; }
+  right: -5px;
+  top: -15px; }
   @media only screen and (min-width: 980px) {
     .search-submit-mobile {
       display: none; } }
@@ -1799,7 +1800,7 @@ img {
     background: transparent;
     outline: none; }
   .search-submit-mobile::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18pt' height='18pt' viewBox='0 0 18 18' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(0%25,0%25,0%25);fill-opacity:1;' d='M 17.890625 17.359375 L 12.414062 11.882812 C 13.550781 10.621094 14.25 8.953125 14.25 7.125 C 14.25 3.195312 11.054688 0 7.125 0 C 3.195312 0 0 3.195312 0 7.125 C 0 11.054688 3.195312 14.25 7.125 14.25 C 8.953125 14.25 10.621094 13.550781 11.882812 12.414062 L 17.359375 17.890625 C 17.433594 17.964844 17.527344 18 17.625 18 C 17.722656 18 17.816406 17.964844 17.890625 17.890625 C 18.035156 17.742188 18.035156 17.507812 17.890625 17.359375 Z M 7.125 13.5 C 3.609375 13.5 0.75 10.640625 0.75 7.125 C 0.75 3.609375 3.609375 0.75 7.125 0.75 C 10.640625 0.75 13.5 3.609375 13.5 7.125 C 13.5 10.640625 10.640625 13.5 7.125 13.5 Z M 7.125 13.5 '/%3E%3C/g%3E%3C/svg%3E%0A");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16pt' height='16pt' viewBox='0 0 16 16' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(0%25,0%25,0%25);fill-opacity:1;' d='M 15.902344 15.429688 L 11.035156 10.5625 C 12.046875 9.441406 12.667969 7.960938 12.667969 6.332031 C 12.667969 2.839844 9.824219 0 6.332031 0 C 2.839844 0 0 2.839844 0 6.332031 C 0 9.824219 2.839844 12.667969 6.332031 12.667969 C 7.960938 12.667969 9.441406 12.046875 10.5625 11.035156 L 15.429688 15.902344 C 15.496094 15.96875 15.582031 16 15.667969 16 C 15.75 16 15.835938 15.96875 15.902344 15.902344 C 16.03125 15.773438 16.03125 15.5625 15.902344 15.429688 Z M 6.332031 12 C 3.210938 12 0.667969 9.457031 0.667969 6.332031 C 0.667969 3.207031 3.210938 0.667969 6.332031 0.667969 C 9.457031 0.667969 12 3.207031 12 6.332031 C 12 9.457031 9.457031 12 6.332031 12 Z M 6.332031 12 '/%3E%3C/g%3E%3C/svg%3E%0A");
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -1910,7 +1911,7 @@ img {
       align-content: center;
       margin-top: 0;
       padding-left: 64px;
-      padding-top: 9%; } }
+      padding-top: 7%; } }
   @media only screen and (min-width: 1400px) {
     .c-contact__context {
       padding-top: 5%; } }
@@ -1957,21 +1958,25 @@ img {
       width: 100%; } }
   .wpcf7 form input[type="text"] {
     height: 30px;
-    padding-top: 5%; }
+    padding-top: 10px; }
   .wpcf7 form input[type="email"] {
-    margin-top: 20px;
+    margin-top: 22px;
     height: 30px;
-    padding-top: 5%; }
+    padding-top: 10px; }
+    @media only screen and (min-width: 980px) {
+      .wpcf7 form input[type="email"] {
+        margin-top: 38px; } }
   .wpcf7 form input[type="submit"] {
     margin-top: 16px; }
   .wpcf7 form textarea {
     width: 100%;
     text-align: left;
-    height: 80px;
-    font-size: 12px; }
+    height: 84px;
+    font-size: 12px;
+    margin-top: 22px; }
     @media only screen and (min-width: 980px) {
       .wpcf7 form textarea {
-        margin-top: 32px; } }
+        margin-top: 46px; } }
 
 .wpcf7-not-valid-tip {
   margin-top: 8px;
@@ -2958,24 +2963,6 @@ img {
       width: 50%;
       margin-top: 0; } }
 
-.c-single__context::-webkit-scrollbar {
-  width: 2px; }
-
-/* Track */
-.c-single__context::-webkit-scrollbar-track {
-  background: #e1e1e1;
-  width: 1px;
-  margin-top: 10vh;
-  margin-bottom: 0vh; }
-
-/* Handle */
-.c-single__context::-webkit-scrollbar-thumb {
-  background: #888; }
-
-/* Handle on hover */
-.c-single__context::-webkit-scrollbar-thumb:hover {
-  background: #555; }
-
 .c-single__title {
   width: 100%;
   display: none;
@@ -3292,7 +3279,7 @@ img {
   align-items: center;
   justify-content: flex-end;
   background-color: transparent;
-  padding-top: 1%;
+  padding-top: 1.5%;
   padding-left: 16px;
   padding-right: 10px; }
   @media only screen and (min-width: 980px) {
@@ -3324,7 +3311,8 @@ img {
   color: #8a8a8a; }
   @media only screen and (min-width: 980px) {
     .c-footer__text {
-      margin-top: 0; } }
+      margin-top: 0;
+      margin-bottom: 0px; } }
 
 .c-footer__text__link {
   font-size: 12px;

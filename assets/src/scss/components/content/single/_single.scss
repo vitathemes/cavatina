@@ -41,29 +41,6 @@
   }
 }
 
-.c-single__context::-webkit-scrollbar {
-  width: 2px;
-  //background-color: #767676;
-}
-
-/* Track */
-.c-single__context::-webkit-scrollbar-track {
-  background: #e1e1e1;
-  width: 1px;
-  margin-top: 10vh;
-  margin-bottom: 0vh;
-}
-
-/* Handle */
-.c-single__context::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-.c-single__context::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 .c-single__title {
   width: 100%;
   display: none;

@@ -36,7 +36,7 @@ get_header();
                         </li>
                         <!-- bullet is here (single meta before) -->
                         <li>
-                            <?php echo '<span>'. get_the_date( "F j.Y", $post_id ) .'</span>';   ?>
+                            <?php echo '<span>'. get_the_date( "F j.Y" ) .'</span>';   ?>
                         </li>
                     </ul>
                     <div class="c-single__text">
