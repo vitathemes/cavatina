@@ -58,6 +58,7 @@
   width: 35%;
   text-align: left;
   padding-left: 16px;
+  padding-top: 2px;
 
   @include media(tablet) {
     width: max-content;
@@ -78,6 +79,15 @@
   }
 }
 
+.c-header__logo__image{
+  width: 95px;
+  height: 17px;
+}
+
+.c-header__logo__text{
+  width: 91px;
+  height: 17px
+}
 /*------------------------------------*\
   #Header text
 \*------------------------------------*/
@@ -232,15 +242,32 @@
 
     .c-header__logo {
       @include media(tablet) {
+
         transform: rotate(0deg);
         margin-bottom: 0;
+        padding-left: 32px;
       }
 
       .c-header__logo__image {
         @include media(tablet) {
           width: 120px;
+          height: auto;
           margin-bottom: 8px;
           margin-top: 8px;
+        }
+      }
+
+      .c-header__logo__text{
+
+
+        @include media(tablet){
+          margin-top: 10px;
+          max-width: 150px;
+          width: auto;
+          height: auto;
+        }
+        @include media(wide){
+          margin-top: 0px;
         }
       }
     }
@@ -248,7 +275,7 @@
     .c-header__text {
       @include media(tablet) {
         display: block;
-        width: 100%;
+        width: 150px;
         margin: 0;
       }
     }
@@ -286,6 +313,7 @@
   }
 
   .c-header__logo {
+
     @include media(tablet) {
       width: 50%;
       margin-bottom: 0;

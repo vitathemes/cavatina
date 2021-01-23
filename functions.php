@@ -356,8 +356,7 @@ add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 /**
  * Auto increment number per posts ( in pages like archives... )
  */
-function cavatina_get_post_number()
-{
+function cavatina_get_post_number(){
     global $wp_query;
     $posts_per_page = get_option('posts_per_page');
     $paged          = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -365,3 +364,57 @@ function cavatina_get_post_number()
     $loop           = $wp_query->current_post + 1;
     return $offset + $loop;
 }
+
+
+/**
+ * Handle Logo - If logo doesn't exist show wordpress Site title name
+ */
+function cavatina_handle_logo(){
+
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+    if ( has_custom_logo() ) {
+
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        echo '<img class="c-header__logo__image" src="' . $image[0] . '" alt="' . get_bloginfo( 'name' ) . '">';
+
+    } else {
+        echo '<h1 class="c-header__logo__text">'. get_bloginfo( 'name' ) .'</h1>';
+    }
+}
+
+/**
+ * Handle Description
+ */
+function cavatina_handle_description(){
+    echo '<span class="c-header__text">'. get_bloginfo('description') .'</span>';
+}
+
+
+/**
+ *Add your custom logo to the login page
+ */
+function cavatina_filter_login_head() {
+
+    if ( has_custom_logo() ) :
+
+        $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+        ?>
+        <style type="text/css">
+            .login h1 a {
+                background-image: url(<?php echo esc_url( $image[0] ); ?>);
+                -webkit-background-size: <?php echo absint( $image[1] )?>px;
+                background-size: <?php echo absint( $image[1] ) ?>px;
+                height: <?php echo absint( $image[2] ) ?>px;
+                width: <?php echo absint( $image[1] ) ?>px;
+            }
+        </style>
+    <?php
+    endif;
+}
+
+add_action( 'login_head', 'cavatina_filter_login_head', 100 );
+
+

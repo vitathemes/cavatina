@@ -25,12 +25,10 @@
 <header id="masthead" class="c-header c-header--home c-header--404 js-header">
     <div class="c-header__holder js-nav">
         <div class="c-header__logo js-logo">
-            <a href="<?php echo esc_url( home_url(  ) ); ?>">
-            <img class="c-header__logo__image"
-                 src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
-            <!-- <h1>Cavatina</h1> -->
-            </a>
-            <p class="c-header__text ">digital creativity</p>
+
+            <?php cavatina_handle_logo(); ?>
+            <?php  cavatina_handle_description(); ?>
+
         </div>
         <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
         </button>

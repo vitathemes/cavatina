@@ -250,11 +250,3 @@ function singleCarousel() {
   });
 }
 
-// if we have single carousel in page slider will render
-if (
-  document
-    .querySelector(".o-page__main")
-    .getElementsByClassName("c-carousel__single__slider")[0]
-) {
-  singleCarousel();
-}

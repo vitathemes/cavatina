@@ -102,4 +102,4 @@
         ?>
     </ul>
 </article><!-- #post-<?php the_ID(); ?> -->
-<div class="u-half-border"></div>
+<div class="u-border"></div>

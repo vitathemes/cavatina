@@ -28,15 +28,11 @@
   height: 60px;
 }
 
-.u-half-border {
-  width: 70%;
-  margin-left: -10%;
-  margin-top: 8px;
-  margin-bottom: 24px;
+.u-border {
+
+  width: 100%;
+  padding: 0px 16px;
+  margin: 24px 0px;
   border-top: 1px solid #e1e1e1;
 
-  @include media(tablet) {
-    width: calc(825px - 212px);
-    margin-left: 212px;
-  }
 }

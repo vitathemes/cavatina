@@ -45,7 +45,7 @@
         </div>
 
         <div class="c-footer__copy">
-            <p class="c-footer__text">© 2020 CAVATINA.<a class="c-footer__text__link" href="#"> TERMS OF USE </a> AND
+            <p class="c-footer__text">©  <?php  echo date("Y"); ?>   <?php echo get_bloginfo(); ?>.<a class="c-footer__text__link" href="#"> TERMS OF USE </a> AND
                 <a class="c-footer__text__link" href="<?php echo get_privacy_policy_url() ?>">PRIVACY POLICY.</a>
             </p>
         </div>
