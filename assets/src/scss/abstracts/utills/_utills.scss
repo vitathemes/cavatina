@@ -29,10 +29,13 @@
 }
 
 .u-border {
-
   width: 100%;
   padding: 0px 16px;
   margin: 24px 0px;
   border-top: 1px solid #e1e1e1;
 
+  @include media(tablet) {
+    width: 615px;
+    margin: 24px 210px;
+  }
 }

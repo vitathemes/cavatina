@@ -348,6 +348,10 @@
   padding: 0px 16px;
   margin: 24px 0px;
   border-top: 1px solid #e1e1e1; }
+  @media only screen and (min-width: 980px) {
+    .u-border {
+      width: 615px;
+      margin: 24px 210px; } }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -800,7 +804,8 @@ html {
 .o-bullet-after {
   font-family: "montserratregular";
   font-size: 14px;
-  line-height: 17px; }
+  line-height: 17px;
+  vertical-align: top; }
   .o-bullet-after::after {
     content: "";
     display: inline-block;
@@ -1263,8 +1268,7 @@ img {
 .c-header__logo {
   width: 35%;
   text-align: left;
-  padding-left: 16px;
-  padding-top: 2px; }
+  padding-left: 16px; }
   @media only screen and (min-width: 980px) {
     .c-header__logo {
       width: max-content;
@@ -1279,6 +1283,12 @@ img {
     @media only screen and (min-width: 980px) {
       .c-header__logo h1 {
         font-size: 2em; } }
+
+.c-header__logo__anchor {
+  display: flex; }
+  @media only screen and (min-width: 980px) {
+    .c-header__logo__anchor {
+      display: block; } }
 
 .c-header__logo__image {
   width: 95px;
@@ -2150,7 +2160,8 @@ img {
   padding-left: 16px; }
   @media only screen and (min-width: 980px) {
     .c-aside__context {
-      text-align: left; } }
+      text-align: left;
+      padding-left: 0; } }
 
 .c-aside__title {
   font-size: 14px;
@@ -2457,6 +2468,13 @@ img {
       padding-left: 24px;
       padding-right: 24px;
       min-width: 30%; } }
+  @media only screen and (min-width: 1140px) {
+    .c-carousel__single__cell {
+      max-width: 550px;
+      width: max-content; } }
+  @media only screen and (min-width: 1400px) {
+    .c-carousel__single__cell {
+      max-width: 600px; } }
 
 .c-carousel__single__cell--page {
   width: 100%; }
@@ -2826,6 +2844,9 @@ img {
   border-bottom: 1px solid grey;
   transition: 1s all; }
 
+/*------------------------------------*\
+  #Pagination
+\*------------------------------------*/
 .c-pagination {
   width: 100%;
   display: flex;
@@ -2835,6 +2856,27 @@ img {
     .c-pagination {
       padding-right: 60px; } }
 
+.c-pagination__load-more {
+  width: 100%;
+  border-radius: 2px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out; }
+
+@media only screen and (min-width: 980px) {
+  .c-pagination--load-more {
+    padding-right: 0px; } }
+
+/*------------------------------------*\
+  #Page Numbers (Word Press pagination)
+\*------------------------------------*/
 .page-numbers {
   color: #767676 !important;
   border-radius: 3px;
@@ -2858,9 +2900,10 @@ img {
   font-family: dashicons !important; }
   .dashicons:hover {
     background-color: transparent;
-    color: #E1E1E1; }
+    color: #e1e1e1; }
 
-.next.page-numbers:hover, .prev.page-numbers:hover {
+.next.page-numbers:hover,
+.prev.page-numbers:hover {
   background-color: unset; }
 
 /*--------------------------------------------------------------
@@ -3091,6 +3134,9 @@ img {
       margin-top: calc(40vh);
       margin-right: 25px;
       min-height: calc(50vh); } }
+  @media only screen and (min-width: 1400px) {
+    .c-single__context__holder {
+      margin-top: calc(43vh); } }
 
 .c-single__context__holder--full-height .c-single__context {
   width: 100%;
@@ -3136,7 +3182,8 @@ img {
   font-size: 14px;
   line-height: 17px;
   font-weight: 600;
-  margin-left: 16px; }
+  margin-left: 16px;
+  max-width: 90%; }
   @media only screen and (min-width: 980px) {
     .c-single__carousel--mobile .c-single__title {
       display: none; } }

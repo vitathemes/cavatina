@@ -32,7 +32,8 @@
 
 		elseif ( is_search() ) :
 			?>
-        <p class="o-page__main__desc"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wp-cavatina' ); ?>
+        <p class="o-page__main__desc">
+            <?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wp-cavatina' ); ?>
         </p>
         <?php
 			get_search_form();

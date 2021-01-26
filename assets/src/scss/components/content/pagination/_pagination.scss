@@ -1,4 +1,3 @@
-
 .nav-links {
   display: none !important;
 }
@@ -14,53 +13,81 @@
   transition: 1s all;
 }
 
-.c-pagination{
+/*------------------------------------*\
+  #Pagination
+\*------------------------------------*/
+
+.c-pagination {
   width: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
 
-  @include media(tablet){
+  @include media(tablet) {
     padding-right: 60px;
   }
-
-
 }
 
-.page-numbers{
+.c-pagination__load-more {
+  width: 100%;
+
+  border-radius: 2px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.c-pagination--load-more {
+  @include media(tablet) {
+    padding-right: 0px;
+  }
+}
+
+/*------------------------------------*\
+  #Page Numbers (Word Press pagination)
+\*------------------------------------*/
+
+.page-numbers {
   color: #767676 !important;
   border-radius: 3px;
   cursor: pointer;
-  margin:2px;
+  margin: 2px;
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  &:hover{
+  &:hover {
     background-color: #767676;
     color: #fff !important;
   }
 }
 
-.page-numbers.current{
-  background-color: #767676 ;
+.page-numbers.current {
+  background-color: #767676;
   color: #fff !important;
 }
-.dashicons{
+.dashicons {
   color: #767676;
   font-family: dashicons !important;
-  &:hover{
+  &:hover {
     background-color: transparent;
-    color: #E1E1E1;
+    color: #e1e1e1;
   }
 }
 
-
-.next.page-numbers , .prev.page-numbers{
-
-  &:hover{
+.next.page-numbers,
+.prev.page-numbers {
+  &:hover {
     background-color: unset;
   }
-
 }

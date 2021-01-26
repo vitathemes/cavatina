@@ -10,9 +10,9 @@
 $decimalCounter = "0";
 ?>
 
-    <?php while (have_posts()) : the_post(); ?>
 
-    <?php
+
+<?php
         // get post number (auto increment)
         $postNumber = cavatina_get_post_number();
 
@@ -22,14 +22,20 @@ $decimalCounter = "0";
             $postNumber = $postNumber;
         }
         else{$postNumber = $decimalCounter.$postNumber;}
+
+        // echo '<script>console.log("'.$postNumber . '")</script>';
+
     ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
+
+
+
+<article id="post-<?php echo $postNumber; ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
     <header class="c-post__header c-post__header--space-height entry-header">
 
         <div class="c-post__header__col c-post__header__col--left">
-            <span class="o-bullet-after"><?php echo $postNumber ?></span>
+            <span class="o-bullet-after"><?php  echo $postNumber ?></span>
         </div>
 
         <div class="c-post__header__col c-post__header__col--right">
@@ -83,5 +89,3 @@ $decimalCounter = "0";
 		?>
     </div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->
-
-<?php  endwhile; ?>

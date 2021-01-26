@@ -131,6 +131,7 @@
 
   @include media(tablet) {
     text-align: left;
+    padding-left: 0;
   }
 }
 

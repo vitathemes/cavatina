@@ -4,13 +4,28 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp-cavatina
+ * @package cavatina
  */
-
+$decimalCounter = "0";
 ?>
+
+
+<?php
+        // get post number (auto increment)
+        $postNumber = cavatina_get_post_number();
+
+        // Remove zero when reaching 10
+        if($postNumber >= 10){
+            $decimalCounter = "";
+            $postNumber = $postNumber;
+        }
+        else{$postNumber = $decimalCounter.$postNumber;}
+    ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
     <header class="c-post__header entry-header">
+
+
         <?php
         if ( is_singular() ) :
             the_title( '<h1 class="c-post__entry-title">', '</h1>' );

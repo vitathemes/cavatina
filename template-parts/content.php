@@ -18,7 +18,7 @@
 			the_title( '<h2 class="c-post__entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
-        <div class="c-post__meta entry-meta c-post__category--blog ">
+        <div class="c-post__meta entry-meta c-post__category--blog">
             <?php
 
                 echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';

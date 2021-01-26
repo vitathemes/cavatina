@@ -377,8 +377,11 @@ function cavatina_handle_logo(){
     if ( has_custom_logo() ) {
 
         $custom_logo_id = get_theme_mod( 'custom_logo' );
-        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-        echo '<img class="c-header__logo__image" src="' . $image[0] . '" alt="' . get_bloginfo( 'name' ) . '">';
+		$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+		
+		echo '<a class="c-header__logo__anchor" href="'.esc_url( home_url() ).'">';
+		echo '<img class="c-header__logo__image" src="' . $image[0] . '" alt="' . get_bloginfo( 'name' ) . '">';
+		echo "</a>";
 
     } else {
         echo '<h1 class="c-header__logo__text">'. get_bloginfo( 'name' ) .'</h1>';
@@ -402,19 +405,93 @@ function cavatina_filter_login_head() {
 
         $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
         ?>
-        <style type="text/css">
-            .login h1 a {
-                background-image: url(<?php echo esc_url( $image[0] ); ?>);
-                -webkit-background-size: <?php echo absint( $image[1] )?>px;
-                background-size: <?php echo absint( $image[1] ) ?>px;
-                height: <?php echo absint( $image[2] ) ?>px;
-                width: <?php echo absint( $image[1] ) ?>px;
-            }
-        </style>
-    <?php
+<style type="text/css">
+.login h1 a {
+    background-image: url(<?php echo esc_url( $image[0] );
+    ?>);
+    -webkit-background-size: <?php echo absint($image[1])?>px;
+    background-size: <?php echo absint($image[1]) ?>px;
+    height: <?php echo absint($image[2]) ?>px;
+    width: <?php echo absint($image[1]) ?>px;
+}
+</style>
+<?php
     endif;
 }
 
 add_action( 'login_head', 'cavatina_filter_login_head', 100 );
 
 
+
+
+
+/**
+ *	Load More
+ */
+function my_load_more_scripts() {
+ 
+	global $wp_query; 
+	wp_enqueue_script('jquery');
+	wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/assets/src/js/myloadmore.js', array('jquery') );
+
+
+	wp_localize_script( 'my_loadmore', 'loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', 
+		'posts' => json_encode( $wp_query->query_vars ), 
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+ 
+ 	wp_enqueue_script( 'my_loadmore' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'my_load_more_scripts' );
+
+
+
+function loadmore_ajax_handler(){
+	$ifCounter = 0;
+
+	$whileCounter = 0;
+
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args['paged'] = $_POST['page'] + 1; 
+	$args['post_status'] = 'publish';
+	
+
+
+
+	query_posts( $args );
+	
+	if( have_posts() ) :
+
+		$ifCounter = $ifCounter + 1;
+
+		echo "<script>console.log('". $ifCounter. "____ if Counter ______' )</script>";
+
+		// run the loop
+		while( have_posts() ) : the_post();
+
+		$whileCounter = $whileCounter + 1;
+
+		get_template_part( 'template-parts/content', 'project' );
+
+		echo "<script>console.log('". $whileCounter. "____ while Counter ______')</script>";
+
+		
+		if($whileCounter === 4){
+
+				break;
+				die;
+		}
+
+		endwhile;
+
+	endif;
+	die; 
+}
+ 
+ 
+ 
+add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'loadmore_ajax_handler'); // wp_ajax_nopriv_{action}

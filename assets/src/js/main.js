@@ -192,7 +192,7 @@ function mainPageCarousels() {
     },
   });
 
-  // Carousel (Main Child) - text Mobile
+  // Carousel (Main Child)j - text Mobile
   let carouselTextMobile = document.querySelector(
     ".js-carousel__post-titles--mobile"
   );
@@ -249,4 +249,4 @@ function singleCarousel() {
     },
   });
 }
-
+singleCarousel();

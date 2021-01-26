@@ -8,6 +8,7 @@
  */
 
 get_header();
+global $wp_query;
 ?>
 
 
@@ -41,7 +42,7 @@ get_header();
 </section>
 
 <!-- Main content-->
-<main class="o-page__main js-page__main  o-page__main--search">
+<main class="o-page__main js-page__main o-page__main--search">
     <div class="o-page__col c-content c-content--max-height c-content--search">
         <div class="c-container site-main__container">
             <div class="c-container__content site-main__content">
@@ -57,19 +58,27 @@ get_header();
                             */
                             get_template_part('template-parts/content', 'search');
                         endwhile;
-                        the_posts_navigation();
+                          // the_posts_navigation();
+                       
+
                     else :
                         get_template_part('template-parts/content', 'none');
+                    
                     endif;
                     ?>
             </div>
             <div class="c-pagination">
-                <?php echo paginate_links( array(
+                <?php  
+                        echo paginate_links( array(
 
-                    'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
-                    'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+                        'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
+                        'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
 
-                )); ?>
+                        ));
+                ?>
+
+
+
             </div>
         </div>
     </div>

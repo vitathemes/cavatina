@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package wp-cavatina
+ * @package cavatina
  */
 
 if ( ! function_exists( 'wp_cavatina_posted_on' ) ) :
@@ -127,14 +127,14 @@ if ( ! function_exists( 'wp_cavatina_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+<div class="post-thumbnail">
+    <?php the_post_thumbnail(); ?>
+</div><!-- .post-thumbnail -->
 
-		<?php else : ?>
+<?php else : ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
+<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+    <?php
 					the_post_thumbnail(
 						'post-thumbnail',
 						array(
@@ -145,10 +145,10 @@ if ( ! function_exists( 'wp_cavatina_post_thumbnail' ) ) :
 							),
 						)
 					);
-				?>
-			</a>
+	?>
+</a>
 
-			<?php
+<?php
 		endif; // End is_singular().
 	}
 endif;
@@ -163,3 +163,59 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+
+ 
+function cavatina_get_slider($postId){
+ 	/**
+     * Display slider if plugin was activated
+     *
+     * @since 1.0.0
+     *
+     */
+	if ( ! class_exists( 'acf_plugin_photo_gallery' ) ){				
+		echo '
+		<div class="c-carousel__single__cell">';
+		
+			the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
+
+		echo '</div>';
+	}
+	else {
+		
+		$images = acf_photo_gallery('gallery', $postId);
+		
+		if( count($images) ){
+	
+			foreach($images as $image) {
+					
+				$id = $image['id'];
+				$title = $image['title'];
+				$caption= $image['caption'];
+				$full_image_url= $image['full_image_url'];
+				$thumbnail_image_url= $image['thumbnail_image_url'];
+				$url= $image['url'];
+				$target= $image['target'];
+				$alt = get_field('photo_gallery_alt', $id);
+					
+				echo '
+					<div class="c-carousel__single__cell">
+						<img class="c-carousel__single__cell__image" src="'.$full_image_url.'" alt="'. $title .'" />
+					</div>';
+				}
+
+		}
+		else{
+						
+			echo '
+			<div class="c-carousel__single__cell">';
+			
+		    	the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
+
+			echo '</div>';
+			
+		}
+		
+	}
+	
+ } 

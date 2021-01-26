@@ -2,7 +2,7 @@
 /**
  * wp-cavatina Theme Customizer
  *
- * @package wp-cavatina
+ * @package cavatina
  */
 
 /**

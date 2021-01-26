@@ -82,10 +82,10 @@
 }
 
 .o-bullet-after {
-
   font-family: $font__regular;
   font-size: 14px;
   line-height: 17px;
+  vertical-align: top;
 
   &::after {
     content: "";
