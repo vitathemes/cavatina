@@ -173,9 +173,8 @@ function cavatina_get_slider($postId){
      * @since 1.0.0
      *
      */
-	if ( ! class_exists( 'acf_plugin_photo_gallery' ) ){				
-		echo '
-		<div class="c-carousel__single__cell">';
+	if ( ! class_exists( 'acf_plugin_photo_gallery' ) ){	
+		echo '<div class="c-carousel__single__cell">';
 		
 			the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
 
@@ -202,20 +201,49 @@ function cavatina_get_slider($postId){
 					<div class="c-carousel__single__cell">
 						<img class="c-carousel__single__cell__image" src="'.$full_image_url.'" alt="'. $title .'" />
 					</div>';
-				}
+			}
 
 		}
 		else{
 						
-			echo '
-			<div class="c-carousel__single__cell">';
+			echo '<div class="c-carousel__single__cell">';
 			
 		    	the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
 
-			echo '</div>';
-			
+			echo '</div>';			
 		}
-		
-	}
-	
+	}	
  } 
+
+
+
+/**
+ * Handle Logo - If logo doesn't exist show wordpress Site title name
+ */
+function cavatina_handle_logo(){
+
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+    if ( has_custom_logo() ) {
+
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+		$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+		
+		echo '<a class="c-header__logo__anchor" href="'.esc_url( home_url() ).'">';
+		echo '<img class="c-header__logo__image" src="' . $image[0] . '" alt="' . get_bloginfo( 'name' ) . '">';
+		echo "</a>";
+
+    } else {
+        echo '<h1 class="c-header__logo__text">'. get_bloginfo( 'name' ) .'</h1>';
+    }
+}
+
+/**
+ * Render load more button
+ */
+function cavatina_load_more_button($query) { 
+	if ( $query->max_num_pages > 1 ){
+		echo '<div class="c-pagination c-pagination--load-more js-pagination__load-more"><button class="button--small js-pagination__load-more__btn">Load More</button></div>'; // you can use <a> as well
+		}
+}

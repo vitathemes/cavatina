@@ -1934,7 +1934,7 @@ img {
 .c-contact__form__holder {
   width: 100%;
   height: max-content;
-  padding-top: 64px;
+  padding-top: 23px;
   padding-bottom: 64px;
   display: flex;
   justify-content: center;
@@ -1957,14 +1957,15 @@ img {
   justify-content: flex-start;
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: 64px;
+  padding-bottom: 0px;
   margin-top: 32px; }
   @media only screen and (min-width: 980px) {
     .c-contact__context {
       width: 50%;
       height: 100%;
       align-content: center;
-      margin-top: 0;
+      margin-top: 0px;
+      padding-bottom: 64px;
       padding-left: 64px;
       padding-top: 7%; } }
   @media only screen and (min-width: 1400px) {
@@ -2042,6 +2043,8 @@ img {
   font-family: "montserratregular";
   letter-spacing: 0.1em;
   color: #ff3636; }
+  .wpcf7-not-valid-tip::first-letter {
+    text-transform: uppercase; }
 
 .wpcf7-response-output {
   outline: none !important;
@@ -2637,8 +2640,9 @@ img {
 
 .comments-title {
   border-top: 1px solid #e1e1e1;
-  padding-top: 40px;
-  margin-bottom: 24px;
+  margin: 0px;
+  padding-top: 39px;
+  padding-bottom: 0px;
   width: 100%;
   font-weight: 600;
   font-size: 14px;

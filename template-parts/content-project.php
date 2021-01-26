@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp-cavatina
+ * @package Cavatina
  */
 
 $decimalCounter = "0";
@@ -15,22 +15,13 @@ $decimalCounter = "0";
 <?php
         // get post number (auto increment)
         $postNumber = cavatina_get_post_number();
-
         // Remove zero when reaching 10
         if($postNumber >= 10){
             $decimalCounter = "";
             $postNumber = $postNumber;
         }
         else{$postNumber = $decimalCounter.$postNumber;}
-
-        // echo '<script>console.log("'.$postNumber . '")</script>';
-
     ?>
-
-
-
-
-
 <article id="post-<?php echo $postNumber; ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
     <header class="c-post__header c-post__header--space-height entry-header">
 

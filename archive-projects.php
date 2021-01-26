@@ -55,10 +55,9 @@ get_header();
                         */
                         get_template_part( 'template-parts/content', 'project' );
                     endwhile;
-                        if (  $wp_query->max_num_pages > 1 ){
-                            echo '<div class="c-pagination c-pagination--load-more js-pagination__load-more"><button class="button--small js-pagination__load-more__btn">Load More</button></div>'; // you can use <a> as well
-                            }
-                        else{}
+                    
+                        cavatina_load_more_button($wp_query);
+                     
                     else :
                     get_template_part('template-parts/content', 'none');
                     endif;

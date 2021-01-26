@@ -9,14 +9,14 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> onload="mainPageCarousels()">
+<body <?php body_class(); ?>>
 
     <?php wp_body_open(); ?>
     <header id="masthead" class="c-header c-header--home js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
 
-                <?php cavatina_handle_logo(); ?>
+                <?php  cavatina_handle_logo(); ?>
                 <?php  cavatina_handle_description(); ?>
 
             </div>
@@ -37,7 +37,7 @@
             }
             ?>
         </div>
-    </header>   <!-- #masthead -->
+    </header> <!-- #masthead -->
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
     </div>
@@ -93,6 +93,7 @@
                             <div class="c-carousel__cell">
                                 <a href="<?php echo get_permalink() ?>">
                                     <?php the_post_thumbnail('full', array('class' => 'c-carousel__image')); ?>
+
                                 </a>
                             </div>
                             <?php endwhile; wp_reset_query(); ?>
