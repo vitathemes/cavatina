@@ -182,6 +182,8 @@ function cavatina_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
+
+
 /**
  * Custom Post type
  */
@@ -385,9 +387,9 @@ function cavatina_filter_login_head() {
         ?>
 <style type="text/css">
 .login h1 a {
-    background-image: url(<?php echo esc_url( $image[0] );
+    background-image: url(<?php echo esc_url($image[0]);
     ?>);
-    -webkit-background-size: <?php echo absint($image[1])?>px;
+    -webkit-background-size: <?php echo absint($image[1]) ?>px;
     background-size: <?php echo absint($image[1]) ?>px;
     height: <?php echo absint($image[2]) ?>px;
     width: <?php echo absint($image[1]) ?>px;
@@ -418,6 +420,7 @@ function my_load_more_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'my_load_more_scripts' );
 
+
 /* Handle Load more loop  */
 function loadmore_ajax_handler(){
 	
@@ -442,3 +445,32 @@ function loadmore_ajax_handler(){
 
 add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
+/**
+ * Gallery meta box 
+ */
+function gallery_metabox_enqueue($hook) {
+    if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
+      wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/assets/js/gallery-metabox.js', array('jquery', 'jquery-ui-sortable'));
+      wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/assets/css/gallery-metabox.css');
+    }
+}
+add_action('admin_enqueue_scripts', 'gallery_metabox_enqueue');
+
+/* Add Gallery meta box */
+function add_gallery_metabox($post_type) {
+	$types = array('projects');
+	
+    if (in_array($post_type, $types)) {
+      add_meta_box(
+        'gallery-metabox',
+        'Gallery',
+        'gallery_meta_callback',
+        $post_type,
+        'normal',
+        'high'
+      );
+    }
+  }
+add_action('add_meta_boxes', 'add_gallery_metabox');

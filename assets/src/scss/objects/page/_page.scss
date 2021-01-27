@@ -25,10 +25,10 @@
     padding-right: 36px;
   }
 }
-.o-page--404{
+.o-page--404 {
   height: calc(100vh - 125px);
 
-  @include media(tablet){
+  @include media(tablet) {
     height: calc(100vh);
   }
 }
@@ -103,6 +103,14 @@
   width: 100%;
 }
 
+.o-page__main--privacy {
+  .c-footer {
+    @include media(tablet) {
+      padding-right: 60px;
+    }
+  }
+}
+
 // Single Blog
 .o-page__main--blog {
   width: 100%;
@@ -113,8 +121,10 @@
 
   .c-footer {
     @include media(tablet) {
-      padding-right:47.35px;
-      padding-left: 75px;
+      width: 1114px;
+
+      padding-right: 0;
+      padding-left: 0;
     }
   }
 }
@@ -155,14 +165,12 @@
   padding-right: 16px;
   padding-top: 25%;
 
-
-
   @include media(tablet) {
     padding: 0;
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 32px;
-    width: 100% ;
+    width: 100%;
   }
 
   form {
@@ -170,10 +178,9 @@
     margin-top: 16px;
   }
 
-  .c-footer{
+  .c-footer {
     display: none;
   }
-
 }
 
 .o-page__main__error-404 {
@@ -184,7 +191,6 @@
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-
 
   @include media(tablet) {
     width: 100%;
@@ -201,7 +207,7 @@
     #Page Main - Error
 \*------------------------------------*/
 .o-page__main__error {
-  font-size:24px;
+  font-size: 24px;
   margin: 0;
   line-height: 41px;
   font-family: $font__semi-bold;
@@ -210,7 +216,7 @@
   font-weight: normal;
 }
 
-.o-page__main__error-desc{
+.o-page__main__error-desc {
   font-family: $font__regular;
   font-size: 19px;
   line-height: 30px;
@@ -220,7 +226,6 @@
   margin-top: 24px;
   margin-bottom: 0;
 }
-
 
 /*------------------------------------*\
   #Search nothing found
@@ -240,7 +245,7 @@
     align-items: center;
   }
 
-  .o-page__main__desc{
+  .o-page__main__desc {
     margin-bottom: 64px;
   }
 
@@ -255,6 +260,4 @@
   .search-submit-mobile {
     display: none;
   }
-
-
 }

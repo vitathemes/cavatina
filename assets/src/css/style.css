@@ -896,6 +896,10 @@ html {
 .o-page__main__header {
   width: 100%; }
 
+@media only screen and (min-width: 980px) {
+  .o-page__main--privacy .c-footer {
+    padding-right: 60px; } }
+
 .o-page__main--blog {
   width: 100%;
   display: flex;
@@ -903,8 +907,9 @@ html {
   flex-wrap: wrap; }
   @media only screen and (min-width: 980px) {
     .o-page__main--blog .c-footer {
-      padding-right: 47.35px;
-      padding-left: 75px; } }
+      width: 1114px;
+      padding-right: 0;
+      padding-left: 0; } }
 
 .o-page__main--projects .c-footer {
   padding-right: 45px; }

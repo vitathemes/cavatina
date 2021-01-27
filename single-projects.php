@@ -27,9 +27,7 @@ get_header();
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>
             <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
                 <div class="c-single__context__holder">
-
                     <?php the_title( '<h1 class="c-single__title">', '</h1>' ); ?>
-
                     <ul class="c-single__meta">
                         <li>
                             <?php echo '<span>'. get_the_category( $id )[0]->name .'</span>'; ?>
@@ -39,7 +37,6 @@ get_header();
                             <?php echo '<span>'. get_the_date( "F j.Y" ) .'</span>';   ?>
                         </li>
                     </ul>
-
                     <div class="c-single__text">
                         <?php
                             the_content(
@@ -64,37 +61,27 @@ get_header();
                             );
                         ?>
                     </div>
-
                 </div>
             </div>
-
             <div class="c-single__carousel c-single__carousel--mobile">
-
                 <?php the_title( '<h2 class="c-single__title">', '</h2>' ); ?>
-
                 <ul class="c-single__meta">
-
                     <li>
                         <?php echo '<span>'. get_the_category( $id )[0]->name .'</span>'; ?>
                     </li>
-                    <!-- bullet is here (single meta ::before) -->
                     <li>
                         <?php echo '<span>'. get_the_date( "F j.Y" ) .'</span>';   ?>
                     </li>
-
                 </ul>
-
-
                 <div class="c-carousel__single__slider js-single__slider">
 
                     <?php cavatina_get_slider( get_the_ID() ); ?>
+
 
                 </div>
             </div>
         </article><!-- #post-<?php the_ID(); ?> -->
         <!--Single-->
-
-
     </div>
     <?php get_footer();?>
 </main><!-- #main -->
