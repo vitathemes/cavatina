@@ -2,8 +2,6 @@ jQuery(function ($) {
   var file_frame;
 
   $(document).on("click", "#gallery-metabox a.gallery-add", function (e) {
-    console.log("test");
-
     e.preventDefault();
 
     if (file_frame) file_frame.close();

@@ -211,7 +211,7 @@ function gallery_meta_save($post_id) {
       delete_post_meta($post_id, 'vdw_gallery_id');
     }
 }
-  add_action('save_post', 'gallery_meta_save');
+add_action('save_post', 'gallery_meta_save');
 
 
 
@@ -220,25 +220,20 @@ function gallery_meta_save($post_id) {
  * Handle Slider from Meta box 
  */
 function cavatina_get_slider($postId){
-
 	$images = get_post_meta( $postId , 'vdw_gallery_id', true); 
 
 	if($images > 0){
-		foreach ($images as $image) {
-				
+		foreach ($images as $image) {			
 			echo '<div class="c-carousel__single__cell">'.
 				 	wp_get_attachment_image($image, "large" , "" , ["class" => "c-carousel__single__cell__image" ,"alt"=>"some"] ).
 				 '</div>';
 		  }
 	}
 	else{
-	
 		echo '<div class="c-carousel__single__cell">';
 		    	the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
 		echo '</div>';	
-
 	}
-
 }
  
 
@@ -271,5 +266,5 @@ function cavatina_handle_logo(){
 function cavatina_load_more_button($query) { 
 	if ( $query->max_num_pages > 1 ){
 		echo '<div class="c-pagination c-pagination--load-more js-pagination__load-more"><button class="button--small js-pagination__load-more__btn">Load More</button></div>'; // you can use <a> as well
-		}
+	}
 }
