@@ -696,12 +696,12 @@ https://flickity.metafizzy.co
 .u-border {
   width: 100%;
   padding: 0px 16px;
-  margin: 24px 0px;
+  margin: 16px 0px 24px 0px;
   border-top: 1px solid #e1e1e1; }
   @media only screen and (min-width: 980px) {
     .u-border {
       width: 615px;
-      margin: 24px 210px; } }
+      margin: 16px 210px 24px 210px; } }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -3120,6 +3120,9 @@ img {
 
 #cancel-comment-reply-link {
   margin-left: 16px; }
+
+.comment-respond {
+  padding-bottom: 39px; }
 
 .comment-respond label {
   display: none; }
