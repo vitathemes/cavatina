@@ -116,25 +116,26 @@ function wp_cavatina_content_width() {
 }
 add_action( 'after_setup_theme', 'wp_cavatina_content_width', 0 );
 
+
+
 /**
- * Register widget area.
+ * Register widget area for contact page.
  *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ * @link https://codex.wordpress.org/Widgetizing_Themes
  */
-function wp_cavatina_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'cavatina' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'cavatina' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+function contact_widget_init() {
+ 
+    register_sidebar( array(
+        'name'          => 'Contact Page Sidebar Area',
+        'id'            => 'custom-contact-widget',
+        'before_widget' => '<div class="c-widget__content">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h6 class="c-widget__title">',
+        'after_title'   => '</h6>',
+    ) );
+ 
 }
-add_action( 'widgets_init', 'wp_cavatina_widgets_init' );
+add_action( 'widgets_init', 'contact_widget_init' );
 
 /**
  * Enqueue scripts and styles.

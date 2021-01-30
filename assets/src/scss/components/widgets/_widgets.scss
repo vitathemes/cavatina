@@ -9,6 +9,10 @@
   color: #000000;
 }
 
+.c-widget__content {
+  width: 100%;
+}
+
 .c-widget__text {
   font-size: 14px;
   line-height: 17px;
@@ -19,8 +23,4 @@
   &:hover {
     color: #000000;
   }
-}
-
-.widget-area {
-  display: none;
 }

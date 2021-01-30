@@ -63,25 +63,12 @@ get_header();
 
             </div>
             <div class="c-contact__context">
-                <div class="c-contact__widget">
-                    <h6 class="c-widget__title">Project Inquiries </h6>
-                    <a href="#">
-                        <p class="c-widget__text">hello@ cvatina.com</p>
-                    </a>
-                    <a href="#">
-                        <p class="c-widget__text">754.765.8373</p>
-                    </a>
+                <?php
+                if ( is_active_sidebar( 'custom-contact-widget' ) ) : ?>
+                <div id="header-widget-area" class="c-contact__widget widget-area" role="complementary">
+                    <?php dynamic_sidebar( 'custom-contact-widget' ); ?>
                 </div>
-                <div class="c-contact__widget">
-                    <h6 class="c-widget__title">Office </h6>
-                    <a href="#">
-                        <p class="c-widget__text">7653 sea Ave, Suite A</p>
-                    </a>
-
-                    <a href="#">
-                        <p class="c-widget__text">North Charleston, Sc 87350</p>
-                    </a>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

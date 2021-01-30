@@ -2320,9 +2320,10 @@ img {
       height: 100%;
       align-content: center;
       margin-top: 0px;
-      padding-bottom: 64px;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
       padding-left: 64px;
-      padding-top: 7%; } }
+      padding-top: 0px; } }
   @media only screen and (min-width: 1400px) {
     .c-contact__context {
       padding-top: 5%; } }
@@ -2355,9 +2356,23 @@ img {
 
 .c-contact__widget {
   width: 100%;
-  height: max-content;
+  height: 280px;
   text-align: left;
-  margin-bottom: 39px; }
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 35px; }
+  .c-contact__widget p {
+    font-size: 14px;
+    line-height: 17px;
+    transition: 0.5s all;
+    color: #767676; }
+    .c-contact__widget p:hover {
+      color: #000000; }
+  @media only screen and (min-width: 1400px) {
+    .c-contact__widget {
+      height: 400px;
+      padding-bottom: 115px; } }
 
 /*------------------------------------*\
   #Contact Form 7 Plugin 
@@ -2893,6 +2908,9 @@ img {
   margin: 0;
   color: #000000; }
 
+.c-widget__content {
+  width: 100%; }
+
 .c-widget__text {
   font-size: 14px;
   line-height: 17px;
@@ -2901,9 +2919,6 @@ img {
   color: #767676; }
   .c-widget__text:hover {
     color: #000000; }
-
-.widget-area {
-  display: none; }
 
 /* Comments
 --------------------------------------------- */
