@@ -135,6 +135,10 @@
     margin-right: 25px;
     min-height: calc(50vh);
   }
+
+  @include media(wide) {
+    margin-top: calc(43vh);
+  }
 }
 
 .c-single__context__holder--full-height {
@@ -200,6 +204,8 @@
     line-height: 17px;
     font-weight: 600;
     margin-left: 16px;
+
+    max-width: 90%;
 
     @include media(tablet) {
       display: none;

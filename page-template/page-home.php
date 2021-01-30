@@ -9,16 +9,16 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> onload="mainPageCarousels()">
+<body <?php body_class(); ?>>
 
     <?php wp_body_open(); ?>
     <header id="masthead" class="c-header c-header--home js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
-                <img class="c-header__logo__image"
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
-                <!-- <h1>Cavatina</h1> -->
-                <p class="c-header__text ">digital creativity</p>
+
+                <?php  cavatina_handle_logo(); ?>
+                <?php  cavatina_handle_description(); ?>
+
             </div>
             <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
             </button>
@@ -35,10 +35,9 @@
                     )
                 );
             }
-
             ?>
         </div>
-    </header>   <!-- #masthead -->
+    </header> <!-- #masthead -->
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
     </div>
@@ -76,7 +75,7 @@
                         <p class="c-carousel__title">Recent Projects</p>
                         <div class="c-carousel__post-titles js-carousel__post-titles">
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                            <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text">', '</p></a>' ); ?>
+                            <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text">', '</p></a>' ); ?>
                             <?php endwhile; wp_reset_query(); ?>
                         </div>
                     </div>
@@ -93,7 +92,8 @@
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="c-carousel__cell">
                                 <a href="<?php echo get_permalink() ?>">
-                                    <?php the_post_thumbnail('large', array('class' => 'c-carousel__image')); ?>
+                                    <?php the_post_thumbnail('full', array('class' => 'c-carousel__image')); ?>
+
                                 </a>
                             </div>
                             <?php endwhile; wp_reset_query(); ?>
@@ -102,7 +102,7 @@
                     <div
                         class="c-carousel__post-titles js-carousel__post-titles c-carousel__post-titles--mobile js-carousel__post-titles--mobile">
                         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                        <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
+                        <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
                         <?php endwhile; wp_reset_query(); ?>
                     </div>
                     <a href="/projects" class="c-carousel__more c-carousel__more--home">View All Projects</a>

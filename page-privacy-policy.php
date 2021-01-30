@@ -45,7 +45,7 @@ get_header();
 </section>
 
 <!-- Main content-->
-<main id="primary" class="o-page__main js-page__main o-page__main--page-single">
+<main id="primary" class="o-page__main js-page__main o-page__main--page-single o-page__main--privacy">
     <?php
     while ( have_posts() ) :
         the_post();

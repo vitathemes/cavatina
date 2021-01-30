@@ -1,3 +1,42 @@
+jQuery(function ($) {
+  $(document).ready(function () {
+    /*------------------------------------*\
+      #Handle Load More button
+    \*------------------------------------*/
+    const button = $(".js-pagination__load-more__btn");
+
+    $(".js-pagination__load-more").click(function () {
+      var loadMore = $(this),
+        data = {
+          action: "loadmore",
+          query: loadmore_params.posts,
+          page: loadmore_params.current_page,
+        };
+      $.ajax({
+        url: loadmore_params.ajaxurl,
+        data: data,
+        type: "POST",
+        beforeSend: function (xhr) {
+          button.text("Loading . . . ");
+        },
+        success: function (data) {
+          if (data) {
+            loadMore.prev().after(data);
+            button.text("Load More");
+
+            loadmore_params.current_page++;
+
+            if (loadmore_params.current_page == loadmore_params.max_page)
+              loadMore.remove();
+          } else {
+            loadMore.remove();
+          }
+        },
+      });
+    });
+  });
+});
+
 // Check device is mobile or not
 function isDesktop() {
   if (
@@ -36,6 +75,17 @@ function fadeIn(el, display) {
   })();
 }
 
+// Detect Element inside other element
+function childFinder(parentElement, childElement) {
+  let result = document
+    .querySelector(parentElement)
+    .getElementsByClassName(childElement)[0]
+    ? true
+    : false;
+
+  return result;
+}
+
 // Search Box Desktop
 let isToggled = false;
 function searchToggleHeader() {
@@ -44,7 +94,7 @@ function searchToggleHeader() {
 
   const searchOverlay = document.querySelector(".js-search__overlay");
 
-  if (document.querySelector("body").getElementsByClassName("o-overlay")[0]) {
+  if (childFinder("body", "o-overlay")) {
     headerSearch.addEventListener("click", function () {
       // Fade in/out the search overlay
       if (isToggled === true) {
@@ -59,7 +109,6 @@ function searchToggleHeader() {
     });
   }
 }
-
 searchToggleHeader();
 
 // Search Box mobile
@@ -85,8 +134,7 @@ function blurToggle() {
   let overlay = document.querySelector(".js-overlay");
   let searchOverlay = document.querySelector(".js-search__overlay");
 
-  if (document.querySelector("body").getElementsByClassName("c-aside")[0]) {
-    console.log("true");
+  if (childFinder("body", "c-aside")) {
     let aside = document.querySelector(".js-aside");
     if (pageMain.classList.contains("o-page__main--blur")) {
       aside.classList.remove("c-aside--blur");
@@ -111,11 +159,7 @@ function blurToggle() {
 // make first letter uppercase ( use case unsupported css )
 function capitalizeFirstLetter() {
   // js-carousel__post-title__text
-  if (
-    document
-      .querySelector("body")
-      .getElementsByClassName("js-carousel__post-title__text")[0]
-  ) {
+  if (childFinder("body", "js-carousel__post-title__text")) {
     const carouselTitle = document.querySelector(
       ".js-carousel__post-title__text"
     );
@@ -126,11 +170,7 @@ function capitalizeFirstLetter() {
   }
 
   // js-carousel__post-title__text-mobile
-  if (
-    document
-      .querySelector("body")
-      .getElementsByClassName("js-carousel__post-title__text-mobile")[0]
-  ) {
+  if (childFinder("body", "js-carousel__post-title__text-mobile")) {
     const carouselTitle = document.querySelector(
       ".js-carousel__post-title__text-mobile"
     );
@@ -141,11 +181,7 @@ function capitalizeFirstLetter() {
   }
 
   // c-post__entry-title__anchor
-  if (
-    document
-      .querySelector("body")
-      .getElementsByClassName("c-post__entry-title__anchor")[0]
-  ) {
+  if (childFinder("body", "c-post__entry-title__anchor")) {
     const projectPostTitle = document.querySelector(
       ".c-post__entry-title__anchor"
     );
@@ -158,7 +194,8 @@ function capitalizeFirstLetter() {
 capitalizeFirstLetter();
 
 // Main page Carousels
-function mainPageCarousels() {
+
+if (childFinder("body", "js-carousel__context")) {
   // Carousel (Main)
   let carousel = document.querySelector(".js-carousel__context");
   let flCarouselMain = new Flickity(carousel, {
@@ -192,7 +229,7 @@ function mainPageCarousels() {
     },
   });
 
-  // Carousel (Main Child) - text Mobile
+  // Carousel (Main Child)j - text Mobile
   let carouselTextMobile = document.querySelector(
     ".js-carousel__post-titles--mobile"
   );
@@ -219,7 +256,8 @@ function mainPageCarousels() {
 }
 
 // Carousel - Single Page
-function singleCarousel() {
+
+if (childFinder("body", "js-single__slider")) {
   let carouselSingle = document.querySelector(".js-single__slider");
 
   let flCarouselSingle = new Flickity(carouselSingle, {
@@ -248,13 +286,4 @@ function singleCarousel() {
       },
     },
   });
-}
-
-// if we have single carousel in page slider will render
-if (
-  document
-    .querySelector(".o-page__main")
-    .getElementsByClassName("c-carousel__single__slider")[0]
-) {
-  singleCarousel();
 }

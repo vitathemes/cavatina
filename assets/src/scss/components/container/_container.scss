@@ -18,6 +18,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 32px;
+
   @include media(tablet) {
     height: 100%;
     padding-right: 60px;
@@ -25,6 +26,6 @@
     padding-bottom: 0px;
   }
   .c-post__entery-content {
-      display: none;
+    display: none;
   }
 }

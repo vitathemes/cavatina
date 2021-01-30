@@ -78,6 +78,22 @@
   }
 }
 
+.c-header__logo__anchor {
+  display: flex;
+
+  @include media(tablet) {
+    display: block;
+  }
+}
+.c-header__logo__image {
+  width: 95px;
+  height: 17px;
+}
+
+.c-header__logo__text {
+  width: 91px;
+  height: 17px;
+}
 /*------------------------------------*\
   #Header text
 \*------------------------------------*/
@@ -234,13 +250,27 @@
       @include media(tablet) {
         transform: rotate(0deg);
         margin-bottom: 0;
+        padding-left: 32px;
       }
 
       .c-header__logo__image {
         @include media(tablet) {
           width: 120px;
+          height: auto;
           margin-bottom: 8px;
           margin-top: 8px;
+        }
+      }
+
+      .c-header__logo__text {
+        @include media(tablet) {
+          margin-top: 10px;
+          max-width: 150px;
+          width: auto;
+          height: auto;
+        }
+        @include media(wide) {
+          margin-top: 0px;
         }
       }
     }
@@ -248,7 +278,7 @@
     .c-header__text {
       @include media(tablet) {
         display: block;
-        width: 100%;
+        width: 150px;
         margin: 0;
       }
     }
@@ -420,16 +450,16 @@
   #Header 404 Modifier
 \*------------------------------------*/
 
-.c-header--404{
-  .c-header__holder{
+.c-header--404 {
+  .c-header__holder {
     padding-top: 0px;
 
-    @include media(tablet){
+    @include media(tablet) {
       justify-content: center;
     }
   }
 
-  .c-header__menu{
+  .c-header__menu {
     display: none;
   }
- }
+}

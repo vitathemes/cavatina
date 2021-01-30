@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package wp_cavatina
+ * @package cavatina
  */
 
 get_header();
@@ -27,16 +27,14 @@ get_header();
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>
             <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
                 <div class="c-single__context__holder">
-                    <?php
-                            the_title( '<h1 class="c-single__title">', '</h1>' );
-                    ?>
+                    <?php the_title( '<h1 class="c-single__title">', '</h1>' ); ?>
                     <ul class="c-single__meta">
                         <li>
-                            <?php echo '<span>'. get_the_category( $id )[0]->name .'</span>'; ?>
+                            <?php echo '<span>'. cavatina_get_category()  .'</span>'; ?>
                         </li>
                         <!-- bullet is here (single meta before) -->
                         <li>
-                            <?php echo '<span>'. get_the_date( "F j.Y" ) .'</span>';   ?>
+                            <?php echo '<span>'. cavatina_get_date() .'</span>';   ?>
                         </li>
                     </ul>
                     <div class="c-single__text">
@@ -66,27 +64,20 @@ get_header();
                 </div>
             </div>
             <div class="c-single__carousel c-single__carousel--mobile">
-                <h2 class="c-single__title">Advertisement Poster</h2>
+                <?php the_title( '<h2 class="c-single__title">', '</h2>' ); ?>
                 <ul class="c-single__meta">
-                    <li>Commercial</li>
-                    <li>April 2019</li>
+                    <li>
+                        <?php echo '<span>'. cavatina_get_category() .'</span>'; ?>
+                    </li>
+                    <li>
+                        <?php echo '<span>'. cavatina_get_date() .'</span>';   ?>
+                    </li>
                 </ul>
                 <div class="c-carousel__single__slider js-single__slider">
-                    <div class="c-carousel__single__cell">
-                        <img class="c-carousel__single__cell__image"
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(1).jpg"
-                            alt="slider_image_1" />
-                    </div>
-                    <div class="c-carousel__single__cell">
-                        <img class="c-carousel__single__cell__image"
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(2).jpg"
-                            alt="slider_image_2" />
-                    </div>
-                    <div class="c-carousel__single__cell">
-                        <img class="c-carousel__single__cell__image"
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/post-images/single-carousel/img(3).jpg"
-                            alt="slider_image_3" />
-                    </div>
+
+                    <?php cavatina_get_slider( get_the_ID() ); ?>
+
+
                 </div>
             </div>
         </article><!-- #post-<?php the_ID(); ?> -->

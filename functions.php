@@ -182,6 +182,8 @@ function cavatina_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
+
+
 /**
  * Custom Post type
  */
@@ -293,7 +295,7 @@ function cavatina_total_post_types() {
 
 
 /**
- * Change comment form textarea to use placeholder
+ * Change comment form textarea placeholder
  */
 function cavatina_change_textarea_placeholder( $args ) {
 	$args['comment_field']        = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
@@ -302,7 +304,7 @@ function cavatina_change_textarea_placeholder( $args ) {
 add_filter( 'comment_form_defaults', 'cavatina_change_textarea_placeholder' );
 
 /**
- * Comment Form Fields Placeholder
+ * change Comment Form Fields Placeholder
  *
  */
 function cavatina_comments_placeholders( $fields ) {
@@ -343,6 +345,7 @@ $args = array(
     'before_page_number' => '',
     'after_page_number'  => '');
 
+
 /**
  * Enable Dashicons
  */
@@ -350,3 +353,124 @@ function cavatina_dashicons(){
     wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
+
+
+/**
+ * Auto increment number per posts ( in pages like archives... )
+ */
+function cavatina_get_post_number(){
+    global $wp_query;
+    $posts_per_page = get_option('posts_per_page');
+    $paged          = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $offset         = ($paged - 1) * $posts_per_page;
+    $loop           = $wp_query->current_post + 1;
+    return $offset + $loop;
+}
+
+
+/**
+ * Handle Description
+ */
+function cavatina_handle_description(){
+    echo '<span class="c-header__text">'. get_bloginfo('description') .'</span>';
+}
+
+
+/**
+ *Add your custom logo to the login page
+ */
+function cavatina_filter_login_head() {
+
+    if ( has_custom_logo() ) :
+
+        $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+        ?>
+<style type="text/css">
+.login h1 a {
+    background-image: url(<?php echo esc_url($image[0]);
+    ?>);
+    -webkit-background-size: <?php echo absint($image[1]) ?>px;
+    background-size: <?php echo absint($image[1]) ?>px;
+    height: <?php echo absint($image[2]) ?>px;
+    width: <?php echo absint($image[1]) ?>px;
+}
+</style>
+<?php
+    endif;
+}
+
+add_action( 'login_head', 'cavatina_filter_login_head', 100 );
+
+
+/**
+ *	Load More
+ */
+function my_load_more_scripts() {
+ 
+	global $wp_query; 
+	wp_enqueue_script('jquery');
+	
+	wp_localize_script( 'cavatina-main-scripts', 'loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', 
+		'posts' => json_encode( $wp_query->query_vars ), 
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+ 	wp_enqueue_script( 'cavatina-main-scripts' );
+}
+add_action( 'wp_enqueue_scripts', 'my_load_more_scripts' );
+
+
+/* Handle Load more loop  */
+function loadmore_ajax_handler(){
+	
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args['paged'] = $_POST['page'] + 1; 
+	$args['post_status'] = 'publish';
+	
+	query_posts( $args );
+	
+	if( have_posts() ) :
+
+		// run the loop
+		while( have_posts() ) : the_post();
+		
+		get_template_part( 'template-parts/content', 'project' );
+		
+		endwhile;
+
+	endif;
+	die; 
+}
+
+add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
+/**
+ * Gallery meta box 
+ */
+function gallery_metabox_enqueue($hook) {
+    if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
+      wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/assets/js/gallery-metabox.js', array('jquery', 'jquery-ui-sortable'));
+      wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/assets/css/gallery-metabox.css');
+    }
+}
+add_action('admin_enqueue_scripts', 'gallery_metabox_enqueue');
+
+/* Add Gallery meta box */
+function add_gallery_metabox($post_type) {
+	$types = array('projects');
+	
+    if (in_array($post_type, $types)) {
+      add_meta_box(
+        'gallery-metabox',
+        'Gallery',
+        'gallery_meta_callback',
+        $post_type,
+        'normal',
+        'high'
+      );
+    }
+  }
+add_action('add_meta_boxes', 'add_gallery_metabox');

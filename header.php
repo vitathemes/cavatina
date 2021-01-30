@@ -32,11 +32,9 @@
     <header id="masthead" class="c-header js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
-                <a href="<?php echo esc_url( home_url(  ) ); ?>">
-                    <img class="c-header__logo__image "
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo" />
-                    <!--                     <h1>cavatina<h1>-->
-                </a>
+
+                <?php cavatina_handle_logo(); ?>
+
             </div>
             <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
             </button>

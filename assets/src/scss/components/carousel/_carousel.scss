@@ -280,6 +280,15 @@
     padding-right: 24px;
     min-width: 30%;
   }
+
+  @include media(laptop) {
+    max-width: 550px;
+    width: max-content;
+  }
+
+  @include media(wide) {
+    max-width: 600px;
+  }
 }
 
 .c-carousel__single__cell--page {
