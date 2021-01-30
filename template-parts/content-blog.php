@@ -4,16 +4,16 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp-cavatina
+ * @package cavatina
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single__blog__post' ); ?>>
     <header class="c-single__blog__header entry-header">
         <div class="c-single__blog__meta entry-meta">
             <?php
-                echo '<span class="c-post__category ">'. get_the_category( $id )[0]->name .'</span>';
+                echo '<span class="c-post__category ">'. cavatina_get_category()  .'</span>';
                 echo '<span class="o-bullet o-bullet--sm"></span>';
-				echo '<span class="c-post__date">'. get_the_date( "F j.Y" ) .'</span>';
+				echo '<span class="c-post__date">'. cavatina_get_date() .'</span>';
 			?>
         </div><!-- .entry-meta -->
         <?php

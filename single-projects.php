@@ -30,11 +30,11 @@ get_header();
                     <?php the_title( '<h1 class="c-single__title">', '</h1>' ); ?>
                     <ul class="c-single__meta">
                         <li>
-                            <?php echo '<span>'. get_the_category( $id )[0]->name .'</span>'; ?>
+                            <?php echo '<span>'. cavatina_get_category()  .'</span>'; ?>
                         </li>
                         <!-- bullet is here (single meta before) -->
                         <li>
-                            <?php echo '<span>'. get_the_date( "F j.Y" ) .'</span>';   ?>
+                            <?php echo '<span>'. cavatina_get_date() .'</span>';   ?>
                         </li>
                     </ul>
                     <div class="c-single__text">
@@ -67,10 +67,10 @@ get_header();
                 <?php the_title( '<h2 class="c-single__title">', '</h2>' ); ?>
                 <ul class="c-single__meta">
                     <li>
-                        <?php echo '<span>'. get_the_category( $id )[0]->name .'</span>'; ?>
+                        <?php echo '<span>'. cavatina_get_category() .'</span>'; ?>
                     </li>
                     <li>
-                        <?php echo '<span>'. get_the_date( "F j.Y" ) .'</span>';   ?>
+                        <?php echo '<span>'. cavatina_get_date() .'</span>';   ?>
                     </li>
                 </ul>
                 <div class="c-carousel__single__slider js-single__slider">

@@ -39,7 +39,7 @@ $decimalCounter = "0";
             ?>
             <div class="c-post__meta c-post__meta--left-space entry-meta">
                 <?php
-                echo '<span class="c-post__category">'. get_the_category( $id )[0]->name .'</span>';
+                echo '<span class="c-post__category">'. cavatina_get_category()  .'</span>';
                 ?>
             </div><!-- .entry-meta -->
         </div>

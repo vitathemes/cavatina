@@ -268,3 +268,31 @@ function cavatina_load_more_button($query) {
 		echo '<div class="c-pagination c-pagination--load-more js-pagination__load-more"><button class="button--small js-pagination__load-more__btn">Load More</button></div>'; // you can use <a> as well
 	}
 }
+
+
+if ( ! function_exists( 'cavatina_get_category' ) ) :
+	/**
+	 * Prints HTML of the categories.
+	 */
+	function cavatina_get_category() {
+	
+		$categories = get_the_category();
+ 
+		if ( ! empty( $categories ) ) {
+			return esc_html( $categories[0]->name );   
+		}
+
+	}
+endif;
+
+
+if ( ! function_exists( 'cavatina_get_date' ) ) :
+	/**
+	 * Prints HTML of the date.
+	 */
+	function cavatina_get_date() {
+	
+		return get_the_date( "F j.Y" );
+
+	}
+endif;
