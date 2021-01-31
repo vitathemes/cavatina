@@ -1,10 +1,9 @@
 <?php
 /**
- * The template for displaying contact page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package wp_cavatina
+ * @package cavatina
  */
 
 get_header();
@@ -15,10 +14,9 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
-                <span class="c-aside__title"><?php global $post; $post_slug=$post->post_name; echo $post_slug; ?></span>
+                <span class="c-aside__title"><?php cavatina_get_current_page_name(); ?></span>
             </div>
         </div>
-
     </div>
 </aside>
 
@@ -49,7 +47,7 @@ get_header();
                                 sprintf(
                                     wp_kses(
                                         /* translators: %s: Name of current post. Only visible to screen readers */
-                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
+                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
                                         array(
                                             'span' => array(
                                                 'class' => array(),

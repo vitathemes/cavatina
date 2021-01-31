@@ -63,12 +63,9 @@ get_header();
                     ?>
             </div>
             <div class="c-pagination">
-                <?php echo paginate_links( array(
 
-                    'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
-                    'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+                <?PHP cavatina_get_pagination(); ?>
 
-                )); ?>
             </div>
         </div>
     </div>

@@ -34,9 +34,9 @@ $decimalCounter = "0";
         <div class="c-post__meta entry-meta c-post__category--blog ">
             <?php
 
-            echo '<span class="c-post__category">'. cavatina_get_category() .'</span>';
+            echo esc_html('<span class="c-post__category">'. cavatina_get_category() .'</span>');
             echo '<span class="o-bullet"></span>';
-            echo '<span class="c-post__date">'. cavatina_get_date() .'</span>';
+            echo esc_html('<span class="c-post__date">'. cavatina_get_date() .'</span>');
 
             ?>
         </div><!-- .entry-meta -->
@@ -52,7 +52,7 @@ $decimalCounter = "0";
         <?php
         wp_link_pages(
             array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cavatina' ),
                 'after'  => '</div>',
             )
         );

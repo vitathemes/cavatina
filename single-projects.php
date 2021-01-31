@@ -30,11 +30,11 @@ get_header();
                     <?php the_title( '<h1 class="c-single__title">', '</h1>' ); ?>
                     <ul class="c-single__meta">
                         <li>
-                            <?php echo '<span>'. cavatina_get_category()  .'</span>'; ?>
+                            <?php echo '<span>'. esc_html( cavatina_get_category() ).'</span>'; ?>
                         </li>
                         <!-- bullet is here (single meta before) -->
                         <li>
-                            <?php echo '<span>'. cavatina_get_date() .'</span>';   ?>
+                            <?php echo '<span>'. esc_html( cavatina_get_date() ).'</span>';   ?>
                         </li>
                     </ul>
                     <div class="c-single__text">
@@ -43,7 +43,7 @@ get_header();
                                 sprintf(
                                     wp_kses(
                                         /* translators: %s: Name of current post. Only visible to screen readers */
-                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
+                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
                                         array(
                                             'span' => array(
                                                 'class' => array(),
@@ -55,7 +55,7 @@ get_header();
                             );
                             wp_link_pages(
                                 array(
-                                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
+                                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cavatina' ),
                                     'after'  => '</div>',
                                 )
                             );
@@ -67,16 +67,15 @@ get_header();
                 <?php the_title( '<h2 class="c-single__title">', '</h2>' ); ?>
                 <ul class="c-single__meta">
                     <li>
-                        <?php echo '<span>'. cavatina_get_category() .'</span>'; ?>
+                        <?php echo '<span>'.esc_html( cavatina_get_category() ).'</span>'; ?>
                     </li>
                     <li>
-                        <?php echo '<span>'. cavatina_get_date() .'</span>';   ?>
+                        <?php echo '<span>'.esc_html( cavatina_get_date() ).'</span>';   ?>
                     </li>
                 </ul>
                 <div class="c-carousel__single__slider js-single__slider">
 
                     <?php cavatina_get_slider( get_the_ID() ); ?>
-
 
                 </div>
             </div>

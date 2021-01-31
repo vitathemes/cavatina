@@ -60,8 +60,6 @@
                                 )
                             );
                         }
-                        else{
-                        }
                         ?>
                 </div>
                 <?php
@@ -91,7 +89,7 @@
                         <div class="c-carousel__context js-carousel__context">
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="c-carousel__cell">
-                                <a href="<?php echo get_permalink() ?>">
+                                <a href="<?php echo esc_html(get_permalink()); ?>">
                                     <?php the_post_thumbnail('full', array('class' => 'c-carousel__image')); ?>
 
                                 </a>

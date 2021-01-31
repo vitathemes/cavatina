@@ -64,11 +64,6 @@ get_header();
                  
                 ?>
             </div>
-
-            <?php 
-
-
-            ?>
         </div>
     </div>
     <?php get_footer();?>

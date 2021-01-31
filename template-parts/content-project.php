@@ -22,11 +22,11 @@ $decimalCounter = "0";
         }
         else{$postNumber = $decimalCounter.$postNumber;}
     ?>
-<article id="post-<?php echo $postNumber; ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
+<article id="post-<?php echo esc_html($postNumber); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
     <header class="c-post__header c-post__header--space-height entry-header">
 
         <div class="c-post__header__col c-post__header__col--left">
-            <span class="o-bullet-after"><?php  echo $postNumber ?></span>
+            <span class="o-bullet-after"><?php  echo esc_html($postNumber); ?></span>
         </div>
 
         <div class="c-post__header__col c-post__header__col--right">
@@ -39,7 +39,7 @@ $decimalCounter = "0";
             ?>
             <div class="c-post__meta c-post__meta--left-space entry-meta">
                 <?php
-                echo '<span class="c-post__category">'. cavatina_get_category()  .'</span>';
+                    echo '<span class="c-post__category">' . esc_html(cavatina_get_category()) .'</span>';
                 ?>
             </div><!-- .entry-meta -->
         </div>

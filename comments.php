@@ -61,7 +61,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wp-cavatina' ); ?></p>
+    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'cavatina' ); ?></p>
     <?php
 		endif;
 	endif; // Check for have_comments().

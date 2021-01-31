@@ -45,8 +45,9 @@
         </div>
 
         <div class="c-footer__copy">
-            <p class="c-footer__text">©  <?php  echo date("Y"); ?>   <?php echo get_bloginfo(); ?>.<a class="c-footer__text__link" href="#"> TERMS OF USE </a> AND
-                <a class="c-footer__text__link" href="<?php echo get_privacy_policy_url() ?>">PRIVACY POLICY.</a>
+            <p class="c-footer__text">© <?php the_time( 'Y' ); ?> <?php cavatina_get_site_name(); ?>.<a
+                    class="c-footer__text__link" href="#"> TERMS OF USE </a> AND
+                <a class="c-footer__text__link" href="<?php cavatina_get_privacy_policy(); ?>">PRIVACY POLICY.</a>
             </p>
         </div>
 

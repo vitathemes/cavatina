@@ -11,9 +11,9 @@
     <header class="c-single__blog__header entry-header">
         <div class="c-single__blog__meta entry-meta">
             <?php
-                echo '<span class="c-post__category ">'. cavatina_get_category()  .'</span>';
+                echo '<span class="c-post__category ">'. esc_html( cavatina_get_category() ) .'</span>';
                 echo '<span class="o-bullet o-bullet--sm"></span>';
-				echo '<span class="c-post__date">'. cavatina_get_date() .'</span>';
+				echo '<span class="c-post__date">'.esc_html( cavatina_get_date()) .'</span>';
 			?>
         </div><!-- .entry-meta -->
         <?php
@@ -73,7 +73,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-cavatina' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -85,7 +85,7 @@
 		);
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cavatina' ),
 				'after'  => '</div>',
 			)
 		);
@@ -95,8 +95,8 @@
         <?php
         $posttags = get_the_tags();
             if ($posttags) {
-            foreach($posttags as $tag) {
-                echo '<li><a href="'.  esc_url( get_tag_link( $tag->term_id ) ) .'" title="'.  esc_attr( $tag->name ) .'">#'. esc_html( $tag->name ). '</a></li>';
+            foreach($posttags as $posttag) {
+                echo '<li><a href="'.  esc_url( get_tag_link( $posttag->term_id ) ) .'" title="'.  esc_attr( $posttag->name ) .'">#'. esc_html( $posttag->name ). '</a></li>';
             }
         }
         ?>

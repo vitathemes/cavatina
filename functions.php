@@ -205,7 +205,7 @@ $labels = array(
     'update_item'         => __( 'Update Project', 'cavatina' ),
     'search_items'        => __( 'Search Project', 'cavatina' ),
     'not_found'           => __( 'Not Found', 'cavatina' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'tcavatina' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'cavatina' ),
 );
 
 // Set other options for Custom Post Type
@@ -253,7 +253,7 @@ add_action( 'init', 'cavatina_projects', 0 );
 
 
 /**
- * change submit button text in wordpress comment form
+ * change submit button text in WordPress comment form
  */
 function cavatina_change_submit_button_text( $defaults ) {
     $defaults['label_submit'] = 'Send';
@@ -277,7 +277,7 @@ add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
  */
 function cavatina_total_posts() {
 	$total = wp_count_posts()->publish;
-	echo  $total;
+	echo  esc_html($total);
 }
 
 /**
@@ -291,7 +291,7 @@ function cavatina_post_type_name() {
  * count number of posts types (project) in a page
  */
 function cavatina_total_post_types() {
-	printf($count_posts = wp_count_posts( 'projects' )->publish);
+	printf(esc_html($count_posts = wp_count_posts( 'projects' )->publish));
 }
 
 
@@ -373,7 +373,7 @@ function cavatina_get_post_number(){
  * Handle Description
  */
 function cavatina_handle_description(){
-    echo '<span class="c-header__text">'. get_bloginfo('description') .'</span>';
+    echo '<span class="c-header__text">'. esc_html(get_bloginfo('description')) .'</span>';
 }
 
 
@@ -425,23 +425,28 @@ add_action( 'wp_enqueue_scripts', 'my_load_more_scripts' );
 /* Handle Load more loop  */
 function loadmore_ajax_handler(){
 	
-	$args = json_decode( stripslashes( $_POST['query'] ), true );
-	$args['paged'] = $_POST['page'] + 1; 
-	$args['post_status'] = 'publish';
-	
-	query_posts( $args );
-	
-	if( have_posts() ) :
+	$argsquery = filter_input( INPUT_POST, 'query', FILTER_SANITIZE_STRING );
 
-		// run the loop
-		while( have_posts() ) : the_post();
+	if ( !empty( $_POST['query'] ||  $_POST['page'] )) {
 		
-		get_template_part( 'template-parts/content', 'project' );
+		$args = json_decode( sanitize_text_field( wp_unslash( $_POST['query'] ) ) , true );
+		$args['paged'] = sanitize_text_field( wp_unslash( $_POST['page'] )) + 1; 
+		$args['post_status'] = 'publish';
 		
-		endwhile;
+		query_posts( $args );
 
-	endif;
-	die; 
+		if( have_posts() ) :
+
+			// run the loop
+			while( have_posts() ) : the_post();
+			
+			get_template_part( 'template-parts/content', 'project' );
+			
+			endwhile;
+
+		endif;
+		die; 
+	}
 }
 
 add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); // wp_ajax_{action}
