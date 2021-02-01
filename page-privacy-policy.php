@@ -20,7 +20,7 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper c-aside__wrapper--full-width">
             <div class="c-aside__context">
-                <span class="c-aside__title">Privacy Policy</span>
+                <span class="c-aside__title"><?php cavatina_get_current_page_name(); ?></span>
             </div>
         </div>
 

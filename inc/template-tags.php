@@ -266,9 +266,9 @@ if (! function_exists('cavatina_get_site_name')) :
 	 * Show site name
 	 */
 	function cavatina_get_site_name() {
-
-		echo esc_html( get_bloginfo());
 		
+		echo esc_html( get_bloginfo());
+
 	}
 endif;
 
@@ -313,7 +313,6 @@ endif;
 
 
 
-
 /**
  * Gallery metabox add input fields
  */
@@ -340,7 +339,6 @@ function gallery_meta_callback($post) {
                 </li>
                 <?php endforeach; endif; ?>
             </ul>
-
         </td>
     </tr>
 </table>
@@ -357,7 +355,7 @@ function gallery_meta_save($post_id) {
 
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 	
-    if( isset( $_POST['vdw_gallery_id']) ) {
+    if( isset( $_POST['vdw_gallery_id'] ) ) {
 
 		$gallerylength = count( $_POST[ 'vdw_gallery_id' ] );
 		$currentId = 0 ;
@@ -368,14 +366,15 @@ function gallery_meta_save($post_id) {
 
 				$hidden_var[$currentId] = sanitize_text_field( wp_unslash( $_POST[ 'vdw_gallery_id' ][$currentId] ) );
 				update_post_meta( $post_id , 'vdw_gallery_id' , $hidden_var );
-				
+			
 			}
 			$currentId++;
 		}
-
 	}
 	else {  
+
 		delete_post_meta($post_id, 'vdw_gallery_id');
+		
 	}
 }
 add_action('save_post', 'gallery_meta_save');
