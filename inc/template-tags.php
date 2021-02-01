@@ -160,75 +160,6 @@ endif;
 
 
 
-
-/**
- * Gallery metabox add input fields
- */
-function gallery_meta_callback($post) {
-
-    wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
-	$ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
-	
-?>
-<table class="form-table">
-    <tr>
-        <td>
-            <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery"
-                data-uploader-button-text="Add image(s)">Add image(s)</a>
-            <ul id="gallery-metabox-list">
-                <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value);?>
-                <li>
-                    <input type="hidden" name="vdw_gallery_id[<?php printf(esc_html($key)); ?>]"
-                        value="<?php printf(esc_html($value)); ?>">
-                    <img class="image-preview" src="<?php printf(esc_html($image[0])); ?>">
-                    <a class="change-image button button-small" href="#" data-uploader-title="Change image"
-                        data-uploader-button-text="Change image">Change image</a><br>
-                    <small><a class="remove-image" href="#">Remove image</a></small>
-                </li>
-                <?php endforeach; endif; ?>
-            </ul>
-
-        </td>
-    </tr>
-</table>
-<?php }
-
-/* Save Gallery meta  */
-function gallery_meta_save($post_id) {
-
-	$galleryMetaNonce = filter_input( INPUT_POST, 'gallery_meta_nonce', FILTER_SANITIZE_STRING );
-	
-    if (!isset($galleryMetaNonce) || !wp_verify_nonce($galleryMetaNonce, basename(__FILE__))) return;
-
-    if (!current_user_can('edit_post', $post_id)) return;
-
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-	
-    if( isset( $_POST['vdw_gallery_id']) ) {
-
-		$gallerylength = count( $_POST[ 'vdw_gallery_id' ] );
-		$currentId = 0 ;
-
-		while ( $currentId <= $gallerylength){
-
-			if ( !empty( $_POST['vdw_gallery_id'][$currentId] ) ) {
-
-				$hidden_var[$currentId] = sanitize_text_field( wp_unslash( $_POST[ 'vdw_gallery_id' ][$currentId] ) );
-				update_post_meta( $post_id , 'vdw_gallery_id' , $hidden_var );
-				
-			}
-			$currentId++;
-		}
-
-	}
-	else {  
-		delete_post_meta($post_id, 'vdw_gallery_id');
-	}
-}
-add_action('save_post', 'gallery_meta_save');
-
-
-
 /**
  * Handle Slider from Meta box 
  */
@@ -309,19 +240,25 @@ if ( ! function_exists( 'cavatina_get_date' ) ) :
 endif;
 
 
+
 if (! function_exists('cavatina_get_pagination')) :
 	/**
 	 * Show numeric pagination
 	 */
 	function cavatina_get_pagination() {
 
-	 	echo esc_html(paginate_links( array(
-			'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
-			'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-		)));
+		
+
+		echo wp_kses_post(paginate_links( 
+			array(
+			   'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
+			   'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+		   )	
+	   ));
 		
 	}
 endif;
+
 
 
 if (! function_exists('cavatina_get_site_name')) :
@@ -331,7 +268,7 @@ if (! function_exists('cavatina_get_site_name')) :
 	function cavatina_get_site_name() {
 
 		echo esc_html( get_bloginfo());
-
+		
 	}
 endif;
 
@@ -373,3 +310,72 @@ if (! function_exists('cavatina_get_home_page_link')) :
 		
 	}
 endif;
+
+
+
+
+/**
+ * Gallery metabox add input fields
+ */
+function gallery_meta_callback($post) {
+
+    wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
+	$ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
+	
+?>
+<table class="form-table">
+    <tr>
+        <td>
+            <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery"
+                data-uploader-button-text="Add image(s)">Add image(s)</a>
+            <ul id="gallery-metabox-list">
+                <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value);?>
+                <li>
+                    <input type="hidden" name="vdw_gallery_id[<?php printf(esc_html($key)); ?>]"
+                        value="<?php printf(esc_html($value)); ?>">
+                    <img class="image-preview" src="<?php printf(esc_html($image[0])); ?>">
+                    <a class="change-image button button-small" href="#" data-uploader-title="Change image"
+                        data-uploader-button-text="Change image">Change image</a><br>
+                    <small><a class="remove-image" href="#">Remove image</a></small>
+                </li>
+                <?php endforeach; endif; ?>
+            </ul>
+
+        </td>
+    </tr>
+</table>
+<?php }
+
+/* Save Gallery meta  */
+function gallery_meta_save($post_id) {
+
+	$galleryMetaNonce = filter_input( INPUT_POST, 'gallery_meta_nonce', FILTER_SANITIZE_STRING );
+	
+    if (!isset($galleryMetaNonce) || !wp_verify_nonce($galleryMetaNonce, basename(__FILE__))) return;
+
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+	
+    if( isset( $_POST['vdw_gallery_id']) ) {
+
+		$gallerylength = count( $_POST[ 'vdw_gallery_id' ] );
+		$currentId = 0 ;
+
+		while ( $currentId <= $gallerylength){
+
+			if ( !empty( $_POST['vdw_gallery_id'][$currentId] ) ) {
+
+				$hidden_var[$currentId] = sanitize_text_field( wp_unslash( $_POST[ 'vdw_gallery_id' ][$currentId] ) );
+				update_post_meta( $post_id , 'vdw_gallery_id' , $hidden_var );
+				
+			}
+			$currentId++;
+		}
+
+	}
+	else {  
+		delete_post_meta($post_id, 'vdw_gallery_id');
+	}
+}
+add_action('save_post', 'gallery_meta_save');
