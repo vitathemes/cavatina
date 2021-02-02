@@ -1,10 +1,10 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying page content without sidebar
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp-cavatina
+ * @package cavatina
  */
 ?>
 <div class="o-page__col c-content">
@@ -12,12 +12,12 @@
         <div class="c-single__context">
             <div class="c-single__context__holder">
                 <div class="c-single__text c-single__text--full-height">
-                    <?php
+                    <?php   
                             the_content(
                                 sprintf(
                                     wp_kses(
                                         /* translators: %s: Name of current post. Only visible to screen readers */
-                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
+                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>' , 'cavatina' ),
                                         array(
                                             'span' => array(
                                                 'class' => array(),
@@ -37,6 +37,5 @@
                 </div>
             </div>
         </div>
-
     </article><!-- #post-<?php the_ID(); ?> -->
 </div>

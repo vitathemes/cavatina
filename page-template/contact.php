@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Content Sidebar 
+ * Template Name: Contact
  * 
  * Page content with sidebar
  *
