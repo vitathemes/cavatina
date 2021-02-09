@@ -34,7 +34,7 @@
   height: 100%;
   width: max-content;
   display: inline-block;
-  color: #111111;
+  color: $cavatina_primary_color;
 
   &::before {
     content: "0" counter(chapter);

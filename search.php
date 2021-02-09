@@ -58,17 +58,12 @@ global $wp_query;
                             */
                             get_template_part('template-parts/content', 'search');
                         endwhile;
-                      
+                            cavatina_get_default_pagination();
                     else :
                         get_template_part('template-parts/content', 'none');
                     
                     endif;
                     ?>
-            </div>
-            <div class="c-pagination">
-                <?php 
-                    cavatina_get_pagination();
-                ?>
             </div>
         </div>
     </div>

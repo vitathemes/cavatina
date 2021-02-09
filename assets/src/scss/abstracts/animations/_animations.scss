@@ -28,22 +28,46 @@
 @keyframes blurReverse {
   0% {
     -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
     filter: blur(10px);
   }
-
+  99% {
+    -webkit-filter: blur(0.5px);
+    -moz-filter: blur(0.5px);
+    -o-filter: blur(0.5px);
+    -ms-filter: blur(0.5px);
+    filter: blur(0.5px);
+  }
   100% {
     -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
     filter: blur(0px);
   }
 }
 @-webkit-keyframes blurReverse {
   0% {
     -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
     filter: blur(10px);
   }
-
+  99% {
+    -webkit-filter: blur(0.5px);
+    -moz-filter: blur(0.5px);
+    -o-filter: blur(0.5px);
+    -ms-filter: blur(0.5px);
+    filter: blur(0.5px);
+  }
   100% {
     -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
     filter: blur(0px);
   }
 }
@@ -188,5 +212,41 @@
   }
   100% {
     width: 100%;
+  }
+}
+
+/*------------------------------------*\
+  #Preloader Circle animation
+\*------------------------------------*/
+
+@keyframes preloader {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  80% {
+    width: 70px;
+    height: 70px;
+  }
+  100% {
+    border-radius: 50%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes preloader {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  80% {
+    width: 70px;
+    height: 70px;
+  }
+  100% {
+    border-radius: 50%;
+    opacity: 0;
   }
 }

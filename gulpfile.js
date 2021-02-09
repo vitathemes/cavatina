@@ -46,6 +46,7 @@ const concatJs = (cb) => {
     .src([
       "./node_modules/flickity/dist/flickity.pkgd.js",
       "./node_modules/simplebar/dist/simplebar.js",
+      "./node_modules/vanilla-lazyload/dist/lazyload.js",
       "./assets/src/js/*.js",
     ])
     .pipe(concat("main.js"))

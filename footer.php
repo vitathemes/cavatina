@@ -12,7 +12,6 @@
 
 <footer id="colophon" class="c-footer">
     <div class="c-footer__context">
-
         <div class="c-social-media">
             <a href="https://www.linkedin.com/" class="c-social-media__item">
                 <svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
@@ -43,14 +42,13 @@
                 </svg>
             </a>
         </div>
-
         <div class="c-footer__copy">
-            <p class="c-footer__text">© <?php the_time( 'Y' ); ?> <?php cavatina_get_site_name(); ?>.<a
-                    class="c-footer__text__link" href="#"> TERMS OF USE </a> AND
+            <p class="c-footer__text">Cavatina theme by
+                <a class="c-footer__text__link" href="https://vitathemes.com/"> VitaThemes </a> |
+                <a class="c-footer__text__link" href="#"> TERMS OF USE </a> &
                 <a class="c-footer__text__link" href="<?php cavatina_get_privacy_policy(); ?>">PRIVACY POLICY.</a>
             </p>
         </div>
-
     </div><!-- #.c-footer__context -->
 </footer><!-- #colophon -->
 </div><!-- #page -->

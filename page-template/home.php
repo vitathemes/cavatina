@@ -10,8 +10,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cavatina' ); ?></a>
     <?php wp_body_open(); ?>
+    <div class="o-preloader">
+        <div class="o-preloader__loader">
+            <span class="o-preloader__circle"></span>
+        </div>
+    </div>
     <header id="masthead" class="c-header c-header--home js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
@@ -90,8 +95,7 @@
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="c-carousel__cell">
                                 <a href="<?php echo esc_html(get_permalink()); ?>">
-                                    <?php the_post_thumbnail('full', array('class' => 'c-carousel__image')); ?>
-
+                                    <?php cavatina_get_home_carousel_thumbnail(); ?>
                                 </a>
                             </div>
                             <?php endwhile; wp_reset_query(); ?>

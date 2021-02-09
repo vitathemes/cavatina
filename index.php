@@ -21,7 +21,7 @@ get_header();
     </div>
 </aside>
 
-<!-- Searchbar Mobile -->
+<!-- Search bar Mobile -->
 <section class="c-search">
     <div class="c-search__content">
         <div class="c-search__wrapper">
@@ -55,14 +55,11 @@ get_header();
                              */
                             get_template_part( 'template-parts/content', get_post_type() );
                         endwhile;
-                        the_posts_navigation();
+                            cavatina_get_default_pagination();
                     else :
                         get_template_part('template-parts/content', 'none');
                     endif;
-                    ?>
-            </div>
-            <div class="c-pagination">
-                <?PHP cavatina_get_pagination(); ?>
+                ?>
             </div>
         </div>
     </div>

@@ -18,21 +18,21 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: $wp-cavatina__main-primary-light-color;
+  color: $cavatina__main-primary-light-color;
   background-color: transparent;
   border: 0;
-  border-bottom: 1px solid $wp-cavatina__main-primary-color;
+  border-bottom: 1px solid $cavatina__main-primary-color;
   width: 100%;
   font-size: 12px;
   min-height: max-content;
 
   &::placeholder {
-    color: $wp-cavatina__main-primary-light-color;
+    color: $cavatina__main-primary-light-color;
     opacity: 1;
     font-weight: normal;
     font-size: 12px;
 
-    color: $wp-cavatina__main-primary-light-color;
+    color: $cavatina__main-primary-light-color;
   }
 
   &:focus {
@@ -58,7 +58,7 @@ textarea {
 }
 
 select {
-  color: $wp-cavatina__main-primary-light-color;
+  color: $cavatina__main-primary-light-color;
   border: none;
   border-radius: $global-radius;
   background-color: $wp-cavatina__neutral-gray-light-color;

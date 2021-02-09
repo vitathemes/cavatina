@@ -6,11 +6,19 @@
   line-height: 17px;
 
   margin: 0;
-  color: #000000;
+  color: $cavatina_primary_color;
 }
 
 .c-widget__content {
   width: 100%;
+}
+
+.c-contact__widget {
+  a {
+    font-size: 14px;
+    line-height: 17px;
+    color: $cavatina_secondary_color;
+  }
 }
 
 .c-widget__text {
@@ -18,7 +26,7 @@
   line-height: 17px;
   /* identical to box height */
   transition: 0.5s all;
-  color: #767676;
+  color: $cavatina__main-primary-light-color;
 
   &:hover {
     color: #000000;

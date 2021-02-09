@@ -18,30 +18,25 @@
   list-style-type: none;
   margin: 2%;
 
-  li {
-    margin-bottom: 24px;
-    @include media(tablet) {
-      margin-bottom: 10px;
-    }
-    a {
-      transition: 0.2s all;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 19px;
-      line-height: 23px;
-
-      @include media(tablet) {
-        font-size: 14px;
-        line-height: 17px;
-        color: #000000;
-      }
-      &:hover {
-        color: #8a8a8a;
-      }
-    }
-  }
-
   @include media(tablet) {
     margin: 0;
+  }
+}
+
+.menu-item {
+  margin-bottom: 24px;
+  @include media(tablet) {
+    margin-bottom: 10px;
+  }
+
+  a {
+    font-size: 19px;
+
+    color: $cavatina_primary_color;
+
+    @include media(tablet) {
+      font-size: 14px;
+      line-height: 17px;
+    }
   }
 }

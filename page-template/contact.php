@@ -44,22 +44,21 @@ get_header();
         <div class="c-contact">
             <div class="c-contact__form__holder">
                 <?php
-                            the_content(
-                                sprintf(
-                                    wp_kses(
-                                        /* translators: %s: Name of current post. Only visible to screen readers */
-                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
-                                        array(
-                                            'span' => array(
-                                                'class' => array(),
-                                            ),
-                                        )
+                    the_content(
+                        sprintf(
+                            wp_kses(
+                                /* translators: %s: Name of current post. Only visible to screen readers */
+                                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
+                                array(
+                                    'span' => array(
+                                        'class' => array(),
                                     ),
-                                    wp_kses_post( get_the_title() )
                                 )
-                            );
-                        ?>
-
+                            ),
+                            wp_kses_post( get_the_title() )
+                        )
+                    );
+                ?>
             </div>
             <div class="c-contact__context">
                 <?php

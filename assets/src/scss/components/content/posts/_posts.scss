@@ -11,8 +11,12 @@
 
   @include media(tablet) {
     width: 35%;
-    margin-bottom: 48px;
+    margin-bottom: 56px;
     padding-bottom: 0px;
+  }
+
+  @include media(wide) {
+    margin-bottom: 7%;
   }
 }
 
@@ -27,25 +31,26 @@
   }
 }
 
-
-.c-post__header__col{
+.c-post__header__col {
   vertical-align: top;
   display: inline-block;
   height: 100%;
 }
 
-.c-post__header__col--left{
+.c-post__header__col--left {
   max-width: 15%;
-
 }
 
-.c-post__header__col--right{
+.c-post__header__col--right {
   max-width: 85%;
 }
 
-
 .c-post__header--space-height {
-  margin-bottom: 8px;
+  margin-bottom: 24px;
+
+  @include media(tablet) {
+    margin-bottom: 16px;
+  }
 }
 
 .c-post__entry-title {
@@ -61,22 +66,24 @@
   }
 
   &:hover {
-    color: #767676;
+    color: $cavatina__main-primary-light-color;
   }
 
   counter-reset: section;
 }
 
-.c-post__entry-title__anchor{
+.c-post__entry-title__anchor {
   font-weight: normal;
   font-size: 14px;
-  color: #111111;
+  line-height: 17px;
+  color: $cavatina_primary_color !important;
   vertical-align: top;
   font-family: $font__semi-bold;
+
+  &:hover {
+    color: $cavatina__main-primary-light-color !important;
+  }
 }
-
-
-
 
 .c-post__entry-title--projects {
   width: 100%;
@@ -90,21 +97,47 @@
   font-size: 14px;
   line-height: 200%;
 }
-.c-post__meta {
-
-}
 
 .c-post__category {
   font-size: 14px;
   line-height: 17px;
-  color: #767676;
+  display: inline-block;
+  color: $cavatina__main-primary-light-color;
+
+  a {
+    &:hover {
+      color: $cavatina__main-primary-color;
+    }
+  }
+}
+
+.c-post__category--blog {
+  padding-left: 0;
+}
+
+.c-post__meta {
+  color: $cavatina__main-primary-light-color;
+}
+
+.c-post__category__anchor {
+  font-size: 12px;
+  line-height: 15px;
+  color: $cavatina_secondary_color !important;
+
+  &:hover {
+    color: $cavatina__main-primary-color !important;
+  }
+  @include media(tablet) {
+    font-size: 14px;
+    line-height: 17 px;
+  }
 }
 
 .c-post__date {
   font-size: 14px;
   line-height: 17px;
   margin-right: 16px;
-  color: #767676;
+  color: $cavatina_secondary_color;
 }
 
 .c-post__thumbnail {
@@ -119,7 +152,7 @@
   height: 100%;
   border-radius: 7px;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 .c-post__entery-content {
   margin-top: 16px;

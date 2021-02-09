@@ -45,12 +45,11 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #8a8a8a;
+  color: $cavatina_secondary_color;
   margin: 0 0 24px 0;
 
   @include media(tablet) {
     margin: 0;
-    color: #8a8a8a;
   }
 
   &::after {
@@ -114,15 +113,17 @@
 }
 .c-carousel__post-title__text {
   width: max-content;
-  color: #000000;
+  color: $cavatina_primary_color;
   display: inline;
   transition: 0.2s all;
   &:hover {
-    color: #767676;
+    color: $cavatina__main-primary-light-color;
   }
 }
 
 .c-carousel__more {
+  font-size: 14px;
+
   &:hover {
     color: #8a8a8a;
   }
@@ -142,7 +143,7 @@
   line-height: 17px;
   /* identical to box height */
 
-  color: #000000;
+  color: $cavatina__main-primary-color;
   @include media(tablet) {
     display: none;
   }
@@ -174,7 +175,7 @@
   line-height: 200%;
   /* identical to box height, or 28px */
 
-  color: #000000;
+  color: $cavatina__main-primary-color;
 
   @include media(tablet) {
     width: 100%;

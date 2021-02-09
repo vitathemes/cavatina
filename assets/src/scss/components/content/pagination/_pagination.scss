@@ -22,10 +22,6 @@
   display: flex;
   align-content: center;
   justify-content: center;
-
-  @include media(tablet) {
-    padding-right: 60px;
-  }
 }
 
 .c-pagination__load-more {
@@ -57,7 +53,7 @@
 \*------------------------------------*/
 
 .page-numbers {
-  color: #767676 !important;
+  color: $cavatina__main-primary-color !important;
   border-radius: 3px;
   cursor: pointer;
   margin: 2px;
@@ -67,21 +63,21 @@
   align-items: center;
   justify-content: center;
   &:hover {
-    background-color: #767676;
-    color: #fff !important;
+    // background-color: $cavatina__main-primary-color; // qa-
+    color: $cavatina__main-primary-light-color !important;
   }
 }
 
 .page-numbers.current {
-  background-color: #767676;
-  color: #fff !important;
+  background-color: $cavatina__main-primary-color;
+  color: $wp-cavatina__neutral-white !important;
 }
 .dashicons {
-  color: #767676;
+  color: $cavatina__main-primary-color;
   font-family: dashicons !important;
   &:hover {
     background-color: transparent;
-    color: #e1e1e1;
+    color: $cavatina__main-primary-light-color;
   }
 }
 

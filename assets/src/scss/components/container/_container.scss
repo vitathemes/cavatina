@@ -22,10 +22,46 @@
   @include media(tablet) {
     height: 100%;
     padding-right: 60px;
-    padding-top: 100px;
+    padding-top: 110px;
     padding-bottom: 0px;
   }
+  @include media(wide) {
+    margin-top: 150px;
+    padding-top: 50px;
+  }
+
   .c-post__entery-content {
     display: none;
   }
+}
+
+/*------------------------------------*\
+  #Container Category
+\*------------------------------------*/
+.c-container__category {
+  transition: 1s all;
+  width: 100%;
+  height: 70px;
+  max-height: 0px;
+  display: none;
+
+  background: repeating-linear-gradient(45deg, #a12929, #030303 20px);
+
+  @include media(tablet) {
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+  }
+}
+
+.c-container__category.is-open {
+  max-height: 70px;
+}
+
+.c-container_category__content {
+  width: 35.5%;
+  height: 100%;
+
+  display: none;
+  background: rgba(131, 195, 255, 0.73);
 }

@@ -161,29 +161,8 @@ endif;
 
 
 /**
- * Handle Slider from Meta box 
- */
-function cavatina_get_slider($postId){
-	$images = get_post_meta( $postId , 'vdw_gallery_id', true); 
-
-	if($images > 0){
-		foreach ($images as $image) {			
-			echo '<div class="c-carousel__single__cell">'.
-				 	wp_get_attachment_image($image, "large" , "" , ["class" => "c-carousel__single__cell__image" ,"alt"=>"some"] ).
-				 '</div>';
-	}
-	}else{
-		echo '<div class="c-carousel__single__cell">';
-		    	the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
-		echo '</div>';	
-	}
-}
- 
-
-
-/**
- * Handle Logo - If logo doesn't exist show WordPress Site title name
- */
+  * Handle Logo - If logo doesn't exist show WordPress Site title name
+  */
 function cavatina_handle_logo(){
 
     $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -203,14 +182,7 @@ function cavatina_handle_logo(){
     }
 }
 
-/**
- * Render load more button
- */
-function cavatina_load_more_button($query) { 
-	if ( $query->max_num_pages > 1 ){
-		echo '<div class="c-pagination c-pagination--load-more js-pagination__load-more"><button class="button--small js-pagination__load-more__btn">Load More</button></div>'; // you can use <a> as well
-	}
-}
+
 
 
 if ( ! function_exists( 'cavatina_get_category' ) ) :
@@ -218,12 +190,16 @@ if ( ! function_exists( 'cavatina_get_category' ) ) :
 	 * Prints HTML of the categories.
 	 */
 	function cavatina_get_category() {
-	
-		$categories = get_the_category();
-		if ( ! empty( $categories ) ) {
-			return $categories[0]->name;   
+		$categoryList = '';
+		foreach((get_the_category()) as $category) {
+			$categoryID = get_cat_ID( $category->cat_name );
+			$categoryLink = get_category_link( $categoryID );
+			if(!empty($categoryList)) {
+				$categoryList .= ', ';
+			}
+			$categoryList .= '<a class="c-post__category__anchor" href="'. $categoryLink .'">'. $category->cat_name .'</a>';
 		}
-		
+		echo  wp_kses_post(   $categoryList );
 	}
 endif;
 
@@ -234,28 +210,103 @@ if ( ! function_exists( 'cavatina_get_date' ) ) :
 	 */
 	function cavatina_get_date() {
 	
-		return get_the_date( "F j.Y" );
+		return get_the_date( "F j.y" );
 		
 	}
 endif;
 
 
-
-if (! function_exists('cavatina_get_pagination')) :
+if ( ! function_exists( 'cavatina_get_date_my' ) ) :
 	/**
-	 * Show numeric pagination
+	 * Prints HTML of the date.
 	 */
-	function cavatina_get_pagination() {
-
+	function cavatina_get_date_my() {
+	
+		return get_the_date( "M Y" );
 		
+	}
+endif;
 
-		echo wp_kses_post(paginate_links( 
-			array(
-			   'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
-			   'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-		   )	
-	   ));
+
+if (! function_exists('cavatina_get_thumbnail')) :
+	/**
+	 * return thumbnail for single blog 
+	 */
+	function cavatina_get_thumbnail() {
+		if ( has_post_thumbnail() ) {
+			echo '<div class="c-single__blog__thumbnail">';
+			the_post_thumbnail('large', array('class' => 'c-single__blog__thumbnail__image' )); 
+			echo '</div>';
+		}
+		else {
+			echo '<div class="c-single__blog__no-thumbnail"></div>';
+		}
+	}
+endif;
+
+
+if (! function_exists('cavatina_get_posts_archive_thumbnail')) :
+	/**
+	 * Return thumbnail for archives
+	 */
+	function cavatina_get_posts_archive_thumbnail() {
+		if ( has_post_thumbnail() ) {
+
+			$post_url = get_permalink(get_the_ID()); 
+			echo '<div class="c-post__thumbnail"><a href="'.esc_url($post_url).'" >'; 
+            	the_post_thumbnail('large', array('class' => 'c-post__thumbnail__image' )) ;
+        	echo '</a></div>';
+
+		}
+		else {
 		
+			echo '<div class="c-post__thumbnail">'; 
+			echo '<img class="c-post__thumbnail__image" src="' . esc_url(get_bloginfo( 'stylesheet_directory' )) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
+        	echo '</div>';
+		}
+	}
+endif;
+
+
+if (! function_exists('cavatina_get_home_carousel_thumbnail')) :
+	/**
+	 * Return thumbnail for home carousel
+	 */
+	function cavatina_get_home_carousel_thumbnail() {
+		if ( has_post_thumbnail() ) {
+
+			the_post_thumbnail('full', array('class' => 'c-carousel__image' ));
+
+		}
+		else {
+			echo '<img class="c-carousel__image" src="' . esc_url(get_bloginfo( 'stylesheet_directory' )) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
+		}
+	}
+endif;
+
+
+
+/**
+ * Render load more button
+ */
+function cavatina_get_loadmore( $query ) { 
+	if ( $query->max_num_pages > 1 ){
+		echo '<div class="c-pagination c-pagination--load-more js-pagination__load-more"><button class="button--small js-pagination__load-more__btn">Load More</button></div>'; // you can use <a> as well
+	}
+}
+
+if (! function_exists('cavatina_get_default_pagination')) :
+	/**
+	* Show numeric pagination
+	*/
+	function cavatina_get_default_pagination() {
+
+		echo'  <div class="c-pagination">' . wp_kses_post(paginate_links(
+				array(
+				'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
+				'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+				)
+			)) . '</div>';
 	}
 endif;
 
@@ -263,11 +314,11 @@ endif;
 
 if (! function_exists('cavatina_get_site_name')) :
 	/**
-	 * Show site name
-	 */
+	* Show site name
+	*/
 	function cavatina_get_site_name() {
-		
-		echo esc_html( get_bloginfo());
+
+	echo esc_html( get_bloginfo());
 
 	}
 endif;
@@ -280,7 +331,7 @@ if (! function_exists('cavatina_get_privacy_policy')) :
 	function cavatina_get_privacy_policy() {
 
 		echo esc_url( get_privacy_policy_url());
-
+		
 	}
 endif;
 
@@ -293,88 +344,66 @@ if (! function_exists('cavatina_get_current_page_name')) :
 	function cavatina_get_current_page_name() {
 
 		global $post;
-		$post_slug=$post->post_name;		
+		$post_slug = $post->post_name;
+		$post_slug = str_replace("-", " ", $post_slug);
 		echo esc_html(esc_html($post_slug));
-
+		
 	}
 endif;
 
 
 if (! function_exists('cavatina_get_home_page_link')) :
 	/**
-	 * get home page link
-	 */
+	* get home page link
+	*/
 	function cavatina_get_home_page_link() {
 
-		echo esc_url(home_url( '/' ));
-		
+	echo esc_url(home_url( '/' ));
+
 	}
 endif;
 
 
+function cavatina_get_slider( $postId ) {
+	/**
+	* Display slider if plugin was activated
+	*
+	* @since 1.0.0
+	*
+	*/
+	if ( ! class_exists( 'acf_plugin_photo_gallery' ) ){
+		
+		echo '<div class="c-carousel__single__cell">';
+		the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
+		echo '</div>';
+	}
+	else {
 
-/**
- * Gallery metabox add input fields
- */
-function gallery_meta_callback($post) {
+		$images = acf_photo_gallery('gallery', $postId);
+		if( count($images) ){
+			foreach($images as $image) {
 
-    wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
-	$ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
-	
-?>
-<table class="form-table">
-    <tr>
-        <td>
-            <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery"
-                data-uploader-button-text="Add image(s)">Add image(s)</a>
-            <ul id="gallery-metabox-list">
-                <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value);?>
-                <li>
-                    <input type="hidden" name="vdw_gallery_id[<?php printf(esc_html($key)); ?>]"
-                        value="<?php printf(esc_html($value)); ?>">
-                    <img class="image-preview" src="<?php printf(esc_html($image[0])); ?>">
-                    <a class="change-image button button-small" href="#" data-uploader-title="Change image"
-                        data-uploader-button-text="Change image">Change image</a><br>
-                    <small><a class="remove-image" href="#">Remove image</a></small>
-                </li>
-                <?php endforeach; endif; ?>
-            </ul>
-        </td>
-    </tr>
-</table>
-<?php }
-
-/* Save Gallery meta  */
-function gallery_meta_save($post_id) {
-
-	$galleryMetaNonce = filter_input( INPUT_POST, 'gallery_meta_nonce', FILTER_SANITIZE_STRING );
-	
-    if (!isset($galleryMetaNonce) || !wp_verify_nonce($galleryMetaNonce, basename(__FILE__))) return;
-
-    if (!current_user_can('edit_post', $post_id)) return;
-
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-	
-    if( isset( $_POST['vdw_gallery_id'] ) ) {
-
-		$gallerylength = count( $_POST[ 'vdw_gallery_id' ] );
-		$currentId = 0 ;
-
-		while ( $currentId <= $gallerylength){
-
-			if ( !empty( $_POST['vdw_gallery_id'][$currentId] ) ) {
-
-				$hidden_var[$currentId] = sanitize_text_field( wp_unslash( $_POST[ 'vdw_gallery_id' ][$currentId] ) );
-				update_post_meta( $post_id , 'vdw_gallery_id' , $hidden_var );
+			$id = $image['id'];
+			$title = $image['title'];
+			$caption= $image['caption'];
+			$full_image_url= $image['full_image_url'];
+			$thumbnail_image_url= $image['thumbnail_image_url'];
+			$url= $image['url'];
+			$target= $image['target'];
+			$alt = get_field('photo_gallery_alt', $id);
+			
+			echo '<div class="c-carousel__single__cell">
+				<img class="c-carousel__single__cell__image" src="'. esc_url($full_image_url).'" alt="'. esc_html($title) .'" />
+			</div>';
 			
 			}
-			$currentId++;
+		}
+		else{
+
+		echo '<div class="c-carousel__single__cell">';
+			the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
+		echo '</div>';
+		
 		}
 	}
-	else {  
-
-		delete_post_meta($post_id, 'vdw_gallery_id');
-		
-	}
 }
-add_action('save_post', 'gallery_meta_save');

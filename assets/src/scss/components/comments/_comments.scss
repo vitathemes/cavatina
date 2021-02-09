@@ -4,18 +4,19 @@
   line-height: 17px;
   font-style: normal;
   font-family: $font__semi-bold;
-  color: #000000;
+  color: $cavatina_primary_color;
 }
 
 .comment {
   margin-left: 0px;
   margin-top: 24px;
+
   @include media(tablet) {
     margin-top: 39px;
   }
 }
 .comment.depth-1 {
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid $color__background-hr;
 
   &:last-child {
     border-bottom: 0px;
@@ -44,7 +45,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    color: #767676;
+    color: $cavatina__main-primary-light-color;
 
     @include media(tablet) {
       flex-wrap: nowrap;
@@ -107,7 +108,7 @@
 }
 
 .comments-title {
-  border-top: 1px solid #e1e1e1;
+  border-top: 1px solid $color__background-hr;
   margin: 0px;
   padding-top: 39px;
   padding-bottom: 0px;
@@ -178,23 +179,26 @@
       display: flex;
       align-items: flex-start;
       padding-top: 8px;
-      color: #000000;
+      color: $cavatina__main-primary-color;
 
       @include media(tablet) {
         position: relative;
-        margin-left: 40px;
+        margin-left: 24px;
         margin-top: 3px;
       }
 
       a {
         font-style: normal;
         font-weight: normal;
-        font-size: 16px;
+        font-size: 12px;
         line-height: 15px;
         display: flex;
         align-items: center;
+        color: $cavatina_primary_color;
 
-        color: #000000;
+        &:hover {
+          color: $cavatina__main-primary-light-color;
+        }
       }
     }
   }
@@ -204,12 +208,12 @@
     position: absolute;
     top: 30px;
     left: 75px;
+    font-size: 12px;
 
     @include media(tablet) {
-      margin-left: 24px;
-      margin-top: 10px;
+      margin-left: 16px;
+      margin-top: 11px;
       position: static;
-      top: 35px;
     }
 
     a {
@@ -217,16 +221,26 @@
       font-weight: normal;
       font-size: 12px;
       line-height: 15px;
-      color: #767676;
+      color: $cavatina_secondary_color;
+
+      &:hover {
+        color: $cavatina__main-primary-color;
+      }
     }
   }
 }
 
 .comment-content {
   margin-left: 75px;
+  margin-right: 16px;
   transform: translate(0px, 0px);
+
+  font-size: 14px;
+  line-height: 28px;
+
   @include media(tablet) {
     padding-left: 15px;
+    margin-left: 60px;
     transform: translate(0px, -16px);
   }
 
@@ -259,7 +273,7 @@
   width: max-content;
   transform: translate(70px, 0px);
   @include media(tablet) {
-    padding-left: 90px;
+    padding-left: 75px;
     transform: translate(0px, -16px);
   }
 
@@ -274,6 +288,15 @@
 
 #cancel-comment-reply-link {
   margin-left: 16px;
+}
+
+.comment-reply-link {
+  font-size: 12px;
+  color: $cavatina_secondary_color;
+
+  &:hover {
+    color: $cavatina__main-primary-color;
+  }
 }
 
 .comment-respond {
@@ -296,6 +319,15 @@
     line-height: 15px;
     align-items: center;
     display: inline-block;
-    color: #767676;
+    color: $cavatina__main-primary-light-color;
+  }
+}
+
+.logged-in-as {
+  a {
+    font-size: 14px;
+    line-height: 17px;
+
+    color: $cavatina_secondary_color !important;
   }
 }

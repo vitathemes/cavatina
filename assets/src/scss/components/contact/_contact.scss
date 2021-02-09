@@ -110,7 +110,7 @@
     font-size: 14px;
     line-height: 17px;
     transition: 0.5s all;
-    color: #767676;
+    color: $cavatina__main-primary-light-color;
 
     &:hover {
       color: #000000;
@@ -175,7 +175,7 @@
   line-height: 166.3%;
   font-family: $font__regular;
   letter-spacing: 0.1em;
-  color: #ff3636;
+  color: $wp-cavatina__service-error-color;
 
   &::first-letter {
     text-transform: uppercase;
@@ -187,4 +187,7 @@
   border: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
+  color: $wp-cavatina__service-error-color;
+  font-size: 12px;
+  line-height: 166.3%;
 }
