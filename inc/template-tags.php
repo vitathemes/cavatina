@@ -251,18 +251,20 @@ if (! function_exists('cavatina_get_posts_archive_thumbnail')) :
 	 */
 	function cavatina_get_posts_archive_thumbnail() {
 		if ( has_post_thumbnail() ) {
-
+			
 			$post_url = get_permalink(get_the_ID()); 
 			echo '<div class="c-post__thumbnail"><a href="'.esc_url($post_url).'" >'; 
-            	the_post_thumbnail('large', array('class' => 'c-post__thumbnail__image' )) ;
-        	echo '</a></div>';
-
+				 the_post_thumbnail('large', array('class' => 'c-post__thumbnail__image' )) ;
+			echo '</a></div>';
+			
 		}
 		else {
-		
-			echo '<div class="c-post__thumbnail">'; 
+			
+			$post_url = get_permalink(get_the_ID());
+			echo '<div class="c-post__thumbnail"><a href="'.esc_url($post_url).'" >'; 
 			echo '<img class="c-post__thumbnail__image" src="' . esc_url(get_bloginfo( 'stylesheet_directory' )) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
-        	echo '</div>';
+			echo '</a></div>';
+			
 		}
 	}
 endif;

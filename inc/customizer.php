@@ -8,7 +8,7 @@
  
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
- *
+ * 
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function cavatina_customize_register( $wp_customize ) {
@@ -71,7 +71,6 @@ if( function_exists( 'kirki' ) ) {
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
 	) );
-
 	
 	/*
 	 *	Kirki -> Typography Settings
@@ -128,12 +127,9 @@ if( function_exists( 'kirki' ) ) {
 	// 	'section'     => 'loadmore_pagination',
 	// 	'default'     => false,
 	// ] );
-
-
+	
 
 	/* Typography Settings */
-
-
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'color',
 		'settings' => 'typography_primary_color',

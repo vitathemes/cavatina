@@ -90,7 +90,7 @@ function cavatina_get_pagination( $page , $query ) {
 
 
 function cavatina_typography() {
-
+	
 	if ( get_theme_mod( 'typography_primary_color' ) == "" ) {
 		$cavatina_primary_color = "#000000";
 	} else {
@@ -101,14 +101,14 @@ function cavatina_typography() {
 	} else {
 		$cavatina_secondary_color = get_theme_mod( 'typography_secondary_color' );
 	}
-	
+
 	$html = ':root {	
 	            --primary-color: '. $cavatina_primary_color .';
 	            --secondary-color: ' . $cavatina_secondary_color . ';
 	            --tertiary-color: ' . $cavatina_tertiary_color . ';
 	            --quaternary-color: ' . $cavatina_quaternary_color . ';
 			}';
-
+						
 	return $html;
 }
 

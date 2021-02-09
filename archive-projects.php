@@ -51,7 +51,7 @@ get_header();
                 </section>
 
                 <?php if (have_posts()) :
-
+                
                     /* Start the Loop */
                     while (have_posts()) : the_post();
                         /*
@@ -61,9 +61,7 @@ get_header();
                         */
                         get_template_part( 'template-parts/content', 'project' );
                     endwhile;
-                    
-                    cavatina_get_pagination( "projects" ,  $wp_query );
-                     
+                        cavatina_get_pagination( "projects" ,  $wp_query );
                     else :
                     get_template_part('template-parts/content', 'none');
                     endif;
