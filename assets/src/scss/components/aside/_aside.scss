@@ -6,8 +6,6 @@
   width: 100%;
   bottom: 0;
   z-index: 9;
-  background-color: $color__background-body;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,6 +141,8 @@
   text-transform: capitalize;
   font-weight: normal;
 
+  color: $cavatina_primary_color;
+
   @include media(tablet) {
     font-size: 19px;
     display: block;
@@ -150,16 +150,9 @@
   }
 }
 
-.c-aside__title--mobile-hide {
-  display: block;
-  @include media(tablet) {
-    display: none;
-  }
-}
-
 .c-aside__counter {
   font-size: 14px;
-  color: #767676;
+  color: $cavatina_secondary_color;
   line-height: 17px;
   font-weight: normal;
 
@@ -184,7 +177,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #8a8a8a;
+  color: $cavatina_secondary_color;
 
   @include media(tablet) {
     margin: 0;
@@ -192,7 +185,6 @@
     margin-left: 8px;
     margin-bottom: 16px;
     padding-top: 16px;
-    color: #8a8a8a;
   }
 }
 
@@ -230,5 +222,29 @@
     width: 100%;
     padding-left: 8px;
     text-align: left;
+  }
+}
+
+/*------------------------------------*\
+  #Aside Category
+\*------------------------------------*/
+.c-aside__title--category {
+  display: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 17px;
+  transition: 0.2s all;
+  color: $cavatina_secondary_color;
+
+  @include media(tablet) {
+    display: block;
+    margin-top: 69px;
+  }
+  @include media(wide) {
+    margin-top: 95px;
+  }
+
+  &:hover {
+    color: $cavatina__main-primary-color;
   }
 }

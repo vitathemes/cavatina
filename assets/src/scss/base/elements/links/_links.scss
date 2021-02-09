@@ -1,15 +1,23 @@
 a {
-  color: $wp-cavatina__secondary-color;
+  color: $cavatina_secondary_color;
   transition: $global-transition;
   text-decoration: none;
+
+  transition: 0.2s all;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 23px;
+  // font-size: 19px;
+  // color: $cavatina__main-primary-color;
+
   &:visited {
-    color: $wp-cavatina__secondary-color;
+    color: $cavatina_secondary_color;
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: $wp-cavatina__primary-color;
+    color: $color__link-hover;
   }
 
   &:focus {

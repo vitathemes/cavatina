@@ -18,12 +18,12 @@
 			the_title( '<h2 class="c-post__entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
-        <div class="c-post__meta entry-meta c-post__category--blog">
+        <div class="c-post__meta entry-meta">
             <?php
 
-                echo '<span class="c-post__category">'. cavatina_get_category() .'</span>';
+                echo '<div class="c-post__category">'. esc_html( cavatina_get_category() ) .'</div>';
                 echo '<span class="o-bullet o-bullet--sm"></span>';
-				echo '<span class="c-post__date">'. cavatina_get_date() .'</span>';
+				echo '<span class="c-post__date">'. esc_html( cavatina_get_date() ) .'</span>';
 
 			?>
         </div><!-- .entry-meta -->
@@ -31,14 +31,14 @@
 
     <div class="c-post__thumbnail">
         <a href=<?php the_permalink() ?>>
-            <?php the_post_thumbnail('large', array('class' => 'c-post__thumbnail__image')); ?>
+            <?php cavatina_get_posts_archive_thumbnail()  ?>
         </a>
     </div>
     <div class="entry-content">
         <?php
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cavatina' ),
 				'after'  => '</div>',
 			)
 		);

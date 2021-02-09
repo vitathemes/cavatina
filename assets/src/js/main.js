@@ -1,8 +1,16 @@
 jQuery(function ($) {
-  $(document).ready(function () {
-    /*------------------------------------*\
+  /*------------------------------------*\
+      #Handle Loading animation
+  \*------------------------------------*/
+  $(window).load(function () {
+    setTimeout(function () {
+      $(".o-preloader").delay(1000).fadeOut();
+    }, 800);
+  });
+  /*------------------------------------*\
       #Handle Load More button
-    \*------------------------------------*/
+  \*------------------------------------*/
+  $(document).ready(function () {
     const button = $(".js-pagination__load-more__btn");
 
     $(".js-pagination__load-more").click(function () {
@@ -35,6 +43,20 @@ jQuery(function ($) {
       });
     });
   });
+
+  /*------------------------------------*\
+      #Handle CategoryToggle
+  \*------------------------------------*/
+  // $(".c-aside__title--category").click(function () {
+  //   $(".js-page__main").animate({ scrollTop: 0 }, 300);
+  //   setTimeout(() => {
+  //     $(".c-container__category").toggleClass("is-open");
+  //   }, 300);
+
+  //   setTimeout(() => {
+  //     $(".c-container_category__content").fadeToggle("slow");
+  //   }, 1000);
+  // });
 });
 
 // Check device is mobile or not
@@ -82,7 +104,6 @@ function childFinder(parentElement, childElement) {
     .getElementsByClassName(childElement)[0]
     ? true
     : false;
-
   return result;
 }
 
@@ -256,7 +277,6 @@ if (childFinder("body", "js-carousel__context")) {
 }
 
 // Carousel - Single Page
-
 if (childFinder("body", "js-single__slider")) {
   let carouselSingle = document.querySelector(".js-single__slider");
 
@@ -267,6 +287,7 @@ if (childFinder("body", "js-single__slider")) {
     cellAlign: "left",
     pageDots: !isDesktop(),
     prevNextButtons: false,
+    lazyLoad: true,
     on: {
       ready: function () {},
       change: function (index) {

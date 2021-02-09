@@ -2,7 +2,6 @@
   #Header
 \*------------------------------------*/
 .c-header {
-  background-color: $color__background-body;
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
   position: relative;
@@ -99,7 +98,7 @@
 \*------------------------------------*/
 
 .c-header__text {
-  color: #8a8a8a;
+  color: $cavatina_secondary_color;
   display: none;
   order: 2;
   font-size: 14px;
@@ -304,7 +303,7 @@
   @include media(tablet) {
     justify-content: flex-end;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     height: max-content;
     align-content: center;
 

@@ -6,21 +6,9 @@
  *
  * @package cavatina
  */
-$decimalCounter = "0";
 ?>
 
-
-<?php
-        // get post number (auto increment)
-        $postNumber = cavatina_get_post_number();
-
-        // Remove zero when reaching 10
-        if($postNumber >= 10){
-            $decimalCounter = "";
-            $postNumber = $postNumber;
-        }
-        else{$postNumber = $decimalCounter.$postNumber;}
-    ?>
+<?php  $postNumber = cavatina_deciaml_post_number(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
     <header class="c-post__header entry-header">
@@ -34,28 +22,24 @@ $decimalCounter = "0";
         <div class="c-post__meta entry-meta c-post__category--blog ">
             <?php
 
-            echo '<span class="c-post__category">'. cavatina_get_category() .'</span>';
+            echo '<span class="c-post__category">'. esc_html( cavatina_get_category() ) .'</span>';
             echo '<span class="o-bullet"></span>';
-            echo '<span class="c-post__date">'. cavatina_get_date() .'</span>';
+            echo '<span class="c-post__date">'.esc_html( cavatina_get_date()) .'</span>';
 
             ?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
 
-    <div class="c-post__thumbnail">
-        <a href=<?php the_permalink() ?>>
-            <?php the_post_thumbnail('large', array('class' => 'c-post__thumbnail__image')); ?>
-        </a>
-    </div>
+    <?php cavatina_get_posts_archive_thumbnail(); ?>
 
     <div class="entry-content">
         <?php
-        wp_link_pages(
-            array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-cavatina' ),
-                'after'  => '</div>',
-            )
-        );
+            wp_link_pages(
+                array(
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cavatina' ),
+                    'after'  => '</div>',
+                )
+            );
         ?>
     </div><!-- .entry-content -->
 

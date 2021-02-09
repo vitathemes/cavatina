@@ -1,15 +1,12 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * * Template Name: Content no-sidebar
+ * 
+ * * The template for displaying pages with sidebar
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp-cavatina
+ * @package cavatina
  */
 
 get_header();
@@ -20,7 +17,7 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper c-aside__wrapper--full-width">
             <div class="c-aside__context">
-                <span class="c-aside__title">Privacy Policy</span>
+                <span class="c-aside__title"><?php cavatina_get_current_page_name(); ?></span>
             </div>
         </div>
 
@@ -50,7 +47,7 @@ get_header();
     while ( have_posts() ) :
         the_post();
 
-        get_template_part( 'template-parts/content', 'page-full-height' );
+        get_template_part( 'template-parts/content', 'no-sidebar' );
 
         // If comments are open or we have at least one comment, load up the comment template.
         if ( comments_open() || get_comments_number() ) :

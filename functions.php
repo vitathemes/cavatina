@@ -116,25 +116,26 @@ function wp_cavatina_content_width() {
 }
 add_action( 'after_setup_theme', 'wp_cavatina_content_width', 0 );
 
+
+
 /**
- * Register widget area.
+ * Register widget area for contact page.
  *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ * @link https://codex.wordpress.org/Widgetizing_Themes
  */
-function wp_cavatina_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'cavatina' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'cavatina' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+function contact_widget_init() {
+ 
+    register_sidebar( array(
+        'name'          => 'Contact Page Sidebar Area',
+        'id'            => 'custom-contact-widget',
+        'before_widget' => '<div class="c-widget__content">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h6 class="c-widget__title">',
+        'after_title'   => '</h6>',
+    ) );
+ 
 }
-add_action( 'widgets_init', 'wp_cavatina_widgets_init' );
+add_action( 'widgets_init', 'contact_widget_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -151,10 +152,6 @@ function wp_cavatina_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wp_cavatina_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -184,75 +181,10 @@ add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
 
 
-/**
- * Custom Post type
- */
-
-function cavatina_projects() {
-
-// Set UI labels for Custom Post Type
-$labels = array(
-    'name'                => _x( 'Projects', 'Post Type General Name', 'cavatina' ),
-    'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'cavatina' ),
-    'menu_name'           => __( 'Projects', 'cavatina' ),
-    'parent_item_colon'   => __( 'Parent Project', 'cavatina' ),
-    'all_items'           => __( 'All Projects', 'cavatina' ),
-    'view_item'           => __( 'View Project', 'cavatina' ),
-    'add_new_item'        => __( 'Add New Project', 'cavatina' ),
-    'add_new'             => __( 'Add New', 'cavatina' ),
-    'edit_item'           => __( 'Edit Project', 'cavatina' ),
-    'update_item'         => __( 'Update Project', 'cavatina' ),
-    'search_items'        => __( 'Search Project', 'cavatina' ),
-    'not_found'           => __( 'Not Found', 'cavatina' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'tcavatina' ),
-);
-
-// Set other options for Custom Post Type
-
-    $args = array(
-        'label'               => __( 'projects', 'cavatina' ),
-        'description'         => __( 'Project news and reviews', 'cavatina' ),
-        'labels'              => $labels,
-        // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
-        // You can associate this CPT with a taxonomy or custom taxonomy.
-        'taxonomies'          => array( 'category' ),
-        /* A hierarchical CPT is like Pages and can have
-        * Parent and child items. A non-hierarchical CPT
-        * is like Posts.
-        */
-        'hierarchical'        => false,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => true,
-        'show_in_admin_bar'   => true,
-        'menu_position'       => 5,
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-        'show_in_rest' => true,
-
-    );
-
-    // Registering your Custom Post Type
-    register_post_type( 'projects', $args );
-
-}
-
-/* Hook into the 'init' action so that the function
-* Containing our post type registration is not
-* unnecessarily executed.
-*/
-
-add_action( 'init', 'cavatina_projects', 0 );
-
 
 
 /**
- * change submit button text in wordpress comment form
+ * change submit button text in WordPress comment form
  */
 function cavatina_change_submit_button_text( $defaults ) {
     $defaults['label_submit'] = 'Send';
@@ -265,9 +197,9 @@ add_filter( 'comment_form_defaults', 'cavatina_change_submit_button_text' );
 /**
  * change comment date format
  */
-function cavatina_change_comment_date_format( $d ) {
-    $d = date("F j.Y");
-    return $d;
+function cavatina_change_comment_date_format( $comment_date ) {
+    $comment_date = date("F j.Y");
+    return $comment_date;
 }
 add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
 
@@ -276,7 +208,7 @@ add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
  */
 function cavatina_total_posts() {
 	$total = wp_count_posts()->publish;
-	echo  $total;
+	echo  esc_html($total);
 }
 
 /**
@@ -289,8 +221,14 @@ function cavatina_post_type_name() {
 /**
  * count number of posts types (project) in a page
  */
-function cavatina_total_post_types() {
-	printf($count_posts = wp_count_posts( 'projects' )->publish);
+function cavatina_total_post_types($isText = true) {
+
+	if($isText === true){
+		printf(esc_html($count_posts = wp_count_posts( 'projects' )->publish));
+	}
+	else{
+		return $count_posts = wp_count_posts( 'projects' )->publish;
+	}
 }
 
 
@@ -298,7 +236,7 @@ function cavatina_total_post_types() {
  * Change comment form textarea placeholder
  */
 function cavatina_change_textarea_placeholder( $args ) {
-	$args['comment_field']        = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
+	$args['comment_field'] = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
 	return $args;
 }
 add_filter( 'comment_form_defaults', 'cavatina_change_textarea_placeholder' );
@@ -355,10 +293,11 @@ function cavatina_dashicons(){
 add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 
 
+
 /**
- * Auto increment number per posts ( in pages like archives... )
+ * Auto increment number per posts ( in pages like archive-projects... )
  */
-function cavatina_get_post_number(){
+function cavatina_get_post_number3(){
     global $wp_query;
     $posts_per_page = get_option('posts_per_page');
     $paged          = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -369,22 +308,58 @@ function cavatina_get_post_number(){
 
 
 /**
- * Handle Description
+ * Auto decrement number per posts ( in pages like archive-projects... )
  */
-function cavatina_handle_description(){
-    echo '<span class="c-header__text">'. get_bloginfo('description') .'</span>';
+function cavatina_get_inverse_post_number(){
+	global $wp_query;
+    $posts_per_page 	= get_option('posts_per_page');
+	$paged          	= (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$offset         	= ($paged - 1) * $posts_per_page;
+	$loop           	= $wp_query->current_post + 1;
+	$posts_in_page	    = $offset + $loop;
+	$total_post_numbers = cavatina_total_post_types(false) + 1;
+	$posts_counter 	    = $total_post_numbers - $posts_in_page;
+
+	return $posts_counter;
 }
 
 
 /**
- *Add your custom logo to the login page
+ * Add zero to the post numbers
+ */
+function cavatina_deciaml_post_number(){
+    // get post number (auto increment)
+    $decimalCounter = "0";
+    $postNumber = cavatina_get_inverse_post_number();
+    // Remove zero when reaching 10
+    if($postNumber >= 10){
+        $decimalCounter = "";
+		$postNumber = $postNumber;
+		return $postNumber;
+    }
+    else{
+		$postNumber = $decimalCounter.$postNumber;
+		return $postNumber;
+	}
+}
+
+
+/**
+ * Handle Description
+ */
+function cavatina_handle_description(){
+    echo '<span class="c-header__text">'. esc_html(get_bloginfo('description')) .'</span>';
+}
+
+
+/**
+ * Add your custom logo to the login page
  */
 function cavatina_filter_login_head() {
 
     if ( has_custom_logo() ) :
-
         $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-        ?>
+	?>
 <style type="text/css">
 .login h1 a {
     background-image: url(<?php echo esc_url($image[0]);
@@ -406,10 +381,8 @@ add_action( 'login_head', 'cavatina_filter_login_head', 100 );
  *	Load More
  */
 function my_load_more_scripts() {
- 
 	global $wp_query; 
 	wp_enqueue_script('jquery');
-	
 	wp_localize_script( 'cavatina-main-scripts', 'loadmore_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', 
 		'posts' => json_encode( $wp_query->query_vars ), 
@@ -424,23 +397,26 @@ add_action( 'wp_enqueue_scripts', 'my_load_more_scripts' );
 /* Handle Load more loop  */
 function loadmore_ajax_handler(){
 	
-	$args = json_decode( stripslashes( $_POST['query'] ), true );
-	$args['paged'] = $_POST['page'] + 1; 
-	$args['post_status'] = 'publish';
-	
-	query_posts( $args );
-	
-	if( have_posts() ) :
+	$argsquery = filter_input( INPUT_POST, 'query', FILTER_SANITIZE_STRING );
 
-		// run the loop
-		while( have_posts() ) : the_post();
+	if ( !empty( $_POST['query'] ||  $_POST['page'] )) {
 		
-		get_template_part( 'template-parts/content', 'project' );
-		
-		endwhile;
+		$args = json_decode( sanitize_text_field( wp_unslash( $_POST['query'] ) ) , true );
+		$args['paged'] = sanitize_text_field( wp_unslash( $_POST['page'] )) + 1; 
+		$args['post_status'] = 'publish';
+		query_posts( $args );
+		if( have_posts() ) :
 
-	endif;
-	die; 
+			// run the loop
+			while( have_posts() ) : the_post();
+			
+			get_template_part( 'template-parts/content', 'project' );
+			
+			endwhile;
+
+		endif;
+		die; 
+	}
 }
 
 add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); // wp_ajax_{action}
@@ -448,29 +424,19 @@ add_action('wp_ajax_nopriv_loadmore', 'loadmore_ajax_handler'); // wp_ajax_nopri
 
 
 /**
- * Gallery meta box 
+ * Load Setup file
  */
-function gallery_metabox_enqueue($hook) {
-    if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
-      wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/assets/js/gallery-metabox.js', array('jquery', 'jquery-ui-sortable'));
-      wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/assets/css/gallery-metabox.css');
-    }
-}
-add_action('admin_enqueue_scripts', 'gallery_metabox_enqueue');
+require_once get_template_directory() . '/inc/setup.php';
 
-/* Add Gallery meta box */
-function add_gallery_metabox($post_type) {
-	$types = array('projects');
-	
-    if (in_array($post_type, $types)) {
-      add_meta_box(
-        'gallery-metabox',
-        'Gallery',
-        'gallery_meta_callback',
-        $post_type,
-        'normal',
-        'high'
-      );
-    }
-  }
-add_action('add_meta_boxes', 'add_gallery_metabox');
+
+/**
+  * Customizer additions.
+  */
+require get_template_directory() . '/inc/customizer.php';
+
+
+/**
+  * Load TGMPA file
+  */
+require_once get_template_directory() . '/inc/tgmpa/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/tgmpa-config.php';

@@ -10,8 +10,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cavatina' ); ?></a>
     <?php wp_body_open(); ?>
+    <div class="o-preloader">
+        <div class="o-preloader__loader">
+            <span class="o-preloader__circle"></span>
+        </div>
+    </div>
     <header id="masthead" class="c-header c-header--home js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
@@ -60,8 +65,6 @@
                                 )
                             );
                         }
-                        else{
-                        }
                         ?>
                 </div>
                 <?php
@@ -91,9 +94,8 @@
                         <div class="c-carousel__context js-carousel__context">
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="c-carousel__cell">
-                                <a href="<?php echo get_permalink() ?>">
-                                    <?php the_post_thumbnail('full', array('class' => 'c-carousel__image')); ?>
-
+                                <a href="<?php echo esc_html(get_permalink()); ?>">
+                                    <?php cavatina_get_home_carousel_thumbnail(); ?>
                                 </a>
                             </div>
                             <?php endwhile; wp_reset_query(); ?>
@@ -102,7 +104,7 @@
                     <div
                         class="c-carousel__post-titles js-carousel__post-titles c-carousel__post-titles--mobile js-carousel__post-titles--mobile">
                         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                        <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
+                        <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric-small"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
                         <?php endwhile; wp_reset_query(); ?>
                     </div>
                     <a href="/projects" class="c-carousel__more c-carousel__more--home">View All Projects</a>

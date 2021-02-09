@@ -23,7 +23,7 @@
 
   @include media(tablet) {
     margin-bottom: 16px;
-    padding-top: 20px;
+    padding-top: 25px;
   }
   @include media(wide) {
     height: 20vh;
@@ -38,6 +38,14 @@
   .flickity-viewport {
     height: 100%;
   }
+
+  .flickity-slider {
+    margin-left: -16px;
+
+    @include media(tablet) {
+      margin-left: 0px;
+    }
+  }
 }
 
 .c-carousel__title {
@@ -45,12 +53,11 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #8a8a8a;
+  color: $cavatina_secondary_color;
   margin: 0 0 24px 0;
 
   @include media(tablet) {
     margin: 0;
-    color: #8a8a8a;
   }
 
   &::after {
@@ -81,15 +88,9 @@
 }
 
 .c-carousel__cell {
-  width: 90%;
-
-  @include media(tablet) {
-    width: 80%;
-  }
-
+  width: 80%;
   height: 100%;
   margin-right: 10px;
-
   counter-increment: gallery-cell;
 
   @include media(tablet) {
@@ -106,25 +107,43 @@
 
 .c-carousel__post-title {
   counter-reset: section;
+  width: max-content;
+  transition: 0.2s all;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 200%;
+  color: $cavatina__main-primary-color;
 
   @include media(tablet) {
-    margin-top: 16px;
+    margin-top: 11px;
     margin-bottom: 32px;
+
+    width: 100%;
+    padding-left: 1px;
+  }
+
+  &:hover {
+    color: $cavatina__main-primary-light-color;
   }
 }
+
 .c-carousel__post-title__text {
   width: max-content;
-  color: #000000;
+  color: $cavatina_primary_color;
   display: inline;
   transition: 0.2s all;
   &:hover {
-    color: #767676;
+    color: $cavatina__main-primary-light-color;
   }
 }
 
 .c-carousel__more {
+  font-size: 14px;
+  color: $cavatina_primary_color;
+
   &:hover {
-    color: #8a8a8a;
+    color: $cavatina__main-primary-light-color;
   }
 
   @include media(tablet) {
@@ -142,7 +161,7 @@
   line-height: 17px;
   /* identical to box height */
 
-  color: #000000;
+  color: $cavatina__main-primary-color;
   @include media(tablet) {
     display: none;
   }
@@ -162,27 +181,6 @@
   .flickity-slider {
     width: 100%;
     height: 100%;
-  }
-}
-
-.c-carousel__post-title {
-  width: max-content;
-  transition: 0.2s all;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 200%;
-  /* identical to box height, or 28px */
-
-  color: #000000;
-
-  @include media(tablet) {
-    width: 100%;
-    padding-left: 1px;
-  }
-
-  &:hover {
-    color: #8a8a8a;
   }
 }
 

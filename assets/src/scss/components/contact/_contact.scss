@@ -56,9 +56,10 @@
     height: 100%;
     align-content: center;
     margin-top: 0px;
-    padding-bottom: 64px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     padding-left: 64px;
-    padding-top: 7%;
+    padding-top: 0px;
   }
   @include media(wide) {
     padding-top: 5%;
@@ -98,10 +99,28 @@
 
 .c-contact__widget {
   width: 100%;
-  height: max-content;
-
+  height: 280px;
   text-align: left;
-  margin-bottom: 39px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 35px;
+
+  p {
+    font-size: 14px;
+    line-height: 17px;
+    transition: 0.5s all;
+    color: $cavatina__main-primary-light-color;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+
+  @include media(wide) {
+    height: 400px;
+    padding-bottom: 115px;
+  }
 }
 
 /*------------------------------------*\
@@ -156,7 +175,7 @@
   line-height: 166.3%;
   font-family: $font__regular;
   letter-spacing: 0.1em;
-  color: #ff3636;
+  color: $wp-cavatina__service-error-color;
 
   &::first-letter {
     text-transform: uppercase;
@@ -168,4 +187,7 @@
   border: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
+  color: $wp-cavatina__service-error-color;
+  font-size: 12px;
+  line-height: 166.3%;
 }

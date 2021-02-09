@@ -14,14 +14,13 @@ get_header();
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
                 <span class="c-aside__title">Blog</span>
-                <span class="c-aside__counter"><?php cavatina_total_posts(); ?> Posts</span>
             </div>
         </div>
 
     </div>
 </aside>
 
-<!-- Searchbar Mobile -->
+<!-- Search bar Mobile -->
 <section class="c-search">
     <div class="c-search__content">
         <div class="c-search__wrapper">
@@ -55,17 +54,11 @@ get_header();
                              */
                             get_template_part( 'template-parts/content', get_post_type() );
                         endwhile;
-                        the_posts_navigation();
+                            cavatina_get_default_pagination();
                     else :
                         get_template_part('template-parts/content', 'none');
                     endif;
-                    ?>
-            </div>
-            <div class="c-pagination">
-                <?php echo paginate_links( array(
-                    'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
-                    'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-                )); ?>
+                ?>
             </div>
         </div>
     </div>

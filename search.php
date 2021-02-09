@@ -58,27 +58,12 @@ global $wp_query;
                             */
                             get_template_part('template-parts/content', 'search');
                         endwhile;
-                          // the_posts_navigation();
-                       
-
+                            cavatina_get_default_pagination();
                     else :
                         get_template_part('template-parts/content', 'none');
                     
                     endif;
                     ?>
-            </div>
-            <div class="c-pagination">
-                <?php  
-                        echo paginate_links( array(
-
-                        'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
-                        'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-
-                        ));
-                ?>
-
-
-
             </div>
         </div>
     </div>

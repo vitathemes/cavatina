@@ -27,10 +27,10 @@ blockquote {
   margin-left: 0;
   border-left: 2px solid $cavatina__neutral-gray-color;
   padding-left: 22px;
-  color: $cavatina__secondary-color;
+  color: $cavatina_secondary_color;
 
   cite {
-    color: $cavatina__tertiary-color;
+    color: $cavatina_secondary_color;
   }
 }
 
@@ -48,7 +48,7 @@ pre {
   max-width: 100%;
   overflow: auto;
   padding: 1.6em;
-  color: $cavatina__secondary-color;
+  color: $cavatina_secondary_color;
 }
 
 code,

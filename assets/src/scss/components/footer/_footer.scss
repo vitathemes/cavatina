@@ -1,4 +1,6 @@
-
+/*------------------------------------*\
+  #Footer
+\*------------------------------------*/
 .c-footer {
   width: 100%;
   height: 9%;
@@ -43,24 +45,27 @@
   font-weight: normal;
   line-height: 20px;
   margin-top: 31px;
-  color: #8a8a8a;
-  text-transform: uppercase;
+  color: $cavatina_secondary_color;
 
   @include media(tablet) {
     margin-top: 0;
     margin-bottom: 0px;
+    line-height: 17px;
+  }
+
+  &::first-letter {
+    text-transform: uppercase;
   }
 }
 
 .c-footer__text__link {
   font-size: 12px;
-  line-height: 15px;
-  border-bottom: 1px solid #767676;
-  color: #767676;
+  line-height: 17px;
+  color: $cavatina_primary_color !important;
   margin: 0 2px;
   padding-bottom: 1px;
 
   &:hover {
-    color: #3a3a3a;
+    color: $cavatina__main-primary-light-color !important;
   }
 }

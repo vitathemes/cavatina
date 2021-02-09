@@ -71,7 +71,8 @@
   padding: 5%;
   top: 140%;
   transform: translate(-50%, -50%);
-  color: #767676;
+  color: $cavatina__main-primary-light-color;
+  background-color: transparent;
 
   @include media(tablet) {
     top: 115%;

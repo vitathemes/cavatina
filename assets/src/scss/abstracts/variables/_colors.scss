@@ -2,7 +2,7 @@ $wp-cavatina__neutral-dark-gray-color: #767676;
 $wp-cavatina__neutral-gray-color: #dfdfdf;
 $wp-cavatina__neutral-gray-light-color: #f4f4f4;
 $wp-cavatina__neutral-white: #ffffff;
-$wp-cavatina__service-error-color: #891900;
+$wp-cavatina__service-error-color: #ff3636;
 
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -16,7 +16,7 @@ $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: #4169e1; //royalblue
 $color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
+$color__link-hover: #767676; //midnightblue
 $color__text-main: #404040;
 
 $color__border-button: #ccc #ccc #bbb;
@@ -25,11 +25,11 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-$wp-cavatina__primary-color: var(--primary-color);
-$wp-cavatina__secondary-color: var(--secondary-color);
-$wp-cavatina__tertiary-color: var(--tertiary-color);
-$wp-cavatina__quaternary-color: var(--quaternary-color);
+$cavatina_primary_color: var(--primary-color);
+$cavatina_secondary_color: var(--secondary-color);
+$cavatina_tertiary_color: var(--tertiary-color);
+$cavatina_quaternary_color: var(--quaternary-color);
 
-$wp-cavatina__main-primary-color: #000000;
-$wp-cavatina__main-primary-dark-color: var(--quaternary-color);
-$wp-cavatina__main-primary-light-color: #767676;
+$cavatina__main-primary-color: #000000;
+$cavatina__main-primary-dark-color: var(--quaternary-color);
+$cavatina__main-primary-light-color: #767676;

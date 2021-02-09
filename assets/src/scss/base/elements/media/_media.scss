@@ -8,6 +8,12 @@ object {
 img {
   height: auto; // Make sure images are scaled correctly.
   max-width: 100%; // Adhere to container width.
+
+  transition: 0.5s all;
+
+  &:hover {
+    filter: brightness(0.78);
+  }
 }
 
 figure {

@@ -9,7 +9,7 @@
 * @package wp-cavatina
 */?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes();?>>
 
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -26,9 +26,15 @@
     </noscript>
 </head>
 
-<body <?php body_class(); ?> oncLoad="scrollbar()">
+<body <?php body_class(); ?>>
+    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cavatina' ); ?></a>
     <?php wp_body_open(); ?>
-    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-cavatina' ); ?></a>
+
+    <div class="o-preloader">
+        <div class="o-preloader__loader">
+            <span class="o-preloader__circle"></span>
+        </div>
+    </div><!-- .preloader -->
     <header id="masthead" class="c-header js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
@@ -52,10 +58,9 @@
             }
             ?>
         </div>
-    </header>
+    </header> <!-- #masthead -->
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
     </div>
     <div class="o-overlay js-overlay"></div>
     <div id="page" class="o-page js-page">
-        <!-- #masthead -->

@@ -219,6 +219,10 @@ hr.wp-block-separator.is-style-wide,
   margin-left: calc(-1 * var(--global--spacing-horizontal));
   margin-right: auto;
 }
+.wp-block-code {
+  background-color: $color__background-hr;
+  padding: 16px 16px;
+}
 
 @media only screen and (min-width: 482px) {
   .full-max-width,
