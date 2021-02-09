@@ -197,9 +197,9 @@ add_filter( 'comment_form_defaults', 'cavatina_change_submit_button_text' );
 /**
  * change comment date format
  */
-function cavatina_change_comment_date_format( $d ) {
-    $d = date("F j.Y");
-    return $d;
+function cavatina_change_comment_date_format( $comment_date ) {
+    $comment_date = date("F j.Y");
+    return $comment_date;
 }
 add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
 

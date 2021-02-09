@@ -38,8 +38,9 @@
   align-items: flex-start;
   @include media(tablet) {
     width: 20%;
-    margin-top: 64px;
+    margin-top: 40px;
     margin-left: 206px;
+    margin-bottom: 4px;
   }
 }
 

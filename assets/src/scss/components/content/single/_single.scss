@@ -46,6 +46,8 @@
   width: 100%;
   display: none;
   font-size: 24px;
+
+  font-size: $font__semi-bold;
   @include media(tablet) {
     display: block;
   }
@@ -56,7 +58,7 @@
 }
 
 .c-single__title--red {
-  color: #ff3636;
+  color: $wp-cavatina__service-error-color;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
@@ -110,7 +112,7 @@
   font-size: 14px;
   width: 100%;
   text-align: left;
-  line-height: 200%;
+  line-height: 27px;
 
   margin-left: 14px;
   margin-right: 32px;
@@ -121,7 +123,8 @@
   }
 
   h3 {
-    line-height: 17px;
+    line-height: 20px;
+    font-size: 16px;
   }
   ul {
     list-style-type: disc;
@@ -211,9 +214,8 @@
     display: block;
     font-size: 14px;
     line-height: 17px;
-    font-weight: 600;
     margin-left: 16px;
-
+    font-family: $font__semi-bold;
     max-width: 90%;
 
     @include media(tablet) {
@@ -356,10 +358,12 @@
   font-size: 14px;
   line-height: 30px;
   font-weight: normal;
+  margin-top: 30px;
 
   @include media(tablet) {
     text-align: justify;
     margin-left: 206px;
+    margin-top: 0px;
   }
 
   &::first-letter {
@@ -381,12 +385,19 @@
   }
 
   p {
-    line-height: 30px;
+    line-height: 28px;
+
+    @include media(tablet) {
+      line-height: 30px;
+    }
+  }
+
+  h2 {
+    font-family: $font__semi-bold;
   }
 }
 
 .c-single__blog__tags {
-  display: none;
   order: 5;
   width: 100%;
   text-align: left;

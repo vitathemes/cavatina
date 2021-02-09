@@ -20,6 +20,25 @@
   }
 }
 
+.c-post--project {
+  .c-post__category__anchor {
+    font-size: 12px;
+
+    @include media(tablet) {
+      font-size: 14px;
+    }
+  }
+}
+.c-post--archive {
+  .c-post__entry-title__anchor {
+    font-size: 14px;
+    line-height: 17px;
+    @include media(tablet) {
+      line-height: 20px;
+    }
+  }
+}
+
 .c-post__header {
   min-height: max-content;
   margin-bottom: 26px;
@@ -117,10 +136,15 @@
 
 .c-post__meta {
   color: $cavatina__main-primary-light-color;
+  line-height: 15px;
+
+  @include media(tablet) {
+    line-height: 17px;
+  }
 }
 
 .c-post__category__anchor {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 15px;
   color: $cavatina_secondary_color !important;
 

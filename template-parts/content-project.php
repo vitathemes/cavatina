@@ -9,7 +9,8 @@
 ?>
 <?php  $postNumber = cavatina_deciaml_post_number(); ?>
 
-<article id="post-<?php echo esc_html($postNumber); ?>" <?php post_class( 'c-post c-post--archive' ); ?>>
+<article id="post-<?php echo esc_html($postNumber); ?>"
+    <?php post_class( 'c-post c-post--archive c-post--project' ); ?>>
     <header class="c-post__header c-post__header--space-height entry-header">
 
         <div class="c-post__header__col c-post__header__col--left">

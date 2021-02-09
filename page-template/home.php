@@ -104,7 +104,7 @@
                     <div
                         class="c-carousel__post-titles js-carousel__post-titles c-carousel__post-titles--mobile js-carousel__post-titles--mobile">
                         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                        <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
+                        <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric-small"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
                         <?php endwhile; wp_reset_query(); ?>
                     </div>
                     <a href="/projects" class="c-carousel__more c-carousel__more--home">View All Projects</a>

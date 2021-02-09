@@ -38,7 +38,7 @@
 
   .comment-notes {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
@@ -49,6 +49,7 @@
 
     @include media(tablet) {
       flex-wrap: nowrap;
+      margin-bottom: 50px;
     }
   }
   .comment-form-author {
@@ -113,10 +114,14 @@
   padding-top: 39px;
   padding-bottom: 0px;
   width: 100%;
-  font-weight: 600;
+  font-family: $font__semi-bold;
   font-size: 14px;
   line-height: 17px;
   order: 2;
+
+  span {
+    font-family: $font__semi-bold;
+  }
 }
 
 .comment-list {
@@ -311,7 +316,7 @@
   label {
     vertical-align: top;
     display: inline-block;
-    width: 85%;
+    width: 88%;
     margin-left: 8px;
     font-style: normal;
     font-weight: normal;

@@ -14,7 +14,6 @@ get_header();
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
                 <span class="c-aside__title">Blog</span>
-                <span class="c-aside__counter"><?php cavatina_total_posts(); ?> Posts</span>
             </div>
         </div>
 
