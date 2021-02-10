@@ -31,12 +31,15 @@
 
   a {
     font-size: 19px;
-
-    color: $cavatina_primary_color;
+    color: $cavatina_primary_color !important;
 
     @include media(tablet) {
       font-size: 14px;
       line-height: 17px;
+    }
+
+    &:hover {
+      color: $cavatina__main-primary-light-color !important;
     }
   }
 }

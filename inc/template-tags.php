@@ -262,7 +262,7 @@ if (! function_exists('cavatina_get_posts_archive_thumbnail')) :
 			
 			$post_url = get_permalink(get_the_ID());
 			echo '<div class="c-post__thumbnail"><a href="'.esc_url($post_url).'" >'; 
-			echo '<img class="c-post__thumbnail__image" src="' . esc_url(get_bloginfo( 'stylesheet_directory' )) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
+			echo '<img class="c-post__thumbnail__image" src="' . esc_url( get_stylesheet_directory_uri() ) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
 			echo '</a></div>';
 			
 		}
@@ -281,7 +281,7 @@ if (! function_exists('cavatina_get_home_carousel_thumbnail')) :
 
 		}
 		else {
-			echo '<img class="c-carousel__image" src="' . esc_url(get_bloginfo( 'stylesheet_directory' )) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
+			echo '<img class="c-carousel__image" src="' . esc_url( get_stylesheet_directory_uri()) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
 		}
 	}
 endif;

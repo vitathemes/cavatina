@@ -72,16 +72,16 @@ if ( ! function_exists( 'cavatina_setup' ) ) :
 		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'wp_cavatina_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
+		// add_theme_support(
+		// 	'custom-background',
+		// 	apply_filters(
+		// 		'wp_cavatina_custom_background_args',
+		// 		array(
+		// 			'default-color' => 'ffffff',
+		// 			'default-image' => '',
+		// 		)
+		// 	)
+		// );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -180,7 +180,10 @@ function cavatina_scripts() {
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
 
-
+/**
+ * Remove admin bar bump
+ */
+add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
 
 /**

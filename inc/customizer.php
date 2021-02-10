@@ -4,7 +4,6 @@
  *
  * @package cavatina
  */
-
  
 /**
  * Add postMessage support for site title and description for the Theme Customizer.

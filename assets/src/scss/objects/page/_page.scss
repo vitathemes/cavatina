@@ -211,8 +211,7 @@
   margin: 0;
   line-height: 41px;
   font-family: $font__semi-bold;
-  color: #000000;
-
+  color: $cavatina_primary_color;
   font-weight: normal;
 }
 
@@ -220,7 +219,7 @@
   font-family: $font__regular;
   font-size: 19px;
   line-height: 30px;
-  color: $cavatina__main-primary-light-color;
+  color: $cavatina_secondary_color;
   text-align: center;
   font-weight: normal;
   margin-top: 24px;

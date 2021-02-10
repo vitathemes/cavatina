@@ -391,9 +391,6 @@
     .u-header-space {
       display: none; } }
 
-.skip-link {
-  display: none; }
-
 .u-header-space-mobile {
   width: 100%;
   height: 60px; }
@@ -1085,14 +1082,14 @@ html {
   margin: 0;
   line-height: 41px;
   font-family: "montserratsemibold";
-  color: #000000;
+  color: var(--primary-color);
   font-weight: normal; }
 
 .o-page__main__error-desc {
   font-family: "montserratregular";
   font-size: 19px;
   line-height: 30px;
-  color: #767676;
+  color: var(--secondary-color);
   text-align: center;
   font-weight: normal;
   margin-top: 24px;
@@ -1760,11 +1757,13 @@ img {
       margin-bottom: 10px; } }
   .menu-item a {
     font-size: 19px;
-    color: var(--primary-color); }
+    color: var(--primary-color) !important; }
     @media only screen and (min-width: 980px) {
       .menu-item a {
         font-size: 14px;
         line-height: 17px; } }
+    .menu-item a:hover {
+      color: #767676 !important; }
 
 /* Common
 --------------------------------------------- */

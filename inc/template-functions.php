@@ -105,8 +105,6 @@ function cavatina_typography() {
 	$html = ':root {	
 	            --primary-color: '. $cavatina_primary_color .';
 	            --secondary-color: ' . $cavatina_secondary_color . ';
-	            --tertiary-color: ' . $cavatina_tertiary_color . ';
-	            --quaternary-color: ' . $cavatina_quaternary_color . ';
 			}';
 						
 	return $html;
