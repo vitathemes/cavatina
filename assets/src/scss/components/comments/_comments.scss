@@ -293,6 +293,10 @@
 
 #cancel-comment-reply-link {
   margin-left: 16px;
+
+  &:hover {
+    color: $cavatina__main-primary-color;
+  }
 }
 
 .comment-reply-link {

@@ -65,6 +65,7 @@
       height: 100%;
       flex-direction: column;
       padding-bottom: 0;
+      padding-left: 16px;
     }
   }
 }
@@ -113,8 +114,8 @@
     height: 100%;
     align-items: flex-start;
     justify-content: center;
-    padding-left: 16px;
-    padding-right: 16px;
+    // padding-left: 16px;
+    // padding-right: 16px;
   }
 
   @include media(wide) {
@@ -130,6 +131,7 @@
   @include media(tablet) {
     text-align: left;
     padding-left: 0;
+    width: 100%;
   }
 }
 
@@ -147,6 +149,9 @@
     font-size: 19px;
     display: block;
     padding-bottom: 8px;
+    padding-top: 4px;
+
+    margin-left: 39px;
   }
 }
 

@@ -40,41 +40,29 @@ add_action( 'wp_head', 'wp_cavatina_pingback_header' );
 
 
 function cavatina_get_pagination( $page , $query ) { 
-
 	if($page === "projects"){
 		if ( true == get_theme_mod( 'projects_loadmore', true ) ){
-			
 			return cavatina_get_loadmore( $query );
-	
 		} else {
 			return cavatina_get_default_pagination();
 		}
 	}
 
-
 	if( $page === "blog"){
-		
-		if ( true == get_theme_mod( 'blog_loadmore', true ) ){
-
+		if ( true == get_theme_mod( 'blog_loadmore' ) ){
 			return cavatina_get_loadmore( $query );
-	
 		} else {
 			return cavatina_get_default_pagination();
 		}
 	}
 
 	if( $page === "archive"){
-		
-		if ( true == get_theme_mod( 'archive_loadmore', true ) ){
-
+		if ( true == get_theme_mod( 'archive_loadmore' ) ){
 			return cavatina_get_loadmore( $query );
-	
 		} else {
 			return cavatina_get_default_pagination();
 		}
-	
 	}
-
 }
 
 
