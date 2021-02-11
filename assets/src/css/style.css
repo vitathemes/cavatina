@@ -3203,7 +3203,7 @@ img {
   width: 100%; }
   @media only screen and (min-width: 980px) {
     .c-post__header {
-      min-height: 60px;
+      min-height: 70px;
       margin-bottom: 16px; } }
   @media only screen and (min-width: 1400px) {
     .c-post__header {
@@ -3223,9 +3223,6 @@ img {
 .c-post__header--space-height {
   margin-bottom: 24px; }
   @media only screen and (min-width: 980px) {
-    .c-post__header--space-height {
-      margin-bottom: 16px; } }
-  @media only screen and (min-width: 1400px) {
     .c-post__header--space-height {
       margin-bottom: 8px; } }
 

@@ -308,16 +308,3 @@ if (childFinder("body", "js-single__slider")) {
     },
   });
 }
-
-if (childFinder("body", "js-carousel__single__cell__image")) {
-  const carouselImage = document.querySelector(
-    ".js-carousel__single__cell__image"
-  );
-  const textnode = document.querySelector(".js-page");
-
-  carouselImage.addEventListener("click", function () {
-    const node = document.createElement("DIV");
-    node.appendChild(textnode);
-    node.classList.add("o-page_image-overlay");
-  });
-}
