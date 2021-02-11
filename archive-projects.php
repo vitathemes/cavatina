@@ -42,16 +42,11 @@ get_header();
 <main class="o-page__main js-page__main o-page__main--projects">
     <div class="o-page__col c-content c-content--max-height">
         <div class="c-container site-main__container">
-
             <div class="c-container__content site-main__content">
                 <section class="c-container__category">
-
                     <div class="c-container_category__content"></div>
-
                 </section>
-
                 <?php if (have_posts()) :
-                
                     /* Start the Loop */
                     while (have_posts()) : the_post();
                         /*
@@ -59,13 +54,12 @@ get_header();
                         * If you want to override this in a child theme, then include a file
                         * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                         */
-                        get_template_part( 'template-parts/content', 'project' );
+                        get_template_part( 'template-parts/content', get_post_type() );
                     endwhile;
                         cavatina_get_pagination( "projects" ,  $wp_query );
                     else :
                     get_template_part('template-parts/content', 'none');
                     endif;
-                 
                 ?>
             </div>
         </div>

@@ -6,7 +6,6 @@
  *
  * @package cavatina
  */
-
 get_header();
 ?>
 <!-- Aside -->
@@ -17,7 +16,6 @@ get_header();
                 <span class="c-aside__title">Project</span>
             </div>
         </div>
-
     </div>
 </aside>
 
@@ -74,9 +72,7 @@ get_header();
                     </li>
                 </ul>
                 <div class="c-carousel__single__slider js-single__slider">
-
                     <?php cavatina_get_slider( get_the_ID() ); ?>
-
                 </div>
             </div>
         </article><!-- #post-<?php the_ID(); ?> -->

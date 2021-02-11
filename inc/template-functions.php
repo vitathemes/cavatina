@@ -51,40 +51,29 @@ function cavatina_get_pagination( $page , $query ) {
 		}
 	}
 
-	// if( $page === "search"){
 
-	// 	if ( true == get_theme_mod( 'search_loadmore', true ) ){
-
-	// 		return cavatina_get_loadmore( $query );
-	
-	// 	} else {
-	// 		return cavatina_get_default_pagination();
-	// 	}
-
-	// }
-
-	// if( $page === "blog"){
+	if( $page === "blog"){
 		
-	// 	if ( true == get_theme_mod( 'blog_loadmore', true ) ){
+		if ( true == get_theme_mod( 'blog_loadmore', true ) ){
 
-	// 		return cavatina_get_loadmore( $query );
+			return cavatina_get_loadmore( $query );
 	
-	// 	} else {
-	// 		return cavatina_get_default_pagination();
-	// 	}
-	// }
+		} else {
+			return cavatina_get_default_pagination();
+		}
+	}
 
-	// if( $page === "archive"){
+	if( $page === "archive"){
 		
-	// 	if ( true == get_theme_mod( 'archive_loadmore', true ) ){
+		if ( true == get_theme_mod( 'archive_loadmore', true ) ){
 
-	// 		return cavatina_get_loadmore( $query );
+			return cavatina_get_loadmore( $query );
 	
-	// 	} else {
-	// 		return cavatina_get_default_pagination();
-	// 	}
+		} else {
+			return cavatina_get_default_pagination();
+		}
 	
-	// }
+	}
 
 }
 

@@ -48,6 +48,10 @@
     min-height: 60px;
     margin-bottom: 16px;
   }
+
+  @include media(wide) {
+    margin-bottom: 8px;
+  }
 }
 
 .c-post__header__col {
@@ -69,6 +73,10 @@
 
   @include media(tablet) {
     margin-bottom: 16px;
+  }
+
+  @include media(wide) {
+    margin-bottom: 8px;
   }
 }
 

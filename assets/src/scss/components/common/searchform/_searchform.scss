@@ -23,6 +23,10 @@
     position: relative;
     width: 50%;
 
+    @include media(wide) {
+      width: 40%;
+    }
+
     .search-field {
       height: 100%;
       padding-bottom: 20px;
