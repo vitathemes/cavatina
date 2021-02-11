@@ -4,7 +4,6 @@
  *
  * @package cavatina
  */
-
  
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -73,15 +72,16 @@ if( function_exists( 'kirki' ) ) {
 	) );
 	
 	/*
-	 *	Kirki -> Typography Settings
+	 *	Kirki -> Sections
 	 */
+
+	// typography settings  
 	Kirki::add_section( 'typography_headings', array(
 		'title'          => esc_html__( 'Typography Setting', 'cavatina' ),
 		'description'    => esc_html__( 'Change Typography color and customize them.', 'cavatina' ),
 		'panel'          => '',
 		'priority'       => 160,
 	) );
-
 
 	/* Load more selection */
 	Kirki::add_section( 'loadmore_pagination', array(
@@ -91,7 +91,16 @@ if( function_exists( 'kirki' ) ) {
 		'priority'       => 160,
 	) );
 
-
+	/*  */
+	Kirki::add_section( 'social_media', array(
+		'title'          => esc_html__( 'Social Media', 'cavatina' ),
+		'description'    => esc_html__( 'Add social media links.', 'cavatina' ),
+		'panel'          => '',
+		'priority'       => 160,
+	) );
+	/*
+	 *	Kirki -> fields
+	 */
 	Kirki::add_field( 'cavatina', [
 		'type'        => 'checkbox',
 		'settings'    => 'projects_loadmore',
@@ -101,32 +110,24 @@ if( function_exists( 'kirki' ) ) {
 		'default'     => true,
 	] );
 
-	// Kirki::add_field( 'cavatina', [
-	// 	'type'        => 'checkbox',
-	// 	'settings'    => 'blog_loadmore',
-	// 	'label'       => esc_html__( 'Blog Page Load more', 'cavatina' ),
-	// 	'description' => esc_html__( 'Add load more button to Blog archives page', 'cavatina' ),
-	// 	'section'     => 'loadmore_pagination',
-	// 	'default'     => false,
-	// ] );
+	
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'checkbox',
+		'settings'    => 'blog_loadmore',
+		'label'       => esc_html__( 'Blog Page Load more', 'cavatina' ),
+		'description' => esc_html__( 'Add load more button to Blog archives page', 'cavatina' ),
+		'section'     => 'loadmore_pagination',
+		'default'     => false,
+	] );
 
-	// Kirki::add_field( 'cavatina', [
-	// 	'type'        => 'checkbox',
-	// 	'settings'    => 'search_loadmore',
-	// 	'label'       => esc_html__( 'Search Page Load more', 'cavatina' ),
-	// 	'description' => esc_html__( 'Add load more button to Search result page', 'cavatina' ),
-	// 	'section'     => 'loadmore_pagination',
-	// 	'default'     => false,
-	// ] );
-
-	// Kirki::add_field( 'cavatina', [
-	// 	'type'        => 'checkbox',
-	// 	'settings'    => 'archive_loadmore',
-	// 	'label'       => esc_html__( 'Archives Page Load more', 'cavatina' ),
-	// 	'description' => esc_html__( 'Add load more button to archives page', 'cavatina' ),
-	// 	'section'     => 'loadmore_pagination',
-	// 	'default'     => false,
-	// ] );
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'checkbox',
+		'settings'    => 'archive_loadmore',
+		'label'       => esc_html__( 'Archives Page Load more', 'cavatina' ),
+		'description' => esc_html__( 'Add load more button to archives page', 'cavatina' ),
+		'section'     => 'loadmore_pagination',
+		'default'     => false,
+	] );
 	
 
 	/* Typography Settings */
@@ -241,8 +242,7 @@ if( function_exists( 'kirki' ) ) {
 		],
 	] );
 
-
-
+	
 	// Paragraph typography
 	Kirki::add_field( 'cavatina_theme', [
 		'type'        => 'typography',
@@ -264,4 +264,41 @@ if( function_exists( 'kirki' ) ) {
 		],
 	] );
 
+
+	// Social Media
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'linkedin_link',
+		'label'    => __( 'Linkedin', 'kirki' ),
+		'section'  => 'social_media',
+		'default'  => '',
+		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'facebook_link',
+		'label'    => __( 'Facebook', 'kirki' ),
+		'section'  => 'social_media',
+		'default'  => '',
+		'priority' => 11,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'github_link',
+		'label'    => __( 'Github', 'kirki' ),
+		'section'  => 'social_media',
+		'default'  => '',
+		'priority' => 12,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'twitter_link',
+		'label'    => __( 'Twitter', 'kirki' ),
+		'section'  => 'social_media',
+		'default'  => '',
+		'priority' => 13,
+	] );
 }

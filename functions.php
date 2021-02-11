@@ -72,16 +72,16 @@ if ( ! function_exists( 'cavatina_setup' ) ) :
 		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'wp_cavatina_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
+		// add_theme_support(
+		// 	'custom-background',
+		// 	apply_filters(
+		// 		'wp_cavatina_custom_background_args',
+		// 		array(
+		// 			'default-color' => 'ffffff',
+		// 			'default-image' => '',
+		// 		)
+		// 	)
+		// );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -180,7 +180,10 @@ function cavatina_scripts() {
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
 
-
+/**
+ * Remove admin bar bump
+ */
+add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
 
 /**
@@ -381,6 +384,7 @@ add_action( 'login_head', 'cavatina_filter_login_head', 100 );
  *	Load More
  */
 function my_load_more_scripts() {
+
 	global $wp_query; 
 	wp_enqueue_script('jquery');
 	wp_localize_script( 'cavatina-main-scripts', 'loadmore_params', array(
@@ -390,6 +394,7 @@ function my_load_more_scripts() {
 		'max_page' => $wp_query->max_num_pages
 	) );
  	wp_enqueue_script( 'cavatina-main-scripts' );
+	 
 }
 add_action( 'wp_enqueue_scripts', 'my_load_more_scripts' );
 
@@ -405,13 +410,13 @@ function loadmore_ajax_handler(){
 		$args['paged'] = sanitize_text_field( wp_unslash( $_POST['page'] )) + 1; 
 		$args['post_status'] = 'publish';
 		query_posts( $args );
+		$post_type = get_post_type( $post->ID );
+		
 		if( have_posts() ) :
 
 			// run the loop
 			while( have_posts() ) : the_post();
-			
-			get_template_part( 'template-parts/content', 'project' );
-			
+			get_template_part( 'template-parts/content',  get_post_type() );
 			endwhile;
 
 		endif;

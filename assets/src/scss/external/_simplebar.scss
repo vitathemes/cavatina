@@ -27,8 +27,8 @@
   position: relative;
   width: 100%;
   height: 100%;
-
   z-index: 20;
+
   &::before {
     @include media(tablet) {
       background-image: linear-gradient(top, #ffffff00 77.53%, #fff 99%);
@@ -44,6 +44,25 @@
       bottom: 10%;
       content: "\00a0";
       height: 30%;
+      position: fixed;
+      z-index: 10;
+      width: 50%;
+    }
+
+    @include media(wide) {
+      background-image: linear-gradient(top, #ffffff00 77.53%, #fff 99%);
+      background-image: -ms-linear-gradient(top, #ffffff00 77.53%, #fff 99%);
+      background-image: -o-linear-gradient(top, #ffffff00 77.53%, #fff 99%);
+      background-image: -webkit-linear-gradient(
+        top,
+        #ffffff00 35.53%,
+        #fff 90%
+      );
+      background-image: -moz-linear-gradient(top, #ffffff00 50%, #fff 99%);
+
+      bottom: 10%;
+      content: "\00a0";
+      height: 20%;
       position: fixed;
       z-index: 10;
       width: 50%;

@@ -40,52 +40,29 @@ add_action( 'wp_head', 'wp_cavatina_pingback_header' );
 
 
 function cavatina_get_pagination( $page , $query ) { 
-
 	if($page === "projects"){
 		if ( true == get_theme_mod( 'projects_loadmore', true ) ){
-			
 			return cavatina_get_loadmore( $query );
-	
 		} else {
 			return cavatina_get_default_pagination();
 		}
 	}
 
-	// if( $page === "search"){
+	if( $page === "blog"){
+		if ( true == get_theme_mod( 'blog_loadmore' ) ){
+			return cavatina_get_loadmore( $query );
+		} else {
+			return cavatina_get_default_pagination();
+		}
+	}
 
-	// 	if ( true == get_theme_mod( 'search_loadmore', true ) ){
-
-	// 		return cavatina_get_loadmore( $query );
-	
-	// 	} else {
-	// 		return cavatina_get_default_pagination();
-	// 	}
-
-	// }
-
-	// if( $page === "blog"){
-		
-	// 	if ( true == get_theme_mod( 'blog_loadmore', true ) ){
-
-	// 		return cavatina_get_loadmore( $query );
-	
-	// 	} else {
-	// 		return cavatina_get_default_pagination();
-	// 	}
-	// }
-
-	// if( $page === "archive"){
-		
-	// 	if ( true == get_theme_mod( 'archive_loadmore', true ) ){
-
-	// 		return cavatina_get_loadmore( $query );
-	
-	// 	} else {
-	// 		return cavatina_get_default_pagination();
-	// 	}
-	
-	// }
-
+	if( $page === "archive"){
+		if ( true == get_theme_mod( 'archive_loadmore' ) ){
+			return cavatina_get_loadmore( $query );
+		} else {
+			return cavatina_get_default_pagination();
+		}
+	}
 }
 
 
@@ -105,8 +82,6 @@ function cavatina_typography() {
 	$html = ':root {	
 	            --primary-color: '. $cavatina_primary_color .';
 	            --secondary-color: ' . $cavatina_secondary_color . ';
-	            --tertiary-color: ' . $cavatina_tertiary_color . ';
-	            --quaternary-color: ' . $cavatina_quaternary_color . ';
 			}';
 						
 	return $html;

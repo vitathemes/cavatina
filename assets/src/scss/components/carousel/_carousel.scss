@@ -140,10 +140,10 @@
 
 .c-carousel__more {
   font-size: 14px;
-  color: $cavatina_primary_color;
+  color: $cavatina_primary_color !important;
 
   &:hover {
-    color: $cavatina__main-primary-light-color;
+    color: $cavatina__main-primary-light-color !important;
   }
 
   @include media(tablet) {

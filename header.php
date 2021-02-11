@@ -6,7 +6,7 @@
 *
 * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
 *
-* @package wp-cavatina
+* @package cavatina
 */?>
 <!doctype html>
 <html <?php language_attributes();?>>

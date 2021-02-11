@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp-cavatina
+ * @package cavatina
  */
 
 get_header();
@@ -55,7 +55,7 @@ get_header();
                             */
                             get_template_part('template-parts/content', 'search');
                         endwhile;
-                            cavatina_get_default_pagination();
+                            cavatina_get_pagination( "archive" ,  $wp_query );
                     else :
                         get_template_part('template-parts/content', 'none');
                     endif;

@@ -211,8 +211,7 @@
   margin: 0;
   line-height: 41px;
   font-family: $font__semi-bold;
-  color: #000000;
-
+  color: $cavatina_primary_color;
   font-weight: normal;
 }
 
@@ -220,7 +219,7 @@
   font-family: $font__regular;
   font-size: 19px;
   line-height: 30px;
-  color: $cavatina__main-primary-light-color;
+  color: $cavatina_secondary_color;
   text-align: center;
   font-weight: normal;
   margin-top: 24px;
@@ -260,4 +259,19 @@
   .search-submit-mobile {
     display: none;
   }
+}
+
+/*------------------------------------*\
+  #Carousel Image showcase
+\*------------------------------------*/
+.o-page_image-overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(3, 3, 3, 0.418);
+
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
