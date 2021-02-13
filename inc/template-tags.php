@@ -191,30 +191,40 @@ if ( ! function_exists( 'cavatina_get_category' ) ) :
 	 */
 	function cavatina_get_category() {
 
-		$categories = get_categories( array(
-			'orderby' => 'name',
-			'order'   => 'ASC'
-		) );
+		// $categories = get_categories( array(
+		// 	'orderby' => 'name',
+		// 	'order'   => 'ASC'
+		// ) );
 		
+		
+		// foreach( $categories as $category ) {
+		// 	$category_link = sprintf( 
+		// 		'<a claass="c-post__category__anchor" href="%1$s" alt="%2$s">%3$s</a>',
+		// 		esc_url( get_category_link( $category->term_id ) ),
+		// 		esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ),
+		// 		esc_html( $category->name )
+		// 	);
+		// 	if(!empty($categoryList)) {
+		// 		$categoryList .= ', ';
+		// 	}
+		// 	$categoryList .=  sprintf( esc_html__( '%s', 'cavatina' ), $category_link ) ;
+		// } 
+		// echo wp_kses_post($categoryList);
+
+		$categories = get_the_category();
+		$separator = ', ';
+		$output = '';
 		$categoryList = '';
-
-		foreach( $categories as $category ) {
-			$category_link = sprintf( 
-				'<a claass="c-post__category__anchor" href="%1$s" alt="%2$s">%3$s</a>',
-				esc_url( get_category_link( $category->term_id ) ),
-				esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ),
-				esc_html( $category->name )
-			);
-			if(!empty($categoryList)) {
-				$categoryList .= ', ';
+		if ( ! empty( $categories ) ) {
+			foreach( $categories as $category ) {
+				/* translators: used between list items, there is a space after the comma */
+				$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
 			}
-			$categoryList .=  sprintf( esc_html__( '%s', 'cavatina' ), $category_link ) ;
-		} 
-
-		echo wp_kses_post($categoryList);
-
-
+			echo  wp_kses_post(trim( $output, $separator ));
+		}
 	}
+
+
 endif;
 
 
@@ -237,6 +247,18 @@ if ( ! function_exists( 'cavatina_get_date_my' ) ) :
 	function cavatina_get_date_my() {
 	
 		return get_the_date( "M Y" );
+		
+	}
+endif;
+
+
+if ( ! function_exists( 'cavatina_get_date_tertiary' ) ) :
+	/**
+	 * Prints HTML of the date.
+	 */
+	function cavatina_get_date_tertiary() {
+		
+		return get_the_date( "M d.y" );
 		
 	}
 endif;
@@ -482,9 +504,22 @@ function cavatina_get_slider( $postId ) {
 		}
 		else{
 
-		echo '<div class="c-carousel__single__cell">';
-			the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image js-carousel__single__cell__image', 'alt' => esc_html( get_the_title() ) ]);
-		echo '</div>';
+			if ( has_post_thumbnail() ) {
+
+				echo '<div class="c-carousel__single__cell">';
+					the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image js-carousel__single__cell__image', 'alt' => esc_html( get_the_title() ) ]);
+				echo '</div>';
+				
+			}
+			else{
+				
+				echo '<div class="c-carousel__single__cell">';
+				echo 	'<img class="c-carousel__single__cell__image js-carousel__single__cell__image" src="' . esc_url( get_stylesheet_directory_uri() ) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
+				echo '</div>';
+
+			}
+
+	
 		
 		}
 	}

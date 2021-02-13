@@ -22,12 +22,13 @@
   @include media(tablet) {
     height: 100%;
     padding-right: 60px;
-    padding-top: 110px;
+    padding-top: 90px;
     padding-bottom: 0px;
   }
+
   @include media(wide) {
-    margin-top: 150px;
-    padding-top: 50px;
+    margin-top: 100px;
+    padding-top: 60px;
   }
 
   .c-post__entery-content {

@@ -1,18 +1,9 @@
 jQuery(function ($) {
   /*------------------------------------*\
-      #Handle Loading animation
-  \*------------------------------------*/
-  $(window).load(function () {
-    setTimeout(function () {
-      $(".o-preloader").delay(1000).fadeOut();
-    }, 800);
-  });
-  /*------------------------------------*\
       #Handle Load More button
   \*------------------------------------*/
   $(document).ready(function () {
     const button = $(".js-pagination__load-more__btn");
-
     $(".js-pagination__load-more").click(function () {
       var loadMore = $(this),
         data = {
@@ -58,6 +49,26 @@ jQuery(function ($) {
   //   }, 1000);
   // });
 });
+
+//preloader fadeout
+const preloader = document.querySelector(".o-preloader");
+function fadeEffect() {
+  setInterval(function () {
+    if (!preloader.style.opacity) {
+      preloader.style.opacity = 1;
+    }
+    if (preloader.style.opacity > 0) {
+      preloader.style.opacity -= 0.1;
+    } else {
+      clearInterval(fadeEffect);
+    }
+  }, 1400);
+
+  setTimeout(function () {
+    preloader.style.display = "none";
+  }, 1600);
+}
+window.addEventListener("load", fadeEffect());
 
 // Check device is mobile or not
 function isDesktop() {
@@ -307,4 +318,21 @@ if (childFinder("body", "js-single__slider")) {
       },
     },
   });
+}
+
+// Remove at from comment
+if (childFinder("body", "comments-area")) {
+  const testContainer = document.querySelector(".comments-area");
+  let timeElement, timeElementCounter;
+  timeElement = testContainer.querySelectorAll("time");
+  for (
+    timeElementCounter = 0;
+    timeElementCounter < timeElement.length;
+    timeElementCounter++
+  ) {
+    let childHtml = timeElement[timeElementCounter].innerHTML;
+    let result = childHtml.replace("at", "");
+
+    timeElement[timeElementCounter].textContent = result;
+  }
 }

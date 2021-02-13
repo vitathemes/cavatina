@@ -21,11 +21,10 @@ if (function_exists('LibWp')) {
             'view_item'     => __('View Project', 'cavatina'),
             'all_items'     => __('All Projects', 'cavatina'),
         ])
-        ->setFeatures([
-            'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields',
-        ])
         ->setArgument('show_ui', true)
         ->setArgument('menu_position' , 5)
+        ->setArgument('show_in_rest' , true)
+        ->setArgument('supports' , array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields',))
         ->register();
 
     LibWp()->taxonomy()

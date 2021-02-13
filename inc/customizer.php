@@ -269,7 +269,7 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'link',
 		'settings' => 'linkedin_link',
-		'label'    => __( 'Linkedin', 'kirki' ),
+		'label'    => __( 'Linkedin', 'cavatina' ),
 		'section'  => 'social_media',
 		'default'  => '',
 		'priority' => 10,
@@ -278,7 +278,7 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'link',
 		'settings' => 'facebook_link',
-		'label'    => __( 'Facebook', 'kirki' ),
+		'label'    => __( 'Facebook', 'cavatina' ),
 		'section'  => 'social_media',
 		'default'  => '',
 		'priority' => 11,
@@ -287,7 +287,7 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'link',
 		'settings' => 'github_link',
-		'label'    => __( 'Github', 'kirki' ),
+		'label'    => __( 'Github', 'cavatina' ),
 		'section'  => 'social_media',
 		'default'  => '',
 		'priority' => 12,
@@ -296,7 +296,7 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'link',
 		'settings' => 'twitter_link',
-		'label'    => __( 'Twitter', 'kirki' ),
+		'label'    => __( 'Twitter', 'cavatina' ),
 		'section'  => 'social_media',
 		'default'  => '',
 		'priority' => 13,

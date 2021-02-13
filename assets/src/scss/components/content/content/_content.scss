@@ -27,6 +27,7 @@
   @include media(tablet) {
     height: max-content;
     overflow: hidden;
+    min-height: 90%;
   }
 }
 .c-content--search {

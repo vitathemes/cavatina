@@ -17,8 +17,8 @@
         <div class="c-footer__copy">
             <p class="c-footer__text">Cavatina theme by
                 <a class="c-footer__text__link" href="https://vitathemes.com/"> VitaThemes </a> |
-                <a class="c-footer__text__link" href="#"> TERMS OF USE </a> &
-                <a class="c-footer__text__link" href="<?php cavatina_get_privacy_policy(); ?>">PRIVACY POLICY.</a>
+                <a class="c-footer__text__link" href="#"> Terms of use </a> &
+                <a class="c-footer__text__link" href="<?php cavatina_get_privacy_policy(); ?>">Privacy Policy.</a>
             </p>
         </div>
     </div><!-- #.c-footer__context -->

@@ -255,6 +255,10 @@
 }
 .comment-body {
   margin-bottom: 40px;
+
+  @include media(tablet) {
+    margin-bottom: 35px;
+  }
 }
 
 .comment-author {

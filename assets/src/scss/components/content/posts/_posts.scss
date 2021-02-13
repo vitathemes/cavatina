@@ -37,6 +37,12 @@
       line-height: 20px;
     }
   }
+
+  .c-post__header {
+    @include media(tablet) {
+      margin-bottom: 8px;
+    }
+  }
 }
 
 .c-post__header {
@@ -73,6 +79,10 @@
 
   @include media(tablet) {
     margin-bottom: 8px;
+  }
+
+  @include media(wide) {
+    margin-bottom: 0px;
   }
 }
 
@@ -144,6 +154,12 @@
 
   @include media(tablet) {
     line-height: 17px;
+  }
+
+  a {
+    &:hover {
+      color: $cavatina__main-primary-color !important;
+    }
   }
 }
 

@@ -250,6 +250,12 @@
       font-size: 12px;
       line-height: 200%;
     }
+
+    a {
+      &:hover {
+        color: $cavatina__main-primary-color !important;
+      }
+    }
   }
 
   .flickity-viewport {
