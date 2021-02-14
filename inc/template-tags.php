@@ -204,7 +204,6 @@ if ( ! function_exists( 'cavatina_get_category' ) ) :
 		}
 	}
 
-
 endif;
 
 
@@ -231,10 +230,7 @@ if ( ! function_exists( 'cavatina_category_filter' ) ) :
 		}
 	}
 
-
 endif;
-
-
 
 
 if ( ! function_exists( 'cavatina_get_date' ) ) :
@@ -383,7 +379,6 @@ if (! function_exists('cavatina_get_privacy_policy')) :
 		
 	}
 endif;
-
 
 
 if (! function_exists('cavatina_get_current_page_name')) :
