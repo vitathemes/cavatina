@@ -20,10 +20,8 @@
     <header id="masthead" class="c-header c-header--home js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
-
                 <?php  cavatina_handle_logo(); ?>
                 <?php  cavatina_handle_description(); ?>
-
             </div>
             <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
             </button>

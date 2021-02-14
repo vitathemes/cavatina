@@ -1744,7 +1744,7 @@ img {
       width: max-content;
       min-width: 90px;
       position: fixed;
-      height: 80%;
+      height: calc(100% - 120px);
       border-right: 1px solid #e1e1e1;
       border-bottom: none;
       padding-top: 0px;
@@ -2425,39 +2425,14 @@ img {
     .c-container__content {
       height: 100%;
       padding-right: 60px;
-      padding-top: 90px;
+      padding-top: 115px;
       padding-bottom: 0px; } }
   @media only screen and (min-width: 1400px) {
     .c-container__content {
-      margin-top: 100px;
+      margin-top: 110px;
       padding-top: 60px; } }
   .c-container__content .c-post__entery-content {
     display: none; }
-
-/*------------------------------------*\
-  #Container Category
-\*------------------------------------*/
-.c-container__category {
-  transition: 1s all;
-  width: 100%;
-  height: 70px;
-  max-height: 0px;
-  display: none;
-  background: repeating-linear-gradient(45deg, #a12929, #030303 20px); }
-  @media only screen and (min-width: 980px) {
-    .c-container__category {
-      display: flex;
-      align-content: center;
-      justify-content: flex-start; } }
-
-.c-container__category.is-open {
-  max-height: 70px; }
-
-.c-container_category__content {
-  width: 35.5%;
-  height: 100%;
-  display: none;
-  background: rgba(131, 195, 255, 0.73); }
 
 /* Contact
 --------------------------------------------- */
@@ -2638,10 +2613,7 @@ img {
       vertical-align: top;
       position: relative;
       border-top: none;
-      padding-top: 3%; } }
-  @media only screen and (min-width: 1400px) {
-    .c-aside {
-      padding-top: 4%; } }
+      padding-top: 35px; } }
 
 .c-aside--blur {
   animation-name: blur;
@@ -2806,7 +2778,6 @@ img {
 \*------------------------------------*/
 .c-aside__title--category {
   display: none;
-  cursor: pointer;
   font-size: 14px;
   line-height: 17px;
   transition: 0.2s all;
@@ -2818,8 +2789,19 @@ img {
   @media only screen and (min-width: 1400px) {
     .c-aside__title--category {
       margin-top: 95px; } }
-  .c-aside__title--category:hover {
-    color: #000000; }
+
+.c-aside__category {
+  margin-left: 39px;
+  margin-top: 16px; }
+
+.c-aside__category__link {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--primary-color) !important;
+  line-height: 17px; }
+  .c-aside__category__link:hover {
+    color: #767676 !important; }
 
 /* Carousel
 --------------------------------------------- */
@@ -3824,9 +3806,6 @@ img {
       margin-top: calc(40vh);
       margin-right: 25px;
       min-height: calc(50vh); } }
-  @media only screen and (min-width: 1400px) {
-    .c-single__context__holder {
-      margin-top: calc(43vh); } }
 
 .c-single__context__holder--full-height .c-single__context {
   width: 100%;

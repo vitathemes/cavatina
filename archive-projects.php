@@ -15,7 +15,8 @@ get_header();
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
                 <span class="c-aside__title"><?php cavatina_post_type_name(); ?></span>
-                <!-- <span class="c-aside__title c-aside__title--category">Category</span> -->
+                <span class="c-aside__title c-aside__title--category">Category</span>
+                <div class="c-aside__category"><?php cavatina_category_filter("c-aside__category__link" , ""); ?></div>
             </div>
         </div>
     </div>
@@ -43,9 +44,6 @@ get_header();
     <div class="o-page__col c-content c-content--max-height">
         <div class="c-container site-main__container">
             <div class="c-container__content site-main__content">
-                <section class="c-container__category">
-                    <div class="c-container_category__content"></div>
-                </section>
                 <?php if (have_posts()) :
                     /* Start the Loop */
                     while (have_posts()) : the_post();

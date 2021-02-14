@@ -34,20 +34,6 @@ jQuery(function ($) {
       });
     });
   });
-
-  /*------------------------------------*\
-      #Handle CategoryToggle
-  \*------------------------------------*/
-  // $(".c-aside__title--category").click(function () {
-  //   $(".js-page__main").animate({ scrollTop: 0 }, 300);
-  //   setTimeout(() => {
-  //     $(".c-container__category").toggleClass("is-open");
-  //   }, 300);
-
-  //   setTimeout(() => {
-  //     $(".c-container_category__content").fadeToggle("slow");
-  //   }, 1000);
-  // });
 });
 
 //preloader fadeout
@@ -332,7 +318,11 @@ if (childFinder("body", "comments-area")) {
   ) {
     let childHtml = timeElement[timeElementCounter].innerHTML;
     let result = childHtml.replace("at", "");
-
     timeElement[timeElementCounter].textContent = result;
   }
 }
+
+// lazy load image
+// var lazyLoadInstance = new LazyLoad({
+//   elements_selector: "img",
+// });

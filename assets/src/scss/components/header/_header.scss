@@ -16,7 +16,7 @@
     width: max-content;
     min-width: 90px;
     position: fixed;
-    height: 80%;
+    height: calc(100% - 120px);
     border-right: 1px solid #e1e1e1;
     border-bottom: none;
     padding-top: 0px;

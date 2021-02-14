@@ -7,6 +7,7 @@
  * @package cavatina
  */
 
+
 if ( ! defined( 'CAVATINA_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'CAVATINA_VERSION', '1.0.0' );
@@ -164,8 +165,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 
-
-
 /**
  * Enqueue scripts and styles.
  */
@@ -194,7 +193,6 @@ function cavatina_change_submit_button_text( $defaults ) {
     return $defaults;
 }
 add_filter( 'comment_form_defaults', 'cavatina_change_submit_button_text' );
-
 
 
 /**
@@ -249,6 +247,17 @@ function cavatina_total_post_types( $isText = true ) {
 	
 }
 
+
+/**
+ * Allow svg support 
+ */
+function codeless_file_types_to_uploads($file_types){
+	$new_filetypes = array();
+	$new_filetypes['svg'] = 'image/svg+xml';
+	$file_types = array_merge($file_types, $new_filetypes );
+	return $file_types;
+	}
+	add_filter('upload_mimes', 'codeless_file_types_to_uploads');
 
 /**
  * Change comment form textarea placeholder
@@ -400,11 +409,11 @@ add_action( 'login_head', 'cavatina_filter_login_head', 100 );
  */
 function my_load_more_scripts() {
 
-	global $wp_query; 
+	global $wp_query;
 	wp_enqueue_script('jquery');
 	wp_localize_script( 'cavatina-main-scripts', 'loadmore_params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', 
-		'posts' => json_encode( $wp_query->query_vars ), 
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+		'posts' => json_encode( $wp_query->query_vars ),
 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'max_page' => $wp_query->max_num_pages
 	) );

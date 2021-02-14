@@ -5,7 +5,7 @@
  * @package cavatina
  */
 
-
+ 
 /**
  * Register Post-type and Taxonomy
  */
@@ -23,6 +23,17 @@ if (function_exists('LibWp')) {
         ])
         ->setArgument('show_ui', true)
         ->setArgument('menu_position' , 5)
+        ->setArgument('show_in_rest' , true)
+        ->setArgument('taxonomies' , array( 'category' ))
+        ->setArgument('hierarchical' , false)
+        ->setArgument('public' , true)
+        ->setArgument('show_in_nav_menus' , true)
+        ->setArgument('show_in_admin_bar' , true)
+        ->setArgument('can_export' , true)
+        ->setArgument('has_archive' , true)
+        ->setArgument('exclude_from_search' , false)
+        ->setArgument('publicly_queryable' , true)
+        ->setArgument('capability_type' , 'post')
         ->setArgument('show_in_rest' , true)
         ->setArgument('supports' , array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields',))
         ->register();

@@ -161,10 +161,6 @@
     margin-right: 25px;
     min-height: calc(50vh);
   }
-
-  @include media(wide) {
-    margin-top: calc(43vh);
-  }
 }
 
 .c-single__context__holder--full-height {

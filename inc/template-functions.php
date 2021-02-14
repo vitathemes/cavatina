@@ -78,13 +78,14 @@ function cavatina_typography() {
 	} else {
 		$cavatina_secondary_color = get_theme_mod( 'typography_secondary_color' );
 	}
-
+	
 	$html = ':root {	
 	            --primary-color: '. $cavatina_primary_color .';
 	            --secondary-color: ' . $cavatina_secondary_color . ';
 			}';
 						
 	return $html;
+	
 }
 
 add_action( 'admin_head', 'cavatina_theme_settings' );
