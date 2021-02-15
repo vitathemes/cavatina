@@ -26,22 +26,10 @@ get_header();
     </div>
 </aside>
 
-<!-- Searchbar Mobile -->
-<section class="c-search">
-    <div class="c-search__content">
-        <div class="c-search__wrapper">
-            <div class="c-search__context">
-                <span class="c-search__title">Search</span>
-            </div>
-            <div class="c-search__icon js-search__icon"></div>
-        </div>
-        <div class="c-search__form js-search__form">
-            <div class="c-search__holder">
-                <?php get_search_form(); ?>
-            </div>
-        </div>
-    </div>
-</section>
+<?php
+    // get mobile search bar
+    get_template_part( 'template-parts/content', 'searchbar' );
+?>
 
 <!-- Main content-->
 <main id="primary" class="o-page__main js-page__main o-page__main--page-single">
@@ -53,7 +41,7 @@ get_header();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
-				comments_template();
+				 comments_template();
 			endif;
 
 		endwhile; // End of the loop.

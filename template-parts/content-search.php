@@ -24,7 +24,7 @@
 
             echo '<span class="c-post__category">'. esc_html( cavatina_get_category() ) .'</span>';
             echo '<span class="o-bullet"></span>';
-            echo '<span class="c-post__date">'.esc_html( cavatina_get_date()) .'</span>';
+            echo '<span class="c-post__date">'.esc_html( cavatina_get_date() ) .'</span>';
 
             ?>
         </div><!-- .entry-meta -->

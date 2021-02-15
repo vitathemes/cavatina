@@ -26,7 +26,7 @@
             ?>
             <div class="c-post__meta c-post__meta--left-space entry-meta">
                 <?php
-                    echo '<span class="c-post__category">' .  esc_html(cavatina_get_category()) .'</span>';
+                    echo '<span class="c-post__category">' .  esc_html( cavatina_get_category() ) .'</span>';
                 ?>
             </div><!-- .entry-meta -->
         </div>

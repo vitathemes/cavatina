@@ -15,29 +15,20 @@ get_header();
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
                 <span class="c-aside__title"><?php cavatina_post_type_name(); ?></span>
-                <span class="c-aside__title c-aside__title--category">Category</span>
-                <div class="c-aside__category"><?php cavatina_category_filter("c-aside__category__link" , ""); ?></div>
+                <span class="c-aside__title c-aside__title--category">
+                    <a href=<?php echo "/".esc_html( get_post_type()) ?>> Category </a></span>
+                <div class="c-aside__category"><?php cavatina_taxonomy_filter("c-aside__category__link" , ""); ?></div>
             </div>
         </div>
     </div>
 </aside>
 
-<!-- Searchbar Mobile -->
-<section class="c-search">
-    <div class="c-search__content">
-        <div class="c-search__wrapper">
-            <div class="c-search__context">
-                <span class="c-search__title">Search</span>
-            </div>
-            <div class="c-search__icon js-search__icon"></div>
-        </div>
-        <div class="c-search__form js-search__form">
-            <div class="c-search__holder">
-                <?php get_search_form(); ?>
-            </div>
-        </div>
-    </div>
-</section>
+
+<?php
+    // get mobile search bar
+    get_template_part( 'template-parts/content', 'searchbar' );
+?>
+
 
 <!-- Main content-->
 <main class="o-page__main js-page__main o-page__main--projects">

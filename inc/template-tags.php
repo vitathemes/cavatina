@@ -188,45 +188,63 @@ function cavatina_handle_logo(){
 
 if ( ! function_exists( 'cavatina_get_category' ) ) :
 	/**
-	 * Prints HTML of the categories.
+	 * Return category based on post type 
 	 */
 	function cavatina_get_category() {
 
-		$categories = get_the_category();
-		$separator = ', ';
-		$output = '';
-		if ( ! empty( $categories ) ) {
-			foreach( $categories as $category ) {
-				/* translators: used between list items, there is a space after the comma */
-				$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+		if( ! empty(get_the_category()) ){
+			/* get category */
+			$categories = get_the_category();
+			$separator = ', ';
+			$output = '';
+			if ( ! empty( $categories ) ) {
+				foreach( $categories as $category ) {
+					/* translators: used between list items, there is a space after the comma */
+					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+				}
+				echo  wp_kses_post(trim( $output, $separator ));
 			}
-			echo  wp_kses_post(trim( $output, $separator ));
+		}
+	
+		if( ! empty(get_the_terms(0, 'project_category')) ){
+			/* get taxonomy  */
+			$custom_taxonomy = get_the_terms(0, 'project_category');
+			$separate = ', ';
+			$output = '';
+			if ($custom_taxonomy) {
+				foreach ($custom_taxonomy as $custom_tax) {
+					/* translators: used between list items, there is a space after the comma */
+					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_term_link( $custom_tax->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $custom_tax->name ) ) . '">' . esc_html( $custom_tax->name ) . '</a>' . $separate;
+				}
+				echo  wp_kses_post(trim( $output , $separate ));
+			}	
 		}
 	}
 
 endif;
 
 
-
-
-if ( ! function_exists( 'cavatina_category_filter' ) ) :
+if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 	/**
-	 * Prints HTML of the categories.
+	 *  Return taxonomy filter
 	 */
-	function cavatina_category_filter( $className = "" ,  $getSeparator = ", ") {
-
-		$categories = get_the_category();
-		$separator = $getSeparator;
-		$output = '';
-		if( ! empty($className)){
-			$className = 'class="'. $className.'"';
-		}
-		if ( ! empty( $categories ) ) {
-			foreach( $categories as $category ) {
-				/* translators: used between list items, there is a space after the comma */
-				$output .= '<a '. $className .' href="/'.get_post_type().'/?cat=' . esc_html( $category->cat_ID  ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+	function cavatina_taxonomy_filter( $className = "" ,  $getSeparator = ", ") {
+		
+		$taxonomies = get_terms( array(
+			'taxonomy' => 'project_category',
+			'hide_empty' => false
+		) );
+		 
+		if ( !empty($taxonomies) ) {
+			$output = '';
+			foreach( $taxonomies as $category ) {
+			
+				if ($category->count != 0) {
+					/* translators: used between list items */
+					$output .= '<a class="c-aside__category__link" href="/'.get_post_type().'/?project_category=' . esc_html( $category->name ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+				}
 			}
-			echo  wp_kses_post(trim( $output, $separator ));
+			echo wp_kses_post(trim( $output ));
 		}
 	}
 

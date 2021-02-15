@@ -46,13 +46,13 @@ function fadeEffect() {
     if (preloader.style.opacity > 0) {
       preloader.style.opacity -= 0.1;
     } else {
-      clearInterval(fadeEffect);
+      if (!preloader.style.opacity === 0) {
+        clearInterval(fadeEffect);
+      } else {
+        preloader.style.display = "none";
+      }
     }
-  }, 1400);
-
-  setTimeout(function () {
-    preloader.style.display = "none";
-  }, 1600);
+  }, 30);
 }
 window.addEventListener("load", fadeEffect());
 
@@ -212,7 +212,6 @@ function capitalizeFirstLetter() {
 capitalizeFirstLetter();
 
 // Main page Carousels
-
 if (childFinder("body", "js-carousel__context")) {
   // Carousel (Main)
   let carousel = document.querySelector(".js-carousel__context");
@@ -247,7 +246,7 @@ if (childFinder("body", "js-carousel__context")) {
     },
   });
 
-  // Carousel (Main Child)j - text Mobile
+  // Carousel (Main Child) - text Mobile
   let carouselTextMobile = document.querySelector(
     ".js-carousel__post-titles--mobile"
   );
@@ -321,8 +320,3 @@ if (childFinder("body", "comments-area")) {
     timeElement[timeElementCounter].textContent = result;
   }
 }
-
-// lazy load image
-// var lazyLoadInstance = new LazyLoad({
-//   elements_selector: "img",
-// });

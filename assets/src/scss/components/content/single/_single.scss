@@ -105,6 +105,14 @@
       margin-left: 6px;
       background-color: #ff3636;
     }
+
+    a {
+      color: $cavatina_secondary_color;
+
+      &:hover {
+        color: $cavatina__main-primary-color;
+      }
+    }
   }
 }
 

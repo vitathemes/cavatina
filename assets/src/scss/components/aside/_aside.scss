@@ -244,8 +244,13 @@
 }
 
 .c-aside__category {
+  display: none;
   margin-left: 39px;
-  margin-top: 16px;
+  margin-top: 8px;
+
+  @include media(tablet) {
+    display: block;
+  }
 }
 
 .c-aside__category__link {
