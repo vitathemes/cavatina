@@ -48,7 +48,6 @@
   animation-name: blurReverse;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-
   overflow: auto;
   height: max-content;
   padding-bottom: 75px;
@@ -61,7 +60,6 @@
     text-align: left;
     padding-bottom: 0px;
   }
-
   @include media(wide) {
     width: calc(99% - 165px);
   }

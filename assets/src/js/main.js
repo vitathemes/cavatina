@@ -5,6 +5,10 @@ jQuery(function ($) {
   $(document).ready(function () {
     const button = $(".js-pagination__load-more__btn");
     $(".js-pagination__load-more").click(function () {
+      setTimeout(function () {
+        lazyLoadInstance.update();
+      }, 1000);
+
       var loadMore = $(this),
         data = {
           action: "loadmore",
@@ -41,7 +45,7 @@ jQuery(function ($) {
 const preloader = document.querySelector(".o-preloader");
 function fadeEffect() {
   setInterval(function () {
-    setTimeout(() => {
+    setTimeout(function () {
       if (!preloader.style.opacity) {
         preloader.style.opacity = 1;
       }
