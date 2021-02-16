@@ -235,6 +235,7 @@ if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 			'hide_empty' => false
 		) );
 		 
+		$separator = $getSeparator;
 		if ( !empty($taxonomies) ) {
 			$output = '';
 			foreach( $taxonomies as $category ) {
