@@ -17,7 +17,7 @@ get_header();
                 <span class="c-aside__title"><?php cavatina_post_type_name(); ?></span>
                 <span class="c-aside__title c-aside__title--category">
                     <a href=<?php echo "/".esc_html( get_post_type()) ?>> Category </a></span>
-                <div class="c-aside__category"><?php cavatina_taxonomy_filter("c-aside__category__link" , ""); ?></div>
+                <div class="c-aside__category"><?php cavatina_taxonomy_filter("c-aside__category__link" , " "); ?></div>
             </div>
         </div>
     </div>
