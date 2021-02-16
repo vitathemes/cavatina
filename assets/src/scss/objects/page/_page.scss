@@ -53,6 +53,9 @@
     text-align: left;
     padding-bottom: 0px;
   }
+  @include media(wide) {
+    width: calc(99% - 169px);
+  }
 }
 
 .o-page__main--blur {

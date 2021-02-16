@@ -41,19 +41,21 @@ jQuery(function ($) {
 const preloader = document.querySelector(".o-preloader");
 function fadeEffect() {
   setInterval(function () {
-    if (!preloader.style.opacity) {
-      preloader.style.opacity = 1;
-    }
-    if (preloader.style.opacity > 0) {
-      preloader.style.opacity -= 0.1;
-    } else {
-      if (!preloader.style.opacity === 0) {
-        clearInterval(fadeEffect);
-      } else {
-        preloader.style.display = "none";
+    setTimeout(() => {
+      if (!preloader.style.opacity) {
+        preloader.style.opacity = 1;
       }
-    }
-  }, 30);
+      if (preloader.style.opacity > 0) {
+        preloader.style.opacity -= 0.1;
+      } else {
+        if (!preloader.style.opacity === 0) {
+          clearInterval(fadeEffect);
+        } else {
+          preloader.style.display = "none";
+        }
+      }
+    }, 1000);
+  }, 10);
 }
 window.addEventListener("load", fadeEffect());
 

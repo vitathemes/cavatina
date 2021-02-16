@@ -1327,6 +1327,9 @@ html {
       display: inline-block;
       text-align: left;
       padding-bottom: 0px; } }
+  @media only screen and (min-width: 1400px) {
+    .o-page__main {
+      width: calc(99% - 169px); } }
 
 .o-page__main--blur {
   animation-name: blur !important;
@@ -1929,12 +1932,12 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 55%; } }
+    padding-top: 60%; } }
 
 @media only screen and (min-width: 1400px) {
   .c-header--home .c-header__holder {
     padding-bottom: 0;
-    padding-top: 90%; } }
+    padding-top: 100%; } }
 
 @media only screen and (min-width: 980px) {
   .c-header--home .c-header__holder .c-header__logo {
