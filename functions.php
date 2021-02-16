@@ -7,6 +7,7 @@
  * @package cavatina
  */
 
+
 if ( ! defined( 'CAVATINA_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'CAVATINA_VERSION', '1.0.0' );
@@ -164,8 +165,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 
-
-
 /**
  * Enqueue scripts and styles.
  */
@@ -178,7 +177,6 @@ function cavatina_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
-
 
 /**
  * Remove admin bar bump
@@ -196,15 +194,28 @@ function cavatina_change_submit_button_text( $defaults ) {
 add_filter( 'comment_form_defaults', 'cavatina_change_submit_button_text' );
 
 
-
 /**
  * change comment date format
  */
 function cavatina_change_comment_date_format( $comment_date ) {
-    $comment_date = date("F j.Y");
+    
+	$comment_date = date("M d.y");
     return $comment_date;
+
 }
 add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
+
+ 
+// Remove comment time
+function wpb_remove_comment_time($date, $d, $comment) { 
+    if ( !is_admin() ) {
+            return;
+    } else { 
+            return $date;
+    }
+}
+add_filter( 'get_comment_time', 'wpb_remove_comment_time', 10, 3);
+
 
 /**
  * count number of posts in a page
@@ -224,7 +235,7 @@ function cavatina_post_type_name() {
 /**
  * count number of posts types (project) in a page
  */
-function cavatina_total_post_types($isText = true) {
+function cavatina_total_post_types( $isText = true ) {
 
 	if($isText === true){
 		printf(esc_html($count_posts = wp_count_posts( 'projects' )->publish));
@@ -232,6 +243,7 @@ function cavatina_total_post_types($isText = true) {
 	else{
 		return $count_posts = wp_count_posts( 'projects' )->publish;
 	}
+	
 }
 
 
@@ -314,6 +326,7 @@ function cavatina_get_post_number3(){
  * Auto decrement number per posts ( in pages like archive-projects... )
  */
 function cavatina_get_inverse_post_number(){
+	
 	global $wp_query;
     $posts_per_page 	= get_option('posts_per_page');
 	$paged          	= (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -385,11 +398,11 @@ add_action( 'login_head', 'cavatina_filter_login_head', 100 );
  */
 function my_load_more_scripts() {
 
-	global $wp_query; 
+	global $wp_query;
 	wp_enqueue_script('jquery');
 	wp_localize_script( 'cavatina-main-scripts', 'loadmore_params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', 
-		'posts' => json_encode( $wp_query->query_vars ), 
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+		'posts' => json_encode( $wp_query->query_vars ),
 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'max_page' => $wp_query->max_num_pages
 	) );

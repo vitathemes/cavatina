@@ -20,10 +20,8 @@
     <header id="masthead" class="c-header c-header--home js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
-
                 <?php  cavatina_handle_logo(); ?>
                 <?php  cavatina_handle_description(); ?>
-
             </div>
             <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
             </button>
@@ -95,7 +93,8 @@
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="c-carousel__cell">
                                 <a href="<?php echo esc_html(get_permalink()); ?>">
-                                    <?php cavatina_get_home_carousel_thumbnail(); ?>
+                                    <?php //cavatina_get_home_carousel_thumbnail(); ?>
+                                    <?php cavatina_get_thumbnail_with_preloader("c-carousel__image"); ?>
                                 </a>
                             </div>
                             <?php endwhile; wp_reset_query(); ?>

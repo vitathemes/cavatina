@@ -20,10 +20,10 @@
 		?>
         <div class="c-post__meta entry-meta">
             <?php
-
+            
                 echo '<div class="c-post__category">'. esc_html( cavatina_get_category() ) .'</div>';
                 echo '<span class="o-bullet o-bullet--sm"></span>';
-				echo '<span class="c-post__date">'. esc_html( cavatina_get_date() ) .'</span>';
+				echo '<span class="c-post__date">'. esc_html( cavatina_get_date_tertiary() ) .'</span>';
 
 			?>
         </div><!-- .entry-meta -->
@@ -31,9 +31,10 @@
 
     <div class="c-post__thumbnail">
         <a href=<?php the_permalink() ?>>
-            <?php cavatina_get_posts_archive_thumbnail()  ?>
+            <?php cavatina_get_thumbnail_with_preloader("c-post__thumbnail__image")  ?>
         </a>
     </div>
+
     <div class="entry-content">
         <?php
 		wp_link_pages(

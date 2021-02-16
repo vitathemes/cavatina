@@ -7,23 +7,21 @@
   position: relative;
   z-index: 50;
   top: 0;
-
+  background-color: $color__background-body;
   padding-top: 25px;
   padding-bottom: 25px;
 
   @include media(tablet) {
-    left: 0;
     width: max-content;
     min-width: 90px;
     position: fixed;
-    height: 80%;
+    height: calc(100% - 120px);
     border-right: 1px solid #e1e1e1;
     border-bottom: none;
     padding-top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     top: 50%;
     left: 0;
     transform: translate(0%, -50%);
@@ -179,7 +177,7 @@
     width: 12px;
     height: 0;
     border-bottom: 1px solid #000;
-    transform: rotate(45deg) translateY(-4px);
+    transform: rotate(50deg) translateY(-4px);
     bottom: 0;
     right: 0;
   }
@@ -237,12 +235,12 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 55%;
+      padding-top: 60%;
     }
 
     @include media(wide) {
       padding-bottom: 0;
-      padding-top: 90%;
+      padding-top: 100%;
     }
 
     .c-header__logo {
@@ -364,7 +362,7 @@
     @include media(tablet) {
       padding-top: 12px;
       margin-left: 5px;
-      margin-top: 10px;
+      margin-top: 0px;
     }
 
     .s-nav {
@@ -433,7 +431,7 @@
 
 .space-top {
   @include media(tablet) {
-    padding-top: 65%;
+    padding-top: 63%;
   }
 }
 

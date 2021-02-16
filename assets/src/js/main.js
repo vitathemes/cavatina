@@ -1,19 +1,14 @@
 jQuery(function ($) {
   /*------------------------------------*\
-      #Handle Loading animation
-  \*------------------------------------*/
-  $(window).load(function () {
-    setTimeout(function () {
-      $(".o-preloader").delay(1000).fadeOut();
-    }, 800);
-  });
-  /*------------------------------------*\
       #Handle Load More button
   \*------------------------------------*/
   $(document).ready(function () {
     const button = $(".js-pagination__load-more__btn");
-
     $(".js-pagination__load-more").click(function () {
+      setTimeout(function () {
+        lazyLoadInstance.update();
+      }, 1000);
+
       var loadMore = $(this),
         data = {
           action: "loadmore",
@@ -43,21 +38,30 @@ jQuery(function ($) {
       });
     });
   });
-
-  /*------------------------------------*\
-      #Handle CategoryToggle
-  \*------------------------------------*/
-  // $(".c-aside__title--category").click(function () {
-  //   $(".js-page__main").animate({ scrollTop: 0 }, 300);
-  //   setTimeout(() => {
-  //     $(".c-container__category").toggleClass("is-open");
-  //   }, 300);
-
-  //   setTimeout(() => {
-  //     $(".c-container_category__content").fadeToggle("slow");
-  //   }, 1000);
-  // });
+  // End Loadmore handling
 });
+
+//preloader fadeout
+const preloader = document.querySelector(".o-preloader");
+function fadeEffect() {
+  setInterval(function () {
+    setTimeout(function () {
+      if (!preloader.style.opacity) {
+        preloader.style.opacity = 1;
+      }
+      if (preloader.style.opacity > 0) {
+        preloader.style.opacity -= 0.1;
+      } else {
+        if (!preloader.style.opacity === 0) {
+          clearInterval(fadeEffect);
+        } else {
+          preloader.style.display = "none";
+        }
+      }
+    }, 1000);
+  }, 10);
+}
+window.addEventListener("load", fadeEffect());
 
 // Check device is mobile or not
 function isDesktop() {
@@ -215,7 +219,6 @@ function capitalizeFirstLetter() {
 capitalizeFirstLetter();
 
 // Main page Carousels
-
 if (childFinder("body", "js-carousel__context")) {
   // Carousel (Main)
   let carousel = document.querySelector(".js-carousel__context");
@@ -250,7 +253,7 @@ if (childFinder("body", "js-carousel__context")) {
     },
   });
 
-  // Carousel (Main Child)j - text Mobile
+  // Carousel (Main Child) - text Mobile
   let carouselTextMobile = document.querySelector(
     ".js-carousel__post-titles--mobile"
   );
@@ -308,3 +311,24 @@ if (childFinder("body", "js-single__slider")) {
     },
   });
 }
+
+// Remove at from comment
+if (childFinder("body", "comments-area")) {
+  const testContainer = document.querySelector(".comments-area");
+  let timeElement, timeElementCounter;
+  timeElement = testContainer.querySelectorAll("time");
+  for (
+    timeElementCounter = 0;
+    timeElementCounter < timeElement.length;
+    timeElementCounter++
+  ) {
+    let childHtml = timeElement[timeElementCounter].innerHTML;
+    let result = childHtml.replace("at", "");
+    timeElement[timeElementCounter].textContent = result;
+  }
+}
+
+// lazy load image
+var lazyLoadInstance = new LazyLoad({
+  elements_selector: [".c-carousel__image", ".c-post__thumbnail__image"],
+});

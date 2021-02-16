@@ -21,11 +21,13 @@
 }
 
 .c-post--project {
-  .c-post__category__anchor {
+  .c-post__meta__link {
     font-size: 12px;
+    line-height: 15px;
 
     @include media(tablet) {
       font-size: 14px;
+      line-height: 17px;
     }
   }
 }
@@ -34,7 +36,13 @@
     font-size: 14px;
     line-height: 17px;
     @include media(tablet) {
-      line-height: 20px;
+      line-height: 17px;
+    }
+  }
+
+  .c-post__header {
+    @include media(tablet) {
+      margin-bottom: 8px;
     }
   }
 }
@@ -45,11 +53,13 @@
   width: 100%;
 
   @include media(tablet) {
-    min-height: 70px;
-    margin-bottom: 16px;
+    min-height: 60px;
+    max-height: 60px;
   }
 
   @include media(wide) {
+    min-height: 70px;
+    max-height: 70px;
     margin-bottom: 0px;
   }
 }
@@ -73,6 +83,10 @@
 
   @include media(tablet) {
     margin-bottom: 8px;
+  }
+
+  @include media(wide) {
+    margin-bottom: 0px;
   }
 }
 
@@ -144,6 +158,12 @@
 
   @include media(tablet) {
     line-height: 17px;
+  }
+}
+
+.c-post__meta__link {
+  &:hover {
+    color: $cavatina__main-primary-color !important;
   }
 }
 

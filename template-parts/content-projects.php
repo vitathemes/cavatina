@@ -7,10 +7,9 @@
  * @package cavatina
  */
 ?>
-<?php  $postNumber = cavatina_deciaml_post_number(); ?>
 
-<article id="post-<?php echo esc_html($postNumber); ?>"
-    <?php post_class( 'c-post c-post--archive c-post--project' ); ?>>
+<?php  $postNumber = cavatina_deciaml_post_number(); ?>
+<article id="post-<?php echo esc_html( $postNumber ); ?>" <?php post_class( 'c-post c-post--project' ); ?>>
     <header class="c-post__header c-post__header--space-height entry-header">
 
         <div class="c-post__header__col c-post__header__col--left">
@@ -27,13 +26,17 @@
             ?>
             <div class="c-post__meta c-post__meta--left-space entry-meta">
                 <?php
-                    echo '<span class="c-post__category">' .  cavatina_get_category() .'</span>';
+                    echo '<span class="c-post__category">' .  esc_html( cavatina_get_category() ) .'</span>';
                 ?>
             </div><!-- .entry-meta -->
         </div>
     </header><!-- .entry-header -->
 
-    <?php cavatina_get_posts_archive_thumbnail()  ?>
+    <div class="c-post__thumbnail">
+        <a href=<?php the_permalink() ?>>
+            <?php cavatina_get_thumbnail_with_preloader("c-post__thumbnail__image")  ?>
+        </a>
+    </div>
 
     <div class="c-post__excerpt">
         <?php the_excerpt() ?>

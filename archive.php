@@ -14,29 +14,16 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
-                <span class="c-aside__title"><?php cavatina_post_type_name();  ?></span>
+                <span class="c-aside__title">Archives</span>
             </div>
         </div>
-
     </div>
 </aside>
 
-<!-- Searchbar Mobile -->
-<section class="c-search">
-    <div class="c-search__content">
-        <div class="c-search__wrapper">
-            <div class="c-search__context">
-                <span class="c-search__title">Search</span>
-            </div>
-            <div class="c-search__icon js-search__icon"></div>
-        </div>
-        <div class="c-search__form js-search__form">
-            <div class="c-search__holder">
-                <?php get_search_form(); ?>
-            </div>
-        </div>
-    </div>
-</section>
+<?php
+    // get mobile search bar
+    get_template_part( 'template-parts/searchbar');
+?>
 
 <!-- Main content-->
 <main class="o-page__main js-page__main">
@@ -53,7 +40,7 @@ get_header();
                             * If you want to override this in a child theme, then include a file
                             * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                             */
-                            get_template_part('template-parts/content', 'search');
+                            get_template_part('template-parts/content', get_post_type());
                         endwhile;
                             cavatina_get_pagination( "archive" ,  $wp_query );
                     else :

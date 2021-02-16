@@ -22,11 +22,7 @@
     vertical-align: top;
     position: relative;
     border-top: none;
-    padding-top: 3%;
-  }
-
-  @include media(wide) {
-    padding-top: 4%;
+    padding-top: 35px;
   }
 }
 
@@ -114,8 +110,6 @@
     height: 100%;
     align-items: flex-start;
     justify-content: center;
-    // padding-left: 16px;
-    // padding-right: 16px;
   }
 
   @include media(wide) {
@@ -235,7 +229,6 @@
 \*------------------------------------*/
 .c-aside__title--category {
   display: none;
-  cursor: pointer;
   font-size: 14px;
   line-height: 17px;
   transition: 0.2s all;
@@ -248,8 +241,25 @@
   @include media(wide) {
     margin-top: 95px;
   }
+}
 
+.c-aside__category {
+  display: none;
+  margin-left: 39px;
+  margin-top: 8px;
+
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.c-aside__category__link {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  color: $cavatina_primary_color !important;
+  line-height: 17px;
   &:hover {
-    color: $cavatina__main-primary-color;
+    color: $cavatina__main-primary-light-color !important;
   }
 }
