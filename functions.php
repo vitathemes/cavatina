@@ -178,7 +178,6 @@ function cavatina_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
-
 /**
  * Remove admin bar bump
  */
@@ -327,6 +326,7 @@ function cavatina_get_post_number3(){
  * Auto decrement number per posts ( in pages like archive-projects... )
  */
 function cavatina_get_inverse_post_number(){
+	
 	global $wp_query;
     $posts_per_page 	= get_option('posts_per_page');
 	$paged          	= (get_query_var('paged')) ? get_query_var('paged') : 1;

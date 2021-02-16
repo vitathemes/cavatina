@@ -34,6 +34,7 @@ jQuery(function ($) {
       });
     });
   });
+  // End Loadmore handling
 });
 
 //preloader fadeout
@@ -320,3 +321,8 @@ if (childFinder("body", "comments-area")) {
     timeElement[timeElementCounter].textContent = result;
   }
 }
+
+// lazy load image
+var lazyLoadInstance = new LazyLoad({
+  elements_selector: [".c-carousel__image", ".c-post__thumbnail__image"],
+});

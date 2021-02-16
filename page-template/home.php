@@ -93,7 +93,8 @@
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="c-carousel__cell">
                                 <a href="<?php echo esc_html(get_permalink()); ?>">
-                                    <?php cavatina_get_home_carousel_thumbnail(); ?>
+                                    <?php //cavatina_get_home_carousel_thumbnail(); ?>
+                                    <?php cavatina_get_thumbnail_with_preloader("c-carousel__image"); ?>
                                 </a>
                             </div>
                             <?php endwhile; wp_reset_query(); ?>

@@ -17,13 +17,12 @@ get_header();
                 <span class="c-aside__title">Archives</span>
             </div>
         </div>
-
     </div>
 </aside>
 
 <?php
     // get mobile search bar
-    get_template_part( 'template-parts/content', 'searchbar' );
+    get_template_part( 'template-parts/searchbar');
 ?>
 
 <!-- Main content-->
@@ -41,7 +40,7 @@ get_header();
                             * If you want to override this in a child theme, then include a file
                             * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                             */
-                            get_template_part('template-parts/content', 'search');
+                            get_template_part('template-parts/content', get_post_type());
                         endwhile;
                             cavatina_get_pagination( "archive" ,  $wp_query );
                     else :

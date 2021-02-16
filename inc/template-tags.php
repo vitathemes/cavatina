@@ -287,6 +287,32 @@ if ( ! function_exists( 'cavatina_get_date_tertiary' ) ) :
 endif;
 
 
+if ( ! function_exists( 'cavatina_get_thumbnail_with_preloader' ) ) :
+	/**
+	 * Return thumbnail with preloader
+	 */
+	function cavatina_get_thumbnail_with_preloader( $className = "" ) {
+	
+		if( ! empty($className)){
+			$className = 'class="' . $className . '"';
+		}
+
+		if ( has_post_thumbnail() ) {
+			
+			$image_url    = get_the_post_thumbnail_url(get_the_ID() , 'large');
+			$image_id     = get_post_thumbnail_id();
+			$image_alt 	  = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE);
+			$image_srcset = wp_get_attachment_image_srcset($image_id , 'medium' , null);
+			
+			echo '<img '. wp_kses_post( $className ) .' data-sizes="100w" data-src="'. esc_url( $image_url ) .'"  src="'. esc_url( get_stylesheet_directory_uri() ). '/assets/images/preloader.svg" alt="' . wp_kses_post( $image_alt ) . '"/>';
+		}
+		else {
+			echo '<img '. wp_kses_post( $className ) .' src="'. esc_url( get_stylesheet_directory_uri() ). '/assets/images/preloader.svg" data-src="' . esc_url( get_stylesheet_directory_uri() ) . '/assets/images/no-thumbnail.png" alt="no thumbnail"  />';
+		}
+	}
+endif;
+
+
 if (! function_exists('cavatina_get_thumbnail')) :
 	/**
 	 * return thumbnail for single blog 
@@ -312,17 +338,17 @@ if (! function_exists('cavatina_get_posts_archive_thumbnail')) :
 		if ( has_post_thumbnail() ) {
 			
 			$post_url = get_permalink(get_the_ID()); 
-			echo '<div class="c-post__thumbnail"><a href="'.esc_url($post_url).'" >'; 
+			echo '<a href="'.esc_url($post_url).'" >'; 
 				 the_post_thumbnail('large', array('class' => 'c-post__thumbnail__image' )) ;
-			echo '</a></div>';
+			echo '</a>';
 			
 		}
 		else {
 			
 			$post_url = get_permalink(get_the_ID());
-			echo '<div class="c-post__thumbnail"><a href="'.esc_url($post_url).'" >'; 
+			echo '<a href="'.esc_url($post_url).'" >'; 
 			echo '<img class="c-post__thumbnail__image" src="' . esc_url( get_stylesheet_directory_uri() ) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
-			echo '</a></div>';
+			echo '</a>';
 			
 		}
 	}

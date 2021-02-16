@@ -53,11 +53,13 @@
   width: 100%;
 
   @include media(tablet) {
-    min-height: 70px;
-    max-height: 70px;
+    min-height: 60px;
+    max-height: 60px;
   }
 
   @include media(wide) {
+    min-height: 70px;
+    max-height: 70px;
     margin-bottom: 0px;
   }
 }

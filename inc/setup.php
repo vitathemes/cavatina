@@ -23,7 +23,6 @@ if (function_exists('LibWp')) {
         ])
         ->setArgument('public' , true)
         ->setArgument('show_ui', true)
-        ->setArgument('show_in_rest' , true)
         ->setArgument('menu_position' , 5)
         ->setArgument('show_in_nav_menus' , true)
         ->setArgument('show_in_admin_bar' , true)
@@ -33,11 +32,13 @@ if (function_exists('LibWp')) {
         ->setArgument('exclude_from_search' , false)
         ->setArgument('publicly_queryable' , true)
         ->setArgument('capability_type' , 'post')
+        ->setArgument('show_in_rest' , true)
         ->setArgument('supports' , array('title', 'editor' , 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'))
         ->register();
 
     LibWp()->taxonomy()
         ->setName( 'project_category' )
+        ->setArgument('show_in_rest' , true)
         ->setPostTypes( array( 'projects' ))
         ->setLabels([
             'name'          => _x('Project Categories', 'taxonomy general name', 'cavatina'),

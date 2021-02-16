@@ -1531,7 +1531,7 @@ img {
     width: 12px;
     height: 0;
     border-bottom: 1px solid #000;
-    transform: rotate(45deg) translateY(-4px);
+    transform: rotate(50deg) translateY(-4px);
     bottom: 0;
     right: 0; }
   @media only screen and (min-width: 980px) {
@@ -3205,10 +3205,12 @@ img {
   width: 100%; }
   @media only screen and (min-width: 980px) {
     .c-post__header {
-      min-height: 70px;
-      max-height: 70px; } }
+      min-height: 60px;
+      max-height: 60px; } }
   @media only screen and (min-width: 1400px) {
     .c-post__header {
+      min-height: 70px;
+      max-height: 70px;
       margin-bottom: 0px; } }
 
 .c-post__header__col {

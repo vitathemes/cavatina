@@ -23,7 +23,7 @@ get_header();
 
 <?php
     // get mobile search bar
-    get_template_part( 'template-parts/content', 'searchbar' );
+    get_template_part( 'template-parts/searchbar');
 ?>
 
 <!-- Main content-->
