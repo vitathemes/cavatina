@@ -13,7 +13,7 @@
             <?php
                 echo '<span class="c-post__category ">'.  esc_html( cavatina_get_category() ) .'</span>';
                 echo '<span class="o-bullet o-bullet--sm"></span>';
-				echo '<span class="c-post__date">'.esc_html( cavatina_get_date_tertiary() ) .'</span>';
+				echo '<span class="c-post__date"><a href="'. esc_url( get_permalink() ) .'">'.esc_html( cavatina_get_date_tertiary() ) .'</a></span>';
 			?>
         </div><!-- .entry-meta -->
         <?php

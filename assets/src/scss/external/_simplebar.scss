@@ -39,11 +39,12 @@
         #ffffff00 35.53%,
         #fff 90%
       );
-      background-image: -moz-linear-gradient(top, #ffffff00 50%, #fff 99%);
+
+      background-image: -moz-linear-gradient(top, #ffffff00 5%, #fff 99%);
 
       bottom: 10%;
       content: "\00a0";
-      height: 30%;
+      height: 10%;
       position: fixed;
       z-index: 10;
       width: 50%;
@@ -58,8 +59,8 @@
         #ffffff00 35.53%,
         #fff 90%
       );
-      background-image: -moz-linear-gradient(top, #ffffff00 50%, #fff 99%);
 
+      background-image: -moz-linear-gradient(top, #ffffff00 5%, #fff 99%);
       bottom: 10%;
       content: "\00a0";
       height: 20%;

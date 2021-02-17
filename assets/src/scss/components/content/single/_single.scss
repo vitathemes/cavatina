@@ -32,13 +32,12 @@
   position: relative;
   min-height: 300px;
   overflow-y: auto;
-
   scrollbar-color: #555 #e1e1e1;
 
   @include media(tablet) {
     width: 50%;
     margin-top: 0;
-    padding-bottom: 6%;
+    padding-bottom: 5%;
   }
 }
 
@@ -46,8 +45,9 @@
   width: 100%;
   display: none;
   font-size: 24px;
-
   font-size: $font__semi-bold;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
   @include media(tablet) {
     display: block;
   }
@@ -121,13 +121,17 @@
   width: 100%;
   text-align: left;
   line-height: 27px;
-
   margin-left: 14px;
   margin-right: 32px;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+
+  max-width: 90vw;
 
   @include media(tablet) {
     margin-left: 0;
     margin-right: 0;
+    max-width: 100%;
   }
 
   .wp-block-button__link {
@@ -330,6 +334,9 @@
 .c-single__blog__meta {
   margin-top: 16px;
 
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+
   a {
     color: $cavatina_secondary_color !important;
     &:hover {
@@ -350,6 +357,9 @@
   color: $cavatina_primary_color;
   font-family: $font__semi-bold;
   font-style: normal;
+
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 
   @include media(tablet) {
     font-size: 24px;
@@ -389,6 +399,11 @@
   line-height: 30px;
   font-weight: normal;
   margin-top: 30px;
+
+  height: max-content;
+
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 
   @include media(tablet) {
     text-align: justify;
@@ -445,6 +460,8 @@
   width: 100%;
   text-align: left;
   margin-top: 39px;
+
+  width: calc(100% - 280px);
 
   @include media(tablet) {
     display: inline-block;

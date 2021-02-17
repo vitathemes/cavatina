@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <main class="o-page__main o-page__main--blog o-page__main--no-bottom-space js-page__main">
-    <div class="c-single__blog">
+    <div class="c-single__blog" id="wrapper">
         <?php
 			while ( have_posts() ) :
 				the_post();

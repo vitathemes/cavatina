@@ -44,8 +44,8 @@ jQuery(function ($) {
 //preloader fadeout
 const preloader = document.querySelector(".o-preloader");
 function fadeEffect() {
-  setInterval(function () {
-    setTimeout(function () {
+  setTimeout(function () {
+    setInterval(function () {
       if (!preloader.style.opacity) {
         preloader.style.opacity = 1;
       }
@@ -58,8 +58,8 @@ function fadeEffect() {
           preloader.style.display = "none";
         }
       }
-    }, 1000);
-  }, 10);
+    }, 10);
+  }, 1000);
 }
 window.addEventListener("load", fadeEffect());
 

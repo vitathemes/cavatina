@@ -32,7 +32,7 @@ get_header();
                         </li>
                         <!-- bullet is here (single meta before) -->
                         <li>
-                            <?php echo '<span>'. esc_html( cavatina_get_date_my() ).'</span>';   ?>
+                            <?php echo '<span><a href="'. esc_url( get_permalink() ) .'">'.esc_html( cavatina_get_date_my() ).'</a></span>';   ?>
                         </li>
                     </ul>
                     <div class="c-single__text">
@@ -68,7 +68,7 @@ get_header();
                         <?php echo '<span>'. esc_html( cavatina_get_category() ).'</span>'; ?>
                     </li>
                     <li>
-                        <?php echo '<span>'.esc_html( cavatina_get_date_my() ).'</span>';   ?>
+                        <?php echo '<span><a href="'. esc_url( get_permalink() ) .'">'.esc_html( cavatina_get_date_my() ).'</a></span>';   ?>
                     </li>
                 </ul>
                 <div class="c-carousel__single__slider js-single__slider">

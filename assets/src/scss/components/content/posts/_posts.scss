@@ -18,6 +18,10 @@
   @include media(wide) {
     margin-bottom: 7%;
   }
+
+  .page-links {
+    margin-top: 16px;
+  }
 }
 
 .c-post--project {
@@ -117,6 +121,9 @@
   vertical-align: top;
   font-family: $font__semi-bold;
 
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+
   &:hover {
     color: $cavatina__main-primary-light-color !important;
   }
@@ -133,6 +140,9 @@
 .c-post__excerpt {
   font-size: 14px;
   line-height: 200%;
+
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .c-post__category {
@@ -162,6 +172,8 @@
 }
 
 .c-post__meta__link {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
   &:hover {
     color: $cavatina__main-primary-color !important;
   }
@@ -201,6 +213,8 @@
   border-radius: 7px;
   object-fit: cover;
   object-position: center;
+
+  background-color: #e8e8e8;
 }
 .c-post__entery-content {
   margin-top: 16px;

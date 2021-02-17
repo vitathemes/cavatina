@@ -14,6 +14,10 @@
   @include media(tablet) {
     margin-top: 39px;
   }
+
+  ol {
+    list-style-type: none;
+  }
 }
 .comment.depth-1 {
   border-bottom: 1px solid $color__background-hr;
@@ -127,6 +131,8 @@
 .comment-list {
   list-style-type: none;
   order: 3;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 
   @include media(tablet) {
     width: 100%;
@@ -239,18 +245,26 @@
   margin-left: 75px;
   margin-right: 16px;
   transform: translate(0px, 0px);
-
   font-size: 14px;
   line-height: 28px;
+  max-width: 70vw;
+  overflow: auto;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 
   @include media(tablet) {
     padding-left: 15px;
     margin-left: 60px;
     transform: translate(0px, -16px);
+    width: 100%;
   }
 
   p {
     margin-top: 8px;
+  }
+
+  ol {
+    list-style-type: decimal;
   }
 }
 .comment-body {

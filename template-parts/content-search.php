@@ -22,7 +22,7 @@
         <div class="c-post__meta entry-meta c-post__category--blog ">
             <?php
 
-            echo '<span class="c-post__category">'. esc_html( cavatina_get_category() ) .'</span>';
+            echo '<span class="c-post__category">'. esc_html( cavatina_get_category(true) ) .'</span>';
             echo '<span class="o-bullet"></span>';
             echo '<span class="c-post__date">'.esc_html( cavatina_get_date() ) .'</span>';
 

@@ -23,12 +23,10 @@ get_header();
     </div>
 </aside>
 
-
 <?php
     // get mobile search bar
     get_template_part( 'template-parts/searchbar');
 ?>
-
 
 <!-- Main content-->
 <main class="o-page__main js-page__main o-page__main--projects">

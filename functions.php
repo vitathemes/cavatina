@@ -179,7 +179,7 @@ function cavatina_scripts() {
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
 /**
- * Remove admin bar bump
+ * Remove admin bar bump space (* Not whole admin bar, just space from the top)
  */
 add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
@@ -372,7 +372,6 @@ function cavatina_handle_description(){
  * Add your custom logo to the login page
  */
 function cavatina_filter_login_head() {
-
     if ( has_custom_logo() ) :
         $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 	?>
