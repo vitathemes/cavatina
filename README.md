@@ -4,7 +4,7 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 
 ![Home Page](screenshot.png)
 
-![Single Project Page](screenshot-2.png)
+![Single Project Page](screenshot2.png)
 
 ## Features
 
