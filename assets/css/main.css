@@ -1866,7 +1866,8 @@ img {
     left: 0;
     transform-origin: bottom left; }
   .c-header__menu:focus {
-    outline: #767676 dotted 1px !important; }
+    outline: #767676 dotted 1px !important;
+    background-color: transparent; }
   @media only screen and (min-width: 980px) {
     .c-header__menu {
       margin-left: 25%;
@@ -1882,9 +1883,6 @@ img {
   display: block;
   transition: transform 700ms cubic-bezier(0.75, 0.01, 0.07, 0.99);
   will-change: transform; }
-
-.c-header__menu:focus {
-  outline: none; }
 
 /*------------------------------------*\
     #Header search
@@ -2026,14 +2024,13 @@ img {
   height: 30px;
   text-align: right; }
   @media only screen and (min-width: 980px) {
-    .c-header__holder.toggled .c-header__menu::before {
-      transform: rotate(45deg) translate(-15px, -5px); }
-    .c-header__holder.toggled .c-header__menu::after {
-      transform: rotate(-45deg) translateX(-10px); } }
-  @media only screen and (min-width: 980px) {
     .c-header__holder.toggled .c-header__menu {
       width: 40px;
-      height: 14px; } }
+      height: 14px; }
+      .c-header__holder.toggled .c-header__menu::before {
+        transform: rotate(45deg) translate(-15px, -5px); }
+      .c-header__holder.toggled .c-header__menu::after {
+        transform: rotate(-45deg) translateX(-10px); } }
 
 @media only screen and (min-width: 980px) {
   .c-header__holder.toggled .c-header__menu::before,
@@ -2677,6 +2674,9 @@ img {
       flex-direction: column;
       padding-bottom: 0;
       padding-left: 16px; } }
+  .c-aside--home .c-nav {
+    opacity: 1;
+    visibility: visible; }
 
 .c-aside__wrapper {
   width: 100%;
@@ -4330,6 +4330,11 @@ input[type="submit"] {
   input[type="reset"]:hover,
   input[type="submit"]:hover {
     background-color: #767676; }
+  button:focus,
+  input[type="button"]:focus,
+  input[type="reset"]:focus,
+  input[type="submit"]:focus {
+    background-color: #767676; }
 
 .button--small {
   padding: 12px 25px; }
@@ -4469,7 +4474,8 @@ a {
   a:hover, a:focus, a:active {
     color: #767676; }
   a:focus {
-    outline: thin dotted; }
+    outline: thin dotted;
+    color: #5a0000 !important; }
   a:hover, a:active {
     outline: 0; }
 
@@ -4536,8 +4542,7 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    color: #111;
-    outline: none; }
+    color: #5a0000; }
   input[type="text"]:active,
   input[type="email"]:active,
   input[type="url"]:active,
@@ -4554,7 +4559,7 @@ textarea {
   input[type="datetime-local"]:active,
   input[type="color"]:active,
   textarea:active {
-    color: #111; }
+    color: #5a0000; }
   input[type="text"]:focus:-moz-placeholder,
   input[type="email"]:focus:-moz-placeholder,
   input[type="url"]:focus:-moz-placeholder,
@@ -4571,7 +4576,7 @@ textarea {
   input[type="datetime-local"]:focus:-moz-placeholder,
   input[type="color"]:focus:-moz-placeholder,
   textarea:focus:-moz-placeholder {
-    color: #111; }
+    color: #5a0000; }
   input[type="text"]:focus:-ms-input-placeholder,
   input[type="email"]:focus:-ms-input-placeholder,
   input[type="url"]:focus:-ms-input-placeholder,
@@ -4588,7 +4593,7 @@ textarea {
   input[type="datetime-local"]:focus:-ms-input-placeholder,
   input[type="color"]:focus:-ms-input-placeholder,
   textarea:focus:-ms-input-placeholder {
-    color: #111; }
+    color: #5a0000; }
   input[type="text"]:focus::-webkit-input-placeholder,
   input[type="email"]:focus::-webkit-input-placeholder,
   input[type="url"]:focus::-webkit-input-placeholder,
@@ -4605,7 +4610,7 @@ textarea {
   input[type="datetime-local"]:focus::-webkit-input-placeholder,
   input[type="color"]:focus::-webkit-input-placeholder,
   textarea:focus::-webkit-input-placeholder {
-    color: #111; }
+    color: #5a0000; }
 
 select {
   color: #767676;

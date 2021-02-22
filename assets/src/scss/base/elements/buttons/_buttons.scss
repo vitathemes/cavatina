@@ -16,6 +16,9 @@ input[type="submit"] {
   &:hover {
     background-color: $color__border-button-hover;
   }
+  &:focus {
+    background-color: $color__border-button-hover;
+  }
 }
 
 .button--small {

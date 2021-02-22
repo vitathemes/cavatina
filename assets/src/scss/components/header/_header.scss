@@ -136,6 +136,7 @@
 
   &:focus {
     outline: $cavatina__main-primary-light-color dotted 1px !important;
+    background-color: transparent;
   }
 
   @include media(tablet) {
@@ -156,9 +157,6 @@
   will-change: transform;
 }
 
-.c-header__menu:focus {
-  outline: none;
-}
 /*------------------------------------*\
     #Header search
 \*------------------------------------*/
@@ -332,17 +330,14 @@
     // padding-right: 26px;
 
     @include media(tablet) {
+      width: 40px;
+      height: 14px;
       &::before {
         transform: rotate(45deg) translate(-15px, -5px);
       }
       &::after {
         transform: rotate(-45deg) translateX(-10px);
       }
-    }
-
-    @include media(tablet) {
-      width: 40px;
-      height: 14px;
     }
   }
 

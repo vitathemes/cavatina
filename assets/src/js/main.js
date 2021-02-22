@@ -125,9 +125,7 @@ function childFinder(parentElement, childElement) {
 // Search Box Desktop
 let isToggled = false;
 function searchToggleHeader() {
-  const header = document.querySelector(".js-header");
   const headerSearch = document.querySelector(".js-header__search");
-
   const searchOverlay = document.querySelector(".js-search__overlay");
 
   if (childFinder("body", "o-overlay")) {
@@ -166,9 +164,9 @@ searchToggleAside();
 
 // o-page toggle for blur content
 function blurToggle() {
-  let pageMain = document.querySelector(".js-page__main");
-  let overlay = document.querySelector(".js-overlay");
-  let searchOverlay = document.querySelector(".js-search__overlay");
+  const pageMain = document.querySelector(".js-page__main");
+  const overlay = document.querySelector(".js-overlay");
+  const searchOverlay = document.querySelector(".js-search__overlay");
 
   if (childFinder("body", "c-aside")) {
     let aside = document.querySelector(".js-aside");

@@ -22,6 +22,7 @@ a {
 
   &:focus {
     outline: thin dotted;
+    color: $color__text-input-focus !important;
   }
 
   &:hover,
