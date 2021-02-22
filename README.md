@@ -46,7 +46,7 @@ themes/cavatina/                 # → Root of your theme
 │   └── hooks.php                # → Theme custom hooks
 │── js/                          # → Theme js files
 ├── language/                    # → Theme Language files
-├── page-template/               # → Theme Part files (Include)
+├── page-template/               # → Theme Part files (Include) - Pages
 ├── template-parts/              # → Theme Part files (Include)
 ├── node_modules/                # → Node.js packages
 ├── package.json                 # → Node.js dependencies and scripts
