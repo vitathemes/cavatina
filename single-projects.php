@@ -24,7 +24,7 @@ get_header();
     <div class="o-page__col c-content">
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>
             <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
-                <div class="c-single__context__holder">
+                <div class="c-single__context__holder" id="wrapper">
                     <?php the_title( '<h1 class="c-single__title">', '</h1>' ); ?>
                     <ul class="c-single__meta">
                         <li>

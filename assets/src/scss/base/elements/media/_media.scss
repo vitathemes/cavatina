@@ -14,6 +14,10 @@ img {
   &:hover {
     filter: brightness(0.78);
   }
+
+  &:focus {
+    outline: $cavatina__main-primary-light-color dotted 1px !important;
+  }
 }
 
 figure {

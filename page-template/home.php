@@ -10,13 +10,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cavatina' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#wrapper"><?php esc_html_e( 'Skip to content', 'cavatina' ); ?></a>
     <?php wp_body_open(); ?>
     <div class="o-preloader">
         <div class="o-preloader__loader">
             <span class="o-preloader__circle"></span>
         </div>
-    </div>
+    </div> <!-- .o-preloader -->
     <header id="masthead" class="c-header c-header--home js-header">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
@@ -43,10 +43,10 @@
     </header> <!-- #masthead -->
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
-    </div>
+    </div> <!-- .c-search__overlay -->
     <div class="o-overlay js-overlay"></div>
 
-    <div id="page" class="o-page o-page--home js-page">
+    <div id="page" class="o-page o-page--home js-page" id="wrapper">
         <aside class="o-page__col c-aside c-aside--home js-aside">
             <div class="c-aside__content">
                 <div class="c-aside__nav">
@@ -83,7 +83,7 @@
                     <a href="/projects" class="c-carousel__more">View All Projects</a>
                 </div>
             </div>
-        </aside>
+        </aside><!-- .c-aside  -->
         <main class="o-page__main js-page__main o-page__main--home">
             <div class="o-page__col c-content c-content--home">
                 <div class="c-carousel">
@@ -109,6 +109,6 @@
                     <a href="/projects" class="c-carousel__more c-carousel__more--home">View All Projects</a>
                 </div>
             </div>
-        </main>
+        </main><!-- .o-page__main  -->
         <?php get_footer(); ?>
-    </div>
+    </div><!-- .o-page  -->

@@ -473,8 +473,15 @@ if (! function_exists('cavatina_get_social_media')) :
 	/**
 	* get social media 
 	*/
-	function cavatina_get_social_media() {
+	function cavatina_get_social_media( $have_social_title = false) {
 
+		if($have_social_title === true){
+			if( get_theme_mod('linkedin_link') || get_theme_mod('facebook_link') || get_theme_mod('github_link') || get_theme_mod('twitter_link')){
+
+				echo '<span class="c-social-media__title">Share:</span>';
+
+			}
+		}
 
 		if ( get_theme_mod('linkedin_link') != null) { 
 			

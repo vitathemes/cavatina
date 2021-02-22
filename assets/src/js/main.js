@@ -1,6 +1,17 @@
 jQuery(function ($) {
   /*------------------------------------*\
-      #Handle Load More button
+    #Keyboard Navigation
+  \*------------------------------------*/
+
+  /* Trap Focus ( Menu ) */
+  $(".js-menu").click(function () {
+    $(".s-nav > .menu-item:last-child").focusout(function () {
+      $(".js-menu").focus();
+    });
+  });
+
+  /*------------------------------------*\
+    #Handle Load More button
   \*------------------------------------*/
   $(document).ready(function () {
     const button = $(".js-pagination__load-more__btn");
@@ -167,8 +178,6 @@ function blurToggle() {
       aside.classList.add("c-aside--blur");
     }
   }
-
-  const headerMenuLogo = document.querySelector(".c-header__menu");
 
   if (pageMain.classList.contains("o-page__main--blur")) {
     searchOverlay.classList.remove("o-page__main--blur");

@@ -27,7 +27,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <a class="skip-link screen-reader-text" href=""><?php esc_html_e( 'Skip to content', 'cavatina' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#wrapper"><?php esc_html_e( 'Skip to content', 'cavatina' ); ?></a>
     <?php wp_body_open(); ?>
 
     <div class="o-preloader">
@@ -42,22 +42,24 @@
                 <?php cavatina_handle_logo(); ?>
 
             </div>
-            <button class="c-header__menu" aria-controls="primary-menu" aria-expanded="false" onClick="blurToggle()">
+            <button class="c-header__menu js-menu" aria-controls="primary-menu" aria-expanded="false"
+                onClick="blurToggle()">
             </button>
             <div class="c-header__search js-header__search"></div>
             <?php
-            if ( has_nav_menu( 'menu-1' ) ) {
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu-registered',
-                        "menu_class" => "s-nav ",
-                        "container_class" => "c-nav js-navigation",
-                        "container" => "nav",
-                    ));
-            }
+               if ( has_nav_menu( 'menu-1' ) ) {
+                   wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'menu_id'        => 'primary-menu-registered',
+                            "menu_class" => "s-nav ",
+                            "container_class" => "c-nav js-navigation",
+                            "container" => "nav",
+                        ));
+                }
             ?>
         </div>
+
     </header> <!-- #masthead -->
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>

@@ -71,8 +71,8 @@
     </ul>
 
     <div class="c-social-media c-social-media--blog">
-        <span class="c-social-media__title">Share :</span>
-        <?php cavatina_get_social_media() ?>
+
+        <?php cavatina_get_social_media(true) ?>
 
     </div>
 

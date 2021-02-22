@@ -48,7 +48,7 @@
 }
 
 /*------------------------------------*\
-  #Header logo
+    #Header logo
 \*------------------------------------*/
 
 .c-header__logo {
@@ -92,7 +92,7 @@
   height: 17px;
 }
 /*------------------------------------*\
-  #Header text
+    #Header text
 \*------------------------------------*/
 
 .c-header__text {
@@ -103,14 +103,14 @@
 }
 
 /*------------------------------------*\
-  #Header menu
+    #Header menu
 \*------------------------------------*/
 .c-header__menu {
   text-align: right;
   background-color: transparent;
 
   width: 45px;
-  height: 14px;
+  height: 30px;
   position: relative;
   display: inline-block;
 
@@ -132,6 +132,10 @@
     bottom: 10px;
     left: 0;
     transform-origin: bottom left;
+  }
+
+  &:focus {
+    outline: $cavatina__main-primary-light-color dotted 1px !important;
   }
 
   @include media(tablet) {
@@ -156,7 +160,7 @@
   outline: none;
 }
 /*------------------------------------*\
-  #Header search
+    #Header search
 \*------------------------------------*/
 .c-header__search {
   cursor: pointer;
@@ -219,7 +223,7 @@
 }
 
 /*------------------------------------*\
-  #Header Home Modifier
+    #Header Home Modifier
 \*------------------------------------*/
 
 .c-header--home {
@@ -295,7 +299,7 @@
 }
 
 /*------------------------------------*\
-  #Header Holder toggled
+    #Header Holder toggled
 \*------------------------------------*/
 .c-header__holder.toggled {
   @include media(tablet) {
@@ -323,9 +327,9 @@
   .c-header__menu {
     padding: 0;
     width: 45px;
-    height: 14px;
+    height: 30px;
     text-align: right;
-    padding-right: 26px;
+    // padding-right: 26px;
 
     @include media(tablet) {
       &::before {
@@ -359,6 +363,11 @@
     width: 100%;
     order: 3;
     margin-top: 40px;
+
+    opacity: 1;
+    visibility: visible;
+    height: 200px;
+
     @include media(tablet) {
       padding-top: 12px;
       margin-left: 5px;
@@ -431,7 +440,7 @@
 
 .space-top {
   @include media(tablet) {
-    padding-top: 63%;
+    padding-top: 80%;
   }
 }
 
@@ -444,7 +453,7 @@
 }
 
 /*------------------------------------*\
-  #Header 404 Modifier
+    #Header 404 Modifier
 \*------------------------------------*/
 
 .c-header--404 {

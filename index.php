@@ -29,7 +29,7 @@ get_header();
 <main class="o-page__main js-page__main o-page__main--posts">
     <div class="o-page__col c-content c-content--max-height">
         <div class="c-container site-main__container">
-            <div class="c-container__content site-main__content">
+            <div class="c-container__content site-main__content" id="wrapper">
                 <?php if (have_posts()) : ?>
                 <?php
                         /* Start the Loop */

@@ -8,6 +8,10 @@
   transition-delay: 0s;
   overflow: hidden;
   margin-left: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+
   @include media(tablet) {
     display: none;
     order: 1;

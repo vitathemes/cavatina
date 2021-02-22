@@ -561,7 +561,7 @@ https://flickity.metafizzy.co
     -webkit-filter: blur(10px);
     filter: blur(10px); } }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes blur {
   0% {
     -webkit-filter: blur(0px);
     filter: blur(0px); }
@@ -730,6 +730,19 @@ https://flickity.metafizzy.co
   100% {
     border-radius: 50%;
     opacity: 0; } }
+
+/**/
+@keyframes myDisplay {
+  0% {
+    height: max-content; }
+  100% {
+    height: 100%; } }
+
+@-webkit-keyframes myDisplay {
+  0% {
+    height: max-content; }
+  100% {
+    height: 100%; } }
 
 /*--------------------------------------------------------------
 # Utilities
@@ -1784,7 +1797,7 @@ img {
       padding-bottom: 0px; } }
 
 /*------------------------------------*\
-  #Header logo
+    #Header logo
 \*------------------------------------*/
 .c-header__logo {
   width: 35%;
@@ -1820,7 +1833,7 @@ img {
   height: 17px; }
 
 /*------------------------------------*\
-  #Header text
+    #Header text
 \*------------------------------------*/
 .c-header__text {
   color: var(--secondary-color);
@@ -1829,13 +1842,13 @@ img {
   font-size: 14px; }
 
 /*------------------------------------*\
-  #Header menu
+    #Header menu
 \*------------------------------------*/
 .c-header__menu {
   text-align: right;
   background-color: transparent;
   width: 45px;
-  height: 14px;
+  height: 30px;
   position: relative;
   display: inline-block; }
   .c-header__menu:hover {
@@ -1852,6 +1865,8 @@ img {
     bottom: 10px;
     left: 0;
     transform-origin: bottom left; }
+  .c-header__menu:focus {
+    outline: #767676 dotted 1px !important; }
   @media only screen and (min-width: 980px) {
     .c-header__menu {
       margin-left: 25%;
@@ -1872,7 +1887,7 @@ img {
   outline: none; }
 
 /*------------------------------------*\
-  #Header search
+    #Header search
 \*------------------------------------*/
 .c-header__search {
   cursor: pointer;
@@ -1924,7 +1939,7 @@ img {
   transform: rotate(45deg) translateY(-10px) translateX(-8px); }
 
 /*------------------------------------*\
-  #Header Home Modifier
+    #Header Home Modifier
 \*------------------------------------*/
 @media only screen and (min-width: 980px) {
   .c-header--home {
@@ -1984,7 +1999,7 @@ img {
     display: none; } }
 
 /*------------------------------------*\
-  #Header Holder toggled
+    #Header Holder toggled
 \*------------------------------------*/
 @media only screen and (min-width: 980px) {
   .c-header__holder.toggled {
@@ -2008,9 +2023,8 @@ img {
 .c-header__holder.toggled .c-header__menu {
   padding: 0;
   width: 45px;
-  height: 14px;
-  text-align: right;
-  padding-right: 26px; }
+  height: 30px;
+  text-align: right; }
   @media only screen and (min-width: 980px) {
     .c-header__holder.toggled .c-header__menu::before {
       transform: rotate(45deg) translate(-15px, -5px); }
@@ -2035,7 +2049,10 @@ img {
   flex-wrap: wrap;
   width: 100%;
   order: 3;
-  margin-top: 40px; }
+  margin-top: 40px;
+  opacity: 1;
+  visibility: visible;
+  height: 200px; }
   @media only screen and (min-width: 980px) {
     .c-header__holder.toggled .c-nav {
       padding-top: 12px;
@@ -2093,7 +2110,7 @@ img {
 
 @media only screen and (min-width: 980px) {
   .space-top {
-    padding-top: 63%; } }
+    padding-top: 80%; } }
 
 @media only screen and (min-width: 980px) {
   .js-nav.has-animation-out {
@@ -2102,7 +2119,7 @@ img {
     animation-fill-mode: forwards; } }
 
 /*------------------------------------*\
-  #Header 404 Modifier
+    #Header 404 Modifier
 \*------------------------------------*/
 .c-header--404 .c-header__holder {
   padding-top: 0px; }
@@ -2124,7 +2141,9 @@ img {
   transition: 1s ease-in-out;
   transition-delay: 0s;
   overflow: hidden;
-  margin-left: 8px; }
+  margin-left: 8px;
+  opacity: 0;
+  visibility: hidden; }
   @media only screen and (min-width: 980px) {
     .c-nav {
       display: none;
@@ -3748,6 +3767,7 @@ img {
   position: relative;
   min-height: 300px;
   overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-color: #555 #e1e1e1; }
   @media only screen and (min-width: 980px) {
     .c-single__context {
@@ -3845,6 +3865,8 @@ img {
   .c-single__text ul {
     list-style-type: disc;
     margin-left: 16px; }
+  .c-single__text ol {
+    padding-left: 16px; }
   .c-single__text .blocks-gallery-grid {
     margin-left: 0px; }
 
@@ -4281,6 +4303,8 @@ img {
   transition: 0.5s all; }
   img:hover {
     filter: brightness(0.78); }
+  img:focus {
+    outline: #767676 dotted 1px !important; }
 
 figure {
   margin: 1em 0;
