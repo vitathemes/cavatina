@@ -80,7 +80,7 @@
                             <?php endwhile; wp_reset_query(); ?>
                         </div>
                     </div>
-                    <a href="/projects" class="c-carousel__more">View All Projects</a>
+                    <a href="<?php echo esc_url(site_url()) ?>/projects" class="c-carousel__more">View All Projects</a>
                 </div>
             </div>
         </aside><!-- .c-aside  -->
@@ -106,7 +106,8 @@
                         <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric-small"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
                         <?php endwhile; wp_reset_query(); ?>
                     </div>
-                    <a href="/projects" class="c-carousel__more c-carousel__more--home">View All Projects</a>
+                    <a href="<?php echo esc_url(site_url()) ?>/projects"
+                        class="c-carousel__more c-carousel__more--home">View All Projects</a>
                 </div>
             </div>
         </main><!-- .o-page__main  -->

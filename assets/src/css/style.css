@@ -1466,10 +1466,11 @@ img {
     margin-bottom: 8px; }
     @media only screen and (min-width: 980px) {
       .c-header__logo h1 {
-        font-size: 2em; } }
+        font-size: 1.7em; } }
 
 .c-header__logo__anchor {
-  display: flex; }
+  display: flex;
+  color: var(--primary-color); }
   @media only screen and (min-width: 980px) {
     .c-header__logo__anchor {
       display: block; } }
@@ -1480,7 +1481,11 @@ img {
 
 .c-header__logo__text {
   width: 91px;
-  height: 17px; }
+  height: 17px;
+  color: var(--primary-color);
+  transition: 0.2s all; }
+  .c-header__logo__text:hover {
+    color: #767676; }
 
 /*------------------------------------*\
     #Header text
@@ -1609,41 +1614,41 @@ img {
     padding-top: 100%; } }
 
 @media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__logo {
+  .c-header--home .c-header__logo {
     transform: rotate(0deg);
     margin-bottom: 0;
     padding-left: 32px; } }
 
 @media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__logo .c-header__logo__image {
+  .c-header--home .c-header__logo .c-header__logo__image {
     width: 120px;
     height: auto;
     margin-bottom: 8px;
     margin-top: 8px; } }
 
 @media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__logo .c-header__logo__text {
+  .c-header--home .c-header__logo .c-header__logo__text {
     margin-top: 10px;
     max-width: 150px;
     width: auto;
     height: auto; } }
 
 @media only screen and (min-width: 1400px) {
-  .c-header--home .c-header__holder .c-header__logo .c-header__logo__text {
+  .c-header--home .c-header__logo .c-header__logo__text {
     margin-top: 0px; } }
 
 @media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__text {
+  .c-header--home .c-header__text {
     display: block;
     width: 150px;
     margin: 0; } }
 
 @media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__menu {
+  .c-header--home .c-header__menu {
     display: none; } }
 
 @media only screen and (min-width: 980px) {
-  .c-header--home .c-header__holder .c-header__search {
+  .c-header--home .c-header__search {
     display: none; } }
 
 /*------------------------------------*\
@@ -1667,6 +1672,10 @@ img {
     width: 50%;
     margin-bottom: 0;
     transform: rotate(0deg); } }
+
+@media only screen and (min-width: 980px) {
+  .c-header__holder.toggled .c-header__logo h1 {
+    margin-bottom: 20px; } }
 
 .c-header__holder.toggled .c-header__menu {
   padding: 0;
@@ -4125,7 +4134,7 @@ a {
     color: #767676; }
   a:focus {
     outline: thin dotted;
-    color: #5a0000 !important; }
+    color: #414141 !important; }
   a:hover, a:active {
     outline: 0; }
 
@@ -4192,7 +4201,7 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    color: #5a0000; }
+    color: #414141; }
   input[type="text"]:active,
   input[type="email"]:active,
   input[type="url"]:active,
@@ -4209,7 +4218,7 @@ textarea {
   input[type="datetime-local"]:active,
   input[type="color"]:active,
   textarea:active {
-    color: #5a0000; }
+    color: #414141; }
   input[type="text"]:focus:-moz-placeholder,
   input[type="email"]:focus:-moz-placeholder,
   input[type="url"]:focus:-moz-placeholder,
@@ -4226,7 +4235,7 @@ textarea {
   input[type="datetime-local"]:focus:-moz-placeholder,
   input[type="color"]:focus:-moz-placeholder,
   textarea:focus:-moz-placeholder {
-    color: #5a0000; }
+    color: #414141; }
   input[type="text"]:focus:-ms-input-placeholder,
   input[type="email"]:focus:-ms-input-placeholder,
   input[type="url"]:focus:-ms-input-placeholder,
@@ -4243,7 +4252,7 @@ textarea {
   input[type="datetime-local"]:focus:-ms-input-placeholder,
   input[type="color"]:focus:-ms-input-placeholder,
   textarea:focus:-ms-input-placeholder {
-    color: #5a0000; }
+    color: #414141; }
   input[type="text"]:focus::-webkit-input-placeholder,
   input[type="email"]:focus::-webkit-input-placeholder,
   input[type="url"]:focus::-webkit-input-placeholder,
@@ -4260,7 +4269,7 @@ textarea {
   input[type="datetime-local"]:focus::-webkit-input-placeholder,
   input[type="color"]:focus::-webkit-input-placeholder,
   textarea:focus::-webkit-input-placeholder {
-    color: #5a0000; }
+    color: #414141; }
 
 select {
   color: #767676;

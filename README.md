@@ -8,7 +8,6 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 
 ## Features
 
-- No additional JS
 - Sass for stylesheets
 - Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
 - Theme options built directly into WordPress native live theme customizer

@@ -45,7 +45,7 @@ function sector_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => 'kirki',
+			'name'      => 'Kirki Customizer Framework',
 			'slug'      => 'kirki',
 			'required'  => false,
 		),

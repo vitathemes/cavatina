@@ -44,7 +44,7 @@ if ( ! function_exists( 'wp_cavatina_posted_by' ) ) :
 	function wp_cavatina_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'cavatina' ),
+			esc_html_x( 'By %s', 'post author', 'cavatina' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -165,9 +165,9 @@ endif;
 
 
 function cavatina_handle_logo(){
-/**
-  * Handle Logo - If logo doesn't exist show WordPress Site title name
-  */
+	/**
+  	* Handle Logo - If logo doesn't exist show WordPress Site title name
+  	*/
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 	
@@ -182,7 +182,11 @@ function cavatina_handle_logo(){
 
     }
 	else {
+
+		echo '<a class="c-header__logo__anchor" href="'.esc_url( home_url() ).'">';
         echo '<h1 class="c-header__logo__text">'. esc_html( get_bloginfo( 'name' ) ) .'</h1>';
+		echo "</a>";
+		
     }
 }
 
@@ -193,7 +197,7 @@ if ( ! function_exists( 'cavatina_get_category' ) ) :
 	 */
 	function cavatina_get_category( $isLimited = false) {
 
-		if( ! empty(get_the_category()) ){
+		if( ! empty( get_the_category() ) ){
 			/* get category */
 			$categories = get_the_category();
 			$separator = ', ';
@@ -215,26 +219,29 @@ if ( ! function_exists( 'cavatina_get_category' ) ) :
 			}
 		}
 	
-		if( ! empty(get_the_terms(0, 'project_category')) ){
-			/* get taxonomy  */
-			$custom_taxonomy = get_the_terms(0, 'project_category');
-			$separate = ', ';
-			$output = '';
-			$category_counter = 0;
-			if ($custom_taxonomy) {
-				foreach ($custom_taxonomy as $custom_tax) {
-					
-					if( $isLimited === true && $category_counter === 3){
-						break;
-					}
+		if ( function_exists( 'libwp' ) ) {
+			if( ! empty(get_the_terms(0, 'project_category')) ){
+				/* get taxonomy  */
+				$custom_taxonomy = get_the_terms(0, 'project_category');
+				$separate = ', ';
+				$output = '';
+				$category_counter = 0;
+				if ($custom_taxonomy) {
+					foreach ($custom_taxonomy as $custom_tax) {
+						
+						if( $isLimited === true && $category_counter === 3){
+							break;
+						}
 
-					$category_counter++;
-					/* translators: used between list items, there is a space after the comma */
-					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_term_link( $custom_tax->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $custom_tax->name ) ) . '">' . esc_html( $custom_tax->name ) . '</a>' . $separate;
-				}
-				echo  wp_kses_post(trim( $output , $separate ));
-			}	
+						$category_counter++;
+						/* translators: used between list items, there is a space after the comma */
+						$output .= '<a class="c-post__meta__link" href="' . esc_url( get_term_link( $custom_tax->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $custom_tax->name ) ) . '">' . esc_html( $custom_tax->name ) . '</a>' . $separate;
+					}
+					echo  wp_kses_post(trim( $output , $separate ));
+				}	
+			}
 		}
+		
 	}
 
 endif;

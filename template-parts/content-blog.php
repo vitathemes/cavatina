@@ -28,7 +28,7 @@
                 <?php echo get_avatar( get_the_author_meta('user_email'), '80', '' ); ?>
             </div>
             <div class="c-single__author__info">
-                <span>By <?php the_author_link(); ?></span>
+                <?php wp_cavatina_posted_by() ?>
             </div>
         </div>
     </header><!-- .entry-header -->
