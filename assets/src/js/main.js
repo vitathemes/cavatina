@@ -7,28 +7,29 @@ jQuery(function ($) {
   $(".c-carousel__post-titles, .c-carousel__context").attr("tabindex", -1);
 
   // Carousel change by focus forwards and backwards
+
   if (childFinder("body", "c-carousel")) {
     let carouselLength = flCarouselText.cells.length;
-  }
-  $(".js-carousel__post-title, .c-carousel__cell > a").on(
-    "keydown",
-    function (e) {
-      if (e.shiftKey && e.keyCode === 9) {
-        if (currentSlide >= 1 && currentSlide != 0) {
-          if (currentSlide === carouselLength) {
+
+    $(".js-carousel__post-title, .c-carousel__cell > a").on(
+      "keydown",
+      function (e) {
+        if (e.shiftKey && e.keyCode === 9) {
+          if (currentSlide >= 1 && currentSlide != 0) {
+            if (currentSlide === carouselLength) {
+              currentSlide -= 1;
+            }
             currentSlide -= 1;
           }
-          currentSlide -= 1;
+          flCarouselText.select(currentSlide);
+        } else if (e.keyCode === 9) {
+          ++currentSlide;
+          flCarouselText.select(currentSlide);
+        } else if (e.type == "blur") {
         }
-        flCarouselText.select(currentSlide);
-      } else if (e.keyCode === 9) {
-        ++currentSlide;
-        flCarouselText.select(currentSlide);
-      } else if (e.type == "blur") {
       }
-    }
-  );
-
+    );
+  }
   // Menu Trap Focus
   /* Trap Focus ( Menu ) Backward */
   $(".c-header__menu").on("keydown blur", function (e) {
