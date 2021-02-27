@@ -16,6 +16,10 @@
     display: none;
     order: 1;
   }
+
+  .sub-menu {
+    display: none;
+  }
 }
 
 .s-nav {
@@ -24,6 +28,10 @@
 
   @include media(tablet) {
     margin: 0;
+  }
+
+  .menu-item {
+    line-height: 17px;
   }
 }
 

@@ -3,7 +3,7 @@
     <div class="c-search__content">
         <div class="c-search__wrapper">
             <div class="c-search__context">
-                <span class="c-search__title">Search</span>
+                <span class="c-search__title"><?php esc_html_e( 'Search', 'cavatina' ); ?></span>
             </div>
             <div class="c-search__icon js-search__icon"></div>
         </div>

@@ -3,7 +3,44 @@ jQuery(function ($) {
     #Keyboard Navigation
   \*------------------------------------*/
 
-  /* Trap Focus ( Menu ) */
+  // Remove tab index from selected elements
+  $(".c-carousel__post-titles, .c-carousel__context").attr("tabindex", -1);
+
+  // Carousel change by focus forwards and backwards
+  if (childFinder("body", "c-carousel")) {
+    let carouselLength = flCarouselText.cells.length;
+  }
+  $(".js-carousel__post-title, .c-carousel__cell > a").on(
+    "keydown",
+    function (e) {
+      if (e.shiftKey && e.keyCode === 9) {
+        if (currentSlide >= 1 && currentSlide != 0) {
+          if (currentSlide === carouselLength) {
+            currentSlide -= 1;
+          }
+          currentSlide -= 1;
+        }
+        flCarouselText.select(currentSlide);
+      } else if (e.keyCode === 9) {
+        ++currentSlide;
+        flCarouselText.select(currentSlide);
+      } else if (e.type == "blur") {
+      }
+    }
+  );
+
+  // Menu Trap Focus
+  /* Trap Focus ( Menu ) Backward */
+  $(".c-header__menu").on("keydown blur", function (e) {
+    if (e.shiftKey && e.keyCode === 9) {
+      if ($(".c-header__holder").hasClass("toggled")) {
+        $(".c-header__logo").focus();
+        return false;
+      }
+    }
+  });
+
+  /* Trap Focus ( Menu ) Forward */
   $(".js-menu").click(function () {
     $(".s-nav > .menu-item:last-child").focusout(function () {
       $(".js-menu").focus();
@@ -225,11 +262,14 @@ function capitalizeFirstLetter() {
 }
 capitalizeFirstLetter();
 
+let currentSlide = 0;
+let flCarouselMain = {};
+let flCarouselText = {};
 // Main page Carousels
 if (childFinder("body", "js-carousel__context")) {
-  // Carousel (Main)
+  // Carousel (Home)
   let carousel = document.querySelector(".js-carousel__context");
-  let flCarouselMain = new Flickity(carousel, {
+  flCarouselMain = new Flickity(carousel, {
     setGallerySize: false,
     freeScroll: false,
     prevNextButtons: true,
@@ -241,18 +281,22 @@ if (childFinder("body", "js-carousel__context")) {
     },
   });
 
-  // Carousel (Main Child) - text
+  // Carousel (Home Page) - text
   let carouselImage = document.querySelector(".js-carousel__post-titles");
-  let flCarouselText = new Flickity(carouselImage, {
+
+  flCarouselText = new Flickity(carouselImage, {
     setGallerySize: true,
     freeScroll: false,
     prevNextButtons: false,
     pageDots: false,
-    asNavFor: ".c-carousel__context",
+    sync: ".c-carousel__context",
     draggable: false,
     selectedAttraction: 0.2,
     friction: 0.8,
     on: {
+      change: function (index) {
+        currentSlide = index;
+      },
       ready: function () {
         const postTitiles = document.querySelector(".c-carousel__post-titles");
         postTitiles.style.opacity = 1;
@@ -260,7 +304,7 @@ if (childFinder("body", "js-carousel__context")) {
     },
   });
 
-  // Carousel (Main Child) - text Mobile
+  // Carousel (Home Page) - text Mobile
   let carouselTextMobile = document.querySelector(
     ".js-carousel__post-titles--mobile"
   );

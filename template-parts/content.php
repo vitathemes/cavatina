@@ -21,9 +21,9 @@
         <div class="c-post__meta entry-meta">
             <?php
             
-                echo '<div class="c-post__category">'. esc_html( cavatina_get_category() ) .'</div>';
+                echo '<div class="c-post__category">'. esc_html( cavatina_get_category( true ) ) .'</div>';
                 echo '<span class="o-bullet o-bullet--sm" tabindex="-1"></span>';
-				echo '<span class="c-post__date">'. esc_html( cavatina_get_date_tertiary() ) .'</span>';
+				echo '<span class="c-post__date">'. esc_html( get_the_date( "M d.y" ) ) .'</span>';
 
 			?>
         </div><!-- .entry-meta -->

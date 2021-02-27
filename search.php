@@ -24,7 +24,7 @@ get_header();
 </aside>
 
 <?php
-    // get mobile search bar
+    // Mobile searchbar
     get_template_part( 'template-parts/searchbar'); 
 ?>
 

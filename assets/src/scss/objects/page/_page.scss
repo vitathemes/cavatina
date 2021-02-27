@@ -29,8 +29,13 @@
   }
 
   .c-footer {
-    padding-left: 20px;
-    padding-right: 36px;
+    padding-left: 14px;
+    padding-right: 0px;
+    padding-bottom: 28px;
+
+    @include media(tablet) {
+      padding-right: 26px;
+    }
   }
 }
 .o-page--404 {

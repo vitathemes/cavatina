@@ -93,6 +93,7 @@
   height: 17px;
   color: $cavatina_primary_color;
   transition: 0.2s all;
+  line-height: 23px;
 
   &:hover {
     color: $cavatina__main-primary-light-color;
@@ -186,7 +187,7 @@
     width: 12px;
     height: 0;
     border-bottom: 1px solid #000;
-    transform: rotate(50deg) translateY(-4px);
+    transform: rotate(40deg) translateY(-8px);
     bottom: 0;
     right: 0;
   }
@@ -374,7 +375,7 @@
 
     opacity: 1;
     visibility: visible;
-    height: 200px;
+    height: 250px;
 
     @include media(tablet) {
       padding-top: 12px;
@@ -448,7 +449,7 @@
 
 .space-top {
   @include media(tablet) {
-    padding-top: 80%;
+    padding-top: 100%;
   }
 }
 

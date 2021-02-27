@@ -16,7 +16,8 @@ get_header();
             <div class="c-aside__context">
                 <span class="c-aside__title"><?php cavatina_post_type_name(); ?></span>
                 <span class="c-aside__title c-aside__title--category">
-                    <a href=<?php echo "/".esc_html( get_post_type()) ?>> Category </a></span>
+                    <a
+                        href=<?php echo "/".esc_html( get_post_type()) ?>><?php esc_html_e( ' Category ', 'cavatina' ); ?></a></span>
                 <div class="c-aside__category"><?php cavatina_taxonomy_filter("c-aside__category__link" , " "); ?></div>
             </div>
         </div>
@@ -24,7 +25,7 @@ get_header();
 </aside>
 
 <?php
-    // get mobile search bar
+    // Mobile searchbar
     get_template_part( 'template-parts/searchbar');
 ?>
 
@@ -41,7 +42,7 @@ get_header();
                         * If you want to override this in a child theme, then include a file
                         * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                         */
-                        get_template_part( 'template-parts/content', get_post_type() );
+                        get_template_part( 'template-parts/content', 'projects' );
                     endwhile;
                         cavatina_get_pagination( "projects" ,  $wp_query );
                     else :

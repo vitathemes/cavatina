@@ -136,3 +136,13 @@ figcaption {
 .wp-block-verse {
   background-color: #e1e1e1;
 }
+
+/*------------------------------------*\
+  #WordPress Admin bar space 
+\*------------------------------------*/
+.admin-bar {
+  margin-top: 46px;
+  @include media(tablet) {
+    margin-top: 0px;
+  }
+}

@@ -1,13 +1,3 @@
-<?php
-/**
-* The header for our theme
-*
-* This is the template that displays all of the <head> section and everything up until <div id="content">
-*
-* @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
-*
-* @package cavatina
-*/?>
 <!doctype html>
 <html <?php language_attributes();?>>
 
@@ -34,23 +24,24 @@
         <div class="o-preloader__loader">
             <span class="o-preloader__circle"></span>
         </div>
-    </div><!-- .preloader -->
-    <header id="masthead" class="c-header js-header">
+    </div><!-- .o-preloader -->
+
+    <header id="masthead" class="<?php cavatina_get_header_class()?>">
         <div class="c-header__holder js-nav">
             <div class="c-header__logo js-logo">
 
                 <?php cavatina_handle_logo(); ?>
 
             </div>
-            <button class="c-header__menu js-menu" aria-controls="primary-menu" aria-expanded="false"
-                onClick="blurToggle()">
+            <button class="c-header__menu js-menu" aria-label="Menu Button" aria-controls="primary-menu"
+                aria-expanded="false" onClick="blurToggle()">
             </button>
             <div class="c-header__search js-header__search"></div>
             <?php
-               if ( has_nav_menu( 'menu-1' ) ) {
+               if ( has_nav_menu( 'primary-menu' ) ) {
                    wp_nav_menu(
                         array(
-                            'theme_location' => 'menu-1',
+                            'theme_location' => 'primary-menu',
                             'menu_id'        => 'primary-menu-registered',
                             "menu_class" => "s-nav ",
                             "container_class" => "c-nav js-navigation",
@@ -65,4 +56,4 @@
         <?php get_search_form(); ?>
     </div>
     <div class="o-overlay js-overlay"></div>
-    <div id="page" class="o-page js-page">
+    <div id="page" class="<?php cavatina_get_page_class(); ?>">

@@ -45,10 +45,10 @@
 .c-single__title {
   width: 100%;
   display: none;
-  font-size: 24px;
   font-size: $font__semi-bold;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
+  color: $cavatina_primary_color;
   @include media(tablet) {
     display: block;
   }
@@ -148,10 +148,6 @@
     }
   }
 
-  h3 {
-    line-height: 20px;
-    font-size: 16px;
-  }
   ul {
     list-style-type: disc;
     margin-left: 16px;
@@ -355,7 +351,6 @@
 
 .c-single__blog__entry-title {
   font-weight: 600;
-  font-size: 14px;
   line-height: 30px;
   max-width: 450px;
   color: $cavatina_primary_color;
@@ -364,10 +359,6 @@
 
   -ms-word-wrap: break-word;
   word-wrap: break-word;
-
-  @include media(tablet) {
-    font-size: 24px;
-  }
 
   &::first-letter {
     text-transform: uppercase;
@@ -444,14 +435,6 @@
   ul {
     list-style-type: disc;
     margin-left: 16px;
-  }
-
-  p {
-    line-height: 28px;
-
-    @include media(tablet) {
-      line-height: 30px;
-    }
   }
 
   h2 {

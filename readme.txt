@@ -1,17 +1,17 @@
-=== cavatina ===
+=== Cavatina ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
-Tested up to: 5.6
+Tested up to: 5.6.1
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-cavatina is a WordPress minimal & Fast-loading theme for people who want to have a simple blog & introduce their service.
+Cavatina is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
 
 == Description ==
 
-cavatina is a WordPress minimal & Fast-loading theme for people who want to have a simple blog & introduce their service.
+Cavatina is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
 
 = Features =
 * No additional JS
@@ -27,7 +27,7 @@ cavatina is a WordPress minimal & Fast-loading theme for people who want to have
 * Right-to-left (RTL) languages support
 * SEO optimized
 * GNU GPL version 2.0 licensed
-* Support 5 levels sub-menus
+* Support 1 levels sub-menus
 * …and much more
 
 See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.com/cavatina/).
@@ -49,7 +49,7 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 
 == Copyright ==
 
-cavatina is distributed under the terms of the GNU GPL.
+Cavatina is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -61,9 +61,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-cavatina is distributed under the terms of the GNU GPL version 2.0
+Cavatina is distributed under the terms of the GNU GPL version 2.0
 
-cavatina bundles the following third-party resources:
+Cavatina bundles the following third-party resources:
 
 Dashicons by WordPress
 License: GNU GPLv2

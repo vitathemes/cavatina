@@ -55,7 +55,7 @@
       menuNav.classList.add("nav-out");
 
       // fadeIn animation after toggled
-      setTimeout(() => {
+      setTimeout(function () {
         menuNav.style.display = "nav-in";
         siteNavigation.classList.add("space-top");
         menuLogo.classList.add("logo-in");
