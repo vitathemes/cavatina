@@ -4,8 +4,6 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 
 ![Home Page](screenshot.png)
 
-![Single Project Page](screenshot2.png)
-
 ## Features
 
 - Sass for stylesheets
@@ -68,3 +66,4 @@ See the [Changelog](CHANGELOG.md)
 ## License
 
 Cavatina is licensed under [GNU GPL](LICENSE).
+Preloader.svg is licensed under [LD-FREE](https://loading.io/license/).

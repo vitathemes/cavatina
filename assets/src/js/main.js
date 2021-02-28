@@ -392,3 +392,19 @@ document.addEventListener("keydown", function (e) {
     cavatinaIsBackward = false;
   }
 });
+
+// truncate long text
+if (childFinder("body", "c-post__entry-title__anchor")) {
+  const postTitles = document.querySelectorAll(".c-post__entry-title__anchor");
+
+  document
+    .querySelectorAll(".c-post__entry-title__anchor")
+    .forEach(function (postLink) {
+      if (postLink.textContent.length > 82) {
+        // box.addEventListener("click", () => box.classList.toggle("red"));
+        let currentPostLink = postLink.textContent;
+        currentPostLink = currentPostLink.substr(0, 80) + "...";
+        postLink.textContent = currentPostLink;
+      }
+    });
+}

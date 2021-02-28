@@ -2030,7 +2030,7 @@ img {
 
 @media only screen and (min-width: 980px) {
   .c-header__holder.toggled .c-header__logo {
-    width: 50%;
+    width: 52%;
     margin-bottom: 0;
     transform: rotate(0deg); } }
 
@@ -4555,8 +4555,7 @@ a {
   font-weight: normal;
   line-height: 23px;
   font-family: "montserratregular";
-  line-height: 17px;
-  /* identical to box height */ }
+  line-height: 17px; }
   a:visited {
     color: var(--secondary-color); }
   a:hover, a:focus, a:active {
