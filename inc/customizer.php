@@ -55,7 +55,7 @@ function cavatina_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function cavatina_customize_preview_js() {
-	wp_enqueue_script( 'wp-cavatina-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), CAVATINA_VERSION, true );
+	wp_enqueue_script( 'wp-cavatina-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), CAVATINA_VERSION, true );
 }
 add_action( 'customize_preview_init', 'cavatina_customize_preview_js' );
 
@@ -185,6 +185,7 @@ if( function_exists( 'kirki' ) ) {
 		'default'     => [
 			'font-family'   	 => 'Montserrat',
 			'font-size'          => '19px',
+			'line-height'     	 => '30px',
 			'variant'         	 => '400',
 			'color'         	 => '#000000',
 		],
@@ -208,7 +209,7 @@ if( function_exists( 'kirki' ) ) {
 			'font-family'   	 => 'Montserrat',
 			'font-size'          => '14px',
 			'variant'         	 => '600',
-			'color'         	 => '#000000',
+			'color'         	  => '#000000',
 			'line-height'     	 => '20px',
 		],
 		'priority'    => 12,
@@ -229,15 +230,64 @@ if( function_exists( 'kirki' ) ) {
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Montserrat',
-			'font-size'          => '12px',
-			'variant'         	 => '400',
+			'font-size'          => '14px',
+			'line-height'     	 => '30px',
+			'variant'         	 => 'regular',
 			'color'         	 => '#000000',
 		],
 		'priority'    => 13,
 		'transport'   => 'auto',
 		'output'      => [
 			[
-				'element' => array( 'h4' ),
+				'element' => array( 'h4'),
+			],
+		],
+	] );
+
+
+
+
+	// Headings typography h5
+	Kirki::add_field( 'cavatina_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_h5',
+		'label'       => esc_html__( 'H5', 'cavatina' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'font-family'   	 => 'Montserrat',
+			'font-size'          => '12px',
+			'line-height'     	 => '30px',
+			'variant'         	 => 'regular',
+			'color'         	 => '#000000',
+		],
+		'priority'    => 14,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => array( 'h5'),
+			],
+		],
+	] );
+
+	
+	// Headings typography h6
+	Kirki::add_field( 'cavatina_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_h6',
+		'label'       => esc_html__( 'H6', 'cavatina' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'font-family'   	 => 'Montserrat',
+			'font-size'          => '10px',
+			'line-height'     	 => '30px',
+			'variant'         	 => 'regular',
+			'color'         	 => '#000000',
+		],
+		'priority'    => 15,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => array( 'h6'),
 			],
 		],
 	] );
@@ -252,18 +302,23 @@ if( function_exists( 'kirki' ) ) {
 		'default'     => [
 			'font-family'   	 => 'Montserrat',
 			'font-size'          => '14px',
-			'variant'         	 => '400',
+			'line-height'        => '28px',
+			'variant'         	 => 'regular',
 			'color'         	 => '#000000',
 		],
-		'priority'    => 14,
+		'priority'    => 17,
 		'transport'   => 'auto',
+		
 		'output'      => [
 			[
-				'element' => array( 'p' , 'ul' ),
+				'element' => array( 'p' , 'ul' , 'ol', ".menu-item a" ),
 			],
 		],
 	] );
 
+
+	
+	
 
 	// Social Media
 	Kirki::add_field( 'cavatina', [

@@ -15,11 +15,24 @@
             <?php cavatina_get_social_media(); ?>
         </div>
         <div class="c-footer__copy">
-            <p class="c-footer__text">Cavatina theme by
-                <a class="c-footer__text__link" href="https://vitathemes.com/"> VitaThemes </a> |
-                <a class="c-footer__text__link" href="#"> Terms of use </a> &
-                <a class="c-footer__text__link" href="<?php cavatina_get_privacy_policy(); ?>">Privacy Policy.</a>
-            </p>
+
+            <ul class="c-footer__nav">
+                <li class="menu-item"><?php esc_html_e( 'Cavatina theme by', 'cavatina' ); ?>
+                    <a class="c-footer__text__link" href="https://vitathemes.com/"> VitaThemes </a>
+                </li>
+                <?php
+                    if ( has_nav_menu( 'footer-menu' ) ) {        
+                        wp_nav_menu(
+                                array(
+                                    'theme_location' => 'footer-menu',
+                                    'menu_id'        => 'footer-menu-registered',
+                                    'container'      => "c-footer__nav",
+                                    'items_wrap'     => '%3$s'
+                                ));
+                    }
+                ?>
+            </ul>
+
         </div>
     </div><!-- #.c-footer__context -->
 </footer><!-- #colophon -->

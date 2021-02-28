@@ -12,8 +12,11 @@ input[type="submit"] {
   font-size: 14px;
   cursor: pointer;
   transition: $global-transition;
-
+  padding: 12px 25px;
   &:hover {
+    background-color: $color__border-button-hover;
+  }
+  &:focus {
     background-color: $color__border-button-hover;
   }
 }

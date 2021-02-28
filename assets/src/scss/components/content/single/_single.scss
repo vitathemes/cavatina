@@ -32,22 +32,27 @@
   position: relative;
   min-height: 300px;
   overflow-y: auto;
-
+  overflow-x: hidden;
   scrollbar-color: #555 #e1e1e1;
 
   @include media(tablet) {
     width: 50%;
     margin-top: 0;
-    padding-bottom: 6%;
+    padding-bottom: 5%;
+  }
+
+  @include media(wide) {
+    padding-bottom: 10%;
   }
 }
 
 .c-single__title {
   width: 100%;
   display: none;
-  font-size: 24px;
-
   font-size: $font__semi-bold;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  color: $cavatina_primary_color;
   @include media(tablet) {
     display: block;
   }
@@ -121,13 +126,16 @@
   width: 100%;
   text-align: left;
   line-height: 27px;
-
   margin-left: 14px;
   margin-right: 32px;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 90vw;
 
   @include media(tablet) {
     margin-left: 0;
     margin-right: 0;
+    max-width: 100%;
   }
 
   .wp-block-button__link {
@@ -144,17 +152,45 @@
     }
   }
 
-  h3 {
-    line-height: 20px;
-    font-size: 16px;
-  }
   ul {
     list-style-type: disc;
     margin-left: 16px;
   }
 
+  ol {
+    padding-left: 16px;
+  }
+
   .blocks-gallery-grid {
     margin-left: 0px;
+  }
+
+  .comment-metadata {
+    margin-top: 5px;
+
+    a {
+      text-decoration: none;
+      color: $cavatina_secondary_color !important;
+      &:hover {
+        color: $cavatina__main-primary-color !important;
+      }
+    }
+  }
+  .comment-reply-link {
+    text-decoration: none;
+    color: $cavatina_secondary_color !important;
+  }
+
+  .fn {
+    color: $cavatina__main-primary-color !important;
+    a {
+      color: $cavatina__main-primary-color !important;
+      text-decoration: none;
+
+      &:hover {
+        color: $cavatina_secondary_color !important;
+      }
+    }
   }
 }
 
@@ -279,6 +315,16 @@
 }
 
 /*------------------------------------*\
+  #Remove block if thumbnail didnt exist
+\*------------------------------------*/
+.c-single__carousel--remove {
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+  }
+}
+/*------------------------------------*\
   #Post blog
 \*------------------------------------*/
 
@@ -330,6 +376,9 @@
 .c-single__blog__meta {
   margin-top: 16px;
 
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+
   a {
     color: $cavatina_secondary_color !important;
     &:hover {
@@ -344,16 +393,14 @@
 
 .c-single__blog__entry-title {
   font-weight: 600;
-  font-size: 14px;
   line-height: 30px;
   max-width: 450px;
   color: $cavatina_primary_color;
   font-family: $font__semi-bold;
   font-style: normal;
 
-  @include media(tablet) {
-    font-size: 24px;
-  }
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 
   &::first-letter {
     text-transform: uppercase;
@@ -389,6 +436,11 @@
   line-height: 30px;
   font-weight: normal;
   margin-top: 30px;
+
+  height: max-content;
+
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 
   @include media(tablet) {
     text-align: justify;
@@ -427,14 +479,6 @@
     margin-left: 16px;
   }
 
-  p {
-    line-height: 28px;
-
-    @include media(tablet) {
-      line-height: 30px;
-    }
-  }
-
   h2 {
     font-family: $font__semi-bold;
   }
@@ -445,6 +489,8 @@
   width: 100%;
   text-align: left;
   margin-top: 39px;
+
+  width: calc(100% - 280px);
 
   @include media(tablet) {
     display: inline-block;

@@ -14,14 +14,14 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
-                <span class="c-aside__title">Archives</span>
+                <span class="c-aside__title"><?php esc_html_e( 'Archives', 'cavatina' ); ?></span>
             </div>
         </div>
     </div>
 </aside>
 
 <?php
-    // get mobile search bar
+    // Mobile searchbar
     get_template_part( 'template-parts/searchbar');
 ?>
 
@@ -29,7 +29,7 @@ get_header();
 <main class="o-page__main js-page__main">
     <div class="o-page__col c-content c-content--max-height">
         <div class="c-container site-main__container">
-            <div class="c-container__content site-main__content">
+            <div class="c-container__content site-main__content" id="wrapper">
                 <?php if (have_posts()) : ?>
                 <?php
                         /* Start the Loop */

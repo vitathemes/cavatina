@@ -1,6 +1,57 @@
 jQuery(function ($) {
+  /* Carousel Navigation images */
+  let flCarouselTextLength;
+  if (childFinder("body", "c-carousel__post-title")) {
+    flCarouselTextLength = flCarouselText.slides.length - 1;
+  }
+
+  $(".c-carousel__cell > a:first").on("focusin", function (e) {
+    flCarouselMain.select(0);
+  });
+
+  $(".c-carousel__cell > a").on("keydown blur", function (e) {
+    if (e.shiftKey && e.keyCode === 9) {
+      flCarouselText.previous();
+    } else if (e.keyCode === 9) {
+      flCarouselText.next();
+    }
+  });
+
+  /* Carousel Navigation Text */
+
+  $(".c-carousel__post-title:last-child").on("focusin", function (e) {
+    flCarouselMain.select(flCarouselTextLength);
+  });
+
+  $(".c-carousel__post-title").on("keydown blur", function (e) {
+    if (e.shiftKey && e.keyCode === 9) {
+      flCarouselText.previous();
+    } else if (e.keyCode === 9) {
+      flCarouselText.next();
+    } else if (e.type == "blur") {
+    }
+  });
+
+  // Menu Trap Focus
+  /* Trap Focus ( Menu ) Backward */
+  $(".c-header__menu").on("keydown blur", function (e) {
+    if (e.shiftKey && e.keyCode === 9) {
+      if ($(".c-header__holder").hasClass("toggled")) {
+        $(".c-header__logo").focus();
+        return false;
+      }
+    }
+  });
+
+  /* Trap Focus ( Menu ) Forward */
+  $(".js-menu").click(function () {
+    $(".s-nav > .menu-item:last-child").focusout(function () {
+      $(".js-menu").focus();
+    });
+  });
+
   /*------------------------------------*\
-      #Handle Load More button
+    #Handle Load More button
   \*------------------------------------*/
   $(document).ready(function () {
     const button = $(".js-pagination__load-more__btn");
@@ -8,7 +59,6 @@ jQuery(function ($) {
       setTimeout(function () {
         lazyLoadInstance.update();
       }, 1000);
-
       var loadMore = $(this),
         data = {
           action: "loadmore",
@@ -26,9 +76,7 @@ jQuery(function ($) {
           if (data) {
             loadMore.prev().after(data);
             button.text("Load More");
-
             loadmore_params.current_page++;
-
             if (loadmore_params.current_page == loadmore_params.max_page)
               loadMore.remove();
           } else {
@@ -44,8 +92,8 @@ jQuery(function ($) {
 //preloader fadeout
 const preloader = document.querySelector(".o-preloader");
 function fadeEffect() {
-  setInterval(function () {
-    setTimeout(function () {
+  setTimeout(function () {
+    setInterval(function () {
       if (!preloader.style.opacity) {
         preloader.style.opacity = 1;
       }
@@ -58,8 +106,8 @@ function fadeEffect() {
           preloader.style.display = "none";
         }
       }
-    }, 1000);
-  }, 10);
+    }, 10);
+  }, 1000);
 }
 window.addEventListener("load", fadeEffect());
 
@@ -114,9 +162,7 @@ function childFinder(parentElement, childElement) {
 // Search Box Desktop
 let isToggled = false;
 function searchToggleHeader() {
-  const header = document.querySelector(".js-header");
   const headerSearch = document.querySelector(".js-header__search");
-
   const searchOverlay = document.querySelector(".js-search__overlay");
 
   if (childFinder("body", "o-overlay")) {
@@ -155,9 +201,9 @@ searchToggleAside();
 
 // o-page toggle for blur content
 function blurToggle() {
-  let pageMain = document.querySelector(".js-page__main");
-  let overlay = document.querySelector(".js-overlay");
-  let searchOverlay = document.querySelector(".js-search__overlay");
+  const pageMain = document.querySelector(".js-page__main");
+  const overlay = document.querySelector(".js-overlay");
+  const searchOverlay = document.querySelector(".js-search__overlay");
 
   if (childFinder("body", "c-aside")) {
     let aside = document.querySelector(".js-aside");
@@ -167,8 +213,6 @@ function blurToggle() {
       aside.classList.add("c-aside--blur");
     }
   }
-
-  const headerMenuLogo = document.querySelector(".c-header__menu");
 
   if (pageMain.classList.contains("o-page__main--blur")) {
     searchOverlay.classList.remove("o-page__main--blur");
@@ -218,11 +262,14 @@ function capitalizeFirstLetter() {
 }
 capitalizeFirstLetter();
 
+let currentSlide = 0;
+let flCarouselMain = {};
+let flCarouselText = {};
 // Main page Carousels
 if (childFinder("body", "js-carousel__context")) {
-  // Carousel (Main)
+  // Carousel (Home)
   let carousel = document.querySelector(".js-carousel__context");
-  let flCarouselMain = new Flickity(carousel, {
+  flCarouselMain = new Flickity(carousel, {
     setGallerySize: false,
     freeScroll: false,
     prevNextButtons: true,
@@ -234,18 +281,22 @@ if (childFinder("body", "js-carousel__context")) {
     },
   });
 
-  // Carousel (Main Child) - text
+  // Carousel (Home Page) - text
   let carouselImage = document.querySelector(".js-carousel__post-titles");
-  let flCarouselText = new Flickity(carouselImage, {
+
+  flCarouselText = new Flickity(carouselImage, {
     setGallerySize: true,
     freeScroll: false,
     prevNextButtons: false,
     pageDots: false,
-    asNavFor: ".c-carousel__context",
-    draggable: false,
+    sync: ".c-carousel__context",
+    draggable: true,
     selectedAttraction: 0.2,
     friction: 0.8,
     on: {
+      change: function (index) {
+        currentSlide = index;
+      },
       ready: function () {
         const postTitiles = document.querySelector(".c-carousel__post-titles");
         postTitiles.style.opacity = 1;
@@ -253,7 +304,7 @@ if (childFinder("body", "js-carousel__context")) {
     },
   });
 
-  // Carousel (Main Child) - text Mobile
+  // Carousel (Home Page) - text Mobile
   let carouselTextMobile = document.querySelector(
     ".js-carousel__post-titles--mobile"
   );
@@ -331,4 +382,13 @@ if (childFinder("body", "comments-area")) {
 // lazy load image
 var lazyLoadInstance = new LazyLoad({
   elements_selector: [".c-carousel__image", ".c-post__thumbnail__image"],
+});
+
+let cavatinaIsBackward;
+document.addEventListener("keydown", function (e) {
+  if (e.shiftKey && e.keyCode == 9) {
+    cavatinaIsBackward = true;
+  } else {
+    cavatinaIsBackward = false;
+  }
 });

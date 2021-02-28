@@ -13,98 +13,6 @@ if ( ! defined( 'CAVATINA_VERSION' ) ) {
 	define( 'CAVATINA_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'cavatina_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function cavatina_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on cavatina, use a find and replace
-		 * to change 'cavatina' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'cavatina', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'cavatina' ),
-			)
-		);
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support(
-			'html5',
-			array(
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-				'style',
-				'script',
-			)
-		);
-
-		// Set up the WordPress core custom background feature.
-		// add_theme_support(
-		// 	'custom-background',
-		// 	apply_filters(
-		// 		'wp_cavatina_custom_background_args',
-		// 		array(
-		// 			'default-color' => 'ffffff',
-		// 			'default-image' => '',
-		// 		)
-		// 	)
-		// );
-
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
-	}
-endif;
-add_action( 'after_setup_theme', 'cavatina_setup' );
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -145,7 +53,7 @@ function wp_cavatina_scripts() {
 	wp_enqueue_style( 'wp-cavatina-style', get_stylesheet_uri(), array(), CAVATINA_VERSION );
 	wp_style_add_data( 'wp-cavatina-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'wp-cavatina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAVATINA_VERSION, true );
+	wp_enqueue_script( 'wp-cavatina-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), CAVATINA_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -179,7 +87,7 @@ function cavatina_scripts() {
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
 /**
- * Remove admin bar bump
+ * Remove admin bar bump space (* Not whole admin bar, just space from the top)
  */
 add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
@@ -281,10 +189,10 @@ function cavatina_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'cavatina_custom_excerpt_length', 999 );
 
 
+
 /**
  * Add numerical pagination
  */
-
 $args = array(
     'base'               => '%_%',
     'format'             => '?paged=%#%',
@@ -298,21 +206,37 @@ $args = array(
     'before_page_number' => '',
     'after_page_number'  => '');
 
-
-/**
- * Enable Dashicons
- */
+	
 function cavatina_dashicons(){
+	/**
+	 * Enable Dashicons
+	 */
     wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 
 
+function cavatina_contact_page_require_shortcode( $the_content ) {
+	/**
+	 * Return all shortcodes from the post 
+	 */
+    $shortcode = "";
+    $pattern = get_shortcode_regex();
+    preg_match_all('/'.$pattern.'/uis', $the_content, $matches);
+    for ( $i=0; $i < 40; $i++ ) {
+        if ( isset( $matches[0][$i] ) ) {
+           $shortcode .= $matches[0][$i];
+        }
+    }
+    return $shortcode;
+}
 
-/**
- * Auto increment number per posts ( in pages like archive-projects... )
- */
-function cavatina_get_post_number3(){
+
+
+function cavatina_get_post_number(){
+	/**
+	 * Auto increment number per posts ( in pages like archive-projects... )
+	 */
     global $wp_query;
     $posts_per_page = get_option('posts_per_page');
     $paged          = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -322,11 +246,10 @@ function cavatina_get_post_number3(){
 }
 
 
-/**
- * Auto decrement number per posts ( in pages like archive-projects... )
- */
 function cavatina_get_inverse_post_number(){
-	
+	/**
+	 * Auto decrement number per posts ( in pages like archive-projects... )
+	 */
 	global $wp_query;
     $posts_per_page 	= get_option('posts_per_page');
 	$paged          	= (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -340,10 +263,11 @@ function cavatina_get_inverse_post_number(){
 }
 
 
-/**
- * Add zero to the post numbers
- */
 function cavatina_deciaml_post_number(){
+	/**
+	 * Add zero to the post numbers
+	 */
+	
     // get post number (auto increment)
     $decimalCounter = "0";
     $postNumber = cavatina_get_inverse_post_number();
@@ -361,18 +285,9 @@ function cavatina_deciaml_post_number(){
 
 
 /**
- * Handle Description
- */
-function cavatina_handle_description(){
-    echo '<span class="c-header__text">'. esc_html(get_bloginfo('description')) .'</span>';
-}
-
-
-/**
  * Add your custom logo to the login page
  */
 function cavatina_filter_login_head() {
-
     if ( has_custom_logo() ) :
         $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 	?>
@@ -396,7 +311,7 @@ add_action( 'login_head', 'cavatina_filter_login_head', 100 );
 /**
  *	Load More
  */
-function my_load_more_scripts() {
+function cavatina_load_more_script() {
 
 	global $wp_query;
 	wp_enqueue_script('jquery');
@@ -409,11 +324,11 @@ function my_load_more_scripts() {
  	wp_enqueue_script( 'cavatina-main-scripts' );
 	 
 }
-add_action( 'wp_enqueue_scripts', 'my_load_more_scripts' );
+add_action( 'wp_enqueue_scripts', 'cavatina_load_more_script' );
 
 
 /* Handle Load more loop  */
-function loadmore_ajax_handler(){
+function cavatina_loadmore_ajax_handler(){
 	
 	$argsquery = filter_input( INPUT_POST, 'query', FILTER_SANITIZE_STRING );
 
@@ -437,8 +352,16 @@ function loadmore_ajax_handler(){
 	}
 }
 
-add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); // wp_ajax_{action}
-add_action('wp_ajax_nopriv_loadmore', 'loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+add_action('wp_ajax_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
+
+
+
+
+
+
 
 
 /**
@@ -457,4 +380,4 @@ require get_template_directory() . '/inc/customizer.php';
   * Load TGMPA file
   */
 require_once get_template_directory() . '/inc/tgmpa/class-tgm-plugin-activation.php';
-require_once get_template_directory() . '/inc/tgmpa-config.php';
+require_once get_template_directory() . '/inc/tgmpa/tgmpa-config.php';

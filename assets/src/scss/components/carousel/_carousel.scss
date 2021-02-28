@@ -51,8 +51,8 @@
 .c-carousel__title {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
+  // font-size: 14px;
+  // line-height: 17px;
   color: $cavatina_secondary_color;
   margin: 0 0 24px 0;
 
@@ -133,6 +133,7 @@
   color: $cavatina_primary_color;
   display: inline;
   transition: 0.2s all;
+  font-size: 14px;
   &:hover {
     color: $cavatina__main-primary-light-color;
   }

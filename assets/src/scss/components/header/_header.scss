@@ -48,7 +48,7 @@
 }
 
 /*------------------------------------*\
-  #Header logo
+    #Header logo
 \*------------------------------------*/
 
 .c-header__logo {
@@ -70,13 +70,14 @@
     margin-bottom: 8px;
 
     @include media(tablet) {
-      font-size: 2em;
+      font-size: 1.7em;
     }
   }
 }
 
 .c-header__logo__anchor {
   display: flex;
+  color: $cavatina_primary_color;
 
   @include media(tablet) {
     display: block;
@@ -90,9 +91,16 @@
 .c-header__logo__text {
   width: 91px;
   height: 17px;
+  color: $cavatina_primary_color;
+  transition: 0.2s all;
+  line-height: 23px;
+
+  &:hover {
+    color: $cavatina__main-primary-light-color;
+  }
 }
 /*------------------------------------*\
-  #Header text
+    #Header text
 \*------------------------------------*/
 
 .c-header__text {
@@ -103,14 +111,14 @@
 }
 
 /*------------------------------------*\
-  #Header menu
+    #Header menu
 \*------------------------------------*/
 .c-header__menu {
   text-align: right;
   background-color: transparent;
 
   width: 45px;
-  height: 14px;
+  height: 30px;
   position: relative;
   display: inline-block;
 
@@ -134,6 +142,11 @@
     transform-origin: bottom left;
   }
 
+  &:focus {
+    outline: $cavatina__main-primary-light-color dotted 1px !important;
+    background-color: transparent;
+  }
+
   @include media(tablet) {
     margin-left: 25%;
     order: 2;
@@ -152,11 +165,8 @@
   will-change: transform;
 }
 
-.c-header__menu:focus {
-  outline: none;
-}
 /*------------------------------------*\
-  #Header search
+    #Header search
 \*------------------------------------*/
 .c-header__search {
   cursor: pointer;
@@ -177,7 +187,7 @@
     width: 12px;
     height: 0;
     border-bottom: 1px solid #000;
-    transform: rotate(50deg) translateY(-4px);
+    transform: rotate(40deg) translateY(-8px);
     bottom: 0;
     right: 0;
   }
@@ -219,7 +229,7 @@
 }
 
 /*------------------------------------*\
-  #Header Home Modifier
+    #Header Home Modifier
 \*------------------------------------*/
 
 .c-header--home {
@@ -242,60 +252,60 @@
       padding-bottom: 0;
       padding-top: 100%;
     }
+  }
 
-    .c-header__logo {
+  .c-header__logo {
+    @include media(tablet) {
+      transform: rotate(0deg);
+      margin-bottom: 0;
+      padding-left: 32px;
+    }
+
+    .c-header__logo__image {
       @include media(tablet) {
-        transform: rotate(0deg);
-        margin-bottom: 0;
-        padding-left: 32px;
-      }
-
-      .c-header__logo__image {
-        @include media(tablet) {
-          width: 120px;
-          height: auto;
-          margin-bottom: 8px;
-          margin-top: 8px;
-        }
-      }
-
-      .c-header__logo__text {
-        @include media(tablet) {
-          margin-top: 10px;
-          max-width: 150px;
-          width: auto;
-          height: auto;
-        }
-        @include media(wide) {
-          margin-top: 0px;
-        }
+        width: 120px;
+        height: auto;
+        margin-bottom: 8px;
+        margin-top: 8px;
       }
     }
 
-    .c-header__text {
+    .c-header__logo__text {
       @include media(tablet) {
-        display: block;
-        width: 150px;
-        margin: 0;
+        margin-top: 10px;
+        max-width: 150px;
+        width: auto;
+        height: auto;
+      }
+      @include media(wide) {
+        margin-top: 0px;
       }
     }
+  }
 
-    .c-header__menu {
-      @include media(tablet) {
-        display: none;
-      }
+  .c-header__text {
+    @include media(tablet) {
+      display: block;
+      width: 150px;
+      margin: 0;
     }
+  }
 
-    .c-header__search {
-      @include media(tablet) {
-        display: none;
-      }
+  .c-header__menu {
+    @include media(tablet) {
+      display: none;
+    }
+  }
+
+  .c-header__search {
+    @include media(tablet) {
+      display: none;
     }
   }
 }
 
 /*------------------------------------*\
-  #Header Holder toggled
+    #Header Holder toggled
 \*------------------------------------*/
 .c-header__holder.toggled {
   @include media(tablet) {
@@ -318,27 +328,29 @@
       margin-bottom: 0;
       transform: rotate(0deg);
     }
+
+    h1 {
+      @include media(tablet) {
+        margin-bottom: 20px;
+      }
+    }
   }
 
   .c-header__menu {
     padding: 0;
     width: 45px;
-    height: 14px;
+    height: 30px;
     text-align: right;
-    padding-right: 26px;
 
     @include media(tablet) {
+      width: 40px;
+      height: 14px;
       &::before {
         transform: rotate(45deg) translate(-15px, -5px);
       }
       &::after {
         transform: rotate(-45deg) translateX(-10px);
       }
-    }
-
-    @include media(tablet) {
-      width: 40px;
-      height: 14px;
     }
   }
 
@@ -352,13 +364,18 @@
   .c-nav {
     padding-top: 24px;
     padding-bottom: 16px;
-    max-height: 25em;
+    max-height: calc(25em);
     text-align: left;
     display: block;
     flex-wrap: wrap;
     width: 100%;
     order: 3;
     margin-top: 40px;
+
+    opacity: 1;
+    visibility: visible;
+    height: 250px;
+
     @include media(tablet) {
       padding-top: 12px;
       margin-left: 5px;
@@ -431,7 +448,7 @@
 
 .space-top {
   @include media(tablet) {
-    padding-top: 63%;
+    padding-top: 100%;
   }
 }
 
@@ -444,7 +461,7 @@
 }
 
 /*------------------------------------*\
-  #Header 404 Modifier
+    #Header 404 Modifier
 \*------------------------------------*/
 
 .c-header--404 {

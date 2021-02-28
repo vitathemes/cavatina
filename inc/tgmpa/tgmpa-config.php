@@ -45,7 +45,7 @@ function sector_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => 'kirki',
+			'name'      => 'Kirki Customizer Framework',
 			'slug'      => 'kirki',
 			'required'  => false,
 		),
@@ -59,11 +59,7 @@ function sector_register_required_plugins() {
 			'slug'      => 'advanced-custom-fields',
 			'required'  => false,
 		),
-		array(
-			'name'      => 'Contact Form 7',
-			'slug'      => 'contact-form-7',
-			'required'  => false,
-		),
+		
 	);
 
 	/*

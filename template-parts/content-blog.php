@@ -13,14 +13,14 @@
             <?php
                 echo '<span class="c-post__category ">'.  esc_html( cavatina_get_category() ) .'</span>';
                 echo '<span class="o-bullet o-bullet--sm"></span>';
-				echo '<span class="c-post__date">'.esc_html( cavatina_get_date_tertiary() ) .'</span>';
+				echo '<span class="c-post__date"><a href="'. esc_url( get_permalink() ) .'">'.esc_html( get_the_date( "M d.y" ) ) .'</a></span>';
 			?>
         </div><!-- .entry-meta -->
         <?php
 		if ( is_singular() ) :
-			the_title( '<h2 class="c-single__blog__entry-title">', '</h2>' );
+			the_title( '<h1 class="c-single__blog__entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title "><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h1 class="entry-title "><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 		endif;
 		?>
         <div class="c-single__author">
@@ -28,7 +28,7 @@
                 <?php echo get_avatar( get_the_author_meta('user_email'), '80', '' ); ?>
             </div>
             <div class="c-single__author__info">
-                <span>By <?php the_author_link(); ?></span>
+                <?php wp_cavatina_posted_by() ?>
             </div>
         </div>
     </header><!-- .entry-header -->
@@ -71,8 +71,8 @@
     </ul>
 
     <div class="c-social-media c-social-media--blog">
-        <span class="c-social-media__title">Share :</span>
-        <?php cavatina_get_social_media() ?>
+
+        <?php cavatina_get_social_media(true) ?>
 
     </div>
 

@@ -8,12 +8,13 @@
  */
 get_header();
 ?>
+
 <!-- Aside -->
 <aside class="o-page__col c-aside c-aside--mobile-hide js-aside">
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
-                <span class="c-aside__title">Project</span>
+                <span class="c-aside__title"><?php esc_html_e( 'Project', 'cavatina' ); ?></span>
             </div>
         </div>
     </div>
@@ -24,7 +25,7 @@ get_header();
     <div class="o-page__col c-content">
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>
             <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">
-                <div class="c-single__context__holder">
+                <div class="c-single__context__holder" id="wrapper">
                     <?php the_title( '<h1 class="c-single__title">', '</h1>' ); ?>
                     <ul class="c-single__meta">
                         <li>
@@ -32,7 +33,7 @@ get_header();
                         </li>
                         <!-- bullet is here (single meta before) -->
                         <li>
-                            <?php echo '<span>'. esc_html( cavatina_get_date_my() ).'</span>';   ?>
+                            <?php echo '<span><a href="'. esc_url( get_permalink() ) .'">'.esc_html( get_the_date( "M Y" ) ).'</a></span>';   ?>
                         </li>
                     </ul>
                     <div class="c-single__text">
@@ -68,7 +69,7 @@ get_header();
                         <?php echo '<span>'. esc_html( cavatina_get_category() ).'</span>'; ?>
                     </li>
                     <li>
-                        <?php echo '<span>'.esc_html( cavatina_get_date_my() ).'</span>';   ?>
+                        <?php echo '<span><a href="'. esc_url( get_permalink() ) .'">'.esc_html( get_the_date( "M Y" ) ).'</a></span>';   ?>
                     </li>
                 </ul>
                 <div class="c-carousel__single__slider js-single__slider">

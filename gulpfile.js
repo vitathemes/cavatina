@@ -45,6 +45,7 @@ const concatJs = (cb) => {
   return gulp
     .src([
       "./node_modules/flickity/dist/flickity.pkgd.js",
+      "./node_modules/flickity-sync/flickity-sync.js",
       "./node_modules/simplebar/dist/simplebar.js",
       "./node_modules/vanilla-lazyload/dist/lazyload.js",
       "./assets/src/js/*.js",
@@ -55,7 +56,10 @@ const concatJs = (cb) => {
 };
 
 const uglifyTask = (cb) => {
-  return gulp.src("assets/js/*.js").pipe(uglify()).pipe(gulp.dest("assets/js"));
+  return gulp
+    .src(["assets/js/*.js", "!assets/js/navigation.js"])
+    .pipe(uglify())
+    .pipe(gulp.dest("assets/js"));
   cb();
 };
 

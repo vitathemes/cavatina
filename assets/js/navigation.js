@@ -22,9 +22,8 @@
   }
 
   const menu = siteNavigation.getElementsByTagName("ul")[0];
-  let mainHeader = document.querySelector(".js-header");
-  let menuLogo = document.querySelector(".js-logo");
-  let menuNav = document.querySelector(".js-navigation");
+  const menuLogo = document.querySelector(".js-logo");
+  const menuNav = document.querySelector(".js-navigation");
 
   // Hide menu toggle button if menu is empty and return early.
   if ("undefined" === typeof menu) {
@@ -56,7 +55,7 @@
       menuNav.classList.add("nav-out");
 
       // fadeIn animation after toggled
-      setTimeout(() => {
+      setTimeout(function () {
         menuNav.style.display = "nav-in";
         siteNavigation.classList.add("space-top");
         menuLogo.classList.add("logo-in");
@@ -95,9 +94,10 @@
         overlay.classList.remove("o-overlay--active");
         searchOverlay.classList.remove("o-page__main--blur");
         pageMain.classList.remove("o-page__main--blur");
-        if (document.querySelector("body").getElementsByClassName("c-aside")[0]) {
+        if (
+          document.querySelector("body").getElementsByClassName("c-aside")[0]
+        ) {
           aside.classList.remove("c-aside--blur");
-
         }
       }
 

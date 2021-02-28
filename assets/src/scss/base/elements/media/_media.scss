@@ -14,8 +14,13 @@ img {
   &:hover {
     filter: brightness(0.78);
   }
+
+  &:focus {
+    outline: $cavatina__main-primary-light-color dotted 1px !important;
+  }
 }
 
 figure {
   margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+  max-width: 100%;
 }

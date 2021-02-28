@@ -79,6 +79,10 @@
     left: 99%;
     padding: 15px;
   }
+
+  &:focus {
+    background-color: transparent;
+  }
 }
 
 .flickity-prev-next-button.previous {

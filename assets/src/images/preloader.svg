@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="1000px" height="500px" viewBox="0 0 128 128" xml:space="preserve">
+	<g>
+		<circle cx="70" cy="50" r="5" fill="#000000" />
+		<circle cx="70" cy="50" r="5" fill="#555555" transform="rotate(45,64,64)" />
+		<circle cx="70" cy="50" r="5" fill="#949494" transform="rotate(90,64,64)" />
+		<circle cx="70" cy="50" r="5" fill="#cccccc" transform="rotate(135,64,64)" />
+		<circle cx="70" cy="50" r="5" fill="#e1e1e1" transform="rotate(180,64,64)" />
+		<circle cx="70" cy="50" r="5" fill="#e1e1e1" transform="rotate(225,64,64)" />
+		<circle cx="70" cy="50" r="5" fill="#e1e1e1" transform="rotate(270,64,64)" />
+		<circle cx="70" cy="50" r="5" fill="#e1e1e1" transform="rotate(315,64,64)" />
+		<animateTransform attributeName="transform" type="rotate" values="0 64 64;315 64 64;270 64 64;225 64 64;180 64 64;135 64 64;90 64 64;45 64 64" calcMode="discrete" dur="720ms" repeatCount="indefinite" />
+	</g>
+</svg>

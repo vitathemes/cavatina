@@ -14,30 +14,27 @@
     <header class="c-post__header entry-header">
         <?php
             if ( is_singular() ) :
-                the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                the_title( '<h3 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
             else :
-                the_title( '<h2 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                the_title( '<h3 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
             endif;
         ?>
         <div class="c-post__meta entry-meta c-post__category--blog ">
             <?php
 
-            echo '<span class="c-post__category">'. esc_html( cavatina_get_category() ) .'</span>';
+            echo '<span class="c-post__category">'. esc_html( cavatina_get_category(true) ) .'</span>';
             echo '<span class="o-bullet"></span>';
-            echo '<span class="c-post__date">'.esc_html( cavatina_get_date() ) .'</span>';
+            echo '<span class="c-post__date">'.esc_html( get_the_date( "F j.y" ) ) .'</span>';
 
             ?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
-
 
     <div class="c-post__thumbnail">
         <a href=<?php the_permalink() ?>>
             <?php cavatina_get_thumbnail_with_preloader("c-post__thumbnail__image")  ?>
         </a>
     </div>
-
-
 
     <div class="entry-content">
         <?php

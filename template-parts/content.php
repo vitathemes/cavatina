@@ -13,17 +13,17 @@
     <header class="c-post__header entry-header">
         <?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="c-post__entry-title">', '</h1>' );
+			the_title( '<h3 class="c-post__entry-title">', '</h3>' );
 		else :
-			the_title( '<h2 class="c-post__entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h3 class="c-post__entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 		endif;
 		?>
         <div class="c-post__meta entry-meta">
             <?php
             
-                echo '<div class="c-post__category">'. esc_html( cavatina_get_category() ) .'</div>';
-                echo '<span class="o-bullet o-bullet--sm"></span>';
-				echo '<span class="c-post__date">'. esc_html( cavatina_get_date_tertiary() ) .'</span>';
+                echo '<div class="c-post__category">'. esc_html( cavatina_get_category( true ) ) .'</div>';
+                echo '<span class="o-bullet o-bullet--sm" tabindex="-1"></span>';
+				echo '<span class="c-post__date">'. esc_html( get_the_date( "M d.y" ) ) .'</span>';
 
 			?>
         </div><!-- .entry-meta -->

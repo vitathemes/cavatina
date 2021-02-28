@@ -2,7 +2,7 @@
 /**
  * Template Name: Contact
  * 
- * Page content with sidebar
+ * Displays the Contact Page Template of the theme.
  *
  * @package cavatina
  */
@@ -22,7 +22,7 @@ get_header();
 </aside>
 
 <?php
-    // get mobile search bar
+    // Mobile searchbar
     get_template_part( 'template-parts/searchbar');
 ?>
 
@@ -32,21 +32,25 @@ get_header();
         <div class="c-contact">
             <div class="c-contact__form__holder">
                 <?php
-                    the_content(
-                        sprintf(
-                            wp_kses(
-                                /* translators: %s: Name of current post. Only visible to screen readers */
-                                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
-                                array(
-                                    'span' => array(
-                                        'class' => array(),
-                                    ),
-                                )
-                            ),
-                            wp_kses_post( get_the_title() )
-                        )
-                    );
+                    // the_content(
+                    //     sprintf(
+                    //         wp_kses(
+                    //             /* translators: %s: Name of current post. Only visible to screen readers */
+                    //             __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cavatina' ),
+                    //             array(
+                    //                 'span' => array(
+                    //                     'class' => array(),
+                    //                 ),
+                    //             )
+                    //         ),
+                    //         wp_kses_post( get_the_title() )
+                    //     )
+                    // );
+
+                    
                 ?>
+                <?php echo do_shortcode( cavatina_contact_page_require_shortcode( get_the_content() ) ) ?>
+
             </div>
             <div class="c-contact__context">
                 <?php

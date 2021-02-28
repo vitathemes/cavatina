@@ -64,6 +64,11 @@
       padding-left: 16px;
     }
   }
+
+  .c-nav {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .c-aside__wrapper {
@@ -174,8 +179,8 @@
 .c-aside__nav-title {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
+  // font-size: 14px;
+  // line-height: 17px;
   color: $cavatina_secondary_color;
 
   @include media(tablet) {
@@ -261,5 +266,9 @@
   line-height: 17px;
   &:hover {
     color: $cavatina__main-primary-light-color !important;
+  }
+
+  h4 {
+    margin: 0px;
   }
 }
