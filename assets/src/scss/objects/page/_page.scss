@@ -10,6 +10,11 @@
     text-align: left;
     max-height: 100vh;
     padding-left: 90px;
+    display: block;
+  }
+
+  @include media(tablet-laptop) {
+    display: flex;
   }
 
   @include media(wide) {
@@ -65,6 +70,7 @@
     text-align: left;
     padding-bottom: 0px;
   }
+
   @include media(wide) {
     width: calc(99% - 165px);
   }

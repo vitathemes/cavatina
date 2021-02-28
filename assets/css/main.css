@@ -1304,7 +1304,11 @@ html {
     .o-page {
       text-align: left;
       max-height: 100vh;
-      padding-left: 90px; } }
+      padding-left: 90px;
+      display: block; } }
+  @media only screen and (min-width: 980px) and (max-width: 1005px) {
+    .o-page {
+      display: flex; } }
   @media only screen and (min-width: 1400px) {
     .o-page {
       display: flex; } }
@@ -3736,6 +3740,8 @@ img {
 .c-post__thumbnail {
   width: 100%;
   height: 30vh;
+  min-height: 180px;
+  max-height: 360px;
   overflow: hidden;
   border-radius: 7px; }
 

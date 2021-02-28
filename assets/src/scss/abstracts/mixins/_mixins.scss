@@ -37,6 +37,12 @@
     }
   }
 
+  @if tablet-laptop == $res {
+    @media only screen and (min-width: #{$breakpoint_md}) and (max-width: #{$breakpoint_md2}) {
+      @content;
+    }
+  }
+
   @if laptop-only == $res {
     @media only screen and (max-width: #{$breakpoint_lg - 1}) {
       @content;
