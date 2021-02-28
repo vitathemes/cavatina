@@ -1,5 +1,10 @@
 jQuery(function ($) {
   /* Carousel Navigation images */
+  let flCarouselTextLength;
+  if (childFinder("body", "c-carousel__post-title")) {
+    flCarouselTextLength = flCarouselText.slides.length - 1;
+  }
+
   $(".c-carousel__cell > a:first").on("focusin", function (e) {
     flCarouselMain.select(0);
   });
@@ -13,11 +18,6 @@ jQuery(function ($) {
   });
 
   /* Carousel Navigation Text */
-
-  if (childFinder("body", "c-carousel__post-title")) {
-    let flCarouselTextLength = flCarouselText.slides.length - 1;
-  } else {
-  }
 
   $(".c-carousel__post-title:last-child").on("focusin", function (e) {
     flCarouselMain.select(flCarouselTextLength);

@@ -15,7 +15,7 @@ get_header();
 <aside class="o-page__col c-aside c-aside--home js-aside">
     <div class="c-aside__content">
         <div class="c-aside__nav">
-            <h3 class="c-aside__nav-title"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></h3>
+            <h4 class="c-aside__nav-title"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></h4>
             <?php
                 if ( has_nav_menu( 'primary-menu' ) ) {
                     wp_nav_menu(
@@ -40,7 +40,7 @@ get_header();
         ?>
         <div class="c-aside__carousel">
             <div class="c-carousel c-carousel--aside">
-                <h3 class="c-carousel__title"><?php esc_html_e( 'Recent Projects', 'cavatina' ); ?></h3>
+                <h4 class="c-carousel__title"><?php esc_html_e( 'Recent Projects', 'cavatina' ); ?></h4>
                 <div class="c-carousel__post-titles js-carousel__post-titles">
                     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <?php the_title( '<a href="'. esc_url( get_permalink() ) .'" class="c-carousel__post-title js-carousel__post-title"><span class="o-bullet-decimal-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text">', '</p></a>' ); ?>
