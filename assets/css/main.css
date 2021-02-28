@@ -4141,12 +4141,12 @@ img {
   order: 5;
   width: 100%;
   text-align: left;
-  margin-top: 39px;
-  width: calc(100% - 280px); }
+  margin-top: 39px; }
   @media only screen and (min-width: 980px) {
     .c-single__blog__tags {
       display: inline-block;
-      padding-left: 206px; } }
+      padding-left: 206px;
+      width: calc(100% - 280px); } }
   .c-single__blog__tags li {
     display: inline-block;
     margin-right: 16px; }
@@ -4455,7 +4455,8 @@ input[type="submit"] {
   #columns
 \*------------------------------------*/
 .wp-block-column {
-  text-align: initial; }
+  text-align: initial;
+  margin: 0px 16px; }
 
 /*------------------------------------*\
   #blockquote

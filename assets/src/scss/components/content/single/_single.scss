@@ -490,11 +490,10 @@
   text-align: left;
   margin-top: 39px;
 
-  width: calc(100% - 280px);
-
   @include media(tablet) {
     display: inline-block;
     padding-left: 206px;
+    width: calc(100% - 280px);
   }
 
   li {
