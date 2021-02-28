@@ -4205,8 +4205,7 @@ a {
   font-weight: normal;
   line-height: 23px;
   font-family: "montserratregular";
-  line-height: 17px;
-  /* identical to box height */ }
+  line-height: 17px; }
   a:visited {
     color: var(--secondary-color); }
   a:hover, a:focus, a:active {
