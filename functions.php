@@ -357,13 +357,6 @@ add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_a
 
 
 
-
-
-
-
-
-
-
 /**
  * Load Setup file
  */
