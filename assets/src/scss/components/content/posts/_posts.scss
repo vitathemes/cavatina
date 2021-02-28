@@ -36,14 +36,6 @@
   }
 }
 .c-post--archive {
-  .c-post__entry-title__anchor {
-    font-size: 14px;
-    line-height: 17px;
-    @include media(tablet) {
-      line-height: 17px;
-    }
-  }
-
   .c-post__header {
     @include media(tablet) {
       margin-bottom: 8px;
@@ -100,7 +92,7 @@
   margin-bottom: 6px;
   vertical-align: top;
   margin-top: 0;
-  line-height: 17px;
+  // line-height: 17px;
 
   &::first-letter {
     text-transform: uppercase;
@@ -115,7 +107,7 @@
 
 .c-post__entry-title__anchor {
   font-weight: normal;
-  font-size: 14px;
+  // font-size: 14px;
   line-height: 17px;
   color: $cavatina_primary_color !important;
   vertical-align: top;
@@ -207,6 +199,14 @@
   max-height: 360px;
   overflow: hidden;
   border-radius: 7px;
+
+  @include media(tablet) {
+    max-height: 180px;
+  }
+
+  @include media(tablet) {
+    max-height: 360px;
+  }
 }
 
 .c-post__thumbnail__image {

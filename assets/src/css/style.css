@@ -3264,13 +3264,6 @@ img {
       font-size: 14px;
       line-height: 17px; } }
 
-.c-post--archive .c-post__entry-title__anchor {
-  font-size: 14px;
-  line-height: 17px; }
-  @media only screen and (min-width: 980px) {
-    .c-post--archive .c-post__entry-title__anchor {
-      line-height: 17px; } }
-
 @media only screen and (min-width: 980px) {
   .c-post--archive .c-post__header {
     margin-bottom: 8px; } }
@@ -3315,7 +3308,6 @@ img {
   margin-bottom: 6px;
   vertical-align: top;
   margin-top: 0;
-  line-height: 17px;
   counter-reset: section; }
   .c-post__entry-title::first-letter {
     text-transform: uppercase; }
@@ -3324,7 +3316,6 @@ img {
 
 .c-post__entry-title__anchor {
   font-weight: normal;
-  font-size: 14px;
   line-height: 17px;
   color: var(--primary-color) !important;
   vertical-align: top;
@@ -3394,6 +3385,12 @@ img {
   max-height: 360px;
   overflow: hidden;
   border-radius: 7px; }
+  @media only screen and (min-width: 980px) {
+    .c-post__thumbnail {
+      max-height: 180px; } }
+  @media only screen and (min-width: 980px) {
+    .c-post__thumbnail {
+      max-height: 360px; } }
 
 .c-post__thumbnail__image {
   width: 100%;
@@ -3944,14 +3941,16 @@ h3 {
 
 h4 {
   font-family: "montserratregular";
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400; }
 
 h5 {
+  font-size: 12px;
   font-family: "montserratregular";
   font-weight: 400; }
 
 h6 {
+  font-size: 10px;
   font-family: "montserratregular";
   font-weight: 400; }
 
@@ -3959,15 +3958,6 @@ h6 {
 --------------------------------------------- */
 * {
   font-family: "montserratregular"; }
-
-a {
-  font-family: "montserratregular";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-  color: #000000; }
 
 /* copy
 --------------------------------------------- */
@@ -4184,7 +4174,10 @@ a {
   transition: 0.2s all;
   font-style: normal;
   font-weight: normal;
-  line-height: 23px; }
+  line-height: 23px;
+  font-family: "montserratregular";
+  line-height: 17px;
+  /* identical to box height */ }
   a:visited {
     color: var(--secondary-color); }
   a:hover, a:focus, a:active {
