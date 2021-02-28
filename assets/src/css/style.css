@@ -2522,6 +2522,8 @@ img {
   line-height: 17px; }
   .c-aside__category__link:hover {
     color: #767676 !important; }
+  .c-aside__category__link h4 {
+    margin: 0px; }
 
 /* Carousel
 --------------------------------------------- */
@@ -2982,7 +2984,7 @@ img {
       width: max-content;
       font-style: normal;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 12px;
       line-height: 15px;
       display: flex;
       align-items: flex-start;
@@ -3357,7 +3359,8 @@ img {
 
 .c-post__meta__link {
   -ms-word-wrap: break-word;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  font-size: 14px; }
   .c-post__meta__link:hover {
     color: #000000 !important; }
 
@@ -3552,6 +3555,23 @@ img {
     padding-left: 16px; }
   .c-single__text .blocks-gallery-grid {
     margin-left: 0px; }
+  .c-single__text .comment-metadata {
+    margin-top: 5px; }
+    .c-single__text .comment-metadata a {
+      text-decoration: none;
+      color: var(--secondary-color) !important; }
+      .c-single__text .comment-metadata a:hover {
+        color: #000000 !important; }
+  .c-single__text .comment-reply-link {
+    text-decoration: none;
+    color: var(--secondary-color) !important; }
+  .c-single__text .fn {
+    color: #000000 !important; }
+    .c-single__text .fn a {
+      color: #000000 !important;
+      text-decoration: none; }
+      .c-single__text .fn a:hover {
+        color: var(--secondary-color) !important; }
 
 .c-single__context__holder {
   height: max-content;
@@ -3638,6 +3658,15 @@ img {
     @media only screen and (min-width: 980px) {
       .c-single__carousel--mobile .flickity-viewport .c-single__slider__cell {
         height: 100%; } }
+
+/*------------------------------------*\
+  #Remove block if thumbnail didnt exist
+\*------------------------------------*/
+.c-single__carousel--remove {
+  display: none; }
+  @media only screen and (min-width: 980px) {
+    .c-single__carousel--remove {
+      display: block; } }
 
 /*------------------------------------*\
   #Post blog

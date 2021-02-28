@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="c-single__carousel c-single__carousel--mobile">
+        <div class="c-single__carousel c-single__carousel--mobile <?php cavatina_page_thumbnail_class() ?>">
             <div class="c-carousel__single__slider c-carousel__single__slider--page js-single__slider">
                 <div class="c-carousel__single__cell  c-carousel__single__cell--page">
                     <?php the_post_thumbnail('large', array('class' => 'c-carousel__single__cell__image c-carousel__single__cell_image--page')); ?>

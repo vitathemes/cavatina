@@ -164,6 +164,34 @@
   .blocks-gallery-grid {
     margin-left: 0px;
   }
+
+  .comment-metadata {
+    margin-top: 5px;
+
+    a {
+      text-decoration: none;
+      color: $cavatina_secondary_color !important;
+      &:hover {
+        color: $cavatina__main-primary-color !important;
+      }
+    }
+  }
+  .comment-reply-link {
+    text-decoration: none;
+    color: $cavatina_secondary_color !important;
+  }
+
+  .fn {
+    color: $cavatina__main-primary-color !important;
+    a {
+      color: $cavatina__main-primary-color !important;
+      text-decoration: none;
+
+      &:hover {
+        color: $cavatina_secondary_color !important;
+      }
+    }
+  }
 }
 
 .c-single__context__holder {
@@ -286,6 +314,16 @@
   }
 }
 
+/*------------------------------------*\
+  #Remove block if thumbnail didnt exist
+\*------------------------------------*/
+.c-single__carousel--remove {
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+  }
+}
 /*------------------------------------*\
   #Post blog
 \*------------------------------------*/

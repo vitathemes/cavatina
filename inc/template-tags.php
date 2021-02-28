@@ -281,7 +281,7 @@ if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 			
 				if ($category->count != 0) {
 					/* translators: return poject_category items for filtering */
-					$output .= '<a class="c-aside__category__link" href="'. site_url() . '/'. get_post_type().'/?project_category=' . esc_html( $category->name ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+					$output .= '<a class="c-aside__category__link" href="'. site_url() . '/'. get_post_type().'/?project_category=' . esc_html( $category->name ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '"><h4>' . esc_html( $category->name ) . '</h4></a>' . $separator;
 				}
 			}
 			echo wp_kses_post(trim( $output ));
@@ -497,6 +497,23 @@ if (! function_exists('cavatina_get_home_page_link')) :
 endif;
 
 
+
+if (! function_exists('cavatina_page_thumbnail_class')) :
+	/**
+	* remove thumnail block if thumbnail didnt exist in pages
+	*/
+	function cavatina_page_thumbnail_class() {
+
+		if ( ! has_post_thumbnail() ) {
+			echo esc_html("c-single__carousel--remove");
+		}
+		
+
+	}
+endif;
+
+
+
 if (! function_exists('cavatina_get_social_media')) :
 	/**
 	* get social media 
@@ -546,73 +563,71 @@ if (! function_exists('cavatina_get_social_media')) :
 
 if ( get_theme_mod('twitter_link') != null) {
 
-echo '
-<a href="'. esc_url(get_theme_mod('twitter_link')) .'" class="c-social-media__item">
-    <span class="c-social-media__icon dashicons dashicons-twitter"></span>
-</a>';
+	echo '
+	<a href="'. esc_url(get_theme_mod('twitter_link')) .'" class="c-social-media__item">
+		<span class="c-social-media__icon dashicons dashicons-twitter"></span>
+	</a>';
 
-}
+	}
 }
 endif;
 
 
 function cavatina_get_slider( $postId ) {
-/**
-* Display slider if plugin was activated
-*
-* @since 1.0.0
-*
-*/
-if ( ! class_exists( 'acf_plugin_photo_gallery' ) ){
+	/**
+	* Display slider if plugin was activated
+	*
+	* @since 1.0.0
+	*
+	*/
+	if ( ! class_exists( 'acf_plugin_photo_gallery' ) ){
 
-echo '<div class="c-carousel__single__cell">';
-    the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
-    echo '</div>';
-}
-else {
+	echo '<div class="c-carousel__single__cell">';
+		the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image', 'title' => 'Feature image']);
+		echo '</div>';
+	}
+	else {
 
-$images = acf_photo_gallery('gallery', $postId);
-if( count($images) ){
-foreach($images as $image) {
+		$images = acf_photo_gallery('gallery', $postId);
+		if( count($images) ){
+			foreach($images as $image) {
 
-$id = $image['id'];
-$title = $image['title'];
-$caption = $image['caption'];
-$full_image_url = $image['full_image_url'];
-$thumbnail_image_url = $image['thumbnail_image_url'];
-$url = $image['url'];
-$target = $image['target'];
-$alt = get_field('photo_gallery_alt', $id);
+				$id = $image['id'];
+				$title = $image['title'];
+				$caption = $image['caption'];
+				$full_image_url = $image['full_image_url'];
+				$thumbnail_image_url = $image['thumbnail_image_url'];
+				$url = $image['url'];
+				$target = $image['target'];
+				$alt = get_field('photo_gallery_alt', $id);
 
-echo
-'<div class="c-carousel__single__cell">
-    <img class="c-carousel__single__cell__image js-carousel__single__cell__image" src="'. esc_url($full_image_url).'"
-        alt="'. esc_html($title) .'" />
-</div>';
+				echo
+				'<div class="c-carousel__single__cell">
+					<img class="c-carousel__single__cell__image js-carousel__single__cell__image" src="'. esc_url($full_image_url).'"
+						alt="'. esc_html($title) .'" />
+				</div>';
 
-}
-}
-else{
+			}
+		}	
+		else{
 
-if ( has_post_thumbnail() ) {
+			if ( has_post_thumbnail() ) {
 
-echo '<div class="c-carousel__single__cell">';
-    the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image js-carousel__single__cell__image', 'alt' =>
-    esc_html( get_the_title() ) ]);
-    echo '</div>';
+				echo '<div class="c-carousel__single__cell">';
+				the_post_thumbnail('large', ['class' => 'c-carousel__single__cell__image js-carousel__single__cell__image', 'alt' =>
+				esc_html( get_the_title() ) ]);
+				echo '</div>';
 
-}
-else{
+			}
+			else{
 
-echo '<div class="c-carousel__single__cell">';
-    echo '<img class="c-carousel__single__cell__image js-carousel__single__cell__image"
-        src="' . esc_url( get_stylesheet_directory_uri() ) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
-    echo '</div>';
+				echo '<div class="c-carousel__single__cell">';
+				echo '<img class="c-carousel__single__cell__image js-carousel__single__cell__image"
+					src="' . esc_url( get_stylesheet_directory_uri() ) . '/assets/images/no-thumbnail.png" alt="no thumbnail" />';
+				echo '</div>';
 
-}
+			}
 
-
-
-}
-}
+		}
+	}
 }
