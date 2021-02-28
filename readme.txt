@@ -73,10 +73,6 @@ Flickity by desandro
 License: GNU GPLv3
 Source: https://www.gnu.org/licenses/gpl-3.0.html
 
-Kirki WordPress Customizer Framework by Ari Stathopoulos
-License: MIT License, https://github.com/kirki-framework/kirki/blob/master/LICENSE
-Source: https://kirki.org
-
 Montserrat Font by Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly
 License: Apache, http://www.apache.org/licenses/LICENSE-2.0
 Source: https://fonts.google.com/specimen/Montserrat?preview.text_type=custom&selection.family=Montserrat&sidebar.open=true#about
