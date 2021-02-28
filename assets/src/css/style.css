@@ -1706,7 +1706,7 @@ img {
 .c-header__holder.toggled .c-nav {
   padding-top: 24px;
   padding-bottom: 16px;
-  max-height: 25em;
+  max-height: calc(25em);
   text-align: left;
   display: block;
   flex-wrap: wrap;
@@ -2449,8 +2449,6 @@ img {
 .c-aside__nav-title {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
   color: var(--secondary-color); }
   @media only screen and (min-width: 980px) {
     .c-aside__nav-title {
@@ -2567,8 +2565,6 @@ img {
 .c-carousel__title {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
   color: var(--secondary-color);
   margin: 0 0 24px 0; }
   @media only screen and (min-width: 980px) {
@@ -3458,6 +3454,9 @@ img {
       width: 50%;
       margin-top: 0;
       padding-bottom: 5%; } }
+  @media only screen and (min-width: 1400px) {
+    .c-single__context {
+      padding-bottom: 10%; } }
 
 .c-single__title {
   width: 100%;

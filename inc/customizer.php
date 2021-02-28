@@ -226,6 +226,69 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'cavatina_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_h4',
+		'label'       => esc_html__( 'H4', 'cavatina' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'font-family'   	 => 'Montserrat',
+			'font-size'          => '12px',
+			'variant'         	 => '400',
+			'color'         	 => '#000000',
+		],
+		'priority'    => 13,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => array( 'h4'),
+			],
+		],
+	] );
+
+
+	Kirki::add_field( 'cavatina_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_h5',
+		'label'       => esc_html__( 'H5', 'cavatina' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'font-family'   	 => 'Montserrat',
+			'font-size'          => '12px',
+			'variant'         	 => '400',
+			'color'         	 => '#000000',
+		],
+		'priority'    => 13,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => array( 'h5'),
+			],
+		],
+	] );
+
+
+	Kirki::add_field( 'cavatina_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_h6',
+		'label'       => esc_html__( 'H6', 'cavatina' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'font-family'   	 => 'Montserrat',
+			'font-size'          => '12px',
+			'variant'         	 => '400',
+			'color'         	 => '#000000',
+		],
+		'priority'    => 13,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => array( 'h6'),
+			],
+		],
+	] );
+
+
+	Kirki::add_field( 'cavatina_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_h4',
 		'label'       => esc_html__( 'H4, H5, H6', 'cavatina' ),
 		'section'     => 'typography_headings',
 		'default'     => [
@@ -243,6 +306,7 @@ if( function_exists( 'kirki' ) ) {
 		],
 	] );
 
+
 	
 	// Paragraph typography
 	Kirki::add_field( 'cavatina_theme', [
@@ -259,9 +323,10 @@ if( function_exists( 'kirki' ) ) {
 		],
 		'priority'    => 14,
 		'transport'   => 'auto',
+		
 		'output'      => [
 			[
-				'element' => array( 'p' , 'ul' ),
+				'element' => array( 'p' , 'ul' , ".menu-item a" ),
 			],
 		],
 	] );

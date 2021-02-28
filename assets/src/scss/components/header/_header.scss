@@ -341,7 +341,6 @@
     width: 45px;
     height: 30px;
     text-align: right;
-    // padding-right: 26px;
 
     @include media(tablet) {
       width: 40px;
@@ -365,7 +364,7 @@
   .c-nav {
     padding-top: 24px;
     padding-bottom: 16px;
-    max-height: 25em;
+    max-height: calc(25em);
     text-align: left;
     display: block;
     flex-wrap: wrap;

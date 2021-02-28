@@ -40,6 +40,10 @@
     margin-top: 0;
     padding-bottom: 5%;
   }
+
+  @include media(wide) {
+    padding-bottom: 10%;
+  }
 }
 
 .c-single__title {

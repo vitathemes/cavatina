@@ -298,7 +298,9 @@ if ( ! function_exists( 'cavatina_get_thumbnail_with_preloader' ) ) :
 	function cavatina_get_thumbnail_with_preloader( $className = "" ) {
 	
 		if( ! empty($className)){
+
 			$className = 'class="' . $className . '"';
+			
 		}
 
 		if ( has_post_thumbnail() ) {

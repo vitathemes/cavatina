@@ -1,35 +1,34 @@
 jQuery(function ($) {
-  /*------------------------------------*\
-    #Keyboard Navigation
-  \*------------------------------------*/
+  /* Carousel Navigation images */
+  $(".c-carousel__cell > a:first").on("focusin", function (e) {
+    console.log("first focus");
+    flCarouselMain.select(0);
+  });
 
-  // Remove tab index from selected elements
-  $(".c-carousel__post-titles, .c-carousel__context").attr("tabindex", -1);
+  $(".c-carousel__cell > a").on("keydown blur", function (e) {
+    if (e.shiftKey && e.keyCode === 9) {
+      flCarouselText.previous();
+    } else if (e.keyCode === 9) {
+      flCarouselText.next();
+    }
+  });
 
-  // Carousel change by focus forwards and backwards
+  /* Carousel Navigation Text */
+  let flCarouselTextLength = flCarouselText.slides.length - 1;
+  $(".c-carousel__post-title:last-child").on("focusin", function (e) {
+    console.log("last focus focus");
+    flCarouselMain.select(flCarouselTextLength);
+  });
 
-  if (childFinder("body", "c-carousel")) {
-    let carouselLength = flCarouselText.cells.length;
+  $(".c-carousel__post-title").on("keydown blur", function (e) {
+    if (e.shiftKey && e.keyCode === 9) {
+      flCarouselText.previous();
+    } else if (e.keyCode === 9) {
+      flCarouselText.next();
+    } else if (e.type == "blur") {
+    }
+  });
 
-    $(".js-carousel__post-title, .c-carousel__cell > a").on(
-      "keydown",
-      function (e) {
-        if (e.shiftKey && e.keyCode === 9) {
-          if (currentSlide >= 1 && currentSlide != 0) {
-            if (currentSlide === carouselLength) {
-              currentSlide -= 1;
-            }
-            currentSlide -= 1;
-          }
-          flCarouselText.select(currentSlide);
-        } else if (e.keyCode === 9) {
-          ++currentSlide;
-          flCarouselText.select(currentSlide);
-        } else if (e.type == "blur") {
-        }
-      }
-    );
-  }
   // Menu Trap Focus
   /* Trap Focus ( Menu ) Backward */
   $(".c-header__menu").on("keydown blur", function (e) {
@@ -57,7 +56,6 @@ jQuery(function ($) {
       setTimeout(function () {
         lazyLoadInstance.update();
       }, 1000);
-
       var loadMore = $(this),
         data = {
           action: "loadmore",
@@ -75,9 +73,7 @@ jQuery(function ($) {
           if (data) {
             loadMore.prev().after(data);
             button.text("Load More");
-
             loadmore_params.current_page++;
-
             if (loadmore_params.current_page == loadmore_params.max_page)
               loadMore.remove();
           } else {
@@ -291,7 +287,7 @@ if (childFinder("body", "js-carousel__context")) {
     prevNextButtons: false,
     pageDots: false,
     sync: ".c-carousel__context",
-    draggable: false,
+    draggable: true,
     selectedAttraction: 0.2,
     friction: 0.8,
     on: {
@@ -383,4 +379,13 @@ if (childFinder("body", "comments-area")) {
 // lazy load image
 var lazyLoadInstance = new LazyLoad({
   elements_selector: [".c-carousel__image", ".c-post__thumbnail__image"],
+});
+
+let cavatinaIsBackward;
+document.addEventListener("keydown", function (e) {
+  if (e.shiftKey && e.keyCode == 9) {
+    cavatinaIsBackward = true;
+  } else {
+    cavatinaIsBackward = false;
+  }
 });

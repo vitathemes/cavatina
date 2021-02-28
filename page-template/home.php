@@ -15,7 +15,7 @@ get_header();
 <aside class="o-page__col c-aside c-aside--home js-aside">
     <div class="c-aside__content">
         <div class="c-aside__nav">
-            <p class="c-aside__nav-title"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></p>
+            <h3 class="c-aside__nav-title"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></h3>
             <?php
                 if ( has_nav_menu( 'primary-menu' ) ) {
                     wp_nav_menu(
@@ -40,8 +40,8 @@ get_header();
         ?>
         <div class="c-aside__carousel">
             <div class="c-carousel c-carousel--aside">
-                <p class="c-carousel__title"><?php esc_html_e( 'Recent Projects', 'cavatina' ); ?></p>
-                <div class="c-carousel__post-titles js-carousel__post-titles" tabindex="-1">
+                <h3 class="c-carousel__title"><?php esc_html_e( 'Recent Projects', 'cavatina' ); ?></h3>
+                <div class="c-carousel__post-titles js-carousel__post-titles">
                     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <?php the_title( '<a href="'. esc_url( get_permalink() ) .'" class="c-carousel__post-title js-carousel__post-title"><span class="o-bullet-decimal-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text">', '</p></a>' ); ?>
                     <?php endwhile; wp_reset_query(); ?>
@@ -63,7 +63,7 @@ get_header();
                 <div class="c-carousel__context js-carousel__context">
                     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <div class="c-carousel__cell">
-                        <a href="<?php echo esc_html(get_permalink()); ?>" tabindex="-1">
+                        <a href="<?php echo esc_html(get_permalink()); ?>">
                             <?php cavatina_get_thumbnail_with_preloader("c-carousel__image"); ?>
                         </a>
                     </div>
