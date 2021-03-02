@@ -1,0 +1,33 @@
+a {
+  color: $cavatina_secondary_color;
+  transition: $global-transition;
+  text-decoration: none;
+
+  transition: 0.2s all;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 23px;
+
+  font-family: $font__regular;
+  line-height: 17px;
+
+  &:visited {
+    color: $cavatina_secondary_color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
+
+  &:focus {
+    outline: thin dotted;
+    color: $color__text-input-focus !important;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}

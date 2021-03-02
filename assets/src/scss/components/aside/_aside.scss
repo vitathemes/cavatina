@@ -1,0 +1,272 @@
+/*------------------------------------*\
+  #Aside
+\*------------------------------------*/
+
+.c-aside {
+  width: 100%;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 39px;
+
+  animation-name: blurReverse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+  @include media(tablet) {
+    display: inline-block;
+    width: 180px;
+    height: 100%;
+    vertical-align: top;
+    position: relative;
+    border-top: none;
+    padding-top: 35px;
+  }
+}
+
+.c-aside--blur {
+  animation-name: blur;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.c-aside--mobile-hide {
+  display: none;
+
+  @include media(tablet) {
+    display: inline-block;
+  }
+}
+
+.c-aside--mobile-hide {
+  display: none;
+  @include media(tablet) {
+    display: inline-block;
+  }
+}
+
+.c-aside--home {
+  display: none;
+  @include media(tablet) {
+    width: 22%;
+    height: 90%;
+    display: inline-block;
+  }
+
+  .c-aside__content {
+    @include media(tablet) {
+      justify-content: flex-end;
+      height: 100%;
+      flex-direction: column;
+      padding-bottom: 0;
+      padding-left: 16px;
+    }
+  }
+
+  .c-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.c-aside__wrapper {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media(tablet) {
+    border-top: 0px solid #e1e1e1;
+    justify-content: center;
+    padding: 25px 16px;
+    min-height: 50px;
+  }
+}
+
+.c-aside__wrapper--full-width {
+  @include media(tablet) {
+    padding: 26px 0 0 0;
+  }
+}
+
+.c-aside--blog {
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+/*------------------------------------*\
+  #Aside content
+\*------------------------------------*/
+.c-aside__content {
+  width: 100%;
+  justify-content: center;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media(tablet) {
+    vertical-align: top;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  @include media(wide) {
+    padding-bottom: 20%;
+  }
+}
+
+.c-aside__context {
+  width: max-content;
+  display: inline-block;
+  padding-left: 16px;
+
+  @include media(tablet) {
+    text-align: left;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+.c-aside__title {
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0;
+  display: inline-block;
+  text-transform: capitalize;
+  font-weight: normal;
+
+  color: $cavatina_primary_color;
+
+  @include media(tablet) {
+    font-size: 19px;
+    display: block;
+    padding-bottom: 8px;
+    padding-top: 4px;
+
+    margin-left: 39px;
+  }
+}
+
+.c-aside__counter {
+  font-size: 14px;
+  color: $cavatina_secondary_color;
+  line-height: 17px;
+  font-weight: normal;
+
+  @include media(tablet) {
+    font-size: 14px;
+  }
+
+  &::before {
+    content: "| \00a0";
+    @include media(tablet) {
+      content: "";
+    }
+  }
+}
+
+.page-numbers.current {
+  font-size: 14px;
+}
+
+.c-aside__nav-title {
+  font-style: normal;
+  font-weight: normal;
+  color: $cavatina_secondary_color;
+
+  @include media(tablet) {
+    margin: 0;
+    text-align: left;
+    margin-left: 8px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+  }
+}
+
+.c-aside__nav {
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+    padding-bottom: 10%;
+  }
+
+  @include media(wide) {
+    padding-bottom: 30%;
+  }
+
+  .c-nav {
+    @include media(tablet) {
+      display: inline-block;
+      overflow: unset;
+    }
+
+    ul {
+      @include media(tablet) {
+        list-style-type: none;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.c-aside__carousel {
+  display: none;
+  @include media(tablet) {
+    display: block;
+    width: 100%;
+    padding-left: 8px;
+    text-align: left;
+  }
+}
+
+/*------------------------------------*\
+  #Aside Category
+\*------------------------------------*/
+.c-aside__title--category {
+  display: none;
+  font-size: 14px;
+  line-height: 17px;
+  transition: 0.2s all;
+  color: $cavatina_secondary_color;
+
+  @include media(tablet) {
+    display: block;
+    margin-top: 69px;
+  }
+  @include media(wide) {
+    margin-top: 95px;
+  }
+}
+
+.c-aside__category {
+  display: none;
+  margin-left: 39px;
+  margin-top: 8px;
+
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.c-aside__category__link {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  color: $cavatina_primary_color !important;
+  line-height: 17px;
+  &:hover {
+    color: $cavatina__main-primary-light-color !important;
+  }
+
+  h4 {
+    margin: 0px;
+  }
+}

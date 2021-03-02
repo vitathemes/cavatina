@@ -1,0 +1,43 @@
+{
+    "key": "group_603b2dafb7cbc",
+    "title": "Projects",
+    "fields": [
+        {
+            "key": "field_603b2db87e65f",
+            "label": "Gallery Project",
+            "name": "gallery_project",
+            "type": "photo_gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "fields[gallery_project": {
+                "edit_modal": "Default",
+                "images_limit": ""
+            },
+            "edit_modal": "Default"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "projects"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1614491097
+}

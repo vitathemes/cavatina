@@ -1,0 +1,93 @@
+/*--------------------------------------------------------------
+  # Custom Flickity
+  --------------------------------------------------------------*/
+
+/* ---- previous/next buttons ---- */
+.flickity-prev-next-button .flickity-button-icon {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 40%;
+  height: 40%;
+
+  @include media(tablet) {
+  }
+}
+
+/* ---- page dots ---- */
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include media(tablet) {
+    padding: 0;
+  }
+}
+
+.flickity-page-dots {
+  bottom: -55px;
+
+  @include media(tablet) {
+    bottom: -35px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    margin: 0;
+    border-radius: 0;
+    background: #8a8a8a;
+    opacity: 0.25;
+    cursor: pointer;
+
+    transition: 0.5s all;
+  }
+  .dot.is-selected {
+    height: 2px;
+    background: #8a8a8a;
+  }
+}
+/* ---- page buttons ---- */
+.flickity-button {
+  position: absolute;
+  left: 94%;
+  padding: 5%;
+  top: 140%;
+  transform: translate(-50%, -50%);
+  color: $cavatina__main-primary-light-color;
+  background-color: transparent;
+
+  @include media(tablet) {
+    top: 115%;
+    left: 99%;
+    padding: 15px;
+  }
+
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+.flickity-prev-next-button.previous {
+  left: 80%;
+  @include media(tablet) {
+    left: 95%;
+  }
+}

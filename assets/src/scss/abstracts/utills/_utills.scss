@@ -1,0 +1,40 @@
+.u-default-max-width {
+  @extend %responsive-aligndefault-width;
+}
+
+.u-wide-max-width {
+  @extend %responsive-alignwide-width;
+}
+
+.u-full-max-width {
+  @extend %responsive-alignfull-width;
+}
+
+.u-header-space {
+  width: 100%;
+  height: 90px;
+
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.skip-link {
+}
+
+.u-header-space-mobile {
+  width: 100%;
+  height: 60px;
+}
+
+.u-border {
+  width: 100%;
+  padding: 0px 16px;
+  margin: 16px 0px 24px 0px;
+  border-top: 1px solid #e1e1e1;
+
+  @include media(tablet) {
+    width: 615px;
+    margin: 16px 206px 24px 206px;
+  }
+}

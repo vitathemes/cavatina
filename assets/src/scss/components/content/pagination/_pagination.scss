@@ -1,0 +1,88 @@
+.nav-links {
+  display: none !important;
+}
+
+.nav-previous {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
+.nav-next {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
+
+/*------------------------------------*\
+  #Pagination
+\*------------------------------------*/
+
+.c-pagination {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.c-pagination__load-more {
+  width: 100%;
+
+  border-radius: 2px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.c-pagination--load-more {
+  @include media(tablet) {
+    padding-right: 0px;
+  }
+}
+
+/*------------------------------------*\
+  #Page Numbers (Word Press pagination)
+\*------------------------------------*/
+
+.page-numbers {
+  color: $cavatina__main-primary-color !important;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    color: $cavatina__main-primary-light-color !important;
+  }
+}
+
+.page-numbers.current {
+  background-color: $cavatina__main-primary-color;
+  color: $cavatina__neutral-white !important;
+}
+.dashicons {
+  color: $cavatina__main-primary-color;
+  font-family: dashicons !important;
+  &:hover {
+    background-color: transparent;
+    color: $cavatina__main-primary-light-color;
+  }
+}
+
+.next.page-numbers,
+.prev.page-numbers {
+  &:hover {
+    background-color: unset;
+  }
+}

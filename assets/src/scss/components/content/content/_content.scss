@@ -1,0 +1,43 @@
+/*------------------------------------*\
+  #Content
+\*------------------------------------*/
+
+.c-content {
+  height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @include media(tablet) {
+    width: 100%;
+    padding-bottom: 0;
+  }
+}
+.c-content--home {
+  height: max-content;
+  margin-top: 39px;
+  @include media(tablet) {
+    height: 100%;
+    margin-top: 0px;
+  }
+  overflow: hidden;
+}
+.c-content--max-height {
+  overflow: scroll;
+  min-height: max-content;
+  @include media(tablet) {
+    height: max-content;
+    overflow: hidden;
+    min-height: 90%;
+  }
+}
+.c-content--search {
+  height: 90%;
+  overflow-y: scroll;
+
+  .c-container__content {
+    height: max-content;
+    .search-submit-mobile {
+      display: none;
+    }
+  }
+}

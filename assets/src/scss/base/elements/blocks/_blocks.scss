@@ -1,0 +1,148 @@
+/*------------------------------------*\
+  #WordPress Buttons
+\*------------------------------------*/
+.wp-block-button.is-style-outline {
+  .wp-block-button__link {
+    border: 1px solid $cavatina__main-primary-light-color;
+    color: $cavatina__main-primary-color !important;
+    &:hover {
+      background-color: #d2d2d2;
+    }
+  }
+}
+
+.wp-block-button.alignright {
+  text-align: right;
+}
+
+.wp-block-button.alignleft {
+  text-align: left;
+}
+
+.wp-block-button__link {
+  &:hover {
+    background-color: #d2d2d2;
+  }
+}
+
+/*------------------------------------*\
+  #cover
+\*------------------------------------*/
+
+/*------------------------------------*\
+  #columns
+\*------------------------------------*/
+.wp-block-column {
+  text-align: initial;
+}
+
+/*------------------------------------*\
+  #blockquote
+\*------------------------------------*/
+
+.wp-block-quote.has-text-align-right {
+  border-left: 0px;
+  border-right: 1px solid #e1e1e1;
+  padding-right: 16px;
+}
+
+/*------------------------------------*\
+  #Block category: Common
+\*------------------------------------*/
+
+.has-large-font-size {
+  text-align: initial;
+  line-height: 46px !important;
+}
+
+.wp-block-file {
+  .wp-block-file__button {
+    color: $cavatina__neutral-gray-light-color !important;
+    text-decoration: none;
+  }
+}
+
+/*------------------------------------*\
+  #Block category: Embeds
+\*------------------------------------*/
+
+.fb-post.fb_iframe_widget {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.wp-block-embed__wrapper {
+  margin: 0px 16px;
+}
+figcaption {
+  margin: 0 16px;
+
+  @include media(tablet) {
+    margin: 0px;
+  }
+}
+
+/*------------------------------------*\
+  #Block category: Widgets
+\*------------------------------------*/
+
+.wp-block-search__inside-wrapper {
+  border: none;
+  outline: none;
+}
+
+.wp-block-search__input {
+  border: 0px !important;
+  border-bottom: 1px solid black !important;
+}
+
+.wp-block-search__button {
+  padding: 12px 25px;
+  border: none;
+  font-weight: var(--heading-typography-variant);
+  background-color: $cavatina__main-primary-color;
+  border-radius: $global-radius;
+  background: #000000;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $cavatina__neutral-white;
+  cursor: pointer;
+  transition: $global-transition;
+
+  &:hover {
+    background-color: $color__border-button-hover;
+  }
+}
+/*------------------------------------*\
+  #Block category: Layout Elements
+\*------------------------------------*/
+
+.post-page-numbers {
+  padding: 10px 12px;
+  border-radius: 3px;
+  color: $cavatina__neutral-gray-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.page-links {
+  margin-top: 16px;
+}
+/*------------------------------------*\
+  #Block category: Formatting
+\*------------------------------------*/
+.wp-block-verse {
+  background-color: #e1e1e1;
+}
+
+/*------------------------------------*\
+  #WordPress Admin bar space 
+\*------------------------------------*/
+.admin-bar {
+  margin-top: 46px;
+  @include media(tablet) {
+    margin-top: 0px;
+  }
+}

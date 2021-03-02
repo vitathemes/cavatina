@@ -1,0 +1,14 @@
+*,
+html,
+body {
+  font-family: $font__regular;
+}
+
+body {
+  background: $color__background-body; // Fallback for when there is no custom background color defined.
+  counter-reset: chapter; /* Create a chapter counter scope */
+  &.has-no-scrollbar {
+    height: 100%;
+    overflow: hidden;
+  }
+}

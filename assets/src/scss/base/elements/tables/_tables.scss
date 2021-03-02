@@ -1,0 +1,11 @@
+thead {
+  tr {
+    background-color: #b3b3b3;
+  }
+}
+
+tbody {
+  tr:nth-child(odd) {
+    background-color: #e6e6e6;
+  }
+}

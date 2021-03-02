@@ -1,0 +1,44 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: none;
+  font-weight: var(--heading-typography-variant);
+  background-color: $cavatina__main-primary-color;
+  color: $cavatina__neutral-white;
+  border-radius: $global-radius;
+  background: #000000;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: $global-transition;
+  padding: 12px 25px;
+  &:hover {
+    background-color: $color__border-button-hover;
+  }
+  &:focus {
+    background-color: $color__border-button-hover;
+  }
+}
+
+.button--small {
+  padding: 12px 25px;
+}
+
+.wp-block-button__link {
+  padding: 12px 25px;
+  border: none;
+  font-weight: var(--heading-typography-variant);
+  background-color: $cavatina__main-primary-color;
+  border-radius: $global-radius;
+  background: #000000;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $cavatina__neutral-white;
+  cursor: pointer;
+  transition: $global-transition;
+
+  &:hover {
+    background-color: $color__border-button-hover;
+  }
+}

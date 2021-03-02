@@ -1,0 +1,57 @@
+/*------------------------------------*\
+  #Navigation
+\*------------------------------------*/
+.c-nav {
+  width: 100%;
+  max-height: 0;
+  transition: 1s ease-in-out;
+  transition-delay: 0s;
+  overflow: hidden;
+  margin-left: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  @include media(tablet) {
+    display: none;
+    order: 1;
+  }
+
+  .sub-menu {
+    display: none;
+  }
+}
+
+.s-nav {
+  list-style-type: none;
+  margin: 2%;
+
+  @include media(tablet) {
+    margin: 0;
+  }
+
+  .menu-item {
+    line-height: 17px;
+  }
+}
+
+.menu-item {
+  margin-bottom: 24px;
+  @include media(tablet) {
+    margin-bottom: 10px;
+  }
+
+  a {
+    font-size: 19px;
+    color: $cavatina_primary_color !important;
+
+    @include media(tablet) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &:hover {
+      color: $cavatina__main-primary-light-color !important;
+    }
+  }
+}

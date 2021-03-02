@@ -1,0 +1,11 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: $cavatina_secondary_color;
+  font-family: $cavatina__primary-font;
+  font-size: $cavatina_base-font-size;
+  line-height: $font__line-height-body;
+}

@@ -1,0 +1,195 @@
+/*------------------------------------*\
+    #Contact page block
+\*------------------------------------*/
+
+.c-contact {
+  width: 100%;
+  height: max-content;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  @include media(tablet) {
+    padding-top: 5%;
+    height: 100%;
+  }
+}
+
+.c-contact__form__holder {
+  width: 100%;
+  height: max-content;
+
+  padding-top: 23px;
+  padding-bottom: 64px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 0;
+
+  @include media(tablet) {
+    width: 50%;
+    height: 100%;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: flex-start;
+  }
+}
+
+.c-contact__context {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 0px;
+  margin-top: 32px;
+
+  @include media(tablet) {
+    width: 50%;
+    height: 100%;
+    align-content: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-left: 64px;
+    padding-top: 0px;
+  }
+  @include media(wide) {
+    padding-top: 5%;
+  }
+}
+
+/*------------------------------------*\
+  #Contact Form
+\*------------------------------------*/
+.c-contact__form {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: left;
+}
+
+.c-contact__form__text {
+  margin-bottom: 32px;
+  height: 30px;
+  padding-top: 5%;
+}
+
+.c-contact__form__text-area {
+  width: 100%;
+  text-align: left;
+  height: 80px;
+  font-size: 12px;
+
+  @include media(tablet) {
+    margin-top: 32px;
+  }
+}
+
+.c-contact__form__button {
+  margin-top: 16px;
+}
+
+.c-contact__widget {
+  width: 100%;
+  height: 280px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 35px;
+
+  p {
+    font-size: 14px;
+    line-height: 17px;
+    transition: 0.5s all;
+    color: $cavatina__main-primary-light-color;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+
+  @include media(wide) {
+    height: 400px;
+    padding-bottom: 115px;
+  }
+}
+
+/*------------------------------------*\
+  #Contact Form 7 Plugin 
+\*------------------------------------*/
+
+.wpcf7 {
+  width: 90%;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  form {
+    input[type="text"] {
+      height: 30px;
+      padding-top: 10px;
+    }
+
+    input[type="email"] {
+      margin-top: 22px;
+      height: 30px;
+      padding-top: 10px;
+
+      @include media(tablet) {
+        margin-top: 38px;
+      }
+    }
+
+    input[type="submit"] {
+      margin-top: 16px;
+    }
+
+    textarea {
+      width: 100%;
+      text-align: left;
+      height: 84px;
+      font-size: 12px;
+      margin-top: 22px;
+      @include media(tablet) {
+        margin-top: 46px;
+      }
+    }
+  }
+}
+
+.wpcf7-not-valid-tip {
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 166.3%;
+  font-family: $font__regular;
+  letter-spacing: 0.1em;
+  color: $cavatina__service-error-color;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.wpcf7-response-output {
+  outline: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: $cavatina__service-error-color;
+  font-size: 12px;
+  line-height: 166.3%;
+}
