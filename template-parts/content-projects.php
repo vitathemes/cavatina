@@ -39,7 +39,7 @@
     </div>
 
     <div class="c-post__excerpt">
-        <?php the_excerpt() ?>
+        <?php the_excerpt(); ?>
     </div>
 
     <div class="c-post__entery-content entry-content">

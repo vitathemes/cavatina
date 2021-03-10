@@ -72,7 +72,7 @@
 
     <div class="c-social-media c-social-media--blog">
 
-        <?php cavatina_get_social_media(true) ?>
+        <?php cavatina_social_media_share_post(true) ?>
 
     </div>
 

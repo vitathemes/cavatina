@@ -66,4 +66,3 @@ See the [Changelog](CHANGELOG.md)
 ## License
 
 Cavatina is licensed under [GNU GPL](LICENSE).
-Preloader.svg is licensed under [LD-FREE](https://loading.io/license/).

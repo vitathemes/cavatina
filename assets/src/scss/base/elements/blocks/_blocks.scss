@@ -26,14 +26,12 @@
 }
 
 /*------------------------------------*\
-  #cover
-\*------------------------------------*/
-
-/*------------------------------------*\
   #columns
 \*------------------------------------*/
+
 .wp-block-column {
   text-align: initial;
+  margin: 0px 16px;
 }
 
 /*------------------------------------*\
@@ -141,7 +139,16 @@ figcaption {
   #WordPress Admin bar space 
 \*------------------------------------*/
 .admin-bar {
-  margin-top: 46px;
+  .o-page {
+    @include media(tablet) {
+      height: calc(100vh - 32px);
+    }
+  }
+
+  .c-aside__wrapper {
+    padding-top: 0px;
+  }
+
   @include media(tablet) {
     margin-top: 0px;
   }

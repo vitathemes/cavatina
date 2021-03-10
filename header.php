@@ -33,19 +33,22 @@
                 <?php cavatina_handle_logo(); ?>
 
             </div>
+
             <button class="c-header__menu js-menu" aria-label="Menu Button" aria-controls="primary-menu"
                 aria-expanded="false" onClick="blurToggle()">
             </button>
-            <div class="c-header__search js-header__search"></div>
+
+            <button class="c-header__search js-header__search"></button>
+
             <?php
                if ( has_nav_menu( 'primary-menu' ) ) {
                    wp_nav_menu(
                         array(
-                            'theme_location' => 'primary-menu',
-                            'menu_id'        => 'primary-menu-registered',
-                            "menu_class" => "s-nav ",
+                            'theme_location'  => 'primary-menu',
+                            'menu_id'         => 'primary-menu-registered',
+                            "menu_class"      => "s-nav",
                             "container_class" => "c-nav js-navigation",
-                            "container" => "nav",
+                            "container"       => "nav",
                         ));
                 }
             ?>

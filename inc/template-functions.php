@@ -38,7 +38,6 @@ add_action( 'wp_head', 'wp_cavatina_pingback_header' );
 
 
 
-
 function cavatina_get_pagination( $page , $query ) { 
 	if($page === "projects"){
 		if ( true == get_theme_mod( 'projects_loadmore', true ) ){

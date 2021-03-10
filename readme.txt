@@ -1,7 +1,7 @@
 === Cavatina ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
-Tested up to: 5.6.1
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
@@ -73,3 +73,14 @@ Flickity by desandro
 License: GNU GPLv3
 Source: https://www.gnu.org/licenses/gpl-3.0.html
 
+Montserrat Font by Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly
+License: Apache, http://www.apache.org/licenses/LICENSE-2.0
+Source: https://fonts.google.com/specimen/Montserrat?preview.text_type=custom&selection.family=Montserrat&sidebar.open=true#about
+
+TGMPA by Thomas Griffin, Gary Jones, Juliette
+License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
+Source: http://tgmpluginactivation.com/
+
+preloader.svg by loading.io
+License: LD-FREE, https://loading.io/license/
+Source: https://loading.io/
