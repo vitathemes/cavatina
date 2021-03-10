@@ -31,20 +31,28 @@ get_header();
             ?>
         </div>
         <?php
-            $projects_post_type = post_type_exists( 'projects' );
-            $loop_post_type =  "";
-
-            if( $projects_post_type ){
-                $loop_post_type = 'projects';
-            }else{
-                $loop_post_type = 'posts';
+            /**
+             * Show last 5 projects (post type) if exist, otherwise show last 5 posts in home page
+             */
+            if(post_type_exists( 'projects' )){
+                $post_type_args = array( 'post_type' => 'projects' );
+                $post_type_args = new WP_Query( $post_type_args );
+                $numposts = $post_type_args->post_count;
+                
+                if ($numposts >= 1) {
+                    $carousel_post_type = 'projects';
+                }else{
+                    $carousel_post_type = 'post';
+                }
             }
-            
+            else{
+                $carousel_post_type = 'post';
+            }
+
             $loop = new WP_Query( array(
-                    'post_type' => $loop_post_type,
+                    'post_type'      => $carousel_post_type,
                     'posts_per_page' => 5
             ));
-            
         ?>
         <div class="c-aside__carousel">
             <div class="c-carousel c-carousel--aside">

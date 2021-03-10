@@ -18,7 +18,6 @@ jQuery(function ($) {
   });
 
   /* Carousel Keyboard Navigation for Texts */
-
   $(".c-carousel__post-title:last-child").on("focusin", function (e) {
     cavatina_flCarouselMain.select(cavatina_flCarouselTextLength);
   });
@@ -28,21 +27,10 @@ jQuery(function ($) {
       cavatina_flCarouselText.previous();
     } else if (e.keyCode === 9) {
       cavatina_flCarouselText.next();
-    } else if (e.type == "blur") {
     }
   });
 
-  // Menu Trap Focus
-  /* Trap Focus ( Menu ) Backward */
-  $(".c-header__menu").on("keydown blur", function (e) {
-    if (e.shiftKey && e.keyCode === 9) {
-      if ($(".c-header__holder").hasClass("toggled")) {
-        $(".s-nav li:last-child").focus();
-        // return false;
-      }
-    }
-  });
-
+  /* Last menu item trap focus */
   $(".s-nav li:last-child").focusout(function () {
     if (cavatina_IsBackward === true) {
     } else if (cavatina_IsBackward === false) {
@@ -88,6 +76,27 @@ jQuery(function ($) {
     });
   });
   // End Loadmore handling
+});
+// End jquery
+
+var cavatina_menuToggle = document.querySelector(".js-menu");
+var cavatina_menu = document.querySelector(".s-nav");
+var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
+var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
+var cavatina_lastIndex = cavatina_menuListItems.length - 1;
+cavatina_menuListItems[cavatina_lastIndex].focus();
+
+document.addEventListener("keydown", function (e) {
+  if (e.shiftKey && e.keyCode == 9) {
+    cavatina_isBackward = true;
+  } else {
+    cavatina_isBackward = false;
+  }
+});
+cavatina_menuToggle.addEventListener("blur", function (e) {
+  if (cavatina_isBackward) {
+    cavatina_menuLinks[cavatina_lastIndex].focus();
+  }
 });
 
 //preloader fadeout
