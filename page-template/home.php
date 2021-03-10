@@ -15,7 +15,7 @@ get_header();
 <aside class="o-page__col c-aside c-aside--home js-aside">
     <div class="c-aside__content">
         <div class="c-aside__nav">
-            <h4 class="c-aside__nav-title"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></h4>
+            <h4 class="c-aside__nav-title h4-lh--sm"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></h4>
             <?php
                 if ( has_nav_menu( 'primary-menu' ) ) {
                     wp_nav_menu(

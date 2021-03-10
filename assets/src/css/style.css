@@ -3962,18 +3962,21 @@ img {
 --------------------------------------------- */
 /* Headings
 --------------------------------------------- */
-h1 {
+h1,
+.h1 {
   font-size: 24px;
   line-height: 30px;
   font-weight: normal;
   font-family: "montserratsemibold"; }
 
-h2 {
+h2,
+.h2 {
   font-size: 19px;
   font-weight: normal;
   font-family: "montserratregular"; }
 
-h3 {
+h3,
+.h3 {
   font-family: "montserratsemibold";
   font-size: 14px;
   font-weight: normal;
@@ -3985,17 +3988,23 @@ h3 {
   line-height: 30px;
   margin-bottom: 15px; }
 
-h4 {
+h4,
+.h4 {
   font-family: "montserratregular";
   font-size: 14px;
   font-weight: 400; }
 
-h5 {
+.h4-lh--sm {
+  line-height: 17px; }
+
+h5,
+.h5 {
   font-size: 12px;
   font-family: "montserratregular";
   font-weight: 400; }
 
-h6 {
+h6,
+.h6 {
   font-size: 10px;
   font-family: "montserratregular";
   font-weight: 400; }

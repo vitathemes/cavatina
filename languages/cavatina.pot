@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 11:56+0330\n"
+"POT-Creation-Date: 2021-03-10 12:51+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,19 +175,23 @@ msgstr ""
 msgid "Paragraph"
 msgstr ""
 
-#: inc/customizer.php:327
+#: inc/customizer.php:324
+msgid "Secondary Links"
+msgstr ""
+
+#: inc/customizer.php:349
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:336
+#: inc/customizer.php:358
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:345
+#: inc/customizer.php:367
 msgid "Github"
 msgstr ""
 
-#: inc/customizer.php:354
+#: inc/customizer.php:376
 msgid "Twitter"
 msgstr ""
 
