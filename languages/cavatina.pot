@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-25 11:39+0330\n"
+"POT-Creation-Date: 2021-03-10 11:56+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,6 +50,10 @@ msgstr ""
 msgid "Cavatina theme by"
 msgstr ""
 
+#: functions.php:38
+msgid "Contact Page Sidebar Area"
+msgstr ""
+
 #: header.php:20
 msgid "Skip to content"
 msgstr ""
@@ -73,9 +77,9 @@ msgstr ""
 msgid "Project"
 msgstr ""
 
-#: single-projects.php:45 page-template/contact.php:39
-#: template-parts/content-blog.php:44 template-parts/content-no-sidebar.php:20
-#: template-parts/content-page.php:29 template-parts/content-projects.php:51
+#: single-projects.php:45 template-parts/content-blog.php:44
+#: template-parts/content-no-sidebar.php:20 template-parts/content-page.php:29
+#: template-parts/content-projects.php:51
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -156,26 +160,34 @@ msgid "H3"
 msgstr ""
 
 #: inc/customizer.php:229
-msgid "H4, H5, H6"
+msgid "H4"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:254
+msgid "H5"
+msgstr ""
+
+#: inc/customizer.php:277
+msgid "H6"
+msgstr ""
+
+#: inc/customizer.php:300
 msgid "Paragraph"
 msgstr ""
 
-#: inc/customizer.php:274
+#: inc/customizer.php:327
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:283
+#: inc/customizer.php:336
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:292
+#: inc/customizer.php:345
 msgid "Github"
 msgstr ""
 
-#: inc/customizer.php:301
+#: inc/customizer.php:354
 msgid "Twitter"
 msgstr ""
 
@@ -187,68 +199,68 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: inc/setup.php:110
+#: inc/setup.php:112
 msgctxt "Post type general name"
 msgid "Projects"
 msgstr ""
 
-#: inc/setup.php:111
+#: inc/setup.php:113
 msgctxt "Post type singular name"
 msgid "Project"
 msgstr ""
 
-#: inc/setup.php:112
+#: inc/setup.php:114
 msgctxt "Admin Menu text"
 msgid "Projects"
 msgstr ""
 
-#: inc/setup.php:113
+#: inc/setup.php:115
 msgid "Add New"
 msgstr ""
 
-#: inc/setup.php:114
+#: inc/setup.php:116
 msgid "Edit Project"
 msgstr ""
 
-#: inc/setup.php:115
+#: inc/setup.php:117
 msgid "View Project"
 msgstr ""
 
-#: inc/setup.php:116
+#: inc/setup.php:118
 msgid "All Projects"
 msgstr ""
 
-#: inc/setup.php:138
+#: inc/setup.php:140
 msgctxt "taxonomy general name"
 msgid "Project Categories"
 msgstr ""
 
-#: inc/setup.php:139
+#: inc/setup.php:141
 msgctxt "taxonomy singular name"
 msgid "Project Category"
 msgstr ""
 
-#: inc/setup.php:140
+#: inc/setup.php:142
 msgid "Search Project Categories"
 msgstr ""
 
-#: inc/setup.php:141
+#: inc/setup.php:143
 msgid "All Project Categories"
 msgstr ""
 
-#: inc/setup.php:142
+#: inc/setup.php:144
 msgid "Edit Project Category"
 msgstr ""
 
-#: inc/setup.php:143
+#: inc/setup.php:145
 msgid "Add New Project Category"
 msgstr ""
 
-#: inc/setup.php:144
+#: inc/setup.php:146
 msgid "New Project Category Name"
 msgstr ""
 
-#: inc/setup.php:145
+#: inc/setup.php:147
 msgid "Project Categories"
 msgstr ""
 
@@ -1109,11 +1121,11 @@ msgstr ""
 msgid "Navigation"
 msgstr ""
 
-#: page-template/home.php:43 page-template/home.php:60
+#: page-template/home.php:59 page-template/home.php:76
 msgid "Recent Projects"
 msgstr ""
 
-#: page-template/home.php:51 page-template/home.php:80
+#: page-template/home.php:67 page-template/home.php:96
 msgid "View All Projects"
 msgstr ""
 
