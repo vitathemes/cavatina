@@ -3,7 +3,7 @@ Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,11 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.com/cavatina/).
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixes keyboard navigation
+* Updated theme info
+* Improvement customizer fonts
 
 = 1.0.0 =
 * Initial version
