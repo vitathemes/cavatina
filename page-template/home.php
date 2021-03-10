@@ -15,7 +15,7 @@ get_header();
 <aside class="o-page__col c-aside c-aside--home js-aside">
     <div class="c-aside__content">
         <div class="c-aside__nav">
-            <h4 class="c-aside__nav-title"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></h4>
+            <h4 class="c-aside__nav-title h4-lh--sm"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></h4>
             <?php
                 if ( has_nav_menu( 'primary-menu' ) ) {
                     wp_nav_menu(
@@ -31,12 +31,28 @@ get_header();
             ?>
         </div>
         <?php
+            /**
+             * Show last 5 projects (post type) if exist, otherwise show last 5 posts in home page
+             */
+            if(post_type_exists( 'projects' )){
+                $post_type_args = array( 'post_type' => 'projects' );
+                $post_type_args = new WP_Query( $post_type_args );
+                $numposts = $post_type_args->post_count;
+                
+                if ($numposts >= 1) {
+                    $carousel_post_type = 'projects';
+                }else{
+                    $carousel_post_type = 'post';
+                }
+            }
+            else{
+                $carousel_post_type = 'post';
+            }
 
             $loop = new WP_Query( array(
-                    'post_type' => 'projects',
+                    'post_type'      => $carousel_post_type,
                     'posts_per_page' => 5
             ));
-            
         ?>
         <div class="c-aside__carousel">
             <div class="c-carousel c-carousel--aside">
@@ -76,7 +92,7 @@ get_header();
                 <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric-small"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
                 <?php endwhile; wp_reset_query(); ?>
             </div>
-            <a href="<?php echo esc_url(site_url()) ?>/projects" class="c-carousel__more c-carousel__more--home">
+            <a href="<?php echo esc_url( site_url() ) ?>/projects" class="c-carousel__more c-carousel__more--home">
                 <?php esc_html_e( 'View All Projects', 'cavatina' ); ?>
             </a>
         </div>

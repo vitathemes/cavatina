@@ -317,6 +317,28 @@ if( function_exists( 'kirki' ) ) {
 	] );
 
 
+	// Secondary Links
+	Kirki::add_field( 'cavatina_theme', [
+		'type'        => 'typography',
+		'settings'    => 'secondary_links',
+		'label'       => esc_html__( 'Secondary Links', 'cavatina' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'font-family'   	 => 'Montserrat',
+			'font-size'          => '14px',
+			'line-height'        => '17px',
+			'variant'         	 => 'regular',
+			'color'         	 => '#000000',
+		],
+		'priority'    => 18,
+		'transport'   => 'auto',
+		
+		'output'      => [
+			[
+				'element' => array( '.h4-lh--sm' , ".s-nav > .menu-item a", ".c-aside__category__link h4" ),
+			],
+		],
+	] );
 	
 	
 

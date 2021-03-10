@@ -1,53 +1,41 @@
 jQuery(function ($) {
-  /* Carousel Navigation images */
-  let flCarouselTextLength;
+  /* Carousel Keyboard Navigation for images */
+  let cavatina_flCarouselTextLength;
   if (childFinder("body", "c-carousel__post-title")) {
-    flCarouselTextLength = flCarouselText.slides.length - 1;
+    cavatina_flCarouselTextLength = cavatina_flCarouselText.slides.length - 1;
   }
 
   $(".c-carousel__cell > a:first").on("focusin", function (e) {
-    flCarouselMain.select(0);
+    cavatina_flCarouselMain.select(0);
   });
 
   $(".c-carousel__cell > a").on("keydown blur", function (e) {
     if (e.shiftKey && e.keyCode === 9) {
-      flCarouselText.previous();
+      cavatina_flCarouselText.previous();
     } else if (e.keyCode === 9) {
-      flCarouselText.next();
+      cavatina_flCarouselText.next();
     }
   });
 
-  /* Carousel Navigation Text */
-
+  /* Carousel Keyboard Navigation for Texts */
   $(".c-carousel__post-title:last-child").on("focusin", function (e) {
-    flCarouselMain.select(flCarouselTextLength);
+    cavatina_flCarouselMain.select(cavatina_flCarouselTextLength);
   });
 
   $(".c-carousel__post-title").on("keydown blur", function (e) {
     if (e.shiftKey && e.keyCode === 9) {
-      flCarouselText.previous();
+      cavatina_flCarouselText.previous();
     } else if (e.keyCode === 9) {
-      flCarouselText.next();
-    } else if (e.type == "blur") {
+      cavatina_flCarouselText.next();
     }
   });
 
-  // Menu Trap Focus
-  /* Trap Focus ( Menu ) Backward */
-  $(".c-header__menu").on("keydown blur", function (e) {
-    if (e.shiftKey && e.keyCode === 9) {
-      if ($(".c-header__holder").hasClass("toggled")) {
-        $(".c-header__logo").focus();
-        return false;
-      }
-    }
-  });
-
-  /* Trap Focus ( Menu ) Forward */
-  $(".js-menu").click(function () {
-    $(".s-nav > .menu-item:last-child").focusout(function () {
+  /* Last menu item trap focus */
+  $(".s-nav li:last-child").focusout(function () {
+    if (cavatina_IsBackward === true) {
+    } else if (cavatina_IsBackward === false) {
       $(".js-menu").focus();
-    });
+    }
   });
 
   /*------------------------------------*\
@@ -57,8 +45,9 @@ jQuery(function ($) {
     const button = $(".js-pagination__load-more__btn");
     $(".js-pagination__load-more").click(function () {
       setTimeout(function () {
-        lazyLoadInstance.update();
+        cavatina_lazyLoadInstance.update();
       }, 1000);
+
       var loadMore = $(this),
         data = {
           action: "loadmore",
@@ -88,22 +77,44 @@ jQuery(function ($) {
   });
   // End Loadmore handling
 });
+// End jquery
+
+var cavatina_menuToggle = document.querySelector(".js-menu");
+var cavatina_menu = document.querySelector(".s-nav");
+var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
+var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
+var cavatina_lastIndex = cavatina_menuListItems.length - 1;
+cavatina_menuListItems[cavatina_lastIndex].focus();
+
+document.addEventListener("keydown", function (e) {
+  if (e.shiftKey && e.keyCode == 9) {
+    cavatina_isBackward = true;
+  } else {
+    cavatina_isBackward = false;
+  }
+});
+cavatina_menuToggle.addEventListener("blur", function (e) {
+  if (cavatina_isBackward) {
+    cavatina_menuLinks[cavatina_lastIndex].focus();
+  }
+});
 
 //preloader fadeout
-const preloader = document.querySelector(".o-preloader");
+const cavatina_preloader = document.querySelector(".o-preloader");
+
 function fadeEffect() {
   setTimeout(function () {
     setInterval(function () {
-      if (!preloader.style.opacity) {
-        preloader.style.opacity = 1;
+      if (!cavatina_preloader.style.opacity) {
+        cavatina_preloader.style.opacity = 1;
       }
-      if (preloader.style.opacity > 0) {
-        preloader.style.opacity -= 0.1;
+      if (cavatina_preloader.style.opacity > 0) {
+        cavatina_preloader.style.opacity -= 0.1;
       } else {
-        if (!preloader.style.opacity === 0) {
+        if (!cavatina_preloader.style.opacity === 0) {
           clearInterval(fadeEffect);
         } else {
-          preloader.style.display = "none";
+          cavatina_preloader.style.display = "none";
         }
       }
     }, 10);
@@ -160,7 +171,7 @@ function childFinder(parentElement, childElement) {
 }
 
 // Search Box Desktop
-let isToggled = false;
+let cavatina_isToggled = false;
 function searchToggleHeader() {
   const headerSearch = document.querySelector(".js-header__search");
   const searchOverlay = document.querySelector(".js-search__overlay");
@@ -168,14 +179,30 @@ function searchToggleHeader() {
   if (childFinder("body", "o-overlay")) {
     headerSearch.addEventListener("click", function () {
       // Fade in/out the search overlay
-      if (isToggled === true) {
+      if (cavatina_isToggled === true) {
         fadeOut(searchOverlay);
         headerSearch.classList.remove("c-header__search--toggle");
-        isToggled = false;
+
+        cavatina_isToggled = false;
       } else {
         fadeIn(searchOverlay, "flex");
         headerSearch.classList.add("c-header__search--toggle");
-        isToggled = true;
+
+        /* Trap focus on element blur */
+        const searchbtn = document.querySelector(".search-submit");
+        searchbtn.addEventListener("blur", function () {
+          if (cavatina_IsBackward === false) {
+            headerSearch.focus();
+          }
+        });
+
+        headerSearch.addEventListener("blur", function () {
+          if (cavatina_IsBackward === true) {
+            searchbtn.focus();
+          }
+        });
+
+        cavatina_isToggled = true;
       }
     });
   }
@@ -262,14 +289,14 @@ function capitalizeFirstLetter() {
 }
 capitalizeFirstLetter();
 
-let currentSlide = 0;
-let flCarouselMain = {};
-let flCarouselText = {};
+let cavatina_currentSlide = 0;
+let cavatina_flCarouselMain = {};
+let cavatina_flCarouselText = {};
 // Main page Carousels
 if (childFinder("body", "js-carousel__context")) {
   // Carousel (Home)
   let carousel = document.querySelector(".js-carousel__context");
-  flCarouselMain = new Flickity(carousel, {
+  cavatina_flCarouselMain = new Flickity(carousel, {
     setGallerySize: false,
     freeScroll: false,
     prevNextButtons: true,
@@ -284,7 +311,7 @@ if (childFinder("body", "js-carousel__context")) {
   // Carousel (Home Page) - text
   let carouselImage = document.querySelector(".js-carousel__post-titles");
 
-  flCarouselText = new Flickity(carouselImage, {
+  cavatina_flCarouselText = new Flickity(carouselImage, {
     setGallerySize: true,
     freeScroll: false,
     prevNextButtons: false,
@@ -295,7 +322,7 @@ if (childFinder("body", "js-carousel__context")) {
     friction: 0.8,
     on: {
       change: function (index) {
-        currentSlide = index;
+        cavatina_currentSlide = index;
       },
       ready: function () {
         const postTitiles = document.querySelector(".c-carousel__post-titles");
@@ -308,6 +335,7 @@ if (childFinder("body", "js-carousel__context")) {
   let carouselTextMobile = document.querySelector(
     ".js-carousel__post-titles--mobile"
   );
+
   let flCarouselTextMobile = new Flickity(carouselTextMobile, {
     setGallerySize: true,
     freeScroll: false,
@@ -380,16 +408,18 @@ if (childFinder("body", "comments-area")) {
 }
 
 // lazy load image
-var lazyLoadInstance = new LazyLoad({
+var cavatina_lazyLoadInstance = new LazyLoad({
   elements_selector: [".c-carousel__image", ".c-post__thumbnail__image"],
 });
 
-let cavatinaIsBackward;
+let cavatina_IsBackward;
 document.addEventListener("keydown", function (e) {
   if (e.shiftKey && e.keyCode == 9) {
-    cavatinaIsBackward = true;
+    // Shift + tab
+    cavatina_IsBackward = true;
   } else {
-    cavatinaIsBackward = false;
+    // Tab
+    cavatina_IsBackward = false;
   }
 });
 

@@ -123,16 +123,18 @@
   width: 100%;
 }
 
-.js-post__entry-title::first-letter {
-  color: red !important;
-}
-
 .c-post__excerpt {
   font-size: 14px;
   line-height: 200%;
 
   -ms-word-wrap: break-word;
   word-wrap: break-word;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .c-post__category {
