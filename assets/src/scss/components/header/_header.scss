@@ -176,11 +176,15 @@
   display: inline-block;
   display: none;
 
+  background: transparent;
+  padding: 0px;
+
   &::before {
     width: 24px;
     height: 24px;
     border: 1px solid #000;
     border-radius: 12px;
+    top: 0;
   }
 
   &::after {
@@ -190,6 +194,16 @@
     transform: rotate(40deg) translateY(-8px);
     bottom: 0;
     right: 0;
+  }
+
+  &:hover {
+    background: transparent;
+  }
+
+  &:focus {
+    background: transparent;
+
+    outline: #000 dotted 1px;
   }
 
   @include media(tablet) {
@@ -248,9 +262,14 @@
       padding-top: 60%;
     }
 
+    @include media(desktop-square) {
+      padding-bottom: 80%;
+      justify-content: center;
+    }
+
     @include media(wide) {
-      padding-bottom: 0;
-      padding-top: 100%;
+      padding-bottom: 100%;
+      justify-content: center;
     }
   }
 

@@ -1,7 +1,7 @@
 === Cavatina ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
-Tested up to: 5.6.1
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later

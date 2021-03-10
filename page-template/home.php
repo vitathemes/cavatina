@@ -31,9 +31,17 @@ get_header();
             ?>
         </div>
         <?php
+            $projects_post_type = post_type_exists( 'projects' );
+            $loop_post_type =  "";
 
+            if( $projects_post_type ){
+                $loop_post_type = 'projects';
+            }else{
+                $loop_post_type = 'posts';
+            }
+            
             $loop = new WP_Query( array(
-                    'post_type' => 'projects',
+                    'post_type' => $loop_post_type,
                     'posts_per_page' => 5
             ));
             
@@ -76,7 +84,7 @@ get_header();
                 <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric-small"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
                 <?php endwhile; wp_reset_query(); ?>
             </div>
-            <a href="<?php echo esc_url(site_url()) ?>/projects" class="c-carousel__more c-carousel__more--home">
+            <a href="<?php echo esc_url( site_url() ) ?>/projects" class="c-carousel__more c-carousel__more--home">
                 <?php esc_html_e( 'View All Projects', 'cavatina' ); ?>
             </a>
         </div>

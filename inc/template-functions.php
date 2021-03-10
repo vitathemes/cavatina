@@ -38,6 +38,23 @@ add_action( 'wp_head', 'wp_cavatina_pingback_header' );
 
 
 
+// function cavatina_get_home_page_posts(){
+// 	/**
+// 	 * Show last 5 projects (post type) if exist, otherwise show last 5 posts in home page
+// 	 */
+// 	if( post_type_exists( 'projects' )){
+// 		$the_post_type = 'projects';
+// 	}else{
+// 		$the_post_type = 'post';
+// 	}
+// 	$loop = new WP_Query( array(
+// 			'post_type'      => $the_post_type,
+// 			'posts_per_page' => 5
+// 	));
+
+// 	return $loop;
+// }
+
 
 function cavatina_get_pagination( $page , $query ) { 
 	if($page === "projects"){

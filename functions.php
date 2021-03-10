@@ -35,7 +35,7 @@ add_action( 'after_setup_theme', 'wp_cavatina_content_width', 0 );
 function contact_widget_init() {
  
     register_sidebar( array(
-        'name'          => 'Contact Page Sidebar Area',
+        'name'          => esc_html__( 'Contact Page Sidebar Area', 'cavatina' ),
         'id'            => 'custom-contact-widget',
         'before_widget' => '<div class="c-widget__content">',
         'after_widget'  => '</div>',
@@ -49,7 +49,7 @@ add_action( 'widgets_init', 'contact_widget_init' );
 /**
  * Enqueue scripts and styles.
  */
-function wp_cavatina_scripts() {
+function cavatina_default_scripts() {
 	wp_enqueue_style( 'wp-cavatina-style', get_stylesheet_uri(), array(), CAVATINA_VERSION );
 	wp_style_add_data( 'wp-cavatina-style', 'rtl', 'replace' );
 
@@ -59,18 +59,8 @@ function wp_cavatina_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'wp_cavatina_scripts' );
+add_action( 'wp_enqueue_scripts', 'cavatina_default_scripts' );
 
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
 
 
 /**
@@ -85,11 +75,6 @@ function cavatina_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
-
-/**
- * Remove admin bar bump space (* Not whole admin bar, just space from the top)
- */
-add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
 
 /**
@@ -113,16 +98,18 @@ function cavatina_change_comment_date_format( $comment_date ) {
 }
 add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
 
- 
-// Remove comment time
-function wpb_remove_comment_time($date, $d, $comment) { 
+
+/**
+ * Remove Comment time
+ */
+function cavatina_remove_comment_time($date, $d, $comment) { 
     if ( !is_admin() ) {
             return;
     } else { 
             return $date;
     }
 }
-add_filter( 'get_comment_time', 'wpb_remove_comment_time', 10, 3);
+add_filter( 'get_comment_time', 'cavatina_remove_comment_time', 10, 3);
 
 
 /**
@@ -177,17 +164,6 @@ function cavatina_comments_placeholders( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'cavatina_comments_placeholders' );
-
-
-
-/**
- * change excerpt length
- */
-function cavatina_custom_excerpt_length( $length ) {
-	return 10;
-}
-add_filter( 'excerpt_length', 'cavatina_custom_excerpt_length', 999 );
-
 
 
 /**
@@ -357,11 +333,23 @@ add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_a
 
 
 
+
+
 /**
  * Load Setup file
  */
 require_once get_template_directory() . '/inc/setup.php';
 
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
 
 /**
   * Customizer additions.
