@@ -14,7 +14,6 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 Cavatina is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
 
 = Features =
-* No additional JS
 * Sass for stylesheets
 * Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
 * Theme options built directly into WordPress native live theme customizer
@@ -24,15 +23,25 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 * Child themes support
 * Developer friendly extendable code
 * Translation ready (with .POT files included)
-* Right-to-left (RTL) languages support
 * SEO optimized
 * GNU GPL version 2.0 licensed
-* Support 1 levels sub-menus
+* Support 1 level menu
 * …and much more
 
 See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.com/cavatina/).
 
 == Changelog ==
+
+= 1.0.2 =
+* Fixes keyboard navigation visual focus to search > burger > logo
+* Escape and translated text in functions.php
+* Improve prefixes and also use admin_url() functions.php
+* Fixed alt and escape textes template-tags.php
+* Fixed prefix in template-functions.php
+* Remove Libwp(Plugin) post type registration from setup.php
+* Prefix global functions names in main.js (unminified version assets/src/js)
+* Fix aria-label in header.php
+
 
 = 1.0.1 =
 * Fixes keyboard navigation

@@ -55,13 +55,13 @@
   width: 35%;
   text-align: left;
   padding-left: 16px;
+  order: 1;
 
   @include media(tablet) {
     width: max-content;
     margin-bottom: 15%;
     padding: 0;
     transform: rotate(-90deg);
-    order: 1;
   }
 
   h1 {
@@ -116,7 +116,7 @@
 .c-header__menu {
   text-align: right;
   background-color: transparent;
-
+  order: 2;
   width: 45px;
   height: 30px;
   position: relative;
@@ -149,7 +149,6 @@
 
   @include media(tablet) {
     margin-left: 25%;
-    order: 2;
     text-align: center;
   }
 }

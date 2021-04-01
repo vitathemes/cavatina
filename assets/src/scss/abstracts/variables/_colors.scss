@@ -25,11 +25,8 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-$cavatina_primary_color: var(--primary-color);
-$cavatina_secondary_color: var(--secondary-color);
-$cavatina_tertiary_color: var(--tertiary-color);
-$cavatina_quaternary_color: var(--quaternary-color);
+$cavatina_primary_color: var(--cavatina_primary-color);
+$cavatina_secondary_color: var(--cavatina_secondary-color);
 
 $cavatina__main-primary-color: #000000;
-$cavatina__main-primary-dark-color: var(--quaternary-color);
 $cavatina__main-primary-light-color: #767676;

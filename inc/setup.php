@@ -101,11 +101,11 @@ add_action( 'init', 'cavatina_footer_menu' );
 
 
 
-
 /**
- * Register Post-type and Taxonomy
- */
+  * Register Post-type and Taxonomy
+  */
 if (function_exists('LibWp')) {
+
     LibWp()->postType()
         ->setName('projects')
         ->setLabels([

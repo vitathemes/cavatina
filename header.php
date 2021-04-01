@@ -28,17 +28,12 @@
 
     <header id="masthead" class="<?php cavatina_get_header_class()?>">
         <div class="c-header__holder js-nav">
-            <div class="c-header__logo js-logo">
 
-                <?php cavatina_handle_logo(); ?>
+            <button class="c-header__search js-header__search"></button><!-- Header Search button -->
 
-            </div>
-
-            <button class="c-header__menu js-menu" aria-label="Menu Button" aria-controls="primary-menu"
-                aria-expanded="false" onClick="blurToggle()">
-            </button>
-
-            <button class="c-header__search js-header__search"></button>
+            <button class="c-header__menu js-menu" aria-label="<?php esc_attr( 'Menu Button', 'cavatina' ) ?>"
+                aria-controls="primary-menu" aria-expanded="false" onClick="cavatina_blurToggle()">
+            </button><!-- Header Search Burger -->
 
             <?php
                if ( has_nav_menu( 'primary-menu' ) ) {
@@ -46,17 +41,24 @@
                         array(
                             'theme_location'  => 'primary-menu',
                             'menu_id'         => 'primary-menu-registered',
-                            "menu_class"      => "s-nav",
-                            "container_class" => "c-nav js-navigation",
-                            "container"       => "nav",
+                            'menu_class'      => 's-nav',
+                            'container_class' => 'c-nav js-navigation',
+                            'container'       => 'nav',
                         ));
                 }
             ?>
-        </div>
+            <!-- primary-menu -->
 
+            <div class="c-header__logo js-logo">
+                <?php cavatina_handle_logo(); ?>
+            </div><!-- Header Logo -->
+
+        </div>
     </header> <!-- #masthead -->
+
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
-    </div>
-    <div class="o-overlay js-overlay"></div>
+    </div><!-- .c-search__overlay -->
+    <div class="o-overlay js-overlay"></div><!-- .o-overlay -->
+
     <div id="page" class="<?php cavatina_get_page_class(); ?>">

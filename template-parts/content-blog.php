@@ -28,7 +28,7 @@
                 <?php echo get_avatar( get_the_author_meta('user_email'), '80', '' ); ?>
             </div>
             <div class="c-single__author__info">
-                <?php wp_cavatina_posted_by() ?>
+                <?php cavatina_posted_by(); ?>
             </div>
         </div>
     </header><!-- .entry-header -->
@@ -60,14 +60,7 @@
         ?>
     </div><!-- .entry-content -->
     <ul class="c-single__blog__tags">
-        <?php
-        $post_tags = get_the_tags();
-            if ($post_tags) {
-            foreach($post_tags as $post_tag) {
-                echo '<li><a href="'.  esc_url( get_tag_link( $post_tag->term_id ) ) .'" title="'.  esc_attr( $post_tag->name ) .'">#'. esc_html( $post_tag->name ). '</a></li>';
-            }
-        }
-        ?>
+        <?php cavatina_get_post_tags(); ?>
     </ul>
 
     <div class="c-social-media c-social-media--blog">

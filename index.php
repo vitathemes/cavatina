@@ -13,7 +13,7 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
-                <span class="c-aside__title">Blog</span>
+                <span class="c-aside__title"><?php esc_html_e( 'Blog', 'cavatina' ); ?></span>
             </div>
         </div>
 

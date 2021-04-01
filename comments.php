@@ -22,21 +22,30 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
     <?php
+
+	comment_form( 
+		array( 
+			'class_form'    => 'c-comment-form  comment-form',
+			'label_submit'  => __( 'Send', 'cavatina' ),
+			'comment_field' => '<p class="comment-form-comment"><label for="comment">'.__( 'Comment', 'cavatina' ).'</label> <textarea placeholder="'.__( 'Your Comment*', 'cavatina' ).'" id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" class=""></textarea></p>',
+			) 
+	);
+
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
-		?>
+	?>
     <h2 class="comments-title">
         <?php
 			$wp_cavatina_comment_count = get_comments_number();
 			if ( '1' === $wp_cavatina_comment_count ) {
 				printf(
 					/* translators: Comments */
-					'<span>Comments</span>'
+					'<span>'.esc_html_e( 'Comments', 'cavatina' ).'</span>'
 				);
 			} else {
 				printf(
 					/* translators: Comments */
-					'<span>Comments</span>'
+					'<span>'.esc_html_e( 'Comments', 'cavatina' ).'</span>'
 				);
 			}
 			?>
@@ -58,14 +67,15 @@ if ( post_password_required() ) {
 
     <?php
 		the_comments_navigation();
-		// If comments are closed and there are comments, let's leave a little note, shall we?
+		// If comments are closed and there are comments, let's leave a little note
 		if ( ! comments_open() ) :
-			?>
+	?>
+
     <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'cavatina' ); ?></p>
+
     <?php
 		endif;
 	endif; // Check for have_comments().
-	comment_form( array( 'class_form' => 'c-comment-form  comment-form' ) );
 	?>
 
 </div><!-- #comments -->

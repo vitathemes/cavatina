@@ -20,10 +20,10 @@ if ( ! defined( 'CAVATINA_VERSION' ) ) {
  *
  * @global int $content_width
  */
-function wp_cavatina_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'wp_cavatina_content_width', 640 );
+function cavatina_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'cavatina_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'wp_cavatina_content_width', 0 );
+add_action( 'after_setup_theme', 'cavatina_content_width', 0 );
 
 
 
@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', 'wp_cavatina_content_width', 0 );
  *
  * @link https://codex.wordpress.org/Widgetizing_Themes
  */
-function contact_widget_init() {
+function cavatina_contact_widget_init() {
  
     register_sidebar( array(
         'name'          => esc_html__( 'Contact Page Sidebar Area', 'cavatina' ),
@@ -44,24 +44,22 @@ function contact_widget_init() {
     ) );
  
 }
-add_action( 'widgets_init', 'contact_widget_init' );
+add_action( 'widgets_init', 'cavatina_contact_widget_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue default scripts and styles.
  */
 function cavatina_default_scripts() {
-	wp_enqueue_style( 'wp-cavatina-style', get_stylesheet_uri(), array(), CAVATINA_VERSION );
-	wp_style_add_data( 'wp-cavatina-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'cavatina-default-style', get_stylesheet_uri(), array(), CAVATINA_VERSION );
+	wp_style_add_data( 'cavatina-default-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'wp-cavatina-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), CAVATINA_VERSION, true );
+	wp_enqueue_script( 'cavatina-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), CAVATINA_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cavatina_default_scripts' );
-
-
 
 /**
  * Enqueue scripts and styles.
@@ -78,22 +76,12 @@ add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
 
 /**
- * change submit button text in WordPress comment form
- */
-function cavatina_change_submit_button_text( $defaults ) {
-    $defaults['label_submit'] = 'Send';
-    return $defaults;
-}
-add_filter( 'comment_form_defaults', 'cavatina_change_submit_button_text' );
-
-
-/**
  * change comment date format
  */
-function cavatina_change_comment_date_format( $comment_date ) {
+function cavatina_change_comment_date_format( $cavatina_comment_date ) {
     
-	$comment_date = date("M d.y");
-    return $comment_date;
+	$cavatina_comment_date = date("M d.y");
+    return $cavatina_comment_date;
 
 }
 add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
@@ -102,11 +90,11 @@ add_filter( 'get_comment_date', 'cavatina_change_comment_date_format' );
 /**
  * Remove Comment time
  */
-function cavatina_remove_comment_time($date, $d, $comment) { 
+function cavatina_remove_comment_time($cavatina_date, $cavatina_d, $cavatina_comment) { 
     if ( !is_admin() ) {
             return;
     } else { 
-            return $date;
+            return $cavatina_date;
     }
 }
 add_filter( 'get_comment_time', 'cavatina_remove_comment_time', 10, 3);
@@ -116,71 +104,43 @@ add_filter( 'get_comment_time', 'cavatina_remove_comment_time', 10, 3);
  * count number of posts in a page
  */
 function cavatina_total_posts() {
-	$total = wp_count_posts()->publish;
-	echo  esc_html($total);
+	$cavatina_total = wp_count_posts()->publish;
+	echo  esc_html($cavatina_total);
 }
 
 /**
- * count number of posts in a page
+ * Count number of posts in a Page
  */
 function cavatina_post_type_name() {
-	echo esc_html( get_post_type( get_the_ID() ));
+	echo esc_html( get_post_type( get_the_ID() ), 'cavatina');
 }
 
 /**
- * count number of posts types (project) in a page
+ * Count number of posts types (project) in a page
  */
-function cavatina_total_post_types( $isText = true ) {
+function cavatina_total_post_types( $cavatina_isText = true ) {
 
-	if($isText === true){
-		printf(esc_html($count_posts = wp_count_posts( 'projects' )->publish));
+	if($cavatina_isText === true){
+		printf(esc_html($cavatina_count_posts = wp_count_posts( 'projects' )->publish));
 	}
 	else{
-		return $count_posts = wp_count_posts( 'projects' )->publish;
+		return $cavatina_count_posts = wp_count_posts( 'projects' )->publish;
 	}
 	
 }
 
-
 /**
- * Change comment form textarea placeholder
+ * Change Comment Form Fields Placeholder
  */
-function cavatina_change_textarea_placeholder( $args ) {
-	$args['comment_field'] = str_replace( 'textarea', 'textarea placeholder="Your Comment*"', $args['comment_field'] );
-	return $args;
-}
-add_filter( 'comment_form_defaults', 'cavatina_change_textarea_placeholder' );
-
-/**
- * change Comment Form Fields Placeholder
- *
- */
-function cavatina_comments_placeholders( $fields ) {
-	foreach( $fields as &$field ) {
-		$field = str_replace( 'id="author"', 'id="author" placeholder="Name*"', $field );
-		$field = str_replace( 'id="email"', 'id="email" placeholder="Email*"', $field );
-		$field = str_replace( 'id="url"', 'id="url" placeholder="Website"', $field );
+function cavatina_comments_placeholders( $cavatina_fields ) {
+	foreach( $cavatina_fields as &$cavatina_field ) {
+		$cavatina_field = str_replace( 'id="author"', 'id="author" placeholder="'.__('Name*' , 'cavatina').'"', $cavatina_field );
+		$cavatina_field = str_replace( 'id="email"', 'id="email" placeholder="'.__('Email*' , 'cavatina').'"', $cavatina_field );
+		$cavatina_field = str_replace( 'id="url"', 'id="url" placeholder="'.__('Website' , 'cavatina').'"', $cavatina_field );
 	}
-	return $fields;
+	return $cavatina_fields;
 }
 add_filter( 'comment_form_default_fields', 'cavatina_comments_placeholders' );
-
-
-/**
- * Add numerical pagination
- */
-$args = array(
-    'base'               => '%_%',
-    'format'             => '?paged=%#%',
-    'total'              => 1,
-    'current'            => 0,
-    'show_all'           => false,
-    'end_size'           => 1,
-    'mid_size'           => 2,
-    'add_args'           => false,
-    'add_fragment'       => '',
-    'before_page_number' => '',
-    'after_page_number'  => '');
 
 	
 function cavatina_dashicons(){
@@ -192,22 +152,20 @@ function cavatina_dashicons(){
 add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 
 
-function cavatina_contact_page_require_shortcode( $the_content ) {
+function cavatina_contact_page_require_shortcode( $cavatina_the_content ) {
 	/**
 	 * Return all shortcodes from the post 
 	 */
-    $shortcode = "";
-    $pattern = get_shortcode_regex();
-    preg_match_all('/'.$pattern.'/uis', $the_content, $matches);
+    $cavatina_shortcode = "";
+    $cavatina_pattern = get_shortcode_regex();
+    preg_match_all('/'.$cavatina_pattern.'/uis', $cavatina_the_content, $matches);
     for ( $i=0; $i < 40; $i++ ) {
         if ( isset( $matches[0][$i] ) ) {
-           $shortcode .= $matches[0][$i];
+           $cavatina_shortcode .= $matches[0][$i];
         }
     }
-    return $shortcode;
+    return $cavatina_shortcode;
 }
-
-
 
 function cavatina_get_post_number(){
 	/**
@@ -241,28 +199,28 @@ function cavatina_get_inverse_post_number(){
 
 function cavatina_deciaml_post_number(){
 	/**
-	 * Add zero to the post numbers
-	 */
+	  * Add zero to the post numbers
+	  */
 	
     // get post number (auto increment)
-    $decimalCounter = "0";
-    $postNumber = cavatina_get_inverse_post_number();
+    $cavatina_decimalCounter = "0";
+    $cavatina_postNumber = cavatina_get_inverse_post_number();
     // Remove zero when reaching 10
-    if($postNumber >= 10){
-        $decimalCounter = "";
-		$postNumber = $postNumber;
-		return $postNumber;
+    if($cavatina_postNumber >= 10){
+        $cavatina_decimalCounter = "";
+		$cavatina_postNumber = $cavatina_postNumber;
+		return $cavatina_postNumber;
     }
     else{
-		$postNumber = $decimalCounter.$postNumber;
-		return $postNumber;
+		$cavatina_postNumber = $cavatina_decimalCounter.$cavatina_postNumber;
+		return $cavatina_postNumber;
 	}
 }
 
 
 /**
- * Add your custom logo to the login page
- */
+  * Add your custom logo to the login page
+  */
 function cavatina_filter_login_head() {
     if ( has_custom_logo() ) :
         $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
@@ -285,25 +243,23 @@ add_action( 'login_head', 'cavatina_filter_login_head', 100 );
 
 
 /**
- *	Load More
+ *	Load More button
  */
 function cavatina_load_more_script() {
-
 	global $wp_query;
 	wp_enqueue_script('jquery');
 	wp_localize_script( 'cavatina-main-scripts', 'loadmore_params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+		'ajaxurl' => esc_url(admin_url('admin-ajax.php')),
 		'posts' => json_encode( $wp_query->query_vars ),
 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'max_page' => $wp_query->max_num_pages
 	) );
  	wp_enqueue_script( 'cavatina-main-scripts' );
-	 
 }
 add_action( 'wp_enqueue_scripts', 'cavatina_load_more_script' );
 
 
-/* Handle Load more loop  */
+/* Handle Load more button loop  */
 function cavatina_loadmore_ajax_handler(){
 	
 	$argsquery = filter_input( INPUT_POST, 'query', FILTER_SANITIZE_STRING );
@@ -332,18 +288,90 @@ add_action('wp_ajax_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_{ac
 add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
 
+/**
+ * 
+ * 
+ * 
+ * 
+ * 
+ * Post Type
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+// /**
+//   * Modify LibWP post type name
+//   */
+// add_filter('libwp_post_type_1_name', function ($postTypeName) {
+//     $postTypeName = 'projects';
+//     return $postTypeName;
+// });
+
+// /**
+//   * Modify LibWP post type arguments
+//   */
+// add_filter('libwp_post_type_1_arguments', function ($postTypeArguments) {
+//     $postTypeArguments['labels'] = [
+//         'name'          => _x('Projects', 'Post type general name', 'cavatina'),
+//         'singular_name' => _x('Project', 'Post type singular name', 'cavatina'),
+//         'menu_name'     => _x('Projects', 'Admin Menu text', 'cavatina'),
+//         'add_new'       => __('Add New', 'cavatina'),
+//         'edit_item'     => __('Edit Project', 'cavatina'),
+//         'view_item'     => __('View Project', 'cavatina'),
+//         'all_items'     => __('All Projects', 'cavatina'),
+//     ];
+//     $taxonomyArguments['rewrite']['slug'] = 'project';
+//     return $postTypeArguments;
+// });
+
+// /**
+//   * Modify LibWP taxonomy name
+//   */
+// add_filter('libwp_taxonomy_1_name', function ($taxonomyName) {
+//     $taxonomyName = 'project_category';
+//     return $taxonomyName;
+// });
+
+// /**
+//   * Modify LibWP post type
+//   */
+// add_filter('libwp_taxonomy_1_post_type', function ($taxonomyPostTypeName) {
+//     $taxonomyPostTypeName = 'projects';
+//     return $taxonomyPostTypeName;
+// });
+
+// /**
+//   * Modify LibWP taxonomy name
+//   */
+// add_filter('libwp_taxonomy_1_arguments', function ($taxonomyArguments) {
+//     $taxonomyArguments['labels'] = [
+//         'name'          => _x('Project Categories', 'taxonomy general name', 'cavatina'),
+//         'singular_name' => _x('Project Category', 'taxonomy singular name', 'cavatina'),
+//         'search_items'  => __('Search Project Categories', 'cavatina'),
+//         'all_items'     => __('All Project Categories', 'cavatina'),
+//         'edit_item'     => __('Edit Project Category', 'cavatina'),
+//         'add_new_item'  => __('Add New Project Category', 'cavatina'),
+//         'new_item_name' => __('New Project Category Name', 'cavatina'),
+//         'menu_name'     => __('Project Categories', 'cavatina'),
+//     ];
+//     $taxonomyArguments['rewrite']['slug'] = 'projects';
+//     return $taxonomyArguments;
+// });
 
 
 
 /**
- * Load Setup file
- */
+  * Load Setup file
+  */
 require_once get_template_directory() . '/inc/setup.php';
 
-
 /**
- * Custom template tags for this theme.
- */
+  * Custom template tags for this theme.
+  */
 require get_template_directory() . '/inc/template-tags.php';
 
 /**

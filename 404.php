@@ -6,10 +6,8 @@
  *
  * @package cavatina
  */
-
  get_header();
 ?>
-
 <main class="o-page__main js-page__main o-page__main--404" id="wrapper">
     <section class="o-page__main__error-404 not-found">
         <header class="o-page__main__header">
@@ -18,7 +16,7 @@
                 <br />
                 <?php esc_html_e( 'back to home and start again ', 'cavatina' ); ?>
             </h2>
-        </header><!-- .page-header -->
+        </header><!-- .o-page__main__header -->
         <div class="o-page__main__content">
             <div class="c-social-media c-social-media--404">
                 <?php cavatina_get_social_media(); ?>
@@ -28,8 +26,8 @@
                     <?php esc_html_e( 'Back to Home', 'cavatina' ); ?>
                 </button>
             </a>
-        </div><!-- .page-content -->
-    </section><!-- .error-404 -->
+        </div><!-- .o-page__main__content -->
+    </section><!-- .o-page__main__error-404 -->
     <?php get_footer(); ?>
 </main><!-- #main -->
 </div>

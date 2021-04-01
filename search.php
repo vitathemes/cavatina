@@ -16,7 +16,7 @@ get_header();
     <div class="c-aside__content">
         <div class="c-aside__wrapper">
             <div class="c-aside__context">
-                <span class="c-aside__title">Result</span>
+                <span class="c-aside__title"><?php esc_html_e( 'Result', 'cavatina' ); ?></span>
             </div>
         </div>
 

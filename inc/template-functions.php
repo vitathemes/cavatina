@@ -26,6 +26,7 @@ function wp_cavatina_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'wp_cavatina_body_classes' );
 
+
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -35,7 +36,6 @@ function wp_cavatina_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'wp_cavatina_pingback_header' );
-
 
 
 function cavatina_get_pagination( $page , $query ) { 
@@ -79,8 +79,8 @@ function cavatina_typography() {
 	}
 	
 	$html = ':root {	
-	            --primary-color: '. $cavatina_primary_color .';
-	            --secondary-color: ' . $cavatina_secondary_color . ';
+	            --cavatina_primary-color: '. $cavatina_primary_color .';
+	            --cavatina_secondary-color: ' . $cavatina_secondary_color . ';
 			}';
 						
 	return $html;
