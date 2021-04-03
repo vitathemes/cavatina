@@ -3,7 +3,7 @@ Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,15 +33,14 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 == Changelog ==
 
 = 1.0.2 =
-* Fixes keyboard navigation visual focus to search > burger > logo
-* Escape and translated text in functions.php
-* Improve prefixes and also use admin_url() functions.php
-* Fixed alt and escape textes template-tags.php
+* Escape and translated texts in functions.php
+* Improve prefixes and use admin_url() functions.php
+* Fixed alt and escape texts template-tags.php
 * Fixed prefix in template-functions.php
-* Remove Libwp(Plugin) post type registration from setup.php
-* Prefix global functions names in main.js (unminified version assets/src/js)
-* Fix aria-label in header.php
-
+* Remove Libwp(Plugin) post type registration from setup.php qa-
+* Prefix global functions names in main.js
+* Fix aria-label and removed noscript from header in header.php
+* Fixed keyboard navigation visual focus to search > burger > logo
 
 = 1.0.1 =
 * Fixes keyboard navigation

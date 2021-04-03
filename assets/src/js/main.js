@@ -48,7 +48,7 @@ jQuery(function ($) {
     #Handle Load More button
   \*------------------------------------*/
   $(document).ready(function () {
-    const button = $(".js-pagination__load-more__btn");
+    const cavatina_loadMoreButton = $(".js-pagination__load-more__btn");
     $(".js-pagination__load-more").click(function () {
       setTimeout(function () {
         cavatina_lazyLoadInstance.update();
@@ -65,12 +65,12 @@ jQuery(function ($) {
         data: data,
         type: "POST",
         beforeSend: function (xhr) {
-          button.text("Loading . . . ");
+          cavatina_loadMoreButton.text("Loading . . . ");
         },
         success: function (data) {
           if (data) {
             loadMore.prev().after(data);
-            button.text("Load More");
+            cavatina_loadMoreButton.text("Load More");
             loadmore_params.current_page++;
             if (loadmore_params.current_page == loadmore_params.max_page)
               loadMore.remove();
@@ -196,19 +196,16 @@ function cavatina_searchToggleHeader() {
   const headerSearch = document.querySelector(".js-header__search");
   const searchOverlay = document.querySelector(".js-search__overlay");
   const searchForm = document.querySelector(".search-field");
-
   if (cavatina_childFinder("body", "o-overlay")) {
     headerSearch.addEventListener("click", function () {
       // Fade in/out the search overlay
       if (cavatina_isToggled === true) {
         cavatina_fadeOut(searchOverlay);
         headerSearch.classList.remove("c-header__search--toggle");
-
         cavatina_isToggled = false;
       } else {
         cavatina_fadeIn(searchOverlay, "flex");
         headerSearch.classList.add("c-header__search--toggle");
-
         /* Trap Focus On element Blur */
         const searchbtn = document.querySelector(".search-submit");
         searchbtn.addEventListener("blur", function () {
@@ -216,18 +213,15 @@ function cavatina_searchToggleHeader() {
             headerSearch.focus();
           }
         });
-
         /* Trap Focus on Element Blur */
         headerSearch.addEventListener("blur", function () {
           if (cavatina_IsBackward === true) {
             searchbtn.focus();
           }
-
           if (cavatina_IsBackward === false) {
             searchForm.focus();
           }
         });
-
         searchForm.addEventListener("blur", function () {
           if (cavatina_IsBackward === true) {
             headerSearch.focus();
@@ -259,9 +253,9 @@ function cavatina_searchToggleMobile() {
 }
 cavatina_searchToggleMobile();
 
-/*--------------------------------------*\
-  #o-page toggle for blur content
-\*--------------------------------------*/
+/*-------------------------------------------*\
+  #o-page toggle for add blur effect content
+\*-------------------------------------------*/
 function cavatina_blurToggle() {
   const pageMain = document.querySelector(".js-page__main");
   const overlay = document.querySelector(".js-overlay");

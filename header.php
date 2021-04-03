@@ -6,14 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
-    <noscript>
-        <style>
-        /*Reinstate scrolling for non-JS clients*/
-        .simplebar-content-wrapper {
-            overflow: auto;
-        }
-        </style>
-    </noscript>
 </head>
 
 <body <?php body_class(); ?>>
@@ -29,11 +21,11 @@
     <header id="masthead" class="<?php cavatina_get_header_class()?>">
         <div class="c-header__holder js-nav">
 
-            <button class="c-header__search js-header__search"></button><!-- Header Search button -->
+            <button class="c-header__search js-header__search"></button><!-- Header__Search button -->
 
             <button class="c-header__menu js-menu" aria-label="<?php esc_attr( 'Menu Button', 'cavatina' ) ?>"
                 aria-controls="primary-menu" aria-expanded="false" onClick="cavatina_blurToggle()">
-            </button><!-- Header Search Burger -->
+            </button><!-- header__menu Burger -->
 
             <?php
                if ( has_nav_menu( 'primary-menu' ) ) {
@@ -51,9 +43,9 @@
 
             <div class="c-header__logo js-logo">
                 <?php cavatina_handle_logo(); ?>
-            </div><!-- Header Logo -->
+            </div><!-- Header__Logo -->
 
-        </div>
+        </div> <!-- header__holder-->
     </header> <!-- #masthead -->
 
     <div class="c-search__overlay js-search__overlay">

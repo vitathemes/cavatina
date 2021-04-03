@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 12:51+0330\n"
+"POT-Creation-Date: 2021-04-03 08:46+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: 404.php:16
+#: 404.php:14
 msgid "404 ERROR"
 msgstr ""
 
-#: 404.php:17
+#: 404.php:15
 msgid " This page not found; "
 msgstr ""
 
-#: 404.php:19
+#: 404.php:17
 msgid "back to home and start again "
 msgstr ""
 
-#: 404.php:28
+#: 404.php:26
 msgid "Back to Home"
 msgstr ""
 
@@ -42,11 +42,27 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:29
+msgid "Send"
+msgstr ""
+
+#: comments.php:30
+msgid "Comment"
+msgstr ""
+
+#: comments.php:30
+msgid "Your Comment*"
+msgstr ""
+
+#: comments.php:43 comments.php:48
+msgid "Comments"
+msgstr ""
+
+#: comments.php:74
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:20
+#: footer.php:16
 msgid "Cavatina theme by"
 msgstr ""
 
@@ -54,8 +70,32 @@ msgstr ""
 msgid "Contact Page Sidebar Area"
 msgstr ""
 
+#: functions.php:137
+msgid "Name*"
+msgstr ""
+
+#: functions.php:138
+msgid "Email*"
+msgstr ""
+
+#: functions.php:139
+msgid "Website"
+msgstr ""
+
 #: header.php:20
 msgid "Skip to content"
+msgstr ""
+
+#: index.php:16
+msgid "Blog"
+msgstr ""
+
+#: search.php:19
+msgid "Result"
+msgstr ""
+
+#: searchform.php:3
+msgid "Search for:"
 msgstr ""
 
 #: searchform.php:5
@@ -309,10 +349,15 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:232 inc/template-tags.php:254
-#: inc/template-tags.php:284
+#: inc/template-tags.php:231 inc/template-tags.php:253
+#: inc/template-tags.php:283
 #, php-format
 msgid "View all posts in %s"
+msgstr ""
+
+#: inc/template-tags.php:313 inc/template-tags.php:353
+#: inc/template-tags.php:409 inc/template-tags.php:744
+msgid "No thumbnail"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:325

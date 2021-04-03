@@ -2940,7 +2940,7 @@ img {
 
 .wp-comment-cookies-consent {
   display: block;
-  padding-top: 10px; }
+  padding-top: 15px; }
 
 .comments-title {
   border-top: 1px solid #e1e1e1;
@@ -3125,7 +3125,8 @@ img {
     line-height: 15px;
     align-items: center;
     display: inline-block;
-    color: #767676; }
+    color: #767676;
+    padding-top: 8px; }
 
 .logged-in-as a {
   font-size: 14px;

@@ -110,7 +110,7 @@
 
 .wp-comment-cookies-consent {
   display: block;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .comments-title {
@@ -334,6 +334,7 @@
 .comment-form-cookies-consent {
   width: 100%;
   display: block;
+
   label {
     vertical-align: top;
     display: inline-block;
@@ -346,6 +347,7 @@
     align-items: center;
     display: inline-block;
     color: $cavatina__main-primary-light-color;
+    padding-top: 8px;
   }
 }
 
