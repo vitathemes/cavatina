@@ -88,6 +88,10 @@ jQuery(function ($) {
 /*------------------------------------*\
   #Menu items trap focus
 \*------------------------------------*/
+
+if (cavatina_childFinder("body", "")) {
+}
+
 var cavatina_menuToggle = document.querySelector(".js-menu");
 var cavatina_menu = document.querySelector(".s-nav");
 var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
@@ -174,18 +178,6 @@ function cavatina_fadeIn(el, display) {
       requestAnimationFrame(fade);
     }
   })();
-}
-
-/*--------------------------------------*\
-  #Detect Element inside other element
-\*--------------------------------------*/
-function cavatina_childFinder(parentElement, childElement) {
-  let result = document
-    .querySelector(parentElement)
-    .getElementsByClassName(childElement)[0]
-    ? true
-    : false;
-  return result;
 }
 
 /*--------------------------------------*\
@@ -287,9 +279,7 @@ function cavatina_blurToggle() {
 function cavatina_capitalizeFirstLetter() {
   // js-carousel__post-title__text
   if (cavatina_childFinder("body", "js-carousel__post-title__text")) {
-    const carouselTitle = document.querySelector(
-      ".js-carousel__post-title__text"
-    );
+    const carouselTitle = document.querySelector(".js-carousel__post-title__text");
 
     carouselTitle.textContent =
       carouselTitle.textContent.charAt(0).toUpperCase() +
@@ -309,9 +299,7 @@ function cavatina_capitalizeFirstLetter() {
 
   // c-post__entry-title__anchor
   if (cavatina_childFinder("body", "c-post__entry-title__anchor")) {
-    const projectPostTitle = document.querySelector(
-      ".c-post__entry-title__anchor"
-    );
+    const projectPostTitle = document.querySelector(".c-post__entry-title__anchor");
 
     projectPostTitle.textContent =
       projectPostTitle.textContent.charAt(0).toUpperCase() +
@@ -411,9 +399,7 @@ if (cavatina_childFinder("body", "js-single__slider")) {
         if (cavatina_isDesktop() === true) {
           // make slider full width with first drag
           let singleCarousel = document.querySelector(".js-single__slider");
-          singleCarousel.classList.add(
-            "c-carousel__single__slider--full-width"
-          );
+          singleCarousel.classList.add("c-carousel__single__slider--full-width");
 
           if (index === 0) {
             singleCarousel.classList.remove(
