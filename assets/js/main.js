@@ -85,32 +85,43 @@ jQuery(function ($) {
 });
 // End jquery
 
+/*--------------------------------------*\
+  #Detect Element inside other element
+\*--------------------------------------*/
+function cavatina_childFinder(parentElement, childElement) {
+  let result = document
+    .querySelector(parentElement)
+    .getElementsByClassName(childElement)[0]
+    ? true
+    : false;
+  return result;
+}
+
 /*------------------------------------*\
   #Menu items trap focus
 \*------------------------------------*/
+if (cavatina_childFinder("body", "s-nav")) {
+  var cavatina_menuToggle = document.querySelector(".js-menu");
+  var cavatina_menu = document.querySelector(".s-nav");
+  var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
+  var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
+  var cavatina_lastIndex = cavatina_menuListItems.length - 1;
 
-if (cavatina_childFinder("body", "")) {
+  cavatina_menuListItems[cavatina_lastIndex].focus();
+
+  document.addEventListener("keydown", function (e) {
+    if (e.shiftKey && e.keyCode == 9) {
+      cavatina_isBackward = true;
+    } else {
+      cavatina_isBackward = false;
+    }
+  });
+  cavatina_menuToggle.addEventListener("blur", function (e) {
+    if (cavatina_isBackward) {
+      cavatina_menuLinks[cavatina_lastIndex].focus();
+    }
+  });
 }
-
-var cavatina_menuToggle = document.querySelector(".js-menu");
-var cavatina_menu = document.querySelector(".s-nav");
-var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
-var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
-var cavatina_lastIndex = cavatina_menuListItems.length - 1;
-cavatina_menuListItems[cavatina_lastIndex].focus();
-
-document.addEventListener("keydown", function (e) {
-  if (e.shiftKey && e.keyCode == 9) {
-    cavatina_isBackward = true;
-  } else {
-    cavatina_isBackward = false;
-  }
-});
-cavatina_menuToggle.addEventListener("blur", function (e) {
-  if (cavatina_isBackward) {
-    cavatina_menuLinks[cavatina_lastIndex].focus();
-  }
-});
 
 /*------------------------------------*\
   #preloader fadeout
