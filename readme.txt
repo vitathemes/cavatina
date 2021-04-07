@@ -5,7 +5,7 @@ Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: 1.0.2
 License: GPL-3.0-or-later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://opensource.org/licenses/GPL-3.0
 
 Cavatina is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
 
