@@ -106,6 +106,7 @@ if (cavatina_childFinder("body", "s-nav")) {
   var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
   var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
   var cavatina_lastIndex = cavatina_menuListItems.length - 1;
+
   cavatina_menuListItems[cavatina_lastIndex].focus();
 
   document.addEventListener("keydown", function (e) {
