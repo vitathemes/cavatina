@@ -18,7 +18,7 @@
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
 			printf(
-				'<p >' . wp_kses(
+				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
 					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'cavatina' ),
 					array(

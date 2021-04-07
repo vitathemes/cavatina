@@ -11,11 +11,7 @@
 ?>
 <footer id="colophon" class="c-footer">
     <div class="c-footer__context">
-        <div class="c-social-media">
-            <?php cavatina_get_social_media(); ?>
-        </div>
         <div class="c-footer__copy">
-
             <ul class="c-footer__nav">
                 <li class="menu-item"><?php esc_html_e( 'Cavatina theme by', 'cavatina' ); ?>
                     <a class="c-footer__text__link" href="https://vitathemes.com/"> VitaThemes </a>
@@ -33,6 +29,9 @@
                 ?>
             </ul>
 
+        </div>
+        <div class="c-social-media">
+            <?php cavatina_get_social_media(); ?>
         </div>
     </div><!-- #.c-footer__context -->
 </footer><!-- #colophon -->

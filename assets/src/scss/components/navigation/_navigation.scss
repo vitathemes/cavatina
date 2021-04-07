@@ -8,7 +8,7 @@
   transition-delay: 0s;
   overflow: hidden;
   margin-left: 8px;
-
+  order: 3;
   opacity: 0;
   visibility: hidden;
 
@@ -32,6 +32,16 @@
 
   .menu-item {
     line-height: 17px;
+
+    a {
+      font-size: 19px !important;
+      line-height: 23px !important;
+
+      @include media(tablet) {
+        font-size: 14px !important;
+        line-height: 17px !important;
+      }
+    }
   }
 }
 

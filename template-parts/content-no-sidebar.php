@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content without sidebar
+ * Template part for displaying page content without Aside
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

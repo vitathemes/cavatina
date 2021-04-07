@@ -1,7 +1,9 @@
 jQuery(function ($) {
-  /* Carousel Keyboard Navigation for images */
+  /*----------------------------------------*\
+    #Carousel Keyboard Navigation (images)
+  \*----------------------------------------*/
   let cavatina_flCarouselTextLength;
-  if (childFinder("body", "c-carousel__post-title")) {
+  if (cavatina_childFinder("body", "c-carousel__post-title")) {
     cavatina_flCarouselTextLength = cavatina_flCarouselText.slides.length - 1;
   }
 
@@ -17,7 +19,9 @@ jQuery(function ($) {
     }
   });
 
-  /* Carousel Keyboard Navigation for Texts */
+  /*----------------------------------------*\
+    #Carousel Keyboard Navigation (Texts)
+  \*----------------------------------------*/
   $(".c-carousel__post-title:last-child").on("focusin", function (e) {
     cavatina_flCarouselMain.select(cavatina_flCarouselTextLength);
   });
@@ -30,7 +34,9 @@ jQuery(function ($) {
     }
   });
 
-  /* Last menu item trap focus */
+  /*------------------------------------*\
+    #Last menu item trap focus
+  \*------------------------------------*/
   $(".s-nav li:last-child").focusout(function () {
     if (cavatina_IsBackward === true) {
     } else if (cavatina_IsBackward === false) {
@@ -42,7 +48,7 @@ jQuery(function ($) {
     #Handle Load More button
   \*------------------------------------*/
   $(document).ready(function () {
-    const button = $(".js-pagination__load-more__btn");
+    const cavatina_loadMoreButton = $(".js-pagination__load-more__btn");
     $(".js-pagination__load-more").click(function () {
       setTimeout(function () {
         cavatina_lazyLoadInstance.update();
@@ -59,12 +65,12 @@ jQuery(function ($) {
         data: data,
         type: "POST",
         beforeSend: function (xhr) {
-          button.text("Loading . . . ");
+          cavatina_loadMoreButton.text("Loading . . . ");
         },
         success: function (data) {
           if (data) {
             loadMore.prev().after(data);
-            button.text("Load More");
+            cavatina_loadMoreButton.text("Load More");
             loadmore_params.current_page++;
             if (loadmore_params.current_page == loadmore_params.max_page)
               loadMore.remove();
@@ -75,34 +81,53 @@ jQuery(function ($) {
       });
     });
   });
-  // End Loadmore handling
+  // End Load more handling
 });
 // End jquery
 
-var cavatina_menuToggle = document.querySelector(".js-menu");
-var cavatina_menu = document.querySelector(".s-nav");
-var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
-var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
-var cavatina_lastIndex = cavatina_menuListItems.length - 1;
-cavatina_menuListItems[cavatina_lastIndex].focus();
+/*--------------------------------------*\
+  #Detect Element inside other element
+\*--------------------------------------*/
+function cavatina_childFinder(parentElement, childElement) {
+  let result = document
+    .querySelector(parentElement)
+    .getElementsByClassName(childElement)[0]
+    ? true
+    : false;
+  return result;
+}
 
-document.addEventListener("keydown", function (e) {
-  if (e.shiftKey && e.keyCode == 9) {
-    cavatina_isBackward = true;
-  } else {
-    cavatina_isBackward = false;
-  }
-});
-cavatina_menuToggle.addEventListener("blur", function (e) {
-  if (cavatina_isBackward) {
-    cavatina_menuLinks[cavatina_lastIndex].focus();
-  }
-});
+/*------------------------------------*\
+  #Menu items trap focus
+\*------------------------------------*/
+if (cavatina_childFinder("body", "s-nav")) {
+  var cavatina_menuToggle = document.querySelector(".js-menu");
+  var cavatina_menu = document.querySelector(".s-nav");
+  var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
+  var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
+  var cavatina_lastIndex = cavatina_menuListItems.length - 1;
 
-//preloader fadeout
+  cavatina_menuListItems[cavatina_lastIndex].focus();
+
+  document.addEventListener("keydown", function (e) {
+    if (e.shiftKey && e.keyCode == 9) {
+      cavatina_isBackward = true;
+    } else {
+      cavatina_isBackward = false;
+    }
+  });
+  cavatina_menuToggle.addEventListener("blur", function (e) {
+    if (cavatina_isBackward) {
+      cavatina_menuLinks[cavatina_lastIndex].focus();
+    }
+  });
+}
+
+/*------------------------------------*\
+  #preloader fadeout
+\*------------------------------------*/
 const cavatina_preloader = document.querySelector(".o-preloader");
-
-function fadeEffect() {
+function cavatina_fadeEffect() {
   setTimeout(function () {
     setInterval(function () {
       if (!cavatina_preloader.style.opacity) {
@@ -112,7 +137,7 @@ function fadeEffect() {
         cavatina_preloader.style.opacity -= 0.1;
       } else {
         if (!cavatina_preloader.style.opacity === 0) {
-          clearInterval(fadeEffect);
+          clearInterval(cavatina_fadeEffect);
         } else {
           cavatina_preloader.style.display = "none";
         }
@@ -120,10 +145,12 @@ function fadeEffect() {
     }, 10);
   }, 1000);
 }
-window.addEventListener("load", fadeEffect());
+window.addEventListener("load", cavatina_fadeEffect());
 
-// Check device is mobile or not
-function isDesktop() {
+/*------------------------------------*\
+  #Check device is mobile or not
+\*------------------------------------*/
+function cavatina_isDesktop() {
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
@@ -135,8 +162,10 @@ function isDesktop() {
   }
 }
 
-// Fade Out Vanilla JS
-function fadeOut(el) {
+/*------------------------------------*\
+  #Fade Out Vanilla JS
+\*------------------------------------*/
+function cavatina_fadeOut(el) {
   el.style.opacity = 1;
   (function fade() {
     if ((el.style.opacity -= 0.1) < 0) {
@@ -147,8 +176,10 @@ function fadeOut(el) {
   })();
 }
 
-// Fade In Vanilla JS
-function fadeIn(el, display) {
+/*------------------------------------*\
+  # Fade In Vanilla JS
+\*------------------------------------*/
+function cavatina_fadeIn(el, display) {
   el.style.opacity = 0;
   el.style.display = display || "block";
   (function fade() {
@@ -160,57 +191,56 @@ function fadeIn(el, display) {
   })();
 }
 
-// Detect Element inside other element
-function childFinder(parentElement, childElement) {
-  let result = document
-    .querySelector(parentElement)
-    .getElementsByClassName(childElement)[0]
-    ? true
-    : false;
-  return result;
-}
-
-// Search Box Desktop
+/*--------------------------------------*\
+  #Search Box Desktop
+\*--------------------------------------*/
 let cavatina_isToggled = false;
-function searchToggleHeader() {
+function cavatina_searchToggleHeader() {
   const headerSearch = document.querySelector(".js-header__search");
   const searchOverlay = document.querySelector(".js-search__overlay");
-
-  if (childFinder("body", "o-overlay")) {
+  const searchForm = document.querySelector(".search-field");
+  if (cavatina_childFinder("body", "o-overlay")) {
     headerSearch.addEventListener("click", function () {
       // Fade in/out the search overlay
       if (cavatina_isToggled === true) {
-        fadeOut(searchOverlay);
+        cavatina_fadeOut(searchOverlay);
         headerSearch.classList.remove("c-header__search--toggle");
-
         cavatina_isToggled = false;
       } else {
-        fadeIn(searchOverlay, "flex");
+        cavatina_fadeIn(searchOverlay, "flex");
         headerSearch.classList.add("c-header__search--toggle");
-
-        /* Trap focus on element blur */
+        /* Trap Focus On element Blur */
         const searchbtn = document.querySelector(".search-submit");
         searchbtn.addEventListener("blur", function () {
           if (cavatina_IsBackward === false) {
             headerSearch.focus();
           }
         });
-
+        /* Trap Focus on Element Blur */
         headerSearch.addEventListener("blur", function () {
           if (cavatina_IsBackward === true) {
             searchbtn.focus();
           }
+          if (cavatina_IsBackward === false) {
+            searchForm.focus();
+          }
         });
-
+        searchForm.addEventListener("blur", function () {
+          if (cavatina_IsBackward === true) {
+            headerSearch.focus();
+          }
+        });
         cavatina_isToggled = true;
       }
     });
   }
 }
-searchToggleHeader();
+cavatina_searchToggleHeader();
 
-// Search Box mobile
-function searchToggleAside() {
+/*--------------------------------------*\
+  #Search Box mobile
+\*--------------------------------------*/
+function cavatina_searchToggleMobile() {
   const oPageMain = document.querySelector(".js-page");
   const searchIcon = document.querySelector(".js-search__icon");
   const searchBlock = document.querySelector(".js-search__form");
@@ -224,15 +254,17 @@ function searchToggleAside() {
     });
   }
 }
-searchToggleAside();
+cavatina_searchToggleMobile();
 
-// o-page toggle for blur content
-function blurToggle() {
+/*-------------------------------------------*\
+  #o-page toggle for add blur effect content
+\*-------------------------------------------*/
+function cavatina_blurToggle() {
   const pageMain = document.querySelector(".js-page__main");
   const overlay = document.querySelector(".js-overlay");
   const searchOverlay = document.querySelector(".js-search__overlay");
 
-  if (childFinder("body", "c-aside")) {
+  if (cavatina_childFinder("body", "c-aside")) {
     let aside = document.querySelector(".js-aside");
     if (pageMain.classList.contains("o-page__main--blur")) {
       aside.classList.remove("c-aside--blur");
@@ -252,13 +284,13 @@ function blurToggle() {
   }
 }
 
-// make first letter uppercase ( use case unsupported css )
-function capitalizeFirstLetter() {
+/*---------------------------------------------------------*\
+  #Make first letter uppercase ( use case unsupported css )
+\*---------------------------------------------------------*/
+function cavatina_capitalizeFirstLetter() {
   // js-carousel__post-title__text
-  if (childFinder("body", "js-carousel__post-title__text")) {
-    const carouselTitle = document.querySelector(
-      ".js-carousel__post-title__text"
-    );
+  if (cavatina_childFinder("body", "js-carousel__post-title__text")) {
+    const carouselTitle = document.querySelector(".js-carousel__post-title__text");
 
     carouselTitle.textContent =
       carouselTitle.textContent.charAt(0).toUpperCase() +
@@ -266,7 +298,7 @@ function capitalizeFirstLetter() {
   }
 
   // js-carousel__post-title__text-mobile
-  if (childFinder("body", "js-carousel__post-title__text-mobile")) {
+  if (cavatina_childFinder("body", "js-carousel__post-title__text-mobile")) {
     const carouselTitle = document.querySelector(
       ".js-carousel__post-title__text-mobile"
     );
@@ -277,23 +309,24 @@ function capitalizeFirstLetter() {
   }
 
   // c-post__entry-title__anchor
-  if (childFinder("body", "c-post__entry-title__anchor")) {
-    const projectPostTitle = document.querySelector(
-      ".c-post__entry-title__anchor"
-    );
+  if (cavatina_childFinder("body", "c-post__entry-title__anchor")) {
+    const projectPostTitle = document.querySelector(".c-post__entry-title__anchor");
 
     projectPostTitle.textContent =
       projectPostTitle.textContent.charAt(0).toUpperCase() +
       projectPostTitle.textContent.slice(1);
   }
 }
-capitalizeFirstLetter();
+cavatina_capitalizeFirstLetter();
 
+/*--------------------------------------*\
+  #cavatina carousels
+\*--------------------------------------*/
 let cavatina_currentSlide = 0;
 let cavatina_flCarouselMain = {};
 let cavatina_flCarouselText = {};
 // Main page Carousels
-if (childFinder("body", "js-carousel__context")) {
+if (cavatina_childFinder("body", "js-carousel__context")) {
   // Carousel (Home)
   let carousel = document.querySelector(".js-carousel__context");
   cavatina_flCarouselMain = new Flickity(carousel, {
@@ -308,7 +341,7 @@ if (childFinder("body", "js-carousel__context")) {
     },
   });
 
-  // Carousel (Home Page) - text
+  // Carousel (Home) - text
   let carouselImage = document.querySelector(".js-carousel__post-titles");
 
   cavatina_flCarouselText = new Flickity(carouselImage, {
@@ -358,27 +391,26 @@ if (childFinder("body", "js-carousel__context")) {
   });
 }
 
-// Carousel - Single Page
-if (childFinder("body", "js-single__slider")) {
+/*--------------------------------------*\
+  #Carousel - Single Page
+\*--------------------------------------*/
+if (cavatina_childFinder("body", "js-single__slider")) {
   let carouselSingle = document.querySelector(".js-single__slider");
 
   let flCarouselSingle = new Flickity(carouselSingle, {
-    freeScroll: isDesktop(),
+    freeScroll: cavatina_isDesktop(),
     setGallerySize: false,
     imagesLoaded: true,
     cellAlign: "left",
-    pageDots: !isDesktop(),
+    pageDots: !cavatina_isDesktop(),
     prevNextButtons: false,
     lazyLoad: true,
     on: {
-      ready: function () {},
       change: function (index) {
-        if (isDesktop() === true) {
+        if (cavatina_isDesktop() === true) {
           // make slider full width with first drag
           let singleCarousel = document.querySelector(".js-single__slider");
-          singleCarousel.classList.add(
-            "c-carousel__single__slider--full-width"
-          );
+          singleCarousel.classList.add("c-carousel__single__slider--full-width");
 
           if (index === 0) {
             singleCarousel.classList.remove(
@@ -391,11 +423,13 @@ if (childFinder("body", "js-single__slider")) {
   });
 }
 
-// Remove at from comment
-if (childFinder("body", "comments-area")) {
-  const testContainer = document.querySelector(".comments-area");
+/*--------------------------------------*\
+  #Remove (at) from comment
+\*--------------------------------------*/
+if (cavatina_childFinder("body", "comments-area")) {
+  const cavatina_commentContainer = document.querySelector(".comments-area");
   let timeElement, timeElementCounter;
-  timeElement = testContainer.querySelectorAll("time");
+  timeElement = cavatina_commentContainer.querySelectorAll("time");
   for (
     timeElementCounter = 0;
     timeElementCounter < timeElement.length;
@@ -407,11 +441,16 @@ if (childFinder("body", "comments-area")) {
   }
 }
 
-// lazy load image
+/*--------------------------------------*\
+  #lazy load images
+\*--------------------------------------*/
 var cavatina_lazyLoadInstance = new LazyLoad({
   elements_selector: [".c-carousel__image", ".c-post__thumbnail__image"],
 });
 
+/*--------------------------------------*\
+  #Detect keyboard navigation action
+\*--------------------------------------*/
 let cavatina_IsBackward;
 document.addEventListener("keydown", function (e) {
   if (e.shiftKey && e.keyCode == 9) {
@@ -423,15 +462,18 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-// truncate long text
-if (childFinder("body", "c-post__entry-title__anchor")) {
-  const postTitles = document.querySelectorAll(".c-post__entry-title__anchor");
+/*--------------------------------------*\
+  #truncate long text
+\*--------------------------------------*/
+if (cavatina_childFinder("body", "c-post__entry-title__anchor")) {
+  const cavatina_postTitles = document.querySelectorAll(
+    ".c-post__entry-title__anchor"
+  );
 
   document
     .querySelectorAll(".c-post__entry-title__anchor")
     .forEach(function (postLink) {
       if (postLink.textContent.length > 82) {
-        // box.addEventListener("click", () => box.classList.toggle("red"));
         let currentPostLink = postLink.textContent;
         currentPostLink = currentPostLink.substr(0, 80) + "...";
         postLink.textContent = currentPostLink;

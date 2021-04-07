@@ -17,7 +17,7 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 - Translation ready (with .POT files included)
 - SEO optimized
 - GNU GPL version 2.0 licensed
-- Support 1 levels sub-menus
+- Support 1 level menu
 - …and much more
 
 See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.com/cavatina/).
@@ -33,12 +33,17 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 ```shell
 themes/cavatina/                 # → Root of your theme
 │── assets/                      # → Theme internal assets
+│   ├── css/                     # → Compressed css file
+│   ├── fonts/                   # → Theme default fonts ( Customizable from kirki )
+│   ├── images/                  # → Theme compressed images
+│   ├── js/                      # → Theme Minified javascript files
+│   └── src/                     # → Theme source files
 ├── inc/                         # → Theme functions
 │   ├── tgmpa/                   # → Tgmpa plugin recommendation
 │   ├── customizer.php           # → All codes related to WordPress Customizer (We use Kirki Framework)
 │   ├── template-functions.php   # → Custom template tweaks
 │   └── template-tags.php        # → Custom template tags
-│   └── setup.php                # → Custom post type setup
+│   └── setup.php                # → Theme Setup
 ├── language/                    # → Theme Language files
 ├── page-template/               # → Theme Part files (Include) - Pages
 ├── template-parts/              # → Theme Part files (Include)

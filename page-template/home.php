@@ -2,7 +2,7 @@
 /**
  * Template Name: Home
  *
- * Displays the Contact Page Template of the theme.
+ * Displays the Home Page Template of the theme.
  *
  * @package cavatina
  * 
@@ -20,11 +20,11 @@ get_header();
                 if ( has_nav_menu( 'primary-menu' ) ) {
                     wp_nav_menu(
                         array(
-                            'theme_location' => 'primary-menu',
-                            'menu_id'        => 'primary-menu-registered',
-                            "menu_class" => "s-nav",
-                            "container_class" => "c-nav",
-                            "container" => "nav",
+                            'theme_location'    => 'primary-menu',
+                            'menu_id'           => 'primary-menu-registered',
+                            "menu_class"        => "s-nav",
+                            "container_class"   => "c-nav",
+                            "container"         => "nav",
                         )
                     );
                 }

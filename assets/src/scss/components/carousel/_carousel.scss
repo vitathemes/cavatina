@@ -232,6 +232,10 @@
     margin-top: 0;
   }
 
+  &:focus {
+    outline: none !important;
+  }
+
   .flickity-viewport {
     width: 100%;
     height: 140px;
@@ -252,8 +256,8 @@
   }
 
   .flickity-page-dots {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 16px;
+    padding-right: 16px;
     bottom: -15px;
     .dot {
       width: 30%;

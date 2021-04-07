@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 12:51+0330\n"
+"POT-Creation-Date: 2021-04-07 10:52+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: 404.php:16
+#: 404.php:14
 msgid "404 ERROR"
 msgstr ""
 
-#: 404.php:17
+#: 404.php:15
 msgid " This page not found; "
 msgstr ""
 
-#: 404.php:19
+#: 404.php:17
 msgid "back to home and start again "
 msgstr ""
 
-#: 404.php:28
+#: 404.php:26
 msgid "Back to Home"
 msgstr ""
 
@@ -42,11 +42,27 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:29
+msgid "Send"
+msgstr ""
+
+#: comments.php:30
+msgid "Comment"
+msgstr ""
+
+#: comments.php:30
+msgid "Your Comment*"
+msgstr ""
+
+#: comments.php:43 comments.php:48
+msgid "Comments"
+msgstr ""
+
+#: comments.php:74
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:20
+#: footer.php:16
 msgid "Cavatina theme by"
 msgstr ""
 
@@ -54,8 +70,97 @@ msgstr ""
 msgid "Contact Page Sidebar Area"
 msgstr ""
 
-#: header.php:20
+#: functions.php:138
+msgid "Name*"
+msgstr ""
+
+#: functions.php:139
+msgid "Email*"
+msgstr ""
+
+#: functions.php:140
+msgid "Website"
+msgstr ""
+
+#: functions.php:311
+msgctxt "Post type general name"
+msgid "Projects"
+msgstr ""
+
+#: functions.php:312
+msgctxt "Post type singular name"
+msgid "Project"
+msgstr ""
+
+#: functions.php:313
+msgctxt "Admin Menu text"
+msgid "Projects"
+msgstr ""
+
+#: functions.php:314
+msgid "Add New"
+msgstr ""
+
+#: functions.php:315
+msgid "Edit Project"
+msgstr ""
+
+#: functions.php:316
+msgid "View Project"
+msgstr ""
+
+#: functions.php:317
+msgid "All Projects"
+msgstr ""
+
+#: functions.php:368
+msgctxt "taxonomy general name"
+msgid "Project Categories"
+msgstr ""
+
+#: functions.php:369
+msgctxt "taxonomy singular name"
+msgid "Project Category"
+msgstr ""
+
+#: functions.php:370
+msgid "Search Project Categories"
+msgstr ""
+
+#: functions.php:371
+msgid "All Project Categories"
+msgstr ""
+
+#: functions.php:372
+msgid "Edit Project Category"
+msgstr ""
+
+#: functions.php:373
+msgid "Add New Project Category"
+msgstr ""
+
+#: functions.php:374
+msgid "New Project Category Name"
+msgstr ""
+
+#: functions.php:375
+msgid "Project Categories"
+msgstr ""
+
+#: header.php:12
 msgid "Skip to content"
+msgstr ""
+
+#: index.php:16
+msgid "Blog"
+msgstr ""
+
+#: search.php:19
+msgid "Result"
+msgstr ""
+
+#: searchform.php:3
+msgid "Search for:"
 msgstr ""
 
 #: searchform.php:5
@@ -195,77 +300,12 @@ msgstr ""
 msgid "Twitter"
 msgstr ""
 
-#: inc/setup.php:47
+#: inc/setup.php:46
 msgid "Primary"
 msgstr ""
 
-#: inc/setup.php:96
+#: inc/setup.php:95
 msgid "Footer"
-msgstr ""
-
-#: inc/setup.php:112
-msgctxt "Post type general name"
-msgid "Projects"
-msgstr ""
-
-#: inc/setup.php:113
-msgctxt "Post type singular name"
-msgid "Project"
-msgstr ""
-
-#: inc/setup.php:114
-msgctxt "Admin Menu text"
-msgid "Projects"
-msgstr ""
-
-#: inc/setup.php:115
-msgid "Add New"
-msgstr ""
-
-#: inc/setup.php:116
-msgid "Edit Project"
-msgstr ""
-
-#: inc/setup.php:117
-msgid "View Project"
-msgstr ""
-
-#: inc/setup.php:118
-msgid "All Projects"
-msgstr ""
-
-#: inc/setup.php:140
-msgctxt "taxonomy general name"
-msgid "Project Categories"
-msgstr ""
-
-#: inc/setup.php:141
-msgctxt "taxonomy singular name"
-msgid "Project Category"
-msgstr ""
-
-#: inc/setup.php:142
-msgid "Search Project Categories"
-msgstr ""
-
-#: inc/setup.php:143
-msgid "All Project Categories"
-msgstr ""
-
-#: inc/setup.php:144
-msgid "Edit Project Category"
-msgstr ""
-
-#: inc/setup.php:145
-msgid "Add New Project Category"
-msgstr ""
-
-#: inc/setup.php:146
-msgid "New Project Category Name"
-msgstr ""
-
-#: inc/setup.php:147
-msgid "Project Categories"
 msgstr ""
 
 #: inc/template-tags.php:31
@@ -309,10 +349,15 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:232 inc/template-tags.php:254
-#: inc/template-tags.php:284
+#: inc/template-tags.php:231 inc/template-tags.php:253
+#: inc/template-tags.php:283
 #, php-format
 msgid "View all posts in %s"
+msgstr ""
+
+#: inc/template-tags.php:313 inc/template-tags.php:353
+#: inc/template-tags.php:409 inc/template-tags.php:744
+msgid "No thumbnail"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:325
