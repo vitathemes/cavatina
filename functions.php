@@ -376,7 +376,7 @@ function cavatina_modify_libwp_taxonomy_argument($taxonomyArguments){
       'new_item_name' => __('New Project Category Name', 'cavatina'),
       'menu_name'     => __('Project Categories', 'cavatina'),
   ];
-  $taxonomyArguments['rewrite']['slug'] = 'projects';
+  $taxonomyArguments['rewrite']['slug'] = 'project_category';
   $taxonomyArguments['show_in_rest'] = true;
 
   return $taxonomyArguments;

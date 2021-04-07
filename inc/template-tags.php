@@ -212,28 +212,7 @@ if ( ! function_exists( 'cavatina_get_category' ) ) :
 	 */
 	function cavatina_get_category( $cavatina_isLimited = false) {
 
-		if( ! empty( get_the_category() ) ){
-			/* get category */
-			$categories = get_the_category();
-			$separator = ', ';
-			$output = '';
-			$category_counter = 0;
-			if ( ! empty( $categories ) ) {
-			
-				foreach( $categories as $category ) {
-
-					if( $cavatina_isLimited === true && $category_counter === 3){
-						break;
-					}
-
-					$category_counter++;
-					/* translators: used between list items, there is a space after the comma */
-					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-				}
-				echo  wp_kses_post(trim( $output, $separator ));
-			}
-		}
-	
+		
 		if ( function_exists( 'libwp' ) ) {
 			if( ! empty(get_the_terms(0, 'project_category')) ){
 				/* get taxonomy  */
@@ -256,6 +235,29 @@ if ( ! function_exists( 'cavatina_get_category' ) ) :
 				}	
 			}
 		}
+
+		if( ! empty( get_the_category() ) ){
+			/* get category */
+			$categories = get_the_category();
+			$separator = ', ';
+			$output = '';
+			$category_counter = 0;
+			if ( ! empty( $categories ) ) {
+			
+				foreach( $categories as $category ) {
+
+					if( $cavatina_isLimited === true && $category_counter === 3){
+						break;
+					}
+
+					$category_counter++;
+					/* translators: used between list items, there is a space after the comma */
+					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+				}
+				echo  wp_kses_post(trim( $output, $separator ));
+			}
+		}
+	
 		
 	}
 
