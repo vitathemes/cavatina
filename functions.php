@@ -211,14 +211,15 @@ function cavatina_deciaml_post_number(){
     // Remove zero when reaching 10
     if($cavatina_postNumber >= 10){
         $cavatina_decimalCounter = "";
-		$cavatina_postNumber = $cavatina_postNumber;
-		return $cavatina_postNumber;
+		    $cavatina_postNumber = $cavatina_postNumber;
+		    return $cavatina_postNumber;
     }
     else{
-		$cavatina_postNumber = $cavatina_decimalCounter.$cavatina_postNumber;
-		return $cavatina_postNumber;
+		    $cavatina_postNumber = $cavatina_decimalCounter.$cavatina_postNumber;
+		    return $cavatina_postNumber;
 	}
 }
+
 
 
 /**
@@ -301,6 +302,7 @@ function cavatina_modify_libwp_post_type($postTypeName){
 }  
 
 add_filter('libwp_post_type_1_name', 'cavatina_modify_libwp_post_type');
+
 
 /**
   * Modify LibWP post type arguments (If libwp plugin exist)

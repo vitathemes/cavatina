@@ -78,7 +78,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Cavatina is distributed under the terms of the GNU GPL version 2.0
+Cavatina is distributed under the terms of the GNU GPL version 3.0
 
 Cavatina bundles the following third-party resources:
 

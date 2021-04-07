@@ -1805,7 +1805,8 @@ img {
     #Header 404 Modifier
 \*------------------------------------*/
 .c-header--404 .c-header__holder {
-  padding-top: 0px; }
+  padding-top: 0px;
+  padding-bottom: 0px; }
   @media only screen and (min-width: 980px) {
     .c-header--404 .c-header__holder {
       justify-content: center; } }

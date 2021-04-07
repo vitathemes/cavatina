@@ -382,13 +382,13 @@ if (! function_exists('cavatina_get_page_class')) :
 	 */
 	function cavatina_get_page_class() {
 		if ( is_page_template( 'page-template/home.php' ) ) {
-			echo "o-page o-page--home js-page";
+			echo esc_attr( "o-page o-page--home js-page" );
 		} 
 		else if( is_404() ){
-			echo "o-page o-page--404 js-page";
+			echo esc_attr( "o-page o-page--404 js-page" );
 		}
 		else{
-			echo "o-page js-page";
+			echo esc_attr( "o-page js-page" );
 		}
 	}
 endif;

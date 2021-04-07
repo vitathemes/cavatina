@@ -1,6 +1,6 @@
 <?php
 /**
- * * Template Name: Content no-sidebar
+ * * Template Name: Content No Aside
  * 
  * * The template for displaying pages with sidebar
  *
