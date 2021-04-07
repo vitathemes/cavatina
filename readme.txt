@@ -4,8 +4,8 @@ Requires at least: 5.0
 Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: 1.0.2
-License: GPL-2.0-or-later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPL-3.0-or-later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Cavatina is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
 
@@ -33,14 +33,18 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 == Changelog ==
 
 = 1.0.2 =
-* Escape and translated texts in functions.php
+* Fix Escape and translated texts in functions.php
 * Improve prefixes and use admin_url() functions.php
-* Fixed alt and escape texts template-tags.php
-* Fixed prefix in template-functions.php
-* Remove Libwp(Plugin) post type registration from setup.php qa-
-* Prefix global functions names in main.js
+* Fix alt and escape texts template-tags.php
+* Fix prefix in template-functions.php
+* Remove Libwp(Plugin) post type registration from setup.php
+* Fix Prefix global functions names in main.js
+* Add vendor.min.js
 * Fix aria-label and removed noscript from header in header.php
-* Fixed keyboard navigation visual focus to search > burger > logo
+* Fix keyboard navigation visual focus to search > burger > logo
+* Improve focus order in footer and comments
+* Improve image links visual focus
+* Update theme license
 
 = 1.0.1 =
 * Fixes keyboard navigation
@@ -82,6 +86,10 @@ Dashicons by WordPress
 License: GNU GPLv2
 Source: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
+Social Icons, Arrow icons, Reply Icons,Magnifier Icons & close icons by iconify
+License: Apache 2.0, http://www.apache.org/licenses/LICENSE-2.0
+Source: https://iconify.design/
+
 Flickity by desandro
 License: GNU GPLv3
 Source: https://www.gnu.org/licenses/gpl-3.0.html
@@ -97,3 +105,7 @@ Source: http://tgmpluginactivation.com/
 preloader.svg by loading.io
 License: LD-FREE, https://loading.io/license/
 Source: https://loading.io/
+
+Image for theme screenshot, Copyright VitaThemes
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://vitathemes.com/theme/cavatina/

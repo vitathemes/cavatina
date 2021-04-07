@@ -1255,6 +1255,9 @@ img {
     .flickity-prev-next-button.previous {
       left: 95%; } }
 
+.flickity-enabled:focus:focus {
+  outline: #000000 dotted 1px; }
+
 /*--------------------------------------------------------------
   # Custom Simplebar
   --------------------------------------------------------------*/
@@ -1702,12 +1705,12 @@ img {
     margin-bottom: 20px; } }
 
 .c-header__holder.toggled .c-header__menu {
-  padding: 0;
   width: 45px;
   height: 30px;
   text-align: right; }
   @media only screen and (min-width: 980px) {
     .c-header__holder.toggled .c-header__menu {
+      padding: 0;
       width: 40px;
       height: 14px; }
       .c-header__holder.toggled .c-header__menu::before {
@@ -1840,6 +1843,13 @@ img {
       margin: 0; } }
   .s-nav .menu-item {
     line-height: 17px; }
+    .s-nav .menu-item a {
+      font-size: 19px !important;
+      line-height: 23px !important; }
+      @media only screen and (min-width: 980px) {
+        .s-nav .menu-item a {
+          font-size: 14px !important;
+          line-height: 17px !important; } }
 
 .menu-item {
   margin-bottom: 24px; }
@@ -2728,6 +2738,8 @@ img {
       left: 50%;
       position: absolute;
       margin-top: 0; } }
+  .c-carousel__single__slider:focus {
+    outline: none !important; }
   .c-carousel__single__slider .flickity-viewport {
     width: 100%;
     height: 140px;
@@ -2742,8 +2754,8 @@ img {
       justify-content: center;
       align-items: center; } }
   .c-carousel__single__slider .flickity-page-dots {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 16px;
+    padding-right: 16px;
     bottom: -15px; }
     .c-carousel__single__slider .flickity-page-dots .dot {
       width: 30%; }
@@ -3208,7 +3220,6 @@ img {
   border-radius: 2px;
   display: block;
   text-align: center;
-  font-size: 14px;
   font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 1px;

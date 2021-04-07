@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-03 08:46+0430\n"
+"POT-Creation-Date: 2021-04-07 10:52+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,19 +70,84 @@ msgstr ""
 msgid "Contact Page Sidebar Area"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:138
 msgid "Name*"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:139
 msgid "Email*"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:140
 msgid "Website"
 msgstr ""
 
-#: header.php:20
+#: functions.php:311
+msgctxt "Post type general name"
+msgid "Projects"
+msgstr ""
+
+#: functions.php:312
+msgctxt "Post type singular name"
+msgid "Project"
+msgstr ""
+
+#: functions.php:313
+msgctxt "Admin Menu text"
+msgid "Projects"
+msgstr ""
+
+#: functions.php:314
+msgid "Add New"
+msgstr ""
+
+#: functions.php:315
+msgid "Edit Project"
+msgstr ""
+
+#: functions.php:316
+msgid "View Project"
+msgstr ""
+
+#: functions.php:317
+msgid "All Projects"
+msgstr ""
+
+#: functions.php:368
+msgctxt "taxonomy general name"
+msgid "Project Categories"
+msgstr ""
+
+#: functions.php:369
+msgctxt "taxonomy singular name"
+msgid "Project Category"
+msgstr ""
+
+#: functions.php:370
+msgid "Search Project Categories"
+msgstr ""
+
+#: functions.php:371
+msgid "All Project Categories"
+msgstr ""
+
+#: functions.php:372
+msgid "Edit Project Category"
+msgstr ""
+
+#: functions.php:373
+msgid "Add New Project Category"
+msgstr ""
+
+#: functions.php:374
+msgid "New Project Category Name"
+msgstr ""
+
+#: functions.php:375
+msgid "Project Categories"
+msgstr ""
+
+#: header.php:12
 msgid "Skip to content"
 msgstr ""
 
@@ -235,77 +300,12 @@ msgstr ""
 msgid "Twitter"
 msgstr ""
 
-#: inc/setup.php:47
+#: inc/setup.php:46
 msgid "Primary"
 msgstr ""
 
-#: inc/setup.php:96
+#: inc/setup.php:95
 msgid "Footer"
-msgstr ""
-
-#: inc/setup.php:112
-msgctxt "Post type general name"
-msgid "Projects"
-msgstr ""
-
-#: inc/setup.php:113
-msgctxt "Post type singular name"
-msgid "Project"
-msgstr ""
-
-#: inc/setup.php:114
-msgctxt "Admin Menu text"
-msgid "Projects"
-msgstr ""
-
-#: inc/setup.php:115
-msgid "Add New"
-msgstr ""
-
-#: inc/setup.php:116
-msgid "Edit Project"
-msgstr ""
-
-#: inc/setup.php:117
-msgid "View Project"
-msgstr ""
-
-#: inc/setup.php:118
-msgid "All Projects"
-msgstr ""
-
-#: inc/setup.php:140
-msgctxt "taxonomy general name"
-msgid "Project Categories"
-msgstr ""
-
-#: inc/setup.php:141
-msgctxt "taxonomy singular name"
-msgid "Project Category"
-msgstr ""
-
-#: inc/setup.php:142
-msgid "Search Project Categories"
-msgstr ""
-
-#: inc/setup.php:143
-msgid "All Project Categories"
-msgstr ""
-
-#: inc/setup.php:144
-msgid "Edit Project Category"
-msgstr ""
-
-#: inc/setup.php:145
-msgid "Add New Project Category"
-msgstr ""
-
-#: inc/setup.php:146
-msgid "New Project Category Name"
-msgstr ""
-
-#: inc/setup.php:147
-msgid "Project Categories"
 msgstr ""
 
 #: inc/template-tags.php:31

@@ -65,9 +65,10 @@ add_action( 'wp_enqueue_scripts', 'cavatina_default_scripts' );
  * Enqueue scripts and styles.
  */
 function cavatina_scripts() {
-
+  
 	wp_enqueue_style( 'cavatina-style', get_template_directory_uri() . '/assets/css/main.css', array(), CAVATINA_VERSION );
 
+  wp_enqueue_script( 'cavatina-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.min.js', array( ), CAVATINA_VERSION, true );
 	wp_enqueue_script( 'cavatina-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array( ), CAVATINA_VERSION, true );
 
 }
@@ -181,6 +182,7 @@ function cavatina_get_post_number(){
 
 
 function cavatina_get_inverse_post_number(){
+  
 	/**
 	 * Auto decrement number per posts ( in pages like archive-projects... )
 	 */
@@ -192,8 +194,9 @@ function cavatina_get_inverse_post_number(){
 	$posts_in_page	    = $offset + $loop;
 	$total_post_numbers = cavatina_total_post_types(false) + 1;
 	$posts_counter 	    = $total_post_numbers - $posts_in_page;
-
+  
 	return $posts_counter;
+  
 }
 
 
@@ -289,114 +292,96 @@ add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_a
 
 
 
+/**
+  * Modify LibWP post type name (If libwp plugin exist)
+  */
+function cavatina_modify_libwp_post_type($postTypeName){
+  $postTypeName = 'projects';
+  return $postTypeName;
+}  
+
+add_filter('libwp_post_type_1_name', 'cavatina_modify_libwp_post_type');
 
 /**
- * @summary        filters an enqueued style tag and adds a noscript element after it
- * 
- * @description    filters an enqueued style tag (identified by the $handle variable) and
- *                 adds a noscript element after it.
- * 
- * @access    public
- * @param     string    $tag       The tag string sent by `style_loader_tag` filter on WP_Styles::do_item
- * @param     string    $handle    The script handle as sent by `script_loader_tag` filter on WP_Styles::do_item
- * @param     string    $href      The style tag href parameter as sent by `script_loader_tag` filter on WP_Styles::do_item
- * @param     string    $media     The style tag media parameter as sent by `script_loader_tag` filter on WP_Styles::do_item
- * @return    string    $tag       The filter $tag variable with the noscript element
- */
-function add_noscript_style_filter($tag, $handle, $href, $media){
-    // as this filter will run for every enqueued script
-    // we need to check if the handle is equals the script
-    // we want to filter. If yes, than adds the noscript element
-    if ( 'script-handle' === $handle ){
-        $noscript = '<noscript>';
-        // you could get the inner content from other function
-        $noscript .= '<p>this site demands javascript</p>';
-        $noscript .= '</noscript>';
-        $tag = $tag . $noscript;
-    }
-        return $tag;
+  * Modify LibWP post type arguments (If libwp plugin exist)
+  */
+function cavatina_modify_libwp_post_type_argument($postTypeArguments){
+  
+  $postTypeArguments['labels'] = [
+      'name'          => _x('Projects', 'Post type general name', 'cavatina'),
+      'singular_name' => _x('Project', 'Post type singular name', 'cavatina'),
+      'menu_name'     => _x('Projects', 'Admin Menu text', 'cavatina'),
+      'add_new'       => __('Add New', 'cavatina'),
+      'edit_item'     => __('Edit Project', 'cavatina'),
+      'view_item'     => __('View Project', 'cavatina'),
+      'all_items'     => __('All Projects', 'cavatina'),
+  ];
+  
+  $postTypeArguments['rewrite']['slug'] = 'projects';
+  $postTypeArguments['public'] = true;
+  $postTypeArguments['show_ui'] = true;
+  $postTypeArguments['menu_position'] = 5;
+  $postTypeArguments['show_in_nav_menus'] = true;
+  $postTypeArguments['show_in_admin_bar'] = true;
+  $postTypeArguments['hierarchical'] = true;
+  $postTypeArguments['can_export'] = true;
+  $postTypeArguments['has_archive'] = true;
+  $postTypeArguments['exclude_from_search'] = false;
+  $postTypeArguments['publicly_queryable'] = true;
+  $postTypeArguments['capability_type'] = 'post';
+  $postTypeArguments['show_in_rest'] = true;
+  $postTypeArguments['supports'] = array('title', 'editor' , 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields');
+
+  return $postTypeArguments;
+}  
+add_filter('libwp_post_type_1_arguments', 'cavatina_modify_libwp_post_type_argument');
+
+
+/**
+  * Modify LibWP taxonomy name (If libwp plugin exist)
+  */
+function cavatina_modify_libwp_taxonomy_name($taxonomyName){
+
+  $taxonomyName = 'project_category';
+  return $taxonomyName;
+  
 }
-// adds the add_noscript_filter function to the style_loader_tag filters
-// it must use 4 as the last parameter to make $tag, $handle, $href, $media available
-// to the filter function
-add_filter('style_loader_tag', 'add_noscript_style_filter', 10, 4);
-
+add_filter('libwp_taxonomy_1_name', 'cavatina_modify_libwp_taxonomy_name');
 
 
 /**
- * 
- * 
- * 
- * 
- * 
- * Post Type
- * 
- * 
- * 
- * 
- * 
- */
+  * Modify LibWP taxonomy post type name (If libwp plugin exist)
+  */
+function cavatina_modify_libwp_taxonomy_post_type_name($taxonomyPostTypeName){
+  $taxonomyPostTypeName = 'projects';
+  return $taxonomyPostTypeName;
+}
+add_filter('libwp_taxonomy_1_post_type', 'cavatina_modify_libwp_taxonomy_post_type_name');
 
 
-// /**
-//   * Modify LibWP post type name
-//   */
-// add_filter('libwp_post_type_1_name', function ($postTypeName) {
-//     $postTypeName = 'projects';
-//     return $postTypeName;
-// });
+/**
+  * Modify LibWP taxonomy name (If libwp plugin exist)
+  */
+function cavatina_modify_libwp_taxonomy_argument($taxonomyArguments){
 
-// /**
-//   * Modify LibWP post type arguments
-//   */
-// add_filter('libwp_post_type_1_arguments', function ($postTypeArguments) {
-//     $postTypeArguments['labels'] = [
-//         'name'          => _x('Projects', 'Post type general name', 'cavatina'),
-//         'singular_name' => _x('Project', 'Post type singular name', 'cavatina'),
-//         'menu_name'     => _x('Projects', 'Admin Menu text', 'cavatina'),
-//         'add_new'       => __('Add New', 'cavatina'),
-//         'edit_item'     => __('Edit Project', 'cavatina'),
-//         'view_item'     => __('View Project', 'cavatina'),
-//         'all_items'     => __('All Projects', 'cavatina'),
-//     ];
-//     $taxonomyArguments['rewrite']['slug'] = 'project';
-//     return $postTypeArguments;
-// });
+    $taxonomyArguments['labels'] = [
+      'name'          => _x('Project Categories', 'taxonomy general name', 'cavatina'),
+      'singular_name' => _x('Project Category', 'taxonomy singular name', 'cavatina'),
+      'search_items'  => __('Search Project Categories', 'cavatina'),
+      'all_items'     => __('All Project Categories', 'cavatina'),
+      'edit_item'     => __('Edit Project Category', 'cavatina'),
+      'add_new_item'  => __('Add New Project Category', 'cavatina'),
+      'new_item_name' => __('New Project Category Name', 'cavatina'),
+      'menu_name'     => __('Project Categories', 'cavatina'),
+  ];
+  $taxonomyArguments['rewrite']['slug'] = 'projects';
+  $taxonomyArguments['show_in_rest'] = true;
 
-// /**
-//   * Modify LibWP taxonomy name
-//   */
-// add_filter('libwp_taxonomy_1_name', function ($taxonomyName) {
-//     $taxonomyName = 'project_category';
-//     return $taxonomyName;
-// });
+  return $taxonomyArguments;
+  
+}
 
-// /**
-//   * Modify LibWP post type
-//   */
-// add_filter('libwp_taxonomy_1_post_type', function ($taxonomyPostTypeName) {
-//     $taxonomyPostTypeName = 'projects';
-//     return $taxonomyPostTypeName;
-// });
-
-// /**
-//   * Modify LibWP taxonomy name
-//   */
-// add_filter('libwp_taxonomy_1_arguments', function ($taxonomyArguments) {
-//     $taxonomyArguments['labels'] = [
-//         'name'          => _x('Project Categories', 'taxonomy general name', 'cavatina'),
-//         'singular_name' => _x('Project Category', 'taxonomy singular name', 'cavatina'),
-//         'search_items'  => __('Search Project Categories', 'cavatina'),
-//         'all_items'     => __('All Project Categories', 'cavatina'),
-//         'edit_item'     => __('Edit Project Category', 'cavatina'),
-//         'add_new_item'  => __('Add New Project Category', 'cavatina'),
-//         'new_item_name' => __('New Project Category Name', 'cavatina'),
-//         'menu_name'     => __('Project Categories', 'cavatina'),
-//     ];
-//     $taxonomyArguments['rewrite']['slug'] = 'projects';
-//     return $taxonomyArguments;
-// });
-
+add_filter('libwp_taxonomy_1_arguments', 'cavatina_modify_libwp_taxonomy_argument');
 
 
 /**

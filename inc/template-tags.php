@@ -474,9 +474,9 @@ if ( ! function_exists('cavatina_get_current_page_name')) :
 		global $post;
 		$post_slug = $post->post_name;
 		$post_slug = str_replace("-", " ", $post_slug);
-		$page_name = esc_html(esc_html($post_slug));
-		echo esc_html_e( $page_name , 'cavatina' );
-		
+		$page_name = esc_html($post_slug);
+		echo esc_html($post_slug);
+			
 	}
 endif;
 

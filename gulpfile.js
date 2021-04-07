@@ -7,6 +7,7 @@ const imagemin = require("gulp-imagemin");
 const concat = require("gulp-concat");
 const cleanCSS = require("gulp-clean-css");
 const uglify = require("gulp-uglify");
+const minify = require("gulp-minify");
 const browserSync = require("browser-sync").create();
 const series = gulp.series;
 const parallel = gulp.parallel;
@@ -48,20 +49,28 @@ const concatJs = (cb) => {
       "./node_modules/flickity-sync/flickity-sync.js",
       "./node_modules/simplebar/dist/simplebar.js",
       "./node_modules/vanilla-lazyload/dist/lazyload.js",
-      "./assets/src/js/*.js",
     ])
-    .pipe(concat("main.js"))
+    .pipe(concat("vendor.min.js"))
     .pipe(gulp.dest("assets/js"));
   cb();
 };
 
-// const uglifyTask = (cb) => {
-//   return gulp
-//     .src(["assets/js/*.js", "!assets/js/navigation.js"])
-//     .pipe(uglify())
-//     .pipe(gulp.dest("assets/js"));
-//   cb();
-// };
+const minifyJs = (cb) => {
+  gulp.task("compress", function () {
+    gulp
+      .src(["./assets/js/vendor.min.js"])
+      .pipe(minify())
+      .pipe(gulp.dest("assets/js"));
+  });
+};
+
+const concatMainJs = (cb) => {
+  return gulp
+    .src(["./assets/src/js/*.js"])
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest("assets/js"));
+  cb();
+};
 
 exports.default = () =>
   gulp
@@ -78,13 +87,13 @@ const browserSyncTask = (cb) => {
 
 const watchTask = () => {
   gulp.watch("./assets/src/scss/**/*.scss", series(sassTask, cssConcatTask));
-  gulp.watch("./assets/src/js/*.js", series(concatJs));
+  gulp.watch("./assets/src/js/*.js", series(concatJs, concatMainJs, minifyJs));
   gulp.watch("./**/*.php", browserSync.reload);
 };
 
 exports.default = parallel(
   series(sassTask, cssConcatTask),
-  series(concatJs),
+  series(concatJs, concatMainJs, minifyJs),
   series(browserSyncTask, watchTask)
 );
 

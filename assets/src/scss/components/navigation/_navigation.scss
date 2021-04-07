@@ -32,6 +32,16 @@
 
   .menu-item {
     line-height: 17px;
+
+    a {
+      font-size: 19px !important;
+      line-height: 23px !important;
+
+      @include media(tablet) {
+        font-size: 14px !important;
+        line-height: 17px !important;
+      }
+    }
   }
 }
 
