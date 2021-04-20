@@ -1,9 +1,9 @@
 === Cavatina ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
-Tested up to: 5.7
+Tested up to: 5.7.1
 Requires PHP: 5.6
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPL-3.0-or-later
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -24,13 +24,22 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 * Developer friendly extendable code
 * Translation ready (with .POT files included)
 * SEO optimized
-* GNU GPL version 2.0 licensed
+* GNU GPL version 3.0 licensed
 * Support 1 level menu
 * …and much more
 
 See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.com/cavatina/).
 
 == Changelog ==
+
+= 1.0.3 =
+* Removed wp_cavatina_entry_footer
+* Change wp_reset_query to wp_reset_postdata
+* Change wp_cavatina_pingback_header
+* Remove Source files ( Development files - src folder)  
+* Improve prefix name sector_register_required_plugins to cavatina_register_required_plugins
+* Change Plugin names to translatable text
+* Update cavatina.pot file
 
 = 1.0.2 =
 * Fix Escape and translated texts in functions.php
