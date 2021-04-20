@@ -36,8 +36,8 @@ if ( post_password_required() ) {
 	?>
     <h2 class="comments-title">
         <?php
-			$wp_cavatina_comment_count = get_comments_number();
-			if ( '1' === $wp_cavatina_comment_count ) {
+			$cavatina_comment_count = get_comments_number();
+			if ( '1' === $cavatina_comment_count ) {
 				printf(
 					/* translators: Comments */
 					'<span>'.esc_html_e( 'Comments', 'cavatina' ).'</span>'

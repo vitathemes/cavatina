@@ -60,7 +60,7 @@ get_header();
                 <div class="c-carousel__post-titles js-carousel__post-titles">
                     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <?php the_title( '<a href="'. esc_url( get_permalink() ) .'" class="c-carousel__post-title js-carousel__post-title"><span class="o-bullet-decimal-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text">', '</p></a>' ); ?>
-                    <?php endwhile; wp_reset_query(); ?>
+                    <?php endwhile; wp_reset_postdata(); ?>
                 </div>
             </div>
             <a href="<?php echo esc_url( site_url() ) ?>/projects" class="c-carousel__more">
@@ -83,14 +83,14 @@ get_header();
                             <?php cavatina_get_thumbnail_with_preloader("c-carousel__image"); ?>
                         </a>
                     </div>
-                    <?php endwhile; wp_reset_query(); ?>
+                    <?php endwhile; wp_reset_postdata(); ?>
                 </div>
             </div>
             <div
                 class="c-carousel__post-titles js-carousel__post-titles c-carousel__post-titles--mobile js-carousel__post-titles--mobile">
                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="c-carousel__post-title"><span class="o-bullet-decimal-numeric-small"></span><p class="c-carousel__post-title__text js-carousel__post-title__text-mobile">', '</p></a>' ); ?>
-                <?php endwhile; wp_reset_query(); ?>
+                <?php endwhile; wp_reset_postdata(); ?>
             </div>
             <a href="<?php echo esc_url( site_url() ) ?>/projects" class="c-carousel__more c-carousel__more--home">
                 <?php esc_html_e( 'View All Projects', 'cavatina' ); ?>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 10:52+0430\n"
+"POT-Creation-Date: 2021-04-20 23:31+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,68 +82,68 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: functions.php:311
+#: functions.php:313
 msgctxt "Post type general name"
 msgid "Projects"
 msgstr ""
 
-#: functions.php:312
+#: functions.php:314
 msgctxt "Post type singular name"
 msgid "Project"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:315
 msgctxt "Admin Menu text"
 msgid "Projects"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:316
 msgid "Add New"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:317
 msgid "Edit Project"
 msgstr ""
 
-#: functions.php:316
+#: functions.php:318
 msgid "View Project"
 msgstr ""
 
-#: functions.php:317
+#: functions.php:319
 msgid "All Projects"
 msgstr ""
 
-#: functions.php:368
+#: functions.php:370
 msgctxt "taxonomy general name"
 msgid "Project Categories"
 msgstr ""
 
-#: functions.php:369
+#: functions.php:371
 msgctxt "taxonomy singular name"
 msgid "Project Category"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:372
 msgid "Search Project Categories"
 msgstr ""
 
-#: functions.php:371
+#: functions.php:373
 msgid "All Project Categories"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:374
 msgid "Edit Project Category"
 msgstr ""
 
-#: functions.php:373
+#: functions.php:375
 msgid "Add New Project Category"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:376
 msgid "New Project Category Name"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:377
 msgid "Project Categories"
 msgstr ""
 
@@ -349,14 +349,14 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:231 inc/template-tags.php:253
-#: inc/template-tags.php:283
+#: inc/template-tags.php:232 inc/template-tags.php:255
+#: inc/template-tags.php:285
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:313 inc/template-tags.php:353
-#: inc/template-tags.php:409 inc/template-tags.php:744
+#: inc/template-tags.php:315 inc/template-tags.php:355
+#: inc/template-tags.php:411 inc/template-tags.php:746
 msgid "No thumbnail"
 msgstr ""
 
@@ -780,6 +780,22 @@ msgstr ""
 #: inc/tgmpa/class-tgm-plugin-activation.php:3515
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/tgmpa/tgmpa-config.php:43
+msgid "LibWp"
+msgstr ""
+
+#: inc/tgmpa/tgmpa-config.php:48
+msgid "Kirki Customizer Framework"
+msgstr ""
+
+#: inc/tgmpa/tgmpa-config.php:53
+msgid "ACF Photo Gallery Field"
+msgstr ""
+
+#: inc/tgmpa/tgmpa-config.php:58
+msgid "Advanced Custom Fields"
 msgstr ""
 
 #: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:51
