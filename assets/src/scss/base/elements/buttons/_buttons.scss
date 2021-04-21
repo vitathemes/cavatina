@@ -1,4 +1,5 @@
 button,
+.btn,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -41,4 +42,8 @@ input[type="submit"] {
   &:hover {
     background-color: $color__border-button-hover;
   }
+}
+
+.btn--404 {
+  color: $cavatina__neutral-white !important;
 }

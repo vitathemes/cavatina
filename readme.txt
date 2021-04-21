@@ -115,6 +115,7 @@ preloader.svg by loading.io
 License: LD-FREE, https://loading.io/license/
 Source: https://loading.io/
 
-Image for theme screenshot, Copyright VitaThemes
+Image for theme screenshot, Credit Nature's Beauty (https://stocksnap.io/author/naturesbeauty)
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://vitathemes.com/theme/cavatina/
+License URL: https://stocksnap.io/license
+Source: https://stocksnap.io/photo/poppy-flower-P6ULXT0VCC

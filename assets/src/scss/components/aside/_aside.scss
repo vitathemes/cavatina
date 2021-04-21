@@ -179,7 +179,7 @@
 .c-aside__nav-title {
   font-style: normal;
   font-weight: normal;
-  color: $cavatina_secondary_color;
+  color: $cavatina_secondary_color !important;
 
   @include media(tablet) {
     margin: 0;

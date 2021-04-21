@@ -378,6 +378,24 @@ if (! function_exists('cavatina_get_header_class')) :
 endif;
 
 
+if (! function_exists('cavatina_get_footer_class')) :
+	/**
+	 * Add header class depend on page
+	 */
+	function cavatina_get_footer_class() {
+		if ( is_page_template( 'page-template/home.php' ) ) {
+			echo "c-footer c-footer--home";
+		} 
+		else if( is_404() ){
+			echo "c-footer c-footer--404";
+		}
+		else{
+			echo "c-footer c-footer--normal";
+		}
+	}
+endif;
+
+
 if (! function_exists('cavatina_get_page_class')) :
 	/**
 	 * Add page class depend on page

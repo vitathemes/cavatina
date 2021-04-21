@@ -106,6 +106,7 @@ if (cavatina_childFinder("body", "s-nav")) {
   var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
   var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
   var cavatina_lastIndex = cavatina_menuListItems.length - 1;
+  var cavatina_isBackward;
 
   cavatina_menuListItems[cavatina_lastIndex].focus();
 
@@ -244,6 +245,12 @@ function cavatina_searchToggleMobile() {
   const oPageMain = document.querySelector(".js-page");
   const searchIcon = document.querySelector(".js-search__icon");
   const searchBlock = document.querySelector(".js-search__form");
+  const searchinput = document.querySelector(
+    ".c-search__holder > .c-search__form > label > .search-field"
+  );
+  const searchinputButton = document.querySelector(
+    ".c-search__holder > .c-search__form > .search-submit-mobile"
+  );
 
   let pageMainContain = oPageMain.contains(searchIcon);
 
@@ -251,6 +258,21 @@ function cavatina_searchToggleMobile() {
     searchIcon.addEventListener("click", function () {
       searchIcon.classList.toggle("c-search__icon--toggled");
       searchBlock.classList.toggle("c-search__form--toggled");
+
+      if (searchIcon.classList.contains("c-search__icon--toggled")) {
+        searchIcon.addEventListener("blur", function () {
+          if (cavatina_isBackward === true) {
+            console.log("backed");
+            searchinput.focus();
+          }
+        });
+
+        searchinputButton.addEventListener("blur", function () {
+          if (cavatina_isBackward === false) {
+            searchIcon.focus();
+          }
+        });
+      }
     });
   }
 }

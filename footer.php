@@ -9,7 +9,9 @@
  * @package cavatina
  */
 ?>
-<footer id="colophon" class="c-footer">
+</div><!-- o-page -->
+
+<footer id="colophon" class="<?php esc_attr( cavatina_get_footer_class() ) ?>">
     <div class="c-footer__context">
         <div class="c-footer__copy">
             <ul class="c-footer__nav">
@@ -35,7 +37,7 @@
         </div>
     </div><!-- #.c-footer__context -->
 </footer><!-- #colophon -->
-</div><!-- #page -->
+
 <?php wp_footer(); ?>
 </body>
 

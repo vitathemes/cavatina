@@ -3,7 +3,7 @@
 \*------------------------------------*/
 .c-footer {
   width: 100%;
-  height: 9%;
+  min-height: 9%;
   bottom: 0;
   z-index: 8;
   display: flex;
@@ -19,6 +19,29 @@
     padding-right: 36px;
     padding-top: 1.5%;
     margin-top: 0px;
+  }
+}
+
+.c-footer--home {
+  @include media(tablet) {
+    position: absolute;
+    bottom: 10px;
+    padding-left: 16%;
+  }
+}
+
+.c-footer--404 {
+  display: none;
+}
+
+.c-footer--normal {
+  @include media(tablet) {
+    background-color: $cavatina__neutral-white;
+    padding-left: 270px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding-bottom: 16px;
   }
 }
 
