@@ -9,7 +9,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+
     <a class="skip-link screen-reader-text" href="#wrapper"><?php esc_html_e( 'Skip to content', 'cavatina' ); ?></a>
+
     <?php wp_body_open(); ?>
 
     <div class="o-preloader">
@@ -21,10 +23,12 @@
     <header id="masthead" class="<?php cavatina_get_header_class()?>">
         <div class="c-header__holder js-nav">
 
-            <button class="c-header__search js-header__search"></button><!-- Header__Search button -->
+            <button class="c-header__search js-header__search"
+                aria-label="<?php esc_attr( 'Search menu Button', 'cavatina' ) ?>"></button>
+            <!-- Header__Search button -->
 
             <button class="c-header__menu js-menu" aria-label="<?php esc_attr( 'Menu Button', 'cavatina' ) ?>"
-                aria-controls="primary-menu" aria-expanded="false" onClick="cavatina_blurToggle()">
+                aria-controls="primary-menu-registered" aria-expanded="false" onClick="cavatina_blurToggle()">
             </button><!-- header__menu Burger -->
 
             <?php
@@ -51,6 +55,7 @@
     <div class="c-search__overlay js-search__overlay">
         <?php get_search_form(); ?>
     </div><!-- .c-search__overlay -->
+
     <div class="o-overlay js-overlay"></div><!-- .o-overlay -->
 
     <div id="page" class="<?php cavatina_get_page_class(); ?>">

@@ -8,6 +8,7 @@
  */
 get_header();
 ?>
+
 <!-- Aside -->
 <aside class="o-page__col c-aside js-aside">
     <div class="c-aside__content">
@@ -47,5 +48,6 @@ get_header();
             </div>
         </div>
     </div>
-    <?php get_footer(); ?>
 </main><!-- #main -->
+
+<?php get_footer(); ?>

@@ -21,13 +21,14 @@
             <div class="c-social-media c-social-media--404">
                 <?php cavatina_get_social_media(); ?>
             </div>
-            <a href=<?php echo esc_url( home_url() ); ?>>
-                <button class="button--small">
-                    <?php esc_html_e( 'Back to Home', 'cavatina' ); ?>
-                </button>
+
+            <a class="btn button--small btn--404" href=<?php echo esc_url( home_url() ); ?>>
+                <?php esc_html_e( 'Back to Home', 'cavatina' ); ?>
             </a>
+
         </div><!-- .o-page__main__content -->
     </section><!-- .o-page__main__error-404 -->
-    <?php get_footer(); ?>
+
 </main><!-- #main -->
-</div>
+
+<?php get_footer(); ?>

@@ -72,8 +72,7 @@ jQuery(function ($) {
             loadMore.prev().after(data);
             cavatina_loadMoreButton.text("Load More");
             loadmore_params.current_page++;
-            if (loadmore_params.current_page == loadmore_params.max_page)
-              loadMore.remove();
+            if (loadmore_params.current_page == loadmore_params.max_page) loadMore.remove();
           } else {
             loadMore.remove();
           }
@@ -89,11 +88,7 @@ jQuery(function ($) {
   #Detect Element inside other element
 \*--------------------------------------*/
 function cavatina_childFinder(parentElement, childElement) {
-  let result = document
-    .querySelector(parentElement)
-    .getElementsByClassName(childElement)[0]
-    ? true
-    : false;
+  let result = document.querySelector(parentElement).getElementsByClassName(childElement)[0] ? true : false;
   return result;
 }
 
@@ -106,6 +101,7 @@ if (cavatina_childFinder("body", "s-nav")) {
   var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
   var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
   var cavatina_lastIndex = cavatina_menuListItems.length - 1;
+  var cavatina_isBackward;
 
   cavatina_menuListItems[cavatina_lastIndex].focus();
 
@@ -151,11 +147,7 @@ window.addEventListener("load", cavatina_fadeEffect());
   #Check device is mobile or not
 \*------------------------------------*/
 function cavatina_isDesktop() {
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     return false;
   } else {
     return true;
@@ -244,6 +236,8 @@ function cavatina_searchToggleMobile() {
   const oPageMain = document.querySelector(".js-page");
   const searchIcon = document.querySelector(".js-search__icon");
   const searchBlock = document.querySelector(".js-search__form");
+  const searchinput = document.querySelector(".c-search__holder > .c-search__form > label > .search-field");
+  const searchinputButton = document.querySelector(".c-search__holder > .c-search__form > .search-submit-mobile");
 
   let pageMainContain = oPageMain.contains(searchIcon);
 
@@ -251,6 +245,21 @@ function cavatina_searchToggleMobile() {
     searchIcon.addEventListener("click", function () {
       searchIcon.classList.toggle("c-search__icon--toggled");
       searchBlock.classList.toggle("c-search__form--toggled");
+
+      if (searchIcon.classList.contains("c-search__icon--toggled")) {
+        searchIcon.addEventListener("blur", function () {
+          if (cavatina_isBackward === true) {
+            console.log("backed");
+            searchinput.focus();
+          }
+        });
+
+        searchinputButton.addEventListener("blur", function () {
+          if (cavatina_isBackward === false) {
+            searchIcon.focus();
+          }
+        });
+      }
     });
   }
 }
@@ -292,20 +301,14 @@ function cavatina_capitalizeFirstLetter() {
   if (cavatina_childFinder("body", "js-carousel__post-title__text")) {
     const carouselTitle = document.querySelector(".js-carousel__post-title__text");
 
-    carouselTitle.textContent =
-      carouselTitle.textContent.charAt(0).toUpperCase() +
-      carouselTitle.textContent.slice(1);
+    carouselTitle.textContent = carouselTitle.textContent.charAt(0).toUpperCase() + carouselTitle.textContent.slice(1);
   }
 
   // js-carousel__post-title__text-mobile
   if (cavatina_childFinder("body", "js-carousel__post-title__text-mobile")) {
-    const carouselTitle = document.querySelector(
-      ".js-carousel__post-title__text-mobile"
-    );
+    const carouselTitle = document.querySelector(".js-carousel__post-title__text-mobile");
 
-    carouselTitle.textContent =
-      carouselTitle.textContent.charAt(0).toUpperCase() +
-      carouselTitle.textContent.slice(1);
+    carouselTitle.textContent = carouselTitle.textContent.charAt(0).toUpperCase() + carouselTitle.textContent.slice(1);
   }
 
   // c-post__entry-title__anchor
@@ -313,8 +316,7 @@ function cavatina_capitalizeFirstLetter() {
     const projectPostTitle = document.querySelector(".c-post__entry-title__anchor");
 
     projectPostTitle.textContent =
-      projectPostTitle.textContent.charAt(0).toUpperCase() +
-      projectPostTitle.textContent.slice(1);
+      projectPostTitle.textContent.charAt(0).toUpperCase() + projectPostTitle.textContent.slice(1);
   }
 }
 cavatina_capitalizeFirstLetter();
@@ -365,9 +367,7 @@ if (cavatina_childFinder("body", "js-carousel__context")) {
   });
 
   // Carousel (Home Page) - text Mobile
-  let carouselTextMobile = document.querySelector(
-    ".js-carousel__post-titles--mobile"
-  );
+  let carouselTextMobile = document.querySelector(".js-carousel__post-titles--mobile");
 
   let flCarouselTextMobile = new Flickity(carouselTextMobile, {
     setGallerySize: true,
@@ -382,9 +382,7 @@ if (cavatina_childFinder("body", "js-carousel__context")) {
     friction: 0.8,
     on: {
       ready: function () {
-        const postTitiles2 = document.querySelector(
-          ".js-carousel__post-titles--mobile"
-        );
+        const postTitiles2 = document.querySelector(".js-carousel__post-titles--mobile");
         postTitiles2.style.opacity = 1;
       },
     },
@@ -413,9 +411,7 @@ if (cavatina_childFinder("body", "js-single__slider")) {
           singleCarousel.classList.add("c-carousel__single__slider--full-width");
 
           if (index === 0) {
-            singleCarousel.classList.remove(
-              "c-carousel__single__slider--full-width"
-            );
+            singleCarousel.classList.remove("c-carousel__single__slider--full-width");
           }
         }
       },
@@ -430,11 +426,7 @@ if (cavatina_childFinder("body", "comments-area")) {
   const cavatina_commentContainer = document.querySelector(".comments-area");
   let timeElement, timeElementCounter;
   timeElement = cavatina_commentContainer.querySelectorAll("time");
-  for (
-    timeElementCounter = 0;
-    timeElementCounter < timeElement.length;
-    timeElementCounter++
-  ) {
+  for (timeElementCounter = 0; timeElementCounter < timeElement.length; timeElementCounter++) {
     let childHtml = timeElement[timeElementCounter].innerHTML;
     let result = childHtml.replace("at", "");
     timeElement[timeElementCounter].textContent = result;
@@ -466,17 +458,13 @@ document.addEventListener("keydown", function (e) {
   #truncate long text
 \*--------------------------------------*/
 if (cavatina_childFinder("body", "c-post__entry-title__anchor")) {
-  const cavatina_postTitles = document.querySelectorAll(
-    ".c-post__entry-title__anchor"
-  );
+  const cavatina_postTitles = document.querySelectorAll(".c-post__entry-title__anchor");
 
-  document
-    .querySelectorAll(".c-post__entry-title__anchor")
-    .forEach(function (postLink) {
-      if (postLink.textContent.length > 82) {
-        let currentPostLink = postLink.textContent;
-        currentPostLink = currentPostLink.substr(0, 80) + "...";
-        postLink.textContent = currentPostLink;
-      }
-    });
+  document.querySelectorAll(".c-post__entry-title__anchor").forEach(function (postLink) {
+    if (postLink.textContent.length > 82) {
+      let currentPostLink = postLink.textContent;
+      currentPostLink = currentPostLink.substr(0, 80) + "...";
+      postLink.textContent = currentPostLink;
+    }
+  });
 }

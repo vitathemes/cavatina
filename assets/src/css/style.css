@@ -948,11 +948,12 @@ html {
 \*------------------------------------*/
 .o-page {
   width: 100%;
-  height: calc(100vh);
+  height: max-content;
   max-height: max-content; }
   @media only screen and (min-width: 980px) {
     .o-page {
       text-align: left;
+      height: calc(100vh);
       max-height: 100vh;
       padding-left: 90px;
       display: block; } }
@@ -1059,6 +1060,9 @@ html {
 
 .o-page__main--no-bottom-space {
   padding-bottom: 0; }
+  @media only screen and (min-width: 980px) {
+    .o-page__main--no-bottom-space {
+      padding-bottom: 64px; } }
 
 /*------------------------------------*\
   #Page col
@@ -2070,17 +2074,28 @@ img {
     animation-duration: 1s;
     animation-fill-mode: forwards; }
 
-.c-search__icon::before {
-  content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='15pt' height='15pt' viewBox='0 0 15 15' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(0%25,0%25,0%25);fill-opacity:1;' d='M 14.910156 14.464844 L 10.34375 9.902344 C 11.292969 8.851562 11.875 7.460938 11.875 5.9375 C 11.875 2.664062 9.210938 0 5.9375 0 C 2.664062 0 0 2.664062 0 5.9375 C 0 9.210938 2.664062 11.875 5.9375 11.875 C 7.460938 11.875 8.851562 11.292969 9.902344 10.34375 L 14.464844 14.90625 C 14.527344 14.96875 14.605469 15 14.6875 15 C 14.765625 15 14.847656 14.96875 14.910156 14.910156 C 15.03125 14.785156 15.03125 14.589844 14.910156 14.464844 Z M 5.9375 11.25 C 3.007812 11.25 0.625 8.867188 0.625 5.9375 C 0.625 3.007812 3.007812 0.625 5.9375 0.625 C 8.867188 0.625 11.25 3.007812 11.25 5.9375 C 11.25 8.867188 8.867188 11.25 5.9375 11.25 Z M 5.9375 11.25 '/%3E%3C/g%3E%3C/svg%3E%0A");
-  cursor: pointer;
+.c-search__icon {
+  background-color: transparent;
   width: 20px;
-  height: 20px;
-  display: block;
-  background-size: 21px 21px; }
-
-@media only screen and (min-width: 980px) {
-  .c-search__icon {
-    display: none; } }
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .c-search__icon::before {
+    content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='15pt' height='15pt' viewBox='0 0 15 15' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(0%25,0%25,0%25);fill-opacity:1;' d='M 14.910156 14.464844 L 10.34375 9.902344 C 11.292969 8.851562 11.875 7.460938 11.875 5.9375 C 11.875 2.664062 9.210938 0 5.9375 0 C 2.664062 0 0 2.664062 0 5.9375 C 0 9.210938 2.664062 11.875 5.9375 11.875 C 7.460938 11.875 8.851562 11.292969 9.902344 10.34375 L 14.464844 14.90625 C 14.527344 14.96875 14.605469 15 14.6875 15 C 14.765625 15 14.847656 14.96875 14.910156 14.910156 C 15.03125 14.785156 15.03125 14.589844 14.910156 14.464844 Z M 5.9375 11.25 C 3.007812 11.25 0.625 8.867188 0.625 5.9375 C 0.625 3.007812 3.007812 0.625 5.9375 0.625 C 8.867188 0.625 11.25 3.007812 11.25 5.9375 C 11.25 8.867188 8.867188 11.25 5.9375 11.25 Z M 5.9375 11.25 '/%3E%3C/g%3E%3C/svg%3E%0A");
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: 21px 21px; }
+  @media only screen and (min-width: 980px) {
+    .c-search__icon {
+      display: none; } }
+  .c-search__icon:focus {
+    background-color: transparent;
+    outline: 1px dotted #000; }
+  .c-search__icon:hover {
+    background-color: transparent; }
 
 .c-search__icon--toggled::before {
   content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='12pt' height='12pt' viewBox='0 0 12 12' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(0%25,0%25,0%25);fill-opacity:1;' d='M 2.960938 5.601562 C 1.335938 7.222656 0.00390625 8.554688 0.00390625 8.5625 C 0 8.566406 0.140625 8.707031 0.308594 8.878906 L 0.617188 9.1875 L 3.265625 6.546875 C 4.722656 5.097656 5.917969 3.90625 5.921875 3.90625 C 5.925781 3.90625 7.121094 5.097656 8.578125 6.546875 L 11.226562 9.1875 L 11.535156 8.878906 C 11.703125 8.707031 11.84375 8.566406 11.84375 8.5625 C 11.84375 8.554688 5.9375 2.660156 5.921875 2.660156 C 5.917969 2.660156 4.585938 3.980469 2.960938 5.601562 Z M 2.960938 5.601562 '/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -2166,7 +2181,7 @@ img {
       height: 100%;
       padding-right: 60px;
       padding-top: 115px;
-      padding-bottom: 0px; } }
+      padding-bottom: 64px; } }
   @media only screen and (min-width: 1400px) {
     .c-container__content {
       margin-top: 110px;
@@ -2479,7 +2494,7 @@ img {
 .c-aside__nav-title {
   font-style: normal;
   font-weight: normal;
-  color: var(--cavatina_secondary-color); }
+  color: var(--cavatina_secondary-color) !important; }
   @media only screen and (min-width: 980px) {
     .c-aside__nav-title {
       margin: 0;
@@ -3885,7 +3900,7 @@ img {
 \*------------------------------------*/
 .c-footer {
   width: 100%;
-  height: 9%;
+  min-height: 9%;
   bottom: 0;
   z-index: 8;
   display: flex;
@@ -3901,6 +3916,24 @@ img {
       padding-right: 36px;
       padding-top: 1.5%;
       margin-top: 0px; } }
+
+@media only screen and (min-width: 980px) {
+  .c-footer--home {
+    position: absolute;
+    bottom: 10px;
+    padding-left: 16%; } }
+
+.c-footer--404 {
+  display: none; }
+
+@media only screen and (min-width: 980px) {
+  .c-footer--normal {
+    background-color: #ffffff;
+    padding-left: 270px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding-bottom: 16px; } }
 
 .c-footer__context {
   width: 100%;
@@ -4057,6 +4090,9 @@ body {
   background: #fff;
   counter-reset: chapter;
   /* Create a chapter counter scope */ }
+  @media only screen and (max-width: 719px) {
+    body {
+      padding-bottom: 64px; } }
   body.has-no-scrollbar {
     height: 100%;
     overflow: hidden; }
@@ -4081,6 +4117,7 @@ figure {
   max-width: 100%; }
 
 button,
+.btn,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -4096,11 +4133,13 @@ input[type="submit"] {
   transition: 0.2s;
   padding: 12px 25px; }
   button:hover,
+  .btn:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
     background-color: #767676; }
   button:focus,
+  .btn:focus,
   input[type="button"]:focus,
   input[type="reset"]:focus,
   input[type="submit"]:focus {
@@ -4123,6 +4162,9 @@ input[type="submit"] {
   transition: 0.2s; }
   .wp-block-button__link:hover {
     background-color: #767676; }
+
+.btn--404 {
+  color: #ffffff !important; }
 
 /*------------------------------------*\
   #WordPress Buttons

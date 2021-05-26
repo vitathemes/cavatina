@@ -1,9 +1,9 @@
 === Cavatina ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
-Tested up to: 5.7.1
+Tested up to: 5.7.2
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.5
 License: GPL-3.0-or-later
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -31,6 +31,16 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.com/cavatina/).
 
 == Changelog ==
+
+= 1.0.5 =
+* Update Theme screenshot
+* Update readme.txt ( added info about enable a plugin and create a simple page Template )
+* Improve minor issues 
+
+= 1.0.4 =
+* Improved w3 validator test
+* Improved search bar mobile visual focus
+* Add image license that is used in theme screenshot
 
 = 1.0.3 =
 * Removed wp_cavatina_entry_footer
@@ -68,6 +78,11 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 1. Simply install as a normal WordPress theme and activate.
 2. In your admin panel, navigate to `Appearance > Customize`.
 3. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
+4. You can enable projects post-type by activing libwp plugin that is recommended at the top.
+5. After libWp plugin activated go to `Settings > Permalink` and select `Post name` (*this option is recommended) radio button and save the changes.
+6. Projects post-type is now available at your dashboard under the `Posts`.
+7. For adding custom page-templates (Like Home or contact page) go to pages on the WordPress dashboard click on `Pages` create new page and in `Page Atrributes` panel select page template that you want. 
+8. Also for Create a gallery in projects you have to active `ACF` and `ACF Photo Gallery Field` after that Custom fields are available at projects edit pages.
 
 == Screenshots ==
 
@@ -115,6 +130,7 @@ preloader.svg by loading.io
 License: LD-FREE, https://loading.io/license/
 Source: https://loading.io/
 
-Image for theme screenshot, Copyright VitaThemes
+Image for theme screenshot, Credit pxhere (https://pxhere.com/)
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://vitathemes.com/theme/cavatina/
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/126532

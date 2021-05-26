@@ -17,43 +17,43 @@ get_header();
         <div class="c-aside__nav">
             <h4 class="c-aside__nav-title h4-lh--sm"><?php esc_html_e( 'Navigation', 'cavatina' ); ?></h4>
             <?php
-                if ( has_nav_menu( 'primary-menu' ) ) {
-                    wp_nav_menu(
-                        array(
-                            'theme_location'    => 'primary-menu',
-                            'menu_id'           => 'primary-menu-registered',
-                            "menu_class"        => "s-nav",
-                            "container_class"   => "c-nav",
-                            "container"         => "nav",
-                        )
-                    );
-                }
-            ?>
+                    if ( has_nav_menu( 'primary-menu' ) ) {
+                        wp_nav_menu(
+                            array(
+                                'theme_location'    => 'primary-menu',
+                                'menu_id'           => 'primary-menu-registered-2',
+                                "menu_class"        => "s-nav",
+                                "container_class"   => "c-nav",
+                                "container"         => "nav",
+                            )
+                        );
+                    }
+                ?>
         </div>
         <?php
-            /**
-             * Show last 5 projects (post type) if exist, otherwise show last 5 posts in home page
-             */
-            if(post_type_exists( 'projects' )){
-                $post_type_args = array( 'post_type' => 'projects' );
-                $post_type_args = new WP_Query( $post_type_args );
-                $numposts = $post_type_args->post_count;
-                
-                if ($numposts >= 1) {
-                    $carousel_post_type = 'projects';
-                }else{
+                /**
+                 * Show last 5 projects (post type) if exist, otherwise show last 5 posts in home page
+                 */
+                if(post_type_exists( 'projects' )){
+                    $post_type_args = array( 'post_type' => 'projects' );
+                    $post_type_args = new WP_Query( $post_type_args );
+                    $numposts = $post_type_args->post_count;
+                    
+                    if ($numposts >= 1) {
+                        $carousel_post_type = 'projects';
+                    }else{
+                        $carousel_post_type = 'post';
+                    }
+                }
+                else{
                     $carousel_post_type = 'post';
                 }
-            }
-            else{
-                $carousel_post_type = 'post';
-            }
 
-            $loop = new WP_Query( array(
-                    'post_type'      => $carousel_post_type,
-                    'posts_per_page' => 5
-            ));
-        ?>
+                $loop = new WP_Query( array(
+                        'post_type'      => $carousel_post_type,
+                        'posts_per_page' => 5
+                ));
+            ?>
         <div class="c-aside__carousel">
             <div class="c-carousel c-carousel--aside">
                 <h4 class="c-carousel__title"><?php esc_html_e( 'Recent Projects', 'cavatina' ); ?></h4>
@@ -98,5 +98,5 @@ get_header();
         </div>
     </div>
 </main><!-- .o-page__main  -->
+
 <?php get_footer(); ?>
-</div><!-- .o-page  -->

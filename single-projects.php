@@ -81,5 +81,6 @@ get_header();
         </article><!-- #post-<?php the_ID(); ?> -->
         <!--Single-->
     </div>
-    <?php get_footer();?>
+
 </main><!-- #main -->
+<?php get_footer();?>
