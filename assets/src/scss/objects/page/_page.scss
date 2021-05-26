@@ -164,6 +164,10 @@
 
 .o-page__main--no-bottom-space {
   padding-bottom: 0;
+
+  @include media(tablet) {
+    padding-bottom: 64px;
+  }
 }
 
 /*------------------------------------*\

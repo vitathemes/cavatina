@@ -386,6 +386,8 @@ function cavatina_modify_libwp_taxonomy_argument($taxonomyArguments){
 add_filter('libwp_taxonomy_1_arguments', 'cavatina_modify_libwp_taxonomy_argument');
 
 
+
+
 /**
   * Load Setup file
   */

@@ -1410,6 +1410,9 @@ html {
 
 .o-page__main--no-bottom-space {
   padding-bottom: 0; }
+  @media only screen and (min-width: 980px) {
+    .o-page__main--no-bottom-space {
+      padding-bottom: 64px; } }
 
 /*------------------------------------*\
   #Page col
