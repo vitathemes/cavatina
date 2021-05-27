@@ -3,7 +3,7 @@ Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
 Tested up to: 5.7.2
 Requires PHP: 5.6
-Stable tag: 1.0.5
+Stable tag: 1.0.4
 License: GPL-3.0-or-later
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -34,8 +34,8 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 
 = 1.0.5 =
 * Update Theme screenshot
-* Update readme.txt ( added info about enable a plugin and create a simple page Template )
-* Improve minor issues 
+* Update readme.txt ( Added info about enable a plugin and create a simple page Template )
+* Improve minor issues
 
 = 1.0.4 =
 * Improved w3 validator test
