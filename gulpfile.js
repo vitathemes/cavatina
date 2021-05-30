@@ -70,7 +70,7 @@ exports.default = () =>
 
 const browserSyncTask = (cb) => {
   browserSync.init({
-    proxy: "localhost/",
+    proxy: "cavatina.local/",
   });
   cb();
 };
