@@ -208,6 +208,14 @@
   @include media(tablet) {
     max-height: 360px;
   }
+
+  a {
+    &:focus {
+      img {
+        border: 2px dotted $color__text-input-focus;
+      }
+    }
+  }
 }
 
 .c-post__thumbnail__image {

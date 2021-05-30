@@ -53,7 +53,7 @@
 
     @include media(tablet) {
       flex-wrap: nowrap;
-      margin-bottom: 50px;
+      margin-bottom: 26px;
     }
   }
   .comment-form-author {
@@ -110,6 +110,7 @@
 
 .wp-comment-cookies-consent {
   display: block;
+  padding-top: 15px;
 }
 
 .comments-title {
@@ -220,7 +221,7 @@
 
     @include media(tablet) {
       margin-left: 16px;
-      margin-top: 11px;
+      margin-top: 5px;
       position: static;
     }
 
@@ -333,6 +334,7 @@
 .comment-form-cookies-consent {
   width: 100%;
   display: block;
+
   label {
     vertical-align: top;
     display: inline-block;
@@ -345,6 +347,7 @@
     align-items: center;
     display: inline-block;
     color: $cavatina__main-primary-light-color;
+    padding-top: 8px;
   }
 }
 

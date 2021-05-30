@@ -1,6 +1,6 @@
 <?php
 /**
- * * Template Name: Content no-sidebar
+ * * Template Name: Content No Aside
  * 
  * * The template for displaying pages with sidebar
  *
@@ -44,5 +44,6 @@ get_header();
 
     endwhile; // End of the loop.
     ?>
-    <?php get_footer();?>
+
 </main><!-- #main -->
+<?php get_footer();?>

@@ -48,17 +48,16 @@ const concatJs = (cb) => {
       "./node_modules/flickity-sync/flickity-sync.js",
       "./node_modules/simplebar/dist/simplebar.js",
       "./node_modules/vanilla-lazyload/dist/lazyload.js",
-      "./assets/src/js/*.js",
     ])
-    .pipe(concat("main.js"))
+    .pipe(concat("vendor.min.js"))
     .pipe(gulp.dest("assets/js"));
   cb();
 };
 
-const uglifyTask = (cb) => {
+const concatMainJs = (cb) => {
   return gulp
-    .src(["assets/js/*.js", "!assets/js/navigation.js"])
-    .pipe(uglify())
+    .src(["./assets/src/js/*.js"])
+    .pipe(concat("main.js"))
     .pipe(gulp.dest("assets/js"));
   cb();
 };
@@ -71,20 +70,20 @@ exports.default = () =>
 
 const browserSyncTask = (cb) => {
   browserSync.init({
-    proxy: "localhost/",
+    proxy: "cavatina.local/",
   });
   cb();
 };
 
 const watchTask = () => {
   gulp.watch("./assets/src/scss/**/*.scss", series(sassTask, cssConcatTask));
-  gulp.watch("./assets/src/js/*.js", series(concatJs, uglifyTask));
+  gulp.watch("./assets/src/js/*.js", series(concatJs, concatMainJs));
   gulp.watch("./**/*.php", browserSync.reload);
 };
 
 exports.default = parallel(
   series(sassTask, cssConcatTask),
-  series(concatJs, uglifyTask),
+  series(concatJs, concatMainJs),
   series(browserSyncTask, watchTask)
 );
 

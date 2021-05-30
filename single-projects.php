@@ -62,6 +62,7 @@ get_header();
                     </div>
                 </div>
             </div>
+
             <div class="c-single__carousel c-single__carousel--mobile">
                 <?php the_title( '<h2 class="c-single__title">', '</h2>' ); ?>
                 <ul class="c-single__meta">
@@ -76,8 +77,10 @@ get_header();
                     <?php cavatina_get_slider( get_the_ID() ); ?>
                 </div>
             </div>
+
         </article><!-- #post-<?php the_ID(); ?> -->
         <!--Single-->
     </div>
-    <?php get_footer();?>
+
 </main><!-- #main -->
+<?php get_footer();?>

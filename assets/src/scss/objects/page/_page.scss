@@ -3,11 +3,12 @@
 \*------------------------------------*/
 .o-page {
   width: 100%;
-  height: calc(100vh);
+  height: max-content;
   max-height: max-content;
 
   @include media(tablet) {
     text-align: left;
+    height: calc(100vh);
     max-height: 100vh;
     padding-left: 90px;
     display: block;
@@ -163,6 +164,10 @@
 
 .o-page__main--no-bottom-space {
   padding-bottom: 0;
+
+  @include media(tablet) {
+    padding-bottom: 64px;
+  }
 }
 
 /*------------------------------------*\

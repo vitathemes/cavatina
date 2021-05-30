@@ -9,7 +9,7 @@
 
 ?>
 
-<main class="o-page__main o-page__main--no-results not-found">
+<section class="o-page__main o-page__main--no-results not-found">
     <header class="o-page__main__header o-page__main__header--align-left">
         <h1 class="o-page__main__title"><?php esc_html_e( 'Nothing Found', 'cavatina' ); ?></h1>
     </header><!-- .page-header -->
@@ -18,7 +18,7 @@
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
 			printf(
-				'<p >' . wp_kses(
+				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
 					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'cavatina' ),
 					array(
@@ -46,4 +46,4 @@
 		endif;
 		?>
     </div><!-- .page-content -->
-</main><!-- .no-results -->
+</section><!-- .no-results -->
