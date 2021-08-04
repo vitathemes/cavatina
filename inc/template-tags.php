@@ -268,51 +268,29 @@ if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 	/**
 	 *  Return taxonomy filter
 	 */
-	function cavatina_taxonomy_filter($wp_indigo_className = "" ,  $wp_indigo_getSeparator = ", " , $wp_indigo_is_limited = false ,  $wp_indigo_taxonomy = "category" , $wp_indigo_hard_limit = false) {
-		
-		// $taxonomies = get_terms( array(
-		// 	'taxonomy' => 'project_category',
-		// 	'hide_empty' => false
-		// ) );
-		 
-		// $separator = $getSeparator;
-		// if ( !empty($taxonomies) ) {
-		// 	$output = '';
-		// 	foreach( $taxonomies as $category ) {
-			
-		// 		if ($category->count != 0) {
-		// 			/* translators: return poject_category items for filtering */
-		// 			$output .= '<a class="c-aside__category__link" href="'. site_url() . '/'. get_post_type().'/?project_category=' . esc_html( $category->name ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '"><h4>' . esc_html( $category->name ) . '</h4></a>' . $separator;
-		// 		}
-		// 	}
-		// 	echo wp_kses_post(trim( $output ));
-		// }
-
-
-		/*** */
+	function cavatina_taxonomy_filter($cavatina_className = "" ,  $cavatina_getSeparator = ", " , $cavatina_is_limited = false ,  $cavatina_taxonomy = "category" , $cavatina_hard_limit = false) {
+	
 
 		global $wp_query;
 		
 		$taxonomies = get_terms( array(
-			'taxonomy' 	 => $wp_indigo_taxonomy,
+			'taxonomy' 	 => $cavatina_taxonomy,
 			'hide_empty' => true
 		) );
 		
 		$taxonomny_counter = 0;
-		$separator = $wp_indigo_getSeparator;
+		$separator = $cavatina_getSeparator;
 			
-		$wp_indigo_all_active_class = "";
+		$cavatina_all_active_class = "";
 		if(empty($wp_query->query['project_category'])){
-			$wp_indigo_all_active_class = "active";
-		}
-
-		
+			$cavatina_all_active_class = "active";
+		}		
 
 		echo sprintf('<a class="c-aside__category__link  %s %s" href="%s"><h4>%s</h4></a>' , 
-		esc_attr( $wp_indigo_className ),
-		esc_attr( $wp_indigo_all_active_class ),
+		esc_attr( $cavatina_className ),
+		esc_attr( $cavatina_all_active_class ),
 		esc_url(site_url().'/'.get_post_type()),
-		esc_html__( 'All ', 'wp-indigo' )
+		esc_html__( 'All ', 'cavatina' )
 	);
 
 
@@ -322,7 +300,7 @@ if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 
 			foreach( $taxonomies as $category ) {
 
-				if($wp_indigo_is_limited === true && $taxonomny_counter === 4 || $wp_indigo_hard_limit === true && $taxonomny_counter === 1){
+				if($cavatina_is_limited === true && $taxonomny_counter === 4 || $cavatina_hard_limit === true && $taxonomny_counter === 1){
 					break;
 				}
 
@@ -340,14 +318,11 @@ if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 
 				if ($category->count != 0) {
 					/* translators: return poject_category items for filtering */
-					$output .= '<a class="c-aside__category__link '.esc_attr($wp_indigo_className). ' ' .esc_attr( $classactive ).'" href="'. esc_url( site_url() . '/'. get_post_type().'/?'.$wp_indigo_taxonomy.'=' . esc_html( $category->slug ) ). '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'wp-indigo' ), $category->name ) ) . '"><h4>' . esc_html( $category->name ) . '</h4></a>' . esc_html($separator);
+					$output .= '<a class="c-aside__category__link '.esc_attr($cavatina_className). ' ' .esc_attr( $classactive ).'" href="'. esc_url( site_url() . '/'. get_post_type().'/?'.$cavatina_taxonomy.'=' . esc_html( $category->slug ) ). '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '"><h4>' . esc_html( $category->name ) . '</h4></a>' . esc_html($separator);
 				}
 			}
 			echo wp_kses_post(trim( $output , $separator ));
 		}
-
-
-		
 	}
 
 endif;
@@ -386,7 +361,7 @@ if (! function_exists('cavatina_get_thumbnail')) :
 	 * return thumbnail for single blog 
 	 */
 	function cavatina_get_thumbnail() {
-		if ( has_post_thumbnail() ) {
+		if ( has_post_thumbnail() && get_theme_mod('post_thumbnail' , true) == true ) {
 			echo '<div class="c-single__blog__thumbnail">';
 			the_post_thumbnail('large', array('class' => 'c-single__blog__thumbnail__image' )); 
 			echo '</div>';
@@ -620,12 +595,13 @@ if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 		$cavatina_dribbble    		=  get_theme_mod( 'dribbble', "" );
 		$cavatina_behance    		=  get_theme_mod( 'behance', "" );
 		$cavatina_codepen    		=  get_theme_mod( 'codepen', "" );
+		$cavatina_telegram    		=  get_theme_mod( 'telegram', "" );
 
 
 		// If variable was not empty will display the icons
 		$cavatina_social_variables  = array($cavatina_facebook,$cavatina_twitter,$cavatina_instagram,$cavatina_linkedin,$cavatina_github,
 		$cavatina_mail, $cavatina_pinterest ,$cavatina_youtube ,$cavatina_spotify , $cavatina_gitlab,$cavatina_lastfm ,$cavatina_stackoverflow ,$cavatina_quora ,$cavatina_reddit ,$cavatina_medium ,
-		$cavatina_vimeo, $cavatina_lanyrd,$cavatina_dribbble ,$cavatina_behance,$cavatina_codepen
+		$cavatina_vimeo, $cavatina_lanyrd,$cavatina_dribbble ,$cavatina_behance,$cavatina_codepen,$cavatina_telegram
 		);
 
 		// Check if one of the variables are not empty 
@@ -721,6 +697,10 @@ if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 			if ( $cavatina_codepen ) {
 				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-codepen"></span></a>', esc_url( $cavatina_codepen ), esc_html__( 'codepen', 'cavatina' ) );
 			}
+			
+			if ( $cavatina_telegram ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify"  data-icon="akar-icons:telegram-fill" ></span></a>', esc_url( $cavatina_telegram ), esc_html__( 'codepen', 'cavatina' ) );
+			}
 
 			echo '</div>';
 		}
@@ -728,60 +708,27 @@ if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 endif;
 
 
-
 if (! function_exists('cavatina_social_media_share_post')) :
 	/**
 	* Share post on social media ( single page )
 	*/
-	function cavatina_social_media_share_post( $have_social_title = false) {
-
+	function cavatina_social_media_share_post( $cavatina_share_title = false) {
 
 		$cavatina_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
 		$cavatina_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
 		$cavatina_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
 
 
-
-
-		if($have_social_title === true){
-			if( get_theme_mod('linkedin_link') || get_theme_mod('facebook_link') || get_theme_mod('github_link') || get_theme_mod('twitter_link')){
-
-				echo '<span class="c-social-media__title">Share:</span>';
-
-			}
-		}
-
-		if ( get_theme_mod('linkedin_link') != null) { 
-			
-			echo '
-			<a href="'. esc_url( $cavatina_linkedin_url ) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-linkedin"></span>	
-			</a>';
-			
+		if($cavatina_share_title){
+			echo sprintf('<span class="c-social-media__title">%s</span>', esc_html__( 'Share on:' , 'cavatina' ));
 		}
 		
-		if ( get_theme_mod('facebook_link') != null) { 
-			
-			echo '      
-			<a href="'. esc_url($cavatina_facebook_url) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-facebook-alt"></span>
-			</a>';
-			
-		}
-
-		if ( get_theme_mod('twitter_link') != null) {
-
-			echo '
-			<a href="'. esc_url($cavatina_twitter_url) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-twitter"></span>
-			</a>';
-
-			}
-		}
-
-		
+		echo sprintf( '<a class="c-social-media__item" target="_blank" href="%s"><span class="c-social-media__icon dashicons dashicons-facebook-alt"></span></a>', esc_url( $cavatina_facebook_url ) );
+		echo sprintf( '<a class="c-social-media__item" target="_blank" href="%s"><span class="c-social-media__icon dashicons dashicons-twitter"></span></a>', esc_url( $cavatina_twitter_url ) );
+		echo sprintf( '<a class="c-social-media__item" target="_blank" href="%s"><span class="c-social-media__icon dashicons dashicons-linkedin"></span></a>', esc_url( $cavatina_linkedin_url ) );
+	
+	}	
 endif;
-
 
 
 function cavatina_get_slider( $postId ) {

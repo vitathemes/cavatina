@@ -11,9 +11,13 @@
     <header class="c-single__blog__header entry-header">
         <div class="c-single__blog__meta entry-meta">
             <?php
-                echo '<span class="c-post__category ">'.  esc_html( cavatina_get_category() ) .'</span>';
-                echo '<span class="o-bullet o-bullet--sm"></span>';
-				echo '<span class="c-post__date"><a href="'. esc_url( get_permalink() ) .'">'.esc_html( get_the_date( "M d.y" ) ) .'</a></span>';
+                if( get_theme_mod( 'show_single_cat', true ) ) {
+                    echo '<span class="c-post__category ">'.  esc_html( cavatina_get_category() ) .'</span>';
+                }
+                if( get_theme_mod( 'publish_date' , true ) ){   
+                    echo '<span class="o-bullet o-bullet--sm"></span>';
+				    echo '<span class="c-post__date"><a href="'. esc_url( get_permalink() ) .'">'.esc_html( get_the_date( "M d.y" ) ) .'</a></span>';
+                }
 			?>
         </div><!-- .entry-meta -->
         <?php
@@ -23,6 +27,8 @@
 			the_title( '<h1 class="entry-title "><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 		endif;
 		?>
+
+        <?php if( get_theme_mod( 'show_author' , true )) :  ?>
         <div class="c-single__author">
             <div class="c-single__author__avatar">
                 <?php echo get_avatar( get_the_author_meta('user_email'), '80', '' ); ?>
@@ -31,9 +37,12 @@
                 <?php cavatina_posted_by(); ?>
             </div>
         </div>
+        <?php endif; ?>
+
     </header><!-- .entry-header -->
 
-    <?php cavatina_get_thumbnail() ?>
+    <?php cavatina_get_thumbnail(); ?>
+
 
     <div class="c-single__blog__entery-content">
         <?php
@@ -59,15 +68,18 @@
 		);
         ?>
     </div><!-- .entry-content -->
+
+    <?php if( get_theme_mod('post_tags' , true) ) : ?>
     <ul class="c-single__blog__tags">
         <?php cavatina_get_post_tags(); ?>
     </ul>
+    <?php endif; ?>
 
+    <?php if( get_theme_mod('post_share_icons' , true)) : ?>
     <div class="c-social-media c-social-media--blog">
-
         <?php cavatina_social_media_share_post(true) ?>
-
     </div>
+    <?php endif; ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->
 <div class="u-border"></div>

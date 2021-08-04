@@ -21,7 +21,6 @@ get_header();
                     </a>
                 </span>
                 <div class="c-aside__category">
-                    <?php //cavatina_taxonomy_filter("c-aside__category__link" , " "); ?>
                     <?php cavatina_taxonomy_filter("", "", false, "project_category"); ?>
                 </div>
             </div>
