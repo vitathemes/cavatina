@@ -468,3 +468,5 @@ if (cavatina_childFinder("body", "c-post__entry-title__anchor")) {
     }
   });
 }
+
+console.log("test");
