@@ -268,28 +268,91 @@ if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 	/**
 	 *  Return taxonomy filter
 	 */
-	function cavatina_taxonomy_filter( $className = "" ,  $getSeparator = ", ") {
+	function cavatina_taxonomy_filter($wp_indigo_className = "" ,  $wp_indigo_getSeparator = ", " , $wp_indigo_is_limited = false ,  $wp_indigo_taxonomy = "category" , $wp_indigo_hard_limit = false) {
+		
+		// $taxonomies = get_terms( array(
+		// 	'taxonomy' => 'project_category',
+		// 	'hide_empty' => false
+		// ) );
+		 
+		// $separator = $getSeparator;
+		// if ( !empty($taxonomies) ) {
+		// 	$output = '';
+		// 	foreach( $taxonomies as $category ) {
+			
+		// 		if ($category->count != 0) {
+		// 			/* translators: return poject_category items for filtering */
+		// 			$output .= '<a class="c-aside__category__link" href="'. site_url() . '/'. get_post_type().'/?project_category=' . esc_html( $category->name ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '"><h4>' . esc_html( $category->name ) . '</h4></a>' . $separator;
+		// 		}
+		// 	}
+		// 	echo wp_kses_post(trim( $output ));
+		// }
+
+
+		/*** */
+
+		global $wp_query;
 		
 		$taxonomies = get_terms( array(
-			'taxonomy' => 'project_category',
-			'hide_empty' => false
+			'taxonomy' 	 => $wp_indigo_taxonomy,
+			'hide_empty' => true
 		) );
-		 
-		$separator = $getSeparator;
+		
+		$taxonomny_counter = 0;
+		$separator = $wp_indigo_getSeparator;
+			
+		$wp_indigo_all_active_class = "";
+		if(empty($wp_query->query['project_category'])){
+			$wp_indigo_all_active_class = "active";
+		}
+
+		
+
+		echo sprintf('<a class="c-aside__category__link  %s %s" href="%s"><h4>%s</h4></a>' , 
+		esc_attr( $wp_indigo_className ),
+		esc_attr( $wp_indigo_all_active_class ),
+		esc_url(site_url().'/'.get_post_type()),
+		esc_html__( 'All ', 'wp-indigo' )
+	);
+
+
+
 		if ( !empty($taxonomies) ) {
 			$output = '';
+
 			foreach( $taxonomies as $category ) {
-			
+
+				if($wp_indigo_is_limited === true && $taxonomny_counter === 4 || $wp_indigo_hard_limit === true && $taxonomny_counter === 1){
+					break;
+				}
+
+				if(!empty($wp_query->query['portfolio_category'])){
+					$current_category = $wp_query->query['portfolio_category'];
+				}			
+				if($category != null && !empty($wp_query->query['portfolio_category'])  && $category->slug  === $current_category){
+					$classactive = "active";
+				}
+				else{
+					$classactive = "";
+				}
+
+				$taxonomny_counter++;
+
 				if ($category->count != 0) {
 					/* translators: return poject_category items for filtering */
-					$output .= '<a class="c-aside__category__link" href="'. site_url() . '/'. get_post_type().'/?project_category=' . esc_html( $category->name ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '"><h4>' . esc_html( $category->name ) . '</h4></a>' . $separator;
+					$output .= '<a class="c-aside__category__link '.esc_attr($wp_indigo_className). ' ' .esc_attr( $classactive ).'" href="'. esc_url( site_url() . '/'. get_post_type().'/?'.$wp_indigo_taxonomy.'=' . esc_html( $category->slug ) ). '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'wp-indigo' ), $category->name ) ) . '"><h4>' . esc_html( $category->name ) . '</h4></a>' . esc_html($separator);
 				}
 			}
-			echo wp_kses_post(trim( $output ));
+			echo wp_kses_post(trim( $output , $separator ));
 		}
+
+
+		
 	}
 
 endif;
+
+
 
 
 if ( ! function_exists( 'cavatina_get_thumbnail_with_preloader' ) ) :
@@ -538,8 +601,6 @@ if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 	function cavatina_get_social_media() {
 		
 		$cavatina_facebook  		=  get_theme_mod( 'facebook', "" );
-
-		
 		$cavatina_twitter   		=  get_theme_mod( 'twitter', "" );
 		$cavatina_instagram 		=  get_theme_mod( 'instagram', "" );
 		$cavatina_linkedin  		=  get_theme_mod( 'linkedin', "" );

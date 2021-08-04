@@ -263,10 +263,15 @@
   color: $cavatina_primary_color !important;
   line-height: 17px;
   &:hover {
-    color: $cavatina__main-primary-light-color !important;
+    color: $cavatina__main-primary-light-color;
+
+    h4 {
+      color: $cavatina__main-primary-light-color;
+    }
   }
 
   h4 {
+    transition: $global-transition;
     margin: 0px;
   }
 }
