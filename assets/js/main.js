@@ -321,9 +321,7 @@ function cavatina_capitalizeFirstLetter() {
 
   // js-carousel__post-title__text-mobile
   if (cavatina_childFinder("body", "js-carousel__post-title__text-mobile")) {
-    const carouselTitle = document.querySelector(
-      ".js-carousel__post-title__text-mobile"
-    );
+    const carouselTitle = document.querySelector(".js-carousel__post-title__text-mobile");
 
     carouselTitle.textContent =
       carouselTitle.textContent.charAt(0).toUpperCase() +
@@ -387,9 +385,7 @@ if (cavatina_childFinder("body", "js-carousel__context")) {
   });
 
   // Carousel (Home Page) - text Mobile
-  let carouselTextMobile = document.querySelector(
-    ".js-carousel__post-titles--mobile"
-  );
+  let carouselTextMobile = document.querySelector(".js-carousel__post-titles--mobile");
 
   let flCarouselTextMobile = new Flickity(carouselTextMobile, {
     setGallerySize: true,
@@ -404,9 +400,7 @@ if (cavatina_childFinder("body", "js-carousel__context")) {
     friction: 0.8,
     on: {
       ready: function () {
-        const postTitiles2 = document.querySelector(
-          ".js-carousel__post-titles--mobile"
-        );
+        const postTitiles2 = document.querySelector(".js-carousel__post-titles--mobile");
         postTitiles2.style.opacity = 1;
       },
     },
@@ -435,9 +429,7 @@ if (cavatina_childFinder("body", "js-single__slider")) {
           singleCarousel.classList.add("c-carousel__single__slider--full-width");
 
           if (index === 0) {
-            singleCarousel.classList.remove(
-              "c-carousel__single__slider--full-width"
-            );
+            singleCarousel.classList.remove("c-carousel__single__slider--full-width");
           }
         }
       },
@@ -488,17 +480,15 @@ document.addEventListener("keydown", function (e) {
   #truncate long text
 \*--------------------------------------*/
 if (cavatina_childFinder("body", "c-post__entry-title__anchor")) {
-  const cavatina_postTitles = document.querySelectorAll(
-    ".c-post__entry-title__anchor"
-  );
+  const cavatina_postTitles = document.querySelectorAll(".c-post__entry-title__anchor");
 
-  document
-    .querySelectorAll(".c-post__entry-title__anchor")
-    .forEach(function (postLink) {
-      if (postLink.textContent.length > 82) {
-        let currentPostLink = postLink.textContent;
-        currentPostLink = currentPostLink.substr(0, 80) + "...";
-        postLink.textContent = currentPostLink;
-      }
-    });
+  document.querySelectorAll(".c-post__entry-title__anchor").forEach(function (postLink) {
+    if (postLink.textContent.length > 82) {
+      let currentPostLink = postLink.textContent;
+      currentPostLink = currentPostLink.substr(0, 80) + "...";
+      postLink.textContent = currentPostLink;
+    }
+  });
 }
+
+console.log("test");

@@ -2290,6 +2290,12 @@ img {
   vertical-align: text-bottom;
   display: inline-block; }
 
+/*------------------------------------*\
+  #Social share Iconify
+\*------------------------------------*/
+.c-social-media__icon.iconify {
+  font-size: 20px; }
+
 /*--------------------------------------------------------------
 # Search form
 --------------------------------------------------------------*/
@@ -3592,7 +3598,7 @@ img {
   cursor: pointer;
   text-transform: uppercase;
   padding: 10px 0;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out; }
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out; }
 
 @media only screen and (min-width: 980px) {
   .c-pagination--load-more {

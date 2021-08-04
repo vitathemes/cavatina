@@ -530,129 +530,141 @@ if (! function_exists('cavatina_page_thumbnail_class')) :
 endif;
 
 
-if (! function_exists('cavatina_get_social_media')) :
+
+if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 	/**
-	* get social media 
-	*/
-	function cavatina_get_social_media( $have_social_title = false) {
-
-		if($have_social_title === true){
-			if( get_theme_mod('linkedin_link') || get_theme_mod('facebook_link') || get_theme_mod('github_link') || get_theme_mod('twitter_link')){
-
-				echo '<span class="c-social-media__title">Share:</span>';
-
-			}
-		}
-
-		if ( get_theme_mod('linkedin_link') != null) { 
-			
-			echo '
-			<a href="'. esc_url(get_theme_mod('linkedin_link')) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-linkedin"></span>	
-			</a>';
-			
-		}
+	  * Display Social Networks
+	  */
+	function cavatina_get_social_media() {
 		
-		if ( get_theme_mod('facebook_link') != null) { 
-			
-			echo '      
-			<a href="'. esc_url(get_theme_mod('facebook_link')) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-facebook-alt"></span>
-			</a>';
-			
-		}
+		$cavatina_facebook  		=  get_theme_mod( 'facebook', "" );
 
-		if ( get_theme_mod('github_link') != null) { 
-			
-			echo '      
-			<a href="'. esc_url(get_theme_mod('github_link')) .'" class="c-social-media__item">
-			<svg width="14pt" height="14pt" viewBox="0 0 14 14" version="1.1">
-				<g id="surface1">
-					<path class="c-social-media__icon" style=" stroke:none;fill-rule:nonzero;fill-opacity:1;"
-						d="M 13.046875 3.652344 C 12.421875 2.582031 11.574219 1.734375 10.503906 1.109375 C 9.429688 0.484375 8.261719 0.171875 6.992188 0.171875 C 5.722656 0.171875 4.554688 0.484375 3.484375 1.109375 C 2.410156 1.734375 1.5625 2.582031 0.9375 3.652344 C 0.3125 4.726562 0 5.894531 0 7.164062 C 0 8.6875 0.445312 10.058594 1.332031 11.273438 C 2.222656 12.492188 3.371094 13.332031 4.78125 13.800781 C 4.945312 13.832031 5.066406 13.808594 5.144531 13.738281 C 5.222656 13.664062 5.261719 13.574219 5.261719 13.464844 C 5.261719 13.445312 5.261719 13.28125 5.257812 12.972656 C 5.253906 12.664062 5.253906 12.394531 5.253906 12.164062 L 5.042969 12.199219 C 4.910156 12.222656 4.742188 12.234375 4.539062 12.230469 C 4.335938 12.226562 4.125 12.207031 3.90625 12.167969 C 3.6875 12.128906 3.484375 12.035156 3.296875 11.894531 C 3.109375 11.75 2.972656 11.566406 2.894531 11.335938 L 2.804688 11.125 C 2.742188 10.984375 2.648438 10.832031 2.515625 10.660156 C 2.386719 10.492188 2.253906 10.375 2.121094 10.3125 L 2.058594 10.269531 C 2.015625 10.238281 1.976562 10.203125 1.9375 10.160156 C 1.902344 10.117188 1.875 10.074219 1.855469 10.03125 C 1.839844 9.988281 1.855469 9.953125 1.902344 9.925781 C 1.953125 9.898438 2.039062 9.886719 2.167969 9.886719 L 2.347656 9.914062 C 2.46875 9.9375 2.621094 10.011719 2.800781 10.132812 C 2.980469 10.253906 3.125 10.410156 3.242188 10.605469 C 3.382812 10.855469 3.550781 11.042969 3.746094 11.175781 C 3.945312 11.304688 4.144531 11.371094 4.34375 11.371094 C 4.542969 11.371094 4.714844 11.355469 4.863281 11.324219 C 5.007812 11.292969 5.144531 11.25 5.273438 11.1875 C 5.328125 10.78125 5.476562 10.46875 5.71875 10.25 C 5.371094 10.214844 5.0625 10.160156 4.785156 10.085938 C 4.507812 10.011719 4.222656 9.894531 3.929688 9.730469 C 3.632812 9.566406 3.390625 9.363281 3.195312 9.121094 C 3 8.878906 2.84375 8.558594 2.71875 8.164062 C 2.59375 7.769531 2.53125 7.316406 2.53125 6.800781 C 2.53125 6.066406 2.769531 5.441406 3.25 4.921875 C 3.027344 4.371094 3.046875 3.753906 3.3125 3.066406 C 3.488281 3.011719 3.75 3.050781 4.097656 3.1875 C 4.441406 3.324219 4.695312 3.441406 4.859375 3.539062 C 5.019531 3.636719 5.148438 3.71875 5.246094 3.785156 C 5.808594 3.628906 6.390625 3.550781 6.992188 3.550781 C 7.59375 3.550781 8.175781 3.628906 8.742188 3.785156 L 9.085938 3.566406 C 9.324219 3.421875 9.601562 3.289062 9.925781 3.167969 C 10.246094 3.046875 10.492188 3.011719 10.664062 3.066406 C 10.933594 3.753906 10.960938 4.371094 10.734375 4.921875 C 11.214844 5.441406 11.453125 6.066406 11.453125 6.800781 C 11.453125 7.316406 11.390625 7.773438 11.269531 8.167969 C 11.144531 8.566406 10.984375 8.886719 10.785156 9.125 C 10.589844 9.367188 10.34375 9.566406 10.046875 9.730469 C 9.753906 9.894531 9.46875 10.011719 9.191406 10.085938 C 8.914062 10.160156 8.605469 10.214844 8.257812 10.25 C 8.574219 10.523438 8.730469 10.953125 8.730469 11.542969 L 8.730469 13.464844 C 8.730469 13.574219 8.769531 13.664062 8.847656 13.738281 C 8.921875 13.808594 9.042969 13.832031 9.207031 13.800781 C 10.613281 13.332031 11.761719 12.492188 12.652344 11.273438 C 13.539062 10.058594 13.984375 8.6875 13.984375 7.164062 C 13.984375 5.894531 13.671875 4.726562 13.046875 3.652344 Z M 13.046875 3.652344 " />
-				</g>
-			</svg>
+		
+		$cavatina_twitter   		=  get_theme_mod( 'twitter', "" );
+		$cavatina_instagram 		=  get_theme_mod( 'instagram', "" );
+		$cavatina_linkedin  		=  get_theme_mod( 'linkedin', "" );
+		$cavatina_github    		=  get_theme_mod( 'github', "" );
+		$cavatina_mail   			=  get_theme_mod( 'mail', "" );
+		$cavatina_pinterest    		=  get_theme_mod( 'pinterest', "" );
+		$cavatina_youtube    		=  get_theme_mod( 'youtube', "" );
+		$cavatina_spotify    		=  get_theme_mod( 'spotify', "" );
+		$cavatina_gitlab    		=  get_theme_mod( 'gitlab', "" );
+		$cavatina_lastfm    		=  get_theme_mod( 'lastfm', "" );
+		$cavatina_stackoverflow     =  get_theme_mod( 'stackoverflow', "" );
+		$cavatina_quora    			=  get_theme_mod( 'quora', "" );
+		$cavatina_reddit    		=  get_theme_mod( 'reddit', "" );
+		$cavatina_medium    		=  get_theme_mod( 'medium', "" );
+		$cavatina_vimeo    			=  get_theme_mod( 'vimeo', "" );
+		$cavatina_lanyrd    		=  get_theme_mod( 'lanyrd', "" );
+		$cavatina_dribbble    		=  get_theme_mod( 'dribbble', "" );
+		$cavatina_behance    		=  get_theme_mod( 'behance', "" );
+		$cavatina_codepen    		=  get_theme_mod( 'codepen', "" );
 
-			</a>';
 
-		}
+		// If variable was not empty will display the icons
+		$cavatina_social_variables  = array($cavatina_facebook,$cavatina_twitter,$cavatina_instagram,$cavatina_linkedin,$cavatina_github,
+		$cavatina_mail, $cavatina_pinterest ,$cavatina_youtube ,$cavatina_spotify , $cavatina_gitlab,$cavatina_lastfm ,$cavatina_stackoverflow ,$cavatina_quora ,$cavatina_reddit ,$cavatina_medium ,
+		$cavatina_vimeo, $cavatina_lanyrd,$cavatina_dribbble ,$cavatina_behance,$cavatina_codepen
+		);
 
-		if ( get_theme_mod('twitter_link') != null) {
-
-			echo '
-			<a href="'. esc_url(get_theme_mod('twitter_link')) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-twitter"></span>
-			</a>';
-
+		// Check if one of the variables are not empty 
+		$cavatina_social_variable_flag = 0;		
+		foreach($cavatina_social_variables as $cavatina_social){
+			if( !empty($cavatina_social)){
+				$cavatina_social_variable_flag = 1;
+				break;
 			}
 		}
 
+		// Display the icons here 
+		if( $cavatina_social_variable_flag === 1 ) {
 
+			echo '<div class="c-social-share c-social-share--footer">';
+
+			if ( $cavatina_facebook ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon dashicons dashicons-facebook-alt"></span></a>', esc_url( $cavatina_facebook ), esc_html__( 'Facebook', 'cavatina' ) );
+			}
+
+			if ( $cavatina_twitter ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon dashicons dashicons-twitter"></span></a>', esc_url( $cavatina_twitter ), esc_html__( 'Twitter', 'cavatina' ) );
+			}
+
+			if ( $cavatina_instagram ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon dashicons dashicons-instagram"></span></a>', esc_url( $cavatina_instagram ), esc_html__( 'Instagram', 'cavatina' ) );
+			}
+
+			if ( $cavatina_linkedin ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon dashicons dashicons-linkedin"></span></a>', esc_url( $cavatina_linkedin ), esc_html__( 'Linkedin', 'cavatina' ) );
+			}
+
+			if ( $cavatina_github ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ant-design:github-filled" data-inline="false"></span></a>', esc_url( $cavatina_github ), esc_html__( 'Github', 'cavatina' ) );
+			}
+
+			if ( $cavatina_mail ) {
+				echo sprintf( '<a href="mailto:%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ant-design:mail-outlined" data-inline="false"></span></a>', esc_attr(sanitize_email( $cavatina_mail)), esc_html__( 'Mail', 'cavatina' ) );
+			}
+			
+			if ( $cavatina_pinterest ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-pinterest" data-inline="false"></span></a>', esc_url( $cavatina_pinterest ), esc_html__( 'pinterest', 'cavatina' ) );
+			}
+
+			if ( $cavatina_youtube ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:youtube-fill" data-inline="false"></span></a>', esc_url( $cavatina_youtube ), esc_html__( 'youtube', 'cavatina' ) );
+			}
+			
+			if ( $cavatina_spotify ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-spotify" data-inline="false"></span></a>', esc_url( $cavatina_spotify ), esc_html__( 'spotify', 'cavatina' ) );
+			}
+			
+			if ( $cavatina_lastfm ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="brandico:lastfm-rect" data-inline="false"></span></a>', esc_url( $cavatina_lastfm ), esc_html__( 'lastfm', 'cavatina' ) );
+			}
+
+			if ( $cavatina_gitlab ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ion:logo-gitlab" data-inline="false"></span></a>', esc_url( $cavatina_gitlab ), esc_html__( 'gitlab', 'cavatina' ) );
+			}
+			
+			if ( $cavatina_stackoverflow ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="cib:stackoverflow" data-inline="false"></span></a>', esc_url( $cavatina_stackoverflow ), esc_html__( 'stackoverflow', 'cavatina' ) );
+			}
+
+			if ( $cavatina_reddit ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:reddit-fill" data-inline="false"></span></a>', esc_url( $cavatina_reddit ), esc_html__( 'reddit', 'cavatina' ) );
+			}
+			
+			if ( $cavatina_quora ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-quora" data-inline="false"></span></a>', esc_url( $cavatina_quora ), esc_html__( 'quora', 'cavatina' ) );
+			}
+
+			if ( $cavatina_medium ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ant-design:medium-circle-filled" data-inline="false"></span></a>', esc_url( $cavatina_medium ), esc_html__( 'medium', 'cavatina' ) );
+			}			
+
+			if ( $cavatina_vimeo ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="brandico:vimeo-rect" data-inline="false"></span></a>', esc_url( $cavatina_vimeo ), esc_html__( 'vimeo', 'cavatina' ) );
+			}
+
+			if ( $cavatina_dribbble ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:dribbble-fill" data-inline="false"></span></a>', esc_url( $cavatina_dribbble ), esc_html__( 'dribbble', 'cavatina' ) );
+			}
+
+			if ( $cavatina_behance ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ant-design:behance-outlined" data-inline="false"></span></a>', esc_url( $cavatina_behance ), esc_html__( 'behance', 'cavatina' ) );
+			}
+
+			if ( $cavatina_lanyrd ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="cib:lanyrd" data-inline="false"></span></a>', esc_url( $cavatina_lanyrd ), esc_html__( 'lanyrd', 'cavatina' ) );
+			}
+
+			if ( $cavatina_codepen ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-codepen"></span></a>', esc_url( $cavatina_codepen ), esc_html__( 'codepen', 'cavatina' ) );
+			}
+
+			echo '</div>';
+		}
+	}
 endif;
-
-
-
-
-if (! function_exists('cavatina_get_social_media')) :
-	/**
-	* get social media 
-	*/
-	function cavatina_get_social_media( $have_social_title = false) {
-
-		if($have_social_title === true){
-			if( get_theme_mod('linkedin_link') || get_theme_mod('facebook_link') || get_theme_mod('github_link') || get_theme_mod('twitter_link')){
-
-				echo '<span class="c-social-media__title">Share:</span>';
-
-			}
-		}
-
-		if ( get_theme_mod('linkedin_link') != null) { 
-			
-			echo '
-			<a href="'. esc_url(get_theme_mod('linkedin_link')) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-linkedin"></span>	
-			</a>';
-			
-		}
-		
-		if ( get_theme_mod('facebook_link') != null) { 
-			
-			echo '      
-			<a href="'. esc_url(get_theme_mod('facebook_link')) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-facebook-alt"></span>
-			</a>';
-			
-		}
-
-		if ( get_theme_mod('github_link') != null) { 
-			
-			echo '      
-			<a href="'. esc_url(get_theme_mod('github_link')) .'" class="c-social-media__item">
-			<svg width="14pt" height="14pt" viewBox="0 0 14 14" version="1.1">
-				<g id="surface1">
-					<path class="c-social-media__icon" style=" stroke:none;fill-rule:nonzero;fill-opacity:1;"
-						d="M 13.046875 3.652344 C 12.421875 2.582031 11.574219 1.734375 10.503906 1.109375 C 9.429688 0.484375 8.261719 0.171875 6.992188 0.171875 C 5.722656 0.171875 4.554688 0.484375 3.484375 1.109375 C 2.410156 1.734375 1.5625 2.582031 0.9375 3.652344 C 0.3125 4.726562 0 5.894531 0 7.164062 C 0 8.6875 0.445312 10.058594 1.332031 11.273438 C 2.222656 12.492188 3.371094 13.332031 4.78125 13.800781 C 4.945312 13.832031 5.066406 13.808594 5.144531 13.738281 C 5.222656 13.664062 5.261719 13.574219 5.261719 13.464844 C 5.261719 13.445312 5.261719 13.28125 5.257812 12.972656 C 5.253906 12.664062 5.253906 12.394531 5.253906 12.164062 L 5.042969 12.199219 C 4.910156 12.222656 4.742188 12.234375 4.539062 12.230469 C 4.335938 12.226562 4.125 12.207031 3.90625 12.167969 C 3.6875 12.128906 3.484375 12.035156 3.296875 11.894531 C 3.109375 11.75 2.972656 11.566406 2.894531 11.335938 L 2.804688 11.125 C 2.742188 10.984375 2.648438 10.832031 2.515625 10.660156 C 2.386719 10.492188 2.253906 10.375 2.121094 10.3125 L 2.058594 10.269531 C 2.015625 10.238281 1.976562 10.203125 1.9375 10.160156 C 1.902344 10.117188 1.875 10.074219 1.855469 10.03125 C 1.839844 9.988281 1.855469 9.953125 1.902344 9.925781 C 1.953125 9.898438 2.039062 9.886719 2.167969 9.886719 L 2.347656 9.914062 C 2.46875 9.9375 2.621094 10.011719 2.800781 10.132812 C 2.980469 10.253906 3.125 10.410156 3.242188 10.605469 C 3.382812 10.855469 3.550781 11.042969 3.746094 11.175781 C 3.945312 11.304688 4.144531 11.371094 4.34375 11.371094 C 4.542969 11.371094 4.714844 11.355469 4.863281 11.324219 C 5.007812 11.292969 5.144531 11.25 5.273438 11.1875 C 5.328125 10.78125 5.476562 10.46875 5.71875 10.25 C 5.371094 10.214844 5.0625 10.160156 4.785156 10.085938 C 4.507812 10.011719 4.222656 9.894531 3.929688 9.730469 C 3.632812 9.566406 3.390625 9.363281 3.195312 9.121094 C 3 8.878906 2.84375 8.558594 2.71875 8.164062 C 2.59375 7.769531 2.53125 7.316406 2.53125 6.800781 C 2.53125 6.066406 2.769531 5.441406 3.25 4.921875 C 3.027344 4.371094 3.046875 3.753906 3.3125 3.066406 C 3.488281 3.011719 3.75 3.050781 4.097656 3.1875 C 4.441406 3.324219 4.695312 3.441406 4.859375 3.539062 C 5.019531 3.636719 5.148438 3.71875 5.246094 3.785156 C 5.808594 3.628906 6.390625 3.550781 6.992188 3.550781 C 7.59375 3.550781 8.175781 3.628906 8.742188 3.785156 L 9.085938 3.566406 C 9.324219 3.421875 9.601562 3.289062 9.925781 3.167969 C 10.246094 3.046875 10.492188 3.011719 10.664062 3.066406 C 10.933594 3.753906 10.960938 4.371094 10.734375 4.921875 C 11.214844 5.441406 11.453125 6.066406 11.453125 6.800781 C 11.453125 7.316406 11.390625 7.773438 11.269531 8.167969 C 11.144531 8.566406 10.984375 8.886719 10.785156 9.125 C 10.589844 9.367188 10.34375 9.566406 10.046875 9.730469 C 9.753906 9.894531 9.46875 10.011719 9.191406 10.085938 C 8.914062 10.160156 8.605469 10.214844 8.257812 10.25 C 8.574219 10.523438 8.730469 10.953125 8.730469 11.542969 L 8.730469 13.464844 C 8.730469 13.574219 8.769531 13.664062 8.847656 13.738281 C 8.921875 13.808594 9.042969 13.832031 9.207031 13.800781 C 10.613281 13.332031 11.761719 12.492188 12.652344 11.273438 C 13.539062 10.058594 13.984375 8.6875 13.984375 7.164062 C 13.984375 5.894531 13.671875 4.726562 13.046875 3.652344 Z M 13.046875 3.652344 " />
-				</g>
-			</svg>
-
-			</a>';
-
-		}
-
-		if ( get_theme_mod('twitter_link') != null) {
-
-			echo '
-			<a href="'. esc_url(get_theme_mod('twitter_link')) .'" class="c-social-media__item">
-				<span class="c-social-media__icon dashicons dashicons-twitter"></span>
-			</a>';
-
-			}
-		}
-
-		
-endif;
-
 
 
 
