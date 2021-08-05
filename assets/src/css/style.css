@@ -2845,7 +2845,11 @@ img {
   height: 100%; }
   @media only screen and (min-width: 980px) {
     .c-carousel__single__cell_image--page {
-      height: unset; } }
+      height: unset;
+      object-position: center; } }
+  @media only screen and (min-width: 1400px) {
+    .c-carousel__single__cell_image--page {
+      object-position: top; } }
 
 /*------------------------------------*\
   #modifier
@@ -4171,6 +4175,7 @@ input[type="submit"] {
 
 .wp-block-button__link {
   padding: 12px 25px;
+  padding-bottom: 10px;
   border: none;
   font-weight: var(--heading-typography-variant);
   background-color: #000000;

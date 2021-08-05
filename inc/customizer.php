@@ -550,8 +550,14 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 29,
 	] );
 	
-
-
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'phone_number',
+		'label'    => __( 'Phone Number', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 30,
+	] );
+	
 	/*------------------------------------*\
 	  #Single Options
 	\*------------------------------------*/
