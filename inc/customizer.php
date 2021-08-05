@@ -71,9 +71,41 @@ if( function_exists( 'kirki' ) ) {
 		'option_type'   => 'theme_mod',
 	) );
 	
+
+	/*
+	 *	Kirki - Panels
+	 */
+	// Typography
+	Kirki::add_panel( 'elements', array(
+		'priority' => 75,
+		'title'    => esc_html__( 'Elements', 'cavatina' ),
+	));
+	
+	
 	/*
 	 *	Kirki -> Sections
 	 */
+
+	/* Single Options */
+	Kirki::add_section( 'single_options', array(
+		'title'          => esc_html__( 'Single Options', 'cavatina' ),
+		'panel'          => 'elements',
+		'priority'       => 200,
+	));
+
+	/* Archive Options */
+	Kirki::add_section( 'archive_options', array(
+		'title'          => esc_html__( 'Archive Options', 'cavatina' ),
+		'panel'          => 'elements',
+		'priority'       => 210,
+	));
+
+	/* Projects Options */
+	Kirki::add_section( 'projects_options', array(
+		'title'          => esc_html__( 'Projects Options', 'cavatina' ),
+		'panel'          => 'elements',
+		'priority'       => 220,
+	));
 
 	// typography settings  
 	Kirki::add_section( 'typography_headings', array(
@@ -91,13 +123,14 @@ if( function_exists( 'kirki' ) ) {
 		'priority'       => 160,
 	) );
 
-	/*  */
+	/* Social Media  */
 	Kirki::add_section( 'social_media', array(
 		'title'          => esc_html__( 'Social Media', 'cavatina' ),
 		'description'    => esc_html__( 'Add social media links.', 'cavatina' ),
 		'panel'          => '',
 		'priority'       => 160,
 	) );
+	
 	/*
 	 *	Kirki -> fields
 	 */
@@ -342,10 +375,10 @@ if( function_exists( 'kirki' ) ) {
 	
 	
 
-	// Social Media
+	// -- Socials --
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'link',
-		'settings' => 'linkedin_link',
+		'settings' => 'linkedin',
 		'label'    => __( 'Linkedin', 'cavatina' ),
 		'section'  => 'social_media',
 		'default'  => '',
@@ -354,16 +387,16 @@ if( function_exists( 'kirki' ) ) {
 
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'link',
-		'settings' => 'facebook_link',
+		'settings' => 'facebook',
 		'label'    => __( 'Facebook', 'cavatina' ),
 		'section'  => 'social_media',
 		'default'  => '',
-		'priority' => 11,
+		'priority' => 5,
 	] );
 
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'link',
-		'settings' => 'github_link',
+		'settings' => 'github',
 		'label'    => __( 'Github', 'cavatina' ),
 		'section'  => 'social_media',
 		'default'  => '',
@@ -372,10 +405,257 @@ if( function_exists( 'kirki' ) ) {
 
 	Kirki::add_field( 'cavatina', [
 		'type'     => 'link',
-		'settings' => 'twitter_link',
+		'settings' => 'twitter',
 		'label'    => __( 'Twitter', 'cavatina' ),
 		'section'  => 'social_media',
 		'default'  => '',
 		'priority' => 13,
 	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'instagram',
+		'label'    => esc_html__( 'Instagram', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 14,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'text',
+		'settings' => 'mail',
+		'label'    => __( 'Email', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 15,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'pinterest',
+		'label'    => __( 'Pinterest', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 16,
+	] );
+
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'youtube',
+		'label'    => __( 'Youtube', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 17,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'spotify',
+		'label'    => __( 'Spotify', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 18,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'gitlab',
+		'label'    => __( 'Gitlab', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 19,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'lastfm',
+		'label'    => __( 'Lastfm', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 20,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'stackoverflow',
+		'label'    => __( 'Stackoverflow', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 21,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'quora',
+		'label'    => __( 'Quora', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 22,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'reddit',
+		'label'    => __( 'Reddit', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 23,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'medium',
+		'label'    => __( 'Medium', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 24,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'vimeo',
+		'label'    => __( 'Vimeo', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 25,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'lanyrd',
+		'label'    => __( 'Lanyrd', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 25.5,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'dribbble',
+		'label'    => __( 'Dribbble', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 26,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'behance',
+		'label'    => __( 'Behance', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 27,
+	] );
+	
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'codepen',
+		'label'    => __( 'Codepen', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 28,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'link',
+		'settings' => 'telegram',
+		'label'    => __( 'Telegram', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 29,
+	] );
+	
+
+
+	/*------------------------------------*\
+	  #Single Options
+	\*------------------------------------*/
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'publish_date',
+		'label'       => esc_html__( 'Show Publish Date', 'cavatina' ),
+		'section'     => 'single_options',
+		'default'     => '1',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'show_single_cat',
+		'label'       => esc_html__( 'Display Posts Category', 'cavatina' ),
+		'section'     => 'single_options',
+		'default'     => '1',
+		'priority'    => 11,
+	] );
+	
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'show_author',
+		'label'       => esc_html__( 'Show Author', 'cavatina' ),
+		'section'     => 'single_options',
+		'default'     => '1',
+		'priority'    => 20,
+	] );
+	
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'post_tags',
+		'label'       => esc_html__( 'Show Posts Tags', 'cavatina' ),
+		'section'     => 'single_options',
+		'default'     => '1',
+		'priority'    => 50,
+	] );
+
+	// Post Share icons Checkbox
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'post_share_icons',
+		'label'       => esc_html__( 'Display Share icons for posts', 'cavatina' ),
+		'section'     => 'single_options',
+		'default'     => '1',
+		'priority'    => 60,
+	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'post_thumbnail',
+		'label'       => esc_html__( 'Show Post Thumbnail', 'cavatina' ),
+		'section'     => 'single_options',
+		'default'     => '1',
+		'priority'    => 70,
+	] );
+
+	/*------------------------------------*\
+		#Archive Options
+	\*------------------------------------*/
+	// Show Archives Posts Categories
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'archives_posts_category',
+		'label'       => esc_html__( 'Show Archives Posts Categories', 'cavatina' ),
+		'section'     => 'archive_options',
+		'default'     => '1',
+		'priority'    => 20,
+	] );
+
+	// Display Date
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'archives_posts_date',
+		'label'       => esc_html__( 'Show Posts Date', 'cavatina' ),
+		'section'     => 'archive_options',
+		'default'     => '1',
+		'priority'    => 30,
+	] );
+	
+
+	/*------------------------------------*\
+	  #Projects Options
+	\*------------------------------------*/
+	// Enable Portfolios (Custom Post type) Category
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'projects_category',
+		'label'       => esc_html__( 'Display Project Category', 'cavatina' ),
+		'section'     => 'projects_options',
+		'default'     => '1',
+		'priority'    => 30,
+	] );
+	
+
+	// Enable Portfolios (Custom Post type) Category
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'projects_excerpt',
+		'label'       => esc_html__( 'Display Projects Excerpt', 'cavatina' ),
+		'section'     => 'projects_options',
+		'default'     => '1',
+		'priority'    => 30,
+	] );
+	
 }

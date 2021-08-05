@@ -44,6 +44,7 @@ const cleanCssTask = (cb) => {
 const concatJs = (cb) => {
   return gulp
     .src([
+      "./assets/src/js/iconify/iconify.js",
       "./node_modules/flickity/dist/flickity.pkgd.js",
       "./node_modules/flickity-sync/flickity-sync.js",
       "./node_modules/simplebar/dist/simplebar.js",
@@ -56,7 +57,7 @@ const concatJs = (cb) => {
 
 const concatMainJs = (cb) => {
   return gulp
-    .src(["./assets/src/js/*.js"])
+    .src(["./assets/src/js/*.js", "!./assets/src/js/iconify/iconify.js"])
     .pipe(concat("main.js"))
     .pipe(gulp.dest("assets/js"));
   cb();
@@ -78,7 +79,7 @@ const browserSyncTask = (cb) => {
 const watchTask = () => {
   gulp.watch("./assets/src/scss/**/*.scss", series(sassTask, cssConcatTask));
   gulp.watch("./assets/src/js/*.js", series(concatJs, concatMainJs));
-  gulp.watch("./**/*.php", browserSync.reload);
+  // gulp.watch("./**/*.php", browserSync.reload);
 };
 
 exports.default = parallel(

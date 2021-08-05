@@ -24,11 +24,14 @@
                 the_title( '<h3 class="c-post__entry-title c-post__entry-title--projects entry-title"><a class="c-post__entry-title__anchor" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
             endif;
             ?>
+
+            <?php if(get_theme_mod('projects_category' , true)) : ?>
             <div class="c-post__meta c-post__meta--left-space entry-meta">
                 <?php
                     echo '<span class="c-post__category">' .  esc_html( cavatina_get_category(true) ) .'</span>';
                 ?>
             </div><!-- .entry-meta -->
+            <?php endif; ?>
         </div>
     </header><!-- .entry-header -->
 
@@ -38,9 +41,11 @@
         </a>
     </div>
 
+    <?php if(get_theme_mod('projects_excerpt' , true)): ?>
     <div class="c-post__excerpt">
         <?php the_excerpt(); ?>
     </div>
+    <?php endif; ?>
 
     <div class="c-post__entery-content entry-content">
         <?php

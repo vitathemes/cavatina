@@ -21,7 +21,7 @@ get_header();
 </aside>
 
 <!-- Main content-->
-<main class="o-page__main o-page__main--no-bottom-space js-page__main">
+<main class="o-page__main  js-page__main">
     <div class="o-page__col c-content">
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-single' ); ?>>
             <div class="c-single__context" data-simplebar data-simplebar-auto-hide="false">

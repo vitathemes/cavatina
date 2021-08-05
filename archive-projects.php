@@ -20,7 +20,9 @@ get_header();
                         <?php esc_html_e( ' Category ', 'cavatina' ); ?>
                     </a>
                 </span>
-                <div class="c-aside__category"><?php cavatina_taxonomy_filter("c-aside__category__link" , " "); ?></div>
+                <div class="c-aside__category">
+                    <?php cavatina_taxonomy_filter("", "", false, "project_category"); ?>
+                </div>
             </div>
         </div>
     </div>
