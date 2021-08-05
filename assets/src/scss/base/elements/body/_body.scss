@@ -17,3 +17,9 @@ body {
     overflow: hidden;
   }
 }
+
+body.home {
+  @include media(mobile-only) {
+    padding-bottom: 0px;
+  }
+}

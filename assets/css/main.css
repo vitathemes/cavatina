@@ -2986,6 +2986,10 @@ img {
     background-size: 28px 28px;
     margin-left: 12px; }
 
+.c-carousel__title--flex {
+  display: flex;
+  align-items: center; }
+
 .c-carousel__slider {
   height: 40vh; }
   @media only screen and (min-width: 980px) {
@@ -4459,6 +4463,10 @@ body {
   body.has-no-scrollbar {
     height: 100%;
     overflow: hidden; }
+
+@media only screen and (max-width: 719px) {
+  body.home {
+    padding-bottom: 0px; } }
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
