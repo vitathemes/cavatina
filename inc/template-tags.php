@@ -568,7 +568,6 @@ if (! function_exists('cavatina_page_thumbnail_class')) :
 endif;
 
 
-
 if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 	/**
 	  * Display Social Networks

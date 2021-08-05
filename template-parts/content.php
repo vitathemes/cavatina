@@ -21,10 +21,14 @@
         <div class="c-post__meta entry-meta">
             <?php
             
+            if ( get_theme_mod('archives_posts_category' , true) ) {
                 echo '<div class="c-post__category">'. esc_html( cavatina_get_category( true ) ) .'</div>';
-                echo '<span class="o-bullet o-bullet--sm" tabindex="-1"></span>';
-				echo '<span class="c-post__date">'. esc_html( get_the_date( "M d.y" ) ) .'</span>';
+            }
 
+            if( get_theme_mod('archives_posts_date' , true) ) {
+                echo '<span class="o-bullet o-bullet--sm" tabindex="-1"></span>';
+                echo '<span class="c-post__date">'. esc_html( get_the_date( "M d.y" ) ) .'</span>';
+            }
 			?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->

@@ -100,9 +100,9 @@ if( function_exists( 'kirki' ) ) {
 		'priority'       => 210,
 	));
 
-	/* Blog Options */
-	Kirki::add_section( 'blog_options', array(
-		'title'          => esc_html__( 'Blog Options', 'cavatina' ),
+	/* Projects Options */
+	Kirki::add_section( 'projects_options', array(
+		'title'          => esc_html__( 'Projects Options', 'cavatina' ),
 		'panel'          => 'elements',
 		'priority'       => 220,
 	));
@@ -344,7 +344,7 @@ if( function_exists( 'kirki' ) ) {
 		
 		'output'      => [
 			[
-				//'element' => array( 'p' , 'ul' , 'ol', ".menu-item a" ),
+				'element' => array( 'p' , 'ul' , 'ol', ".menu-item a" ),
 			],
 		],
 	] );
@@ -563,6 +563,15 @@ if( function_exists( 'kirki' ) ) {
 		'default'     => '1',
 		'priority'    => 10,
 	] );
+
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'show_single_cat',
+		'label'       => esc_html__( 'Display Posts Category', 'cavatina' ),
+		'section'     => 'single_options',
+		'default'     => '1',
+		'priority'    => 11,
+	] );
 	
 	Kirki::add_field( 'cavatina', [
 		'type'        => 'toggle',
@@ -601,14 +610,52 @@ if( function_exists( 'kirki' ) ) {
 		'priority'    => 70,
 	] );
 
+	/*------------------------------------*\
+		#Archive Options
+	\*------------------------------------*/
+	// Show Archives Posts Categories
 	Kirki::add_field( 'cavatina', [
 		'type'        => 'toggle',
-		'settings'    => 'show_single_cat',
-		'label'       => esc_html__( 'Display Posts Category', 'cavatina' ),
-		'section'     => 'single_options',
+		'settings'    => 'archives_posts_category',
+		'label'       => esc_html__( 'Show Archives Posts Categories', 'cavatina' ),
+		'section'     => 'archive_options',
 		'default'     => '1',
-		'priority'    => 80,
+		'priority'    => 20,
+	] );
+
+	// Display Date
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'archives_posts_date',
+		'label'       => esc_html__( 'Show Posts Date', 'cavatina' ),
+		'section'     => 'archive_options',
+		'default'     => '1',
+		'priority'    => 30,
 	] );
 	
 
+	/*------------------------------------*\
+	  #Projects Options
+	\*------------------------------------*/
+	// Enable Portfolios (Custom Post type) Category
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'projects_category',
+		'label'       => esc_html__( 'Display Project Category', 'cavatina' ),
+		'section'     => 'projects_options',
+		'default'     => '1',
+		'priority'    => 30,
+	] );
+	
+
+	// Enable Portfolios (Custom Post type) Category
+	Kirki::add_field( 'cavatina', [
+		'type'        => 'toggle',
+		'settings'    => 'projects_excerpt',
+		'label'       => esc_html__( 'Display Projects Excerpt', 'cavatina' ),
+		'section'     => 'projects_options',
+		'default'     => '1',
+		'priority'    => 30,
+	] );
+	
 }
