@@ -3879,9 +3879,6 @@ img {
     .c-single__context {
       width: 50%;
       margin-top: 0;
-      padding-bottom: 5%; } }
-  @media only screen and (min-width: 1400px) {
-    .c-single__context {
       padding-bottom: 10%; } }
 
 .c-single__title {
