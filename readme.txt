@@ -1,7 +1,7 @@
 === Cavatina ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
-Tested up to: 5.7.2
+Tested up to: 5.8
 Requires PHP: 5.6
 Stable tag: 1.0.4
 License: GPL-3.0-or-later
@@ -32,7 +32,9 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 
 == Changelog ==
 
-= 1.0.5 =
+= 1.1.0 =
+* Add new social items for footer
+* Add new features to customizer
 * Update Theme screenshot
 * Update readme.txt ( Added info about enable a plugin and create a simple page Template )
 * Improve minor issues
