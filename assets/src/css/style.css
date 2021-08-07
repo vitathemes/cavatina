@@ -1902,6 +1902,9 @@ img {
   .c-social-media__item .c-social-media__icon:hover {
     color: #000000; }
 
+.c-social-share--footer {
+  display: flex; }
+
 /*------------------------------------*\
   #Blog social media
 \*------------------------------------*/

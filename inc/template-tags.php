@@ -703,7 +703,7 @@ if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 			}
 
 			if ( $cavatina_phone_number ) {
-				echo sprintf( '<a href="tel:%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify"  data-icon="bx:bxs-phone" ></span></a>', esc_url( $$cavatina_phone_number ), esc_html__( 'Phone Number', 'cavatina' ) );
+				echo sprintf( '<a href="tel:%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify"  data-icon="bx:bxs-phone" ></span></a>', esc_html( $cavatina_phone_number ), esc_html__( 'Phone Number', 'cavatina' ) );
 			}
 
 			echo '</div>';
