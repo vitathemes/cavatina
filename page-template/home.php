@@ -56,7 +56,8 @@ get_header();
             ?>
         <div class="c-aside__carousel">
             <div class="c-carousel c-carousel--aside">
-                <h4 class="c-carousel__title"><?php esc_html_e( 'Recent Projects', 'cavatina' ); ?></h4>
+                <h4 class="c-carousel__title c-carousel__title--flex">
+                    <?php esc_html_e( 'Recent Projects', 'cavatina' ); ?></h4>
                 <div class="c-carousel__post-titles js-carousel__post-titles">
                     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <?php the_title( '<a href="'. esc_url( get_permalink() ) .'" class="c-carousel__post-title js-carousel__post-title"><span class="o-bullet-decimal-numeric"></span><p class="c-carousel__post-title__text js-carousel__post-title__text">', '</p></a>' ); ?>
@@ -72,7 +73,7 @@ get_header();
 <main class="o-page__main js-page__main o-page__main--home">
     <div class="o-page__col c-content c-content--home">
         <div class="c-carousel">
-            <p class="c-carousel__title c-carousel__title--home">
+            <p class="c-carousel__title c-carousel__title--flex c-carousel__title--home">
                 <?php esc_html_e( 'Recent Projects', 'cavatina' ); ?>
             </p>
             <div class="c-carousel__slider">

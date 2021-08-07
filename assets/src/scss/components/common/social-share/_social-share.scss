@@ -4,6 +4,7 @@
 .c-social-media {
   transition: 1s all;
 }
+
 .c-social-media__item {
   margin-right: 18px;
   transition: 0.2s all;
@@ -26,6 +27,11 @@
     }
   }
 }
+
+.c-social-share--footer {
+  display: flex;
+}
+
 /*------------------------------------*\
   #Blog social media
 \*------------------------------------*/

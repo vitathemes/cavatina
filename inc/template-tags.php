@@ -595,12 +595,13 @@ if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 		$cavatina_behance    		=  get_theme_mod( 'behance', "" );
 		$cavatina_codepen    		=  get_theme_mod( 'codepen', "" );
 		$cavatina_telegram    		=  get_theme_mod( 'telegram', "" );
+		$cavatina_phone_number    	=  get_theme_mod( 'phone_number', "" );
 
 
 		// If variable was not empty will display the icons
 		$cavatina_social_variables  = array($cavatina_facebook,$cavatina_twitter,$cavatina_instagram,$cavatina_linkedin,$cavatina_github,
 		$cavatina_mail, $cavatina_pinterest ,$cavatina_youtube ,$cavatina_spotify , $cavatina_gitlab,$cavatina_lastfm ,$cavatina_stackoverflow ,$cavatina_quora ,$cavatina_reddit ,$cavatina_medium ,
-		$cavatina_vimeo, $cavatina_lanyrd,$cavatina_dribbble ,$cavatina_behance,$cavatina_codepen,$cavatina_telegram
+		$cavatina_vimeo, $cavatina_lanyrd,$cavatina_dribbble ,$cavatina_behance,$cavatina_codepen,$cavatina_telegram,$cavatina_phone_number
 		);
 
 		// Check if one of the variables are not empty 
@@ -699,6 +700,10 @@ if ( ! function_exists( 'cavatina_get_social_media' ) ) :
 			
 			if ( $cavatina_telegram ) {
 				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify"  data-icon="akar-icons:telegram-fill" ></span></a>', esc_url( $cavatina_telegram ), esc_html__( 'codepen', 'cavatina' ) );
+			}
+
+			if ( $cavatina_phone_number ) {
+				echo sprintf( '<a href="tel:%s" aria-label="%s" class="c-social-media__item" target="_blank"><span class="c-social-media__icon iconify"  data-icon="bx:bxs-phone" ></span></a>', esc_html( $cavatina_phone_number ), esc_html__( 'Phone Number', 'cavatina' ) );
 			}
 
 			echo '</div>';

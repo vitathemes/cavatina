@@ -110,7 +110,7 @@ if( function_exists( 'kirki' ) ) {
 	// typography settings  
 	Kirki::add_section( 'typography_headings', array(
 		'title'          => esc_html__( 'Typography Setting', 'cavatina' ),
-		'description'    => esc_html__( 'Change Typography color and customize them.', 'cavatina' ),
+		'description'    => esc_html__( 'Change typography color and customize them.', 'cavatina' ),
 		'panel'          => '',
 		'priority'       => 160,
 	) );
@@ -550,8 +550,14 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 29,
 	] );
 	
-
-
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'text',
+		'settings' => 'phone_number',
+		'label'    => __( 'Phone Number', 'cavatina' ),
+		'section'  => 'social_media',
+		'priority' => 30,
+	] );
+	
 	/*------------------------------------*\
 	  #Single Options
 	\*------------------------------------*/

@@ -68,6 +68,11 @@
   }
 }
 
+.c-carousel__title--flex {
+  display: flex;
+  align-items: center;
+}
+
 .c-carousel__slider {
   height: 40vh;
 
@@ -326,13 +331,17 @@
 
   @include media(tablet) {
     height: unset;
+    object-position: center;
+  }
+
+  @include media(wide) {
+    object-position: top;
   }
 }
 
 /*------------------------------------*\
   #modifier
 \*------------------------------------*/
-
 .c-carousel__single__slider--full-width {
   left: 0;
   .c-single__slider__cell {
