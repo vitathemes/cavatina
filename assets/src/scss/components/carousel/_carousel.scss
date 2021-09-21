@@ -117,7 +117,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 200%;
-  color: $cavatina__main-primary-color;
+  color: $cavatina_primary_color;
 
   @include media(tablet) {
     margin-top: 11px;
@@ -166,7 +166,7 @@
   line-height: 17px;
   /* identical to box height */
 
-  color: $cavatina__main-primary-color;
+  color: $cavatina_primary_color;
   @include media(tablet) {
     display: none;
   }

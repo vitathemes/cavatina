@@ -115,7 +115,7 @@
     color: $cavatina__main-primary-light-color;
 
     &:hover {
-      color: #000000;
+      color: $cavatina_primary_color;
     }
   }
 
@@ -177,7 +177,7 @@
   line-height: 166.3%;
   font-family: $font__regular;
   letter-spacing: 0.1em;
-  color: $cavatina__service-error-color;
+  color: $cavatina_accent_color;
 
   &::first-letter {
     text-transform: uppercase;
@@ -189,7 +189,7 @@
   border: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
-  color: $cavatina__service-error-color;
+  color: $cavatina_accent_color;
   font-size: 12px;
   line-height: 166.3%;
 }

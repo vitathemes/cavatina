@@ -32,6 +32,10 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 
 == Changelog ==
 
+= 1.1.1 =
+* Improve design styling
+* Add new feature to customizer
+
 = 1.1.0 =
 * Add new social items for footer
 * Add new features to customizer

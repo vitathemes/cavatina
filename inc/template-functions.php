@@ -73,10 +73,18 @@ function cavatina_typography() {
 	} else {
 		$cavatina_secondary_color = get_theme_mod( 'typography_secondary_color' );
 	}
+	if ( get_theme_mod( 'typography_accent_color' ) == "" ) {
+		$cavatina_accent_color = "#ff3636";
+	} else {
+		$cavatina_accent_color = get_theme_mod( 'typography_accent_color' );
+	}
+	
+	
 	
 	$html = ':root {	
 	            --cavatina_primary-color: '. $cavatina_primary_color .';
 	            --cavatina_secondary-color: ' . $cavatina_secondary_color . ';
+				--cavatina_accent-color: ' . $cavatina_accent_color . ';
 			}';
 					
 	return $html;

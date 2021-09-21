@@ -291,6 +291,14 @@
   }
 }
 
+.o-page__main__content--404 {
+  width: max-content;
+
+  .c-social-share {
+    justify-content: center;
+  }
+}
+
 /*------------------------------------*\
   #Carousel Image showcase
 \*------------------------------------*/

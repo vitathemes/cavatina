@@ -159,5 +159,3 @@ function cavatina_register_required_plugins() {
 	);
     tgmpa( $plugins, $config );
 }
-
-?>

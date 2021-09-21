@@ -145,7 +145,7 @@
 
   a {
     &:hover {
-      color: $cavatina__main-primary-color;
+      color: $cavatina_primary_color;
     }
   }
 }
@@ -168,7 +168,7 @@
   word-wrap: break-word;
   font-size: 14px;
   &:hover {
-    color: $cavatina__main-primary-color !important;
+    color: $cavatina_primary_color !important;
   }
 }
 
@@ -178,7 +178,7 @@
   color: $cavatina_secondary_color !important;
 
   &:hover {
-    color: $cavatina__main-primary-color !important;
+    color: $cavatina_primary_color !important;
   }
   @include media(tablet) {
     font-size: 14px;
@@ -229,7 +229,7 @@
 }
 .c-post__entery-content {
   margin-top: 16px;
-  color: #000000;
+  color: $cavatina_primary_color;
   p {
     line-height: 200%;
     font-size: 14px;

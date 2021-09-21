@@ -17,7 +17,7 @@
                 <?php esc_html_e( 'back to home and start again ', 'cavatina' ); ?>
             </h2>
         </header><!-- .o-page__main__header -->
-        <div class="o-page__main__content">
+        <div class="o-page__main__content o-page__main__content--404">
             <div class="c-social-media c-social-media--404">
                 <?php cavatina_get_social_media(); ?>
             </div>
