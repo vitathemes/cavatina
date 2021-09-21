@@ -21,7 +21,7 @@ textarea {
   color: $cavatina__main-primary-light-color;
   background-color: transparent;
   border: 0;
-  border-bottom: 1px solid $cavatina__main-primary-color;
+  border-bottom: 1px solid $cavatina_primary_color;
   width: 100%;
   font-size: 12px;
   min-height: max-content;
@@ -104,7 +104,7 @@ textarea {
 }
 input.error,
 textarea.error {
-  color: #000000;
+  color: $cavatina_primary_color;
 }
 
 /* remore X button from inputs */

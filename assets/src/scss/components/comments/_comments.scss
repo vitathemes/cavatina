@@ -188,7 +188,7 @@
       display: flex;
       align-items: flex-start;
       padding-top: 8px;
-      color: $cavatina__main-primary-color;
+      color: $cavatina_primary_color;
 
       @include media(tablet) {
         position: relative;
@@ -234,7 +234,7 @@
       color: $cavatina_secondary_color;
 
       &:hover {
-        color: $cavatina__main-primary-color;
+        color: $cavatina_primary_color;
       }
     }
   }
@@ -313,7 +313,7 @@
   margin-left: 16px;
 
   &:hover {
-    color: $cavatina__main-primary-color;
+    color: $cavatina_primary_color;
   }
 }
 
@@ -322,7 +322,7 @@
   color: $cavatina_secondary_color;
 
   &:hover {
-    color: $cavatina__main-primary-color;
+    color: $cavatina_primary_color;
   }
 }
 
@@ -360,7 +360,7 @@
     color: $cavatina_secondary_color !important;
 
     &:hover {
-      color: $cavatina__main-primary-color !important ;
+      color: $cavatina_primary_color !important ;
     }
   }
 }

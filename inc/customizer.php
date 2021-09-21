@@ -184,7 +184,18 @@ if( function_exists( 'kirki' ) ) {
 		'priority'    => 9,
 		
 	] );
+	
 
+	Kirki::add_field( 'cavatina', [
+		'type'     => 'color',
+		'settings' => 'typography_accent_color',
+		'label'    => __( 'Accent Color', 'cavatina' ),
+		'section'  => 'typography_headings',
+		'default'  => '#ff3636',
+		'priority'    => 9,
+		
+	] );
+	
 
 	// Headings typography h1
 	Kirki::add_field( 'cavatina_theme', [

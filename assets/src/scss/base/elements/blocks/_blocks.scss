@@ -4,7 +4,7 @@
 .wp-block-button.is-style-outline {
   .wp-block-button__link {
     border: 1px solid $cavatina__main-primary-light-color;
-    color: $cavatina__main-primary-color !important;
+    color: $cavatina_primary_color !important;
     &:hover {
       background-color: #d2d2d2;
     }
@@ -98,9 +98,9 @@ figcaption {
   padding: 12px 25px;
   border: none;
   font-weight: var(--heading-typography-variant);
-  background-color: $cavatina__main-primary-color;
+  background-color: $cavatina_primary_color;
   border-radius: $global-radius;
-  background: #000000;
+  background: $cavatina_primary_color;
   border-radius: 5px;
   font-size: 14px;
   color: $cavatina__neutral-white;

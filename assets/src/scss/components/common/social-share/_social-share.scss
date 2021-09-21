@@ -13,7 +13,7 @@
 .c-social-media__item {
   &:hover {
     .c-social-media__icon {
-      fill: $cavatina__main-primary-color;
+      fill: $cavatina_primary_color;
     }
   }
 
@@ -23,7 +23,7 @@
     fill: $cavatina_secondary_color;
 
     &:hover {
-      color: $cavatina__main-primary-color;
+      color: $cavatina_primary_color;
     }
   }
 }
