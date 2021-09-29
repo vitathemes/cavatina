@@ -195,11 +195,11 @@
 
     @include media(tablet) {
         display: block;
-        padding-bottom: 0%;
+        padding-bottom: 10%;
     }
 
     @include media(wide) {
-        padding-bottom: 0%;
+        padding-bottom: 10%;
     }
 
     .c-nav {

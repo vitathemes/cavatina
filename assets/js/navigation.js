@@ -143,36 +143,6 @@
         }
     });
 
-    /*--------------------------------------------------------*\
-      #Remove the .toggled class and set aria-expanded to false
-       when the user clicks outside the navigation.
-    \*--------------------------------------------------------*/
-    document.addEventListener("click", function (event) {
-        // const isClickInside = siteNavigation.contains(event.target);
-        // let pageMain = document.querySelector(".o-page__main");
-        // let overlay = document.querySelector(".js-overlay");
-        // let aside = document.querySelector(".js-aside");
-        // const searchOverlay = document.querySelector(".js-search__overlay");
-        // if (!isClickInside) {
-        //     if (document.querySelector("body").getElementsByClassName("o-overlay")[0]) {
-        //         overlay.classList.remove("o-overlay--active");
-        //         searchOverlay.classList.remove("o-page__main--blur");
-        //         pageMain.classList.remove("o-page__main--blur");
-        //         if (document.querySelector("body").getElementsByClassName("c-aside")[0]) {
-        //             aside.classList.remove("c-aside--blur");
-        //         }
-        //     }
-        //     siteNavigation.classList.remove("toggled");
-        //     button.setAttribute("aria-expanded", "false");
-        //     if (!cavatina_isMobile(cavatina_clientWindowSize)) {
-        //         menuLogo.classList.toggle("is-open");
-        //     }
-        //     if (siteNavigation.classList.contains("is-open")) {
-        //         siteNavigation.classList.remove("is-open");
-        //     }
-        // }
-    });
-
     /*-------------------------------------------*\
       #Focus handler 
     \*-------------------------------------------*/
