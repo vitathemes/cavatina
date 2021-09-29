@@ -2122,6 +2122,15 @@ img {
   top: 10px;
   left: 0px; }
 
+.c-header__search:focus .c-header__search--toggle > .magnifier-icon .magnifier-handle-x, .c-header__search:active .c-header__search--toggle > .magnifier-icon .magnifier-handle-x, .c-header__search:hover .c-header__search--toggle > .magnifier-icon .magnifier-handle-x {
+  background: #767676; }
+
+.c-header__search:focus .magnifier-handle-x, .c-header__search:active .magnifier-handle-x, .c-header__search:hover .magnifier-handle-x {
+  border: 1px solid #767676; }
+
+.c-header__search:focus .magnifier-handle, .c-header__search:active .magnifier-handle, .c-header__search:hover .magnifier-handle {
+  background: #767676; }
+
 /* Navigation
 --------------------------------------------- */
 /*------------------------------------*\

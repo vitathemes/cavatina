@@ -429,3 +429,21 @@ $dimensions-close: 36px;
     top: 10px;
     left: 0px;
 }
+
+.c-header__search {
+    &:focus,
+    &:active,
+    &:hover {
+        .c-header__search--toggle > .magnifier-icon .magnifier-handle-x {
+            background: $color__border-button-hover;
+        }
+
+        .magnifier-handle-x {
+            border: 1px solid $color__border-button-hover;
+        }
+
+        .magnifier-handle {
+            background: $color__border-button-hover;
+        }
+    }
+}
