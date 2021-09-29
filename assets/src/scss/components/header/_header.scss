@@ -50,6 +50,11 @@
             height: max-content;
             padding-left: 50px;
             padding-right: 16px;
+            padding-bottom: 45%;
+        }
+
+        @include media(ultra-wide) {
+            padding-bottom: 25%;
         }
     }
 
@@ -289,10 +294,7 @@
 
     @include media(tablet) {
         width: 100%;
-        margin-bottom: 50%;
         padding-right: 8px;
-
-        // in org menu
         margin-bottom: 0px;
         position: relative;
     }

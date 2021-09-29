@@ -96,4 +96,10 @@
             @content;
         }
     }
+
+    @if ultra-wide == $res {
+        @media only screen and (min-width: #{$breakpoint_3xl}) {
+            @content;
+        }
+    }
 }

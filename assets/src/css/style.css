@@ -33,85 +33,85 @@
   --responsive--alignwide-width: 100%;
   --responsive--alignfull-width: 100%;
   --responsive--alignwide-width-multiplier: calc(
-    16 * var(--global--spacing-horizontal)
-  );
+        16 * var(--global--spacing-horizontal)
+    );
   --responsive--alignright-margin: var(--global--spacing-horizontal);
   --responsive--alignleft-margin: var(--global--spacing-horizontal); }
 
 @media only screen and (min-width: 720px) {
   :root {
     --responsive--aligndefault-width: calc(
-      720px - var(--responsive--spacing-horizontal)
-    );
+            720px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignwide-width: calc(
-      720px - var(--responsive--spacing-horizontal)
-    );
+            720px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        );
     --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    ); } }
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        ); } }
 
 @media only screen and (min-width: 980px) {
   :root {
     --responsive--aligndefault-width: calc(
-      980px - var(--responsive--spacing-horizontal)
-    );
+            980px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignwide-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
+            1140px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        );
     --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    ); } }
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        ); } }
 
 @media only screen and (min-width: 1140px) {
   :root {
     --responsive--aligndefault-width: calc(
-      980px - var(--responsive--spacing-horizontal)
-    );
+            980px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignwide-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
+            1140px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        );
     --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    ); } }
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        ); } }
 
 @media only screen and (min-width: 1200px) {
   :root {
     --responsive--aligndefault-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
+            1140px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignwide-width: calc(
-      1200px - var(--responsive--spacing-horizontal)
-    );
+            1200px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        );
     --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    ); } }
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        ); } }
 
 @media only screen and (min-width: 1400px) {
   :root {
     --responsive--aligndefault-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
+            1140px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignwide-width: calc(
-      1200px - var(--responsive--spacing-horizontal)
-    );
+            1200px - var(--responsive--spacing-horizontal)
+        );
     --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        );
     --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    ); } }
+            0.5 * (100vw - var(--responsive--aligndefault-width))
+        ); } }
 
 /**
  * Extends
@@ -1479,7 +1479,12 @@ img {
   .c-header--home .c-header__wrapper {
     height: max-content;
     padding-left: 50px;
-    padding-right: 16px; } }
+    padding-right: 16px;
+    padding-bottom: 45%; } }
+
+@media only screen and (min-width: 1600px) {
+  .c-header--home .c-header__wrapper {
+    padding-bottom: 25%; } }
 
 @media only screen and (min-width: 980px) {
   .c-header--home .c-header__search {
@@ -1659,7 +1664,6 @@ img {
   @media only screen and (min-width: 980px) {
     .c-header__logo {
       width: 100%;
-      margin-bottom: 50%;
       padding-right: 8px;
       margin-bottom: 0px;
       position: relative; } }
