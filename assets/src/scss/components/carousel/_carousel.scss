@@ -2,214 +2,222 @@
   #Carousel
 \*------------------------------------*/
 .c-carousel {
-  width: 100%;
-  height: 90%;
-  text-align: left;
-  margin-top: 0px;
-  display: flex;
-  flex-direction: column;
-  @include media(tablet) {
-    width: 90%;
-    height: 80%;
-    margin-top: 7%;
-    margin-left: 5%;
-  }
+    width: 100%;
+    height: 90%;
+    text-align: left;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    @include media(tablet) {
+        width: 90%;
+        height: 80%;
+        margin-top: 7%;
+        margin-left: 5%;
+    }
 }
 
 .c-carousel--aside {
-  margin-left: 0;
-  height: 22vh;
-  width: 100%;
+    margin-left: 0;
+    height: 22vh;
+    width: 100%;
 
-  @include media(tablet) {
-    margin-bottom: 16px;
-    padding-top: 25px;
-  }
-  @include media(wide) {
-    height: 20vh;
-  }
+    @include media(tablet) {
+        margin-bottom: 16px;
+        padding-top: 25px;
+    }
+    @include media(wide) {
+        height: 20vh;
+    }
 }
 
 .c-carousel__context {
-  height: 100%;
-  background: transparent;
-  opacity: 0;
-
-  .flickity-viewport {
     height: 100%;
-  }
+    background: transparent;
+    opacity: 0;
 
-  .flickity-slider {
-    margin-left: -16px;
-
-    @include media(tablet) {
-      margin-left: 0px;
+    .flickity-viewport {
+        height: 100%;
     }
-  }
+
+    .flickity-slider {
+        margin-left: -16px;
+
+        @include media(tablet) {
+            margin-left: 0px;
+        }
+
+        @include media(landscape) {
+            margin-left: -10vh;
+        }
+    }
 }
 
 .c-carousel__title {
-  font-style: normal;
-  font-weight: normal;
+    font-style: normal;
+    font-weight: normal;
 
-  color: $cavatina_secondary_color;
-  margin: 0 0 24px 0;
+    color: $cavatina_secondary_color;
+    margin: 0 0 24px 0;
 
-  @include media(tablet) {
-    margin: 0;
-  }
+    @include media(tablet) {
+        margin: 0;
+    }
 
-  &::after {
-    content: url("data:image/svg+xml,%3Csvg width='17' height='4' viewBox='0 0 17 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.1768 2.17678C16.2744 2.07915 16.2744 1.92086 16.1768 1.82322L14.5858 0.232234C14.4882 0.134603 14.3299 0.134603 14.2322 0.232234C14.1346 0.329865 14.1346 0.488157 14.2322 0.585788L15.6464 2L14.2322 3.41421C14.1346 3.51185 14.1346 3.67014 14.2322 3.76777C14.3299 3.8654 14.4882 3.8654 14.5858 3.76777L16.1768 2.17678ZM-2.18557e-08 2.25L16 2.25L16 1.75L2.18557e-08 1.75L-2.18557e-08 2.25Z' fill='%238A8A8A'/%3E%3C/svg%3E%0A");
-    vertical-align: text-bottom;
-    display: inline-block;
-    background-size: 28px 28px;
-    margin-left: 12px;
-  }
+    &::after {
+        content: url("data:image/svg+xml,%3Csvg width='17' height='4' viewBox='0 0 17 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.1768 2.17678C16.2744 2.07915 16.2744 1.92086 16.1768 1.82322L14.5858 0.232234C14.4882 0.134603 14.3299 0.134603 14.2322 0.232234C14.1346 0.329865 14.1346 0.488157 14.2322 0.585788L15.6464 2L14.2322 3.41421C14.1346 3.51185 14.1346 3.67014 14.2322 3.76777C14.3299 3.8654 14.4882 3.8654 14.5858 3.76777L16.1768 2.17678ZM-2.18557e-08 2.25L16 2.25L16 1.75L2.18557e-08 1.75L-2.18557e-08 2.25Z' fill='%238A8A8A'/%3E%3C/svg%3E%0A");
+        vertical-align: text-bottom;
+        display: inline-block;
+        background-size: 28px 28px;
+        margin-left: 12px;
+    }
 }
 
 .c-carousel__title--flex {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .c-carousel__slider {
-  height: 40vh;
+    height: 40vh;
 
-  @include media(tablet) {
-    height: 90%;
-  }
+    @include media(tablet) {
+        height: 90%;
+    }
+
+    @include media(landscape) {
+        height: 360px;
+    }
 }
 
 .c-carousel__title--home {
-  width: max-content;
-  text-align: left;
-  margin-left: 5%;
+    width: max-content;
+    text-align: left;
+    margin-left: 5%;
 
-  @include media(tablet) {
-    display: none;
-  }
+    @include media(tablet) {
+        display: none;
+    }
 }
 
 .c-carousel__cell {
-  width: 80%;
-  height: 100%;
-  margin-right: 10px;
-  counter-increment: gallery-cell;
+    width: 80%;
+    height: 100%;
+    margin-right: 10px;
+    counter-increment: gallery-cell;
 
-  @include media(tablet) {
-    width: 100%;
-  }
+    @include media(tablet) {
+        width: 100%;
+    }
 }
 
 .c-carousel__image {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .c-carousel__post-title {
-  counter-reset: section;
-  width: max-content;
-  transition: 0.2s all;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 200%;
-  color: $cavatina_primary_color;
+    counter-reset: section;
+    width: max-content;
+    transition: 0.2s all;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 200%;
+    color: $cavatina_primary_color;
 
-  @include media(tablet) {
-    margin-top: 11px;
-    margin-bottom: 32px;
+    @include media(tablet) {
+        margin-top: 11px;
+        margin-bottom: 32px;
 
-    width: 100%;
-    padding-left: 1px;
-  }
+        width: 100%;
+        padding-left: 1px;
+    }
 
-  &:hover {
-    color: $cavatina__main-primary-light-color;
-  }
+    &:hover {
+        color: $cavatina__main-primary-light-color;
+    }
 }
 
 .c-carousel__post-title__text {
-  width: max-content;
-  color: $cavatina_primary_color;
-  display: inline;
-  transition: 0.2s all;
-  font-size: 14px;
-  &:hover {
-    color: $cavatina__main-primary-light-color;
-  }
+    width: max-content;
+    color: $cavatina_primary_color;
+    display: inline;
+    transition: 0.2s all;
+    font-size: 14px;
+    &:hover {
+        color: $cavatina__main-primary-light-color;
+    }
 }
 
 .c-carousel__more {
-  font-size: 14px;
-  color: $cavatina_primary_color !important;
+    font-size: 14px;
+    color: $cavatina_primary_color !important;
 
-  &:hover {
-    color: $cavatina__main-primary-light-color !important;
-  }
+    &:hover {
+        color: $cavatina__main-primary-light-color !important;
+    }
 
-  @include media(tablet) {
-    margin: 0;
-  }
+    @include media(tablet) {
+        margin: 0;
+    }
 }
 
 .c-carousel__more--home {
-  margin-top: 78px;
-  margin-left: 5%;
-  margin-bottom: 66px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-
-  color: $cavatina_primary_color;
-  @include media(tablet) {
-    display: none;
-  }
+    margin-top: 78px;
+    margin-left: 5%;
+    margin-bottom: 66px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    width: max-content;
+    color: $cavatina_primary_color;
+    @include media(tablet) {
+        display: none;
+    }
 }
 
 .c-carousel__post-titles {
-  width: 100%;
-  height: max-content;
-  opacity: 0;
-
-  .flickity-viewport {
     width: 100%;
-    height: 100%;
-    max-height: 100px;
-  }
+    height: max-content;
+    opacity: 0;
 
-  .flickity-slider {
-    width: 100%;
-    height: 100%;
-  }
+    .flickity-viewport {
+        width: 100%;
+        height: 100%;
+        max-height: 100px;
+    }
+
+    .flickity-slider {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .c-carousel__post-titles--mobile {
-  .flickity-slider {
-    margin-left: 5%;
-  }
-
-  .c-carousel__post-title {
-    width: 95%;
-    height: 30px;
-    overflow: hidden;
-    margin-top: 5%;
-    padding-right: 32px;
-    @include media(tablet) {
-      display: none;
+    .flickity-slider {
+        margin-left: 5%;
     }
-  }
 
-  @include media(tablet) {
     .c-carousel__post-title {
-      display: none;
+        width: 95%;
+        height: 30px;
+        overflow: hidden;
+        margin-top: 5%;
+        padding-right: 32px;
+        @include media(tablet) {
+            display: none;
+        }
     }
-  }
+
+    @include media(tablet) {
+        .c-carousel__post-title {
+            display: none;
+        }
+    }
 }
 
 /*------------------------------------*\
@@ -217,147 +225,147 @@
 \*------------------------------------*/
 
 .c-carousel__single__slider {
-  width: 100%;
-  left: 0;
-  height: max-content;
-  transition: 1s all;
-  background-color: $color__background-body;
-  right: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin-top: 24px;
-  z-index: 5;
-
-  @include media(tablet) {
     width: 100%;
-    height: 100%;
-    left: 50%;
-    position: absolute;
-    margin-top: 0;
-  }
-
-  &:focus {
-    outline: none !important;
-  }
-
-  .flickity-viewport {
-    width: 100%;
-    height: 140px;
-    margin-right: -0.5%;
+    left: 0;
+    height: max-content;
+    transition: 1s all;
+    background-color: $color__background-body;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 24px;
+    z-index: 5;
 
     @include media(tablet) {
-      width: 100%;
-      height: 95%;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        margin-top: 0;
     }
-  }
 
-  .flickity-slider {
-    @include media(tablet) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    &:focus {
+        outline: none !important;
     }
-  }
 
-  .flickity-page-dots {
-    padding-left: 16px;
-    padding-right: 16px;
-    bottom: -15px;
-    .dot {
-      width: 30%;
+    .flickity-viewport {
+        width: 100%;
+        height: 140px;
+        margin-right: -0.5%;
+
+        @include media(tablet) {
+            width: 100%;
+            height: 95%;
+        }
     }
-  }
+
+    .flickity-slider {
+        @include media(tablet) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .flickity-page-dots {
+        padding-left: 16px;
+        padding-right: 16px;
+        bottom: -15px;
+        .dot {
+            width: 30%;
+        }
+    }
 }
 
 .c-carousel__single__cell {
-  min-width: 90%;
-  max-width: 600px;
-  height: 100%;
-  transition: 1s all;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @include media(tablet) {
-    transition: 1s all;
-    padding-left: 24px;
-    padding-right: 24px;
-    min-width: 30%;
-  }
-
-  @include media(laptop) {
-    max-width: 550px;
-    width: max-content;
-  }
-
-  @include media(wide) {
+    min-width: 90%;
     max-width: 600px;
-  }
+    height: 100%;
+    transition: 1s all;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media(tablet) {
+        transition: 1s all;
+        padding-left: 24px;
+        padding-right: 24px;
+        min-width: 30%;
+    }
+
+    @include media(laptop) {
+        max-width: 550px;
+        width: max-content;
+    }
+
+    @include media(wide) {
+        max-width: 600px;
+    }
 }
 
 .c-carousel__single__cell--page {
-  width: 100%;
-  @include media(laptop) {
-    width: 50%;
-  }
+    width: 100%;
+    @include media(laptop) {
+        width: 50%;
+    }
 }
 
 .flickity-page-dots {
-  bottom: -23%;
-  @include media(tablet) {
-    bottom: -24px;
-  }
+    bottom: -23%;
+    @include media(tablet) {
+        bottom: -24px;
+    }
 }
 .c-carousel__single__image {
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
 .c-carousel__single__cell__image {
-  max-width: 100%;
-  border-radius: 10px;
-  max-height: 100%;
-  width: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    max-height: 100%;
+    width: auto;
 }
 
 .c-carousel__single__cell_image--page {
-  cursor: auto;
-  width: 100%;
-  object-position: top;
-  object-fit: cover;
-  height: 100%;
-
-  @include media(tablet) {
-    height: unset;
-    object-position: center;
-  }
-
-  @include media(wide) {
+    cursor: auto;
+    width: 100%;
     object-position: top;
-  }
+    object-fit: cover;
+    height: 100%;
+
+    @include media(tablet) {
+        height: unset;
+        object-position: center;
+    }
+
+    @include media(wide) {
+        object-position: top;
+    }
 }
 
 /*------------------------------------*\
   #modifier
 \*------------------------------------*/
 .c-carousel__single__slider--full-width {
-  left: 0;
-  .c-single__slider__cell {
-    width: 90%;
-    padding-left: 10%;
-    padding-right: 10%;
+    left: 0;
+    .c-single__slider__cell {
+        width: 90%;
+        padding-left: 10%;
+        padding-right: 10%;
 
-    @include media(wide) {
-      padding-left: 15%;
-      padding-right: 15%;
+        @include media(wide) {
+            padding-left: 15%;
+            padding-right: 15%;
+        }
     }
-  }
 }
 
 .c-carousel__single__slider--page {
-  .dot {
-    display: none;
-  }
+    .dot {
+        display: none;
+    }
 }

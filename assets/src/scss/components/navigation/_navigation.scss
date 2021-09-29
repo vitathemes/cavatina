@@ -1,67 +1,54 @@
 /*------------------------------------*\
   #Navigation
 \*------------------------------------*/
+
+.s-nav {
+    list-style-type: none;
+
+    .menu-item {
+    }
+}
 .c-nav {
-  width: 100%;
-  max-height: 0;
-  transition: 1s ease-in-out;
-  transition-delay: 0s;
-  overflow: hidden;
-  margin-left: 8px;
-  order: 3;
-  opacity: 0;
-  visibility: hidden;
-
-  @include media(tablet) {
-    display: none;
-    order: 1;
-  }
-
-  .sub-menu {
-    display: none;
-  }
+    .sub-menu {
+        display: none;
+    }
 }
 
 .s-nav {
-  list-style-type: none;
-  margin: 2%;
+    list-style-type: none;
 
-  @include media(tablet) {
-    margin: 0;
-  }
+    .menu-item {
+        line-height: 17px;
+        margin-bottom: 24px;
 
-  .menu-item {
-    line-height: 17px;
+        @include media(tablet) {
+            margin-bottom: 12px;
+        }
 
-    a {
-      font-size: 19px !important;
-      line-height: 23px !important;
+        a {
+            font-size: 19px !important;
+            line-height: 23px !important;
 
-      @include media(tablet) {
-        font-size: 14px !important;
-        line-height: 17px !important;
-      }
+            @include media(tablet) {
+                font-size: 14px !important;
+                line-height: 17px !important;
+            }
+        }
     }
-  }
 }
 
 .menu-item {
-  margin-bottom: 24px;
-  @include media(tablet) {
-    margin-bottom: 10px;
-  }
+    a {
+        font-size: 19px;
+        color: $cavatina_primary_color !important;
 
-  a {
-    font-size: 19px;
-    color: $cavatina_primary_color !important;
+        @include media(tablet) {
+            font-size: 14px;
+            line-height: 17px;
+        }
 
-    @include media(tablet) {
-      font-size: 14px;
-      line-height: 17px;
+        &:hover {
+            color: $cavatina__main-primary-light-color !important;
+        }
     }
-
-    &:hover {
-      color: $cavatina__main-primary-light-color !important;
-    }
-  }
 }

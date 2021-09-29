@@ -193,7 +193,7 @@ function cavatina_handle_logo(){
 	else {
 
 		echo '<a class="c-header__logo__anchor" href="'.esc_url( home_url() ).'">';
-        echo '<h1 class="c-header__logo__text">'. esc_html( get_bloginfo( 'name' ) ) .'</h1>';
+        echo '<h1 class="c-header__logo__text h2">'. esc_html( get_bloginfo( 'name' ) ) .'</h1>';
 		echo "</a>";
 		
     }
@@ -447,6 +447,24 @@ if (! function_exists('cavatina_get_page_class')) :
 		}
 		else{
 			echo esc_attr( "o-page js-page" );
+		}
+	}
+endif;
+
+
+
+if (! function_exists('cavatina_get_wrapper_component')) :
+	/**
+	 * Add page wrapper depend on page
+	 */
+	function cavatina_get_wrapper_component($cavatina_component_wrapper) {
+		if ( is_page_template( 'page-template/home.php' ) || is_404() ) {
+			if($cavatina_component_wrapper === true){
+				echo sprintf('<div class="o-wrapper">');
+			}
+			else{
+				echo sprintf('</div>');
+			}
 		}
 	}
 endif;

@@ -9,9 +9,7 @@
  */
 
 get_header();
- ?>
-
-
+?>
 <aside class="o-page__col c-aside c-aside--home js-aside">
     <div class="c-aside__content">
         <div class="c-aside__nav">
@@ -100,4 +98,6 @@ get_header();
     </div>
 </main><!-- .o-page__main  -->
 
+
 <?php get_footer(); ?>
+<?php cavatina_get_wrapper_component(false); ?>
