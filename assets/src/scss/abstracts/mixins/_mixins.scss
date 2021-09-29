@@ -13,6 +13,12 @@
 }
 
 @mixin media($res) {
+    @if landscape == $res {
+        @media screen and (orientation: landscape) {
+            @content;
+        }
+    }
+
     @if mobile-only == $res {
         @media only screen and (max-width: #{$breakpoint_sm - 1}) {
             @content;

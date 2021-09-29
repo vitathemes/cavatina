@@ -45,6 +45,10 @@
         @include media(tablet) {
             margin-left: 0px;
         }
+
+        @include media(landscape) {
+            margin-left: -10vh;
+        }
     }
 }
 
@@ -78,6 +82,10 @@
 
     @include media(tablet) {
         height: 90%;
+    }
+
+    @include media(landscape) {
+        height: 360px;
     }
 }
 

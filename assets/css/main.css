@@ -2905,6 +2905,9 @@ img {
     @media only screen and (min-width: 980px) {
       .c-carousel__context .flickity-slider {
         margin-left: 0px; } }
+    @media screen and (orientation: landscape) {
+      .c-carousel__context .flickity-slider {
+        margin-left: -10vh; } }
 
 .c-carousel__title {
   font-style: normal;
@@ -2930,6 +2933,9 @@ img {
   @media only screen and (min-width: 980px) {
     .c-carousel__slider {
       height: 90%; } }
+  @media screen and (orientation: landscape) {
+    .c-carousel__slider {
+      height: 360px; } }
 
 .c-carousel__title--home {
   width: max-content;
