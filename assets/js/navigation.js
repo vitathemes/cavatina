@@ -104,7 +104,6 @@
 
         if (!cavatina_isMobile(cavatina_clientWindowSize)) {
             if (menuLogo.classList.contains("has-animation")) {
-                console.log(menuLogo.classList.contains("has-animation"));
                 menuLogo.classList.remove("has-animation");
                 menuLogo.classList.add("has-animation-out");
 

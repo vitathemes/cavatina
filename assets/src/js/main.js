@@ -1,7 +1,7 @@
 jQuery(function ($) {
     /*----------------------------------------*\
-    #Carousel Keyboard Navigation (images)
-  \*----------------------------------------*/
+      #Carousel Keyboard Navigation (images)
+    \*----------------------------------------*/
     let cavatina_flCarouselTextLength;
     if (cavatina_childFinder("body", "c-carousel__post-title")) {
         cavatina_flCarouselTextLength = cavatina_flCarouselText.slides.length - 1;
@@ -20,8 +20,8 @@ jQuery(function ($) {
     });
 
     /*----------------------------------------*\
-    #Carousel Keyboard Navigation (Texts)
-  \*----------------------------------------*/
+      #Carousel Keyboard Navigation (Texts)
+    \*----------------------------------------*/
     $(".c-carousel__post-title:last-child").on("focusin", function (e) {
         cavatina_flCarouselMain.select(cavatina_flCarouselTextLength);
     });
@@ -35,8 +35,8 @@ jQuery(function ($) {
     });
 
     /*------------------------------------*\
-    #Last menu item trap focus
-  \*------------------------------------*/
+      #Last menu item trap focus
+    \*------------------------------------*/
     $(".s-nav li:last-child").focusout(function () {
         if (cavatina_IsBackward === true) {
         } else if (cavatina_IsBackward === false) {
@@ -46,7 +46,7 @@ jQuery(function ($) {
 
     /*------------------------------------*\
     #Handle Load More button
-  \*------------------------------------*/
+    \*------------------------------------*/
     $(document).ready(function () {
         const cavatina_loadMoreButton = $(".js-pagination__load-more__btn");
         $(".js-pagination__load-more").click(function () {
@@ -102,6 +102,7 @@ function cavatina_childFinder(parentElement, childElement) {
 \*------------------------------------*/
 if (cavatina_childFinder("body", "s-nav")) {
     var cavatina_menuToggle = document.querySelector(".js-menu");
+    var cavatina_headerMain = document.querySelector(".js-header__main");
     var cavatina_menu = document.querySelector(".s-nav");
     var cavatina_menuListItems = cavatina_menu.querySelectorAll("li");
     var cavatina_menuLinks = cavatina_menu.getElementsByTagName("a");
@@ -113,13 +114,18 @@ if (cavatina_childFinder("body", "s-nav")) {
     document.addEventListener("keydown", function (e) {
         if (e.shiftKey && e.keyCode == 9) {
             cavatina_isBackward = true;
+            console.log("true");
         } else {
             cavatina_isBackward = false;
+            console.log("false");
         }
     });
+
     cavatina_menuToggle.addEventListener("blur", function (e) {
-        if (cavatina_isBackward) {
-            cavatina_menuLinks[cavatina_lastIndex].focus();
+        if (cavatina_headerMain.classList.contains("is-open")) {
+            if (cavatina_isBackward) {
+                cavatina_menuLinks[cavatina_lastIndex].focus();
+            }
         }
     });
 }
@@ -262,7 +268,6 @@ function cavatina_searchToggleMobile() {
             if (searchIcon.classList.contains("c-search__icon--toggled")) {
                 searchIcon.addEventListener("blur", function () {
                     if (cavatina_isBackward === true) {
-                        console.log("backed");
                         searchinput.focus();
                     }
                 });

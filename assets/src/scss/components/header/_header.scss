@@ -88,7 +88,7 @@
     padding: 10px 16px 43px 16px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     overflow: hidden;
     transition: height 1s;
@@ -153,6 +153,7 @@
     }
 
     .c-header__navigation {
+        display: block;
         @include media(tablet) {
             padding-top: 0;
             height: 50%;
@@ -249,6 +250,7 @@
     order: 3;
     width: 100%;
     padding-top: 65px;
+    display: none;
 
     @include media(tablet) {
         display: none;

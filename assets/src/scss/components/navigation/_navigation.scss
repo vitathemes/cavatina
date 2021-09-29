@@ -19,6 +19,11 @@
 
     .menu-item {
         line-height: 17px;
+        margin-bottom: 24px;
+
+        @include media(tablet) {
+            margin-bottom: auto;
+        }
 
         a {
             font-size: 19px !important;
