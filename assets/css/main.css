@@ -2137,7 +2137,7 @@ img {
     margin-bottom: 24px; }
     @media only screen and (min-width: 980px) {
       .s-nav .menu-item {
-        margin-bottom: auto; } }
+        margin-bottom: 12px; } }
     .s-nav .menu-item a {
       font-size: 19px !important;
       line-height: 23px !important; }
