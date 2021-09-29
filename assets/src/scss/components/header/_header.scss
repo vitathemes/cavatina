@@ -70,6 +70,14 @@
             transform: none;
             position: relative;
             left: 0;
+            max-width: 90%;
+
+            word-wrap: unset;
+            overflow: unset;
+            text-overflow: unset;
+            display: unset;
+            -webkit-line-clamp: unset;
+            -webkit-box-orient: unset;
         }
     }
 }
@@ -181,6 +189,16 @@
     }
 }
 
+.c-header__logo__anchor {
+    &:hover,
+    &:focus,
+    &:active {
+        .c-header__logo__text {
+            color: $color__border-button-hover;
+        }
+    }
+}
+
 /*------------------------------------*\
   #Header Menu
 \*------------------------------------*/
@@ -265,6 +283,7 @@
 .c-header__logo {
     order: 1;
     transition: 0s all;
+    max-width: 100%;
 
     @include media(tablet) {
         width: 100%;
@@ -291,6 +310,14 @@
 }
 
 .c-header__logo__anchor {
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-width: 240px;
+
     @include media(tablet) {
         position: absolute;
         left: 50%;
@@ -298,8 +325,6 @@
         transform: translate(0%, -50%) rotate(270deg);
         width: max-content;
         transform-origin: left;
-
-        //@include
 
         word-wrap: break-word;
         overflow: hidden;

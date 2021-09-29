@@ -73,7 +73,7 @@
     let cavatina_isMenuCollapsed = false;
     function cavatina_DesktopWidthToggle() {
         const menuElement = document.querySelector(".js-header__main");
-        let scrollerWidth = menuElement.scrollWidth * 2.5;
+        let scrollerWidth = menuElement.scrollWidth * 2;
 
         cavatina_isMenuCollapsed = !cavatina_isMenuCollapsed;
         const noWidthSet = !menuElement.style.width;
