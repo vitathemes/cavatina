@@ -42,12 +42,12 @@
     .flickity-slider {
         margin-left: -16px;
 
-        @include media(tablet) {
-            margin-left: 0px;
-        }
-
         @include media(landscape) {
             margin-left: -10vh;
+        }
+
+        @include media(tablet) {
+            margin-left: 0px;
         }
     }
 }
@@ -80,12 +80,12 @@
 .c-carousel__slider {
     height: 40vh;
 
-    @include media(tablet) {
-        height: 90%;
-    }
-
     @include media(landscape) {
         height: 360px;
+    }
+
+    @include media(tablet) {
+        height: 90%;
     }
 }
 
