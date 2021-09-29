@@ -99,5 +99,5 @@ get_header();
 </main><!-- .o-page__main  -->
 
 
-<?php get_footer(); ?>
 <?php cavatina_get_wrapper_component(false); ?>
+<?php get_footer(); ?>

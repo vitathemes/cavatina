@@ -28,9 +28,8 @@
 
 .c-header--home {
     @include media(tablet) {
-        width: max-content;
-        min-width: 15%;
-        max-width: 20%;
+        width: 100%;
+        max-width: 350px;
         height: 100%;
         display: flex;
         align-items: center;
@@ -40,7 +39,7 @@
     .c-header__holder {
         @include media(tablet) {
             border-right: 1px solid $color__background-hr;
-            width: 95%;
+            width: 100%;
             align-content: center;
         }
     }
@@ -50,6 +49,11 @@
             height: max-content;
             padding-left: 50px;
             padding-right: 16px;
+            padding-bottom: 45%;
+        }
+
+        @include media(ultra-wide) {
+            padding-bottom: 25%;
         }
     }
 
@@ -289,10 +293,7 @@
 
     @include media(tablet) {
         width: 100%;
-        margin-bottom: 50%;
         padding-right: 8px;
-
-        // in org menu
         margin-bottom: 0px;
         position: relative;
     }
@@ -427,4 +428,22 @@ $dimensions-close: 36px;
     transform: rotate(-50deg);
     top: 10px;
     left: 0px;
+}
+
+.c-header__search {
+    &:focus,
+    &:active,
+    &:hover {
+        .c-header__search--toggle > .magnifier-icon .magnifier-handle-x {
+            background: $color__border-button-hover;
+        }
+
+        .magnifier-handle-x {
+            border: 1px solid $color__border-button-hover;
+        }
+
+        .magnifier-handle {
+            background: $color__border-button-hover;
+        }
+    }
 }
