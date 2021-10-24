@@ -90,8 +90,20 @@
     \*------------------------------------------------*/
     const menuLogo = document.querySelector(".js-logo");
     const navMenu = document.querySelector(".js-navigation");
+    const navSearch = document.querySelector(".js-header__search");
+    navSearch.classList.add("is-active");
 
     button.addEventListener("click", function () {
+        navSearch.classList.toggle("is-active");
+
+        if (!cavatina_isMobile(cavatina_clientWindowSize)) {
+            button.style.display = "none";
+
+            setTimeout(() => {
+                button.style.display = "block";
+            }, 1000);
+        }
+
         if (!cavatina_isMobile(cavatina_clientWindowSize)) {
             if (!menuLogo.classList.contains("is-hide")) {
                 menuLogo.classList.add("is-hide");
@@ -154,11 +166,6 @@
         link.addEventListener("focus", toggleFocus, true);
         link.addEventListener("blur", toggleFocus, true);
     }
-
-    // Toggle focus each time a menu link with children receive a touch event.
-    // for (const link of linksWithChildren) {
-    //     link.addEventListener("touchstart", toggleFocus, false);
-    // }
 
     /*-------------------------------------------*\
       #Sets or removes .focus class on an element.
