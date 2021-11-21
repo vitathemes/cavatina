@@ -32,6 +32,12 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 
 == Changelog ==
 
+= 1.2.2 =
+* Fix image width issues
+
+= 1.2.1 =
+* Improve menu animation
+
 = 1.2.0 =
 * Remake menu - improve size animation  
 * Fix ipad-pro responsive issues

@@ -218,6 +218,10 @@
     height: max-content;
     padding: 8px 12px;
 
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
     &::before {
         height: 5px;
         border-bottom: 1px solid #000;
@@ -274,7 +278,7 @@
     border: none;
     outline: none;
     width: 100%;
-
+    opacity: 0;
     margin-left: 5px;
 
     &:focus,
@@ -284,6 +288,13 @@
         border: none;
         outline: none;
     }
+}
+
+.c-header__search.is-active {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
 .c-header__logo {
@@ -434,16 +445,25 @@ $dimensions-close: 36px;
     &:focus,
     &:active,
     &:hover {
-        .c-header__search--toggle > .magnifier-icon .magnifier-handle-x {
-            background: $color__border-button-hover;
-        }
-
         .magnifier-handle-x {
             border: 1px solid $color__border-button-hover;
+            // background-color: red !important;
         }
 
         .magnifier-handle {
             background: $color__border-button-hover;
+        }
+    }
+}
+
+.c-header__search--toggle {
+    &:focus,
+    &:active,
+    &:hover {
+        .magnifier-handle-x {
+            background: $color__border-button-hover;
+            border: 0px solid $color__border-button-hover;
+            // background-color: red !important;
         }
     }
 }

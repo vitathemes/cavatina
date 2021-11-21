@@ -1543,8 +1543,8 @@ html {
 /* Images
 --------------------------------------------- */
 img {
-  width: 100%;
-  height: 100%; }
+  height: auto;
+  max-width: 100%; }
 
 /*--------------------------------------------------------------
 # Components
@@ -1953,7 +1953,10 @@ img {
   width: max-content;
   min-width: 0px;
   height: max-content;
-  padding: 8px 12px; }
+  padding: 8px 12px;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; }
   .c-header__menu::before {
     height: 5px;
     border-bottom: 1px solid #000;
@@ -2000,11 +2003,18 @@ img {
   border: none;
   outline: none;
   width: 100%;
+  opacity: 0;
   margin-left: 5px; }
   .c-header__search:focus, .c-header__search:active, .c-header__search:hover {
     background-color: transparent;
     border: none;
     outline: none; }
+
+.c-header__search.is-active {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards; }
 
 .c-header__logo {
   order: 1;
@@ -2122,14 +2132,15 @@ img {
   top: 10px;
   left: 0px; }
 
-.c-header__search:focus .c-header__search--toggle > .magnifier-icon .magnifier-handle-x, .c-header__search:active .c-header__search--toggle > .magnifier-icon .magnifier-handle-x, .c-header__search:hover .c-header__search--toggle > .magnifier-icon .magnifier-handle-x {
-  background: #767676; }
-
 .c-header__search:focus .magnifier-handle-x, .c-header__search:active .magnifier-handle-x, .c-header__search:hover .magnifier-handle-x {
   border: 1px solid #767676; }
 
 .c-header__search:focus .magnifier-handle, .c-header__search:active .magnifier-handle, .c-header__search:hover .magnifier-handle {
   background: #767676; }
+
+.c-header__search--toggle:focus .magnifier-handle-x, .c-header__search--toggle:active .magnifier-handle-x, .c-header__search--toggle:hover .magnifier-handle-x {
+  background: #767676;
+  border: 0px solid #767676; }
 
 /* Navigation
 --------------------------------------------- */
@@ -3371,7 +3382,8 @@ img {
         line-height: 15px;
         display: flex;
         align-items: center;
-        color: var(--cavatina_primary-color); }
+        color: var(--cavatina_primary-color);
+        text-transform: capitalize; }
         .comment-meta .comment-author .fn a:hover {
           color: #767676; }
   .comment-meta .comment-metadata {
@@ -3382,7 +3394,7 @@ img {
     @media only screen and (min-width: 980px) {
       .comment-meta .comment-metadata {
         margin-left: 16px;
-        margin-top: 5px;
+        margin-top: 0px;
         position: static; } }
     .comment-meta .comment-metadata a {
       font-style: normal;
