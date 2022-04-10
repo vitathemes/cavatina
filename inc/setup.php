@@ -86,14 +86,16 @@ endif;
 add_action( 'after_setup_theme', 'cavatina_setup' );
 
 
-function cavatina_footer_menu() {
-	/**
-	 * Create Footer Menu Location
-	 */
-	register_nav_menus(
-		array(
-			'footer-menu' => esc_html__( 'Footer', 'cavatina' ),
-		)
-	);
-}
-add_action( 'init', 'cavatina_footer_menu' );
+if ( ! function_exists( 'cavatina_footer_menu' ) ) :
+	function cavatina_footer_menu() {
+		/**
+		 * Create Footer Menu Location
+		 */
+		register_nav_menus(
+			array(
+				'footer-menu' => esc_html__( 'Footer', 'cavatina' ),
+			)
+		);
+	}
+	add_action( 'init', 'cavatina_footer_menu' );
+endif;

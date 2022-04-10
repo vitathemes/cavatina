@@ -25,6 +25,9 @@
 }
 
 .c-post--project {
+  .c-post__header {
+    display: flex;
+  }
   .c-post__meta__link {
     font-size: 12px;
     line-height: 15px;
@@ -67,7 +70,8 @@
 }
 
 .c-post__header__col--left {
-  max-width: 15%;
+  max-width: 40px;
+  width: 100%;
 }
 
 .c-post__header__col--right {

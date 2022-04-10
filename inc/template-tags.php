@@ -163,16 +163,17 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 endif;
 
 
-
+if ( ! function_exists( 'cavatina_handle_description' ) ) :
 /**
  * Handle Description
  */
 function cavatina_handle_description(){
     echo '<span class="c-header__text">'. esc_html(get_bloginfo('description')) .'</span>';
 }
+endif;
 
 
-
+if ( ! function_exists( 'cavatina_handle_logo' ) ) :
 function cavatina_handle_logo(){
 	/**
   	  * Handle Logo - If logo doesn't exist show WordPress Site title name
@@ -201,9 +202,8 @@ function cavatina_handle_logo(){
 	if( is_page_template( 'page-template/home.php' ) ||  is_404() ){
 		return cavatina_handle_description();
 	}
-	
-
 }
+endif;
 
 
 if ( ! function_exists( 'cavatina_get_category' ) ) :
@@ -486,7 +486,7 @@ if (! function_exists('cavatina_get_home_carousel_thumbnail')) :
 	}
 endif;
 
-
+if (! function_exists('cavatina_get_loadmore')) :
 function cavatina_get_loadmore( $query ) { 
 	/**
 	 * Render load more button
@@ -498,6 +498,7 @@ function cavatina_get_loadmore( $query ) {
 		</div>'; // you can use <a> as well
 	}
 }
+endif;
 
 
 if (! function_exists('cavatina_get_default_pagination')) :
@@ -750,7 +751,7 @@ if (! function_exists('cavatina_social_media_share_post')) :
 	}	
 endif;
 
-
+if( ! function_exists('cavatina_get_slider') ): 
 function cavatina_get_slider( $postId ) {
 	/**
 	* Display slider if plugin was activated
@@ -809,3 +810,4 @@ function cavatina_get_slider( $postId ) {
 		}
 	}
 }
+endif;

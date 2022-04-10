@@ -33,7 +33,6 @@ jQuery(function ($) {
             cavatina_flCarouselText.next();
         }
     });
-
     /*------------------------------------*\
       #Last menu item trap focus
     \*------------------------------------*/
@@ -45,7 +44,7 @@ jQuery(function ($) {
     });
 
     /*------------------------------------*\
-    #Handle Load More button
+      #Handle Load More button
     \*------------------------------------*/
     $(document).ready(function () {
         const cavatina_loadMoreButton = $(".js-pagination__load-more__btn");
@@ -89,9 +88,7 @@ jQuery(function ($) {
   #Detect Element inside other element
 \*--------------------------------------*/
 function cavatina_childFinder(parentElement, childElement) {
-    let result = document
-        .querySelector(parentElement)
-        .getElementsByClassName(childElement)[0]
+    let result = document.querySelector(parentElement).getElementsByClassName(childElement)[0]
         ? true
         : false;
     return result;
@@ -159,9 +156,7 @@ window.addEventListener("load", cavatina_fadeEffect());
 \*------------------------------------*/
 function cavatina_isDesktop() {
     if (
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent
-        )
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     ) {
         return false;
     } else {
@@ -320,19 +315,15 @@ function cavatina_capitalizeFirstLetter() {
         const carouselTitle = document.querySelector(".js-carousel__post-title__text");
 
         carouselTitle.textContent =
-            carouselTitle.textContent.charAt(0).toUpperCase() +
-            carouselTitle.textContent.slice(1);
+            carouselTitle.textContent.charAt(0).toUpperCase() + carouselTitle.textContent.slice(1);
     }
 
     // js-carousel__post-title__text-mobile
     if (cavatina_childFinder("body", "js-carousel__post-title__text-mobile")) {
-        const carouselTitle = document.querySelector(
-            ".js-carousel__post-title__text-mobile"
-        );
+        const carouselTitle = document.querySelector(".js-carousel__post-title__text-mobile");
 
         carouselTitle.textContent =
-            carouselTitle.textContent.charAt(0).toUpperCase() +
-            carouselTitle.textContent.slice(1);
+            carouselTitle.textContent.charAt(0).toUpperCase() + carouselTitle.textContent.slice(1);
     }
 
     // c-post__entry-title__anchor
@@ -407,9 +398,7 @@ if (cavatina_childFinder("body", "js-carousel__context")) {
         friction: 0.8,
         on: {
             ready: function () {
-                const postTitiles2 = document.querySelector(
-                    ".js-carousel__post-titles--mobile"
-                );
+                const postTitiles2 = document.querySelector(".js-carousel__post-titles--mobile");
                 postTitiles2.style.opacity = 1;
             },
         },
@@ -435,14 +424,10 @@ if (cavatina_childFinder("body", "js-single__slider")) {
                 if (cavatina_isDesktop() === true) {
                     // make slider full width with first drag
                     let singleCarousel = document.querySelector(".js-single__slider");
-                    singleCarousel.classList.add(
-                        "c-carousel__single__slider--full-width"
-                    );
+                    singleCarousel.classList.add("c-carousel__single__slider--full-width");
 
                     if (index === 0) {
-                        singleCarousel.classList.remove(
-                            "c-carousel__single__slider--full-width"
-                        );
+                        singleCarousel.classList.remove("c-carousel__single__slider--full-width");
                     }
                 }
             },
@@ -457,11 +442,7 @@ if (cavatina_childFinder("body", "comments-area")) {
     const cavatina_commentContainer = document.querySelector(".comments-area");
     let timeElement, timeElementCounter;
     timeElement = cavatina_commentContainer.querySelectorAll("time");
-    for (
-        timeElementCounter = 0;
-        timeElementCounter < timeElement.length;
-        timeElementCounter++
-    ) {
+    for (timeElementCounter = 0; timeElementCounter < timeElement.length; timeElementCounter++) {
         let childHtml = timeElement[timeElementCounter].innerHTML;
         let result = childHtml.replace("at", "");
         timeElement[timeElementCounter].textContent = result;
@@ -495,15 +476,13 @@ document.addEventListener("keydown", function (e) {
 if (cavatina_childFinder("body", "c-post__entry-title__anchor")) {
     const cavatina_postTitles = document.querySelectorAll(".c-post__entry-title__anchor");
 
-    document
-        .querySelectorAll(".c-post__entry-title__anchor")
-        .forEach(function (postLink) {
-            if (postLink.textContent.length > 82) {
-                let currentPostLink = postLink.textContent;
-                currentPostLink = currentPostLink.substr(0, 80) + "...";
-                postLink.textContent = currentPostLink;
-            }
-        });
+    document.querySelectorAll(".c-post__entry-title__anchor").forEach(function (postLink) {
+        if (postLink.textContent.length > 82) {
+            let currentPostLink = postLink.textContent;
+            currentPostLink = currentPostLink.substr(0, 80) + "...";
+            postLink.textContent = currentPostLink;
+        }
+    });
 }
 
 /*--------------------------------------*\

@@ -16,13 +16,12 @@ function cavatina_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
-
-
 	return $classes;
 }
 add_filter( 'body_class', 'cavatina_body_classes' );
 
 
+if ( ! function_exists( 'cavatina_pingback_header' ) ) :
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -32,8 +31,10 @@ function cavatina_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'cavatina_pingback_header' );
+endif;
 
 
+if ( ! function_exists( 'cavatina_get_pagination' ) ) :
 function cavatina_get_pagination( $page , $query ) { 
 	if($page === "projects"){
 		if ( true == get_theme_mod( 'projects_loadmore', true ) ){
@@ -59,8 +60,9 @@ function cavatina_get_pagination( $page , $query ) {
 		}
 	}
 }
+endif;
 
-
+if ( ! function_exists( 'cavatina_typography' ) ) :
 function cavatina_typography() {
 	
 	if ( get_theme_mod( 'typography_primary_color' ) == "" ) {
@@ -103,3 +105,4 @@ function cavatina_theme_settings() {
 </style>
 <?php
 }
+endif;
