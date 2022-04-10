@@ -264,8 +264,6 @@ add_action( 'wp_enqueue_scripts', 'cavatina_load_more_script' );
 /* Handle Load more button loop  */
 function cavatina_loadmore_ajax_handler(){
 	
-	$argsquery = filter_input( INPUT_POST, 'query', FILTER_SANITIZE_STRING );
-
 	if ( !empty( $_POST['query'] ||  $_POST['page'] )) {
 		
 		$args = json_decode( sanitize_text_field( wp_unslash( $_POST['query'] ) ) , true );

@@ -328,8 +328,6 @@ if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 endif;
 
 
-
-
 if ( ! function_exists( 'cavatina_get_thumbnail_with_preloader' ) ) :
 	/**
 	  * Return thumbnail with preloader
