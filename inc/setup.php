@@ -97,5 +97,5 @@ if ( ! function_exists( 'cavatina_footer_menu' ) ) :
 			)
 		);
 	}
-	add_action( 'init', 'cavatina_footer_menu' );
 endif;
+add_action( 'init', 'cavatina_footer_menu' );

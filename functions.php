@@ -140,8 +140,8 @@ if( !function_exists( 'cavatina_dashicons' ) ) :
      */
       wp_enqueue_style('dashicons');
   }
-  add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 endif;
+add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 
 
 if( !function_exists( 'cavatina_contact_page_require_shortcode' ) ) : 
@@ -243,8 +243,8 @@ if( !function_exists( 'cavatina_filter_login_head' ) ) :
       endif;
   }
 
-  add_action( 'login_head', 'cavatina_filter_login_head', 100 );
 endif;
+add_action( 'login_head', 'cavatina_filter_login_head', 100 );
 
 
 if( !function_exists( 'cavatina_load_more_script' ) ) : 
@@ -262,8 +262,8 @@ function cavatina_load_more_script() {
     ) );
     wp_enqueue_script( 'cavatina-main-scripts' );
   }
-  add_action( 'wp_enqueue_scripts', 'cavatina_load_more_script' );
 endif;
+add_action( 'wp_enqueue_scripts', 'cavatina_load_more_script' );
 
 
 if( !function_exists( 'cavatina_loadmore_ajax_handler' ) ) : 
@@ -290,9 +290,9 @@ if( !function_exists( 'cavatina_loadmore_ajax_handler' ) ) :
     }
   }
 
-  add_action('wp_ajax_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_{action}
-  add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 endif;
+add_action('wp_ajax_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
 
 if( !function_exists( 'cavatina_modify_libwp_post_type' ) ) : 
