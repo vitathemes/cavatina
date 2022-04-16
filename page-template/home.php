@@ -51,7 +51,7 @@ get_header();
                         'post_type'      => $carousel_post_type,
                         'posts_per_page' => 5
                 ));
-            ?>
+        ?>
         <div class="c-aside__carousel">
             <div class="c-carousel c-carousel--aside">
                 <h4 class="c-carousel__title c-carousel__title--flex">

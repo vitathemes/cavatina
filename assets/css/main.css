@@ -3393,9 +3393,10 @@ img {
     font-size: 12px; }
     @media only screen and (min-width: 980px) {
       .comment-meta .comment-metadata {
+        margin-top: 5px;
         margin-left: 16px;
-        margin-top: 0px;
-        position: static; } }
+        position: static;
+        display: flex; } }
     .comment-meta .comment-metadata a {
       font-style: normal;
       font-weight: normal;
@@ -3639,6 +3640,9 @@ img {
   .c-post .page-links {
     margin-top: 16px; }
 
+.c-post--project .c-post__header {
+  display: flex; }
+
 .c-post--project .c-post__meta__link {
   font-size: 12px;
   line-height: 15px; }
@@ -3671,7 +3675,8 @@ img {
   height: 100%; }
 
 .c-post__header__col--left {
-  max-width: 15%; }
+  max-width: 40px;
+  width: 100%; }
 
 .c-post__header__col--right {
   max-width: 84%; }

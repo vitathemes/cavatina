@@ -1,7 +1,7 @@
 === Cavatina ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.6
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 5.6
 Stable tag: 1.0.4
 License: GPL-3.0-or-later
@@ -31,6 +31,10 @@ Cavatina is a minimal & mobile-first theme. The best choice for people who want 
 See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.com/cavatina/).
 
 == Changelog ==
+
+= 1.2.3 =
+* Update Kirki to version 4
+* Fix Plugable functions
 
 = 1.2.2 =
 * Fix image width issues
