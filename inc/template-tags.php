@@ -293,8 +293,6 @@ if ( ! function_exists( 'cavatina_taxonomy_filter' ) ) :
 		esc_html__( 'All ', 'cavatina' )
 	);
 
-
-
 		if ( !empty($taxonomies) ) {
 			$output = '';
 
@@ -468,7 +466,7 @@ if (! function_exists('cavatina_get_wrapper_component')) :
 endif;
 
 
-if (! function_exists('cavatina_get_home_carousel_thumbnail')) :
+if ( ! function_exists('cavatina_get_home_carousel_thumbnail')) :
 	/**
 	 * Return thumbnail for home carousel
 	 */
@@ -486,22 +484,23 @@ if (! function_exists('cavatina_get_home_carousel_thumbnail')) :
 	}
 endif;
 
-if (! function_exists('cavatina_get_loadmore')) :
-function cavatina_get_loadmore( $query ) { 
-	/**
-	 * Render load more button
-	 */
-	if ( $query->max_num_pages > 1 ){
-		echo '
-		<div class="c-pagination c-pagination--load-more js-pagination__load-more">
-			<button class="button--small js-pagination__load-more__btn">' . esc_html( 'Load More' , 'cavatina' ) . '</button>
-		</div>'; // you can use <a> as well
+
+if ( ! function_exists('cavatina_get_loadmore')) :
+	function cavatina_get_loadmore( $query ) { 
+		/**
+		 * Render load more button
+		 */
+		if ( $query->max_num_pages > 1 ){
+			echo '
+			<div class="c-pagination c-pagination--load-more js-pagination__load-more">
+				<button class="button--small js-pagination__load-more__btn">' . esc_html( 'Load More' , 'cavatina' ) . '</button>
+			</div>'; // you can use <a> as well
+		}
 	}
-}
 endif;
 
 
-if (! function_exists('cavatina_get_default_pagination')) :
+if ( ! function_exists('cavatina_get_default_pagination')) :
 	/**
 	  * Show numeric Pagination
 	  */
@@ -516,7 +515,7 @@ if (! function_exists('cavatina_get_default_pagination')) :
 endif;
 
 
-if (! function_exists('cavatina_get_site_name')) :
+if ( ! function_exists('cavatina_get_site_name')) :
 	/**
 	* Show site name
 	*/
@@ -528,7 +527,7 @@ if (! function_exists('cavatina_get_site_name')) :
 endif;
 
 
-if (! function_exists('cavatina_get_privacy_policy')) :
+if ( ! function_exists('cavatina_get_privacy_policy')) :
 	/**
 	 * get privacy policy link
 	 */

@@ -5,19 +5,21 @@
  * @package cavatina
  */
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function cavatina_body_classes( $classes ) {
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
+if( ! function_exists('cavatina_body_classes') ) :
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @param array $classes Classes for the body element.
+	 * @return array
+	 */
+	function cavatina_body_classes( $classes ) {
+		// Adds a class of hfeed to non-singular pages.
+		if ( ! is_singular() ) {
+			$classes[] = 'hfeed';
+		}
+		return $classes;
 	}
-	return $classes;
-}
+endif;
 add_filter( 'body_class', 'cavatina_body_classes' );
 
 
@@ -96,6 +98,5 @@ if ( ! function_exists( 'cavatina_typography' ) ) :
 	}
 	
 endif;
-
 add_action( 'admin_head', 'cavatina_theme_settings' );
 add_action( 'wp_head', 'cavatina_theme_settings' );
