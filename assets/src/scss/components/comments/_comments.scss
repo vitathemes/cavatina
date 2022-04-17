@@ -238,6 +238,13 @@
         color: $cavatina_primary_color;
       }
     }
+
+    .edit-link {
+      @include media(tablet) {
+        display: flex;
+        margin-left: 8px;
+      }
+    }
   }
 }
 
