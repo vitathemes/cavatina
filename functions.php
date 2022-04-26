@@ -10,57 +10,66 @@
 
 if ( ! defined( 'CAVATINA_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'CAVATINA_VERSION', '1.0.0' );
+	define( 'CAVATINA_VERSION', '1.2.3' );
 }
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function cavatina_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'cavatina_content_width', 640 );
-}
+if( ! function_exists('cavatina_content_width') ) : 
+  /**
+   * Set the content width in pixels, based on the theme's design and stylesheet.
+   *
+   * Priority 0 to make it available to lower priority callbacks.
+   *
+   * @global int $content_width
+   */
+  function cavatina_content_width() {
+    $GLOBALS['content_width'] = apply_filters( 'cavatina_content_width', 640 );
+  }
+endif;
 add_action( 'after_setup_theme', 'cavatina_content_width', 0 );
 
-/**
- * Register widget area for contact page.
- *
- * @link https://codex.wordpress.org/Widgetizing_Themes
- */
-function cavatina_contact_widget_init() {
- 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Contact Page Sidebar Area', 'cavatina' ),
-        'id'            => 'custom-contact-widget',
-        'before_widget' => '<div class="c-widget__content">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h6 class="c-widget__title">',
-        'after_title'   => '</h6>',
-    ) );
- 
-}
+
+if( ! function_exists('cavatina_contact_widget_init') ) : 
+  /**
+   * Register widget area for contact page.
+   *
+   * @link https://codex.wordpress.org/Widgetizing_Themes
+   */
+  function cavatina_contact_widget_init() {
+  
+      register_sidebar( array(
+          'name'          => esc_html__( 'Contact Page Sidebar Area', 'cavatina' ),
+          'id'            => 'custom-contact-widget',
+          'before_widget' => '<div class="c-widget__content">',
+          'after_widget'  => '</div>',
+          'before_title'  => '<h6 class="c-widget__title">',
+          'after_title'   => '</h6>',
+      ) );
+  
+  }
+endif;
 add_action( 'widgets_init', 'cavatina_contact_widget_init' );
 
-/**
- * Enqueue default scripts and styles.
- */
-function cavatina_default_scripts() {
-	wp_enqueue_style( 'cavatina-default-style', get_stylesheet_uri(), array(), CAVATINA_VERSION );
-	wp_style_add_data( 'cavatina-default-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'cavatina-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), CAVATINA_VERSION, true );
+if( ! function_exists('cavatina_default_scripts') ) : 
+  /**
+   * Enqueue default scripts and styles.
+   */
+  function cavatina_default_scripts() {
+    wp_enqueue_style( 'cavatina-default-style', get_stylesheet_uri(), array(), CAVATINA_VERSION );
+    wp_style_add_data( 'cavatina-default-style', 'rtl', 'replace' );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
+    wp_enqueue_script( 'cavatina-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), CAVATINA_VERSION, true );
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+      wp_enqueue_script( 'comment-reply' );
+    }
+  }
+endif;
 add_action( 'wp_enqueue_scripts', 'cavatina_default_scripts' );
 
+
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts and styles. Should not be pluggable theme (core assets)
  */
 function cavatina_scripts() {
   
@@ -70,7 +79,6 @@ function cavatina_scripts() {
 	wp_enqueue_script( 'cavatina-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array( ), CAVATINA_VERSION, true );
 
 }
-
 add_action( 'wp_enqueue_scripts', 'cavatina_scripts' );
 
 
@@ -86,8 +94,8 @@ if( !function_exists( 'cavatina_remove_comment_time' ) ) :
               return $cavatina_date;
       }
   }
-  add_filter( 'get_comment_time', 'cavatina_remove_comment_time', 10, 3);
 endif;
+add_filter( 'get_comment_time', 'cavatina_remove_comment_time', 10, 3);
 
 
 
@@ -129,8 +137,8 @@ if( !function_exists( 'cavatina_comments_placeholders' ) ) :
     }
     return $cavatina_fields;
   }
-  add_filter( 'comment_form_default_fields', 'cavatina_comments_placeholders' );
 endif;
+add_filter( 'comment_form_default_fields', 'cavatina_comments_placeholders' );
 
 
 if( !function_exists( 'cavatina_dashicons' ) ) : 
@@ -140,8 +148,8 @@ if( !function_exists( 'cavatina_dashicons' ) ) :
      */
       wp_enqueue_style('dashicons');
   }
-  add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 endif;
+add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 
 
 if( !function_exists( 'cavatina_contact_page_require_shortcode' ) ) : 
@@ -178,46 +186,42 @@ endif;
 
 
 if( !function_exists( 'cavatina_get_inverse_post_number' ) ) : 
-function cavatina_get_inverse_post_number(){
-  
-	/**
-	 * Auto decrement number per posts ( in pages like archive-projects... )
-	 */
-	global $wp_query;
-    $posts_per_page 	= get_option('posts_per_page');
-	$paged          	= (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$offset         	= ($paged - 1) * $posts_per_page;
-	$loop           	= $wp_query->current_post + 1;
-	$posts_in_page	    = $offset + $loop;
-	$total_post_numbers = cavatina_total_post_types(false) + 1;
-	$posts_counter 	    = $total_post_numbers - $posts_in_page;
-  
-	return $posts_counter;
-  
-}
+  function cavatina_get_inverse_post_number(){
+    /**
+     * Auto decrement number per posts ( in pages like archive-projects... )
+     */
+    global $wp_query;
+      $posts_per_page 	= get_option('posts_per_page');
+    $paged          	= (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $offset         	= ($paged - 1) * $posts_per_page;
+    $loop           	= $wp_query->current_post + 1;
+    $posts_in_page	    = $offset + $loop;
+    $total_post_numbers = cavatina_total_post_types(false) + 1;
+    $posts_counter 	    = $total_post_numbers - $posts_in_page;
+    return $posts_counter;
+  }
 endif;
 
 
 if( !function_exists( 'cavatina_deciaml_post_number' ) ) : 
-function cavatina_deciaml_post_number(){
-	/**
-	  * Add zero to the post numbers
-	  */
-	
-    // get post number (auto increment)
-    $cavatina_decimalCounter = "0";
-    $cavatina_postNumber = cavatina_get_inverse_post_number();
-    // Remove zero when reaching 10
-    if($cavatina_postNumber >= 10){
-        $cavatina_decimalCounter = "";
-		    $cavatina_postNumber = $cavatina_postNumber;
-		    return $cavatina_postNumber;
-    }
-    else{
-		    $cavatina_postNumber = $cavatina_decimalCounter.$cavatina_postNumber;
-		    return $cavatina_postNumber;
-	}
-}
+  function cavatina_deciaml_post_number(){
+    /**
+      * Add zero to the post numbers
+      */
+      // get post number (auto increment)
+      $cavatina_decimalCounter = "0";
+      $cavatina_postNumber = cavatina_get_inverse_post_number();
+      // Remove zero when reaching 10
+      if($cavatina_postNumber >= 10){
+          $cavatina_decimalCounter = "";
+          $cavatina_postNumber = $cavatina_postNumber;
+          return $cavatina_postNumber;
+      }
+      else{
+          $cavatina_postNumber = $cavatina_decimalCounter.$cavatina_postNumber;
+          return $cavatina_postNumber;
+      }
+  }
 endif;
 
 
@@ -243,8 +247,8 @@ if( !function_exists( 'cavatina_filter_login_head' ) ) :
       endif;
   }
 
-  add_action( 'login_head', 'cavatina_filter_login_head', 100 );
 endif;
+add_action( 'login_head', 'cavatina_filter_login_head', 100 );
 
 
 if( !function_exists( 'cavatina_load_more_script' ) ) : 
@@ -262,8 +266,8 @@ function cavatina_load_more_script() {
     ) );
     wp_enqueue_script( 'cavatina-main-scripts' );
   }
-  add_action( 'wp_enqueue_scripts', 'cavatina_load_more_script' );
 endif;
+add_action( 'wp_enqueue_scripts', 'cavatina_load_more_script' );
 
 
 if( !function_exists( 'cavatina_loadmore_ajax_handler' ) ) : 
@@ -290,9 +294,9 @@ if( !function_exists( 'cavatina_loadmore_ajax_handler' ) ) :
     }
   }
 
-  add_action('wp_ajax_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_{action}
-  add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 endif;
+add_action('wp_ajax_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'cavatina_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
 
 if( !function_exists( 'cavatina_modify_libwp_post_type' ) ) : 
@@ -303,9 +307,8 @@ if( !function_exists( 'cavatina_modify_libwp_post_type' ) ) :
     $postTypeName = 'projects';
     return $postTypeName;
   }  
-
-  add_filter('libwp_post_type_1_name', 'cavatina_modify_libwp_post_type');
 endif;
+add_filter('libwp_post_type_1_name', 'cavatina_modify_libwp_post_type');
 
 
 if( !function_exists( 'cavatina_modify_libwp_post_type_argument' ) ) : 
@@ -341,8 +344,8 @@ if( !function_exists( 'cavatina_modify_libwp_post_type_argument' ) ) :
 
     return $postTypeArguments;
   }  
-  add_filter('libwp_post_type_1_arguments', 'cavatina_modify_libwp_post_type_argument');
 endif;
+add_filter('libwp_post_type_1_arguments', 'cavatina_modify_libwp_post_type_argument');
 
 
 if( !function_exists( 'cavatina_modify_libwp_taxonomy_name' ) ) :
@@ -355,8 +358,8 @@ if( !function_exists( 'cavatina_modify_libwp_taxonomy_name' ) ) :
     return $taxonomyName;
     
   }
-  add_filter('libwp_taxonomy_1_name', 'cavatina_modify_libwp_taxonomy_name');
 endif;
+add_filter('libwp_taxonomy_1_name', 'cavatina_modify_libwp_taxonomy_name');
 
 
 if( !function_exists( 'cavatina_modify_libwp_taxonomy_post_type_name' ) ) :
@@ -367,8 +370,8 @@ if( !function_exists( 'cavatina_modify_libwp_taxonomy_post_type_name' ) ) :
     $taxonomyPostTypeName = 'projects';
     return $taxonomyPostTypeName;
   }
-  add_filter('libwp_taxonomy_1_post_type', 'cavatina_modify_libwp_taxonomy_post_type_name');
 endif;
+add_filter('libwp_taxonomy_1_post_type', 'cavatina_modify_libwp_taxonomy_post_type_name');
 
 
 if( !function_exists( 'cavatina_modify_libwp_taxonomy_argument' ) ) :
@@ -394,8 +397,8 @@ if( !function_exists( 'cavatina_modify_libwp_taxonomy_argument' ) ) :
     
   }
 
-  add_filter('libwp_taxonomy_1_arguments', 'cavatina_modify_libwp_taxonomy_argument');
 endif;
+add_filter('libwp_taxonomy_1_arguments', 'cavatina_modify_libwp_taxonomy_argument');
 
 
 /**

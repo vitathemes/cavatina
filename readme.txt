@@ -35,6 +35,7 @@ See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.
 = 1.2.3 =
 * Update Kirki to version 4
 * Fix Plugable functions
+* Add Kirki Customizer version handler
 
 = 1.2.2 =
 * Fix image width issues
