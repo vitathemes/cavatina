@@ -49,7 +49,7 @@ get_header();
 
                 $loop = new WP_Query( array(
                         'post_type'      => $carousel_post_type,
-                        'posts_per_page' => 5
+                        //'posts_per_page' => 5
                 ));
         ?>
         <div class="c-aside__carousel">
