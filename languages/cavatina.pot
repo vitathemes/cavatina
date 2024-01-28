@@ -1,22 +1,38 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (C) 2024 VitaThemes
+# This file is distributed under the GPL-3.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-20 23:31+0430\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: Cavatina 1.2.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cavatina\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"POT-Creation-Date: 2024-01-28T12:00:09+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: cavatina\n"
+
+#. Theme Name of the theme
+msgid "Cavatina"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://vitathemes.com/theme/cavatina/"
+msgstr ""
+
+#. Description of the theme
+msgid "A minimal & mobile-first theme. The best choice for people who want to introduce their projects."
+msgstr ""
+
+#. Author of the theme
+msgid "VitaThemes"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://vitathemes.com"
+msgstr ""
 
 #: 404.php:14
 msgid "404 ERROR"
@@ -54,7 +70,9 @@ msgstr ""
 msgid "Your Comment*"
 msgstr ""
 
-#: comments.php:43 comments.php:48
+#. translators: Comments
+#: comments.php:43
+#: comments.php:48
 msgid "Comments"
 msgstr ""
 
@@ -62,302 +80,470 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:16
+#: footer.php:18
 msgid "Cavatina theme by"
 msgstr ""
 
-#: functions.php:38
+#: functions.php:40
 msgid "Contact Page Sidebar Area"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:134
 msgid "Name*"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:135
 msgid "Email*"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:136
 msgid "Website"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:321
 msgctxt "Post type general name"
 msgid "Projects"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:322
 msgctxt "Post type singular name"
 msgid "Project"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:323
 msgctxt "Admin Menu text"
 msgid "Projects"
 msgstr ""
 
-#: functions.php:316
+#: functions.php:324
 msgid "Add New"
 msgstr ""
 
-#: functions.php:317
+#: functions.php:325
 msgid "Edit Project"
 msgstr ""
 
-#: functions.php:318
+#: functions.php:326
 msgid "View Project"
 msgstr ""
 
-#: functions.php:319
+#: functions.php:327
 msgid "All Projects"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:384
 msgctxt "taxonomy general name"
 msgid "Project Categories"
 msgstr ""
 
-#: functions.php:371
+#: functions.php:385
 msgctxt "taxonomy singular name"
 msgid "Project Category"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:386
 msgid "Search Project Categories"
 msgstr ""
 
-#: functions.php:373
+#: functions.php:387
 msgid "All Project Categories"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:388
 msgid "Edit Project Category"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:389
 msgid "Add New Project Category"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:390
 msgid "New Project Category Name"
 msgstr ""
 
-#: functions.php:377
+#: functions.php:391
 msgid "Project Categories"
 msgstr ""
 
-#: header.php:12
+#: header.php:13
 msgid "Skip to content"
 msgstr ""
 
-#: index.php:16
-msgid "Blog"
-msgstr ""
-
-#: search.php:19
-msgid "Result"
-msgstr ""
-
-#: searchform.php:3
-msgid "Search for:"
-msgstr ""
-
-#: searchform.php:5
-msgctxt "placeholder"
-msgid "Search by Keyword"
-msgstr ""
-
-#: searchform.php:7
-msgctxt "label"
-msgid "Search for:"
-msgstr ""
-
-#: searchform.php:10
-msgctxt "submit button"
-msgid "Search"
-msgstr ""
-
-#: single-projects.php:17
-msgid "Project"
-msgstr ""
-
-#: single-projects.php:45 template-parts/content-blog.php:44
-#: template-parts/content-no-sidebar.php:20 template-parts/content-page.php:29
-#: template-parts/content-projects.php:51
-#, php-format
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
-
-#: single-projects.php:57 template-parts/content-blog.php:56
-#: template-parts/content-no-sidebar.php:32 template-parts/content-page.php:41
-#: template-parts/content-projects.php:63 template-parts/content-search.php:43
-#: template-parts/content.php:42
-msgid "Pages:"
-msgstr ""
-
-#: inc/customizer.php:80
-msgid "Typography Setting"
-msgstr ""
-
-#: inc/customizer.php:81
-msgid "Change Typography color and customize them."
-msgstr ""
-
-#: inc/customizer.php:88
-msgid "Pagination"
-msgstr ""
-
-#: inc/customizer.php:89
-msgid "You can add load more button to page that you want."
+#: inc/customizer.php:83
+msgid "Elements"
 msgstr ""
 
 #: inc/customizer.php:96
-msgid "Social Media"
+msgid "Single Options"
 msgstr ""
 
-#: inc/customizer.php:97
-msgid "Add social media links."
+#: inc/customizer.php:106
+msgid "Archive Options"
 msgstr ""
 
-#: inc/customizer.php:107
-msgid "Projects Page Load more"
-msgstr ""
-
-#: inc/customizer.php:108
-msgid "Add load more button to Project archives page"
-msgstr ""
-
-#: inc/customizer.php:117
-msgid "Blog Page Load more"
-msgstr ""
-
-#: inc/customizer.php:118
-msgid "Add load more button to Blog archives page"
+#: inc/customizer.php:116
+msgid "Projects Options"
 msgstr ""
 
 #: inc/customizer.php:126
-msgid "Archives Page Load more"
+msgid "Typography Setting"
 msgstr ""
 
 #: inc/customizer.php:127
-msgid "Add load more button to archives page"
+msgid "Change typography color and customize them."
 msgstr ""
 
 #: inc/customizer.php:137
-msgid "Primary Color"
+msgid "Pagination"
+msgstr ""
+
+#: inc/customizer.php:138
+msgid "You can add load more button to page that you want."
 msgstr ""
 
 #: inc/customizer.php:148
-msgid "Secondary Color"
+msgid "Social Media"
 msgstr ""
 
-#: inc/customizer.php:160
-msgid "H1"
+#: inc/customizer.php:149
+msgid "Add social media links."
+msgstr ""
+
+#: inc/customizer.php:161
+msgid "Projects Page Load more"
+msgstr ""
+
+#: inc/customizer.php:162
+msgid "Add load more button to Project archives page"
+msgstr ""
+
+#: inc/customizer.php:171
+msgid "Blog Page Load more"
+msgstr ""
+
+#: inc/customizer.php:172
+msgid "Add load more button to Blog archives page"
+msgstr ""
+
+#: inc/customizer.php:182
+msgid "Archives Page Load more"
 msgstr ""
 
 #: inc/customizer.php:183
+msgid "Add load more button to archives page"
+msgstr ""
+
+#: inc/customizer.php:194
+msgid "Primary Color"
+msgstr ""
+
+#: inc/customizer.php:204
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/customizer.php:214
+msgid "Accent Color"
+msgstr ""
+
+#: inc/customizer.php:226
+msgid "H1"
+msgstr ""
+
+#: inc/customizer.php:250
 msgid "H2"
 msgstr ""
 
-#: inc/customizer.php:206
+#: inc/customizer.php:274
 msgid "H3"
 msgstr ""
 
-#: inc/customizer.php:229
+#: inc/customizer.php:297
 msgid "H4"
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:320
 msgid "H5"
 msgstr ""
 
-#: inc/customizer.php:277
+#: inc/customizer.php:344
 msgid "H6"
 msgstr ""
 
-#: inc/customizer.php:300
+#: inc/customizer.php:368
 msgid "Paragraph"
 msgstr ""
 
-#: inc/customizer.php:324
+#: inc/customizer.php:392
 msgid "Secondary Links"
 msgstr ""
 
-#: inc/customizer.php:349
+#: inc/customizer.php:416
+#: inc/template-tags.php:650
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:358
+#: inc/customizer.php:425
+#: inc/template-tags.php:638
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:367
+#: inc/customizer.php:434
+#: inc/template-tags.php:654
 msgid "Github"
 msgstr ""
 
-#: inc/customizer.php:376
+#: inc/customizer.php:443
+#: inc/template-tags.php:642
 msgid "Twitter"
+msgstr ""
+
+#: inc/customizer.php:452
+#: inc/template-tags.php:646
+msgid "Instagram"
+msgstr ""
+
+#: inc/customizer.php:461
+msgid "Email"
+msgstr ""
+
+#: inc/customizer.php:470
+msgid "Pinterest"
+msgstr ""
+
+#: inc/customizer.php:479
+msgid "Youtube"
+msgstr ""
+
+#: inc/customizer.php:488
+msgid "Spotify"
+msgstr ""
+
+#: inc/customizer.php:497
+msgid "Gitlab"
+msgstr ""
+
+#: inc/customizer.php:506
+msgid "Lastfm"
+msgstr ""
+
+#: inc/customizer.php:515
+msgid "Stackoverflow"
+msgstr ""
+
+#: inc/customizer.php:524
+msgid "Quora"
+msgstr ""
+
+#: inc/customizer.php:533
+msgid "Reddit"
+msgstr ""
+
+#: inc/customizer.php:542
+msgid "Medium"
+msgstr ""
+
+#: inc/customizer.php:551
+msgid "Vimeo"
+msgstr ""
+
+#: inc/customizer.php:560
+msgid "Lanyrd"
+msgstr ""
+
+#: inc/customizer.php:569
+msgid "Dribbble"
+msgstr ""
+
+#: inc/customizer.php:578
+msgid "Behance"
+msgstr ""
+
+#: inc/customizer.php:587
+msgid "Codepen"
+msgstr ""
+
+#: inc/customizer.php:596
+msgid "Telegram"
+msgstr ""
+
+#: inc/customizer.php:605
+#: inc/template-tags.php:722
+msgid "Phone Number"
+msgstr ""
+
+#: inc/customizer.php:617
+msgid "Show Publish Date"
+msgstr ""
+
+#: inc/customizer.php:627
+msgid "Display Posts Category"
+msgstr ""
+
+#: inc/customizer.php:637
+msgid "Show Author"
+msgstr ""
+
+#: inc/customizer.php:647
+msgid "Show Posts Tags"
+msgstr ""
+
+#: inc/customizer.php:658
+msgid "Display Share icons for posts"
+msgstr ""
+
+#: inc/customizer.php:668
+msgid "Show Post Thumbnail"
+msgstr ""
+
+#: inc/customizer.php:682
+msgid "Show Archives Posts Categories"
+msgstr ""
+
+#: inc/customizer.php:693
+msgid "Show Posts Date"
+msgstr ""
+
+#: inc/customizer.php:707
+msgid "Display Project Category"
+msgstr ""
+
+#: inc/customizer.php:719
+msgid "Display Projects Excerpt"
 msgstr ""
 
 #: inc/setup.php:46
 msgid "Primary"
 msgstr ""
 
-#: inc/setup.php:95
+#: inc/setup.php:96
 msgid "Footer"
 msgstr ""
 
+#. translators: %s: post date.
 #: inc/template-tags.php:31
-#, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
+#. translators: %s: post author.
 #: inc/template-tags.php:47
-#, php-format
 msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
+#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:64
 msgid ", "
 msgstr ""
 
+#. translators: 1: list of categories.
 #: inc/template-tags.php:67
-#, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
+#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:71
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
+#. translators: 1: list of tags.
 #: inc/template-tags.php:74
-#, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
+#. translators: %s: post title
 #: inc/template-tags.php:84
-#, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
+#. translators: %s: Name of current post. Only visible to screen readers
 #: inc/template-tags.php:101
-#, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:232 inc/template-tags.php:255
-#: inc/template-tags.php:285
-#, php-format
+#. translators: used between list items, there is a space after the comma
+#. translators: return poject_category items for filtering
+#: inc/template-tags.php:232
+#: inc/template-tags.php:255
+#: inc/template-tags.php:319
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:315 inc/template-tags.php:355
-#: inc/template-tags.php:411 inc/template-tags.php:746
+#: inc/template-tags.php:293
+msgid "All "
+msgstr ""
+
+#: inc/template-tags.php:349
+#: inc/template-tags.php:389
+#: inc/template-tags.php:481
+#: inc/template-tags.php:804
 msgid "No thumbnail"
+msgstr ""
+
+#: inc/template-tags.php:658
+msgid "Mail"
+msgstr ""
+
+#: inc/template-tags.php:662
+msgid "pinterest"
+msgstr ""
+
+#: inc/template-tags.php:666
+msgid "youtube"
+msgstr ""
+
+#: inc/template-tags.php:670
+msgid "spotify"
+msgstr ""
+
+#: inc/template-tags.php:674
+msgid "lastfm"
+msgstr ""
+
+#: inc/template-tags.php:678
+msgid "gitlab"
+msgstr ""
+
+#: inc/template-tags.php:682
+msgid "stackoverflow"
+msgstr ""
+
+#: inc/template-tags.php:686
+msgid "reddit"
+msgstr ""
+
+#: inc/template-tags.php:690
+msgid "quora"
+msgstr ""
+
+#: inc/template-tags.php:694
+msgid "medium"
+msgstr ""
+
+#: inc/template-tags.php:698
+msgid "vimeo"
+msgstr ""
+
+#: inc/template-tags.php:702
+msgid "dribbble"
+msgstr ""
+
+#: inc/template-tags.php:706
+msgid "behance"
+msgstr ""
+
+#: inc/template-tags.php:710
+msgid "lanyrd"
+msgstr ""
+
+#: inc/template-tags.php:714
+#: inc/template-tags.php:718
+msgid "codepen"
+msgstr ""
+
+#: inc/template-tags.php:743
+msgid "Share on:"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:325
@@ -368,13 +554,13 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
+#. translators: %s: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:328
-#, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
+#. translators: %s: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:330
-#, php-format
 msgid "Updating Plugin: %s"
 msgstr ""
 
@@ -382,65 +568,61 @@ msgstr ""
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:334
-#, php-format
+#. translators: 1: plugin name(s).
+#: inc/tgmpa/class-tgm-plugin-activation.php:332
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:340
-#, php-format
+#. translators: 1: plugin name(s).
+#: inc/tgmpa/class-tgm-plugin-activation.php:338
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:346
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
+#. translators: 1: plugin name(s).
+#: inc/tgmpa/class-tgm-plugin-activation.php:344
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:352
-#, php-format
+#. translators: 1: plugin name(s).
+#: inc/tgmpa/class-tgm-plugin-activation.php:350
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:358
-#, php-format
+#. translators: 1: plugin name(s).
+#: inc/tgmpa/class-tgm-plugin-activation.php:356
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:364
-#, php-format
+#. translators: 1: plugin name(s).
+#: inc/tgmpa/class-tgm-plugin-activation.php:362
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:369
+#: inc/tgmpa/class-tgm-plugin-activation.php:368
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:374
+#: inc/tgmpa/class-tgm-plugin-activation.php:373
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgmpa/class-tgm-plugin-activation.php:379
+#: inc/tgmpa/class-tgm-plugin-activation.php:378
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
@@ -469,20 +651,18 @@ msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:388
-#, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:390
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
+#. translators: 1: dashboard link.
 #: inc/tgmpa/class-tgm-plugin-activation.php:392
-#, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
@@ -491,9 +671,7 @@ msgid "Dismiss this notice"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:394
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
+msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:395
@@ -509,22 +687,16 @@ msgid "Update Required"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:932
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:932
 #: inc/tgmpa/class-tgm-plugin-activation.php:935
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:935
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:1119
@@ -533,8 +705,8 @@ msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
+#. translators: %s: version number
 #: inc/tgmpa/class-tgm-plugin-activation.php:1980
-#, php-format
 msgid "TGMPA v%s"
 msgstr ""
 
@@ -582,36 +754,36 @@ msgstr ""
 msgid "Update recommended"
 msgstr ""
 
+#. translators: 1: install status, 2: update status
 #: inc/tgmpa/class-tgm-plugin-activation.php:2340
-#, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
+#. translators: 1: number of plugins.
 #: inc/tgmpa/class-tgm-plugin-activation.php:2386
-#, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: inc/tgmpa/class-tgm-plugin-activation.php:2390
-#, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: inc/tgmpa/class-tgm-plugin-activation.php:2394
-#, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: inc/tgmpa/class-tgm-plugin-activation.php:2398
-#, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -658,18 +830,18 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: inc/tgmpa/class-tgm-plugin-activation.php:2601
-#, php-format
 msgid "Install %2$s"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: inc/tgmpa/class-tgm-plugin-activation.php:2606
-#, php-format
 msgid "Update %2$s"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: inc/tgmpa/class-tgm-plugin-activation.php:2612
-#, php-format
 msgid "Activate %2$s"
 msgstr ""
 
@@ -717,37 +889,37 @@ msgstr ""
 msgid "Plugin activation failed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3493
-#, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#. translators: 1: plugin name, 2: error message.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3496
-#, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3498
-#, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:3502
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3504
-#, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3504
 #: inc/tgmpa/class-tgm-plugin-activation.php:3512
 msgid "Show Details"
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3504
 #: inc/tgmpa/class-tgm-plugin-activation.php:3512
 msgid "Hide Details"
@@ -757,19 +929,17 @@ msgstr ""
 msgid "All installations and activations have been completed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3507
-#, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:3510
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3512
-#, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
@@ -777,8 +947,8 @@ msgstr ""
 msgid "All installations have been completed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/tgmpa/class-tgm-plugin-activation.php:3515
-#, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
@@ -798,422 +968,97 @@ msgstr ""
 msgid "Advanced Custom Fields"
 msgstr ""
 
-#: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:51
-msgid "\n"
+#: index.php:17
+msgid "Blog"
 msgstr ""
 
-#: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:78
-msgid "<"
+#. Template Name of the theme
+msgid "Contact"
 msgstr ""
 
-#: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:84
-#, python-format
-msgid " %s=\"%s\""
+#. Template Name of the theme
+msgid "Home"
 msgstr ""
 
-#: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:87
-msgid ">"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:101
-#, python-format
-msgid "</%s>%s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:103
-#, python-format
-msgid "/>%s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/input.py:1837
-#: node_modules/node-gyp/gyp/pylib/gyp/input.py:1898
-#, python-format
-msgid "Cycle: %s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:358
-msgid "_MBCS"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:423
-msgid "/safeseh"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:473
-msgid "/FS"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:543
-#, python-format
-msgid "/DEF:\"%s\""
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:575
-msgid "/OUT:"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:578
-msgid "/PDB:"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:581
-msgid "/PGD:"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:604
-#, python-format
-msgid "/STACK:%s%s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:643
-msgid "/DYNAMICBASE"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:650
-msgid "/NXCOMPAT"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:692
-msgid "/MANIFESTUAC:NO"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:740
-msgid "/ALLOWISOLATION"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py:785
-msgid "/I"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/ninja_syntax.py:72
-msgid "|"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/ninja_syntax.py:76
-msgid "||"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcodeproj_file.py:276
-#, python-format
-msgid "\\U%04x"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcodeproj_file.py:988
-msgid ".name"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcodeproj_file.py:999
-msgid ".path"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcodeproj_file.py:1066
-msgid "$("
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:481
-#, python-format
-msgid "-isysroot %s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:484
-msgid "-Wconstant-conversion"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:487
-msgid "-funsigned-char"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:490
-msgid "-fasm-blocks"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:494
-msgid "-mdynamic-no-pic"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:502
-msgid "-mpascal-strings"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:509
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:513
-msgid "-gdwarf-2"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:518
-msgid "-fstrict-aliasing"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:520
-msgid "-fno-strict-aliasing"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:523
-msgid "-fvisibility=hidden"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:526
-msgid "-Werror"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:529
-msgid "-Wnewline-eof"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:536
-msgid "-flto"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:559
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:822
-msgid "-arch "
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:563
-msgid "-msse3"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:566
-msgid "-mssse3"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:568
-msgid "-msse4.1"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:570
-msgid "-msse4.2"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:577
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:586
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:840
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:845
-msgid "-F"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:596
-msgid "-ansi"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:613
-#, python-format
-msgid "-std=%s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:618
-msgid "-fno-rtti"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:620
-msgid "-fno-exceptions"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:622
-msgid "-fvisibility-inlines-hidden"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:624
-msgid "-fno-threadsafe-statics"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:627
-msgid "-Wno-invalid-offsetof"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:647
-msgid "-fobjc-gc"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:649
-msgid "-fobjc-gc-only"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:653
-msgid "-fobjc-arc"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:658
-msgid "-Wobjc-missing-property-synthesis"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:678
-msgid "-fobjc-call-cxx-cdtors"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:790
-msgid "-Wl,-dead_strip"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:793
-msgid "-Wl,-prebind"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:803
-msgid "-isysroot "
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:806
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:825
-msgid "-L"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:809
-msgid "-Wl,-order_file "
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:829
-msgid "-install_name "
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:832
-msgid "-Wl,-rpath,"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:853
-msgid "-lpkstart"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:856
-msgid "/System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:857
-msgid "-fapplication-extension"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:858
-msgid "-Xlinker -rpath -Xlinker @executable_path/../../Frameworks"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:950
-#, python-format
-msgid "echo STRIP\\(%s\\)"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:951
-#, python-format
-msgid "strip %s %s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:969
-#, python-format
-msgid "echo DSYMUTIL\\(%s\\)"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:970
-#, python-format
-msgid "dsymutil %s -o %s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py:1618
-#, python-format
-msgid "echo POSTBUILD\\(%s\\) %s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/__init__.py:364
-msgid "USERPROFILE"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/analyzer.py:663
-msgid "all"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/android.py:450
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/make.py:982
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/make.py:1108
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/make.py:1150
-#, python-format
-msgid "$(%s)"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/cmake.py:376
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/cmake.py:377
-msgid "${"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/eclipse.py:223
-msgid "1"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/make.py:1279
-msgid "$(OBJS)"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/make.py:1501
-#, python-format
-msgid "-Wl,-rpath=\\$$ORIGIN/lib.%s/"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/make.py:1502
-#, python-format
-msgid "-Wl,-rpath-link=\\$(builddir)/lib.%s/"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/make.py:1530
-msgid "$(TARGET_POSTBUILDS_$(BUILDTYPE))"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/make.py:1994
-msgid "BUILDTYPE="
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/msvs.py:2946
-msgid "Label"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/msvs.py:3109
-#, python-format
-msgid "%%(%s)"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py:1181
-#, python-format
-msgid "-Wl,-rpath=\\$$ORIGIN/%s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py:1182
-#, python-format
-msgid "-Wl,-rpath-link=%s"
-msgstr ""
-
-#: node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py:1415
-#, python-format
-msgid "export %s=%s;"
-msgstr ""
-
-#: page-template/home.php:18
+#: page-template/home.php:16
 msgid "Navigation"
 msgstr ""
 
-#: page-template/home.php:59 page-template/home.php:76
+#: page-template/home.php:58
+#: page-template/home.php:75
 msgid "Recent Projects"
 msgstr ""
 
-#: page-template/home.php:67 page-template/home.php:96
+#: page-template/home.php:66
+#: page-template/home.php:95
 msgid "View All Projects"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Content No Aside"
+msgstr ""
+
+#: search.php:19
+msgid "Result"
+msgstr ""
+
+#: searchform.php:3
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:5
+msgctxt "placeholder"
+msgid "Search by Keyword"
+msgstr ""
+
+#: searchform.php:7
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:10
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: single-projects.php:17
+msgid "Project"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: single-projects.php:45
+#: template-parts/content-blog.php:53
+#: template-parts/content-no-sidebar.php:20
+#: template-parts/content-page.php:29
+#: template-parts/content-projects.php:56
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: single-projects.php:57
+#: template-parts/content-blog.php:65
+#: template-parts/content-no-sidebar.php:32
+#: template-parts/content-page.php:41
+#: template-parts/content-projects.php:68
+#: template-parts/content-search.php:43
+#: template-parts/content.php:46
+msgid "Pages:"
 msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
+#. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:23
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:36
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:42
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: template-parts/searchbar.php:6
